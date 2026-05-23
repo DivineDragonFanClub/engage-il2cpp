@@ -2,11 +2,13 @@
 
 #[cfg(feature = "root-debugmesh-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::dynamicmesh::{DynamicMesh, IDynamicMesh};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::dynamicmesh::{DynamicMesh, IDynamicMesh},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/debugmesh/DebugMesh.md"))]
     #[::unity2::class(namespace = "", name = "DebugMesh")]
@@ -38,9 +40,7 @@ mod __DebugMesh_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_font_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMesh as ::unity2::ClassIdentity>::class(),
@@ -53,114 +53,73 @@ mod __DebugMesh_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "get_FontSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "get_FontSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_font_size(
-        this: DebugMesh,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_font_size(this: DebugMesh, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(DebugMesh, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_font_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_font_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugMesh,
-        vertex_capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugMesh, vertex_capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugMesh, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, vertex_capacity, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -170,61 +129,35 @@ mod __DebugMesh_unity2_raw {
         vertex_capacity: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugMesh,
-            crate::unity_engine::gameobject::GameObject,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            go,
-            sub_mesh_count,
-            vertex_capacity,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(DebugMesh, crate::unity_engine::gameobject::GameObject, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, go, sub_mesh_count, vertex_capacity, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddText",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddText", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_text(
@@ -235,56 +168,35 @@ mod __DebugMesh_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugMesh,
-            f32,
-            f32,
-            crate::unity_engine::color::Color,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_text::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugMesh, f32, f32, crate::unity_engine::color::Color, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_text::get_method_info().method_ptr);
         inner(this, x, y, color, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddText",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddText", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_text_2(
@@ -295,27 +207,15 @@ mod __DebugMesh_unity2_raw {
         text: ::unity2::Array<u16>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugMesh,
-            f32,
-            f32,
-            crate::unity_engine::color::Color,
-            ::unity2::Array<u16>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_text_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugMesh, f32, f32, crate::unity_engine::color::Color, ::unity2::Array<u16>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_text_2::get_method_info().method_ptr);
         inner(this, x, y, color, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -323,29 +223,20 @@ mod __DebugMesh_unity2_raw {
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddLine",
-                5,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddLine", 5, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_line(
@@ -357,56 +248,34 @@ mod __DebugMesh_unity2_raw {
         color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugMesh,
-            f32,
-            f32,
-            f32,
-            f32,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_line::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugMesh, f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_line::get_method_info().method_ptr);
         inner(this, x0, y0, x1, y1, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_line_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddLine",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddLine", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddLine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_line_2(
@@ -422,47 +291,32 @@ mod __DebugMesh_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_line_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_line_2::get_method_info().method_ptr);
         inner(this, pos0, pos1, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_rect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddRect",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddRect", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddRect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_rect(
@@ -471,25 +325,15 @@ mod __DebugMesh_unity2_raw {
         color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugMesh,
-            crate::unity_engine::rect::Rect,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_rect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugMesh, crate::unity_engine::rect::Rect, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_rect::get_method_info().method_ptr);
         inner(this, rect, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_rect_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -497,29 +341,20 @@ mod __DebugMesh_unity2_raw {
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddRect",
-                5,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddRect", 5, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddRect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_rect_2(
@@ -531,432 +366,250 @@ mod __DebugMesh_unity2_raw {
         color: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugMesh,
-            f32,
-            f32,
-            f32,
-            f32,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_rect_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugMesh, f32, f32, f32, f32, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_rect_2::get_method_info().method_ptr);
         inner(this, x, y, w, h, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetIndex",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetIndex", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_index(code: u16, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(u16, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(code, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_uv0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetUV0",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetUV0", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetUV0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetUV0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_uv0(
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_uv0::get_offset() as isize),
-        );
+    pub unsafe fn get_uv0(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_uv0::get_method_info().method_ptr);
         inner(index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_uv2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetUV2",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetUV2", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetUV2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetUV2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_uv2(
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_uv2::get_offset() as isize),
-        );
+    pub unsafe fn get_uv2(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_uv2::get_method_info().method_ptr);
         inner(index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mask_uv {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetMaskUV",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetMaskUV", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetMaskUV",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetMaskUV",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mask_uv(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mask_uv::get_offset() as isize),
-        );
+    pub unsafe fn get_mask_uv(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_mask_uv::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_num_uv0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetNumUV0",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetNumUV0", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetNumUV0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetNumUV0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_num_uv0(
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_num_uv0::get_offset() as isize),
-        );
+    pub unsafe fn get_num_uv0(num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_num_uv0::get_method_info().method_ptr);
         inner(num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_num_uv2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetNumUV2",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetNumUV2", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetNumUV2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetNumUV2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_num_uv2(
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_num_uv2::get_offset() as isize),
-        );
+    pub unsafe fn get_num_uv2(num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_num_uv2::get_method_info().method_ptr);
         inner(num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hex_uv0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetHexUV0",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetHexUV0", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetHexUV0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetHexUV0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hex_uv0(
-        hex: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hex_uv0::get_offset() as isize),
-        );
+    pub unsafe fn get_hex_uv0(hex: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_hex_uv0::get_method_info().method_ptr);
         inner(hex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hex_uv2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "GetHexUV2",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "GetHexUV2", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetHexUV2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetHexUV2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hex_uv2(
-        hex: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hex_uv2::get_offset() as isize),
-        );
+    pub unsafe fn get_hex_uv2(hex: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_hex_uv2::get_method_info().method_ptr);
         inner(hex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                "AddChara",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), "AddChara", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddChara",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_chara(
@@ -967,59 +620,34 @@ mod __DebugMesh_unity2_raw {
         code: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            DebugMesh,
-            f32,
-            f32,
-            crate::unity_engine::color32::Color32,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_chara::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugMesh, f32, f32, crate::unity_engine::color32::Color32, u16, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_add_chara::get_method_info().method_ptr);
         inner(this, x, y, color, code, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugMesh as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugMesh as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMesh as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMesh as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1028,83 +656,44 @@ mod __DebugMesh_unity2_raw {
 impl DebugMesh {
     #[doc = "`GetIndex(u16)` overload"]
     pub fn get_index(code: impl ::core::convert::Into<u16>) -> i32 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_index(
-                ::core::convert::Into::into(code),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DebugMesh_unity2_raw::get_index(::core::convert::Into::into(code), ::core::option::Option::None) }
     }
+
     #[doc = "`GetUV0(i32)` overload"]
-    pub fn get_uv0(
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_uv0(
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_uv0(index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __DebugMesh_unity2_raw::get_uv0(::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`GetUV2(i32)` overload"]
-    pub fn get_uv2(
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_uv2(
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_uv2(index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __DebugMesh_unity2_raw::get_uv2(::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMaskUV()` overload"]
     pub fn get_mask_uv() -> crate::unity_engine::vector2::Vector2 {
         unsafe { __DebugMesh_unity2_raw::get_mask_uv(::core::option::Option::None) }
     }
+
     #[doc = "`GetNumUV0(i32)` overload"]
-    pub fn get_num_uv0(
-        num: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_num_uv0(
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_num_uv0(num: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __DebugMesh_unity2_raw::get_num_uv0(::core::convert::Into::into(num), ::core::option::Option::None) }
     }
+
     #[doc = "`GetNumUV2(i32)` overload"]
-    pub fn get_num_uv2(
-        num: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_num_uv2(
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_num_uv2(num: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __DebugMesh_unity2_raw::get_num_uv2(::core::convert::Into::into(num), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHexUV0(i32)` overload"]
-    pub fn get_hex_uv0(
-        hex: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_hex_uv0(
-                ::core::convert::Into::into(hex),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_hex_uv0(hex: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __DebugMesh_unity2_raw::get_hex_uv0(::core::convert::Into::into(hex), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHexUV2(i32)` overload"]
-    pub fn get_hex_uv2(
-        hex: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        unsafe {
-            __DebugMesh_unity2_raw::get_hex_uv2(
-                ::core::convert::Into::into(hex),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_hex_uv2(hex: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
+        unsafe { __DebugMesh_unity2_raw::get_hex_uv2(::core::convert::Into::into(hex), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __DebugMesh_unity2_raw::cctor(::core::option::Option::None) }
@@ -1116,23 +705,15 @@ pub trait IDebugMeshMethods: IDebugMesh {
     #[doc = "`get_FontSize()` overload"]
     fn get_font_size(self) -> f32 {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::get_font_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(i32)` overload"]
     fn ctor(self, vertex_capacity: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugMesh_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(vertex_capacity),
-                ::core::option::Option::None,
-            )
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugMesh_unity2_raw::ctor(__receiver, ::core::convert::Into::into(vertex_capacity), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
@@ -1143,9 +724,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         vertex_capacity: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(go),
@@ -1164,9 +743,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         text: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_text(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1186,9 +763,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         text: impl ::core::convert::Into<::unity2::Array<u16>>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_text_2(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1209,9 +784,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_line(
                 __receiver,
                 ::core::convert::Into::into(x0),
@@ -1231,9 +804,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_line_2(
                 __receiver,
                 ::core::convert::Into::into(pos0),
@@ -1250,9 +821,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_rect(
                 __receiver,
                 ::core::convert::Into::into(rect),
@@ -1271,9 +840,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_rect_2(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1294,9 +861,7 @@ pub trait IDebugMeshMethods: IDebugMesh {
         code: impl ::core::convert::Into<u16>,
     ) -> f32 {
         unsafe {
-            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMesh_unity2_raw::add_chara(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1316,30 +881,16 @@ impl<__T: IDebugMesh> IDebugMeshMethods for __T {}
 impl DebugMesh {
     #[doc = "`.ctor(i32)` — overload selector"]
     pub fn new(vertex_capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugMesh),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DebugMesh), ::core::stringify!(new),));
         <Self as IDebugMeshMethods>::ctor(this, vertex_capacity);
         this
     }
 
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]
-    pub fn new_2(
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugMesh),
-                ::core::stringify!(new_2),
-            )
-        });
+    pub fn new_2(go: crate::unity_engine::gameobject::GameObject, sub_mesh_count: i32, vertex_capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(DebugMesh), ::core::stringify!(new_2),));
         <Self as IDebugMeshMethods>::ctor_2(this, go, sub_mesh_count, vertex_capacity);
         this
     }
@@ -1348,13 +899,10 @@ impl DebugMesh {
 #[cfg(feature = "root-debugmesh")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugMesh;
-    pub use super::IDebugMesh;
-    pub use super::IDebugMeshMethods;
-    pub use crate::app::dynamicmesh::IDynamicMesh;
+    pub use super::{DebugMesh, IDebugMesh, IDebugMeshMethods};
     #[cfg(feature = "app-dynamicmesh")]
     pub use crate::app::dynamicmesh::IDynamicMeshMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::dynamicmesh::IDynamicMesh, system::object::IObject};
 }

@@ -2,64 +2,28 @@
 
 #[cfg(feature = "unity_engine-terraindata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "TerrainData")]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    pub struct TerrainData {
-        #[static_field]
-        #[rename(name = "k_MaximumResolution")]
-        pub k_maximum_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MinimumDetailResolutionPerPatch")]
-        pub k_minimum_detail_resolution_per_patch: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumDetailResolutionPerPatch")]
-        pub k_maximum_detail_resolution_per_patch: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumDetailPatchCount")]
-        pub k_maximum_detail_patch_count: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumDetailsPerRes")]
-        pub k_maximum_details_per_res: i32,
-        #[static_field]
-        #[rename(name = "k_MinimumAlphamapResolution")]
-        pub k_minimum_alphamap_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumAlphamapResolution")]
-        pub k_maximum_alphamap_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MinimumBaseMapResolution")]
-        pub k_minimum_base_map_resolution: i32,
-        #[static_field]
-        #[rename(name = "k_MaximumBaseMapResolution")]
-        pub k_maximum_base_map_resolution: i32,
-    }
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::object_2::{IObject_2, Object_2},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TerrainData_BoundaryValueType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TerrainData_BoundaryValueType {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "TerrainData.BoundaryValueType";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -70,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for TerrainData_BoundaryValueType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -114,6 +75,39 @@ mod __types {
             Self { value: 8 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "TerrainData")]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    pub struct TerrainData {
+        #[static_field]
+        #[rename(name = "k_MaximumResolution")]
+        pub k_maximum_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MinimumDetailResolutionPerPatch")]
+        pub k_minimum_detail_resolution_per_patch: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumDetailResolutionPerPatch")]
+        pub k_maximum_detail_resolution_per_patch: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumDetailPatchCount")]
+        pub k_maximum_detail_patch_count: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumDetailsPerRes")]
+        pub k_maximum_details_per_res: i32,
+        #[static_field]
+        #[rename(name = "k_MinimumAlphamapResolution")]
+        pub k_minimum_alphamap_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumAlphamapResolution")]
+        pub k_maximum_alphamap_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MinimumBaseMapResolution")]
+        pub k_minimum_base_map_resolution: i32,
+        #[static_field]
+        #[rename(name = "k_MaximumBaseMapResolution")]
+        pub k_maximum_base_map_resolution: i32,
+    }
 }
 
 #[cfg(feature = "unity_engine-terraindata-types")]
@@ -128,10 +122,9 @@ mod __TerrainData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_boundary_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: terraindata :: TerrainData_BoundaryValueType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::terraindata::TerrainData_BoundaryValueType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
                 "GetBoundaryValue",
@@ -143,83 +136,56 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "GetBoundaryValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "GetBoundaryValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_boundary_value(
         r#type: crate::unity_engine::terraindata::TerrainData_BoundaryValueType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::terraindata::TerrainData_BoundaryValueType,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_boundary_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::terraindata::TerrainData_BoundaryValueType, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_boundary_value::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TerrainData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::terraindata::TerrainData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -233,41 +199,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_create(
-        terrain_data: crate::unity_engine::terraindata::TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::terraindata::TerrainData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create::get_offset() as isize),
-        );
+    pub unsafe fn internal_create(terrain_data: crate::unity_engine::terraindata::TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_create::get_method_info().method_ptr);
         inner(terrain_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_heightmap_resolution {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -280,39 +232,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_heightmapResolution",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_heightmapResolution",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_heightmap_resolution(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_heightmap_resolution(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_heightmap_resolution::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_heightmap_resolution::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_internal_heightmap_resolution {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -325,39 +265,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_internalHeightmapResolution",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_internalHeightmapResolution",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_internal_heightmap_resolution(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_internal_heightmap_resolution(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_internal_heightmap_resolution::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_internal_heightmap_resolution::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_heightmap_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -370,41 +298,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_heightmapScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_heightmapScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_heightmap_scale(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            TerrainData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_heightmap_scale::get_offset() as isize),
-        );
+    pub unsafe fn get_heightmap_scale(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_heightmap_scale::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -417,45 +331,28 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_size",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_size",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_size(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            TerrainData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_size::get_offset() as isize),
-        );
+    pub unsafe fn get_size(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interpolated_normal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
                 "GetInterpolatedNormal",
@@ -467,18 +364,15 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "GetInterpolatedNormal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "GetInterpolatedNormal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_interpolated_normal(
@@ -487,25 +381,15 @@ mod __TerrainData_unity2_raw {
         y: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            TerrainData,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_interpolated_normal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TerrainData, f32, f32, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_interpolated_normal::get_method_info().method_ptr);
         inner(this, x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alphamap_layers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -518,39 +402,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_alphamapLayers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_alphamapLayers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alphamap_layers(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_alphamap_layers(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alphamap_layers::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alphamap_layers::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alphamap_resolution {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -563,39 +435,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_alphamapResolution",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_alphamapResolution",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alphamap_resolution(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_alphamap_resolution(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alphamap_resolution::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alphamap_resolution::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alphamap_resolution_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -608,39 +468,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "GetAlphamapResolutionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "GetAlphamapResolutionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alphamap_resolution_internal(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_alphamap_resolution_internal(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alphamap_resolution_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alphamap_resolution_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_internal_alphamap_resolution {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -653,39 +501,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_Internal_alphamapResolution",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_Internal_alphamapResolution",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_internal_alphamap_resolution(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_internal_alphamap_resolution(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_internal_alphamap_resolution::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_internal_alphamap_resolution::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alphamap_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -698,39 +534,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_alphamapWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_alphamapWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alphamap_width(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_alphamap_width(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alphamap_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alphamap_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alphamap_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -743,39 +567,27 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_alphamapHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_alphamapHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alphamap_height(
-        this: TerrainData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_alphamap_height(this: TerrainData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alphamap_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alphamap_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_users {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
@@ -788,85 +600,57 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_users",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_users",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_users(
         this: TerrainData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::terrain::Terrain> {
-        let inner: extern "C" fn(
-            TerrainData,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::terrain::Terrain> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_users::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TerrainData, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::terrain::Terrain> =
+            ::core::mem::transmute(__lookup_get_users::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TerrainData as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_heightmap_scale_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
                 "get_heightmapScale_Injected",
@@ -878,18 +662,15 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_heightmapScale_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_heightmapScale_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_heightmap_scale_injected(
@@ -897,26 +678,16 @@ mod __TerrainData_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TerrainData,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_heightmap_scale_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TerrainData, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_heightmap_scale_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_size_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainData as ::unity2::ClassIdentity>::class(),
                 "get_size_Injected",
@@ -928,18 +699,15 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "get_size_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "get_size_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_size_injected(
@@ -947,24 +715,15 @@ mod __TerrainData_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TerrainData,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_size_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TerrainData, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_size_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interpolated_normal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -981,18 +740,15 @@ mod __TerrainData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainData as ::unity2::ClassIdentity>::NAME,
-                    "GetInterpolatedNormal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainData as ::unity2::ClassIdentity>::NAME,
+                        "GetInterpolatedNormal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_interpolated_normal_injected(
@@ -1002,17 +758,8 @@ mod __TerrainData_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TerrainData,
-            f32,
-            f32,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_interpolated_normal_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TerrainData, f32, f32, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_interpolated_normal_injected::get_method_info().method_ptr);
         inner(this, x, y, ret, __unity2_method_info)
     }
 }
@@ -1020,29 +767,15 @@ mod __TerrainData_unity2_raw {
 #[cfg(feature = "unity_engine-terraindata")]
 impl TerrainData {
     #[doc = "`GetBoundaryValue(crate::unity_engine::terraindata::TerrainData_BoundaryValueType)` overload"]
-    pub fn get_boundary_value(
-        r#type: impl ::core::convert::Into<
-            crate::unity_engine::terraindata::TerrainData_BoundaryValueType,
-        >,
-    ) -> i32 {
-        unsafe {
-            __TerrainData_unity2_raw::get_boundary_value(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_boundary_value(r#type: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData_BoundaryValueType>) -> i32 {
+        unsafe { __TerrainData_unity2_raw::get_boundary_value(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
+
     #[doc = "`Internal_Create(crate::unity_engine::terraindata::TerrainData)` overload"]
-    pub fn internal_create(
-        terrain_data: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData>,
-    ) -> () {
-        unsafe {
-            __TerrainData_unity2_raw::internal_create(
-                ::core::convert::Into::into(terrain_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn internal_create(terrain_data: impl ::core::convert::Into<crate::unity_engine::terraindata::TerrainData>) -> () {
+        unsafe { __TerrainData_unity2_raw::internal_create(::core::convert::Into::into(terrain_data), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TerrainData_unity2_raw::cctor(::core::option::Option::None) }
@@ -1054,51 +787,35 @@ pub trait ITerrainDataMethods: ITerrainData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_heightmapResolution()` overload"]
     fn get_heightmap_resolution(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainData_unity2_raw::get_heightmap_resolution(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TerrainData_unity2_raw::get_heightmap_resolution(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_internalHeightmapResolution()` overload"]
     fn get_internal_heightmap_resolution(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainData_unity2_raw::get_internal_heightmap_resolution(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TerrainData_unity2_raw::get_internal_heightmap_resolution(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_heightmapScale()` overload"]
     fn get_heightmap_scale(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_heightmap_scale(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_size()` overload"]
     fn get_size(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_size(__receiver, ::core::option::Option::None)
         }
     }
@@ -1109,9 +826,7 @@ pub trait ITerrainDataMethods: ITerrainData {
         y: impl ::core::convert::Into<f32>,
     ) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_interpolated_normal(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1123,104 +838,67 @@ pub trait ITerrainDataMethods: ITerrainData {
     #[doc = "`get_alphamapLayers()` overload"]
     fn get_alphamap_layers(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_alphamap_layers(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_alphamapResolution()` overload"]
     fn get_alphamap_resolution(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainData_unity2_raw::get_alphamap_resolution(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TerrainData_unity2_raw::get_alphamap_resolution(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAlphamapResolutionInternal()` overload"]
     fn get_alphamap_resolution_internal(self) -> f32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainData_unity2_raw::get_alphamap_resolution_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TerrainData_unity2_raw::get_alphamap_resolution_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Internal_alphamapResolution()` overload"]
     fn get_internal_alphamap_resolution(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainData_unity2_raw::get_internal_alphamap_resolution(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TerrainData_unity2_raw::get_internal_alphamap_resolution(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_alphamapWidth()` overload"]
     fn get_alphamap_width(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_alphamap_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_alphamapHeight()` overload"]
     fn get_alphamap_height(self) -> i32 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_alphamap_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_users()` overload"]
     fn get_users(self) -> ::unity2::Array<crate::unity_engine::terrain::Terrain> {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainData_unity2_raw::get_users(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_heightmapScale_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_heightmap_scale_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __TerrainData_unity2_raw::get_heightmap_scale_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __TerrainData_unity2_raw::get_heightmap_scale_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_size_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __TerrainData_unity2_raw::get_size_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __TerrainData_unity2_raw::get_size_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -1231,11 +909,8 @@ pub trait ITerrainDataMethods: ITerrainData {
         y: impl ::core::convert::Into<f32>,
     ) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __receiver = <TerrainData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             __TerrainData_unity2_raw::get_interpolated_normal_injected(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -1255,13 +930,8 @@ impl<__T: ITerrainData> ITerrainDataMethods for __T {}
 impl TerrainData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TerrainData), ::core::stringify!(new),));
         <Self as ITerrainDataMethods>::ctor(this);
         this
     }
@@ -1270,20 +940,17 @@ impl TerrainData {
 #[cfg(feature = "unity_engine-terraindata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITerrainData;
-    pub use super::ITerrainDataMethods;
-    pub use super::TerrainData;
-    pub use super::TerrainData_BoundaryValueType;
-    pub use crate::system::object::IObject;
+    pub use super::{ITerrainData, ITerrainDataMethods, TerrainData, TerrainData_BoundaryValueType};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::object_2::IObject_2,
+    };
 }

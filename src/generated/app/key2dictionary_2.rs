@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-key2dictionary_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/key2dictionary_2/Key2Dictionary_2.md"))]
     #[::unity2::class(namespace = "App", name = "Key2Dictionary`2")]
@@ -67,9 +67,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> Key2Dictionary_2<
 #[cfg(feature = "app-key2dictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKey2Dictionary_2;
-    pub use super::IKey2Dictionary_2Methods;
-    pub use super::Key2Dictionary_2;
+    pub use super::{IKey2Dictionary_2, IKey2Dictionary_2Methods, Key2Dictionary_2};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

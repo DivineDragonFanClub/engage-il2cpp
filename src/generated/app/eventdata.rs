@@ -2,33 +2,37 @@
 
 #[cfg(feature = "app-eventdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))]
+    #[::unity2::class(namespace = "App", name = "EventData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
+    pub struct EventData {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdata/EventData_Commands.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct EventData_Commands {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for EventData_Commands {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "EventData.Commands";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,10 +43,7 @@ mod __types {
 
     impl ::unity2::IlType for EventData_Commands {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -167,11 +168,6 @@ mod __types {
             Self { value: 102 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))]
-    #[::unity2::class(namespace = "App", name = "EventData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
-    pub struct EventData {}
 }
 
 #[cfg(feature = "app-eventdata-types")]
@@ -186,9 +182,7 @@ mod __EventData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_command {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventData as ::unity2::ClassIdentity>::class(),
@@ -201,43 +195,28 @@ mod __EventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Command",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Command",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_command(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::eventdata::EventData_Commands {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::eventdata::EventData_Commands = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_command::get_offset() as isize),
-        );
+    pub unsafe fn get_command(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::eventdata::EventData_Commands {
+        let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> crate::app::eventdata::EventData_Commands =
+            ::core::mem::transmute(__lookup_get_command::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_command {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::eventdata::EventData_Commands as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::eventdata::EventData_Commands as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventData as ::unity2::ClassIdentity>::class(),
                 "set_Command",
@@ -249,18 +228,15 @@ mod __EventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Command",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Command",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_command(
@@ -268,689 +244,393 @@ mod __EventData_unity2_raw {
         value: crate::app::eventdata::EventData_Commands,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            crate::app::eventdata::EventData_Commands,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_command::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventData, crate::app::eventdata::EventData_Commands, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_command::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg1",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg1", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg1(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg1(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg1",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg1", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg1(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg1::get_offset() as isize),
-        );
+    pub unsafe fn set_arg1(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg1::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg2",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg2", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg2(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg2(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg2",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg2", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg2(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg2::get_offset() as isize),
-        );
+    pub unsafe fn set_arg2(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg3",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg3", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg3(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg3(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg3",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg3", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg3(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg3::get_offset() as isize),
-        );
+    pub unsafe fn set_arg3(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg3::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg4",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg4", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg4",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg4(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg4(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg4::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg4::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg4",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg4", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg4",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg4(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg4::get_offset() as isize),
-        );
+    pub unsafe fn set_arg4(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg4::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg5",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg5", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg5",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg5(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg5(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg5::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg5::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg5",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg5", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg5",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg5(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg5::get_offset() as isize),
-        );
+    pub unsafe fn set_arg5(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg5::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg6",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg6", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg6",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg6",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg6(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg6(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg6::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg6::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg6",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg6", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg6",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg6",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg6(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg6::get_offset() as isize),
-        );
+    pub unsafe fn set_arg6(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg6::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "get_Arg7",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "get_Arg7", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Arg7",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Arg7",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg7(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_arg7(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg7::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg7::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arg7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "set_Arg7",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "set_Arg7", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Arg7",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Arg7",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arg7(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_arg7::get_offset() as isize),
-        );
+    pub unsafe fn set_arg7(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_arg7::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_condition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventData as ::unity2::ClassIdentity>::class(),
@@ -963,41 +643,28 @@ mod __EventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "get_Condition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "get_Condition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_condition(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_condition(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_condition::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_condition::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_condition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventData as ::unity2::ClassIdentity>::class(),
                 "set_Condition",
@@ -1009,89 +676,54 @@ mod __EventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "set_Condition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "set_Condition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_condition(
-        this: EventData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EventData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_condition::get_offset() as isize),
-        );
+    pub unsafe fn set_condition(this: EventData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EventData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_condition::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                "Load",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load(
-        file_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load(file_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventData as ::unity2::ClassIdentity>::class(),
@@ -1104,72 +736,46 @@ mod __EventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    "GetDebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        "GetDebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: EventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_debug_name(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_debug_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: EventData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(EventData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1178,12 +784,7 @@ mod __EventData_unity2_raw {
 impl EventData {
     #[doc = "`Load(::unity2::Il2CppString)` overload"]
     pub fn load(file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __EventData_unity2_raw::load(
-                ::core::convert::Into::into(file_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __EventData_unity2_raw::load(::core::convert::Into::into(file_name), ::core::option::Option::None) }
     }
 }
 
@@ -1192,219 +793,140 @@ pub trait IEventDataMethods: IEventData {
     #[doc = "`get_Command()` overload"]
     fn get_command(self) -> crate::app::eventdata::EventData_Commands {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_command(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Command(crate::app::eventdata::EventData_Commands)` overload"]
-    fn set_command(
-        self,
-        value: impl ::core::convert::Into<crate::app::eventdata::EventData_Commands>,
-    ) -> () {
+    fn set_command(self, value: impl ::core::convert::Into<crate::app::eventdata::EventData_Commands>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_command(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_command(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg1()` overload"]
     fn get_arg1(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg1(::unity2::Il2CppString)` overload"]
     fn set_arg1(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg1(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg1(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg2()` overload"]
     fn get_arg2(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg2(::unity2::Il2CppString)` overload"]
     fn set_arg2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg3()` overload"]
     fn get_arg3(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg3(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg3(::unity2::Il2CppString)` overload"]
     fn set_arg3(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg3(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg3(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg4()` overload"]
     fn get_arg4(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg4(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg4(::unity2::Il2CppString)` overload"]
     fn set_arg4(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg4(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg5()` overload"]
     fn get_arg5(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg5(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg5(::unity2::Il2CppString)` overload"]
     fn set_arg5(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg5(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg5(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg6()` overload"]
     fn get_arg6(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg6(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg6(::unity2::Il2CppString)` overload"]
     fn set_arg6(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg6(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg6(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Arg7()` overload"]
     fn get_arg7(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_arg7(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Arg7(::unity2::Il2CppString)` overload"]
     fn set_arg7(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_arg7(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_arg7(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Condition()` overload"]
     fn get_condition(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_condition(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Condition(::unity2::Il2CppString)` overload"]
     fn set_condition(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventData_unity2_raw::set_condition(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventData_unity2_raw::set_condition(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1417,13 +939,8 @@ impl<__T: IEventData> IEventDataMethods for __T {}
 impl EventData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(EventData), ::core::stringify!(new),));
         <Self as IEventDataMethods>::ctor(this);
         this
     }
@@ -1432,26 +949,21 @@ impl EventData {
 #[cfg(feature = "app-eventdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventData;
-    pub use super::EventData_Commands;
-    pub use super::IEventData;
-    pub use super::IEventDataMethods;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{EventData, EventData_Commands, IEventData, IEventDataMethods};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

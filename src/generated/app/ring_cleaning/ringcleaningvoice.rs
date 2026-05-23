@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-ring_cleaning-ringcleaningvoice-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/ringcleaningvoice/RingCleaningVoice.md"))]
     #[::unity2::class(namespace = "App.RingCleaning", name = "RingCleaningVoice")]
@@ -38,9 +38,7 @@ mod __RingCleaningVoice_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_playable_finish_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -53,39 +51,28 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "get_IsPlayableFinishVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "get_IsPlayableFinishVoice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_playable_finish_voice(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_playable_finish_voice::get_offset() as isize),
-        );
+    pub unsafe fn get_is_playable_finish_voice(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_playable_finish_voice::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_playable_finish_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
                 "set_IsPlayableFinishVoice",
@@ -97,38 +84,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "set_IsPlayableFinishVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "set_IsPlayableFinishVoice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_playable_finish_voice(
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_playable_finish_voice::get_offset() as isize),
-        );
+    pub unsafe fn set_is_playable_finish_voice(value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_playable_finish_voice::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_god_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -141,40 +117,28 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "get_GodUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "get_GodUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_god_unit(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godunit::GodUnit {
+    pub unsafe fn get_god_unit(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_god_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_god_unit::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
                 "set_GodUnit",
@@ -186,39 +150,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "set_GodUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "set_GodUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_god_unit(
-        value: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_god_unit(value: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_god_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_god_unit::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_god_sound_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -231,40 +183,28 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "get_GodSoundID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "get_GodSoundID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_god_sound_id(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_god_sound_id(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_god_sound_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_god_sound_id::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god_sound_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
                 "set_GodSoundID",
@@ -276,39 +216,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "set_GodSoundID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "set_GodSoundID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_god_sound_id(
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_god_sound_id(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_god_sound_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_god_sound_id::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_god_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -321,40 +249,28 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "get_GodChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "get_GodChara",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_god_chara(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::character::Character {
+    pub unsafe fn get_god_chara(__unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::combat::character::Character =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_god_chara::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_god_chara::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
                 "set_GodChara",
@@ -366,43 +282,28 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "set_GodChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "set_GodChara",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_god_chara(
-        value: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_god_chara::get_offset() as isize),
-        );
+    pub unsafe fn set_god_chara(value: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_god_chara::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -414,39 +315,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup(
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup(god: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -459,35 +348,26 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "Unload",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "Unload",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_finish {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -500,36 +380,28 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "IsFinish",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "IsFinish",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_finish(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_finish::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_finish::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
                 "PlayVoice",
@@ -541,18 +413,15 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_voice(
@@ -562,21 +431,14 @@ mod __RingCleaningVoice_unity2_raw {
         let inner: extern "C" fn(
             crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_voice::get_offset() as isize),
-        );
+        ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData = ::core::mem::transmute(__lookup_play_voice::get_method_info().method_ptr);
         inner(situation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_start_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -589,40 +451,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayStartVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayStartVoice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_start_voice(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_start_voice::get_offset() as isize),
-        );
+    pub unsafe fn play_start_voice(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData =
+            ::core::mem::transmute(__lookup_play_start_voice::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_cleaning_critical_point_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -635,40 +484,29 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayCleaningCriticalPointVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayCleaningCriticalPointVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_cleaning_critical_point_voice(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_cleaning_critical_point_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData =
+            ::core::mem::transmute(__lookup_play_cleaning_critical_point_voice::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_strong_cleaning_not_critical_point_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -681,42 +519,29 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayStrongCleaningNotCriticalPointVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayStrongCleaningNotCriticalPointVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_strong_cleaning_not_critical_point_voice(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_play_strong_cleaning_not_critical_point_voice::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData =
+            ::core::mem::transmute(__lookup_play_strong_cleaning_not_critical_point_voice::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_strong_cleaning_critical_point_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -729,40 +554,29 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayStrongCleaningCriticalPointVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayStrongCleaningCriticalPointVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_strong_cleaning_critical_point_voice(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_strong_cleaning_critical_point_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData =
+            ::core::mem::transmute(__lookup_play_strong_cleaning_critical_point_voice::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_finish_cleaning_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -775,35 +589,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayFinishCleaningVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayFinishCleaningVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_finish_cleaning_voice(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_finish_cleaning_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_finish_cleaning_voice::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_now_se_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -816,38 +622,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "get_NowSeEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "get_NowSeEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_now_se_event(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_now_se_event(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_now_se_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_now_se_event::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_cleaning_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -860,35 +655,26 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayCleaningSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayCleaningSE",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_cleaning_se(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_cleaning_se::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_play_cleaning_se::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_start_strong_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -901,35 +687,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayStartStrongSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayStartStrongSE",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_start_strong_se(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_start_strong_se::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_start_strong_se::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_strong_cleaning_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -942,35 +720,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    "PlayStrongCleaningSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        "PlayStrongCleaningSE",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_strong_cleaning_se(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_strong_cleaning_se::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_strong_cleaning_se::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -983,39 +753,27 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RingCleaningVoice,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RingCleaningVoice, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingCleaningVoice, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingCleaningVoice as ::unity2::ClassIdentity>::class(),
@@ -1028,26 +786,19 @@ mod __RingCleaningVoice_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingCleaningVoice as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1056,149 +807,111 @@ mod __RingCleaningVoice_unity2_raw {
 impl RingCleaningVoice {
     #[doc = "`get_IsPlayableFinishVoice()` overload"]
     pub fn get_is_playable_finish_voice() -> bool {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::get_is_playable_finish_voice(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::get_is_playable_finish_voice(::core::option::Option::None) }
     }
+
     #[doc = "`set_IsPlayableFinishVoice(bool)` overload"]
     pub fn set_is_playable_finish_voice(value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::set_is_playable_finish_voice(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::set_is_playable_finish_voice(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_GodUnit()` overload"]
     pub fn get_god_unit() -> crate::app::godunit::GodUnit {
         unsafe { __RingCleaningVoice_unity2_raw::get_god_unit(::core::option::Option::None) }
     }
+
     #[doc = "`set_GodUnit(crate::app::godunit::GodUnit)` overload"]
     pub fn set_god_unit(value: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::set_god_unit(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::set_god_unit(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_GodSoundID()` overload"]
     pub fn get_god_sound_id() -> ::unity2::Il2CppString {
         unsafe { __RingCleaningVoice_unity2_raw::get_god_sound_id(::core::option::Option::None) }
     }
+
     #[doc = "`set_GodSoundID(::unity2::Il2CppString)` overload"]
     pub fn set_god_sound_id(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::set_god_sound_id(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::set_god_sound_id(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_GodChara()` overload"]
     pub fn get_god_chara() -> crate::combat::character::Character {
         unsafe { __RingCleaningVoice_unity2_raw::get_god_chara(::core::option::Option::None) }
     }
+
     #[doc = "`set_GodChara(crate::combat::character::Character)` overload"]
-    pub fn set_god_chara(
-        value: impl ::core::convert::Into<crate::combat::character::Character>,
-    ) -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::set_god_chara(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_god_chara(value: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
+        unsafe { __RingCleaningVoice_unity2_raw::set_god_chara(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`Setup(crate::app::godunit::GodUnit)` overload"]
     pub fn setup(god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::setup(
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::setup(::core::convert::Into::into(god), ::core::option::Option::None) }
     }
+
     #[doc = "`Unload()` overload"]
     pub fn unload() -> () {
         unsafe { __RingCleaningVoice_unity2_raw::unload(::core::option::Option::None) }
     }
+
     #[doc = "`IsFinish()` overload"]
     pub fn is_finish() -> bool {
         unsafe { __RingCleaningVoice_unity2_raw::is_finish(::core::option::Option::None) }
     }
+
     #[doc = "`PlayVoice(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"]
     pub fn play_voice(
-        situation: impl ::core::convert::Into<
-            crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation,
-        >,
+        situation: impl ::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation>,
     ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_voice(
-                ::core::convert::Into::into(situation),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::play_voice(::core::convert::Into::into(situation), ::core::option::Option::None) }
     }
+
     #[doc = "`PlayStartVoice()` overload"]
     pub fn play_start_voice() -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
         unsafe { __RingCleaningVoice_unity2_raw::play_start_voice(::core::option::Option::None) }
     }
+
     #[doc = "`PlayCleaningCriticalPointVoice()` overload"]
-    pub fn play_cleaning_critical_point_voice(
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_cleaning_critical_point_voice(
-                ::core::option::Option::None,
-            )
-        }
+    pub fn play_cleaning_critical_point_voice() -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
+        unsafe { __RingCleaningVoice_unity2_raw::play_cleaning_critical_point_voice(::core::option::Option::None) }
     }
+
     #[doc = "`PlayStrongCleaningNotCriticalPointVoice()` overload"]
-    pub fn play_strong_cleaning_not_critical_point_voice(
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_strong_cleaning_not_critical_point_voice(
-                ::core::option::Option::None,
-            )
-        }
+    pub fn play_strong_cleaning_not_critical_point_voice() -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
+        unsafe { __RingCleaningVoice_unity2_raw::play_strong_cleaning_not_critical_point_voice(::core::option::Option::None) }
     }
+
     #[doc = "`PlayStrongCleaningCriticalPointVoice()` overload"]
-    pub fn play_strong_cleaning_critical_point_voice(
-    ) -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_strong_cleaning_critical_point_voice(
-                ::core::option::Option::None,
-            )
-        }
+    pub fn play_strong_cleaning_critical_point_voice() -> crate::app::ringcleaningvoicedata::RingCleaningVoiceData {
+        unsafe { __RingCleaningVoice_unity2_raw::play_strong_cleaning_critical_point_voice(::core::option::Option::None) }
     }
+
     #[doc = "`PlayFinishCleaningVoice()` overload"]
     pub fn play_finish_cleaning_voice() -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_finish_cleaning_voice(::core::option::Option::None)
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::play_finish_cleaning_voice(::core::option::Option::None) }
     }
+
     #[doc = "`get_NowSeEvent()` overload"]
     pub fn get_now_se_event() -> ::unity2::Il2CppString {
         unsafe { __RingCleaningVoice_unity2_raw::get_now_se_event(::core::option::Option::None) }
     }
+
     #[doc = "`PlayCleaningSE()` overload"]
     pub fn play_cleaning_se() -> () {
         unsafe { __RingCleaningVoice_unity2_raw::play_cleaning_se(::core::option::Option::None) }
     }
+
     #[doc = "`PlayStartStrongSE()` overload"]
     pub fn play_start_strong_se() -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_start_strong_se(::core::option::Option::None)
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::play_start_strong_se(::core::option::Option::None) }
     }
+
     #[doc = "`PlayStrongCleaningSE()` overload"]
     pub fn play_strong_cleaning_se() -> () {
-        unsafe {
-            __RingCleaningVoice_unity2_raw::play_strong_cleaning_se(::core::option::Option::None)
-        }
+        unsafe { __RingCleaningVoice_unity2_raw::play_strong_cleaning_se(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RingCleaningVoice_unity2_raw::cctor(::core::option::Option::None) }
@@ -1210,9 +923,7 @@ pub trait IRingCleaningVoiceMethods: IRingCleaningVoice {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RingCleaningVoice as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RingCleaningVoice as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingCleaningVoice_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1240,9 +951,7 @@ impl RingCleaningVoice {
 #[cfg(feature = "app-ring_cleaning-ringcleaningvoice")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRingCleaningVoice;
-    pub use super::IRingCleaningVoiceMethods;
-    pub use super::RingCleaningVoice;
+    pub use super::{IRingCleaningVoice, IRingCleaningVoiceMethods, RingCleaningVoice};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

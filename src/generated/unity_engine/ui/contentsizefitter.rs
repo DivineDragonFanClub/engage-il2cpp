@@ -2,17 +2,23 @@
 
 #[cfg(feature = "unity_engine-ui-contentsizefitter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ContentSizeFitter")]
@@ -30,21 +36,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ContentSizeFitter_FitMode {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for ContentSizeFitter_FitMode {
-        const NAMESPACE: &'static str = "UnityEngine.UI";
-
         const NAME: &'static str = "ContentSizeFitter.FitMode";
+        const NAMESPACE: &'static str = "UnityEngine.UI";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -55,10 +54,7 @@ mod __types {
 
     impl ::unity2::IlType for ContentSizeFitter_FitMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -89,9 +85,7 @@ mod __ContentSizeFitter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_horizontal_fit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -104,35 +98,35 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "get_horizontalFit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "get_horizontalFit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_horizontal_fit(
         this: ContentSizeFitter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode {
-        let inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_horizontal_fit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ContentSizeFitter,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode =
+            ::core::mem::transmute(__lookup_get_horizontal_fit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_horizontal_fit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
                 "set_horizontalFit",
@@ -144,18 +138,15 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "set_horizontalFit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "set_horizontalFit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_horizontal_fit(
@@ -167,20 +158,14 @@ mod __ContentSizeFitter_unity2_raw {
             ContentSizeFitter,
             crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_horizontal_fit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_horizontal_fit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertical_fit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -193,35 +178,35 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "get_verticalFit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "get_verticalFit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_vertical_fit(
         this: ContentSizeFitter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode {
-        let inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_vertical_fit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ContentSizeFitter,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode =
+            ::core::mem::transmute(__lookup_get_vertical_fit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vertical_fit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
                 "set_verticalFit",
@@ -233,18 +218,15 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "set_verticalFit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "set_verticalFit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_vertical_fit(
@@ -256,20 +238,14 @@ mod __ContentSizeFitter_unity2_raw {
             ContentSizeFitter,
             crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_vertical_fit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_vertical_fit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -282,41 +258,30 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "get_rectTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "get_rectTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rect_transform(
         this: ContentSizeFitter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(
-            ContentSizeFitter,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_transform::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
+            ::core::mem::transmute(__lookup_get_rect_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -329,39 +294,27 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -374,39 +327,27 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -419,39 +360,27 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_rect_transform_dimensions_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -464,41 +393,28 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "OnRectTransformDimensionsChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "OnRectTransformDimensionsChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_rect_transform_dimensions_change(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_rect_transform_dimensions_change(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_rect_transform_dimensions_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_rect_transform_dimensions_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_handle_self_fitting_along_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
                 "HandleSelfFittingAlongAxis",
@@ -510,40 +426,27 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "HandleSelfFittingAlongAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "HandleSelfFittingAlongAxis",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn handle_self_fitting_along_axis(
-        this: ContentSizeFitter,
-        axis: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn handle_self_fitting_along_axis(this: ContentSizeFitter, axis: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_handle_self_fitting_along_axis::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_handle_self_fitting_along_axis::get_method_info().method_ptr);
         inner(this, axis, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -556,39 +459,27 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutHorizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutHorizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_layout_horizontal(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_layout_horizontal(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_layout_horizontal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -601,39 +492,27 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutVertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutVertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_layout_vertical(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_layout_vertical(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_layout_vertical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ContentSizeFitter as ::unity2::ClassIdentity>::class(),
@@ -646,30 +525,20 @@ mod __ContentSizeFitter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
-                    "SetDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContentSizeFitter as ::unity2::ClassIdentity>::NAME,
+                        "SetDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_dirty(
-        this: ContentSizeFitter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_dirty(this: ContentSizeFitter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -677,126 +546,72 @@ mod __ContentSizeFitter_unity2_raw {
 #[cfg(feature = "unity_engine-ui-contentsizefitter")]
 pub trait IContentSizeFitterMethods: IContentSizeFitter {
     #[doc = "`get_horizontalFit()` overload"]
-    fn get_horizontal_fit(
-        self,
-    ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode {
+    fn get_horizontal_fit(self) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::get_horizontal_fit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::get_horizontal_fit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_horizontalFit(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)` overload"]
-    fn set_horizontal_fit(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
-        >,
-    ) -> () {
+    fn set_horizontal_fit(self, value: impl ::core::convert::Into<crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode>) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::set_horizontal_fit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::set_horizontal_fit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_verticalFit()` overload"]
-    fn get_vertical_fit(
-        self,
-    ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode {
+    fn get_vertical_fit(self) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::get_vertical_fit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::get_vertical_fit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_verticalFit(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)` overload"]
-    fn set_vertical_fit(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
-        >,
-    ) -> () {
+    fn set_vertical_fit(self, value: impl ::core::convert::Into<crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode>) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::set_vertical_fit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::set_vertical_fit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_rectTransform()` overload"]
     fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::get_rect_transform(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentSizeFitter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentSizeFitter_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentSizeFitter_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnRectTransformDimensionsChange()` overload"]
     fn on_rect_transform_dimensions_change(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::on_rect_transform_dimensions_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HandleSelfFittingAlongAxis(i32)` overload"]
     fn handle_self_fitting_along_axis(self, axis: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentSizeFitter_unity2_raw::handle_self_fitting_along_axis(
                 __receiver,
                 ::core::convert::Into::into(axis),
@@ -807,33 +622,21 @@ pub trait IContentSizeFitterMethods: IContentSizeFitter {
     #[doc = "`SetLayoutHorizontal()` overload"]
     fn set_layout_horizontal(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::set_layout_horizontal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLayoutVertical()` overload"]
     fn set_layout_vertical(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContentSizeFitter_unity2_raw::set_layout_vertical(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContentSizeFitter_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetDirty()` overload"]
     fn set_dirty(self) -> () {
         unsafe {
-            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContentSizeFitter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContentSizeFitter_unity2_raw::set_dirty(__receiver, ::core::option::Option::None)
         }
     }
@@ -861,32 +664,28 @@ impl ContentSizeFitter {
 #[cfg(feature = "unity_engine-ui-contentsizefitter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ContentSizeFitter;
-    pub use super::ContentSizeFitter_FitMode;
-    pub use super::IContentSizeFitter;
-    pub use super::IContentSizeFitterMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{ContentSizeFitter, ContentSizeFitter_FitMode, IContentSizeFitter, IContentSizeFitterMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

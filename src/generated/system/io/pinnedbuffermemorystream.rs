@@ -2,12 +2,16 @@
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::io::stream::{IStream, Stream};
-    use crate::system::io::unmanagedmemorystream::{IUnmanagedMemoryStream, UnmanagedMemoryStream};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        io::{
+            stream::{IStream, Stream},
+            unmanagedmemorystream::{IUnmanagedMemoryStream, UnmanagedMemoryStream},
+        },
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/pinnedbuffermemorystream/PinnedBufferMemoryStream.md"))]
     #[::unity2::class(namespace = "System.IO", name = "PinnedBufferMemoryStream")]
@@ -30,11 +34,8 @@ mod __PinnedBufferMemoryStream_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -46,43 +47,27 @@ mod __PinnedBufferMemoryStream_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PinnedBufferMemoryStream,
-        array: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PinnedBufferMemoryStream,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: PinnedBufferMemoryStream, array: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PinnedBufferMemoryStream, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::class(),
@@ -95,41 +80,28 @@ mod __PinnedBufferMemoryStream_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: PinnedBufferMemoryStream,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: PinnedBufferMemoryStream, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PinnedBufferMemoryStream, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -141,31 +113,20 @@ mod __PinnedBufferMemoryStream_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PinnedBufferMemoryStream as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: PinnedBufferMemoryStream,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: PinnedBufferMemoryStream, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PinnedBufferMemoryStream, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
 }
@@ -176,41 +137,24 @@ pub trait IPinnedBufferMemoryStreamMethods: IPinnedBufferMemoryStream {
     fn ctor(self, array: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
         unsafe {
             let __receiver =
-                <PinnedBufferMemoryStream as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PinnedBufferMemoryStream_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::option::Option::None,
-            )
+                <PinnedBufferMemoryStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PinnedBufferMemoryStream_unity2_raw::ctor(__receiver, ::core::convert::Into::into(array), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
             let __receiver =
-                <PinnedBufferMemoryStream as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PinnedBufferMemoryStream_unity2_raw::finalize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PinnedBufferMemoryStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PinnedBufferMemoryStream_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <PinnedBufferMemoryStream as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PinnedBufferMemoryStream_unity2_raw::dispose(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+                <PinnedBufferMemoryStream as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PinnedBufferMemoryStream_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
 }
@@ -237,16 +181,15 @@ impl PinnedBufferMemoryStream {
 #[cfg(feature = "system-io-pinnedbuffermemorystream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPinnedBufferMemoryStream;
-    pub use super::IPinnedBufferMemoryStreamMethods;
-    pub use super::PinnedBufferMemoryStream;
-    pub use crate::system::io::stream::IStream;
+    pub use super::{IPinnedBufferMemoryStream, IPinnedBufferMemoryStreamMethods, PinnedBufferMemoryStream};
     #[cfg(feature = "system-io-stream")]
     pub use crate::system::io::stream::IStreamMethods;
-    pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStream;
     #[cfg(feature = "system-io-unmanagedmemorystream")]
     pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStreamMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{
+        io::{stream::IStream, unmanagedmemorystream::IUnmanagedMemoryStream},
+        object::IObject,
+    };
 }

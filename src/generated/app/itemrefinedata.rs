@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-itemrefinedata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemrefinedata/ItemRefineData.md"))]
     #[::unity2::class(namespace = "App", name = "ItemRefineData")]
@@ -28,52 +32,34 @@ mod __ItemRefineData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ItemRefineData as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ItemRefineData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_from_iid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "TryGetFromIid",
@@ -85,47 +71,34 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "TryGetFromIid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "TryGetFromIid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_from_iid(
         iid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::itemrefinedata::ItemRefineData,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::itemrefinedata::ItemRefineData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_from_iid::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> =
+            ::core::mem::transmute(__lookup_try_get_from_iid::get_method_info().method_ptr);
         inner(iid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_from_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "TryGetFromItem",
@@ -137,47 +110,34 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "TryGetFromItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "TryGetFromItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_from_item(
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::itemrefinedata::ItemRefineData,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> {
         let inner: extern "C" fn(
             crate::app::itemdata::ItemData,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::itemrefinedata::ItemRefineData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_from_item::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> =
+            ::core::mem::transmute(__lookup_try_get_from_item::get_method_info().method_ptr);
         inner(item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_iid2_rid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "Iid2Rid",
@@ -189,41 +149,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "Iid2Rid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "Iid2Rid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn iid2_rid(
-        iid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_iid2_rid::get_offset() as isize),
-        );
+    pub unsafe fn iid2_rid(iid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_iid2_rid::get_method_info().method_ptr);
         inner(iid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_iron {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -236,41 +182,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Iron",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Iron",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_iron(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_iron(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_iron::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_iron::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_iron {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Iron",
@@ -282,40 +215,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Iron",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Iron",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_iron(
-        this: ItemRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_iron(this: ItemRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_iron::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_iron::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_steel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -328,41 +248,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Steel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Steel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_steel(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_steel(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_steel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_steel::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_steel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Steel",
@@ -374,40 +281,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Steel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Steel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_steel(
-        this: ItemRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_steel(this: ItemRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_steel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_steel::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_silver {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -420,41 +314,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Silver",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Silver",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_silver(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_silver(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_silver::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_silver::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_silver {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Silver",
@@ -466,40 +347,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Silver",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Silver",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_silver(
-        this: ItemRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_silver(this: ItemRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_silver::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_silver::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_price {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -512,41 +380,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Price",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Price",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_price(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_price(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_price::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_price::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_price {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Price",
@@ -558,40 +413,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Price",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Price",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_price(
-        this: ItemRefineData,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_price(this: ItemRefineData, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_price::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_price::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -604,41 +446,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Power",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Power",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_power(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_power(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_power::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_power::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Power",
@@ -650,40 +479,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Power",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Power",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_power(
-        this: ItemRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_power(this: ItemRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_power::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_power::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -696,41 +512,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Weight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Weight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weight(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_weight(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_weight::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Weight",
@@ -742,40 +545,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Weight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Weight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_weight(
-        this: ItemRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_weight(this: ItemRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_weight::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_weight::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -788,41 +578,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Hit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Hit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hit(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_hit(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Hit",
@@ -834,40 +611,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Hit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Hit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hit(
-        this: ItemRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_hit(this: ItemRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_hit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_critical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -880,41 +644,28 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "get_Critical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "get_Critical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_critical(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_critical(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_critical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_critical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_critical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
                 "set_Critical",
@@ -926,40 +677,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "set_Critical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "set_Critical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_critical(
-        this: ItemRefineData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_critical(this: ItemRefineData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_critical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_critical::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -972,41 +710,27 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    "GetDebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        "GetDebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: ItemRefineData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ItemRefineData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_name::get_offset() as isize),
-        );
+    pub unsafe fn get_debug_name(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemRefineData as ::unity2::ClassIdentity>::class(),
@@ -1019,27 +743,20 @@ mod __ItemRefineData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemRefineData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemRefineData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ItemRefineData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemRefineData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1050,42 +767,24 @@ impl ItemRefineData {
     pub fn load() -> () {
         unsafe { __ItemRefineData_unity2_raw::load(::core::option::Option::None) }
     }
+
     #[doc = "`TryGetFromIid(::unity2::Il2CppString)` overload"]
     pub fn try_get_from_iid(
         iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::itemrefinedata::ItemRefineData,
-    > {
-        unsafe {
-            __ItemRefineData_unity2_raw::try_get_from_iid(
-                ::core::convert::Into::into(iid),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> {
+        unsafe { __ItemRefineData_unity2_raw::try_get_from_iid(::core::convert::Into::into(iid), ::core::option::Option::None) }
     }
+
     #[doc = "`TryGetFromItem(crate::app::itemdata::ItemData)` overload"]
     pub fn try_get_from_item(
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::itemrefinedata::ItemRefineData,
-    > {
-        unsafe {
-            __ItemRefineData_unity2_raw::try_get_from_item(
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> {
+        unsafe { __ItemRefineData_unity2_raw::try_get_from_item(::core::convert::Into::into(item), ::core::option::Option::None) }
     }
+
     #[doc = "`Iid2Rid(::unity2::Il2CppString)` overload"]
-    pub fn iid2_rid(
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __ItemRefineData_unity2_raw::iid2_rid(
-                ::core::convert::Into::into(iid),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn iid2_rid(iid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __ItemRefineData_unity2_raw::iid2_rid(::core::convert::Into::into(iid), ::core::option::Option::None) }
     }
 }
 
@@ -1094,194 +793,126 @@ pub trait IItemRefineDataMethods: IItemRefineData {
     #[doc = "`get_Iron()` overload"]
     fn get_iron(self) -> u16 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_iron(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Iron(u16)` overload"]
     fn set_iron(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_iron(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_iron(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Steel()` overload"]
     fn get_steel(self) -> u16 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_steel(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Steel(u16)` overload"]
     fn set_steel(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_steel(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_steel(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Silver()` overload"]
     fn get_silver(self) -> u16 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_silver(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Silver(u16)` overload"]
     fn set_silver(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_silver(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_silver(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Price()` overload"]
     fn get_price(self) -> u16 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_price(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Price(u16)` overload"]
     fn set_price(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_price(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_price(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Power()` overload"]
     fn get_power(self) -> i8 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_power(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Power(i8)` overload"]
     fn set_power(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_power(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_power(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Weight()` overload"]
     fn get_weight(self) -> i8 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_weight(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Weight(i8)` overload"]
     fn set_weight(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_weight(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Hit()` overload"]
     fn get_hit(self) -> i8 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_hit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Hit(i8)` overload"]
     fn set_hit(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_hit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_hit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Critical()` overload"]
     fn get_critical(self) -> i8 {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_critical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Critical(i8)` overload"]
     fn set_critical(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemRefineData_unity2_raw::set_critical(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemRefineData_unity2_raw::set_critical(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemRefineData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemRefineData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1309,19 +940,17 @@ impl ItemRefineData {
 #[cfg(feature = "app-itemrefinedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IItemRefineData;
-    pub use super::IItemRefineDataMethods;
-    pub use super::ItemRefineData;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{IItemRefineData, IItemRefineDataMethods, ItemRefineData};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

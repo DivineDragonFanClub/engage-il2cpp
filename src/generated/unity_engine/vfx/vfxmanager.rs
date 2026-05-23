@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-vfx-vfxmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxmanager/VFXManager.md"))]
     #[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXManager")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-vfx-vfxmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVFXManager;
-    pub use super::VFXManager;
+    pub use super::{IVFXManager, VFXManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

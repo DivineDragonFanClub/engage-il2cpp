@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-mapdeployoverlapimage-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::mapdeploybitimage::{IMapDeployBitImage, MapDeployBitImage};
-    use crate::app::mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            mapdeploybitimage::{IMapDeployBitImage, MapDeployBitImage},
+            mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeployoverlapimage/MapDeployOverlapImage.md"))]
     #[::unity2::class(namespace = "App", name = "MapDeployOverlapImage")]
@@ -27,9 +31,7 @@ mod __MapDeployOverlapImage_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployOverlapImage as ::unity2::ClassIdentity>::class(),
@@ -42,30 +44,20 @@ mod __MapDeployOverlapImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployOverlapImage as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployOverlapImage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapDeployOverlapImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapDeployOverlapImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapDeployOverlapImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -75,9 +67,8 @@ pub trait IMapDeployOverlapImageMethods: IMapDeployOverlapImage {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapDeployOverlapImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapDeployOverlapImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployOverlapImage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -105,16 +96,15 @@ impl MapDeployOverlapImage {
 #[cfg(feature = "app-mapdeployoverlapimage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapDeployOverlapImage;
-    pub use super::IMapDeployOverlapImageMethods;
-    pub use super::MapDeployOverlapImage;
-    pub use crate::app::mapdeploybitimage::IMapDeployBitImage;
+    pub use super::{IMapDeployOverlapImage, IMapDeployOverlapImageMethods, MapDeployOverlapImage};
     #[cfg(feature = "app-mapdeploybitimage")]
     pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
-    pub use crate::app::mapimagecorebit::IMapImageCoreBit;
     #[cfg(feature = "app-mapimagecorebit")]
     pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapdeploybitimage::IMapDeployBitImage, mapimagecorebit::IMapImageCoreBit},
+        system::object::IObject,
+    };
 }

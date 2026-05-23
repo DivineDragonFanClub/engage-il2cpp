@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-submeshdescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/submeshdescriptor/SubMeshDescriptor.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct SubMeshDescriptor {}
 
     impl ::unity2::ClassIdentity for SubMeshDescriptor {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "SubMeshDescriptor";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for SubMeshDescriptor {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,9 +45,7 @@ mod __SubMeshDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -62,41 +58,27 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_bounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_bounds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bounds(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bounds::Bounds {
-        let inner: extern "C" fn(
-            SubMeshDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bounds::get_offset() as isize),
-        );
+    pub unsafe fn get_bounds(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds =
+            ::core::mem::transmute(__lookup_get_bounds::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_topology {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -109,41 +91,30 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_topology",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_topology",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_topology(
         this: SubMeshDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::meshtopology::MeshTopology {
-        let inner: extern "C" fn(
-            SubMeshDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::meshtopology::MeshTopology = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_topology::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> crate::unity_engine::meshtopology::MeshTopology =
+            ::core::mem::transmute(__lookup_get_topology::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -156,39 +127,27 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_indexStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_indexStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_index_start(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_index_start(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_index_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -201,39 +160,27 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_indexCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_indexCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_index_count(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_index_count(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_index_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_base_vertex {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -246,39 +193,27 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_baseVertex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_baseVertex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_base_vertex(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_base_vertex(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_base_vertex::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_base_vertex::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_first_vertex {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -291,39 +226,27 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_firstVertex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_firstVertex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_first_vertex(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_first_vertex(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_first_vertex::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_first_vertex::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertex_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -336,39 +259,27 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_vertexCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_vertexCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_vertex_count(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_vertex_count(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_vertex_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_vertex_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubMeshDescriptor as ::unity2::ClassIdentity>::class(),
@@ -381,32 +292,20 @@ mod __SubMeshDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubMeshDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: SubMeshDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            SubMeshDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: SubMeshDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SubMeshDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -417,40 +316,37 @@ impl SubMeshDescriptor {
     pub fn get_bounds(self) -> crate::unity_engine::bounds::Bounds {
         unsafe { __SubMeshDescriptor_unity2_raw::get_bounds(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_topology()` overload"]
     pub fn get_topology(self) -> crate::unity_engine::meshtopology::MeshTopology {
         unsafe { __SubMeshDescriptor_unity2_raw::get_topology(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_indexStart()` overload"]
     pub fn get_index_start(self) -> i32 {
-        unsafe {
-            __SubMeshDescriptor_unity2_raw::get_index_start(self, ::core::option::Option::None)
-        }
+        unsafe { __SubMeshDescriptor_unity2_raw::get_index_start(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_indexCount()` overload"]
     pub fn get_index_count(self) -> i32 {
-        unsafe {
-            __SubMeshDescriptor_unity2_raw::get_index_count(self, ::core::option::Option::None)
-        }
+        unsafe { __SubMeshDescriptor_unity2_raw::get_index_count(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_baseVertex()` overload"]
     pub fn get_base_vertex(self) -> i32 {
-        unsafe {
-            __SubMeshDescriptor_unity2_raw::get_base_vertex(self, ::core::option::Option::None)
-        }
+        unsafe { __SubMeshDescriptor_unity2_raw::get_base_vertex(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_firstVertex()` overload"]
     pub fn get_first_vertex(self) -> i32 {
-        unsafe {
-            __SubMeshDescriptor_unity2_raw::get_first_vertex(self, ::core::option::Option::None)
-        }
+        unsafe { __SubMeshDescriptor_unity2_raw::get_first_vertex(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_vertexCount()` overload"]
     pub fn get_vertex_count(self) -> i32 {
-        unsafe {
-            __SubMeshDescriptor_unity2_raw::get_vertex_count(self, ::core::option::Option::None)
-        }
+        unsafe { __SubMeshDescriptor_unity2_raw::get_vertex_count(self, ::core::option::Option::None) }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __SubMeshDescriptor_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -461,10 +357,9 @@ impl SubMeshDescriptor {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SubMeshDescriptor;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

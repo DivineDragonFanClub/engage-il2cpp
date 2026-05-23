@@ -2,32 +2,80 @@
 
 #[cfg(feature = "app-tutorialsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialsequence/TutorialSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "TutorialSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: tutorialsequence :: TutorialSequence >)]
+    pub struct TutorialSequence {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "SpriteAtlasPaths")]
+        pub sprite_atlas_paths: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "CapCommonName")]
+        pub cap_common_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "USCommonName")]
+        pub us_common_name: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "EUCommonName")]
+        pub eu_common_name: ::unity2::Il2CppString,
+        #[rename(name = "m_TutorialObject")]
+        pub m_tutorial_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_MainSpriteAtlas")]
+        pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[rename(name = "m_SubSpriteAtlas")]
+        pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+        #[rename(name = "m_LocatorRoot")]
+        pub m_locator_root: crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot,
+        #[rename(name = "m_TutorialData")]
+        pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData>,
+        #[rename(name = "m_TutorialID")]
+        pub m_tutorial_id: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "FirstPage")]
+        pub first_page: i32,
+        #[rename(name = "m_Page")]
+        pub m_page: i32,
+        #[rename(name = "m_IsUpdate")]
+        pub m_is_update: bool,
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_MainHandle")]
+        pub m_main_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+        #[rename(name = "m_SubHandle")]
+        pub m_sub_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
+        #[static_field]
+        #[rename(name = "ClassChangeKey")]
+        pub class_change_key: ::unity2::Il2CppString,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TutorialSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TutorialSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "TutorialSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -38,10 +86,7 @@ mod __types {
 
     impl ::unity2::IlType for TutorialSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -61,21 +106,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TutorialSequence_LanguageType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TutorialSequence_LanguageType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "TutorialSequence.LanguageType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -86,10 +124,7 @@ mod __types {
 
     impl ::unity2::IlType for TutorialSequence_LanguageType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -130,63 +165,6 @@ mod __types {
             Self { value: 8 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialsequence/TutorialSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "TutorialSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: tutorialsequence :: TutorialSequence >)]
-    pub struct TutorialSequence {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "SpriteAtlasPaths")]
-        pub sprite_atlas_paths: ::unity2::Array<::unity2::Il2CppString>,
-        #[static_field]
-        #[rename(name = "CapCommonName")]
-        pub cap_common_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "USCommonName")]
-        pub us_common_name: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "EUCommonName")]
-        pub eu_common_name: ::unity2::Il2CppString,
-        #[rename(name = "m_TutorialObject")]
-        pub m_tutorial_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_MainSpriteAtlas")]
-        pub m_main_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[rename(name = "m_SubSpriteAtlas")]
-        pub m_sub_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        #[rename(name = "m_LocatorRoot")]
-        pub m_locator_root: crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot,
-        #[rename(name = "m_TutorialData")]
-        pub m_tutorial_data: crate::system::collections::generic::list_1::List_1<
-            crate::app::tutorialdata::TutorialData,
-        >,
-        #[rename(name = "m_TutorialID")]
-        pub m_tutorial_id: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "FirstPage")]
-        pub first_page: i32,
-        #[rename(name = "m_Page")]
-        pub m_page: i32,
-        #[rename(name = "m_IsUpdate")]
-        pub m_is_update: bool,
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_MainHandle")]
-        pub m_main_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        >,
-        #[rename(name = "m_SubHandle")]
-        pub m_sub_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-        >,
-        #[static_field]
-        #[rename(name = "ClassChangeKey")]
-        pub class_change_key: ::unity2::Il2CppString,
-    }
 }
 
 #[cfg(feature = "app-tutorialsequence-types")]
@@ -201,11 +179,8 @@ mod __TutorialSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -217,43 +192,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TutorialSequence,
-        id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TutorialSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: TutorialSequence, id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -266,39 +225,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_data(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_data(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_language {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -311,38 +258,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetLanguage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetLanguage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_language(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::language::Language_Langs {
+    pub unsafe fn get_language(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::language::Language_Langs {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::language::Language_Langs =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_language::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_language::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sprite_atlas_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -355,38 +291,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetSpriteAtlasPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetSpriteAtlasPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sprite_atlas_path(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_sprite_atlas_path(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sprite_atlas_path::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sprite_atlas_path::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_image_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -402,18 +327,15 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetImageName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetImageName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_image_name(
@@ -421,24 +343,15 @@ mod __TutorialSequence_unity2_raw {
         page: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_image_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::u2d::spriteatlas::SpriteAtlas, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_image_name::get_method_info().method_ptr);
         inner(sprite_atlas, page, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -451,39 +364,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "UnloadData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "UnloadData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_data(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unload_data(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unload_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_load_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -496,39 +397,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_load_data(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_load_data(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_load_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_load_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_tutorial {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -541,39 +430,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "PrepareTutorial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "PrepareTutorial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prepare_tutorial(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn prepare_tutorial(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare_tutorial::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_prepare_tutorial::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_tutorial {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -586,39 +463,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "CheckTutorial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "CheckTutorial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_tutorial(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn check_tutorial(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_tutorial::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_tutorial::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -631,39 +496,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_window {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -676,39 +529,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenWindow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenWindow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_window(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open_window(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_window::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open_window::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_open_window {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -721,39 +562,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitOpenWindow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitOpenWindow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn wait_open_window(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn wait_open_window(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_open_window::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_wait_open_window::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tutorial_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -766,39 +595,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "TutorialTick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "TutorialTick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tutorial_tick(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tutorial_tick(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tutorial_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tutorial_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_close_window {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -811,39 +628,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsCloseWindow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsCloseWindow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_close_window(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_close_window(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_close_window::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_close_window::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close_window {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -856,39 +661,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "CloseWindow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "CloseWindow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close_window(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close_window(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_window::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close_window::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_close_window {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -901,39 +694,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitCloseWindow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitCloseWindow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn wait_close_window(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn wait_close_window(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_close_window::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_wait_close_window::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_page {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -946,39 +727,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetPage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetPage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_page(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_page(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_page::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_page::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_arrow {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -991,39 +760,27 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetArrow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetArrow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_arrow(
-        this: TutorialSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_arrow(this: TutorialSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TutorialSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_arrow::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_arrow::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1039,18 +796,15 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -1058,24 +812,15 @@ mod __TutorialSequence_unity2_raw {
         tid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, tid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1091,18 +836,15 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "TryCreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_create_bind(
@@ -1110,24 +852,15 @@ mod __TutorialSequence_unity2_raw {
         tid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_create_bind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_try_create_bind::get_method_info().method_ptr);
         inner(super_, tid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_class_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -1140,35 +873,26 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsClassChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsClassChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_class_changed(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_class_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_class_changed::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialSequence as ::unity2::ClassIdentity>::class(),
@@ -1181,26 +905,19 @@ mod __TutorialSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialSequence as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialSequence as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1211,12 +928,12 @@ impl TutorialSequence {
     pub fn get_language() -> crate::app::language::Language_Langs {
         unsafe { __TutorialSequence_unity2_raw::get_language(::core::option::Option::None) }
     }
+
     #[doc = "`GetSpriteAtlasPath()` overload"]
     pub fn get_sprite_atlas_path() -> ::unity2::Il2CppString {
-        unsafe {
-            __TutorialSequence_unity2_raw::get_sprite_atlas_path(::core::option::Option::None)
-        }
+        unsafe { __TutorialSequence_unity2_raw::get_sprite_atlas_path(::core::option::Option::None) }
     }
+
     #[doc = "`GetImageName(crate::unity_engine::u2d::spriteatlas::SpriteAtlas, i32)` overload"]
     pub fn get_image_name(
         sprite_atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
@@ -1230,6 +947,7 @@ impl TutorialSequence {
             )
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1243,6 +961,7 @@ impl TutorialSequence {
             )
         }
     }
+
     #[doc = "`TryCreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
     pub fn try_create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1256,10 +975,12 @@ impl TutorialSequence {
             )
         }
     }
+
     #[doc = "`IsClassChanged()` overload"]
     pub fn is_class_changed() -> bool {
         unsafe { __TutorialSequence_unity2_raw::is_class_changed(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TutorialSequence_unity2_raw::cctor(::core::option::Option::None) }
@@ -1271,148 +992,105 @@ pub trait ITutorialSequenceMethods: ITutorialSequence {
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TutorialSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TutorialSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
         }
     }
     #[doc = "`LoadData()` overload"]
     fn load_data(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::load_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadData()` overload"]
     fn unload_data(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::unload_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadData()` overload"]
     fn is_load_data(self) -> bool {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::is_load_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareTutorial()` overload"]
     fn prepare_tutorial(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TutorialSequence_unity2_raw::prepare_tutorial(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TutorialSequence_unity2_raw::prepare_tutorial(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckTutorial()` overload"]
     fn check_tutorial(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::check_tutorial(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Init()` overload"]
     fn init(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenWindow()` overload"]
     fn open_window(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::open_window(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitOpenWindow()` overload"]
     fn wait_open_window(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TutorialSequence_unity2_raw::wait_open_window(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TutorialSequence_unity2_raw::wait_open_window(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TutorialTick()` overload"]
     fn tutorial_tick(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::tutorial_tick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsCloseWindow()` overload"]
     fn is_close_window(self) -> bool {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::is_close_window(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CloseWindow()` overload"]
     fn close_window(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::close_window(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitCloseWindow()` overload"]
     fn wait_close_window(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TutorialSequence_unity2_raw::wait_close_window(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TutorialSequence_unity2_raw::wait_close_window(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPage()` overload"]
     fn set_page(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::set_page(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetArrow()` overload"]
     fn set_arrow(self) -> () {
         unsafe {
-            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TutorialSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TutorialSequence_unity2_raw::set_arrow(__receiver, ::core::option::Option::None)
         }
     }
@@ -1440,24 +1118,19 @@ impl TutorialSequence {
 #[cfg(feature = "app-tutorialsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITutorialSequence;
-    pub use super::ITutorialSequenceMethods;
-    pub use super::TutorialSequence;
-    pub use super::TutorialSequence_Label;
-    pub use super::TutorialSequence_LanguageType;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{ITutorialSequence, ITutorialSequenceMethods, TutorialSequence, TutorialSequence_Label, TutorialSequence_LanguageType};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "root-mapinfoiconpool-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoiconpool/MapInfoIconPool.md"))]
     #[::unity2::class(namespace = "", name = "MapInfoIconPool")]
@@ -28,10 +28,11 @@ mod __MapInfoIconPool_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconPool as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -43,18 +44,15 @@ mod __MapInfoIconPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconPool as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconPool as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -68,20 +66,14 @@ mod __MapInfoIconPool_unity2_raw {
             crate::unity_engine::transform::Transform,
             crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, transform, prefab, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoIconPool as ::unity2::ClassIdentity>::class(),
@@ -94,33 +86,23 @@ mod __MapInfoIconPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoIconPool as ::unity2::ClassIdentity>::NAME,
-                    "CreateInstance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoIconPool as ::unity2::ClassIdentity>::NAME,
+                        "CreateInstance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_instance(
         this: MapInfoIconPool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot {
-        let inner: extern "C" fn(
-            MapInfoIconPool,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_instance::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoIconPool, ::unity2::OptionalMethod) -> crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot =
+            ::core::mem::transmute(__lookup_create_instance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -134,9 +116,7 @@ pub trait IMapInfoIconPoolMethods: IMapInfoIconPool {
         prefab: impl ::core::convert::Into<crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot>,
     ) -> () {
         unsafe {
-            let __receiver = <MapInfoIconPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapInfoIconPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoIconPool_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(transform),
@@ -148,9 +128,7 @@ pub trait IMapInfoIconPoolMethods: IMapInfoIconPool {
     #[doc = "`CreateInstance()` overload"]
     fn create_instance(self) -> crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot {
         unsafe {
-            let __receiver = <MapInfoIconPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapInfoIconPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoIconPool_unity2_raw::create_instance(__receiver, ::core::option::Option::None)
         }
     }
@@ -162,10 +140,7 @@ impl<__T: IMapInfoIconPool> IMapInfoIconPoolMethods for __T {}
 #[cfg(feature = "root-mapinfoiconpool")]
 impl MapInfoIconPool {
     #[doc = "`.ctor(crate::unity_engine::transform::Transform, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)` — overload selector"]
-    pub fn new(
-        transform: crate::unity_engine::transform::Transform,
-        prefab: crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot,
-    ) -> Self {
+    pub fn new(transform: crate::unity_engine::transform::Transform, prefab: crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -181,7 +156,5 @@ impl MapInfoIconPool {
 #[cfg(feature = "root-mapinfoiconpool")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapInfoIconPool;
-    pub use super::IMapInfoIconPoolMethods;
-    pub use super::MapInfoIconPool;
+    pub use super::{IMapInfoIconPool, IMapInfoIconPoolMethods, MapInfoIconPool};
 }

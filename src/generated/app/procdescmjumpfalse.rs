@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-procdescmjumpfalse-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procdesc::{IProcDesc, ProcDesc};
-    use crate::app::procdescjumpfunc::{IProcDescJumpFunc, ProcDescJumpFunc};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procdesc::{IProcDesc, ProcDesc},
+            procdescjumpfunc::{IProcDescJumpFunc, ProcDescJumpFunc},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmjumpfalse/ProcDescMJumpFalse.md"))]
     #[::unity2::class(namespace = "App", name = "ProcDescMJumpFalse")]
@@ -30,9 +34,7 @@ mod __ProcDescMJumpFalse_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procboolmethod::ProcBoolMethod as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -48,18 +50,15 @@ mod __ProcDescMJumpFalse_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProcDescMJumpFalse as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProcDescMJumpFalse as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -68,27 +67,16 @@ mod __ProcDescMJumpFalse_unity2_raw {
         label: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProcDescMJumpFalse,
-            crate::app::procboolmethod::ProcBoolMethod,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProcDescMJumpFalse, crate::app::procboolmethod::ProcBoolMethod, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, method, label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_jump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProcDescMJumpFalse as ::unity2::ClassIdentity>::class(),
                 "IsJump",
@@ -100,34 +88,20 @@ mod __ProcDescMJumpFalse_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProcDescMJumpFalse as ::unity2::ClassIdentity>::NAME,
-                    "IsJump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProcDescMJumpFalse as ::unity2::ClassIdentity>::NAME,
+                        "IsJump",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_jump(
-        this: ProcDescMJumpFalse,
-        inst: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ProcDescMJumpFalse,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_jump::get_offset() as isize),
-        );
+    pub unsafe fn is_jump(this: ProcDescMJumpFalse, inst: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ProcDescMJumpFalse, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_jump::get_method_info().method_ptr);
         inner(this, inst, __unity2_method_info)
     }
 }
@@ -135,15 +109,9 @@ mod __ProcDescMJumpFalse_unity2_raw {
 #[cfg(feature = "app-procdescmjumpfalse")]
 pub trait IProcDescMJumpFalseMethods: IProcDescMJumpFalse {
     #[doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"]
-    fn ctor(
-        self,
-        method: impl ::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod>,
-        label: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, method: impl ::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod>, label: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ProcDescMJumpFalse as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProcDescMJumpFalse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProcDescMJumpFalse_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(method),
@@ -155,14 +123,8 @@ pub trait IProcDescMJumpFalseMethods: IProcDescMJumpFalse {
     #[doc = "`IsJump(crate::app::procinst::ProcInst)` overload"]
     fn is_jump(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> bool {
         unsafe {
-            let __receiver = <ProcDescMJumpFalse as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProcDescMJumpFalse_unity2_raw::is_jump(
-                __receiver,
-                ::core::convert::Into::into(inst),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProcDescMJumpFalse as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProcDescMJumpFalse_unity2_raw::is_jump(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)
         }
     }
 }
@@ -189,16 +151,15 @@ impl ProcDescMJumpFalse {
 #[cfg(feature = "app-procdescmjumpfalse")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProcDescMJumpFalse;
-    pub use super::IProcDescMJumpFalseMethods;
-    pub use super::ProcDescMJumpFalse;
-    pub use crate::app::procdesc::IProcDesc;
+    pub use super::{IProcDescMJumpFalse, IProcDescMJumpFalseMethods, ProcDescMJumpFalse};
     #[cfg(feature = "app-procdesc")]
     pub use crate::app::procdesc::IProcDescMethods;
-    pub use crate::app::procdescjumpfunc::IProcDescJumpFunc;
     #[cfg(feature = "app-procdescjumpfunc")]
     pub use crate::app::procdescjumpfunc::IProcDescJumpFuncMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procdesc::IProcDesc, procdescjumpfunc::IProcDescJumpFunc},
+        system::object::IObject,
+    };
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-randomseed-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/randomseed/RandomSeed.md"))]
     #[repr(C)]
@@ -19,9 +21,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for RandomSeed {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RandomSeed";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -32,10 +33,7 @@ mod __types {
 
     impl ::unity2::IlType for RandomSeed {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -48,9 +46,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for RandomSeed_CastType_I2F {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RandomSeed.CastType_I2F";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -61,10 +58,7 @@ mod __types {
 
     impl ::unity2::IlType for RandomSeed_CastType_I2F {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -81,9 +75,7 @@ mod __RandomSeed_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RandomSeed as ::unity2::ClassIdentity>::class(),
@@ -96,41 +88,28 @@ mod __RandomSeed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize(
-        this: RandomSeed,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize(this: RandomSeed, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RandomSeed as ::unity2::ClassIdentity>::class(),
                 "Initialize",
@@ -142,42 +121,28 @@ mod __RandomSeed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize_2(
-        this: RandomSeed,
-        v: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize_2(this: RandomSeed, v: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RandomSeed, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize_2::get_method_info().method_ptr);
         inner(this, v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RandomSeed as ::unity2::ClassIdentity>::class(),
                 "Serialize",
@@ -189,45 +154,28 @@ mod __RandomSeed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: RandomSeed,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RandomSeed,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+    pub unsafe fn serialize(this: RandomSeed, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RandomSeed, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RandomSeed as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -239,253 +187,153 @@ mod __RandomSeed_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: RandomSeed,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RandomSeed,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+    pub unsafe fn deserialize(this: RandomSeed, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RandomSeed, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_peek {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RandomSeed as ::unity2::ClassIdentity>::class(),
-                "Peek",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RandomSeed as ::unity2::ClassIdentity>::class(), "Peek", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "Peek",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "Peek",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn peek(this: RandomSeed, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_peek::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_peek::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RandomSeed as ::unity2::ClassIdentity>::class(),
-                "GetValue",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RandomSeed as ::unity2::ClassIdentity>::class(), "GetValue", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "GetValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "GetValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: RandomSeed,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_value(this: RandomSeed, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RandomSeed as ::unity2::ClassIdentity>::class(),
-                "GetFloat",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RandomSeed as ::unity2::ClassIdentity>::class(), "GetFloat", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "GetFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "GetFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_float(
-        this: RandomSeed,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_float(this: RandomSeed, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_float::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_float::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RandomSeed as ::unity2::ClassIdentity>::class(),
-                "Dump",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RandomSeed as ::unity2::ClassIdentity>::class(), "Dump", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "Dump",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dump(this: RandomSeed, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dump::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RandomSeed as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RandomSeed as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RandomSeed as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RandomSeed as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: RandomSeed,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: RandomSeed, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(RandomSeed, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -496,58 +344,42 @@ impl RandomSeed {
     pub fn initialize(self) -> () {
         unsafe { __RandomSeed_unity2_raw::initialize(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Initialize(u32)` overload"]
     pub fn initialize_2(self, v: impl ::core::convert::Into<u32>) -> () {
-        unsafe {
-            __RandomSeed_unity2_raw::initialize_2(
-                self,
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RandomSeed_unity2_raw::initialize_2(self, ::core::convert::Into::into(v), ::core::option::Option::None) }
     }
+
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    pub fn serialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
-        unsafe {
-            __RandomSeed_unity2_raw::serialize(
-                self,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe { __RandomSeed_unity2_raw::serialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
     }
+
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    pub fn deserialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
-        unsafe {
-            __RandomSeed_unity2_raw::deserialize(
-                self,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe { __RandomSeed_unity2_raw::deserialize(self, ::core::convert::Into::into(stream), ::core::option::Option::None) }
     }
+
     #[doc = "`Peek()` overload"]
     pub fn peek(self) -> i32 {
         unsafe { __RandomSeed_unity2_raw::peek(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetValue()` overload"]
     pub fn get_value(self) -> i32 {
         unsafe { __RandomSeed_unity2_raw::get_value(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetFloat()` overload"]
     pub fn get_float(self) -> f32 {
         unsafe { __RandomSeed_unity2_raw::get_float(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Dump()` overload"]
     pub fn dump(self) -> () {
         unsafe { __RandomSeed_unity2_raw::dump(self, ::core::option::Option::None) }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __RandomSeed_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -557,12 +389,10 @@ impl RandomSeed {
 #[cfg(feature = "app-randomseed")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RandomSeed;
-    pub use super::RandomSeed_CastType_I2F;
-    pub use crate::system::object::IObject;
+    pub use super::{RandomSeed, RandomSeed_CastType_I2F};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

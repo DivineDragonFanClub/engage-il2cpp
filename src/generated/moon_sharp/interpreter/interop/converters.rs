@@ -15,9 +15,7 @@ pub use scripttoclrconversions::{IScriptToClrConversions, ScriptToClrConversions
 #[cfg(any(feature = "moon_sharp-interpreter-interop-converters-stringconversions-types"))]
 pub mod stringconversions;
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")]
-pub use stringconversions::{
-    IStringConversions, StringConversions, StringConversions_StringSubtype,
-};
+pub use stringconversions::{IStringConversions, StringConversions, StringConversions_StringSubtype};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-converters-tableconversions-types"))]
 pub mod tableconversions;
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-tableconversions-types")]

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-actionbase-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::state::{IState, State};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::state::{IState, State},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionbase/ActionBase.md"))]
     #[::unity2::class(namespace = "Combat", name = "ActionBase")]
@@ -26,106 +28,61 @@ mod __ActionBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_cp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionBase as ::unity2::ClassIdentity>::class(),
-                "get_CP",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionBase as ::unity2::ClassIdentity>::class(), "get_CP", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionBase as ::unity2::ClassIdentity>::NAME,
-                    "get_CP",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionBase as ::unity2::ClassIdentity>::NAME,
+                        "get_CP",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cp(
-        this: ActionBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(
-            ActionBase,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cp::get_offset() as isize),
-        );
+    pub unsafe fn get_cp(this: ActionBase, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
+        let inner: extern "C" fn(ActionBase, ::unity2::OptionalMethod) -> crate::combat::character::Character =
+            ::core::mem::transmute(__lookup_get_cp::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionBase as ::unity2::ClassIdentity>::class(),
-                "set_CP",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionBase as ::unity2::ClassIdentity>::class(), "set_CP", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionBase as ::unity2::ClassIdentity>::NAME,
-                    "set_CP",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionBase as ::unity2::ClassIdentity>::NAME,
+                        "set_CP",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_cp(
-        this: ActionBase,
-        value: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ActionBase,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cp::get_offset() as isize),
-        );
+    pub unsafe fn set_cp(this: ActionBase, value: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ActionBase, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cp::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_phase {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionBase as ::unity2::ClassIdentity>::class(),
@@ -138,43 +95,28 @@ mod __ActionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionBase as ::unity2::ClassIdentity>::NAME,
-                    "get_m_Phase",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionBase as ::unity2::ClassIdentity>::NAME,
+                        "get_m_Phase",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_m_phase(
-        this: ActionBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::phase::Phase {
-        let inner: extern "C" fn(
-            ActionBase,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::phase::Phase = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_phase::get_offset() as isize),
-        );
+    pub unsafe fn get_m_phase(this: ActionBase, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::phase::Phase {
+        let inner: extern "C" fn(ActionBase, ::unity2::OptionalMethod) -> crate::combat::phase::Phase =
+            ::core::mem::transmute(__lookup_get_m_phase::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_phase {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionBase as ::unity2::ClassIdentity>::class(),
                 "set_m_Phase",
@@ -186,70 +128,45 @@ mod __ActionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionBase as ::unity2::ClassIdentity>::NAME,
-                    "set_m_Phase",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionBase as ::unity2::ClassIdentity>::NAME,
+                        "set_m_Phase",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_m_phase(
-        this: ActionBase,
-        value: crate::combat::phase::Phase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ActionBase,
-            crate::combat::phase::Phase,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_phase::get_offset() as isize),
-        );
+    pub unsafe fn set_m_phase(this: ActionBase, value: crate::combat::phase::Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ActionBase, crate::combat::phase::Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_phase::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionBase as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionBase as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -258,27 +175,16 @@ mod __ActionBase_unity2_raw {
         phase: crate::combat::phase::Phase,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ActionBase,
-            crate::combat::character::Character,
-            crate::combat::phase::Phase,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ActionBase, crate::combat::character::Character, crate::combat::phase::Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, chr, phase, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_phase_for_rush {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::phase::Phase as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionBase as ::unity2::ClassIdentity>::class(),
                 "SetPhaseForRush",
@@ -290,34 +196,20 @@ mod __ActionBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionBase as ::unity2::ClassIdentity>::NAME,
-                    "SetPhaseForRush",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionBase as ::unity2::ClassIdentity>::NAME,
+                        "SetPhaseForRush",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_phase_for_rush(
-        this: ActionBase,
-        phase: crate::combat::phase::Phase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ActionBase,
-            crate::combat::phase::Phase,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_phase_for_rush::get_offset() as isize),
-        );
+    pub unsafe fn set_phase_for_rush(this: ActionBase, phase: crate::combat::phase::Phase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ActionBase, crate::combat::phase::Phase, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_phase_for_rush::get_method_info().method_ptr);
         inner(this, phase, __unity2_method_info)
     }
 }
@@ -327,45 +219,29 @@ pub trait IActionBaseMethods: IActionBase {
     #[doc = "`get_CP()` overload"]
     fn get_cp(self) -> crate::combat::character::Character {
         unsafe {
-            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionBase_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CP(crate::combat::character::Character)` overload"]
     fn set_cp(self, value: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
         unsafe {
-            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ActionBase_unity2_raw::set_cp(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ActionBase_unity2_raw::set_cp(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_m_Phase()` overload"]
     fn get_m_phase(self) -> crate::combat::phase::Phase {
         unsafe {
-            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionBase_unity2_raw::get_m_phase(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_Phase(crate::combat::phase::Phase)` overload"]
     fn set_m_phase(self, value: impl ::core::convert::Into<crate::combat::phase::Phase>) -> () {
         unsafe {
-            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ActionBase_unity2_raw::set_m_phase(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ActionBase_unity2_raw::set_m_phase(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]
@@ -375,9 +251,7 @@ pub trait IActionBaseMethods: IActionBase {
         phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
     ) -> () {
         unsafe {
-            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionBase_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(chr),
@@ -387,19 +261,10 @@ pub trait IActionBaseMethods: IActionBase {
         }
     }
     #[doc = "`SetPhaseForRush(crate::combat::phase::Phase)` overload"]
-    fn set_phase_for_rush(
-        self,
-        phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
-    ) -> () {
+    fn set_phase_for_rush(self, phase: impl ::core::convert::Into<crate::combat::phase::Phase>) -> () {
         unsafe {
-            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ActionBase_unity2_raw::set_phase_for_rush(
-                __receiver,
-                ::core::convert::Into::into(phase),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ActionBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ActionBase_unity2_raw::set_phase_for_rush(__receiver, ::core::convert::Into::into(phase), ::core::option::Option::None)
         }
     }
 }
@@ -410,17 +275,9 @@ impl<__T: IActionBase> IActionBaseMethods for __T {}
 #[cfg(feature = "combat-actionbase")]
 impl ActionBase {
     #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]
-    pub fn new(
-        chr: crate::combat::character::Character,
-        phase: crate::combat::phase::Phase,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ActionBase),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(chr: crate::combat::character::Character, phase: crate::combat::phase::Phase) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ActionBase), ::core::stringify!(new),));
         <Self as IActionBaseMethods>::ctor(this, chr, phase);
         this
     }
@@ -429,13 +286,10 @@ impl ActionBase {
 #[cfg(feature = "combat-actionbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionBase;
-    pub use super::IActionBase;
-    pub use super::IActionBaseMethods;
-    pub use crate::combat::state::IState;
+    pub use super::{ActionBase, IActionBase, IActionBaseMethods};
     #[cfg(feature = "combat-state")]
     pub use crate::combat::state::IStateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::state::IState, system::object::IObject};
 }

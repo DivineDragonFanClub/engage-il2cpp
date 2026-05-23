@@ -2,34 +2,33 @@
 
 #[cfg(feature = "root-mapinfogaugesublocatorroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_Parts.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapInfoGaugeSubLocatorRoot_Parts {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapInfoGaugeSubLocatorRoot_Parts {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "MapInfoGaugeSubLocatorRoot.Parts";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for MapInfoGaugeSubLocatorRoot_Parts {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -157,13 +153,9 @@ mod __types {
         #[rename(name = "m_ScreenHalf")]
         pub m_screen_half: crate::unity_engine::vector3::Vector3,
         #[rename(name = "m_StateList")]
-        pub m_state_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::mapuigauge::MapUIGauge_IconIndex,
-        >,
+        pub m_state_list: crate::system::collections::generic::list_1::List_1<crate::root::mapuigauge::MapUIGauge_IconIndex>,
         #[rename(name = "m_BalloonList")]
-        pub m_balloon_list: crate::system::collections::generic::list_1::List_1<
-            crate::root::mapuigauge::MapUIGauge_IconIndex,
-        >,
+        pub m_balloon_list: crate::system::collections::generic::list_1::List_1<crate::root::mapuigauge::MapUIGauge_IconIndex>,
         #[rename(name = "m_HpBeforeBattle")]
         pub m_hp_before_battle: i32,
         #[rename(name = "m_HpAfterBattle")]
@@ -256,21 +248,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfogaugesublocatorroot/MapInfoGaugeSubLocatorRoot_BreakEffectKind.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapInfoGaugeSubLocatorRoot_BreakEffectKind {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapInfoGaugeSubLocatorRoot_BreakEffectKind {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "MapInfoGaugeSubLocatorRoot.BreakEffectKind";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -281,10 +266,7 @@ mod __types {
 
     impl ::unity2::IlType for MapInfoGaugeSubLocatorRoot_BreakEffectKind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -315,9 +297,7 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -330,39 +310,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -375,39 +343,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetGameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetGameObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_game_object(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn get_game_object(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_game_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_game_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -420,41 +376,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_image(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn get_image(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_image::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_image::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetIcon",
@@ -466,43 +409,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetIcon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_icon(
-        this: MapInfoGaugeSubLocatorRoot,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_icon::get_offset() as isize),
-        );
+    pub unsafe fn set_icon(this: MapInfoGaugeSubLocatorRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_set_whole_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -515,41 +442,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "CanSetWholeIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "CanSetWholeIcon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_set_whole_icon(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_set_whole_icon(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_set_whole_icon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_set_whole_icon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_base_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetBaseColor",
@@ -561,18 +475,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetBaseColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetBaseColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_base_color(
@@ -580,26 +491,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_base_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_base_color::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetWeaponIcon",
@@ -611,18 +512,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetWeaponIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetWeaponIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_weapon_icon(
@@ -630,24 +528,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_weapon_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_weapon_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -663,18 +552,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetWeaponIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetWeaponIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_weapon_index(
@@ -688,22 +574,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
             crate::app::unit::Unit,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_index::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_weapon_index::get_method_info().method_ptr);
         inner(this, unit, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_break_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetBreakIcon",
@@ -715,18 +594,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetBreakIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetBreakIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_break_icon(
@@ -734,26 +610,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_break_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_break_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsBreak",
@@ -765,18 +631,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsBreak",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_break(
@@ -784,18 +647,20 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_BreakEffectKind {
-        let inner : extern "C" fn (MapInfoGaugeSubLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot_BreakEffectKind = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_is_break :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            MapInfoGaugeSubLocatorRoot,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_BreakEffectKind =
+            ::core::mem::transmute(__lookup_is_break::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rod_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetRodIcon",
@@ -807,45 +672,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetRodIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetRodIcon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rod_icon(
-        this: MapInfoGaugeSubLocatorRoot,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rod_icon::get_offset() as isize),
-        );
+    pub unsafe fn set_rod_icon(this: MapInfoGaugeSubLocatorRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rod_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rod_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "GetRodIndex",
@@ -857,18 +705,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetRodIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetRodIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rod_index(
@@ -876,26 +721,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rod_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_rod_index::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_balloon_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetBalloonIcon",
@@ -907,18 +742,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetBalloonIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetBalloonIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_balloon_icon(
@@ -926,26 +758,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_balloon_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_balloon_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_relay_exit_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetRelayExitIcon",
@@ -957,18 +779,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetRelayExitIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetRelayExitIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_relay_exit_icon(
@@ -976,26 +795,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_relay_exit_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_relay_exit_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_make_balloon_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "MakeBalloonList",
@@ -1007,18 +816,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "MakeBalloonList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "MakeBalloonList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn make_balloon_list(
@@ -1026,24 +832,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_make_balloon_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_make_balloon_list::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_efficary {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1059,18 +856,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "CheckEfficary",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "CheckEfficary",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_efficary(
@@ -1079,25 +873,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         enemy: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_efficary::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_check_efficary::get_method_info().method_ptr);
         inner(this, player, enemy, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cursor_target_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -1110,41 +894,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetCursorTargetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetCursorTargetUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cursor_target_unit(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cursor_target_unit::get_offset() as isize),
-        );
+    pub unsafe fn get_cursor_target_unit(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_cursor_target_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mind_unit_on_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -1157,43 +927,31 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetMindUnitOnLateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetMindUnitOnLateUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mind_unit_on_late_update(
         this: MapInfoGaugeSubLocatorRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mind_unit_on_late_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_mind_unit_on_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_state_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetStateIcon",
@@ -1205,18 +963,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetStateIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetStateIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_state_icon(
@@ -1224,26 +979,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_state_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_state_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_make_unit_state_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "MakeUnitStateList",
@@ -1255,18 +1000,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "MakeUnitStateList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "MakeUnitStateList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn make_unit_state_list(
@@ -1274,26 +1016,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_make_unit_state_list::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_make_unit_state_list::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_drop_item_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetDropItemIcon",
@@ -1305,18 +1037,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetDropItemIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetDropItemIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_drop_item_icon(
@@ -1324,26 +1053,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_drop_item_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_drop_item_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_engage_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetEngageIcon",
@@ -1355,18 +1074,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetEngageIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetEngageIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_engage_icon(
@@ -1374,26 +1090,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_engage_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_engage_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_set_engage_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsSetEngageIcon",
@@ -1405,18 +1111,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsSetEngageIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsSetEngageIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_set_engage_icon(
@@ -1424,26 +1127,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_set_engage_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_set_engage_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_darkness_engage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsDarknessEngage",
@@ -1455,18 +1148,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsDarknessEngage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsDarknessEngage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_darkness_engage(
@@ -1474,26 +1164,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_darkness_engage::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_darkness_engage::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_count_max_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetCountMaxEffect",
@@ -1505,18 +1185,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetCountMaxEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetCountMaxEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_count_max_effect(
@@ -1524,26 +1201,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_count_max_effect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_count_max_effect::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_set_count_max_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsSetCountMaxEffect",
@@ -1555,18 +1222,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsSetCountMaxEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsSetCountMaxEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_set_count_max_effect(
@@ -1574,26 +1238,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_set_count_max_effect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_set_count_max_effect::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god_face_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetGodFaceIcon",
@@ -1605,18 +1259,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetGodFaceIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetGodFaceIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_god_face_icon(
@@ -1624,26 +1275,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_god_face_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_god_face_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_set_god_face_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsSetGodFaceIcon",
@@ -1655,18 +1296,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsSetGodFaceIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsSetGodFaceIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_set_god_face_icon(
@@ -1674,24 +1312,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_set_god_face_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_set_god_face_icon::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_engage_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1707,18 +1336,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "PlayEngageEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "PlayEngageEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_engage_effect(
@@ -1727,25 +1353,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_engage_effect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_engage_effect::get_method_info().method_ptr);
         inner(this, unit, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_engage_turn_recovery_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -1758,39 +1374,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "PlayEngageTurnRecoveryEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "PlayEngageTurnRecoveryEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_engage_turn_recovery_effect(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_engage_turn_recovery_effect(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_engage_turn_recovery_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_engage_turn_recovery_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing_engage_turn_recovery_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -1803,39 +1407,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayingEngageTurnRecoveryEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayingEngageTurnRecoveryEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing_engage_turn_recovery_effect(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing_engage_turn_recovery_effect(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing_engage_turn_recovery_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing_engage_turn_recovery_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_engage_turn_recovery_effect_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -1848,41 +1440,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetEngageTurnRecoveryEffectRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetEngageTurnRecoveryEffectRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_engage_turn_recovery_effect_rate(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_engage_turn_recovery_effect_rate(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_engage_turn_recovery_effect_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_engage_turn_recovery_effect_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_screen_pos_local_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetUnitScreenPosLocalScale",
@@ -1894,18 +1473,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitScreenPosLocalScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitScreenPosLocalScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_screen_pos_local_scale(
@@ -1913,26 +1489,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pos_scale: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_screen_pos_local_scale::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit_screen_pos_local_scale::get_method_info().method_ptr);
         inner(this, pos_scale, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_screen_half_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetScreenHalfSize",
@@ -1944,18 +1510,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetScreenHalfSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetScreenHalfSize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_screen_half_size(
@@ -1963,24 +1526,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         screen_half: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_screen_half_size::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_screen_half_size::get_method_info().method_ptr);
         inner(this, screen_half, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_engage_count_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -1993,43 +1547,31 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetEngageCountPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetEngageCountPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_engage_count_pos(
         this: MapInfoGaugeSubLocatorRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_engage_count_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_engage_count_pos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hp_stock_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "GetHpStockPos",
@@ -2041,18 +1583,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetHpStockPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetHpStockPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hp_stock_pos(
@@ -2064,22 +1603,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
             MapInfoGaugeSubLocatorRoot,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hp_stock_pos::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_get_hp_stock_pos::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_engage_count_empty_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "GetEngageCountEmptyIndex",
@@ -2091,18 +1623,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetEngageCountEmptyIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetEngageCountEmptyIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_engage_count_empty_index(
@@ -2110,26 +1639,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_engage_count_empty_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_engage_count_empty_index::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_gauge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpGauge",
@@ -2141,45 +1660,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpGauge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpGauge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hp_gauge(
-        this: MapInfoGaugeSubLocatorRoot,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_gauge::get_offset() as isize),
-        );
+    pub unsafe fn set_hp_gauge(this: MapInfoGaugeSubLocatorRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_gauge::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpFrame",
@@ -2191,45 +1693,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hp_frame(
-        this: MapInfoGaugeSubLocatorRoot,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_frame::get_offset() as isize),
-        );
+    pub unsafe fn set_hp_frame(this: MapInfoGaugeSubLocatorRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_frame::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpDamage",
@@ -2241,18 +1726,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpDamage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpDamage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_hp_damage(
@@ -2260,26 +1742,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_damage::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_damage::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_heal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpHeal",
@@ -2291,45 +1763,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpHeal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpHeal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hp_heal(
-        this: MapInfoGaugeSubLocatorRoot,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_heal::get_offset() as isize),
-        );
+    pub unsafe fn set_hp_heal(this: MapInfoGaugeSubLocatorRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_heal::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_stock {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpStock",
@@ -2341,45 +1796,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpStock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpStock",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hp_stock(
-        this: MapInfoGaugeSubLocatorRoot,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_stock::get_offset() as isize),
-        );
+    pub unsafe fn set_hp_stock(this: MapInfoGaugeSubLocatorRoot, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_stock::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_hp_stock_break_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "PlayHpStockBreakEffect",
@@ -2391,18 +1829,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "PlayHpStockBreakEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "PlayHpStockBreakEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_hp_stock_break_effect(
@@ -2410,26 +1845,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_hp_stock_break_effect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_hp_stock_break_effect::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_hp_stock_create_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "PlayHpStockCreateEffect",
@@ -2441,18 +1866,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "PlayHpStockCreateEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "PlayHpStockCreateEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_hp_stock_create_effect(
@@ -2460,28 +1882,16 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_hp_stock_create_effect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_hp_stock_create_effect::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_stock_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpStockAlpha",
@@ -2493,45 +1903,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpStockAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpStockAlpha",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hp_stock_alpha(
-        this: MapInfoGaugeSubLocatorRoot,
-        stock: i32,
-        alpha: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            i32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_stock_alpha::get_offset() as isize),
-        );
+    pub unsafe fn set_hp_stock_alpha(this: MapInfoGaugeSubLocatorRoot, stock: i32, alpha: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_stock_alpha::get_method_info().method_ptr);
         inner(this, stock, alpha, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing_hp_stock_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -2544,39 +1936,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayingHpStockEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayingHpStockEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing_hp_stock_effect(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing_hp_stock_effect(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing_hp_stock_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing_hp_stock_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hp_stock_effect_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -2589,40 +1969,31 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetHpStockEffectRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetHpStockEffectRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hp_stock_effect_rate(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_hp_stock_effect_rate(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hp_stock_effect_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hp_stock_effect_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot_Parts as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_Parts as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetActive",
@@ -2634,18 +2005,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetActive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_active(
@@ -2659,22 +2027,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
             crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_Parts,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_active::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
         inner(this, index, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_config {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "GetConfig",
@@ -2686,43 +2047,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetConfig",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetConfig",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_config(
-        this: MapInfoGaugeSubLocatorRoot,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_config::get_offset() as isize),
-        );
+    pub unsafe fn get_config(this: MapInfoGaugeSubLocatorRoot, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_config::get_method_info().method_ptr);
         inner(this, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_display_area_left_top {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -2735,41 +2080,30 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetDisplayAreaLeftTop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetDisplayAreaLeftTop",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_display_area_left_top(
         this: MapInfoGaugeSubLocatorRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_display_area_left_top::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_display_area_left_top::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_display_area_right_bottom {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -2782,43 +2116,31 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "GetDisplayAreaRightBottom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "GetDisplayAreaRightBottom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_display_area_right_bottom(
         this: MapInfoGaugeSubLocatorRoot,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_display_area_right_bottom::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_display_area_right_bottom::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_effect_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "UpdateEffectPos",
@@ -2830,18 +2152,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "UpdateEffectPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "UpdateEffectPos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_effect_pos(
@@ -2849,24 +2168,15 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_effect_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_effect_pos::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_hp_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -2879,43 +2189,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "InitHpForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "InitHpForecast",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_hp_forecast(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_hp_forecast(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_hp_forecast::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_hp_forecast::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetHpForecast",
@@ -2927,45 +2222,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetHpForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetHpForecast",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_hp_forecast(
-        this: MapInfoGaugeSubLocatorRoot,
-        before: i32,
-        after: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapInfoGaugeSubLocatorRoot,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_forecast::get_offset() as isize),
-        );
+    pub unsafe fn set_hp_forecast(this: MapInfoGaugeSubLocatorRoot, before: i32, after: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_forecast::get_method_info().method_ptr);
         inner(this, before, after, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -2978,41 +2255,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "InitBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "InitBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_break(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_break(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_break::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "SetBreak",
@@ -3024,40 +2288,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "SetBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "SetBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_break(
-        this: MapInfoGaugeSubLocatorRoot,
-        is_break: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_break(this: MapInfoGaugeSubLocatorRoot, is_break: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_break::get_method_info().method_ptr);
         inner(this, is_break, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_suppress_hp_stock {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -3070,41 +2321,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSuppressHpStock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSuppressHpStock",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_suppress_hp_stock(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_suppress_hp_stock(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_suppress_hp_stock::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_suppress_hp_stock::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_suppress_hp_stock {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "set_IsSuppressHpStock",
@@ -3116,40 +2354,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "set_IsSuppressHpStock",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "set_IsSuppressHpStock",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_suppress_hp_stock(
-        this: MapInfoGaugeSubLocatorRoot,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_suppress_hp_stock(this: MapInfoGaugeSubLocatorRoot, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_suppress_hp_stock::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_suppress_hp_stock::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -3162,41 +2387,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "get_IsComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "get_IsComplete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_complete(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_complete(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_complete::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_complete::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "set_IsComplete",
@@ -3208,40 +2420,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "set_IsComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "set_IsComplete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_complete(
-        this: MapInfoGaugeSubLocatorRoot,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_complete(this: MapInfoGaugeSubLocatorRoot, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_complete::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_complete::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_acitve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3255,43 +2454,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsAcitve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsAcitve",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_acitve(
-        go: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_acitve::get_offset() as isize),
-        );
+    pub unsafe fn is_acitve(go: crate::unity_engine::gameobject::GameObject, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_acitve::get_method_info().method_ptr);
         inner(go, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_acitve_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsAcitve",
@@ -3303,43 +2487,28 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsAcitve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsAcitve",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_acitve_2(
-        transform: crate::unity_engine::transform::Transform,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_acitve_2::get_offset() as isize),
-        );
+    pub unsafe fn is_acitve_2(transform: crate::unity_engine::transform::Transform, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_acitve_2::get_method_info().method_ptr);
         inner(transform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_acitve_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
                 "IsAcitve",
@@ -3351,41 +2520,27 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsAcitve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsAcitve",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_acitve_3(
-        component: crate::unity_engine::component::Component,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::component::Component,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_acitve_3::get_offset() as isize),
-        );
+    pub unsafe fn is_acitve_3(component: crate::unity_engine::component::Component, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::component::Component, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_acitve_3::get_method_info().method_ptr);
         inner(component, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::class(),
@@ -3398,30 +2553,20 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapInfoGaugeSubLocatorRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapInfoGaugeSubLocatorRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapInfoGaugeSubLocatorRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapInfoGaugeSubLocatorRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -3429,37 +2574,18 @@ mod __MapInfoGaugeSubLocatorRoot_unity2_raw {
 #[cfg(feature = "root-mapinfogaugesublocatorroot")]
 impl MapInfoGaugeSubLocatorRoot {
     #[doc = "`IsAcitve(crate::unity_engine::gameobject::GameObject)` overload"]
-    pub fn is_acitve(
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> bool {
-        unsafe {
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_acitve(
-                ::core::convert::Into::into(go),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_acitve(go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> bool {
+        unsafe { __MapInfoGaugeSubLocatorRoot_unity2_raw::is_acitve(::core::convert::Into::into(go), ::core::option::Option::None) }
     }
+
     #[doc = "`IsAcitve(crate::unity_engine::transform::Transform)` overload"]
-    pub fn is_acitve_2(
-        transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> bool {
-        unsafe {
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_acitve_2(
-                ::core::convert::Into::into(transform),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_acitve_2(transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> bool {
+        unsafe { __MapInfoGaugeSubLocatorRoot_unity2_raw::is_acitve_2(::core::convert::Into::into(transform), ::core::option::Option::None) }
     }
+
     #[doc = "`IsAcitve(crate::unity_engine::component::Component)` overload"]
-    pub fn is_acitve_3(
-        component: impl ::core::convert::Into<crate::unity_engine::component::Component>,
-    ) -> bool {
-        unsafe {
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_acitve_3(
-                ::core::convert::Into::into(component),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_acitve_3(component: impl ::core::convert::Into<crate::unity_engine::component::Component>) -> bool {
+        unsafe { __MapInfoGaugeSubLocatorRoot_unity2_raw::is_acitve_3(::core::convert::Into::into(component), ::core::option::Option::None) }
     }
 }
 
@@ -3469,9 +2595,7 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn awake(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
@@ -3479,81 +2603,48 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn get_game_object(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_game_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetImage()` overload"]
     fn get_image(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_image(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetIcon(crate::app::unit::Unit)` overload"]
     fn set_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`CanSetWholeIcon()` overload"]
     fn can_set_whole_icon(self) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::can_set_whole_icon(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::can_set_whole_icon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetBaseColor(crate::app::unit::Unit)` overload"]
     fn set_base_color(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_base_color(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_base_color(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetWeaponIcon(crate::app::unit::Unit)` overload"]
     fn set_weapon_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_weapon_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_weapon_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetWeaponIndex(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
@@ -3564,9 +2655,7 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     ) -> i32 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::get_weapon_index(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3579,14 +2668,8 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn set_break_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_break_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_break_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`IsBreak(crate::app::unit::Unit)` overload"]
@@ -3596,84 +2679,48 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     ) -> crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_BreakEffectKind {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_break(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_break(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetRodIcon(crate::app::unit::Unit)` overload"]
     fn set_rod_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_rod_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_rod_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetRodIndex(crate::app::unit::Unit)` overload"]
     fn get_rod_index(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_rod_index(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_rod_index(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetBalloonIcon(crate::app::unit::Unit)` overload"]
     fn set_balloon_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_balloon_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_balloon_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetRelayExitIcon(crate::app::unit::Unit)` overload"]
     fn set_relay_exit_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_relay_exit_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_relay_exit_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`MakeBalloonList(crate::app::unit::Unit)` overload"]
     fn make_balloon_list(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::make_balloon_list(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::make_balloon_list(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`CheckEfficary(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
@@ -3684,9 +2731,7 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     ) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::check_efficary(
                 __receiver,
                 ::core::convert::Into::into(player),
@@ -3699,136 +2744,79 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn get_cursor_target_unit(self) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_cursor_target_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_cursor_target_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMindUnitOnLateUpdate()` overload"]
     fn get_mind_unit_on_late_update(self) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_mind_unit_on_late_update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_mind_unit_on_late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetStateIcon(crate::app::unit::Unit)` overload"]
     fn set_state_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_state_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_state_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`MakeUnitStateList(crate::app::unit::Unit)` overload"]
     fn make_unit_state_list(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::make_unit_state_list(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::make_unit_state_list(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetDropItemIcon(crate::app::unit::Unit)` overload"]
     fn set_drop_item_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_drop_item_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_drop_item_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetEngageIcon(crate::app::unit::Unit)` overload"]
     fn set_engage_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_engage_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_engage_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSetEngageIcon(crate::app::unit::Unit)` overload"]
     fn is_set_engage_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_set_engage_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_set_engage_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`IsDarknessEngage(crate::app::unit::Unit)` overload"]
     fn is_darkness_engage(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_darkness_engage(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_darkness_engage(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetCountMaxEffect(crate::app::unit::Unit)` overload"]
     fn set_count_max_effect(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_count_max_effect(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_count_max_effect(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSetCountMaxEffect(crate::app::unit::Unit)` overload"]
-    fn is_set_count_max_effect(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
+    fn is_set_count_max_effect(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::is_set_count_max_effect(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3840,44 +2828,23 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn set_god_face_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_god_face_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_god_face_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`IsSetGodFaceIcon(crate::app::unit::Unit)` overload"]
-    fn is_set_god_face_icon(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
+    fn is_set_god_face_icon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_set_god_face_icon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_set_god_face_icon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayEngageEffect(crate::app::unit::Unit, i32)` overload"]
-    fn play_engage_effect(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn play_engage_effect(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::play_engage_effect(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3890,51 +2857,31 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn play_engage_turn_recovery_effect(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::play_engage_turn_recovery_effect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::play_engage_turn_recovery_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlayingEngageTurnRecoveryEffect()` overload"]
     fn is_playing_engage_turn_recovery_effect(self) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_playing_engage_turn_recovery_effect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_playing_engage_turn_recovery_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetEngageTurnRecoveryEffectRate()` overload"]
     fn get_engage_turn_recovery_effect_rate(self) -> f32 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_engage_turn_recovery_effect_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_engage_turn_recovery_effect_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetUnitScreenPosLocalScale(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_unit_screen_pos_local_scale(
-        self,
-        pos_scale: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_unit_screen_pos_local_scale(self, pos_scale: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::set_unit_screen_pos_local_scale(
                 __receiver,
                 ::core::convert::Into::into(pos_scale),
@@ -3943,15 +2890,10 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
         }
     }
     #[doc = "`SetScreenHalfSize(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_screen_half_size(
-        self,
-        screen_half: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_screen_half_size(self, screen_half: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::set_screen_half_size(
                 __receiver,
                 ::core::convert::Into::into(screen_half),
@@ -3963,42 +2905,23 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn get_engage_count_pos(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_engage_count_pos(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_engage_count_pos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetHpStockPos(crate::app::unit::Unit)` overload"]
-    fn get_hp_stock_pos(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::unity_engine::vector3::Vector3 {
+    fn get_hp_stock_pos(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_hp_stock_pos(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_hp_stock_pos(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEngageCountEmptyIndex(crate::app::unit::Unit)` overload"]
-    fn get_engage_count_empty_index(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> i32 {
+    fn get_engage_count_empty_index(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::get_engage_count_empty_index(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -4010,82 +2933,47 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn set_hp_gauge(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_gauge(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_gauge(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpFrame(crate::app::unit::Unit)` overload"]
     fn set_hp_frame(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_frame(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_frame(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpDamage(crate::app::unit::Unit)` overload"]
     fn set_hp_damage(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_damage(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_damage(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpHeal(crate::app::unit::Unit)` overload"]
     fn set_hp_heal(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_heal(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_heal(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpStock(crate::app::unit::Unit)` overload"]
     fn set_hp_stock(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_stock(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_stock(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayHpStockBreakEffect(crate::app::unit::Unit)` overload"]
-    fn play_hp_stock_break_effect(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    fn play_hp_stock_break_effect(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::play_hp_stock_break_effect(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -4094,15 +2982,10 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
         }
     }
     #[doc = "`PlayHpStockCreateEffect(crate::app::unit::Unit)` overload"]
-    fn play_hp_stock_create_effect(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    fn play_hp_stock_create_effect(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::play_hp_stock_create_effect(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -4111,16 +2994,10 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
         }
     }
     #[doc = "`SetHpStockAlpha(i32, f32)` overload"]
-    fn set_hp_stock_alpha(
-        self,
-        stock: impl ::core::convert::Into<i32>,
-        alpha: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_hp_stock_alpha(self, stock: impl ::core::convert::Into<i32>, alpha: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_stock_alpha(
                 __receiver,
                 ::core::convert::Into::into(stock),
@@ -4133,41 +3010,27 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn is_playing_hp_stock_effect(self) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_playing_hp_stock_effect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::is_playing_hp_stock_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetHpStockEffectRate()` overload"]
     fn get_hp_stock_effect_rate(self) -> f32 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_hp_stock_effect_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_hp_stock_effect_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetActive(crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_Parts, bool)` overload"]
     fn set_active(
         self,
-        index: impl ::core::convert::Into<
-            crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_Parts,
-        >,
+        index: impl ::core::convert::Into<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot_Parts>,
         enable: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::set_active(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -4180,80 +3043,47 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn get_config(self, enable: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_config(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_config(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDisplayAreaLeftTop()` overload"]
     fn get_display_area_left_top(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_display_area_left_top(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_display_area_left_top(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDisplayAreaRightBottom()` overload"]
     fn get_display_area_right_bottom(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_display_area_right_bottom(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_display_area_right_bottom(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateEffectPos(crate::app::unit::Unit)` overload"]
     fn update_effect_pos(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::update_effect_pos(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::update_effect_pos(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`InitHpForecast()` overload"]
     fn init_hp_forecast(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::init_hp_forecast(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::init_hp_forecast(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpForecast(i32, i32)` overload"]
-    fn set_hp_forecast(
-        self,
-        before: impl ::core::convert::Into<i32>,
-        after: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set_hp_forecast(self, before: impl ::core::convert::Into<i32>, after: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::set_hp_forecast(
                 __receiver,
                 ::core::convert::Into::into(before),
@@ -4266,49 +3096,31 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn init_break(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::init_break(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::init_break(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetBreak(bool)` overload"]
     fn set_break(self, is_break: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_break(
-                __receiver,
-                ::core::convert::Into::into(is_break),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_break(__receiver, ::core::convert::Into::into(is_break), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsSuppressHpStock()` overload"]
     fn get_is_suppress_hp_stock(self) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_is_suppress_hp_stock(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_is_suppress_hp_stock(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsSuppressHpStock(bool)` overload"]
     fn set_is_suppress_hp_stock(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::set_is_suppress_hp_stock(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -4320,36 +3132,23 @@ pub trait IMapInfoGaugeSubLocatorRootMethods: IMapInfoGaugeSubLocatorRoot {
     fn get_is_complete(self) -> bool {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_is_complete(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::get_is_complete(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsComplete(bool)` overload"]
     fn set_is_complete(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_is_complete(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapInfoGaugeSubLocatorRoot_unity2_raw::set_is_complete(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapInfoGaugeSubLocatorRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapInfoGaugeSubLocatorRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -4377,30 +3176,26 @@ impl MapInfoGaugeSubLocatorRoot {
 #[cfg(feature = "root-mapinfogaugesublocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapInfoGaugeSubLocatorRoot;
-    pub use super::IMapInfoGaugeSubLocatorRootMethods;
-    pub use super::MapInfoGaugeSubLocatorRoot;
-    pub use super::MapInfoGaugeSubLocatorRoot_BreakEffectKind;
-    pub use super::MapInfoGaugeSubLocatorRoot_Parts;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMapInfoGaugeSubLocatorRoot, IMapInfoGaugeSubLocatorRootMethods, MapInfoGaugeSubLocatorRoot, MapInfoGaugeSubLocatorRoot_BreakEffectKind,
+        MapInfoGaugeSubLocatorRoot_Parts,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-io-filesystemenumerablefactory-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesystemenumerablefactory/FileSystemEnumerableFactory.md"))]
     #[::unity2::class(namespace = "System.IO", name = "FileSystemEnumerableFactory")]
@@ -25,9 +25,7 @@ mod __FileSystemEnumerableFactory_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_file_name_iterator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -48,18 +46,15 @@ mod __FileSystemEnumerableFactory_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FileSystemEnumerableFactory as ::unity2::ClassIdentity>::NAME,
-                    "CreateFileNameIterator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FileSystemEnumerableFactory as ::unity2::ClassIdentity>::NAME,
+                        "CreateFileNameIterator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_file_name_iterator(
@@ -71,9 +66,18 @@ mod __FileSystemEnumerableFactory_unity2_raw {
         search_option: crate::system::io::searchoption::SearchOption,
         check_host: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , bool , crate :: system :: io :: searchoption :: SearchOption , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_file_name_iterator :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            bool,
+            bool,
+            crate::system::io::searchoption::SearchOption,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_create_file_name_iterator::get_method_info().method_ptr);
         inner(
             path,
             original_user_path,
@@ -98,8 +102,7 @@ impl FileSystemEnumerableFactory {
         include_dirs: impl ::core::convert::Into<bool>,
         search_option: impl ::core::convert::Into<crate::system::io::searchoption::SearchOption>,
         check_host: impl ::core::convert::Into<bool>,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>
-    {
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString> {
         unsafe {
             __FileSystemEnumerableFactory_unity2_raw::create_file_name_iterator(
                 ::core::convert::Into::into(path),
@@ -118,8 +121,7 @@ impl FileSystemEnumerableFactory {
 #[cfg(feature = "system-io-filesystemenumerablefactory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileSystemEnumerableFactory;
-    pub use super::IFileSystemEnumerableFactory;
+    pub use super::{FileSystemEnumerableFactory, IFileSystemEnumerableFactory};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

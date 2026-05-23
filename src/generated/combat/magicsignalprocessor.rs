@@ -2,14 +2,18 @@
 
 #[cfg(feature = "combat-magicsignalprocessor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsignalprocessor/MagicSignalProcessor.md"))]
     #[::unity2::class(namespace = "Combat", name = "MagicSignalProcessor")]
@@ -20,8 +24,7 @@ mod __types {
         #[rename(name = "m_FlyingObject")]
         pub m_flying_object: crate::combat::magicflying::MagicFlying,
         #[rename(name = "m_CachedNodeConstraint")]
-        pub m_cached_node_constraint:
-            crate::combat::characternodeconstraint::CharacterNodeConstraint,
+        pub m_cached_node_constraint: crate::combat::characternodeconstraint::CharacterNodeConstraint,
         #[rename(name = "m_Phase")]
         pub m_phase: crate::combat::phase::Phase,
         #[rename(name = "m_DecayTime")]
@@ -53,13 +56,9 @@ mod __types {
         #[rename(name = "TL打撃命中処理")]
         pub tl打撃命中処理: crate::combat::magicsignaltimeline::MagicSignalTimeline,
         #[rename(name = "m_ManagedObjects")]
-        pub m_managed_objects: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_managed_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_DeletedObjects")]
-        pub m_deleted_objects: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_deleted_objects: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_KnockoffAttackHash")]
         pub m_knockoff_attack_hash: i32,
     }
@@ -77,9 +76,7 @@ mod __MagicSignalProcessor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_magic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -92,43 +89,28 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "get_Magic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "get_Magic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_magic(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::magic::Magic {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::magic::Magic = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_magic::get_offset() as isize),
-        );
+    pub unsafe fn get_magic(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::magic::Magic {
+        let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> crate::combat::magic::Magic =
+            ::core::mem::transmute(__lookup_get_magic::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_magic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magic::Magic as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magic::Magic as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "set_Magic",
@@ -140,43 +122,27 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "set_Magic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "set_Magic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_magic(
-        this: MagicSignalProcessor,
-        value: crate::combat::magic::Magic,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magic::Magic,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_magic::get_offset() as isize),
-        );
+    pub unsafe fn set_magic(this: MagicSignalProcessor, value: crate::combat::magic::Magic, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magic::Magic, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_magic::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enter_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::magic::Magic as ::unity2::IlType>::il_type(),
@@ -193,18 +159,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "OnEnterAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "OnEnterAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_enter_attack(
@@ -220,22 +183,15 @@ mod __MagicSignalProcessor_unity2_raw {
             crate::combat::magic::Magic,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_enter_attack::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_enter_attack::get_method_info().method_ptr);
         inner(this, owner, catalog, world_hit_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_observers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "RegisterObservers",
@@ -247,40 +203,27 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "RegisterObservers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "RegisterObservers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn register_observers(
-        this: MagicSignalProcessor,
-        world_hit_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn register_observers(this: MagicSignalProcessor, world_hit_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_register_observers::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_register_observers::get_method_info().method_ptr);
         inner(this, world_hit_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_process {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -293,39 +236,27 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "HitProcess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "HitProcess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hit_process(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hit_process(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hit_process::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hit_process::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -338,39 +269,27 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "LateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "LateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn late_update(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn late_update(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -383,39 +302,27 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "OnDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "OnDestroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_destroy(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_destroy(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enter_magic_sword_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::magic::Magic as ::unity2::IlType>::il_type(),
@@ -431,18 +338,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "OnEnterMagicSwordHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "OnEnterMagicSwordHit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_enter_magic_sword_hit(
@@ -456,20 +360,14 @@ mod __MagicSignalProcessor_unity2_raw {
             crate::combat::character::Character,
             crate::combat::magic::Magic,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_enter_magic_sword_hit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_enter_magic_sword_hit::get_method_info().method_ptr);
         inner(this, owner, catalog, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_hit_magic_sword_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -482,39 +380,27 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "OnHitMagicSwordHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "OnHitMagicSwordHit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_hit_magic_sword_hit(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_hit_magic_sword_hit(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_hit_magic_sword_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_hit_magic_sword_hit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ice_rock_skipped_prefab仕方なく {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -527,42 +413,32 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "GetIceRockSkippedPrefab仕方なく",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "GetIceRockSkippedPrefab仕方なく",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ice_rock_skipped_prefab仕方なく(
         this: MagicSignalProcessor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_ice_rock_skipped_prefab仕方なく::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_ice_rock_skipped_prefab仕方なく::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_timeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: magicsignaltimeline :: MagicSignalTimeline as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::magicsignaltimeline::MagicSignalTimeline as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "UpdateTimeline",
@@ -574,18 +450,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTimeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTimeline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_timeline(
@@ -593,24 +466,15 @@ mod __MagicSignalProcessor_unity2_raw {
         timeline: crate::combat::magicsignaltimeline::MagicSignalTimeline,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignaltimeline::MagicSignalTimeline,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_timeline::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignaltimeline::MagicSignalTimeline, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_timeline::get_method_info().method_ptr);
         inner(this, timeline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -626,18 +490,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCreate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_create(
@@ -646,25 +507,15 @@ mod __MagicSignalProcessor_unity2_raw {
         uncached: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_create::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_create::get_method_info().method_ptr);
         inner(this, ev, uncached, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_create_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -680,18 +531,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCreateImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCreateImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_create_impl(
@@ -700,25 +548,15 @@ mod __MagicSignalProcessor_unity2_raw {
         uncached: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_create_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_create_impl::get_method_info().method_ptr);
         inner(this, ev, uncached, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_create_go {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -734,18 +572,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCreateGO",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCreateGO",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_create_go(
@@ -759,22 +594,15 @@ mod __MagicSignalProcessor_unity2_raw {
             crate::combat::magicsignal::MagicSignal,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_create_go::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_cmd_create_go::get_method_info().method_ptr);
         inner(this, ev, uncached, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_delete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdDelete",
@@ -786,18 +614,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdDelete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdDelete",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_delete(
@@ -805,26 +630,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_delete::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_delete::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_shoot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdShoot",
@@ -836,18 +651,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdShoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdShoot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_shoot(
@@ -855,26 +667,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_shoot::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_shoot::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_collide_flying {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdCollideFlying",
@@ -886,18 +688,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCollideFlying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCollideFlying",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_collide_flying(
@@ -905,26 +704,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_collide_flying::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_collide_flying::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_stop_flying {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdStopFlying",
@@ -936,18 +725,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdStopFlying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdStopFlying",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_stop_flying(
@@ -955,26 +741,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_stop_flying::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_stop_flying::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_change_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdChangeTarget",
@@ -986,18 +762,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdChangeTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdChangeTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_change_target(
@@ -1005,26 +778,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_change_target::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_change_target::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_sound {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdSound",
@@ -1036,18 +799,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdSound",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdSound",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_sound(
@@ -1055,26 +815,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_sound::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_sound::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_cut_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdCutChange",
@@ -1086,18 +836,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCutChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCutChange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_cut_change(
@@ -1105,24 +852,15 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_cut_change::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_cut_change::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_call_on_focus_enemy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -1135,41 +873,28 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CallOnFocusEnemy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CallOnFocusEnemy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn call_on_focus_enemy(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn call_on_focus_enemy(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_call_on_focus_enemy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_call_on_focus_enemy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdCamera",
@@ -1181,18 +906,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_camera(
@@ -1200,26 +922,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_camera::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_camera_resume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdCameraResume",
@@ -1231,18 +943,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdCameraResume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdCameraResume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_camera_resume(
@@ -1250,26 +959,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_camera_resume::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_camera_resume::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_radial_blur {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdRadialBlur",
@@ -1281,18 +980,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdRadialBlur",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdRadialBlur",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_radial_blur(
@@ -1300,26 +996,16 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_radial_blur::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_radial_blur::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cmd_bg_brightness {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magicsignal::MagicSignal as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
                 "CmdBGBrightness",
@@ -1331,18 +1017,15 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    "CmdBGBrightness",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        "CmdBGBrightness",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cmd_bg_brightness(
@@ -1350,24 +1033,15 @@ mod __MagicSignalProcessor_unity2_raw {
         ev: crate::combat::magicsignal::MagicSignal,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalProcessor,
-            crate::combat::magicsignal::MagicSignal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cmd_bg_brightness::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalProcessor, crate::combat::magicsignal::MagicSignal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cmd_bg_brightness::get_method_info().method_ptr);
         inner(this, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalProcessor as ::unity2::ClassIdentity>::class(),
@@ -1380,30 +1054,20 @@ mod __MagicSignalProcessor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalProcessor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MagicSignalProcessor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MagicSignalProcessor, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalProcessor, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1413,23 +1077,17 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
     #[doc = "`get_Magic()` overload"]
     fn get_magic(self) -> crate::combat::magic::Magic {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::get_magic(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Magic(crate::combat::magic::Magic)` overload"]
     fn set_magic(self, value: impl ::core::convert::Into<crate::combat::magic::Magic>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::set_magic(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::set_magic(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnterAttack(crate::combat::character::Character, crate::combat::magic::Magic, f32)` overload"]
@@ -1440,9 +1098,8 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
         world_hit_time: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::on_enter_attack(
                 __receiver,
                 ::core::convert::Into::into(owner),
@@ -1455,9 +1112,8 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
     #[doc = "`RegisterObservers(f32)` overload"]
     fn register_observers(self, world_hit_time: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::register_observers(
                 __receiver,
                 ::core::convert::Into::into(world_hit_time),
@@ -1468,27 +1124,24 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
     #[doc = "`HitProcess()` overload"]
     fn hit_process(self) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::hit_process(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LateUpdate()` overload"]
     fn late_update(self) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDestroy()` overload"]
     fn on_destroy(self) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
         }
     }
@@ -1499,9 +1152,8 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
         catalog: impl ::core::convert::Into<crate::combat::magic::Magic>,
     ) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::on_enter_magic_sword_hit(
                 __receiver,
                 ::core::convert::Into::into(owner),
@@ -1513,55 +1165,32 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
     #[doc = "`OnHitMagicSwordHit()` overload"]
     fn on_hit_magic_sword_hit(self) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::on_hit_magic_sword_hit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::on_hit_magic_sword_hit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetIceRockSkippedPrefab仕方なく()` overload"]
-    fn get_ice_rock_skipped_prefab仕方なく(
-        self,
-    ) -> crate::unity_engine::gameobject::GameObject {
+    fn get_ice_rock_skipped_prefab仕方なく(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::get_ice_rock_skipped_prefab仕方なく(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::get_ice_rock_skipped_prefab仕方なく(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateTimeline(crate::combat::magicsignaltimeline::MagicSignalTimeline)` overload"]
-    fn update_timeline(
-        self,
-        timeline: impl ::core::convert::Into<crate::combat::magicsignaltimeline::MagicSignalTimeline>,
-    ) -> () {
+    fn update_timeline(self, timeline: impl ::core::convert::Into<crate::combat::magicsignaltimeline::MagicSignalTimeline>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::update_timeline(
-                __receiver,
-                ::core::convert::Into::into(timeline),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::update_timeline(__receiver, ::core::convert::Into::into(timeline), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdCreate(crate::combat::magicsignal::MagicSignal, bool)` overload"]
-    fn cmd_create(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-        uncached: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn cmd_create(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>, uncached: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::cmd_create(
                 __receiver,
                 ::core::convert::Into::into(ev),
@@ -1577,9 +1206,8 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
         uncached: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::cmd_create_impl(
                 __receiver,
                 ::core::convert::Into::into(ev),
@@ -1595,9 +1223,8 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
         uncached: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::cmd_create_go(
                 __receiver,
                 ::core::convert::Into::into(ev),
@@ -1607,199 +1234,106 @@ pub trait IMagicSignalProcessorMethods: IMagicSignalProcessor {
         }
     }
     #[doc = "`CmdDelete(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_delete(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_delete(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_delete(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_delete(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdShoot(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_shoot(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_shoot(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_shoot(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_shoot(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdCollideFlying(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_collide_flying(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_collide_flying(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_collide_flying(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_collide_flying(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdStopFlying(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_stop_flying(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_stop_flying(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_stop_flying(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_stop_flying(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdChangeTarget(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_change_target(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_change_target(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_change_target(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_change_target(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdSound(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_sound(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_sound(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_sound(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_sound(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdCutChange(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_cut_change(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_cut_change(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_cut_change(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_cut_change(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CallOnFocusEnemy()` overload"]
     fn call_on_focus_enemy(self) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::call_on_focus_enemy(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::call_on_focus_enemy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CmdCamera(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_camera(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_camera(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_camera(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_camera(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdCameraResume(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_camera_resume(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_camera_resume(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_camera_resume(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_camera_resume(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdRadialBlur(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_radial_blur(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_radial_blur(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_radial_blur(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_radial_blur(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`CmdBGBrightness(crate::combat::magicsignal::MagicSignal)` overload"]
-    fn cmd_bg_brightness(
-        self,
-        ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>,
-    ) -> () {
+    fn cmd_bg_brightness(self, ev: impl ::core::convert::Into<crate::combat::magicsignal::MagicSignal>) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalProcessor_unity2_raw::cmd_bg_brightness(
-                __receiver,
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalProcessor_unity2_raw::cmd_bg_brightness(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MagicSignalProcessor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalProcessor_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1827,22 +1361,19 @@ impl MagicSignalProcessor {
 #[cfg(feature = "combat-magicsignalprocessor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMagicSignalProcessor;
-    pub use super::IMagicSignalProcessorMethods;
-    pub use super::MagicSignalProcessor;
-    pub use crate::system::object::IObject;
+    pub use super::{IMagicSignalProcessor, IMagicSignalProcessorMethods, MagicSignalProcessor};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-volumeisolationscope-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/volumeisolationscope/VolumeIsolationScope.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct VolumeIsolationScope {}
 
     impl ::unity2::ClassIdentity for VolumeIsolationScope {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "VolumeIsolationScope";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for VolumeIsolationScope {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,11 +45,8 @@ mod __VolumeIsolationScope_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VolumeIsolationScope as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -63,40 +58,27 @@ mod __VolumeIsolationScope_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VolumeIsolationScope as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VolumeIsolationScope as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: VolumeIsolationScope,
-        unused: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: VolumeIsolationScope, unused: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VolumeIsolationScope, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, unused, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_i_disposable_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VolumeIsolationScope as ::unity2::ClassIdentity>::class(),
@@ -109,30 +91,20 @@ mod __VolumeIsolationScope_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VolumeIsolationScope as ::unity2::ClassIdentity>::NAME,
-                    "System.IDisposable.Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VolumeIsolationScope as ::unity2::ClassIdentity>::NAME,
+                        "System.IDisposable.Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn system_i_disposable_dispose(
-        this: VolumeIsolationScope,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn system_i_disposable_dispose(this: VolumeIsolationScope, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VolumeIsolationScope, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_system_i_disposable_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_system_i_disposable_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -141,22 +113,12 @@ mod __VolumeIsolationScope_unity2_raw {
 impl VolumeIsolationScope {
     #[doc = "`.ctor(bool)` overload"]
     pub fn ctor(self, unused: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __VolumeIsolationScope_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(unused),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __VolumeIsolationScope_unity2_raw::ctor(self, ::core::convert::Into::into(unused), ::core::option::Option::None) }
     }
+
     #[doc = "`System.IDisposable.Dispose()` overload"]
     pub fn system_i_disposable_dispose(self) -> () {
-        unsafe {
-            __VolumeIsolationScope_unity2_raw::system_i_disposable_dispose(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __VolumeIsolationScope_unity2_raw::system_i_disposable_dispose(self, ::core::option::Option::None) }
     }
 }
 
@@ -164,10 +126,9 @@ impl VolumeIsolationScope {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::VolumeIsolationScope;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

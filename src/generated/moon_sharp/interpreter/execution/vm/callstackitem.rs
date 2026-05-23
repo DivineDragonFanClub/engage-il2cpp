@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/callstackitem/CallStackItem.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Execution.VM",
-        name = "CallStackItem"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "CallStackItem")]
     #[parent(crate::system::object::Object)]
     pub struct CallStackItem {
         #[rename(name = "Debug_EntryPoint")]
@@ -35,11 +32,9 @@ mod __types {
         #[rename(name = "LocalScope")]
         pub local_scope: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         #[rename(name = "ClosureScope")]
-        pub closure_scope:
-            crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
+        pub closure_scope: crate::moon_sharp::interpreter::execution::closurecontext::ClosureContext,
         #[rename(name = "Flags")]
-        pub flags:
-            crate::moon_sharp::interpreter::execution::vm::callstackitemflags::CallStackItemFlags,
+        pub flags: crate::moon_sharp::interpreter::execution::vm::callstackitemflags::CallStackItemFlags,
     }
 }
 
@@ -55,42 +50,26 @@ mod __CallStackItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CallStackItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CallStackItem as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CallStackItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CallStackItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: CallStackItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CallStackItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(CallStackItem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -100,9 +79,7 @@ pub trait ICallStackItemMethods: ICallStackItem {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CallStackItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CallStackItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CallStackItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -115,13 +92,8 @@ impl<__T: ICallStackItem> ICallStackItemMethods for __T {}
 impl CallStackItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CallStackItem),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CallStackItem), ::core::stringify!(new),));
         <Self as ICallStackItemMethods>::ctor(this);
         this
     }
@@ -130,9 +102,7 @@ impl CallStackItem {
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-callstackitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CallStackItem;
-    pub use super::ICallStackItem;
-    pub use super::ICallStackItemMethods;
+    pub use super::{CallStackItem, ICallStackItem, ICallStackItemMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

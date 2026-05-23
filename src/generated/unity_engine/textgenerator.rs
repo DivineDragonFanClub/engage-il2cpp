@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-textgenerator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textgenerator/TextGenerator.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "TextGenerator")]
@@ -22,17 +22,11 @@ mod __types {
         #[rename(name = "m_LastValid")]
         pub m_last_valid: crate::unity_engine::textgenerationerror::TextGenerationError,
         #[rename(name = "m_Verts")]
-        pub m_verts: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uivertex::UIVertex,
-        >,
+        pub m_verts: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
         #[rename(name = "m_Characters")]
-        pub m_characters: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uicharinfo::UICharInfo,
-        >,
+        pub m_characters: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uicharinfo::UICharInfo>,
         #[rename(name = "m_Lines")]
-        pub m_lines: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uilineinfo::UILineInfo,
-        >,
+        pub m_lines: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uilineinfo::UILineInfo>,
         #[rename(name = "m_CachedVerts")]
         pub m_cached_verts: bool,
         #[rename(name = "m_CachedCharacters")]
@@ -54,98 +48,60 @@ mod __TextGenerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextGenerator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextGenerator as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextGenerator as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TextGenerator as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: TextGenerator,
-        initial_capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: TextGenerator, initial_capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextGenerator, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, initial_capacity, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -158,39 +114,27 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_i_disposable_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -203,39 +147,27 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "System.IDisposable.Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "System.IDisposable.Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn system_i_disposable_dispose(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn system_i_disposable_dispose(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_system_i_disposable_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_system_i_disposable_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_count_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -248,40 +180,29 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_characterCountVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_characterCountVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_character_count_visible(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_character_count_visible(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_character_count_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_character_count_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validated_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "ValidatedSettings",
@@ -293,18 +214,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "ValidatedSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "ValidatedSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn validated_settings(
@@ -312,16 +230,19 @@ mod __TextGenerator_unity2_raw {
         settings: crate::unity_engine::textgenerationsettings::TextGenerationSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::textgenerationsettings::TextGenerationSettings {
-        let inner : extern "C" fn (TextGenerator , crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_validated_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            TextGenerator,
+            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::textgenerationsettings::TextGenerationSettings =
+            ::core::mem::transmute(__lookup_validated_settings::get_method_info().method_ptr);
         inner(this, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invalidate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -334,43 +255,30 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Invalidate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Invalidate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invalidate(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn invalidate(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invalidate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invalidate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_characters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::uicharinfo::UICharInfo,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uicharinfo::UICharInfo,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetCharacters",
@@ -382,51 +290,37 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetCharacters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetCharacters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_characters(
         this: TextGenerator,
-        characters: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uicharinfo::UICharInfo,
-        >,
+        characters: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uicharinfo::UICharInfo>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TextGenerator,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uicharinfo::UICharInfo,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::uicharinfo::UICharInfo>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_characters::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_characters::get_method_info().method_ptr);
         inner(this, characters, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lines {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::uilineinfo::UILineInfo,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uilineinfo::UILineInfo,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetLines",
@@ -438,51 +332,37 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetLines",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetLines",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lines(
         this: TextGenerator,
-        lines: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uilineinfo::UILineInfo,
-        >,
+        lines: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uilineinfo::UILineInfo>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TextGenerator,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uilineinfo::UILineInfo,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::uilineinfo::UILineInfo>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lines::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_lines::get_method_info().method_ptr);
         inner(this, lines, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertices {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::uivertex::UIVertex,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::uivertex::UIVertex,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetVertices",
@@ -494,48 +374,38 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetVertices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetVertices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_vertices(
         this: TextGenerator,
-        vertices: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::uivertex::UIVertex,
-        >,
+        vertices: crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TextGenerator,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_vertices::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_vertices::get_method_info().method_ptr);
         inner(this, vertices, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_preferred_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetPreferredWidth",
@@ -547,18 +417,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetPreferredWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetPreferredWidth",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_preferred_width(
@@ -572,21 +439,18 @@ mod __TextGenerator_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_preferred_width::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_get_preferred_width::get_method_info().method_ptr);
         inner(this, str, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_preferred_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetPreferredHeight",
@@ -598,18 +462,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetPreferredHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetPreferredHeight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_preferred_height(
@@ -623,21 +484,19 @@ mod __TextGenerator_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_preferred_height::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_get_preferred_height::get_method_info().method_ptr);
         inner(this, str, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate_with_errors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "PopulateWithErrors",
@@ -649,18 +508,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "PopulateWithErrors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "PopulateWithErrors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_with_errors(
@@ -676,21 +532,18 @@ mod __TextGenerator_unity2_raw {
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_populate_with_errors::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_populate_with_errors::get_method_info().method_ptr);
         inner(this, str, settings, context, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "Populate",
@@ -702,18 +555,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Populate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Populate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate(
@@ -727,21 +577,18 @@ mod __TextGenerator_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_populate::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_populate::get_method_info().method_ptr);
         inner(this, str, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate_with_error {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "PopulateWithError",
@@ -753,18 +600,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "PopulateWithError",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "PopulateWithError",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_with_error(
@@ -778,23 +622,19 @@ mod __TextGenerator_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::textgenerationerror::TextGenerationError =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_populate_with_error::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::textgenerationerror::TextGenerationError =
+            ::core::mem::transmute(__lookup_populate_with_error::get_method_info().method_ptr);
         inner(this, str, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate_always {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "PopulateAlways",
@@ -806,18 +646,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "PopulateAlways",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "PopulateAlways",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_always(
@@ -831,22 +668,15 @@ mod __TextGenerator_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::textgenerationerror::TextGenerationError =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_populate_always::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::textgenerationerror::TextGenerationError =
+            ::core::mem::transmute(__lookup_populate_always::get_method_info().method_ptr);
         inner(this, str, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_verts {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -859,36 +689,34 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_verts",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_verts",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_verts(
         this: TextGenerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::unity_engine::uivertex::UIVertex,
-    > {
-        let inner : extern "C" fn (TextGenerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: uivertex :: UIVertex > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_verts :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::uivertex::UIVertex> {
+        let inner: extern "C" fn(
+            TextGenerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::uivertex::UIVertex,
+        > = ::core::mem::transmute(__lookup_get_verts::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_characters_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -901,36 +729,34 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_characters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_characters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_characters_2(
         this: TextGenerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::unity_engine::uicharinfo::UICharInfo,
-    > {
-        let inner : extern "C" fn (TextGenerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: uicharinfo :: UICharInfo > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_characters_2 :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::uicharinfo::UICharInfo> {
+        let inner: extern "C" fn(
+            TextGenerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::uicharinfo::UICharInfo,
+        > = ::core::mem::transmute(__lookup_get_characters_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lines_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -943,36 +769,34 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_lines",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_lines",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lines_2(
         this: TextGenerator,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::unity_engine::uilineinfo::UILineInfo,
-    > {
-        let inner : extern "C" fn (TextGenerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: uilineinfo :: UILineInfo > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_lines_2 :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::uilineinfo::UILineInfo> {
+        let inner: extern "C" fn(
+            TextGenerator,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::uilineinfo::UILineInfo,
+        > = ::core::mem::transmute(__lookup_get_lines_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_extents {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -985,41 +809,27 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_rectExtents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_rectExtents",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rect_extents(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rect::Rect {
-        let inner: extern "C" fn(
-            TextGenerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rect::Rect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_extents::get_offset() as isize),
-        );
+    pub unsafe fn get_rect_extents(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect {
+        let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> crate::unity_engine::rect::Rect =
+            ::core::mem::transmute(__lookup_get_rect_extents::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -1032,39 +842,27 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_characterCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_characterCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_character_count(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_character_count(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_character_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_character_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_line_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -1077,39 +875,27 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_lineCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_lineCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_line_count(
-        this: TextGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_line_count(this: TextGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TextGenerator, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_line_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_line_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
@@ -1122,40 +908,28 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn internal_create(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_create::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "Internal_Destroy",
@@ -1167,39 +941,27 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Internal_Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Internal_Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_destroy(
-        ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn internal_destroy(ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_destroy::get_method_info().method_ptr);
         inner(ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::font::Font as ::unity2::IlType>::il_type(),
@@ -1235,18 +997,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Populate_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Populate_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_internal(
@@ -1300,11 +1059,7 @@ mod __TextGenerator_unity2_raw {
             bool,
             *mut u32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_populate_internal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_populate_internal::get_method_info().method_ptr);
         inner(
             this,
             str,
@@ -1336,10 +1091,29 @@ mod __TextGenerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_populate_internal_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: font :: Font as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: fontstyle :: FontStyle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textanchor :: TextAnchor as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: textgenerationerror :: TextGenerationError as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::font::Font as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::fontstyle::FontStyle as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::verticalwrapmode::VerticalWrapMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::horizontalwrapmode::HorizontalWrapMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textanchor::TextAnchor as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::textgenerationerror::TextGenerationError as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "Populate_Internal",
@@ -1351,18 +1125,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Populate_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Populate_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_internal_2(
@@ -1412,11 +1183,7 @@ mod __TextGenerator_unity2_raw {
             bool,
             *mut crate::unity_engine::textgenerationerror::TextGenerationError,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_populate_internal_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_populate_internal_2::get_method_info().method_ptr);
         inner(
             this,
             str,
@@ -1446,11 +1213,8 @@ mod __TextGenerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertices_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetVerticesInternal",
@@ -1462,18 +1226,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetVerticesInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetVerticesInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_vertices_internal(
@@ -1481,26 +1242,16 @@ mod __TextGenerator_unity2_raw {
         vertices: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextGenerator,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_vertices_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextGenerator, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_vertices_internal::get_method_info().method_ptr);
         inner(this, vertices, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_characters_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetCharactersInternal",
@@ -1512,18 +1263,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetCharactersInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetCharactersInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_characters_internal(
@@ -1531,26 +1279,16 @@ mod __TextGenerator_unity2_raw {
         characters: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextGenerator,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_characters_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextGenerator, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_characters_internal::get_method_info().method_ptr);
         inner(this, characters, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lines_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "GetLinesInternal",
@@ -1562,18 +1300,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetLinesInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetLinesInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lines_internal(
@@ -1581,26 +1316,16 @@ mod __TextGenerator_unity2_raw {
         lines: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextGenerator,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lines_internal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextGenerator, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_lines_internal::get_method_info().method_ptr);
         inner(this, lines, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_extents_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerator as ::unity2::ClassIdentity>::class(),
                 "get_rectExtents_Injected",
@@ -1612,18 +1337,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "get_rectExtents_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "get_rectExtents_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rect_extents_injected(
@@ -1631,24 +1353,15 @@ mod __TextGenerator_unity2_raw {
         ret: *mut crate::unity_engine::rect::Rect,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextGenerator,
-            *mut crate::unity_engine::rect::Rect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_extents_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextGenerator, *mut crate::unity_engine::rect::Rect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_rect_extents_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_populate_internal_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::font::Font as ::unity2::IlType>::il_type(),
@@ -1684,18 +1397,15 @@ mod __TextGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerator as ::unity2::ClassIdentity>::NAME,
-                    "Populate_Internal_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerator as ::unity2::ClassIdentity>::NAME,
+                        "Populate_Internal_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn populate_internal_injected(
@@ -1749,11 +1459,7 @@ mod __TextGenerator_unity2_raw {
             bool,
             *mut u32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_populate_internal_injected::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_populate_internal_injected::get_method_info().method_ptr);
         inner(
             this,
             str,
@@ -1789,14 +1495,10 @@ impl TextGenerator {
     pub fn internal_create() -> ::unity2::IntPtr {
         unsafe { __TextGenerator_unity2_raw::internal_create(::core::option::Option::None) }
     }
+
     #[doc = "`Internal_Destroy(::unity2::IntPtr)` overload"]
     pub fn internal_destroy(ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            __TextGenerator_unity2_raw::internal_destroy(
-                ::core::convert::Into::into(ptr),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TextGenerator_unity2_raw::internal_destroy(::core::convert::Into::into(ptr), ::core::option::Option::None) }
     }
 }
 
@@ -1805,157 +1507,93 @@ pub trait ITextGeneratorMethods: ITextGenerator {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(i32)` overload"]
     fn ctor_2(self, initial_capacity: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(initial_capacity),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(initial_capacity), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`System.IDisposable.Dispose()` overload"]
     fn system_i_disposable_dispose(self) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::system_i_disposable_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::system_i_disposable_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_characterCountVisible()` overload"]
     fn get_character_count_visible(self) -> i32 {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_character_count_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_character_count_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ValidatedSettings(crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"]
     fn validated_settings(
         self,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
     ) -> crate::unity_engine::textgenerationsettings::TextGenerationSettings {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::validated_settings(
-                __receiver,
-                ::core::convert::Into::into(settings),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::validated_settings(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)
         }
     }
     #[doc = "`Invalidate()` overload"]
     fn invalidate(self) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::invalidate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCharacters(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uicharinfo::UICharInfo>)` overload"]
     fn get_characters(
         self,
-        characters: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uicharinfo::UICharInfo,
-            >,
-        >,
+        characters: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uicharinfo::UICharInfo>>,
     ) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_characters(
-                __receiver,
-                ::core::convert::Into::into(characters),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_characters(__receiver, ::core::convert::Into::into(characters), ::core::option::Option::None)
         }
     }
     #[doc = "`GetLines(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uilineinfo::UILineInfo>)` overload"]
     fn get_lines(
         self,
-        lines: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uilineinfo::UILineInfo,
-            >,
-        >,
+        lines: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uilineinfo::UILineInfo>>,
     ) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_lines(
-                __receiver,
-                ::core::convert::Into::into(lines),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_lines(__receiver, ::core::convert::Into::into(lines), ::core::option::Option::None)
         }
     }
     #[doc = "`GetVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]
     fn get_vertices(
         self,
-        vertices: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::uivertex::UIVertex,
-            >,
-        >,
+        vertices: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>>,
     ) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_vertices(
-                __receiver,
-                ::core::convert::Into::into(vertices),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_vertices(__receiver, ::core::convert::Into::into(vertices), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPreferredWidth(::unity2::Il2CppString, crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"]
     fn get_preferred_width(
         self,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
     ) -> f32 {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_preferred_width(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -1968,14 +1606,10 @@ pub trait ITextGeneratorMethods: ITextGenerator {
     fn get_preferred_height(
         self,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
     ) -> f32 {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_preferred_height(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -1988,15 +1622,11 @@ pub trait ITextGeneratorMethods: ITextGenerator {
     fn populate_with_errors(
         self,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
         context: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> bool {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::populate_with_errors(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -2010,14 +1640,10 @@ pub trait ITextGeneratorMethods: ITextGenerator {
     fn populate(
         self,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
     ) -> bool {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::populate(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -2030,14 +1656,10 @@ pub trait ITextGeneratorMethods: ITextGenerator {
     fn populate_with_error(
         self,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
     ) -> crate::unity_engine::textgenerationerror::TextGenerationError {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::populate_with_error(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -2050,14 +1672,10 @@ pub trait ITextGeneratorMethods: ITextGenerator {
     fn populate_always(
         self,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
-        settings: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
+        settings: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>,
     ) -> crate::unity_engine::textgenerationerror::TextGenerationError {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::populate_always(
                 __receiver,
                 ::core::convert::Into::into(str),
@@ -2067,71 +1685,46 @@ pub trait ITextGeneratorMethods: ITextGenerator {
         }
     }
     #[doc = "`get_verts()` overload"]
-    fn get_verts(
-        self,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::unity_engine::uivertex::UIVertex,
-    > {
+    fn get_verts(self) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::uivertex::UIVertex> {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_verts(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_characters()` overload"]
     fn get_characters_2(
         self,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::unity_engine::uicharinfo::UICharInfo,
-    > {
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::uicharinfo::UICharInfo> {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_characters_2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_lines()` overload"]
-    fn get_lines_2(
-        self,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::unity_engine::uilineinfo::UILineInfo,
-    > {
+    fn get_lines_2(self) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::uilineinfo::UILineInfo> {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_lines_2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_rectExtents()` overload"]
     fn get_rect_extents(self) -> crate::unity_engine::rect::Rect {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_rect_extents(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_characterCount()` overload"]
     fn get_character_count(self) -> i32 {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_character_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_character_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_lineCount()` overload"]
     fn get_line_count(self) -> i32 {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextGenerator_unity2_raw::get_line_count(__receiver, ::core::option::Option::None)
         }
     }
@@ -2161,9 +1754,7 @@ pub trait ITextGeneratorMethods: ITextGenerator {
         align_by_geometry: impl ::core::convert::Into<bool>,
     ) -> (bool, u32) {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
             let __ret = {
                 __TextGenerator_unity2_raw::populate_internal(
@@ -2210,29 +1801,18 @@ pub trait ITextGeneratorMethods: ITextGenerator {
         resize_text_for_best_fit: impl ::core::convert::Into<bool>,
         resize_text_min_size: impl ::core::convert::Into<i32>,
         resize_text_max_size: impl ::core::convert::Into<i32>,
-        vertical_over_flow: impl ::core::convert::Into<
-            crate::unity_engine::verticalwrapmode::VerticalWrapMode,
-        >,
-        horizontal_overflow: impl ::core::convert::Into<
-            crate::unity_engine::horizontalwrapmode::HorizontalWrapMode,
-        >,
+        vertical_over_flow: impl ::core::convert::Into<crate::unity_engine::verticalwrapmode::VerticalWrapMode>,
+        horizontal_overflow: impl ::core::convert::Into<crate::unity_engine::horizontalwrapmode::HorizontalWrapMode>,
         update_bounds: impl ::core::convert::Into<bool>,
         anchor: impl ::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>,
         extents: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
         pivot: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
         generate_out_of_bounds: impl ::core::convert::Into<bool>,
         align_by_geometry: impl ::core::convert::Into<bool>,
-    ) -> (
-        bool,
-        crate::unity_engine::textgenerationerror::TextGenerationError,
-    ) {
+    ) -> (bool, crate::unity_engine::textgenerationerror::TextGenerationError) {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::textgenerationerror::TextGenerationError,
-            >::uninit();
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::textgenerationerror::TextGenerationError>::uninit();
             let __ret = {
                 __TextGenerator_unity2_raw::populate_internal_2(
                     __receiver,
@@ -2263,65 +1843,32 @@ pub trait ITextGeneratorMethods: ITextGenerator {
         }
     }
     #[doc = "`GetVerticesInternal(crate::system::object::Object)` overload"]
-    fn get_vertices_internal(
-        self,
-        vertices: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn get_vertices_internal(self, vertices: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_vertices_internal(
-                __receiver,
-                ::core::convert::Into::into(vertices),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_vertices_internal(__receiver, ::core::convert::Into::into(vertices), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCharactersInternal(crate::system::object::Object)` overload"]
-    fn get_characters_internal(
-        self,
-        characters: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn get_characters_internal(self, characters: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_characters_internal(
-                __receiver,
-                ::core::convert::Into::into(characters),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_characters_internal(__receiver, ::core::convert::Into::into(characters), ::core::option::Option::None)
         }
     }
     #[doc = "`GetLinesInternal(crate::system::object::Object)` overload"]
-    fn get_lines_internal(
-        self,
-        lines: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn get_lines_internal(self, lines: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextGenerator_unity2_raw::get_lines_internal(
-                __receiver,
-                ::core::convert::Into::into(lines),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextGenerator_unity2_raw::get_lines_internal(__receiver, ::core::convert::Into::into(lines), ::core::option::Option::None)
         }
     }
     #[doc = "`get_rectExtents_Injected(*mutcrate::unity_engine::rect::Rect)` overload"]
     fn get_rect_extents_injected(self) -> crate::unity_engine::rect::Rect {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rect::Rect>::uninit();
-            __TextGenerator_unity2_raw::get_rect_extents_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __TextGenerator_unity2_raw::get_rect_extents_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -2350,11 +1897,8 @@ pub trait ITextGeneratorMethods: ITextGenerator {
         align_by_geometry: impl ::core::convert::Into<bool>,
     ) -> (bool, crate::unity_engine::color::Color, u32) {
         unsafe {
-            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
+            let __receiver = <TextGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::color::Color>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<u32>::uninit();
             let __ret = {
                 __TextGenerator_unity2_raw::populate_internal_injected(
@@ -2396,13 +1940,8 @@ impl<__T: ITextGenerator> ITextGeneratorMethods for __T {}
 impl TextGenerator {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextGenerator),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextGenerator), ::core::stringify!(new),));
         <Self as ITextGeneratorMethods>::ctor(this);
         this
     }
@@ -2424,9 +1963,7 @@ impl TextGenerator {
 #[cfg(feature = "unity_engine-textgenerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITextGenerator;
-    pub use super::ITextGeneratorMethods;
-    pub use super::TextGenerator;
+    pub use super::{ITextGenerator, ITextGeneratorMethods, TextGenerator};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

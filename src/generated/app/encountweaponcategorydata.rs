@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-encountweaponcategorydata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountweaponcategorydata/EncountWeaponCategoryData.md"))]
     #[::unity2::class(namespace = "App", name = "EncountWeaponCategoryData")]
@@ -28,9 +32,7 @@ mod __EncountWeaponCategoryData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -43,35 +45,26 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_iid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -84,43 +77,28 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "get_Iid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "get_Iid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_iid(
-        this: EncountWeaponCategoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            EncountWeaponCategoryData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_iid::get_offset() as isize),
-        );
+    pub unsafe fn get_iid(this: EncountWeaponCategoryData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_iid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_iid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
                 "set_Iid",
@@ -132,43 +110,27 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "set_Iid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "set_Iid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_iid(
-        this: EncountWeaponCategoryData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EncountWeaponCategoryData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_iid::get_offset() as isize),
-        );
+    pub unsafe fn set_iid(this: EncountWeaponCategoryData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_iid::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rank_condition_more {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -181,41 +143,28 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "get_RankConditionMore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "get_RankConditionMore",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rank_condition_more(
-        this: EncountWeaponCategoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_rank_condition_more(this: EncountWeaponCategoryData, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rank_condition_more::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rank_condition_more::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rank_condition_more {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
                 "set_RankConditionMore",
@@ -227,40 +176,27 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "set_RankConditionMore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "set_RankConditionMore",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rank_condition_more(
-        this: EncountWeaponCategoryData,
-        value: u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_rank_condition_more(this: EncountWeaponCategoryData, value: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(EncountWeaponCategoryData, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rank_condition_more::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_rank_condition_more::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rank_condition_less {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -273,41 +209,28 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "get_RankConditionLess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "get_RankConditionLess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rank_condition_less(
-        this: EncountWeaponCategoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_rank_condition_less(this: EncountWeaponCategoryData, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rank_condition_less::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rank_condition_less::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rank_condition_less {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
                 "set_RankConditionLess",
@@ -319,40 +242,27 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "set_RankConditionLess",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "set_RankConditionLess",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rank_condition_less(
-        this: EncountWeaponCategoryData,
-        value: u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_rank_condition_less(this: EncountWeaponCategoryData, value: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(EncountWeaponCategoryData, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rank_condition_less::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_rank_condition_less::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_percentage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -365,41 +275,28 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "get_Percentage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "get_Percentage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_percentage(
-        this: EncountWeaponCategoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u8 {
+    pub unsafe fn get_percentage(this: EncountWeaponCategoryData, __unity2_method_info: ::unity2::OptionalMethod) -> u8 {
         let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::OptionalMethod) -> u8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_percentage::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_percentage::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_percentage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
                 "set_Percentage",
@@ -411,40 +308,27 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "set_Percentage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "set_Percentage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_percentage(
-        this: EncountWeaponCategoryData,
-        value: u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_percentage(this: EncountWeaponCategoryData, value: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(EncountWeaponCategoryData, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_percentage::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_percentage::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -457,41 +341,27 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    "GetDebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        "GetDebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: EncountWeaponCategoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            EncountWeaponCategoryData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_name::get_offset() as isize),
-        );
+    pub unsafe fn get_debug_name(this: EncountWeaponCategoryData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EncountWeaponCategoryData as ::unity2::ClassIdentity>::class(),
@@ -504,30 +374,20 @@ mod __EncountWeaponCategoryData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EncountWeaponCategoryData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: EncountWeaponCategoryData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: EncountWeaponCategoryData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(EncountWeaponCategoryData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -546,49 +406,31 @@ pub trait IEncountWeaponCategoryDataMethods: IEncountWeaponCategoryData {
     fn get_iid(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::get_iid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::get_iid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Iid(::unity2::Il2CppString)` overload"]
     fn set_iid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::set_iid(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::set_iid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_RankConditionMore()` overload"]
     fn get_rank_condition_more(self) -> u8 {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::get_rank_condition_more(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::get_rank_condition_more(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_RankConditionMore(u8)` overload"]
     fn set_rank_condition_more(self, value: impl ::core::convert::Into<u8>) -> () {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EncountWeaponCategoryData_unity2_raw::set_rank_condition_more(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -600,22 +442,15 @@ pub trait IEncountWeaponCategoryDataMethods: IEncountWeaponCategoryData {
     fn get_rank_condition_less(self) -> u8 {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::get_rank_condition_less(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::get_rank_condition_less(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_RankConditionLess(u8)` overload"]
     fn set_rank_condition_less(self, value: impl ::core::convert::Into<u8>) -> () {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EncountWeaponCategoryData_unity2_raw::set_rank_condition_less(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -627,49 +462,31 @@ pub trait IEncountWeaponCategoryDataMethods: IEncountWeaponCategoryData {
     fn get_percentage(self) -> u8 {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::get_percentage(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::get_percentage(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Percentage(u8)` overload"]
     fn set_percentage(self, value: impl ::core::convert::Into<u8>) -> () {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::set_percentage(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::set_percentage(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EncountWeaponCategoryData_unity2_raw::get_debug_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EncountWeaponCategoryData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <EncountWeaponCategoryData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EncountWeaponCategoryData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -697,19 +514,17 @@ impl EncountWeaponCategoryData {
 #[cfg(feature = "app-encountweaponcategorydata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EncountWeaponCategoryData;
-    pub use super::IEncountWeaponCategoryData;
-    pub use super::IEncountWeaponCategoryDataMethods;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{EncountWeaponCategoryData, IEncountWeaponCategoryData, IEncountWeaponCategoryDataMethods};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

@@ -2,177 +2,42 @@
 
 #[cfg(feature = "tm_pro-tmp_inputfield-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::events::unityevent_1::{IUnityEvent_1, UnityEvent_1};
-    use crate::unity_engine::events::unityevent_3::{IUnityEvent_3, UnityEvent_3};
-    use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::selectable::{ISelectable, Selectable};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TouchScreenKeyboardEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard_Status >)]
-    pub struct TMP_InputField_TouchScreenKeyboardEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnValidateInput")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct TMP_InputField_OnValidateInput {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_CharacterValidation.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_InputField_CharacterValidation {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_InputField_CharacterValidation {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_InputField.CharacterValidation";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_InputField_CharacterValidation {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_InputField_CharacterValidation {
-        pub fn none() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn digit() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn integer() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn decimal() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn alphanumeric() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn name() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn regex() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn email_address() -> Self {
-            Self { value: 7 }
-        }
-
-        pub fn custom_validator() -> Self {
-            Self { value: 8 }
-        }
-    }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct TMP_InputField_EditState {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for TMP_InputField_EditState {
-        const NAMESPACE: &'static str = "TMPro";
-
-        const NAME: &'static str = "TMP_InputField.EditState";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for TMP_InputField_EditState {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl TMP_InputField_EditState {
-        pub fn r#continue() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn finish() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SelectionEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_SelectionEvent {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TextSelectionEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_3 :: UnityEvent_3 < :: unity2 :: Il2CppString , i32 , i32 >)]
-    pub struct TMP_InputField_TextSelectionEvent {}
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            events::{
+                unityevent_1::{IUnityEvent_1, UnityEvent_1},
+                unityevent_3::{IUnityEvent_3, UnityEvent_3},
+                unityeventbase::{IUnityEventBase, UnityEventBase},
+            },
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::selectable::{ISelectable, Selectable},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_LineType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TMP_InputField_LineType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TMP_InputField_LineType {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_InputField.LineType";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -183,10 +48,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_InputField_LineType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -204,23 +66,31 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnChangeEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_OnChangeEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SelectionEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+    pub struct TMP_InputField_SelectionEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TextSelectionEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_3 :: UnityEvent_3 < :: unity2 :: Il2CppString , i32 , i32 >)]
+    pub struct TMP_InputField_TextSelectionEvent {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_ContentType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TMP_InputField_ContentType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TMP_InputField_ContentType {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_InputField.ContentType";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -231,10 +101,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_InputField_ContentType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -282,21 +149,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_InputType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TMP_InputField_InputType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TMP_InputField_InputType {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_InputField.InputType";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -307,10 +167,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_InputField_InputType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -328,10 +185,77 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnChangeEvent")]
-    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-    pub struct TMP_InputField_OnChangeEvent {}
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_CharacterValidation.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TMP_InputField_CharacterValidation {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_InputField_CharacterValidation {
+        const NAME: &'static str = "TMP_InputField.CharacterValidation";
+        const NAMESPACE: &'static str = "TMPro";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_InputField_CharacterValidation {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TMP_InputField_CharacterValidation {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn digit() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn integer() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn decimal() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn alphanumeric() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn name() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn regex() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn email_address() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn custom_validator() -> Self {
+            Self { value: 8 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.TouchScreenKeyboardEvent")]
+    # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: touchscreenkeyboard :: TouchScreenKeyboard_Status >)]
+    pub struct TMP_InputField_TouchScreenKeyboardEvent {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.OnValidateInput")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct TMP_InputField_OnValidateInput {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_InputField")]
@@ -361,15 +285,13 @@ mod __types {
         #[rename(name = "m_VerticalScrollbar")]
         pub m_vertical_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
         #[rename(name = "m_VerticalScrollbarEventHandler")]
-        pub m_vertical_scrollbar_event_handler:
-            crate::tm_pro::tmp_scrollbareventhandler::TMP_ScrollbarEventHandler,
+        pub m_vertical_scrollbar_event_handler: crate::tm_pro::tmp_scrollbareventhandler::TMP_ScrollbarEventHandler,
         #[rename(name = "m_IsDrivenByLayoutComponents")]
         pub m_is_driven_by_layout_components: bool,
         #[rename(name = "m_LayoutGroup")]
         pub m_layout_group: crate::unity_engine::ui::layoutgroup::LayoutGroup,
         #[rename(name = "m_IScrollHandlerParent")]
-        pub m_i_scroll_handler_parent:
-            crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+        pub m_i_scroll_handler_parent: crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
         #[rename(name = "m_ScrollPosition")]
         pub m_scroll_position: f32,
         #[rename(name = "m_ScrollSensitivity")]
@@ -389,8 +311,7 @@ mod __types {
         #[rename(name = "m_HideSoftKeyboard")]
         pub m_hide_soft_keyboard: bool,
         #[rename(name = "m_CharacterValidation")]
-        pub m_character_validation:
-            crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
+        pub m_character_validation: crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
         #[rename(name = "m_RegexValue")]
         pub m_regex_value: ::unity2::Il2CppString,
         #[rename(name = "m_GlobalPointSize")]
@@ -408,13 +329,11 @@ mod __types {
         #[rename(name = "m_OnTextSelection")]
         pub m_on_text_selection: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
         #[rename(name = "m_OnEndTextSelection")]
-        pub m_on_end_text_selection:
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
+        pub m_on_end_text_selection: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
         #[rename(name = "m_OnValueChanged")]
         pub m_on_value_changed: crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent,
         #[rename(name = "m_OnTouchScreenKeyboardStatusChanged")]
-        pub m_on_touch_screen_keyboard_status_changed:
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent,
+        pub m_on_touch_screen_keyboard_status_changed: crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent,
         #[rename(name = "m_OnValidateInput")]
         pub m_on_validate_input: crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput,
         #[rename(name = "m_CaretColor")]
@@ -480,8 +399,7 @@ mod __types {
         #[rename(name = "m_HasDoneFocusTransition")]
         pub m_has_done_focus_transition: bool,
         #[rename(name = "m_WaitForSecondsRealtime")]
-        pub m_wait_for_seconds_realtime:
-            crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime,
+        pub m_wait_for_seconds_realtime: crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime,
         #[rename(name = "m_PreventCallback")]
         pub m_prevent_callback: bool,
         #[rename(name = "m_TouchKeyboardAllowsInPlaceEditing")]
@@ -539,6 +457,40 @@ mod __types {
         pub m_processing_event: crate::unity_engine::event::Event,
     }
 
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TMP_InputField_EditState {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for TMP_InputField_EditState {
+        const NAME: &'static str = "TMP_InputField.EditState";
+        const NAMESPACE: &'static str = "TMPro";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for TMP_InputField_EditState {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl TMP_InputField_EditState {
+        pub fn r#continue() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn finish() -> Self {
+            Self { value: 1 }
+        }
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputfield/TMP_InputField_SubmitEvent.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_InputField.SubmitEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
@@ -551,15 +503,227 @@ pub use __types::*;
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_OnChangeEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_OnChangeEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_OnChangeEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_OnChangeEventMethods: ITMP_InputField_OnChangeEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_InputField_OnChangeEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_OnChangeEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_OnChangeEvent> ITMP_InputField_OnChangeEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_OnChangeEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_OnChangeEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_OnChangeEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_SelectionEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_SelectionEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_SelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_SelectionEventMethods: ITMP_InputField_SelectionEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <TMP_InputField_SelectionEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_SelectionEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_SelectionEvent> ITMP_InputField_SelectionEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_SelectionEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_SelectionEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_SelectionEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TMP_InputField_TextSelectionEvent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: TMP_InputField_TextSelectionEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_TextSelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+pub trait ITMP_InputField_TextSelectionEventMethods: ITMP_InputField_TextSelectionEvent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_InputField_TextSelectionEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_InputField_TextSelectionEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl<__T: ITMP_InputField_TextSelectionEvent> ITMP_InputField_TextSelectionEventMethods for __T {}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+impl TMP_InputField_TextSelectionEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_InputField_TextSelectionEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_InputField_TextSelectionEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_inputfield")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::class(),
@@ -572,57 +736,39 @@ mod __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_InputField_TouchScreenKeyboardEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField_TouchScreenKeyboardEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: TMP_InputField_TouchScreenKeyboardEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField_TouchScreenKeyboardEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_TouchScreenKeyboardEventMethods:
-    ITMP_InputField_TouchScreenKeyboardEvent
-{
+pub trait ITMP_InputField_TouchScreenKeyboardEventMethods: ITMP_InputField_TouchScreenKeyboardEvent {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < TMP_InputField_TouchScreenKeyboardEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField_TouchScreenKeyboardEvent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TMP_InputField_TouchScreenKeyboardEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_TouchScreenKeyboardEvent> ITMP_InputField_TouchScreenKeyboardEventMethods
-    for __T
-{
-}
+impl<__T: ITMP_InputField_TouchScreenKeyboardEvent> ITMP_InputField_TouchScreenKeyboardEventMethods for __T {}
 
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 impl TMP_InputField_TouchScreenKeyboardEvent {
@@ -649,9 +795,7 @@ mod __TMP_InputField_OnValidateInput_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -667,18 +811,15 @@ mod __TMP_InputField_OnValidateInput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -687,25 +828,15 @@ mod __TMP_InputField_OnValidateInput_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField_OnValidateInput,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField_OnValidateInput, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -722,18 +853,15 @@ mod __TMP_InputField_OnValidateInput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_OnValidateInput as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -743,17 +871,8 @@ mod __TMP_InputField_OnValidateInput_unity2_raw {
         added_char: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> u16 {
-        let inner: extern "C" fn(
-            TMP_InputField_OnValidateInput,
-            ::unity2::Il2CppString,
-            i32,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField_OnValidateInput, ::unity2::Il2CppString, i32, u16, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, text, char_index, added_char, __unity2_method_info)
     }
 }
@@ -761,16 +880,10 @@ mod __TMP_InputField_OnValidateInput_unity2_raw {
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 pub trait ITMP_InputField_OnValidateInputMethods: ITMP_InputField_OnValidateInput {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_OnValidateInput_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -788,9 +901,7 @@ pub trait ITMP_InputField_OnValidateInputMethods: ITMP_InputField_OnValidateInpu
     ) -> u16 {
         unsafe {
             let __receiver =
-                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_InputField_OnValidateInput as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_OnValidateInput_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -824,281 +935,13 @@ impl TMP_InputField_OnValidateInput {
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_SelectionEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_SelectionEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_InputField_SelectionEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TMP_InputField_SelectionEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_SelectionEventMethods: ITMP_InputField_SelectionEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_SelectionEvent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_InputField_SelectionEvent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_SelectionEvent> ITMP_InputField_SelectionEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_SelectionEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_SelectionEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_SelectionEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_TextSelectionEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_TextSelectionEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_InputField_TextSelectionEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField_TextSelectionEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_TextSelectionEventMethods: ITMP_InputField_TextSelectionEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_TextSelectionEvent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_InputField_TextSelectionEvent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_TextSelectionEvent> ITMP_InputField_TextSelectionEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_TextSelectionEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_TextSelectionEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_TextSelectionEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TMP_InputField_OnChangeEvent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_OnChangeEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TMP_InputField_OnChangeEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(TMP_InputField_OnChangeEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-pub trait ITMP_InputField_OnChangeEventMethods: ITMP_InputField_OnChangeEvent {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <TMP_InputField_OnChangeEvent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TMP_InputField_OnChangeEvent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl<__T: ITMP_InputField_OnChangeEvent> ITMP_InputField_OnChangeEventMethods for __T {}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-impl TMP_InputField_OnChangeEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_InputField_OnChangeEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_InputField_OnChangeEventMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_inputfield")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __TMP_InputField_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_input_system {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1111,42 +954,30 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_inputSystem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_inputSystem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_input_system(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::event_systems::baseinput::BaseInput {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::event_systems::baseinput::BaseInput = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_input_system::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::event_systems::baseinput::BaseInput =
+            ::core::mem::transmute(__lookup_get_input_system::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_composition_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1159,41 +990,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_compositionString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_compositionString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_composition_string(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_composition_string::get_offset() as isize),
-        );
+    pub unsafe fn get_composition_string(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_composition_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_composition_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1206,39 +1023,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_compositionLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_compositionLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_composition_length(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_composition_length(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_composition_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_composition_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1251,36 +1056,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1293,41 +1089,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_mesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_mesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mesh(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mesh::get_offset() as isize),
-        );
+    pub unsafe fn get_mesh(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_should_hide_mobile_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1340,41 +1122,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_shouldHideMobileInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_shouldHideMobileInput",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_should_hide_mobile_input(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_should_hide_mobile_input(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_should_hide_mobile_input::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_should_hide_mobile_input::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_should_hide_mobile_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_shouldHideMobileInput",
@@ -1386,40 +1155,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_shouldHideMobileInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_shouldHideMobileInput",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_should_hide_mobile_input(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_should_hide_mobile_input(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_should_hide_mobile_input::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_should_hide_mobile_input::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_should_hide_soft_keyboard {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1432,41 +1188,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_shouldHideSoftKeyboard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_shouldHideSoftKeyboard",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_should_hide_soft_keyboard(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_should_hide_soft_keyboard(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_should_hide_soft_keyboard::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_should_hide_soft_keyboard::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_should_hide_soft_keyboard {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_shouldHideSoftKeyboard",
@@ -1478,40 +1221,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_shouldHideSoftKeyboard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_shouldHideSoftKeyboard",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_should_hide_soft_keyboard(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_should_hide_soft_keyboard(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_should_hide_soft_keyboard::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_should_hide_soft_keyboard::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_keyboard_using_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1524,39 +1254,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "isKeyboardUsingEvents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "isKeyboardUsingEvents",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_keyboard_using_events(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_keyboard_using_events(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_keyboard_using_events::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_keyboard_using_events::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1569,43 +1287,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_text",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_text",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_text(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text::get_offset() as isize),
-        );
+    pub unsafe fn get_text(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_text",
@@ -1617,45 +1320,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_text",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_text",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_text(
-        this: TMP_InputField,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text::get_offset() as isize),
-        );
+    pub unsafe fn set_text(this: TMP_InputField, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_without_notify {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "SetTextWithoutNotify",
@@ -1667,43 +1353,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetTextWithoutNotify",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetTextWithoutNotify",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_text_without_notify(
-        this: TMP_InputField,
-        input: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_without_notify::get_offset() as isize),
-        );
+    pub unsafe fn set_text_without_notify(this: TMP_InputField, input: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text_without_notify::get_method_info().method_ptr);
         inner(this, input, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1719,18 +1389,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text_2(
@@ -1739,25 +1406,15 @@ mod __TMP_InputField_unity2_raw {
         send_callback: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text_2::get_method_info().method_ptr);
         inner(this, value, send_callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_focused {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1770,39 +1427,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_isFocused",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_isFocused",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_focused(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_focused(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_focused::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_focused::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_blink_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1815,41 +1460,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_caretBlinkRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_caretBlinkRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_caret_blink_rate(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_caret_blink_rate(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_caret_blink_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_caret_blink_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_blink_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_caretBlinkRate",
@@ -1861,40 +1493,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_caretBlinkRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_caretBlinkRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_blink_rate(
-        this: TMP_InputField,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_blink_rate(this: TMP_InputField, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_blink_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_blink_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1907,41 +1526,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_caretWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_caretWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_caret_width(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_caret_width(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_caret_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_caret_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_caretWidth",
@@ -1953,40 +1559,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_caretWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_caretWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_width(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_width(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_width::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -1999,44 +1592,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_textViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_textViewport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_text_viewport(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_viewport::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
+            ::core::mem::transmute(__lookup_get_text_viewport::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_textViewport",
@@ -2048,18 +1629,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_textViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_textViewport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text_viewport(
@@ -2067,24 +1645,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::unity_engine::recttransform::RectTransform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::recttransform::RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_viewport::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::recttransform::RectTransform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text_viewport::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text_component {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2097,43 +1666,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_textComponent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_textComponent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_text_component(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_text::TMP_Text {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_text::TMP_Text = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_component::get_offset() as isize),
-        );
+    pub unsafe fn get_text_component(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::tmp_text::TMP_Text {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_text::TMP_Text =
+            ::core::mem::transmute(__lookup_get_text_component::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_component {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_textComponent",
@@ -2145,18 +1699,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_textComponent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_textComponent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text_component(
@@ -2164,24 +1715,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text_component::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_text_component::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_placeholder {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2194,43 +1736,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_placeholder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_placeholder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_placeholder(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::ui::graphic::Graphic {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::graphic::Graphic = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_placeholder::get_offset() as isize),
-        );
+    pub unsafe fn get_placeholder(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::ui::graphic::Graphic {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::ui::graphic::Graphic =
+            ::core::mem::transmute(__lookup_get_placeholder::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_placeholder {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::ui::graphic::Graphic as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::ui::graphic::Graphic as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_placeholder",
@@ -2242,18 +1769,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_placeholder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_placeholder",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_placeholder(
@@ -2261,24 +1785,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::unity_engine::ui::graphic::Graphic,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::ui::graphic::Graphic,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_placeholder::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::ui::graphic::Graphic, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_placeholder::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertical_scrollbar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2291,41 +1806,30 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_verticalScrollbar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_verticalScrollbar",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_vertical_scrollbar(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::ui::scrollbar::Scrollbar {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::scrollbar::Scrollbar = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_vertical_scrollbar::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::ui::scrollbar::Scrollbar =
+            ::core::mem::transmute(__lookup_get_vertical_scrollbar::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vertical_scrollbar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::ui::scrollbar::Scrollbar as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2339,18 +1843,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_verticalScrollbar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_verticalScrollbar",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_vertical_scrollbar(
@@ -2358,24 +1859,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::unity_engine::ui::scrollbar::Scrollbar,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::ui::scrollbar::Scrollbar,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_vertical_scrollbar::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::ui::scrollbar::Scrollbar, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_vertical_scrollbar::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scroll_sensitivity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2388,41 +1880,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_scrollSensitivity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_scrollSensitivity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scroll_sensitivity(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_scroll_sensitivity(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_scroll_sensitivity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_scroll_sensitivity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scroll_sensitivity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_scrollSensitivity",
@@ -2434,40 +1913,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_scrollSensitivity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_scrollSensitivity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_scroll_sensitivity(
-        this: TMP_InputField,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_scroll_sensitivity(this: TMP_InputField, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_scroll_sensitivity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_scroll_sensitivity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2480,43 +1946,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_caretColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_caretColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_caret_color(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_caret_color::get_offset() as isize),
-        );
+    pub unsafe fn get_caret_color(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_caret_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_caretColor",
@@ -2528,18 +1979,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_caretColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_caretColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_caret_color(
@@ -2547,24 +1995,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_caret_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_caret_color::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_caret_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2577,41 +2016,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_customCaretColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_customCaretColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_custom_caret_color(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_custom_caret_color(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_custom_caret_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_custom_caret_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_custom_caret_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_customCaretColor",
@@ -2623,40 +2049,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_customCaretColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_customCaretColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_custom_caret_color(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_custom_caret_color(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_custom_caret_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_custom_caret_color::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selection_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2669,43 +2082,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_selectionColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_selectionColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selection_color(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_selection_color::get_offset() as isize),
-        );
+    pub unsafe fn get_selection_color(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_selection_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_selection_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_selectionColor",
@@ -2717,18 +2115,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_selectionColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_selectionColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_selection_color(
@@ -2736,24 +2131,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_selection_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_selection_color::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_end_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2766,43 +2152,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onEndEdit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onEndEdit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_end_edit(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_on_end_edit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent =
+            ::core::mem::transmute(__lookup_get_on_end_edit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_end_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_SubmitEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onEndEdit",
@@ -2814,18 +2189,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onEndEdit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onEndEdit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_end_edit(
@@ -2833,24 +2205,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_end_edit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_end_edit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_submit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2863,43 +2226,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onSubmit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onSubmit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_submit(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_on_submit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent =
+            ::core::mem::transmute(__lookup_get_on_submit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_submit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_SubmitEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onSubmit",
@@ -2911,18 +2263,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onSubmit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onSubmit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_submit(
@@ -2930,24 +2279,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_submit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_submit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -2960,44 +2300,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_select(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_on_select::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent =
+            ::core::mem::transmute(__lookup_get_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_SelectionEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onSelect",
@@ -3009,18 +2337,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_select(
@@ -3028,24 +2353,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_select::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_select::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_deselect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3058,44 +2374,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onDeselect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onDeselect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_deselect(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_on_deselect::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent =
+            ::core::mem::transmute(__lookup_get_on_deselect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_deselect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_SelectionEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onDeselect",
@@ -3107,18 +2411,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onDeselect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onDeselect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_deselect(
@@ -3126,24 +2427,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_deselect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_deselect::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_text_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3156,35 +2448,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onTextSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onTextSelection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_text_selection(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent {
-        let inner : extern "C" fn (TMP_InputField , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_inputfield :: TMP_InputField_TextSelectionEvent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_on_text_selection :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent =
+            ::core::mem::transmute(__lookup_get_on_text_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_text_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_TextSelectionEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onTextSelection",
@@ -3196,18 +2485,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onTextSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onTextSelection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_text_selection(
@@ -3215,24 +2501,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_text_selection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_text_selection::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_end_text_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3245,35 +2522,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onEndTextSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onEndTextSelection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_end_text_selection(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent {
-        let inner : extern "C" fn (TMP_InputField , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_inputfield :: TMP_InputField_TextSelectionEvent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_on_end_text_selection :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent =
+            ::core::mem::transmute(__lookup_get_on_end_text_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_end_text_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_TextSelectionEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onEndTextSelection",
@@ -3285,18 +2559,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onEndTextSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onEndTextSelection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_end_text_selection(
@@ -3304,24 +2575,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_end_text_selection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_end_text_selection::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_value_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3334,43 +2596,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onValueChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onValueChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_value_changed(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_on_value_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent =
+            ::core::mem::transmute(__lookup_get_on_value_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_value_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_OnChangeEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onValueChanged",
@@ -3382,18 +2633,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onValueChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onValueChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_value_changed(
@@ -3401,24 +2649,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_value_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_value_changed::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_touch_screen_keyboard_status_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3431,35 +2670,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onTouchScreenKeyboardStatusChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onTouchScreenKeyboardStatusChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_touch_screen_keyboard_status_changed(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent {
-        let inner : extern "C" fn (TMP_InputField , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_inputfield :: TMP_InputField_TouchScreenKeyboardEvent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_on_touch_screen_keyboard_status_changed :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent =
+            ::core::mem::transmute(__lookup_get_on_touch_screen_keyboard_status_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_touch_screen_keyboard_status_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_TouchScreenKeyboardEvent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onTouchScreenKeyboardStatusChanged",
@@ -3471,18 +2707,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onTouchScreenKeyboardStatusChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onTouchScreenKeyboardStatusChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_touch_screen_keyboard_status_changed(
@@ -3494,22 +2727,14 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_set_on_touch_screen_keyboard_status_changed::get_offset() as isize,
-                ),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_on_touch_screen_keyboard_status_changed::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_validate_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3522,44 +2747,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onValidateInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onValidateInput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_on_validate_input(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_on_validate_input::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput =
+            ::core::mem::transmute(__lookup_get_on_validate_input::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_validate_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_OnValidateInput as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onValidateInput",
@@ -3571,18 +2784,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onValidateInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onValidateInput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_on_validate_input(
@@ -3590,24 +2800,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_on_validate_input::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_on_validate_input::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3620,41 +2821,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_characterLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_characterLimit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_character_limit(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_character_limit(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_character_limit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_character_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_character_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_characterLimit",
@@ -3666,40 +2854,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_characterLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_characterLimit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_character_limit(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_character_limit(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_character_limit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_character_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_point_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3712,41 +2887,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_pointSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_pointSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_point_size(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_point_size(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_point_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_point_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_point_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_pointSize",
@@ -3758,40 +2920,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_pointSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_pointSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_point_size(
-        this: TMP_InputField,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_point_size(this: TMP_InputField, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_point_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_point_size::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3804,41 +2953,30 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_fontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_fontAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_font_asset(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_font_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset =
+            ::core::mem::transmute(__lookup_get_font_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3852,18 +2990,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_fontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_fontAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_font_asset(
@@ -3871,24 +3006,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_font_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_fontasset::TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_font_asset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_on_focus_select_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3901,41 +3027,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_onFocusSelectAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_onFocusSelectAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_on_focus_select_all(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_on_focus_select_all(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_on_focus_select_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_on_focus_select_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_on_focus_select_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_onFocusSelectAll",
@@ -3947,40 +3060,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_onFocusSelectAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_onFocusSelectAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_on_focus_select_all(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_on_focus_select_all(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_on_focus_select_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_on_focus_select_all::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reset_on_de_activation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -3993,41 +3093,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_resetOnDeActivation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_resetOnDeActivation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reset_on_de_activation(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_reset_on_de_activation(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reset_on_de_activation::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_reset_on_de_activation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_reset_on_de_activation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_resetOnDeActivation",
@@ -4039,40 +3126,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_resetOnDeActivation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_resetOnDeActivation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_reset_on_de_activation(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_reset_on_de_activation(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_reset_on_de_activation::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_reset_on_de_activation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_restore_original_text_on_escape {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4085,41 +3159,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_restoreOriginalTextOnEscape",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_restoreOriginalTextOnEscape",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_restore_original_text_on_escape(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_restore_original_text_on_escape(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_restore_original_text_on_escape::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_restore_original_text_on_escape::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_restore_original_text_on_escape {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_restoreOriginalTextOnEscape",
@@ -4131,40 +3192,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_restoreOriginalTextOnEscape",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_restoreOriginalTextOnEscape",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_restore_original_text_on_escape(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_restore_original_text_on_escape(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_restore_original_text_on_escape::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_restore_original_text_on_escape::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_rich_text_editing_allowed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4177,41 +3225,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_isRichTextEditingAllowed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_isRichTextEditingAllowed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_rich_text_editing_allowed(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_rich_text_editing_allowed(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_rich_text_editing_allowed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_rich_text_editing_allowed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_rich_text_editing_allowed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_isRichTextEditingAllowed",
@@ -4223,40 +3258,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_isRichTextEditingAllowed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_isRichTextEditingAllowed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_rich_text_editing_allowed(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_rich_text_editing_allowed(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_rich_text_editing_allowed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_rich_text_editing_allowed::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_content_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4269,43 +3291,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_contentType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_contentType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_content_type(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_content_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType =
+            ::core::mem::transmute(__lookup_get_content_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_content_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_ContentType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_contentType",
@@ -4317,18 +3328,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_contentType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_contentType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_content_type(
@@ -4336,24 +3344,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_content_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_content_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_line_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4366,43 +3365,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_lineType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_lineType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_line_type(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_LineType {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_LineType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_line_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_LineType =
+            ::core::mem::transmute(__lookup_get_line_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_line_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_LineType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_LineType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_lineType",
@@ -4414,18 +3402,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_lineType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_lineType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_line_type(
@@ -4433,24 +3418,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_LineType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_LineType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_line_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_LineType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_line_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_line_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4463,41 +3439,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_lineLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_lineLimit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_line_limit(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_line_limit(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_line_limit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_line_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_line_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_lineLimit",
@@ -4509,40 +3472,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_lineLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_lineLimit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_line_limit(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_line_limit(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_line_limit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_line_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_input_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4555,43 +3505,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_inputType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_inputType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_input_type(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_InputType {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_InputType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_input_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_InputType =
+            ::core::mem::transmute(__lookup_get_input_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_input_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_InputType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_InputType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_inputType",
@@ -4603,18 +3542,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_inputType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_inputType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_input_type(
@@ -4622,24 +3558,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_InputType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_InputType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_input_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_InputType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_input_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_keyboard_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4652,35 +3579,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_keyboardType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_keyboardType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_keyboard_type(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType {
-        let inner : extern "C" fn (TMP_InputField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: touchscreenkeyboardtype :: TouchScreenKeyboardType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_keyboard_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType =
+            ::core::mem::transmute(__lookup_get_keyboard_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_keyboard_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: touchscreenkeyboardtype :: TouchScreenKeyboardType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_keyboardType",
@@ -4692,18 +3616,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_keyboardType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_keyboardType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_keyboard_type(
@@ -4715,20 +3636,14 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_keyboard_type::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_keyboard_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_validation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4741,35 +3656,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_characterValidation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_characterValidation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_character_validation(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation {
-        let inner : extern "C" fn (TMP_InputField , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_inputfield :: TMP_InputField_CharacterValidation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_character_validation :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation =
+            ::core::mem::transmute(__lookup_get_character_validation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_character_validation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_CharacterValidation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_characterValidation",
@@ -4781,18 +3693,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_characterValidation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_characterValidation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_character_validation(
@@ -4800,24 +3709,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_character_validation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_character_validation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_input_validator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4830,42 +3730,32 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_inputValidator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_inputValidator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_input_validator(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_inputvalidator::TMP_InputValidator {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_inputvalidator::TMP_InputValidator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_input_validator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_inputvalidator::TMP_InputValidator =
+            ::core::mem::transmute(__lookup_get_input_validator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_input_validator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputvalidator :: TMP_InputValidator as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputvalidator::TMP_InputValidator as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_inputValidator",
@@ -4877,18 +3767,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_inputValidator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_inputValidator",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_input_validator(
@@ -4896,24 +3783,15 @@ mod __TMP_InputField_unity2_raw {
         value: crate::tm_pro::tmp_inputvalidator::TMP_InputValidator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputvalidator::TMP_InputValidator,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_input_validator::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputvalidator::TMP_InputValidator, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_input_validator::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_read_only {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -4926,41 +3804,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_readOnly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_readOnly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_read_only(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_read_only(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_read_only::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_read_only::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_read_only {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_readOnly",
@@ -4972,40 +3837,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_readOnly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_readOnly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_read_only(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_read_only(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_read_only::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_read_only::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rich_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5018,41 +3870,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_richText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_richText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rich_text(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_rich_text(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rich_text::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rich_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rich_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_richText",
@@ -5064,40 +3903,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_richText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_richText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rich_text(
-        this: TMP_InputField,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_rich_text(this: TMP_InputField, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rich_text::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_rich_text::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_multi_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5110,39 +3936,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_multiLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_multiLine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_multi_line(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_multi_line(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_multi_line::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_multi_line::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_asterisk_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5155,41 +3969,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_asteriskChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_asteriskChar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_asterisk_char(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_asterisk_char(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_asterisk_char::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_asterisk_char::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_asterisk_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_asteriskChar",
@@ -5201,40 +4002,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_asteriskChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_asteriskChar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_asterisk_char(
-        this: TMP_InputField,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_asterisk_char(this: TMP_InputField, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_asterisk_char::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_asterisk_char::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_was_canceled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5247,41 +4035,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_wasCanceled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_wasCanceled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_was_canceled(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_was_canceled(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_was_canceled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_was_canceled::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clamp_string_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "ClampStringPos",
@@ -5293,42 +4068,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ClampStringPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ClampStringPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clamp_string_pos(
-        this: TMP_InputField,
-        pos: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clamp_string_pos(this: TMP_InputField, pos: *mut i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, *mut i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clamp_string_pos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clamp_string_pos::get_method_info().method_ptr);
         inner(this, pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clamp_caret_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "ClampCaretPos",
@@ -5340,40 +4101,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ClampCaretPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ClampCaretPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clamp_caret_pos(
-        this: TMP_InputField,
-        pos: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clamp_caret_pos(this: TMP_InputField, pos: *mut i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, *mut i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clamp_caret_pos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clamp_caret_pos::get_method_info().method_ptr);
         inner(this, pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5386,41 +4134,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_caretPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_caretPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_caret_position_internal(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_caret_position_internal(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_caret_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_caret_position_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_caretPositionInternal",
@@ -5432,40 +4167,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_caretPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_caretPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_position_internal(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_position_internal(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_position_internal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5478,41 +4200,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_stringPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_stringPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_string_position_internal(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_string_position_internal(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_string_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_string_position_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_string_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_stringPositionInternal",
@@ -5524,40 +4233,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_stringPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_stringPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_string_position_internal(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_string_position_internal(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_string_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_string_position_internal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_select_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5570,41 +4266,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_caretSelectPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_caretSelectPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_caret_select_position_internal(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_caret_select_position_internal(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_caret_select_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_caret_select_position_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_select_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_caretSelectPositionInternal",
@@ -5616,40 +4299,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_caretSelectPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_caretSelectPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_select_position_internal(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_select_position_internal(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_select_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_select_position_internal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string_select_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5662,41 +4332,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_stringSelectPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_stringSelectPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_string_select_position_internal(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_string_select_position_internal(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_string_select_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_string_select_position_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_string_select_position_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_stringSelectPositionInternal",
@@ -5708,40 +4365,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_stringSelectPositionInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_stringSelectPositionInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_string_select_position_internal(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_string_select_position_internal(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_string_select_position_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_string_select_position_internal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5754,39 +4398,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_hasSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_hasSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_selection(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_selection(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5799,41 +4431,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_caretPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_caretPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_caret_position(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_caret_position(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_caret_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_caret_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_caretPosition",
@@ -5845,40 +4464,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_caretPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_caretPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_position(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_position(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selection_anchor_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5891,41 +4497,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_selectionAnchorPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_selectionAnchorPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selection_anchor_position(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selection_anchor_position(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selection_anchor_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selection_anchor_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_selection_anchor_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_selectionAnchorPosition",
@@ -5937,40 +4530,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_selectionAnchorPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_selectionAnchorPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_selection_anchor_position(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_selection_anchor_position(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_selection_anchor_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_selection_anchor_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selection_focus_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -5983,41 +4563,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_selectionFocusPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_selectionFocusPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selection_focus_position(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selection_focus_position(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selection_focus_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selection_focus_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_selection_focus_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_selectionFocusPosition",
@@ -6029,40 +4596,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_selectionFocusPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_selectionFocusPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_selection_focus_position(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_selection_focus_position(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_selection_focus_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_selection_focus_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6075,41 +4629,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_stringPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_stringPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_string_position(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_string_position(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_string_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_string_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_string_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_stringPosition",
@@ -6121,40 +4662,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_stringPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_stringPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_string_position(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_string_position(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_string_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_string_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selection_string_anchor_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6167,41 +4695,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_selectionStringAnchorPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_selectionStringAnchorPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selection_string_anchor_position(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selection_string_anchor_position(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selection_string_anchor_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selection_string_anchor_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_selection_string_anchor_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_selectionStringAnchorPosition",
@@ -6213,40 +4728,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_selectionStringAnchorPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_selectionStringAnchorPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_selection_string_anchor_position(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_selection_string_anchor_position(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_selection_string_anchor_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_selection_string_anchor_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selection_string_focus_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6259,41 +4761,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_selectionStringFocusPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_selectionStringFocusPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selection_string_focus_position(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selection_string_focus_position(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selection_string_focus_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selection_string_focus_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_selection_string_focus_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_selectionStringFocusPosition",
@@ -6305,40 +4794,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_selectionStringFocusPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_selectionStringFocusPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_selection_string_focus_position(
-        this: TMP_InputField,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_selection_string_focus_position(this: TMP_InputField, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_selection_string_focus_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_selection_string_focus_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6351,39 +4827,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6396,41 +4860,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_text_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "ON_TEXT_CHANGED",
@@ -6442,18 +4893,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ON_TEXT_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ON_TEXT_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_text_changed(
@@ -6461,24 +4909,15 @@ mod __TMP_InputField_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_text_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_text_changed::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_caret_blink {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6491,41 +4930,30 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "CaretBlink",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "CaretBlink",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn caret_blink(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_caret_blink::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_caret_blink::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6538,39 +4966,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetCaretVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetCaretVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_visible(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_visible(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caret_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6583,39 +4999,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetCaretActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetCaretActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caret_active(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_caret_active(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_caret_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_caret_active::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_focus {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6628,39 +5032,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnFocus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnFocus",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_focus(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_focus(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_focus::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_focus::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6673,41 +5065,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SelectAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SelectAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn select_all(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn select_all(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_select_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_text_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveTextEnd",
@@ -6719,42 +5098,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveTextEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveTextEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_text_end(
-        this: TMP_InputField,
-        shift: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_text_end(this: TMP_InputField, shift: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_text_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_text_end::get_method_info().method_ptr);
         inner(this, shift, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_text_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveTextStart",
@@ -6766,44 +5131,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveTextStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveTextStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_text_start(
-        this: TMP_InputField,
-        shift: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_text_start(this: TMP_InputField, shift: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_text_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_text_start::get_method_info().method_ptr);
         inner(this, shift, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_to_end_of_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveToEndOfLine",
@@ -6815,45 +5165,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveToEndOfLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveToEndOfLine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_to_end_of_line(
-        this: TMP_InputField,
-        shift: bool,
-        ctrl: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_to_end_of_line(this: TMP_InputField, shift: bool, ctrl: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_to_end_of_line::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_to_end_of_line::get_method_info().method_ptr);
         inner(this, shift, ctrl, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_to_start_of_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveToStartOfLine",
@@ -6865,41 +5199,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveToStartOfLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveToStartOfLine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_to_start_of_line(
-        this: TMP_InputField,
-        shift: bool,
-        ctrl: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_to_start_of_line(this: TMP_InputField, shift: bool, ctrl: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_to_start_of_line::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_to_start_of_line::get_method_info().method_ptr);
         inner(this, shift, ctrl, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clipboard {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -6912,40 +5232,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_clipboard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_clipboard",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clipboard(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_clipboard(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_clipboard::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_clipboard::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_clipboard {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "set_clipboard",
@@ -6957,39 +5265,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "set_clipboard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "set_clipboard",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_clipboard(
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_clipboard(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_clipboard::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_clipboard::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_in_place_editing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7002,39 +5298,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "InPlaceEditing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "InPlaceEditing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn in_place_editing(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn in_place_editing(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_in_place_editing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_in_place_editing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_string_position_from_keyboard {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7047,39 +5331,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UpdateStringPositionFromKeyboard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UpdateStringPositionFromKeyboard",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_string_position_from_keyboard(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_string_position_from_keyboard(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_string_position_from_keyboard::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_string_position_from_keyboard::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7092,40 +5364,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "LateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "LateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn late_update(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn late_update(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_may_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MayDrag",
@@ -7137,18 +5398,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MayDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MayDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn may_drag(
@@ -7160,21 +5418,16 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_may_drag::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_may_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_begin_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnBeginDrag",
@@ -7186,18 +5439,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnBeginDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnBeginDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_begin_drag(
@@ -7209,21 +5459,16 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_begin_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_begin_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnDrag",
@@ -7235,18 +5480,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_drag(
@@ -7258,21 +5500,16 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mouse_drag_outside_rect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MouseDragOutsideRect",
@@ -7284,18 +5521,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MouseDragOutsideRect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MouseDragOutsideRect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn mouse_drag_outside_rect(
@@ -7307,21 +5541,17 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mouse_drag_outside_rect::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_mouse_drag_outside_rect::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_end_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnEndDrag",
@@ -7333,18 +5563,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnEndDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnEndDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_end_drag(
@@ -7356,21 +5583,16 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_end_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_end_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnPointerDown",
@@ -7382,18 +5604,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerDown",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_down(
@@ -7405,22 +5624,15 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_down::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_down::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_pressed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event::Event as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::event::Event as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "KeyPressed",
@@ -7432,18 +5644,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "KeyPressed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "KeyPressed",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn key_pressed(
@@ -7455,23 +5664,15 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event::Event,
             ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::tmp_inputfield::TMP_InputField_EditState = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_key_pressed::get_offset() as isize),
-        );
+        ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_EditState = ::core::mem::transmute(__lookup_key_pressed::get_method_info().method_ptr);
         inner(this, evt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid_char {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "IsValidChar",
@@ -7483,42 +5684,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "IsValidChar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "IsValidChar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid_char(
-        this: TMP_InputField,
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid_char(this: TMP_InputField, c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_InputField, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid_char::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid_char::get_method_info().method_ptr);
         inner(this, c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::event::Event as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::event::Event as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "ProcessEvent",
@@ -7530,44 +5717,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ProcessEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ProcessEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_event(
-        this: TMP_InputField,
-        e: crate::unity_engine::event::Event,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::event::Event,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process_event::get_offset() as isize),
-        );
+    pub unsafe fn process_event(this: TMP_InputField, e: crate::unity_engine::event::Event, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::event::Event, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_process_event::get_method_info().method_ptr);
         inner(this, e, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_update_selected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnUpdateSelected",
@@ -7579,18 +5751,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnUpdateSelected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnUpdateSelected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_update_selected(
@@ -7598,25 +5767,17 @@ mod __TMP_InputField_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_update_selected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_update_selected::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_scroll {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnScroll",
@@ -7628,18 +5789,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnScroll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnScroll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_scroll(
@@ -7651,20 +5809,14 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_scroll::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_scroll::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scroll_position_relative_to_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7677,41 +5829,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GetScrollPositionRelativeToViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GetScrollPositionRelativeToViewport",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scroll_position_relative_to_viewport(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_scroll_position_relative_to_viewport(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_get_scroll_position_relative_to_viewport::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_get_scroll_position_relative_to_viewport::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selected_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7724,41 +5862,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectedString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectedString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selected_string(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_selected_string::get_offset() as isize),
-        );
+    pub unsafe fn get_selected_string(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_selected_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_next_word_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7771,43 +5895,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "FindNextWordBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "FindNextWordBegin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn find_next_word_begin(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn find_next_word_begin(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_find_next_word_begin::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_find_next_word_begin::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveRight",
@@ -7819,41 +5929,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveRight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveRight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_right(
-        this: TMP_InputField,
-        shift: bool,
-        ctrl: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_right(this: TMP_InputField, shift: bool, ctrl: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_right::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_right::get_method_info().method_ptr);
         inner(this, shift, ctrl, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_prev_word_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -7866,43 +5962,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "FindPrevWordBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "FindPrevWordBegin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn find_prev_word_begin(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn find_prev_word_begin(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_find_prev_word_begin::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_find_prev_word_begin::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveLeft",
@@ -7914,45 +5996,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveLeft",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveLeft",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_left(
-        this: TMP_InputField,
-        shift: bool,
-        ctrl: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_left(this: TMP_InputField, shift: bool, ctrl: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_left::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_left::get_method_info().method_ptr);
         inner(this, shift, ctrl, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_line_up_character_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "LineUpCharacterPosition",
@@ -7964,18 +6030,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "LineUpCharacterPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "LineUpCharacterPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn line_up_character_position(
@@ -7985,24 +6048,16 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_line_up_character_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_line_up_character_position::get_method_info().method_ptr);
         inner(this, original_pos, go_to_first_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_line_down_character_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "LineDownCharacterPosition",
@@ -8014,18 +6069,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "LineDownCharacterPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "LineDownCharacterPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn line_down_character_position(
@@ -8035,24 +6087,16 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_line_down_character_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_line_down_character_position::get_method_info().method_ptr);
         inner(this, original_pos, go_to_last_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_page_up_character_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "PageUpCharacterPosition",
@@ -8064,18 +6108,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "PageUpCharacterPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "PageUpCharacterPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn page_up_character_position(
@@ -8085,24 +6126,16 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_page_up_character_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_page_up_character_position::get_method_info().method_ptr);
         inner(this, original_pos, go_to_first_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_page_down_character_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "PageDownCharacterPosition",
@@ -8114,18 +6147,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "PageDownCharacterPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "PageDownCharacterPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn page_down_character_position(
@@ -8135,22 +6165,15 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, bool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_page_down_character_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_page_down_character_position::get_method_info().method_ptr);
         inner(this, original_pos, go_to_last_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveDown",
@@ -8162,44 +6185,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_down(
-        this: TMP_InputField,
-        shift: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_down(this: TMP_InputField, shift: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_down::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_down::get_method_info().method_ptr);
         inner(this, shift, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_down_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveDown",
@@ -8211,43 +6219,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_down_2(
-        this: TMP_InputField,
-        shift: bool,
-        go_to_last_char: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_down_2(this: TMP_InputField, shift: bool, go_to_last_char: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_down_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_down_2::get_method_info().method_ptr);
         inner(this, shift, go_to_last_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveUp",
@@ -8259,44 +6252,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_up(
-        this: TMP_InputField,
-        shift: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_up(this: TMP_InputField, shift: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_up::get_method_info().method_ptr);
         inner(this, shift, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_up_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MoveUp",
@@ -8308,43 +6286,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MoveUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MoveUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_up_2(
-        this: TMP_InputField,
-        shift: bool,
-        go_to_first_char: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_up_2(this: TMP_InputField, shift: bool, go_to_first_char: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_up_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_up_2::get_method_info().method_ptr);
         inner(this, shift, go_to_first_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_page_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MovePageUp",
@@ -8356,44 +6319,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MovePageUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MovePageUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_page_up(
-        this: TMP_InputField,
-        shift: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_page_up(this: TMP_InputField, shift: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_page_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_page_up::get_method_info().method_ptr);
         inner(this, shift, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_page_up_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MovePageUp",
@@ -8405,43 +6353,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MovePageUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MovePageUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_page_up_2(
-        this: TMP_InputField,
-        shift: bool,
-        go_to_first_char: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_page_up_2(this: TMP_InputField, shift: bool, go_to_first_char: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_page_up_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_page_up_2::get_method_info().method_ptr);
         inner(this, shift, go_to_first_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_page_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MovePageDown",
@@ -8453,44 +6386,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MovePageDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MovePageDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_page_down(
-        this: TMP_InputField,
-        shift: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_page_down(this: TMP_InputField, shift: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_page_down::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_page_down::get_method_info().method_ptr);
         inner(this, shift, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_page_down_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "MovePageDown",
@@ -8502,41 +6420,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MovePageDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MovePageDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_page_down_2(
-        this: TMP_InputField,
-        shift: bool,
-        go_to_last_char: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn move_page_down_2(this: TMP_InputField, shift: bool, go_to_last_char: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_page_down_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_page_down_2::get_method_info().method_ptr);
         inner(this, shift, go_to_last_char, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8549,39 +6453,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8594,39 +6486,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "DeleteKey",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "DeleteKey",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_key(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_key(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_key::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_backspace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8639,41 +6519,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Backspace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Backspace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn backspace(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn backspace(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_backspace::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_backspace::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_append {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "Append",
@@ -8685,45 +6552,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Append",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Append",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn append(
-        this: TMP_InputField,
-        input: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_append::get_offset() as isize),
-        );
+    pub unsafe fn append(this: TMP_InputField, input: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_append::get_method_info().method_ptr);
         inner(this, input, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_append_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "Append",
@@ -8735,42 +6585,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Append",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Append",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn append_2(
-        this: TMP_InputField,
-        input: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn append_2(this: TMP_InputField, input: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_append_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_append_2::get_method_info().method_ptr);
         inner(this, input, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_insert {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "Insert",
@@ -8782,40 +6618,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Insert",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Insert",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn insert(
-        this: TMP_InputField,
-        c: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn insert(this: TMP_InputField, c: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_insert::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_insert::get_method_info().method_ptr);
         inner(this, c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_touch_keyboard_from_edit_changes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8828,41 +6651,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTouchKeyboardFromEditChanges",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTouchKeyboardFromEditChanges",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_touch_keyboard_from_edit_changes(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_touch_keyboard_from_edit_changes(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_update_touch_keyboard_from_edit_changes::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_update_touch_keyboard_from_edit_changes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_value_changed_and_update_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8875,39 +6684,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnValueChangedAndUpdateLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnValueChangedAndUpdateLabel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_value_changed_and_update_label(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_value_changed_and_update_label(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_value_changed_and_update_label::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_value_changed_and_update_label::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_value_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8920,39 +6717,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnValueChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnValueChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_value_changed(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_value_changed(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_value_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_value_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_end_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -8965,39 +6750,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnEndEdit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnEndEdit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_end_edit(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_end_edit(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_end_edit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_end_edit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_submit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9010,39 +6783,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnSubmit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnSubmit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_submit(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_submit(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_submit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_submit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_focus {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9055,39 +6816,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnFocus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnFocus",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_focus(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_focus(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_focus::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_focus::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_focus_lost {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9100,39 +6849,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnFocusLost",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnFocusLost",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_focus_lost(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_focus_lost(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_focus_lost::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_focus_lost::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_text_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9145,39 +6882,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnTextSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnTextSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_text_selection(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_text_selection(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_text_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_text_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_on_end_text_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9190,39 +6915,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendOnEndTextSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendOnEndTextSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_on_end_text_selection(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_on_end_text_selection(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_on_end_text_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_on_end_text_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_touch_screen_keyboard_status_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9235,41 +6948,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SendTouchScreenKeyboardStatusChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SendTouchScreenKeyboardStatusChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_touch_screen_keyboard_status_changed(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn send_touch_screen_keyboard_status_changed(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_send_touch_screen_keyboard_status_changed::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_send_touch_screen_keyboard_status_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9282,39 +6981,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UpdateLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UpdateLabel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_label(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_label(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_label::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_label::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_scrollbar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9327,41 +7014,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UpdateScrollbar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UpdateScrollbar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_scrollbar(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_scrollbar(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_scrollbar::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_scrollbar::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_scrollbar_value_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnScrollbarValueChange",
@@ -9373,40 +7047,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnScrollbarValueChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnScrollbarValueChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_scrollbar_value_change(
-        this: TMP_InputField,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_scrollbar_value_change(this: TMP_InputField, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_scrollbar_value_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_scrollbar_value_change::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_mask_regions {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9419,41 +7080,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMaskRegions",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMaskRegions",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_mask_regions(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_mask_regions(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_mask_regions::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_mask_regions::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_adjust_text_position_relative_to_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "AdjustTextPositionRelativeToViewport",
@@ -9465,18 +7113,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "AdjustTextPositionRelativeToViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "AdjustTextPositionRelativeToViewport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn adjust_text_position_relative_to_viewport(
@@ -9485,24 +7130,15 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TMP_InputField, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_adjust_text_position_relative_to_viewport::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_adjust_text_position_relative_to_viewport::get_method_info().method_ptr);
         inner(this, relative_position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_caret_position_from_string_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "GetCaretPositionFromStringIndex",
@@ -9514,18 +7150,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GetCaretPositionFromStringIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GetCaretPositionFromStringIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_caret_position_from_string_index(
@@ -9534,22 +7167,15 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_caret_position_from_string_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_caret_position_from_string_index::get_method_info().method_ptr);
         inner(this, string_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_min_caret_position_from_string_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "GetMinCaretPositionFromStringIndex",
@@ -9561,18 +7187,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GetMinCaretPositionFromStringIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GetMinCaretPositionFromStringIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_min_caret_position_from_string_index(
@@ -9581,24 +7204,15 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_get_min_caret_position_from_string_index::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_get_min_caret_position_from_string_index::get_method_info().method_ptr);
         inner(this, string_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_caret_position_from_string_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "GetMaxCaretPositionFromStringIndex",
@@ -9610,18 +7224,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxCaretPositionFromStringIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxCaretPositionFromStringIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_max_caret_position_from_string_index(
@@ -9630,24 +7241,15 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_get_max_caret_position_from_string_index::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_get_max_caret_position_from_string_index::get_method_info().method_ptr);
         inner(this, string_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_string_index_from_caret_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "GetStringIndexFromCaretPosition",
@@ -9659,18 +7261,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GetStringIndexFromCaretPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GetStringIndexFromCaretPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_string_index_from_caret_position(
@@ -9679,20 +7278,14 @@ mod __TMP_InputField_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(TMP_InputField, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_string_index_from_caret_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_string_index_from_caret_position::get_method_info().method_ptr);
         inner(this, caret_position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_force_label_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9705,39 +7298,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ForceLabelUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ForceLabelUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn force_label_update(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn force_label_update(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_force_label_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_force_label_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mark_geometry_as_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9750,43 +7331,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "MarkGeometryAsDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "MarkGeometryAsDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn mark_geometry_as_dirty(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn mark_geometry_as_dirty(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_mark_geometry_as_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_mark_geometry_as_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "Rebuild",
@@ -9798,18 +7365,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Rebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Rebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rebuild(
@@ -9817,24 +7381,15 @@ mod __TMP_InputField_unity2_raw {
         update: crate::unity_engine::ui::canvasupdate::CanvasUpdate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::ui::canvasupdate::CanvasUpdate,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rebuild::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rebuild::get_method_info().method_ptr);
         inner(this, update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_layout_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9847,39 +7402,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "LayoutComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "LayoutComplete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn layout_complete(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn layout_complete(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_layout_complete::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_layout_complete::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_graphic_update_complete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9892,39 +7435,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GraphicUpdateComplete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GraphicUpdateComplete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn graphic_update_complete(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn graphic_update_complete(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_graphic_update_complete::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_graphic_update_complete::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9937,39 +7468,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGeometry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_geometry(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_geometry(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_geometry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_assign_positioning_if_needed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -9982,41 +7501,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "AssignPositioningIfNeeded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "AssignPositioningIfNeeded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn assign_positioning_if_needed(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn assign_positioning_if_needed(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_assign_positioning_if_needed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_assign_positioning_if_needed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_fill_vbo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnFillVBO",
@@ -10028,46 +7534,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnFillVBO",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnFillVBO",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_fill_vbo(
-        this: TMP_InputField,
-        vbo: crate::unity_engine::mesh::Mesh,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_fill_vbo::get_offset() as isize),
-        );
+    pub unsafe fn on_fill_vbo(this: TMP_InputField, vbo: crate::unity_engine::mesh::Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_fill_vbo::get_method_info().method_ptr);
         inner(this, vbo, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_generate_caret {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -10081,18 +7570,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GenerateCaret",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GenerateCaret",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn generate_caret(
@@ -10106,20 +7592,14 @@ mod __TMP_InputField_unity2_raw {
             crate::unity_engine::ui::vertexhelper::VertexHelper,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_generate_caret::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_generate_caret::get_method_info().method_ptr);
         inner(this, vbo, rounding_offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_cursor_verts {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10132,42 +7612,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "CreateCursorVerts",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "CreateCursorVerts",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_cursor_verts(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_cursor_verts(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_cursor_verts::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_cursor_verts::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_generate_hightlight {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -10181,18 +7648,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "GenerateHightlight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "GenerateHightlight",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn generate_hightlight(
@@ -10206,20 +7670,14 @@ mod __TMP_InputField_unity2_raw {
             crate::unity_engine::ui::vertexhelper::VertexHelper,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_generate_hightlight::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_generate_hightlight::get_method_info().method_ptr);
         inner(this, vbo, rounding_offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_adjust_rect_transform_relative_to_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -10236,18 +7694,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "AdjustRectTransformRelativeToViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "AdjustRectTransformRelativeToViewport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn adjust_rect_transform_relative_to_viewport(
@@ -10257,32 +7712,15 @@ mod __TMP_InputField_unity2_raw {
         is_char_visible: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::vector2::Vector2,
-            f32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_adjust_rect_transform_relative_to_viewport::get_offset() as isize),
-        );
-        inner(
-            this,
-            start_position,
-            height,
-            is_char_visible,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::vector2::Vector2, f32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_adjust_rect_transform_relative_to_viewport::get_method_info().method_ptr);
+        inner(this, start_position, height, is_char_visible, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -10299,18 +7737,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "Validate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "Validate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn validate(
@@ -10320,26 +7755,15 @@ mod __TMP_InputField_unity2_raw {
         ch: u16,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> u16 {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::Il2CppString,
-            i32,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::Il2CppString, i32, u16, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_validate::get_method_info().method_ptr);
         inner(this, text, pos, ch, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_activate_input_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10352,39 +7776,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ActivateInputField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ActivateInputField",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn activate_input_field(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn activate_input_field(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_activate_input_field::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_activate_input_field::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_activate_input_field_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10397,40 +7809,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ActivateInputFieldInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ActivateInputFieldInternal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn activate_input_field_internal(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn activate_input_field_internal(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_activate_input_field_internal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_activate_input_field_internal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnSelect",
@@ -10442,18 +7843,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select(
@@ -10461,25 +7859,17 @@ mod __TMP_InputField_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_click {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnPointerClick",
@@ -10491,18 +7881,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerClick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerClick",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_click(
@@ -10514,20 +7901,14 @@ mod __TMP_InputField_unity2_raw {
             TMP_InputField,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_click::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_click::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_control_click {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10540,39 +7921,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnControlClick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnControlClick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_control_click(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_control_click(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_control_click::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_control_click::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10585,41 +7954,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_selection(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release_selection(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deactivate_input_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "DeactivateInputField",
@@ -10631,41 +7987,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "DeactivateInputField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "DeactivateInputField",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deactivate_input_field(
-        this: TMP_InputField,
-        clear_selection: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn deactivate_input_field(this: TMP_InputField, clear_selection: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deactivate_input_field::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deactivate_input_field::get_method_info().method_ptr);
         inner(this, clear_selection, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deselect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnDeselect",
@@ -10677,18 +8021,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnDeselect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnDeselect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_deselect(
@@ -10696,25 +8037,17 @@ mod __TMP_InputField_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deselect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_submit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "OnSubmit",
@@ -10726,18 +8059,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "OnSubmit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "OnSubmit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_submit(
@@ -10745,24 +8075,15 @@ mod __TMP_InputField_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_submit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_submit::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enforce_content_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10775,39 +8096,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "EnforceContentType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "EnforceContentType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enforce_content_type(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enforce_content_type(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enforce_content_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enforce_content_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_component_wrap_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10820,39 +8129,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetTextComponentWrapMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetTextComponentWrapMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_text_component_wrap_mode(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_text_component_wrap_mode(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_text_component_wrap_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_text_component_wrap_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text_component_rich_text_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10865,43 +8162,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetTextComponentRichTextMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetTextComponentRichTextMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_text_component_rich_text_mode(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_text_component_rich_text_mode(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_text_component_rich_text_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_text_component_rich_text_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_custom_if_content_type_is_not {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "SetToCustomIfContentTypeIsNot",
@@ -10913,45 +8196,34 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetToCustomIfContentTypeIsNot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetToCustomIfContentTypeIsNot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_to_custom_if_content_type_is_not(
         this: TMP_InputField,
-        allowed_content_types: ::unity2::Array<
-            crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType,
-        >,
+        allowed_content_types: ::unity2::Array<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TMP_InputField,
             ::unity2::Array<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_to_custom_if_content_type_is_not::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_to_custom_if_content_type_is_not::get_method_info().method_ptr);
         inner(this, allowed_content_types, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_custom {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -10964,40 +8236,29 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetToCustom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetToCustom",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_to_custom(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_to_custom(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_to_custom::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_to_custom::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_custom_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_inputfield :: TMP_InputField_CharacterValidation as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "SetToCustom",
@@ -11009,18 +8270,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetToCustom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetToCustom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_to_custom_2(
@@ -11028,25 +8286,19 @@ mod __TMP_InputField_unity2_raw {
         character_validation: crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_to_custom_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_to_custom_2::get_method_info().method_ptr);
         inner(this, character_validation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do_state_transition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: ui :: selectable :: Selectable_SelectionState as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::ui::selectable::Selectable_SelectionState as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "DoStateTransition",
@@ -11058,18 +8310,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "DoStateTransition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "DoStateTransition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn do_state_transition(
@@ -11083,20 +8332,14 @@ mod __TMP_InputField_unity2_raw {
             crate::unity_engine::ui::selectable::Selectable_SelectionState,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do_state_transition::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_do_state_transition::get_method_info().method_ptr);
         inner(this, state, instant, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_layout_input_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11109,39 +8352,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "CalculateLayoutInputHorizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "CalculateLayoutInputHorizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_layout_input_horizontal(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calculate_layout_input_horizontal(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_layout_input_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_layout_input_horizontal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_layout_input_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11154,39 +8385,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "CalculateLayoutInputVertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "CalculateLayoutInputVertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_layout_input_vertical(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calculate_layout_input_vertical(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_layout_input_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_layout_input_vertical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_min_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11199,39 +8418,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_minWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_minWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_min_width(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_min_width(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_min_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_min_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_preferred_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11244,39 +8451,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_preferredWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_preferredWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_preferred_width(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_preferred_width(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_preferred_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_preferred_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_flexible_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11289,39 +8484,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_flexibleWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_flexibleWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_flexible_width(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_flexible_width(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_flexible_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_flexible_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_min_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11334,39 +8517,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_minHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_minHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_min_height(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_min_height(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_min_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_min_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_preferred_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11379,39 +8550,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_preferredHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_preferredHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_preferred_height(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_preferred_height(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_preferred_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_preferred_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_flexible_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11424,39 +8583,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_flexibleHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_flexibleHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_flexible_height(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_flexible_height(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_flexible_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_flexible_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_layout_priority {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11469,41 +8616,28 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "get_layoutPriority",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "get_layoutPriority",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_layout_priority(
-        this: TMP_InputField,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_layout_priority(this: TMP_InputField, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_layout_priority::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_layout_priority::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_point_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
                 "SetGlobalPointSize",
@@ -11515,40 +8649,27 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalPointSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalPointSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_point_size(
-        this: TMP_InputField,
-        point_size: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_point_size(this: TMP_InputField, point_size: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_point_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_point_size::get_method_info().method_ptr);
         inner(this, point_size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -11562,18 +8683,15 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFontAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_font_asset(
@@ -11581,24 +8699,15 @@ mod __TMP_InputField_unity2_raw {
         font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_font_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_InputField, crate::tm_pro::tmp_fontasset::TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_font_asset::get_method_info().method_ptr);
         inner(this, font_asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11611,35 +8720,26 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_ui_i_canvas_element_get_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField as ::unity2::ClassIdentity>::class(),
@@ -11652,34 +8752,23 @@ mod __TMP_InputField_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.UI.ICanvasElement.get_transform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.UI.ICanvasElement.get_transform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(
         this: TMP_InputField,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            TMP_InputField,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_unity_engine_ui_i_canvas_element_get_transform::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_InputField, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_unity_engine_ui_i_canvas_element_get_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -11690,15 +8779,12 @@ impl TMP_InputField {
     pub fn get_clipboard() -> ::unity2::Il2CppString {
         unsafe { __TMP_InputField_unity2_raw::get_clipboard(::core::option::Option::None) }
     }
+
     #[doc = "`set_clipboard(::unity2::Il2CppString)` overload"]
     pub fn set_clipboard(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __TMP_InputField_unity2_raw::set_clipboard(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_InputField_unity2_raw::set_clipboard(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TMP_InputField_unity2_raw::cctor(::core::option::Option::None) }
@@ -11710,164 +8796,98 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_inputSystem()` overload"]
     fn get_input_system(self) -> crate::unity_engine::event_systems::baseinput::BaseInput {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_input_system(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_compositionString()` overload"]
     fn get_composition_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_composition_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_composition_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_compositionLength()` overload"]
     fn get_composition_length(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_composition_length(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_composition_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_mesh()` overload"]
     fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_shouldHideMobileInput()` overload"]
     fn get_should_hide_mobile_input(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_should_hide_mobile_input(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_should_hide_mobile_input(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_shouldHideMobileInput(bool)` overload"]
     fn set_should_hide_mobile_input(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_should_hide_mobile_input(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_should_hide_mobile_input(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_shouldHideSoftKeyboard()` overload"]
     fn get_should_hide_soft_keyboard(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_should_hide_soft_keyboard(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_should_hide_soft_keyboard(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_shouldHideSoftKeyboard(bool)` overload"]
     fn set_should_hide_soft_keyboard(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_should_hide_soft_keyboard(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_should_hide_soft_keyboard(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`isKeyboardUsingEvents()` overload"]
     fn is_keyboard_using_events(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::is_keyboard_using_events(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::is_keyboard_using_events(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_text()` overload"]
     fn get_text(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_text(::unity2::Il2CppString)` overload"]
     fn set_text(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_text(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetTextWithoutNotify(::unity2::Il2CppString)` overload"]
-    fn set_text_without_notify(
-        self,
-        input: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_text_without_notify(self, input: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_text_without_notify(
-                __receiver,
-                ::core::convert::Into::into(input),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_text_without_notify(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)
         }
     }
     #[doc = "`SetText(::unity2::Il2CppString, bool)` overload"]
-    fn set_text_2(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-        send_callback: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_text_2(self, value: impl ::core::convert::Into<::unity2::Il2CppString>, send_callback: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_text_2(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -11879,485 +8899,262 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_isFocused()` overload"]
     fn get_is_focused(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_is_focused(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_caretBlinkRate()` overload"]
     fn get_caret_blink_rate(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_caret_blink_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_caret_blink_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_caretBlinkRate(f32)` overload"]
     fn set_caret_blink_rate(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_caret_blink_rate(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_caret_blink_rate(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_caretWidth()` overload"]
     fn get_caret_width(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_caret_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_caretWidth(i32)` overload"]
     fn set_caret_width(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_caret_width(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_caret_width(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_textViewport()` overload"]
     fn get_text_viewport(self) -> crate::unity_engine::recttransform::RectTransform {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_text_viewport(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_textViewport(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn set_text_viewport(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
+    fn set_text_viewport(self, value: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_text_viewport(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_text_viewport(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_textComponent()` overload"]
     fn get_text_component(self) -> crate::tm_pro::tmp_text::TMP_Text {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_text_component(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_text_component(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_textComponent(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn set_text_component(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn set_text_component(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_text_component(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_text_component(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_placeholder()` overload"]
     fn get_placeholder(self) -> crate::unity_engine::ui::graphic::Graphic {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_placeholder(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_placeholder(crate::unity_engine::ui::graphic::Graphic)` overload"]
-    fn set_placeholder(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>,
-    ) -> () {
+    fn set_placeholder(self, value: impl ::core::convert::Into<crate::unity_engine::ui::graphic::Graphic>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_placeholder(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_placeholder(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_verticalScrollbar()` overload"]
     fn get_vertical_scrollbar(self) -> crate::unity_engine::ui::scrollbar::Scrollbar {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_vertical_scrollbar(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_vertical_scrollbar(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_verticalScrollbar(crate::unity_engine::ui::scrollbar::Scrollbar)` overload"]
-    fn set_vertical_scrollbar(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar>,
-    ) -> () {
+    fn set_vertical_scrollbar(self, value: impl ::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_vertical_scrollbar(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_vertical_scrollbar(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_scrollSensitivity()` overload"]
     fn get_scroll_sensitivity(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_scroll_sensitivity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_scroll_sensitivity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_scrollSensitivity(f32)` overload"]
     fn set_scroll_sensitivity(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_scroll_sensitivity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_scroll_sensitivity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_caretColor()` overload"]
     fn get_caret_color(self) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_caret_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_caretColor(crate::unity_engine::color::Color)` overload"]
-    fn set_caret_color(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
+    fn set_caret_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_caret_color(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_caret_color(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_customCaretColor()` overload"]
     fn get_custom_caret_color(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_custom_caret_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_custom_caret_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_customCaretColor(bool)` overload"]
     fn set_custom_caret_color(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_custom_caret_color(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_custom_caret_color(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_selectionColor()` overload"]
     fn get_selection_color(self) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_selection_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_selection_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selectionColor(crate::unity_engine::color::Color)` overload"]
-    fn set_selection_color(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
+    fn set_selection_color(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_selection_color(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_selection_color(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onEndEdit()` overload"]
     fn get_on_end_edit(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_on_end_edit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onEndEdit(crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent)` overload"]
-    fn set_on_end_edit(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent>,
-    ) -> () {
+    fn set_on_end_edit(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_end_edit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_end_edit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onSubmit()` overload"]
     fn get_on_submit(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_on_submit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onSubmit(crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent)` overload"]
-    fn set_on_submit(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent>,
-    ) -> () {
+    fn set_on_submit(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_submit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_submit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onSelect()` overload"]
     fn get_on_select(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onSelect(crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent)` overload"]
-    fn set_on_select(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent>,
-    ) -> () {
+    fn set_on_select(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_select(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_select(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onDeselect()` overload"]
     fn get_on_deselect(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_on_deselect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onDeselect(crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent)` overload"]
-    fn set_on_deselect(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent>,
-    ) -> () {
+    fn set_on_deselect(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_deselect(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_deselect(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onTextSelection()` overload"]
-    fn get_on_text_selection(
-        self,
-    ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent {
+    fn get_on_text_selection(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_on_text_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_on_text_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onTextSelection(crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent)` overload"]
-    fn set_on_text_selection(
-        self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
-        >,
-    ) -> () {
+    fn set_on_text_selection(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_text_selection(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_text_selection(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onEndTextSelection()` overload"]
-    fn get_on_end_text_selection(
-        self,
-    ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent {
+    fn get_on_end_text_selection(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_on_end_text_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_on_end_text_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onEndTextSelection(crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent)` overload"]
-    fn set_on_end_text_selection(
-        self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent,
-        >,
-    ) -> () {
+    fn set_on_end_text_selection(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_end_text_selection(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_end_text_selection(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onValueChanged()` overload"]
     fn get_on_value_changed(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_on_value_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_on_value_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onValueChanged(crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent)` overload"]
-    fn set_on_value_changed(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent>,
-    ) -> () {
+    fn set_on_value_changed(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_value_changed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_value_changed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onTouchScreenKeyboardStatusChanged()` overload"]
-    fn get_on_touch_screen_keyboard_status_changed(
-        self,
-    ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent {
+    fn get_on_touch_screen_keyboard_status_changed(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_on_touch_screen_keyboard_status_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_on_touch_screen_keyboard_status_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onTouchScreenKeyboardStatusChanged(crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent)` overload"]
     fn set_on_touch_screen_keyboard_status_changed(
         self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent,
-        >,
+        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_on_touch_screen_keyboard_status_changed(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -12366,175 +9163,100 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`get_onValidateInput()` overload"]
-    fn get_on_validate_input(
-        self,
-    ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput {
+    fn get_on_validate_input(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_on_validate_input(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_on_validate_input(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onValidateInput(crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput)` overload"]
-    fn set_on_validate_input(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput>,
-    ) -> () {
+    fn set_on_validate_input(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_validate_input(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_validate_input(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_characterLimit()` overload"]
     fn get_character_limit(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_character_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_character_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_characterLimit(i32)` overload"]
     fn set_character_limit(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_character_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_character_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_pointSize()` overload"]
     fn get_point_size(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_point_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_pointSize(f32)` overload"]
     fn set_point_size(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_point_size(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_point_size(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fontAsset()` overload"]
     fn get_font_asset(self) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_font_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fontAsset(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    fn set_font_asset(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
-    ) -> () {
+    fn set_font_asset(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_font_asset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_font_asset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_onFocusSelectAll()` overload"]
     fn get_on_focus_select_all(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_on_focus_select_all(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_on_focus_select_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_onFocusSelectAll(bool)` overload"]
     fn set_on_focus_select_all(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_on_focus_select_all(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_on_focus_select_all(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_resetOnDeActivation()` overload"]
     fn get_reset_on_de_activation(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_reset_on_de_activation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_reset_on_de_activation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_resetOnDeActivation(bool)` overload"]
     fn set_reset_on_de_activation(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_reset_on_de_activation(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_reset_on_de_activation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_restoreOriginalTextOnEscape()` overload"]
     fn get_restore_original_text_on_escape(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_restore_original_text_on_escape(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_restore_original_text_on_escape(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_restoreOriginalTextOnEscape(bool)` overload"]
     fn set_restore_original_text_on_escape(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_restore_original_text_on_escape(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -12545,21 +9267,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_isRichTextEditingAllowed()` overload"]
     fn get_is_rich_text_editing_allowed(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_is_rich_text_editing_allowed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_is_rich_text_editing_allowed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_isRichTextEditingAllowed(bool)` overload"]
     fn set_is_rich_text_editing_allowed(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_is_rich_text_editing_allowed(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -12570,371 +9285,214 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_contentType()` overload"]
     fn get_content_type(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_content_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_contentType(crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType)` overload"]
-    fn set_content_type(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>,
-    ) -> () {
+    fn set_content_type(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_content_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_content_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_lineType()` overload"]
     fn get_line_type(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_LineType {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_line_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_lineType(crate::tm_pro::tmp_inputfield::TMP_InputField_LineType)` overload"]
-    fn set_line_type(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_LineType>,
-    ) -> () {
+    fn set_line_type(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_LineType>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_line_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_line_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_lineLimit()` overload"]
     fn get_line_limit(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_line_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_lineLimit(i32)` overload"]
     fn set_line_limit(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_line_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_line_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_inputType()` overload"]
     fn get_input_type(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_InputType {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_input_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_inputType(crate::tm_pro::tmp_inputfield::TMP_InputField_InputType)` overload"]
-    fn set_input_type(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_InputType>,
-    ) -> () {
+    fn set_input_type(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_InputType>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_input_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_input_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_keyboardType()` overload"]
-    fn get_keyboard_type(
-        self,
-    ) -> crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType {
+    fn get_keyboard_type(self) -> crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_keyboard_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_keyboardType(crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType)` overload"]
-    fn set_keyboard_type(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
-        >,
-    ) -> () {
+    fn set_keyboard_type(self, value: impl ::core::convert::Into<crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_keyboard_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_keyboard_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_characterValidation()` overload"]
-    fn get_character_validation(
-        self,
-    ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation {
+    fn get_character_validation(self) -> crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_character_validation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_character_validation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_characterValidation(crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation)` overload"]
-    fn set_character_validation(
-        self,
-        value: impl ::core::convert::Into<
-            crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
-        >,
-    ) -> () {
+    fn set_character_validation(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_character_validation(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_character_validation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_inputValidator()` overload"]
     fn get_input_validator(self) -> crate::tm_pro::tmp_inputvalidator::TMP_InputValidator {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_input_validator(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_input_validator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_inputValidator(crate::tm_pro::tmp_inputvalidator::TMP_InputValidator)` overload"]
-    fn set_input_validator(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_inputvalidator::TMP_InputValidator>,
-    ) -> () {
+    fn set_input_validator(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_inputvalidator::TMP_InputValidator>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_input_validator(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_input_validator(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_readOnly()` overload"]
     fn get_read_only(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_read_only(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_readOnly(bool)` overload"]
     fn set_read_only(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_read_only(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_read_only(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_richText()` overload"]
     fn get_rich_text(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_rich_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_richText(bool)` overload"]
     fn set_rich_text(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_rich_text(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_rich_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_multiLine()` overload"]
     fn get_multi_line(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_multi_line(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_asteriskChar()` overload"]
     fn get_asterisk_char(self) -> u16 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_asterisk_char(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_asteriskChar(u16)` overload"]
     fn set_asterisk_char(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_asterisk_char(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_asterisk_char(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_wasCanceled()` overload"]
     fn get_was_canceled(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_was_canceled(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClampStringPos(*muti32)` overload"]
     fn clamp_string_pos(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            __TMP_InputField_unity2_raw::clamp_string_pos(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __TMP_InputField_unity2_raw::clamp_string_pos(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`ClampCaretPos(*muti32)` overload"]
     fn clamp_caret_pos(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            __TMP_InputField_unity2_raw::clamp_caret_pos(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __TMP_InputField_unity2_raw::clamp_caret_pos(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_caretPositionInternal()` overload"]
     fn get_caret_position_internal(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_caret_position_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_caret_position_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_caretPositionInternal(i32)` overload"]
     fn set_caret_position_internal(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_caret_position_internal(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_caret_position_internal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_stringPositionInternal()` overload"]
     fn get_string_position_internal(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_string_position_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_string_position_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_stringPositionInternal(i32)` overload"]
     fn set_string_position_internal(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_string_position_internal(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_string_position_internal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_caretSelectPositionInternal()` overload"]
     fn get_caret_select_position_internal(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_caret_select_position_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_caret_select_position_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_caretSelectPositionInternal(i32)` overload"]
     fn set_caret_select_position_internal(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_caret_select_position_internal(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -12945,21 +9503,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_stringSelectPositionInternal()` overload"]
     fn get_string_select_position_internal(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_string_select_position_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_string_select_position_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_stringSelectPositionInternal(i32)` overload"]
     fn set_string_select_position_internal(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_string_select_position_internal(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -12970,130 +9521,77 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_hasSelection()` overload"]
     fn get_has_selection(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_has_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_caretPosition()` overload"]
     fn get_caret_position(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_caret_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_caret_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_caretPosition(i32)` overload"]
     fn set_caret_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_caret_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_caret_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_selectionAnchorPosition()` overload"]
     fn get_selection_anchor_position(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_selection_anchor_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_selection_anchor_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selectionAnchorPosition(i32)` overload"]
     fn set_selection_anchor_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_selection_anchor_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_selection_anchor_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_selectionFocusPosition()` overload"]
     fn get_selection_focus_position(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_selection_focus_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_selection_focus_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selectionFocusPosition(i32)` overload"]
     fn set_selection_focus_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_selection_focus_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_selection_focus_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_stringPosition()` overload"]
     fn get_string_position(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_string_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_string_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_stringPosition(i32)` overload"]
     fn set_string_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_string_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_string_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_selectionStringAnchorPosition()` overload"]
     fn get_selection_string_anchor_position(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_selection_string_anchor_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_selection_string_anchor_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selectionStringAnchorPosition(i32)` overload"]
     fn set_selection_string_anchor_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_selection_string_anchor_position(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -13104,21 +9602,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`get_selectionStringFocusPosition()` overload"]
     fn get_selection_string_focus_position(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_selection_string_focus_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_selection_string_focus_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selectionStringFocusPosition(i32)` overload"]
     fn set_selection_string_focus_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_selection_string_focus_position(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -13129,118 +9620,77 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ON_TEXT_CHANGED(crate::unity_engine::object_2::Object_2)` overload"]
-    fn on_text_changed(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
+    fn on_text_changed(self, obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_text_changed(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_text_changed(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`CaretBlink()` overload"]
     fn caret_blink(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::caret_blink(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetCaretVisible()` overload"]
     fn set_caret_visible(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_caret_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetCaretActive()` overload"]
     fn set_caret_active(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_caret_active(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnFocus()` overload"]
     fn on_focus(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::on_focus(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SelectAll()` overload"]
     fn select_all(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::select_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveTextEnd(bool)` overload"]
     fn move_text_end(self, shift: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::move_text_end(
-                __receiver,
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::move_text_end(__receiver, ::core::convert::Into::into(shift), ::core::option::Option::None)
         }
     }
     #[doc = "`MoveTextStart(bool)` overload"]
     fn move_text_start(self, shift: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::move_text_start(
-                __receiver,
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::move_text_start(__receiver, ::core::convert::Into::into(shift), ::core::option::Option::None)
         }
     }
     #[doc = "`MoveToEndOfLine(bool, bool)` overload"]
-    fn move_to_end_of_line(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        ctrl: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_to_end_of_line(self, shift: impl ::core::convert::Into<bool>, ctrl: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_to_end_of_line(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13250,15 +9700,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`MoveToStartOfLine(bool, bool)` overload"]
-    fn move_to_start_of_line(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        ctrl: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_to_start_of_line(self, shift: impl ::core::convert::Into<bool>, ctrl: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_to_start_of_line(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13270,139 +9714,67 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`InPlaceEditing()` overload"]
     fn in_place_editing(self) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::in_place_editing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateStringPositionFromKeyboard()` overload"]
     fn update_string_position_from_keyboard(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::update_string_position_from_keyboard(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::update_string_position_from_keyboard(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LateUpdate()` overload"]
     fn late_update(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn may_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> bool {
+    fn may_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::may_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::may_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_begin_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_begin_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_begin_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`MouseDragOutsideRect(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
     fn mouse_drag_outside_rect(
         self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
     ) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::mouse_drag_outside_rect(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::mouse_drag_outside_rect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_end_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_end_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_end_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_end_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_down(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_down(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_pointer_down(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyPressed(crate::unity_engine::event::Event)` overload"]
@@ -13411,124 +9783,63 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         evt: impl ::core::convert::Into<crate::unity_engine::event::Event>,
     ) -> crate::tm_pro::tmp_inputfield::TMP_InputField_EditState {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::key_pressed(
-                __receiver,
-                ::core::convert::Into::into(evt),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::key_pressed(__receiver, ::core::convert::Into::into(evt), ::core::option::Option::None)
         }
     }
     #[doc = "`IsValidChar(u16)` overload"]
     fn is_valid_char(self, c: impl ::core::convert::Into<u16>) -> bool {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::is_valid_char(
-                __receiver,
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::is_valid_char(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessEvent(crate::unity_engine::event::Event)` overload"]
     fn process_event(self, e: impl ::core::convert::Into<crate::unity_engine::event::Event>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::process_event(
-                __receiver,
-                ::core::convert::Into::into(e),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::process_event(__receiver, ::core::convert::Into::into(e), ::core::option::Option::None)
         }
     }
     #[doc = "`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_update_selected(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_update_selected(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_update_selected(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_update_selected(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_scroll(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_scroll(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_scroll(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_scroll(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`GetScrollPositionRelativeToViewport()` overload"]
     fn get_scroll_position_relative_to_viewport(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_scroll_position_relative_to_viewport(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_scroll_position_relative_to_viewport(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetSelectedString()` overload"]
     fn get_selected_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_selected_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_selected_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FindNextWordBegin()` overload"]
     fn find_next_word_begin(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::find_next_word_begin(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::find_next_word_begin(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveRight(bool, bool)` overload"]
-    fn move_right(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        ctrl: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_right(self, shift: impl ::core::convert::Into<bool>, ctrl: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_right(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13540,25 +9851,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`FindPrevWordBegin()` overload"]
     fn find_prev_word_begin(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::find_prev_word_begin(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::find_prev_word_begin(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveLeft(bool, bool)` overload"]
-    fn move_left(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        ctrl: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_left(self, shift: impl ::core::convert::Into<bool>, ctrl: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_left(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13568,15 +9868,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`LineUpCharacterPosition(i32, bool)` overload"]
-    fn line_up_character_position(
-        self,
-        original_pos: impl ::core::convert::Into<i32>,
-        go_to_first_char: impl ::core::convert::Into<bool>,
-    ) -> i32 {
+    fn line_up_character_position(self, original_pos: impl ::core::convert::Into<i32>, go_to_first_char: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::line_up_character_position(
                 __receiver,
                 ::core::convert::Into::into(original_pos),
@@ -13586,15 +9880,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`LineDownCharacterPosition(i32, bool)` overload"]
-    fn line_down_character_position(
-        self,
-        original_pos: impl ::core::convert::Into<i32>,
-        go_to_last_char: impl ::core::convert::Into<bool>,
-    ) -> i32 {
+    fn line_down_character_position(self, original_pos: impl ::core::convert::Into<i32>, go_to_last_char: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::line_down_character_position(
                 __receiver,
                 ::core::convert::Into::into(original_pos),
@@ -13604,15 +9892,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`PageUpCharacterPosition(i32, bool)` overload"]
-    fn page_up_character_position(
-        self,
-        original_pos: impl ::core::convert::Into<i32>,
-        go_to_first_char: impl ::core::convert::Into<bool>,
-    ) -> i32 {
+    fn page_up_character_position(self, original_pos: impl ::core::convert::Into<i32>, go_to_first_char: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::page_up_character_position(
                 __receiver,
                 ::core::convert::Into::into(original_pos),
@@ -13622,15 +9904,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`PageDownCharacterPosition(i32, bool)` overload"]
-    fn page_down_character_position(
-        self,
-        original_pos: impl ::core::convert::Into<i32>,
-        go_to_last_char: impl ::core::convert::Into<bool>,
-    ) -> i32 {
+    fn page_down_character_position(self, original_pos: impl ::core::convert::Into<i32>, go_to_last_char: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::page_down_character_position(
                 __receiver,
                 ::core::convert::Into::into(original_pos),
@@ -13642,26 +9918,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`MoveDown(bool)` overload"]
     fn move_down(self, shift: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::move_down(
-                __receiver,
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::move_down(__receiver, ::core::convert::Into::into(shift), ::core::option::Option::None)
         }
     }
     #[doc = "`MoveDown(bool, bool)` overload"]
-    fn move_down_2(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        go_to_last_char: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_down_2(self, shift: impl ::core::convert::Into<bool>, go_to_last_char: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_down_2(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13673,26 +9937,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`MoveUp(bool)` overload"]
     fn move_up(self, shift: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::move_up(
-                __receiver,
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::move_up(__receiver, ::core::convert::Into::into(shift), ::core::option::Option::None)
         }
     }
     #[doc = "`MoveUp(bool, bool)` overload"]
-    fn move_up_2(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        go_to_first_char: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_up_2(self, shift: impl ::core::convert::Into<bool>, go_to_first_char: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_up_2(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13704,26 +9956,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`MovePageUp(bool)` overload"]
     fn move_page_up(self, shift: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::move_page_up(
-                __receiver,
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::move_page_up(__receiver, ::core::convert::Into::into(shift), ::core::option::Option::None)
         }
     }
     #[doc = "`MovePageUp(bool, bool)` overload"]
-    fn move_page_up_2(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        go_to_first_char: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_page_up_2(self, shift: impl ::core::convert::Into<bool>, go_to_first_char: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_page_up_2(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13735,26 +9975,14 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`MovePageDown(bool)` overload"]
     fn move_page_down(self, shift: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::move_page_down(
-                __receiver,
-                ::core::convert::Into::into(shift),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::move_page_down(__receiver, ::core::convert::Into::into(shift), ::core::option::Option::None)
         }
     }
     #[doc = "`MovePageDown(bool, bool)` overload"]
-    fn move_page_down_2(
-        self,
-        shift: impl ::core::convert::Into<bool>,
-        go_to_last_char: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn move_page_down_2(self, shift: impl ::core::convert::Into<bool>, go_to_last_char: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::move_page_down_2(
                 __receiver,
                 ::core::convert::Into::into(shift),
@@ -13766,232 +9994,147 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`Delete()` overload"]
     fn delete(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::delete(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteKey()` overload"]
     fn delete_key(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::delete_key(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Backspace()` overload"]
     fn backspace(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::backspace(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Append(::unity2::Il2CppString)` overload"]
     fn append(self, input: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::append(
-                __receiver,
-                ::core::convert::Into::into(input),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::append(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)
         }
     }
     #[doc = "`Append(u16)` overload"]
     fn append_2(self, input: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::append_2(
-                __receiver,
-                ::core::convert::Into::into(input),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::append_2(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)
         }
     }
     #[doc = "`Insert(u16)` overload"]
     fn insert(self, c: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::insert(
-                __receiver,
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::insert(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateTouchKeyboardFromEditChanges()` overload"]
     fn update_touch_keyboard_from_edit_changes(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::update_touch_keyboard_from_edit_changes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::update_touch_keyboard_from_edit_changes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnValueChangedAndUpdateLabel()` overload"]
     fn send_on_value_changed_and_update_label(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::send_on_value_changed_and_update_label(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::send_on_value_changed_and_update_label(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnValueChanged()` overload"]
     fn send_on_value_changed(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::send_on_value_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::send_on_value_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnEndEdit()` overload"]
     fn send_on_end_edit(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::send_on_end_edit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnSubmit()` overload"]
     fn send_on_submit(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::send_on_submit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnFocus()` overload"]
     fn send_on_focus(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::send_on_focus(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnFocusLost()` overload"]
     fn send_on_focus_lost(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::send_on_focus_lost(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::send_on_focus_lost(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnTextSelection()` overload"]
     fn send_on_text_selection(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::send_on_text_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::send_on_text_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendOnEndTextSelection()` overload"]
     fn send_on_end_text_selection(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::send_on_end_text_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::send_on_end_text_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendTouchScreenKeyboardStatusChanged()` overload"]
     fn send_touch_screen_keyboard_status_changed(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::send_touch_screen_keyboard_status_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::send_touch_screen_keyboard_status_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateLabel()` overload"]
     fn update_label(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::update_label(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateScrollbar()` overload"]
     fn update_scrollbar(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::update_scrollbar(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnScrollbarValueChange(f32)` overload"]
     fn on_scrollbar_value_change(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_scrollbar_value_change(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_scrollbar_value_change(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMaskRegions()` overload"]
     fn update_mask_regions(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::update_mask_regions(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::update_mask_regions(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AdjustTextPositionRelativeToViewport(f32)` overload"]
-    fn adjust_text_position_relative_to_viewport(
-        self,
-        relative_position: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn adjust_text_position_relative_to_viewport(self, relative_position: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::adjust_text_position_relative_to_viewport(
                 __receiver,
                 ::core::convert::Into::into(relative_position),
@@ -14000,14 +10143,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`GetCaretPositionFromStringIndex(i32)` overload"]
-    fn get_caret_position_from_string_index(
-        self,
-        string_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn get_caret_position_from_string_index(self, string_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_caret_position_from_string_index(
                 __receiver,
                 ::core::convert::Into::into(string_index),
@@ -14016,14 +10154,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`GetMinCaretPositionFromStringIndex(i32)` overload"]
-    fn get_min_caret_position_from_string_index(
-        self,
-        string_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn get_min_caret_position_from_string_index(self, string_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_min_caret_position_from_string_index(
                 __receiver,
                 ::core::convert::Into::into(string_index),
@@ -14032,14 +10165,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`GetMaxCaretPositionFromStringIndex(i32)` overload"]
-    fn get_max_caret_position_from_string_index(
-        self,
-        string_index: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn get_max_caret_position_from_string_index(self, string_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_max_caret_position_from_string_index(
                 __receiver,
                 ::core::convert::Into::into(string_index),
@@ -14048,14 +10176,9 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`GetStringIndexFromCaretPosition(i32)` overload"]
-    fn get_string_index_from_caret_position(
-        self,
-        caret_position: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn get_string_index_from_caret_position(self, caret_position: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_string_index_from_caret_position(
                 __receiver,
                 ::core::convert::Into::into(caret_position),
@@ -14066,96 +10189,57 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`ForceLabelUpdate()` overload"]
     fn force_label_update(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::force_label_update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::force_label_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MarkGeometryAsDirty()` overload"]
     fn mark_geometry_as_dirty(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::mark_geometry_as_dirty(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::mark_geometry_as_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
-    fn rebuild(
-        self,
-        update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>,
-    ) -> () {
+    fn rebuild(self, update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::rebuild(
-                __receiver,
-                ::core::convert::Into::into(update),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)
         }
     }
     #[doc = "`LayoutComplete()` overload"]
     fn layout_complete(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GraphicUpdateComplete()` overload"]
     fn graphic_update_complete(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::graphic_update_complete(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateGeometry()` overload"]
     fn update_geometry(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AssignPositioningIfNeeded()` overload"]
     fn assign_positioning_if_needed(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::assign_positioning_if_needed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::assign_positioning_if_needed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnFillVBO(crate::unity_engine::mesh::Mesh)` overload"]
     fn on_fill_vbo(self, vbo: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_fill_vbo(
-                __receiver,
-                ::core::convert::Into::into(vbo),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_fill_vbo(__receiver, ::core::convert::Into::into(vbo), ::core::option::Option::None)
         }
     }
     #[doc = "`GenerateCaret(crate::unity_engine::ui::vertexhelper::VertexHelper, crate::unity_engine::vector2::Vector2)` overload"]
@@ -14165,9 +10249,7 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         rounding_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::generate_caret(
                 __receiver,
                 ::core::convert::Into::into(vbo),
@@ -14179,13 +10261,8 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`CreateCursorVerts()` overload"]
     fn create_cursor_verts(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::create_cursor_verts(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::create_cursor_verts(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GenerateHightlight(crate::unity_engine::ui::vertexhelper::VertexHelper, crate::unity_engine::vector2::Vector2)` overload"]
@@ -14195,9 +10272,7 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         rounding_offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::generate_hightlight(
                 __receiver,
                 ::core::convert::Into::into(vbo),
@@ -14214,9 +10289,7 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         is_char_visible: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::adjust_rect_transform_relative_to_viewport(
                 __receiver,
                 ::core::convert::Into::into(start_position),
@@ -14234,9 +10307,7 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         ch: impl ::core::convert::Into<u16>,
     ) -> u16 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::validate(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -14249,87 +10320,49 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`ActivateInputField()` overload"]
     fn activate_input_field(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::activate_input_field(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::activate_input_field(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ActivateInputFieldInternal()` overload"]
     fn activate_input_field_internal(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::activate_input_field_internal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::activate_input_field_internal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_select(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_select(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_select(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_select(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_click(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_click(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_pointer_click(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnControlClick()` overload"]
     fn on_control_click(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::on_control_click(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseSelection()` overload"]
     fn release_selection(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::release_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeactivateInputField(bool)` overload"]
     fn deactivate_input_field(self, clear_selection: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::deactivate_input_field(
                 __receiver,
                 ::core::convert::Into::into(clear_selection),
@@ -14338,88 +10371,47 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
         }
     }
     #[doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_deselect(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_deselect(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_deselect(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_submit(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_submit(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::on_submit(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`EnforceContentType()` overload"]
     fn enforce_content_type(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::enforce_content_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::enforce_content_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetTextComponentWrapMode()` overload"]
     fn set_text_component_wrap_mode(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_text_component_wrap_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_text_component_wrap_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetTextComponentRichTextMode()` overload"]
     fn set_text_component_rich_text_mode(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_text_component_rich_text_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_text_component_rich_text_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetToCustomIfContentTypeIsNot(::unity2::Array<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>)` overload"]
     fn set_to_custom_if_content_type_is_not(
         self,
-        allowed_content_types: impl ::core::convert::Into<
-            ::unity2::Array<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>,
-        >,
+        allowed_content_types: impl ::core::convert::Into<::unity2::Array<crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType>>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_to_custom_if_content_type_is_not(
                 __receiver,
                 ::core::convert::Into::into(allowed_content_types),
@@ -14430,23 +10422,17 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`SetToCustom()` overload"]
     fn set_to_custom(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_to_custom(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetToCustom(crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation)` overload"]
     fn set_to_custom_2(
         self,
-        character_validation: impl ::core::convert::Into<
-            crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation,
-        >,
+        character_validation: impl ::core::convert::Into<crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::set_to_custom_2(
                 __receiver,
                 ::core::convert::Into::into(character_validation),
@@ -14457,15 +10443,11 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`DoStateTransition(crate::unity_engine::ui::selectable::Selectable_SelectionState, bool)` overload"]
     fn do_state_transition(
         self,
-        state: impl ::core::convert::Into<
-            crate::unity_engine::ui::selectable::Selectable_SelectionState,
-        >,
+        state: impl ::core::convert::Into<crate::unity_engine::ui::selectable::Selectable_SelectionState>,
         instant: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::do_state_transition(
                 __receiver,
                 ::core::convert::Into::into(state),
@@ -14477,146 +10459,85 @@ pub trait ITMP_InputFieldMethods: ITMP_InputField {
     #[doc = "`CalculateLayoutInputHorizontal()` overload"]
     fn calculate_layout_input_horizontal(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::calculate_layout_input_horizontal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalculateLayoutInputVertical()` overload"]
     fn calculate_layout_input_vertical(self) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::calculate_layout_input_vertical(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_minWidth()` overload"]
     fn get_min_width(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_preferredWidth()` overload"]
     fn get_preferred_width(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_preferred_width(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_flexibleWidth()` overload"]
     fn get_flexible_width(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_flexible_width(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_minHeight()` overload"]
     fn get_min_height(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_preferredHeight()` overload"]
     fn get_preferred_height(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_preferred_height(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_flexibleHeight()` overload"]
     fn get_flexible_height(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_flexible_height(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_layoutPriority()` overload"]
     fn get_layout_priority(self) -> i32 {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::get_layout_priority(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetGlobalPointSize(f32)` overload"]
     fn set_global_point_size(self, point_size: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_global_point_size(
-                __receiver,
-                ::core::convert::Into::into(point_size),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_global_point_size(__receiver, ::core::convert::Into::into(point_size), ::core::option::Option::None)
         }
     }
     #[doc = "`SetGlobalFontAsset(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    fn set_global_font_asset(
-        self,
-        font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
-    ) -> () {
+    fn set_global_font_asset(self, font_asset: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>) -> () {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::set_global_font_asset(
-                __receiver,
-                ::core::convert::Into::into(font_asset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::set_global_font_asset(__receiver, ::core::convert::Into::into(font_asset), ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.UI.ICanvasElement.get_transform()` overload"]
-    fn unity_engine_ui_i_canvas_element_get_transform(
-        self,
-    ) -> crate::unity_engine::transform::Transform {
+    fn unity_engine_ui_i_canvas_element_get_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_InputField_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_InputField as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_InputField_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -14649,9 +10570,7 @@ mod __TMP_InputField_SubmitEvent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_InputField_SubmitEvent as ::unity2::ClassIdentity>::class(),
@@ -14664,30 +10583,20 @@ mod __TMP_InputField_SubmitEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_InputField_SubmitEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_InputField_SubmitEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_InputField_SubmitEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TMP_InputField_SubmitEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_InputField_SubmitEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -14698,9 +10607,7 @@ pub trait ITMP_InputField_SubmitEventMethods: ITMP_InputField_SubmitEvent {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <TMP_InputField_SubmitEvent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TMP_InputField_SubmitEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_InputField_SubmitEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -14728,72 +10635,53 @@ impl TMP_InputField_SubmitEvent {
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_InputField;
-    pub use super::ITMP_InputFieldMethods;
-    pub use super::ITMP_InputField_OnChangeEvent;
-    pub use super::ITMP_InputField_OnChangeEventMethods;
-    pub use super::ITMP_InputField_OnValidateInput;
-    pub use super::ITMP_InputField_OnValidateInputMethods;
-    pub use super::ITMP_InputField_SelectionEvent;
-    pub use super::ITMP_InputField_SelectionEventMethods;
-    pub use super::ITMP_InputField_SubmitEvent;
-    pub use super::ITMP_InputField_SubmitEventMethods;
-    pub use super::ITMP_InputField_TextSelectionEvent;
-    pub use super::ITMP_InputField_TextSelectionEventMethods;
-    pub use super::ITMP_InputField_TouchScreenKeyboardEvent;
-    pub use super::ITMP_InputField_TouchScreenKeyboardEventMethods;
-    pub use super::TMP_InputField;
-    pub use super::TMP_InputField_CharacterValidation;
-    pub use super::TMP_InputField_ContentType;
-    pub use super::TMP_InputField_EditState;
-    pub use super::TMP_InputField_InputType;
-    pub use super::TMP_InputField_LineType;
-    pub use super::TMP_InputField_OnChangeEvent;
-    pub use super::TMP_InputField_OnValidateInput;
-    pub use super::TMP_InputField_SelectionEvent;
-    pub use super::TMP_InputField_SubmitEvent;
-    pub use super::TMP_InputField_TextSelectionEvent;
-    pub use super::TMP_InputField_TouchScreenKeyboardEvent;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        ITMP_InputField, ITMP_InputFieldMethods, ITMP_InputField_OnChangeEvent, ITMP_InputField_OnChangeEventMethods,
+        ITMP_InputField_OnValidateInput, ITMP_InputField_OnValidateInputMethods, ITMP_InputField_SelectionEvent,
+        ITMP_InputField_SelectionEventMethods, ITMP_InputField_SubmitEvent, ITMP_InputField_SubmitEventMethods, ITMP_InputField_TextSelectionEvent,
+        ITMP_InputField_TextSelectionEventMethods, ITMP_InputField_TouchScreenKeyboardEvent, ITMP_InputField_TouchScreenKeyboardEventMethods,
+        TMP_InputField, TMP_InputField_CharacterValidation, TMP_InputField_ContentType, TMP_InputField_EditState, TMP_InputField_InputType,
+        TMP_InputField_LineType, TMP_InputField_OnChangeEvent, TMP_InputField_OnValidateInput, TMP_InputField_SelectionEvent,
+        TMP_InputField_SubmitEvent, TMP_InputField_TextSelectionEvent, TMP_InputField_TouchScreenKeyboardEvent,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
     #[cfg(feature = "unity_engine-events-unityevent_1")]
     pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
-    pub use crate::unity_engine::events::unityevent_3::IUnityEvent_3;
     #[cfg(feature = "unity_engine-events-unityevent_3")]
     pub use crate::unity_engine::events::unityevent_3::IUnityEvent_3Methods;
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
     #[cfg(feature = "unity_engine-events-unityeventbase")]
     pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::selectable::ISelectable;
     #[cfg(feature = "unity_engine-ui-selectable")]
     pub use crate::unity_engine::ui::selectable::ISelectableMethods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            events::{unityevent_1::IUnityEvent_1, unityevent_3::IUnityEvent_3, unityeventbase::IUnityEventBase},
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::selectable::ISelectable,
+        },
+    };
 }

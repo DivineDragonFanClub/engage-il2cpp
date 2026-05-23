@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-versusratecalc-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusratecalc/VersusRateCalc.md"))]
     #[::unity2::class(namespace = "App", name = "VersusRateCalc")]
@@ -35,11 +35,8 @@ mod __VersusRateCalc_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_rate_data_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusRateCalc as ::unity2::ClassIdentity>::class(),
                 "GetRateDataType",
@@ -51,42 +48,28 @@ mod __VersusRateCalc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
-                    "GetRateDataType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
+                        "GetRateDataType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rate_data_type(
-        rate: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rate_data_type::get_offset() as isize),
-        );
+    pub unsafe fn get_rate_data_type(rate: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_rate_data_type::get_method_info().method_ptr);
         inner(rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_win_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusRateCalc as ::unity2::ClassIdentity>::class(),
                 "GetWinRate",
@@ -98,44 +81,28 @@ mod __VersusRateCalc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
-                    "GetWinRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
+                        "GetWinRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_win_rate(
-        rate: i32,
-        opponent_rate: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_win_rate(rate: i32, opponent_rate: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_win_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_win_rate::get_method_info().method_ptr);
         inner(rate, opponent_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lose_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusRateCalc as ::unity2::ClassIdentity>::class(),
                 "GetLoseRate",
@@ -147,40 +114,27 @@ mod __VersusRateCalc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
-                    "GetLoseRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
+                        "GetLoseRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_lose_rate(
-        rate: i32,
-        opponent_rate: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_lose_rate(rate: i32, opponent_rate: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_lose_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_lose_rate::get_method_info().method_ptr);
         inner(rate, opponent_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusRateCalc as ::unity2::ClassIdentity>::class(),
@@ -193,27 +147,20 @@ mod __VersusRateCalc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusRateCalc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: VersusRateCalc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusRateCalc, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -222,18 +169,11 @@ mod __VersusRateCalc_unity2_raw {
 impl VersusRateCalc {
     #[doc = "`GetRateDataType(i32)` overload"]
     pub fn get_rate_data_type(rate: impl ::core::convert::Into<i32>) -> u16 {
-        unsafe {
-            __VersusRateCalc_unity2_raw::get_rate_data_type(
-                ::core::convert::Into::into(rate),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __VersusRateCalc_unity2_raw::get_rate_data_type(::core::convert::Into::into(rate), ::core::option::Option::None) }
     }
+
     #[doc = "`GetWinRate(i32, i32)` overload"]
-    pub fn get_win_rate(
-        rate: impl ::core::convert::Into<i32>,
-        opponent_rate: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_win_rate(rate: impl ::core::convert::Into<i32>, opponent_rate: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __VersusRateCalc_unity2_raw::get_win_rate(
                 ::core::convert::Into::into(rate),
@@ -242,11 +182,9 @@ impl VersusRateCalc {
             )
         }
     }
+
     #[doc = "`GetLoseRate(i32, i32)` overload"]
-    pub fn get_lose_rate(
-        rate: impl ::core::convert::Into<i32>,
-        opponent_rate: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn get_lose_rate(rate: impl ::core::convert::Into<i32>, opponent_rate: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __VersusRateCalc_unity2_raw::get_lose_rate(
                 ::core::convert::Into::into(rate),
@@ -262,9 +200,7 @@ pub trait IVersusRateCalcMethods: IVersusRateCalc {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <VersusRateCalc as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <VersusRateCalc as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VersusRateCalc_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -292,9 +228,7 @@ impl VersusRateCalc {
 #[cfg(feature = "app-versusratecalc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVersusRateCalc;
-    pub use super::IVersusRateCalcMethods;
-    pub use super::VersusRateCalc;
+    pub use super::{IVersusRateCalc, IVersusRateCalcMethods, VersusRateCalc};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

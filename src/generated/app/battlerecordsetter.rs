@@ -2,14 +2,18 @@
 
 #[cfg(feature = "app-battlerecordsetter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordsetter/BattleRecordSetter.md"))]
     #[::unity2::class(namespace = "App", name = "BattleRecordSetter")]
@@ -30,9 +34,7 @@ mod __types {
         #[rename(name = "m_ScrolledTime")]
         pub m_scrolled_time: f32,
         #[rename(name = "m_RecordList")]
-        pub m_record_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::recttransform::RectTransform,
-        >,
+        pub m_record_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform>,
         #[rename(name = "m_StartTime")]
         pub m_start_time: f64,
     }
@@ -50,9 +52,7 @@ mod __BattleRecordSetter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_scroll_time_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleRecordSetter as ::unity2::ClassIdentity>::class(),
@@ -65,41 +65,28 @@ mod __BattleRecordSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
-                    "get_ScrollTimePattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
+                        "get_ScrollTimePattern",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_scroll_time_pattern(
-        this: BattleRecordSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_scroll_time_pattern(this: BattleRecordSetter, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BattleRecordSetter, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_scroll_time_pattern::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_scroll_time_pattern::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_scroll_time_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleRecordSetter as ::unity2::ClassIdentity>::class(),
                 "set_ScrollTimePattern",
@@ -111,40 +98,27 @@ mod __BattleRecordSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
-                    "set_ScrollTimePattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
+                        "set_ScrollTimePattern",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_scroll_time_pattern(
-        this: BattleRecordSetter,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_scroll_time_pattern(this: BattleRecordSetter, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleRecordSetter, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_scroll_time_pattern::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_scroll_time_pattern::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_finished {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleRecordSetter as ::unity2::ClassIdentity>::class(),
@@ -157,39 +131,27 @@ mod __BattleRecordSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
-                    "get_IsFinished",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
+                        "get_IsFinished",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_finished(
-        this: BattleRecordSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_finished(this: BattleRecordSetter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(BattleRecordSetter, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_finished::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_finished::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleRecordSetter as ::unity2::ClassIdentity>::class(),
@@ -202,39 +164,27 @@ mod __BattleRecordSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize(
-        this: BattleRecordSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize(this: BattleRecordSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleRecordSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleRecordSetter as ::unity2::ClassIdentity>::class(),
@@ -247,39 +197,27 @@ mod __BattleRecordSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: BattleRecordSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: BattleRecordSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleRecordSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleRecordSetter as ::unity2::ClassIdentity>::class(),
@@ -292,30 +230,20 @@ mod __BattleRecordSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleRecordSetter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BattleRecordSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BattleRecordSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleRecordSetter, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -325,64 +253,42 @@ pub trait IBattleRecordSetterMethods: IBattleRecordSetter {
     #[doc = "`get_ScrollTimePattern()` overload"]
     fn get_scroll_time_pattern(self) -> i32 {
         unsafe {
-            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleRecordSetter_unity2_raw::get_scroll_time_pattern(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleRecordSetter_unity2_raw::get_scroll_time_pattern(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ScrollTimePattern(i32)` overload"]
     fn set_scroll_time_pattern(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleRecordSetter_unity2_raw::set_scroll_time_pattern(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleRecordSetter_unity2_raw::set_scroll_time_pattern(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsFinished()` overload"]
     fn get_is_finished(self) -> bool {
         unsafe {
-            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleRecordSetter_unity2_raw::get_is_finished(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleRecordSetter_unity2_raw::get_is_finished(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Initialize()` overload"]
     fn initialize(self) -> () {
         unsafe {
-            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleRecordSetter_unity2_raw::initialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleRecordSetter_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleRecordSetter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleRecordSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -410,22 +316,19 @@ impl BattleRecordSetter {
 #[cfg(feature = "app-battlerecordsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleRecordSetter;
-    pub use super::IBattleRecordSetter;
-    pub use super::IBattleRecordSetterMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{BattleRecordSetter, IBattleRecordSetter, IBattleRecordSetterMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

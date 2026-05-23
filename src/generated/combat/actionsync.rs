@@ -2,12 +2,16 @@
 
 #[cfg(feature = "combat-actionsync-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::actionbase::{ActionBase, IActionBase};
-    use crate::combat::state::{IState, State};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::{
+            actionbase::{ActionBase, IActionBase},
+            state::{IState, State},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionsync/ActionSync.md"))]
     #[::unity2::class(namespace = "Combat", name = "ActionSync")]
@@ -30,81 +34,52 @@ mod __ActionSync_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionSync as ::unity2::ClassIdentity>::class(),
-                "get_Name",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionSync as ::unity2::ClassIdentity>::class(), "get_Name", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionSync as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionSync as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ActionSync,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_name(this: ActionSync, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(ActionSync, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::synctoken::SyncToken as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionSync as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionSync as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionSync as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionSync as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -118,98 +93,61 @@ mod __ActionSync_unity2_raw {
             crate::combat::character::Character,
             crate::combat::synctoken::SyncToken,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, chr, sync_token, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionSync as ::unity2::ClassIdentity>::class(),
-                "OnEnter",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionSync as ::unity2::ClassIdentity>::class(), "OnEnter", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionSync as ::unity2::ClassIdentity>::NAME,
-                    "OnEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionSync as ::unity2::ClassIdentity>::NAME,
+                        "OnEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_enter(this: ActionSync, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ActionSync, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ActionSync as ::unity2::ClassIdentity>::class(),
-                "OnUpdate",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ActionSync as ::unity2::ClassIdentity>::class(), "OnUpdate", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionSync as ::unity2::ClassIdentity>::NAME,
-                    "OnUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionSync as ::unity2::ClassIdentity>::NAME,
+                        "OnUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_update(
-        this: ActionSync,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_update(this: ActionSync, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ActionSync, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -219,9 +157,7 @@ pub trait IActionSyncMethods: IActionSync {
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionSync_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
@@ -232,9 +168,7 @@ pub trait IActionSyncMethods: IActionSync {
         sync_token: impl ::core::convert::Into<crate::combat::synctoken::SyncToken>,
     ) -> () {
         unsafe {
-            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionSync_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(chr),
@@ -246,18 +180,14 @@ pub trait IActionSyncMethods: IActionSync {
     #[doc = "`OnEnter()` overload"]
     fn on_enter(self) -> () {
         unsafe {
-            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionSync_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnUpdate()` overload"]
     fn on_update(self) -> () {
         unsafe {
-            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ActionSync as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionSync_unity2_raw::on_update(__receiver, ::core::option::Option::None)
         }
     }
@@ -269,17 +199,9 @@ impl<__T: IActionSync> IActionSyncMethods for __T {}
 #[cfg(feature = "combat-actionsync")]
 impl ActionSync {
     #[doc = "`.ctor(crate::combat::character::Character, crate::combat::synctoken::SyncToken)` — overload selector"]
-    pub fn new(
-        chr: crate::combat::character::Character,
-        sync_token: crate::combat::synctoken::SyncToken,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ActionSync),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(chr: crate::combat::character::Character, sync_token: crate::combat::synctoken::SyncToken) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ActionSync), ::core::stringify!(new),));
         <Self as IActionSyncMethods>::ctor(this, chr, sync_token);
         this
     }
@@ -288,16 +210,15 @@ impl ActionSync {
 #[cfg(feature = "combat-actionsync")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionSync;
-    pub use super::IActionSync;
-    pub use super::IActionSyncMethods;
-    pub use crate::combat::actionbase::IActionBase;
+    pub use super::{ActionSync, IActionSync, IActionSyncMethods};
     #[cfg(feature = "combat-actionbase")]
     pub use crate::combat::actionbase::IActionBaseMethods;
-    pub use crate::combat::state::IState;
     #[cfg(feature = "combat-state")]
     pub use crate::combat::state::IStateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::{actionbase::IActionBase, state::IState},
+        system::object::IObject,
+    };
 }

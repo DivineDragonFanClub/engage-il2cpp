@@ -2,27 +2,27 @@
 
 #[cfg(feature = "app-eatunitsselectmenureliancecontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eatunitsselectmenureliancecontent/EatUnitsSelectMenuRelianceContent.md"))]
     #[::unity2::class(namespace = "App", name = "EatUnitsSelectMenuRelianceContent")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EatUnitsSelectMenuRelianceContent {
         #[rename(name = "m_TogetherList")]
-        pub m_together_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_together_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_RelianceList")]
-        pub m_reliance_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_reliance_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }
 }
 
@@ -38,10 +38,11 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_update_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::class(),
                 "UpdateList",
@@ -53,18 +54,15 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_list(
@@ -78,21 +76,18 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
             crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_list::get_method_info().method_ptr);
         inner(this, selected_units, now_cursor_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_same_units {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::class(),
                 "IsSameUnits",
@@ -104,18 +99,15 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
-                    "IsSameUnits",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
+                        "IsSameUnits",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_same_units(
@@ -129,20 +121,14 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
             crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_same_units::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_same_units::get_method_info().method_ptr);
         inner(this, selected_units, now_cursor_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -158,18 +144,15 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_info(
@@ -183,20 +166,14 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_info::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_unit_info::get_method_info().method_ptr);
         inner(this, together_list_item_object, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::class(),
@@ -209,32 +186,20 @@ mod __EatUnitsSelectMenuRelianceContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EatUnitsSelectMenuRelianceContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: EatUnitsSelectMenuRelianceContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            EatUnitsSelectMenuRelianceContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: EatUnitsSelectMenuRelianceContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(EatUnitsSelectMenuRelianceContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -244,16 +209,13 @@ pub trait IEatUnitsSelectMenuRelianceContentMethods: IEatUnitsSelectMenuReliance
     #[doc = "`UpdateList(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::unit::Unit)` overload"]
     fn update_list(
         self,
-        selected_units: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        >,
+        selected_units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
         now_cursor_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __EatUnitsSelectMenuRelianceContent_unity2_raw::update_list(
                 __receiver,
                 ::core::convert::Into::into(selected_units),
@@ -265,16 +227,13 @@ pub trait IEatUnitsSelectMenuRelianceContentMethods: IEatUnitsSelectMenuReliance
     #[doc = "`IsSameUnits(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::unit::Unit)` overload"]
     fn is_same_units(
         self,
-        selected_units: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-        >,
+        selected_units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
         now_cursor_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> bool {
         unsafe {
-            let __receiver =
-                <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __EatUnitsSelectMenuRelianceContent_unity2_raw::is_same_units(
                 __receiver,
                 ::core::convert::Into::into(selected_units),
@@ -286,16 +245,13 @@ pub trait IEatUnitsSelectMenuRelianceContentMethods: IEatUnitsSelectMenuReliance
     #[doc = "`SetUnitInfo(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]
     fn set_unit_info(
         self,
-        together_list_item_object: impl ::core::convert::Into<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        together_list_item_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __EatUnitsSelectMenuRelianceContent_unity2_raw::set_unit_info(
                 __receiver,
                 ::core::convert::Into::into(together_list_item_object),
@@ -307,14 +263,10 @@ pub trait IEatUnitsSelectMenuRelianceContentMethods: IEatUnitsSelectMenuReliance
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __EatUnitsSelectMenuRelianceContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <EatUnitsSelectMenuRelianceContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __EatUnitsSelectMenuRelianceContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -341,22 +293,19 @@ impl EatUnitsSelectMenuRelianceContent {
 #[cfg(feature = "app-eatunitsselectmenureliancecontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EatUnitsSelectMenuRelianceContent;
-    pub use super::IEatUnitsSelectMenuRelianceContent;
-    pub use super::IEatUnitsSelectMenuRelianceContentMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{EatUnitsSelectMenuRelianceContent, IEatUnitsSelectMenuRelianceContent, IEatUnitsSelectMenuRelianceContentMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

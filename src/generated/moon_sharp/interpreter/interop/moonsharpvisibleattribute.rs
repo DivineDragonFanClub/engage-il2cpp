@@ -2,15 +2,12 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-moonsharpvisibleattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/moonsharpvisibleattribute/MoonSharpVisibleAttribute.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "MoonSharpVisibleAttribute"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "MoonSharpVisibleAttribute")]
     pub struct MoonSharpVisibleAttribute {}
 }
 
@@ -26,9 +23,7 @@ mod __MoonSharpVisibleAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::class(),
@@ -41,41 +36,28 @@ mod __MoonSharpVisibleAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::NAME,
-                    "get_Visible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::NAME,
+                        "get_Visible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_visible(
-        this: MoonSharpVisibleAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_visible(this: MoonSharpVisibleAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoonSharpVisibleAttribute, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::class(),
                 "set_Visible",
@@ -87,42 +69,28 @@ mod __MoonSharpVisibleAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::NAME,
-                    "set_Visible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::NAME,
+                        "set_Visible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_visible(
-        this: MoonSharpVisibleAttribute,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_visible(this: MoonSharpVisibleAttribute, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoonSharpVisibleAttribute, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_visible::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -134,31 +102,20 @@ mod __MoonSharpVisibleAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpVisibleAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MoonSharpVisibleAttribute,
-        visible: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MoonSharpVisibleAttribute, visible: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoonSharpVisibleAttribute, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, visible, __unity2_method_info)
     }
 }
@@ -169,41 +126,24 @@ pub trait IMoonSharpVisibleAttributeMethods: IMoonSharpVisibleAttribute {
     fn get_visible(self) -> bool {
         unsafe {
             let __receiver =
-                <MoonSharpVisibleAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpVisibleAttribute_unity2_raw::get_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MoonSharpVisibleAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpVisibleAttribute_unity2_raw::get_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Visible(bool)` overload"]
     fn set_visible(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MoonSharpVisibleAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpVisibleAttribute_unity2_raw::set_visible(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MoonSharpVisibleAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpVisibleAttribute_unity2_raw::set_visible(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(bool)` overload"]
     fn ctor(self, visible: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <MoonSharpVisibleAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpVisibleAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(visible),
-                ::core::option::Option::None,
-            )
+                <MoonSharpVisibleAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpVisibleAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(visible), ::core::option::Option::None)
         }
     }
 }
@@ -230,7 +170,5 @@ impl MoonSharpVisibleAttribute {
 #[cfg(feature = "moon_sharp-interpreter-interop-moonsharpvisibleattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMoonSharpVisibleAttribute;
-    pub use super::IMoonSharpVisibleAttributeMethods;
-    pub use super::MoonSharpVisibleAttribute;
+    pub use super::{IMoonSharpVisibleAttribute, IMoonSharpVisibleAttributeMethods, MoonSharpVisibleAttribute};
 }

@@ -2,15 +2,17 @@
 
 #[cfg(feature = "root-cinemachinemixer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::playables::playablebehaviour::{
-        IPlayableBehaviour, PlayableBehaviour,
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinemixer/CinemachineMixer.md"))]
     #[::unity2::class(namespace = "", name = "CinemachineMixer")]
@@ -18,8 +20,7 @@ mod __types {
     pub struct CinemachineMixer {
         #[static_field]
         #[rename(name = "GetMasterPlayableDirector")]
-        pub get_master_playable_director:
-            crate::root::cinemachinemixer::CinemachineMixer_MasterDirectorDelegate,
+        pub get_master_playable_director: crate::root::cinemachinemixer::CinemachineMixer_MasterDirectorDelegate,
         #[rename(name = "mBrainOverrideId")]
         pub m_brain_override_id: i32,
         #[rename(name = "mPreviewPlay")]
@@ -44,12 +45,9 @@ mod __CinemachineMixer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_playable_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineMixer as ::unity2::ClassIdentity>::class(),
                 "OnPlayableDestroy",
@@ -61,18 +59,15 @@ mod __CinemachineMixer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
-                    "OnPlayableDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
+                        "OnPlayableDestroy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_playable_destroy(
@@ -80,28 +75,18 @@ mod __CinemachineMixer_unity2_raw {
         playable: crate::unity_engine::playables::playable::Playable,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CinemachineMixer,
-            crate::unity_engine::playables::playable::Playable,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_playable_destroy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CinemachineMixer, crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_playable_destroy::get_method_info().method_ptr);
         inner(this, playable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineMixer as ::unity2::ClassIdentity>::class(),
@@ -114,18 +99,15 @@ mod __CinemachineMixer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
-                    "PrepareFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
+                        "PrepareFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_frame(
@@ -139,24 +121,17 @@ mod __CinemachineMixer_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_frame::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_prepare_frame::get_method_info().method_ptr);
         inner(this, playable, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -170,18 +145,15 @@ mod __CinemachineMixer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
-                    "ProcessFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
+                        "ProcessFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn process_frame(
@@ -197,22 +169,15 @@ mod __CinemachineMixer_unity2_raw {
             crate::unity_engine::playables::framedata::FrameData,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process_frame::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_process_frame::get_method_info().method_ptr);
         inner(this, playable, info, player_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_delta_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineMixer as ::unity2::ClassIdentity>::class(),
                 "GetDeltaTime",
@@ -224,40 +189,27 @@ mod __CinemachineMixer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
-                    "GetDeltaTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
+                        "GetDeltaTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_delta_time(
-        this: CinemachineMixer,
-        delta_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_delta_time(this: CinemachineMixer, delta_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CinemachineMixer, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_delta_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_delta_time::get_method_info().method_ptr);
         inner(this, delta_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineMixer as ::unity2::ClassIdentity>::class(),
@@ -270,30 +222,20 @@ mod __CinemachineMixer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CinemachineMixer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CinemachineMixer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CinemachineMixer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -301,19 +243,10 @@ mod __CinemachineMixer_unity2_raw {
 #[cfg(feature = "root-cinemachinemixer")]
 pub trait ICinemachineMixerMethods: ICinemachineMixer {
     #[doc = "`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]
-    fn on_playable_destroy(
-        self,
-        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
-    ) -> () {
+    fn on_playable_destroy(self, playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> () {
         unsafe {
-            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CinemachineMixer_unity2_raw::on_playable_destroy(
-                __receiver,
-                ::core::convert::Into::into(playable),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CinemachineMixer_unity2_raw::on_playable_destroy(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]
@@ -323,9 +256,7 @@ pub trait ICinemachineMixerMethods: ICinemachineMixer {
         info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineMixer_unity2_raw::prepare_frame(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -342,9 +273,7 @@ pub trait ICinemachineMixerMethods: ICinemachineMixer {
         player_data: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineMixer_unity2_raw::process_frame(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -357,22 +286,14 @@ pub trait ICinemachineMixerMethods: ICinemachineMixer {
     #[doc = "`GetDeltaTime(f32)` overload"]
     fn get_delta_time(self, delta_time: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
-            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CinemachineMixer_unity2_raw::get_delta_time(
-                __receiver,
-                ::core::convert::Into::into(delta_time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CinemachineMixer_unity2_raw::get_delta_time(__receiver, ::core::convert::Into::into(delta_time), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CinemachineMixer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CinemachineMixer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -406,9 +327,7 @@ mod __CinemachineMixer_MasterDirectorDelegate_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -424,18 +343,15 @@ mod __CinemachineMixer_MasterDirectorDelegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer_MasterDirectorDelegate as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer_MasterDirectorDelegate as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -449,20 +365,14 @@ mod __CinemachineMixer_MasterDirectorDelegate_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CinemachineMixer_MasterDirectorDelegate as ::unity2::ClassIdentity>::class(),
@@ -475,41 +385,38 @@ mod __CinemachineMixer_MasterDirectorDelegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CinemachineMixer_MasterDirectorDelegate as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CinemachineMixer_MasterDirectorDelegate as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
         this: CinemachineMixer_MasterDirectorDelegate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playabledirector::PlayableDirector {
-        let inner : extern "C" fn (CinemachineMixer_MasterDirectorDelegate , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playabledirector :: PlayableDirector = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_invoke :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CinemachineMixer_MasterDirectorDelegate,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playabledirector::PlayableDirector =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-cinemachinemixer")]
-pub trait ICinemachineMixer_MasterDirectorDelegateMethods:
-    ICinemachineMixer_MasterDirectorDelegate
-{
+pub trait ICinemachineMixer_MasterDirectorDelegateMethods: ICinemachineMixer_MasterDirectorDelegate {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < CinemachineMixer_MasterDirectorDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <CinemachineMixer_MasterDirectorDelegate as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __CinemachineMixer_MasterDirectorDelegate_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -521,20 +428,16 @@ pub trait ICinemachineMixer_MasterDirectorDelegateMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> crate::unity_engine::playables::playabledirector::PlayableDirector {
         unsafe {
-            let __receiver = < CinemachineMixer_MasterDirectorDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CinemachineMixer_MasterDirectorDelegate_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CinemachineMixer_MasterDirectorDelegate as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CinemachineMixer_MasterDirectorDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "root-cinemachinemixer")]
-impl<__T: ICinemachineMixer_MasterDirectorDelegate> ICinemachineMixer_MasterDirectorDelegateMethods
-    for __T
-{
-}
+impl<__T: ICinemachineMixer_MasterDirectorDelegate> ICinemachineMixer_MasterDirectorDelegateMethods for __T {}
 
 #[cfg(feature = "root-cinemachinemixer")]
 impl CinemachineMixer_MasterDirectorDelegate {
@@ -555,22 +458,20 @@ impl CinemachineMixer_MasterDirectorDelegate {
 #[cfg(feature = "root-cinemachinemixer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CinemachineMixer;
-    pub use super::CinemachineMixer_MasterDirectorDelegate;
-    pub use super::ICinemachineMixer;
-    pub use super::ICinemachineMixerMethods;
-    pub use super::ICinemachineMixer_MasterDirectorDelegate;
-    pub use super::ICinemachineMixer_MasterDirectorDelegateMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        CinemachineMixer, CinemachineMixer_MasterDirectorDelegate, ICinemachineMixer, ICinemachineMixerMethods,
+        ICinemachineMixer_MasterDirectorDelegate, ICinemachineMixer_MasterDirectorDelegateMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
     #[cfg(feature = "unity_engine-playables-playablebehaviour")]
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::playables::playablebehaviour::IPlayableBehaviour,
+    };
 }

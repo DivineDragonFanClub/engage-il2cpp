@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-skilldataex-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skilldataex/SkillDataEx.md"))]
     #[::unity2::class(namespace = "Combat", name = "SkillDataEx")]
@@ -25,11 +25,8 @@ mod __SkillDataEx_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_has_skill_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillDataEx as ::unity2::ClassIdentity>::class(),
                 "HasSkillEffect",
@@ -41,43 +38,28 @@ mod __SkillDataEx_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                    "HasSkillEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
+                        "HasSkillEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn has_skill_effect(
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_has_skill_effect::get_offset() as isize),
-        );
+    pub unsafe fn has_skill_effect(skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_has_skill_effect::get_method_info().method_ptr);
         inner(skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_activate_effect_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillDataEx as ::unity2::ClassIdentity>::class(),
                 "GetActivateEffectPrefab",
@@ -89,43 +71,31 @@ mod __SkillDataEx_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                    "GetActivateEffectPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
+                        "GetActivateEffectPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_activate_effect_prefab(
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_activate_effect_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_activate_effect_prefab::get_method_info().method_ptr);
         inner(skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_effect_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillDataEx as ::unity2::ClassIdentity>::class(),
                 "GetHitEffectPrefab",
@@ -137,43 +107,31 @@ mod __SkillDataEx_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                    "GetHitEffectPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
+                        "GetHitEffectPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hit_effect_prefab(
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hit_effect_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_hit_effect_prefab::get_method_info().method_ptr);
         inner(skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_preload_for_adhoc_asset_loader {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillDataEx as ::unity2::ClassIdentity>::class(),
                 "PreloadForAdhocAssetLoader",
@@ -185,30 +143,20 @@ mod __SkillDataEx_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillDataEx as ::unity2::ClassIdentity>::NAME,
-                    "PreloadForAdhocAssetLoader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillDataEx as ::unity2::ClassIdentity>::NAME,
+                        "PreloadForAdhocAssetLoader",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn preload_for_adhoc_asset_loader(
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn preload_for_adhoc_asset_loader(skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_preload_for_adhoc_asset_loader::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_preload_for_adhoc_asset_loader::get_method_info().method_ptr);
         inner(skill, __unity2_method_info)
     }
 }
@@ -216,56 +164,32 @@ mod __SkillDataEx_unity2_raw {
 #[cfg(feature = "combat-skilldataex")]
 impl SkillDataEx {
     #[doc = "`HasSkillEffect(crate::app::skilldata::SkillData)` overload"]
-    pub fn has_skill_effect(
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> bool {
-        unsafe {
-            __SkillDataEx_unity2_raw::has_skill_effect(
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn has_skill_effect(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
+        unsafe { __SkillDataEx_unity2_raw::has_skill_effect(::core::convert::Into::into(skill), ::core::option::Option::None) }
     }
+
     #[doc = "`GetActivateEffectPrefab(crate::app::skilldata::SkillData)` overload"]
     pub fn get_activate_effect_prefab(
         skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
     ) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            __SkillDataEx_unity2_raw::get_activate_effect_prefab(
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SkillDataEx_unity2_raw::get_activate_effect_prefab(::core::convert::Into::into(skill), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHitEffectPrefab(crate::app::skilldata::SkillData)` overload"]
-    pub fn get_hit_effect_prefab(
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            __SkillDataEx_unity2_raw::get_hit_effect_prefab(
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_hit_effect_prefab(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> crate::unity_engine::gameobject::GameObject {
+        unsafe { __SkillDataEx_unity2_raw::get_hit_effect_prefab(::core::convert::Into::into(skill), ::core::option::Option::None) }
     }
+
     #[doc = "`PreloadForAdhocAssetLoader(crate::app::skilldata::SkillData)` overload"]
-    pub fn preload_for_adhoc_asset_loader(
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> () {
-        unsafe {
-            __SkillDataEx_unity2_raw::preload_for_adhoc_asset_loader(
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn preload_for_adhoc_asset_loader(skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
+        unsafe { __SkillDataEx_unity2_raw::preload_for_adhoc_asset_loader(::core::convert::Into::into(skill), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "combat-skilldataex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISkillDataEx;
-    pub use super::SkillDataEx;
+    pub use super::{ISkillDataEx, SkillDataEx};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-trailhand-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/trailhand/TrailHand.md"))]
     #[repr(C)]
@@ -19,9 +21,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for TrailHand {
-        const NAMESPACE: &'static str = "Combat";
-
         const NAME: &'static str = "TrailHand";
+        const NAMESPACE: &'static str = "Combat";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -32,10 +33,7 @@ mod __types {
 
     impl ::unity2::IlType for TrailHand {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -52,9 +50,7 @@ mod __TrailHand_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_alive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TrailHand as ::unity2::ClassIdentity>::class(),
@@ -67,39 +63,27 @@ mod __TrailHand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrailHand as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAlive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrailHand as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAlive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_alive(
-        this: TrailHand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_alive(this: TrailHand, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TrailHand, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_alive::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_root_and_tip_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -116,18 +100,15 @@ mod __TrailHand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrailHand as ::unity2::ClassIdentity>::NAME,
-                    "SetRootAndTipTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrailHand as ::unity2::ClassIdentity>::NAME,
+                        "SetRootAndTipTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_root_and_tip_transform(
@@ -143,100 +124,60 @@ mod __TrailHand_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_root_and_tip_transform::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_set_root_and_tip_transform::get_method_info().method_ptr);
         inner(this, t, root_name, tip_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrailHand as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TrailHand as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrailHand as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrailHand as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: TrailHand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TrailHand, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TrailHand, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TrailHand as ::unity2::ClassIdentity>::class(),
-                "Update",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TrailHand as ::unity2::ClassIdentity>::class(), "Update", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrailHand as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrailHand as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: TrailHand,
-        dt: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: TrailHand, dt: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TrailHand, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, dt, __unity2_method_info)
     }
 }
@@ -247,6 +188,7 @@ impl TrailHand {
     pub fn get_is_alive(self) -> bool {
         unsafe { __TrailHand_unity2_raw::get_is_alive(self, ::core::option::Option::None) }
     }
+
     #[doc = "`SetRootAndTipTransform(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn set_root_and_tip_transform(
         self,
@@ -264,19 +206,15 @@ impl TrailHand {
             )
         }
     }
+
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
         unsafe { __TrailHand_unity2_raw::clear(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Update(f32)` overload"]
     pub fn update(self, dt: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TrailHand_unity2_raw::update(
-                self,
-                ::core::convert::Into::into(dt),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TrailHand_unity2_raw::update(self, ::core::convert::Into::into(dt), ::core::option::Option::None) }
     }
 }
 
@@ -284,10 +222,9 @@ impl TrailHand {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TrailHand;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

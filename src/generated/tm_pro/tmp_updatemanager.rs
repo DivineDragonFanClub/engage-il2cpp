@@ -2,10 +2,10 @@
 
 #[cfg(feature = "tm_pro-tmp_updatemanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_updatemanager/TMP_UpdateManager.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_UpdateManager")]
@@ -17,24 +17,19 @@ mod __types {
         #[rename(name = "m_LayoutQueueLookup")]
         pub m_layout_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
         #[rename(name = "m_LayoutRebuildQueue")]
-        pub m_layout_rebuild_queue:
-            crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        pub m_layout_rebuild_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
         #[rename(name = "m_GraphicQueueLookup")]
         pub m_graphic_queue_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
         #[rename(name = "m_GraphicRebuildQueue")]
-        pub m_graphic_rebuild_queue:
-            crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        pub m_graphic_rebuild_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
         #[rename(name = "m_InternalUpdateLookup")]
-        pub m_internal_update_lookup:
-            crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+        pub m_internal_update_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
         #[rename(name = "m_InternalUpdateQueue")]
-        pub m_internal_update_queue:
-            crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        pub m_internal_update_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
         #[rename(name = "m_CullingUpdateLookup")]
         pub m_culling_update_lookup: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
         #[rename(name = "m_CullingUpdateQueue")]
-        pub m_culling_update_queue:
-            crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
+        pub m_culling_update_queue: crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_text::TMP_Text>,
     }
 }
 
@@ -50,9 +45,7 @@ mod __TMP_UpdateManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
@@ -65,39 +58,27 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "get_instance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "get_instance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_updatemanager::TMP_UpdateManager {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_updatemanager::TMP_UpdateManager = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_instance::get_offset() as isize),
-        );
+    pub unsafe fn get_instance(__unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::tmp_updatemanager::TMP_UpdateManager {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::tm_pro::tmp_updatemanager::TMP_UpdateManager =
+            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
@@ -110,41 +91,28 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_UpdateManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TMP_UpdateManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_UpdateManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_text_object_for_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "RegisterTextObjectForUpdate",
@@ -156,43 +124,31 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterTextObjectForUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterTextObjectForUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_text_object_for_update(
         text_object: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_text_object_for_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_text_object_for_update::get_method_info().method_ptr);
         inner(text_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_register_text_object_for_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalRegisterTextObjectForUpdate",
@@ -204,18 +160,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalRegisterTextObjectForUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalRegisterTextObjectForUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_register_text_object_for_update(
@@ -223,26 +176,16 @@ mod __TMP_UpdateManager_unity2_raw {
         text_object: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_register_text_object_for_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_register_text_object_for_update::get_method_info().method_ptr);
         inner(this, text_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_text_element_for_layout_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "RegisterTextElementForLayoutRebuild",
@@ -254,43 +197,31 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterTextElementForLayoutRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterTextElementForLayoutRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_text_element_for_layout_rebuild(
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_text_element_for_layout_rebuild::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_text_element_for_layout_rebuild::get_method_info().method_ptr);
         inner(element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_register_text_element_for_layout_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalRegisterTextElementForLayoutRebuild",
@@ -302,18 +233,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalRegisterTextElementForLayoutRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalRegisterTextElementForLayoutRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_register_text_element_for_layout_rebuild(
@@ -321,29 +249,16 @@ mod __TMP_UpdateManager_unity2_raw {
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_register_text_element_for_layout_rebuild::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_register_text_element_for_layout_rebuild::get_method_info().method_ptr);
         inner(this, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_text_element_for_graphic_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "RegisterTextElementForGraphicRebuild",
@@ -355,43 +270,31 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterTextElementForGraphicRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterTextElementForGraphicRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_text_element_for_graphic_rebuild(
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_text_element_for_graphic_rebuild::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_text_element_for_graphic_rebuild::get_method_info().method_ptr);
         inner(element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_register_text_element_for_graphic_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalRegisterTextElementForGraphicRebuild",
@@ -403,18 +306,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalRegisterTextElementForGraphicRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalRegisterTextElementForGraphicRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_register_text_element_for_graphic_rebuild(
@@ -422,29 +322,16 @@ mod __TMP_UpdateManager_unity2_raw {
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_register_text_element_for_graphic_rebuild::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_register_text_element_for_graphic_rebuild::get_method_info().method_ptr);
         inner(this, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_text_element_for_culling_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "RegisterTextElementForCullingUpdate",
@@ -456,43 +343,31 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "RegisterTextElementForCullingUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "RegisterTextElementForCullingUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_text_element_for_culling_update(
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_text_element_for_culling_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_text_element_for_culling_update::get_method_info().method_ptr);
         inner(element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_register_text_element_for_culling_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalRegisterTextElementForCullingUpdate",
@@ -504,18 +379,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalRegisterTextElementForCullingUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalRegisterTextElementForCullingUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_register_text_element_for_culling_update(
@@ -523,27 +395,15 @@ mod __TMP_UpdateManager_unity2_raw {
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_register_text_element_for_culling_update::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_register_text_element_for_culling_update::get_method_info().method_ptr);
         inner(this, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_camera_pre_cull {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
@@ -556,39 +416,27 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "OnCameraPreCull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "OnCameraPreCull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_camera_pre_cull(
-        this: TMP_UpdateManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_camera_pre_cull(this: TMP_UpdateManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_UpdateManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_camera_pre_cull::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_camera_pre_cull::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do_rebuilds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
@@ -601,41 +449,28 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "DoRebuilds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "DoRebuilds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn do_rebuilds(
-        this: TMP_UpdateManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn do_rebuilds(this: TMP_UpdateManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_UpdateManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_do_rebuilds::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_do_rebuilds::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_un_register_text_object_for_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "UnRegisterTextObjectForUpdate",
@@ -647,43 +482,31 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "UnRegisterTextObjectForUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "UnRegisterTextObjectForUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn un_register_text_object_for_update(
         text_object: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_un_register_text_object_for_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_un_register_text_object_for_update::get_method_info().method_ptr);
         inner(text_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_un_register_text_element_for_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "UnRegisterTextElementForRebuild",
@@ -695,43 +518,31 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "UnRegisterTextElementForRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "UnRegisterTextElementForRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn un_register_text_element_for_rebuild(
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_un_register_text_element_for_rebuild::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_un_register_text_element_for_rebuild::get_method_info().method_ptr);
         inner(element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_un_register_text_element_for_graphic_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalUnRegisterTextElementForGraphicRebuild",
@@ -743,18 +554,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalUnRegisterTextElementForGraphicRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalUnRegisterTextElementForGraphicRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_un_register_text_element_for_graphic_rebuild(
@@ -762,29 +570,16 @@ mod __TMP_UpdateManager_unity2_raw {
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_un_register_text_element_for_graphic_rebuild::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_un_register_text_element_for_graphic_rebuild::get_method_info().method_ptr);
         inner(this, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_un_register_text_element_for_layout_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalUnRegisterTextElementForLayoutRebuild",
@@ -796,18 +591,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalUnRegisterTextElementForLayoutRebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalUnRegisterTextElementForLayoutRebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_un_register_text_element_for_layout_rebuild(
@@ -815,29 +607,16 @@ mod __TMP_UpdateManager_unity2_raw {
         element: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_un_register_text_element_for_layout_rebuild::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_un_register_text_element_for_layout_rebuild::get_method_info().method_ptr);
         inner(this, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_un_register_text_object_for_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_text::TMP_Text as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
                 "InternalUnRegisterTextObjectForUpdate",
@@ -849,18 +628,15 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    "InternalUnRegisterTextObjectForUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        "InternalUnRegisterTextObjectForUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_un_register_text_object_for_update(
@@ -868,26 +644,15 @@ mod __TMP_UpdateManager_unity2_raw {
         text_object: crate::tm_pro::tmp_text::TMP_Text,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_UpdateManager,
-            crate::tm_pro::tmp_text::TMP_Text,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_internal_un_register_text_object_for_update::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(TMP_UpdateManager, crate::tm_pro::tmp_text::TMP_Text, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_un_register_text_object_for_update::get_method_info().method_ptr);
         inner(this, text_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_UpdateManager as ::unity2::ClassIdentity>::class(),
@@ -900,26 +665,19 @@ mod __TMP_UpdateManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_UpdateManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -930,21 +688,16 @@ impl TMP_UpdateManager {
     pub fn get_instance() -> crate::tm_pro::tmp_updatemanager::TMP_UpdateManager {
         unsafe { __TMP_UpdateManager_unity2_raw::get_instance(::core::option::Option::None) }
     }
+
     #[doc = "`RegisterTextObjectForUpdate(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    pub fn register_text_object_for_update(
-        text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    pub fn register_text_object_for_update(text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            __TMP_UpdateManager_unity2_raw::register_text_object_for_update(
-                ::core::convert::Into::into(text_object),
-                ::core::option::Option::None,
-            )
+            __TMP_UpdateManager_unity2_raw::register_text_object_for_update(::core::convert::Into::into(text_object), ::core::option::Option::None)
         }
     }
+
     #[doc = "`RegisterTextElementForLayoutRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    pub fn register_text_element_for_layout_rebuild(
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    pub fn register_text_element_for_layout_rebuild(element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
             __TMP_UpdateManager_unity2_raw::register_text_element_for_layout_rebuild(
                 ::core::convert::Into::into(element),
@@ -952,10 +705,9 @@ impl TMP_UpdateManager {
             )
         }
     }
+
     #[doc = "`RegisterTextElementForGraphicRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    pub fn register_text_element_for_graphic_rebuild(
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    pub fn register_text_element_for_graphic_rebuild(element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
             __TMP_UpdateManager_unity2_raw::register_text_element_for_graphic_rebuild(
                 ::core::convert::Into::into(element),
@@ -963,10 +715,9 @@ impl TMP_UpdateManager {
             )
         }
     }
+
     #[doc = "`RegisterTextElementForCullingUpdate(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    pub fn register_text_element_for_culling_update(
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    pub fn register_text_element_for_culling_update(element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
             __TMP_UpdateManager_unity2_raw::register_text_element_for_culling_update(
                 ::core::convert::Into::into(element),
@@ -974,28 +725,21 @@ impl TMP_UpdateManager {
             )
         }
     }
+
     #[doc = "`UnRegisterTextObjectForUpdate(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    pub fn un_register_text_object_for_update(
-        text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    pub fn un_register_text_object_for_update(text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            __TMP_UpdateManager_unity2_raw::un_register_text_object_for_update(
-                ::core::convert::Into::into(text_object),
-                ::core::option::Option::None,
-            )
+            __TMP_UpdateManager_unity2_raw::un_register_text_object_for_update(::core::convert::Into::into(text_object), ::core::option::Option::None)
         }
     }
+
     #[doc = "`UnRegisterTextElementForRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    pub fn un_register_text_element_for_rebuild(
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    pub fn un_register_text_element_for_rebuild(element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            __TMP_UpdateManager_unity2_raw::un_register_text_element_for_rebuild(
-                ::core::convert::Into::into(element),
-                ::core::option::Option::None,
-            )
+            __TMP_UpdateManager_unity2_raw::un_register_text_element_for_rebuild(::core::convert::Into::into(element), ::core::option::Option::None)
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TMP_UpdateManager_unity2_raw::cctor(::core::option::Option::None) }
@@ -1007,21 +751,14 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InternalRegisterTextObjectForUpdate(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_register_text_object_for_update(
-        self,
-        text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_register_text_object_for_update(self, text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_register_text_object_for_update(
                 __receiver,
                 ::core::convert::Into::into(text_object),
@@ -1030,14 +767,9 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
         }
     }
     #[doc = "`InternalRegisterTextElementForLayoutRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_register_text_element_for_layout_rebuild(
-        self,
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_register_text_element_for_layout_rebuild(self, element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_register_text_element_for_layout_rebuild(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -1046,14 +778,9 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
         }
     }
     #[doc = "`InternalRegisterTextElementForGraphicRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_register_text_element_for_graphic_rebuild(
-        self,
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_register_text_element_for_graphic_rebuild(self, element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_register_text_element_for_graphic_rebuild(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -1062,14 +789,9 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
         }
     }
     #[doc = "`InternalRegisterTextElementForCullingUpdate(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_register_text_element_for_culling_update(
-        self,
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_register_text_element_for_culling_update(self, element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_register_text_element_for_culling_update(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -1080,33 +802,21 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
     #[doc = "`OnCameraPreCull()` overload"]
     fn on_camera_pre_cull(self) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_UpdateManager_unity2_raw::on_camera_pre_cull(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_UpdateManager_unity2_raw::on_camera_pre_cull(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DoRebuilds()` overload"]
     fn do_rebuilds(self) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::do_rebuilds(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InternalUnRegisterTextElementForGraphicRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_un_register_text_element_for_graphic_rebuild(
-        self,
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_un_register_text_element_for_graphic_rebuild(self, element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_un_register_text_element_for_graphic_rebuild(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -1115,14 +825,9 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
         }
     }
     #[doc = "`InternalUnRegisterTextElementForLayoutRebuild(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_un_register_text_element_for_layout_rebuild(
-        self,
-        element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_un_register_text_element_for_layout_rebuild(self, element: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_un_register_text_element_for_layout_rebuild(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -1131,14 +836,9 @@ pub trait ITMP_UpdateManagerMethods: ITMP_UpdateManager {
         }
     }
     #[doc = "`InternalUnRegisterTextObjectForUpdate(crate::tm_pro::tmp_text::TMP_Text)` overload"]
-    fn internal_un_register_text_object_for_update(
-        self,
-        text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>,
-    ) -> () {
+    fn internal_un_register_text_object_for_update(self, text_object: impl ::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>) -> () {
         unsafe {
-            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_UpdateManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_UpdateManager_unity2_raw::internal_un_register_text_object_for_update(
                 __receiver,
                 ::core::convert::Into::into(text_object),
@@ -1170,9 +870,7 @@ impl TMP_UpdateManager {
 #[cfg(feature = "tm_pro-tmp_updatemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_UpdateManager;
-    pub use super::ITMP_UpdateManagerMethods;
-    pub use super::TMP_UpdateManager;
+    pub use super::{ITMP_UpdateManager, ITMP_UpdateManagerMethods, TMP_UpdateManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

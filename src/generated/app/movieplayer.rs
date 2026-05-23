@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-movieplayer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::movieplayerbase::{IMoviePlayerBase, MoviePlayerBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::movieplayerbase::{IMoviePlayerBase, MoviePlayerBase},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayer/MoviePlayer.md"))]
     #[::unity2::class(namespace = "App", name = "MoviePlayer")]
@@ -33,36 +35,25 @@ mod __MoviePlayer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoviePlayer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MoviePlayer as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -71,33 +62,17 @@ mod __MoviePlayer_unity2_raw {
         is_movie_file_name_direct: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MoviePlayer,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            movie_file_name,
-            is_movie_file_name_direct,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(MoviePlayer, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, movie_file_name, is_movie_file_name_direct, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_error_callback {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -111,18 +86,15 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "ErrorCallback",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "ErrorCallback",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn error_callback(
@@ -136,24 +108,16 @@ mod __MoviePlayer_unity2_raw {
             crate::unity_engine::video::videoplayer::VideoPlayer,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_error_callback::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_error_callback::get_method_info().method_ptr);
         inner(this, player, mess, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_loop_point_reached {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
                 "LoopPointReached",
@@ -165,18 +129,15 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "LoopPointReached",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "LoopPointReached",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn loop_point_reached(
@@ -184,27 +145,17 @@ mod __MoviePlayer_unity2_raw {
         player: crate::unity_engine::video::videoplayer::VideoPlayer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MoviePlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_loop_point_reached::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MoviePlayer, crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_loop_point_reached::get_method_info().method_ptr);
         inner(this, player, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_frame_ready {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -218,18 +169,15 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "FrameReady",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "FrameReady",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn frame_ready(
@@ -238,25 +186,15 @@ mod __MoviePlayer_unity2_raw {
         frame_idx: i64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MoviePlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            i64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_frame_ready::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MoviePlayer, crate::unity_engine::video::videoplayer::VideoPlayer, i64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_frame_ready::get_method_info().method_ptr);
         inner(this, player, frame_idx, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_after_load_scene {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -269,39 +207,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "SetupAfterLoadScene",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "SetupAfterLoadScene",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_after_load_scene(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn setup_after_load_scene(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_after_load_scene::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_after_load_scene::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_by_movie_canvas_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -315,18 +241,15 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "SetupByMovieCanvasPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "SetupByMovieCanvasPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_by_movie_canvas_prefab(
@@ -334,24 +257,15 @@ mod __MoviePlayer_unity2_raw {
         canvas_prefab: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MoviePlayer,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_by_movie_canvas_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MoviePlayer, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_setup_by_movie_canvas_prefab::get_method_info().method_ptr);
         inner(this, canvas_prefab, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_movie_file_path_to_video_player {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -364,39 +278,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "SetMovieFilePathToVideoPlayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "SetMovieFilePathToVideoPlayer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_movie_file_path_to_video_player(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn set_movie_file_path_to_video_player(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_movie_file_path_to_video_player::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_movie_file_path_to_video_player::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_sound_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -409,39 +311,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "EnableSoundEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "EnableSoundEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_sound_event(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_sound_event(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_sound_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_sound_event::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_sound_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -454,39 +344,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "DisableSoundEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "DisableSoundEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_sound_event(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_sound_event(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_sound_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_sound_event::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_true_play_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -499,39 +377,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsTruePlayEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsTruePlayEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_true_play_end(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_true_play_end(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_true_play_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_true_play_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_screen_object_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -544,39 +410,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetScreenObjectName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetScreenObjectName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_screen_object_name(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_screen_object_name(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_screen_object_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_screen_object_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_paused {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -589,39 +443,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsPaused",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsPaused",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_paused(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_paused(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_paused::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_paused::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -634,39 +476,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsPlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_play_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -679,39 +509,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_play_end(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_play_end(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_play_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_play_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_movie_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -724,39 +542,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetMovieLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetMovieLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_movie_length(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_movie_length(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_movie_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_movie_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playing_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -769,123 +575,80 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayingPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayingPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_playing_position(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_playing_position(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_playing_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_playing_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoviePlayer as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MoviePlayer as ::unity2::ClassIdentity>::class(), "Tick", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn tick(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoviePlayer as ::unity2::ClassIdentity>::class(),
-                "Prepare",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MoviePlayer as ::unity2::ClassIdentity>::class(), "Prepare", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "Prepare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "Prepare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_prepared {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -898,123 +661,79 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsPrepared",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsPrepared",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_prepared(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_prepared(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_prepared::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_prepared::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoviePlayer as ::unity2::ClassIdentity>::class(),
-                "Play",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MoviePlayer as ::unity2::ClassIdentity>::class(), "Play", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MoviePlayer as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MoviePlayer as ::unity2::ClassIdentity>::class(), "Stop", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_suspend_on {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -1027,39 +746,27 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "SuspendOn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "SuspendOn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn suspend_on(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn suspend_on(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_suspend_on::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_suspend_on::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_suspend_off {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoviePlayer as ::unity2::ClassIdentity>::class(),
@@ -1072,30 +779,20 @@ mod __MoviePlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoviePlayer as ::unity2::ClassIdentity>::NAME,
-                    "SuspendOff",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoviePlayer as ::unity2::ClassIdentity>::NAME,
+                        "SuspendOff",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn suspend_off(
-        this: MoviePlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn suspend_off(this: MoviePlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MoviePlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_suspend_off::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_suspend_off::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1109,9 +806,7 @@ pub trait IMoviePlayerMethods: IMoviePlayer {
         is_movie_file_name_direct: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(movie_file_name),
@@ -1127,9 +822,7 @@ pub trait IMoviePlayerMethods: IMoviePlayer {
         mess: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::error_callback(
                 __receiver,
                 ::core::convert::Into::into(player),
@@ -1139,19 +832,10 @@ pub trait IMoviePlayerMethods: IMoviePlayer {
         }
     }
     #[doc = "`LoopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    fn loop_point_reached(
-        self,
-        player: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
+    fn loop_point_reached(self, player: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MoviePlayer_unity2_raw::loop_point_reached(
-                __receiver,
-                ::core::convert::Into::into(player),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoviePlayer_unity2_raw::loop_point_reached(__receiver, ::core::convert::Into::into(player), ::core::option::Option::None)
         }
     }
     #[doc = "`FrameReady(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]
@@ -1161,9 +845,7 @@ pub trait IMoviePlayerMethods: IMoviePlayer {
         frame_idx: impl ::core::convert::Into<i64>,
     ) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::frame_ready(
                 __receiver,
                 ::core::convert::Into::into(player),
@@ -1175,24 +857,14 @@ pub trait IMoviePlayerMethods: IMoviePlayer {
     #[doc = "`SetupAfterLoadScene()` overload"]
     fn setup_after_load_scene(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MoviePlayer_unity2_raw::setup_after_load_scene(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoviePlayer_unity2_raw::setup_after_load_scene(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupByMovieCanvasPrefab(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn setup_by_movie_canvas_prefab(
-        self,
-        canvas_prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> bool {
+    fn setup_by_movie_canvas_prefab(self, canvas_prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::setup_by_movie_canvas_prefab(
                 __receiver,
                 ::core::convert::Into::into(canvas_prefab),
@@ -1203,159 +875,119 @@ pub trait IMoviePlayerMethods: IMoviePlayer {
     #[doc = "`SetMovieFilePathToVideoPlayer()` overload"]
     fn set_movie_file_path_to_video_player(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MoviePlayer_unity2_raw::set_movie_file_path_to_video_player(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoviePlayer_unity2_raw::set_movie_file_path_to_video_player(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EnableSoundEvent()` overload"]
     fn enable_sound_event(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::enable_sound_event(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DisableSoundEvent()` overload"]
     fn disable_sound_event(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::disable_sound_event(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsTruePlayEnd()` overload"]
     fn is_true_play_end(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::is_true_play_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetScreenObjectName()` overload"]
     fn get_screen_object_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MoviePlayer_unity2_raw::get_screen_object_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoviePlayer_unity2_raw::get_screen_object_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPaused()` overload"]
     fn is_paused(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::is_paused(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlaying()` overload"]
     fn is_playing(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::is_playing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlayEnd()` overload"]
     fn is_play_end(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::is_play_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMovieLength()` overload"]
     fn get_movie_length(self) -> f32 {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::get_movie_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPlayingPosition()` overload"]
     fn get_playing_position(self) -> f32 {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::get_playing_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Tick()` overload"]
     fn tick(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::tick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Prepare()` overload"]
     fn prepare(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::prepare(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPrepared()` overload"]
     fn is_prepared(self) -> bool {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::is_prepared(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Play()` overload"]
     fn play(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::play(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Stop()` overload"]
     fn stop(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::stop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SuspendOn()` overload"]
     fn suspend_on(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::suspend_on(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SuspendOff()` overload"]
     fn suspend_off(self) -> () {
         unsafe {
-            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MoviePlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MoviePlayer_unity2_raw::suspend_off(__receiver, ::core::option::Option::None)
         }
     }
@@ -1368,13 +1000,8 @@ impl<__T: IMoviePlayer> IMoviePlayerMethods for __T {}
 impl MoviePlayer {
     #[doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"]
     pub fn new(movie_file_name: ::unity2::Il2CppString, is_movie_file_name_direct: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MoviePlayer),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MoviePlayer), ::core::stringify!(new),));
         <Self as IMoviePlayerMethods>::ctor(this, movie_file_name, is_movie_file_name_direct);
         this
     }
@@ -1383,13 +1010,10 @@ impl MoviePlayer {
 #[cfg(feature = "app-movieplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMoviePlayer;
-    pub use super::IMoviePlayerMethods;
-    pub use super::MoviePlayer;
-    pub use crate::app::movieplayerbase::IMoviePlayerBase;
+    pub use super::{IMoviePlayer, IMoviePlayerMethods, MoviePlayer};
     #[cfg(feature = "app-movieplayerbase")]
     pub use crate::app::movieplayerbase::IMoviePlayerBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::movieplayerbase::IMoviePlayerBase, system::object::IObject};
 }

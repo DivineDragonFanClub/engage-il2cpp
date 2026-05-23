@@ -2,10 +2,10 @@
 
 #[cfg(feature = "tm_pro-tmpro_extensionmethods-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmpro_extensionmethods/TMPro_ExtensionMethods.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMPro_ExtensionMethods")]
@@ -25,11 +25,8 @@ mod __TMPro_ExtensionMethods_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_to_int_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::class(),
                 "ToIntArray",
@@ -41,43 +38,28 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "ToIntArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "ToIntArray",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_int_array(
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<i32> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<i32> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int_array::get_offset() as isize),
-        );
+    pub unsafe fn to_int_array(text: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<i32> {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<i32> =
+            ::core::mem::transmute(__lookup_to_int_array::get_method_info().method_ptr);
         inner(text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_array_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::class(),
                 "ArrayToString",
@@ -89,43 +71,28 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "ArrayToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "ArrayToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn array_to_string(
-        chars: ::unity2::Array<u16>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Array<u16>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_array_to_string::get_offset() as isize),
-        );
+    pub unsafe fn array_to_string(chars: ::unity2::Array<u16>, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Array<u16>, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_array_to_string::get_method_info().method_ptr);
         inner(chars, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_int_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<i32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::class(),
                 "IntToString",
@@ -137,42 +104,29 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "IntToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "IntToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn int_to_string(
-        unicodes: ::unity2::Array<i32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Array<i32>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_int_to_string::get_offset() as isize),
-        );
+    pub unsafe fn int_to_string(unicodes: ::unity2::Array<i32>, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Array<i32>, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_int_to_string::get_method_info().method_ptr);
         inner(unicodes, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_uint_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<u32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::class(),
                 "UintToString",
@@ -184,41 +138,30 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "UintToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "UintToString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn uint_to_string(
         unicodes: crate::system::collections::generic::list_1::List_1<u32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<u32>,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_uint_to_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::system::collections::generic::list_1::List_1<u32>, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_uint_to_string::get_method_info().method_ptr);
         inner(unicodes, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_int_to_string_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<i32> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -235,18 +178,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "IntToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "IntToString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn int_to_string_2(
@@ -255,25 +195,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Array<i32>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_int_to_string_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<i32>, i32, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_int_to_string_2::get_method_info().method_ptr);
         inner(unicodes, start, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
@@ -289,18 +219,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare(
@@ -308,24 +235,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         b: crate::unity_engine::color32::Color32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::color32::Color32,
-            crate::unity_engine::color32::Color32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color32::Color32, crate::unity_engine::color32::Color32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_rgb {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
@@ -341,18 +259,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "CompareRGB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "CompareRGB",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_rgb(
@@ -360,24 +275,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         b: crate::unity_engine::color32::Color32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::color32::Color32,
-            crate::unity_engine::color32::Color32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_rgb::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color32::Color32, crate::unity_engine::color32::Color32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_compare_rgb::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -393,18 +299,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_2(
@@ -412,24 +315,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         b: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color::Color, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_compare_2::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_rgb_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -445,18 +339,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "CompareRGB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "CompareRGB",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_rgb_2(
@@ -464,24 +355,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         b: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::color::Color,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_rgb_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color::Color, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_compare_rgb_2::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
@@ -497,18 +379,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Multiply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Multiply",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply(
@@ -520,20 +399,14 @@ mod __TMPro_ExtensionMethods_unity2_raw {
             crate::unity_engine::color32::Color32,
             crate::unity_engine::color32::Color32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(__lookup_multiply::get_method_info().method_ptr);
         inner(c1, c2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tint {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
@@ -549,18 +422,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Tint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Tint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn tint(
@@ -572,20 +442,14 @@ mod __TMPro_ExtensionMethods_unity2_raw {
             crate::unity_engine::color32::Color32,
             crate::unity_engine::color32::Color32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tint::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(__lookup_tint::get_method_info().method_ptr);
         inner(c1, c2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tint_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -601,18 +465,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Tint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Tint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn tint_2(
@@ -620,24 +481,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         tint: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color32::Color32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::color32::Color32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tint_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color32::Color32, f32, ::unity2::OptionalMethod) -> crate::unity_engine::color32::Color32 =
+            ::core::mem::transmute(__lookup_tint_2::get_method_info().method_ptr);
         inner(c1, tint, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_min_alpha {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -653,18 +505,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "MinAlpha",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "MinAlpha",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn min_alpha(
@@ -676,20 +525,14 @@ mod __TMPro_ExtensionMethods_unity2_raw {
             crate::unity_engine::color::Color,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_min_alpha::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(__lookup_min_alpha::get_method_info().method_ptr);
         inner(c1, c2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -706,18 +549,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_3(
@@ -731,20 +571,14 @@ mod __TMPro_ExtensionMethods_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_3::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compare_3::get_method_info().method_ptr);
         inner(v1, v2, accuracy, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -761,18 +595,15 @@ mod __TMPro_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_4(
@@ -786,11 +617,7 @@ mod __TMPro_ExtensionMethods_unity2_raw {
             crate::unity_engine::quaternion::Quaternion,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_4::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compare_4::get_method_info().method_ptr);
         inner(q1, q2, accuracy, __unity2_method_info)
     }
 }
@@ -798,49 +625,25 @@ mod __TMPro_ExtensionMethods_unity2_raw {
 #[cfg(feature = "tm_pro-tmpro_extensionmethods")]
 impl TMPro_ExtensionMethods {
     #[doc = "`ToIntArray(::unity2::Il2CppString)` overload"]
-    pub fn to_int_array(
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<i32> {
-        unsafe {
-            __TMPro_ExtensionMethods_unity2_raw::to_int_array(
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn to_int_array(text: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Array<i32> {
+        unsafe { __TMPro_ExtensionMethods_unity2_raw::to_int_array(::core::convert::Into::into(text), ::core::option::Option::None) }
     }
+
     #[doc = "`ArrayToString(::unity2::Array<u16>)` overload"]
-    pub fn array_to_string(
-        chars: impl ::core::convert::Into<::unity2::Array<u16>>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TMPro_ExtensionMethods_unity2_raw::array_to_string(
-                ::core::convert::Into::into(chars),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn array_to_string(chars: impl ::core::convert::Into<::unity2::Array<u16>>) -> ::unity2::Il2CppString {
+        unsafe { __TMPro_ExtensionMethods_unity2_raw::array_to_string(::core::convert::Into::into(chars), ::core::option::Option::None) }
     }
+
     #[doc = "`IntToString(::unity2::Array<i32>)` overload"]
-    pub fn int_to_string(
-        unicodes: impl ::core::convert::Into<::unity2::Array<i32>>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TMPro_ExtensionMethods_unity2_raw::int_to_string(
-                ::core::convert::Into::into(unicodes),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn int_to_string(unicodes: impl ::core::convert::Into<::unity2::Array<i32>>) -> ::unity2::Il2CppString {
+        unsafe { __TMPro_ExtensionMethods_unity2_raw::int_to_string(::core::convert::Into::into(unicodes), ::core::option::Option::None) }
     }
+
     #[doc = "`UintToString(crate::system::collections::generic::list_1::List_1<u32>)` overload"]
-    pub fn uint_to_string(
-        unicodes: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u32>>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TMPro_ExtensionMethods_unity2_raw::uint_to_string(
-                ::core::convert::Into::into(unicodes),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn uint_to_string(unicodes: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<u32>>) -> ::unity2::Il2CppString {
+        unsafe { __TMPro_ExtensionMethods_unity2_raw::uint_to_string(::core::convert::Into::into(unicodes), ::core::option::Option::None) }
     }
+
     #[doc = "`IntToString(::unity2::Array<i32>, i32, i32)` overload"]
     pub fn int_to_string_2(
         unicodes: impl ::core::convert::Into<::unity2::Array<i32>>,
@@ -856,55 +659,40 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
-    pub fn find_instance_id<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+
+    pub fn find_instance_id<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0>>,
         target: impl ::core::convert::Into<M0>,
     ) -> i32 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::class(),
-                "FindInstanceID",
-                2,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<TMPro_ExtensionMethods as ::unity2::ClassIdentity>::class(), "FindInstanceID", 2)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                "FindInstanceID",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TMPro_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                    "FindInstanceID",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(
-                crate::system::collections::generic::list_1::List_1<M0>,
-                M0,
-                ::unity2::OptionalMethod,
-            ) -> i32 = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(crate::system::collections::generic::list_1::List_1<M0>, M0, ::unity2::OptionalMethod) -> i32 =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 ::core::convert::Into::into(list),
@@ -913,6 +701,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Compare(crate::unity_engine::color32::Color32, crate::unity_engine::color32::Color32)` overload"]
     pub fn compare(
         a: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
@@ -926,6 +715,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`CompareRGB(crate::unity_engine::color32::Color32, crate::unity_engine::color32::Color32)` overload"]
     pub fn compare_rgb(
         a: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
@@ -939,6 +729,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Compare(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
     pub fn compare_2(
         a: impl ::core::convert::Into<crate::unity_engine::color::Color>,
@@ -952,6 +743,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`CompareRGB(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
     pub fn compare_rgb_2(
         a: impl ::core::convert::Into<crate::unity_engine::color::Color>,
@@ -965,6 +757,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Multiply(crate::unity_engine::color32::Color32, crate::unity_engine::color32::Color32)` overload"]
     pub fn multiply(
         c1: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
@@ -978,6 +771,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Tint(crate::unity_engine::color32::Color32, crate::unity_engine::color32::Color32)` overload"]
     pub fn tint(
         c1: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
@@ -991,6 +785,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Tint(crate::unity_engine::color32::Color32, f32)` overload"]
     pub fn tint_2(
         c1: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
@@ -1004,6 +799,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`MinAlpha(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
     pub fn min_alpha(
         c1: impl ::core::convert::Into<crate::unity_engine::color::Color>,
@@ -1017,6 +813,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Compare(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32)` overload"]
     pub fn compare_3(
         v1: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
@@ -1032,6 +829,7 @@ impl TMPro_ExtensionMethods {
             )
         }
     }
+
     #[doc = "`Compare(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::quaternion::Quaternion, i32)` overload"]
     pub fn compare_4(
         q1: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
@@ -1052,8 +850,7 @@ impl TMPro_ExtensionMethods {
 #[cfg(feature = "tm_pro-tmpro_extensionmethods")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMPro_ExtensionMethods;
-    pub use super::TMPro_ExtensionMethods;
+    pub use super::{ITMPro_ExtensionMethods, TMPro_ExtensionMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

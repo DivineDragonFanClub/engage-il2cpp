@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-jsonmodule-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/jsonmodule/JsonModule.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "JsonModule")]
@@ -25,37 +25,29 @@ mod __JsonModule_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_parse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonModule as ::unity2::ClassIdentity>::class(),
-                "parse",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<JsonModule as ::unity2::ClassIdentity>::class(), "parse", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonModule as ::unity2::ClassIdentity>::NAME,
-                    "parse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonModule as ::unity2::ClassIdentity>::NAME,
+                        "parse",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn parse(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -63,48 +55,36 @@ mod __JsonModule_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_parse::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_parse::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonModule as ::unity2::ClassIdentity>::class(),
-                "serialize",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<JsonModule as ::unity2::ClassIdentity>::class(), "serialize", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonModule as ::unity2::ClassIdentity>::NAME,
-                    "serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonModule as ::unity2::ClassIdentity>::NAME,
+                        "serialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn serialize(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -112,48 +92,36 @@ mod __JsonModule_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_isnull {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonModule as ::unity2::ClassIdentity>::class(),
-                "isnull",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<JsonModule as ::unity2::ClassIdentity>::class(), "isnull", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonModule as ::unity2::ClassIdentity>::NAME,
-                    "isnull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonModule as ::unity2::ClassIdentity>::NAME,
+                        "isnull",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn isnull(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -161,48 +129,36 @@ mod __JsonModule_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_isnull::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_isnull::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonModule as ::unity2::ClassIdentity>::class(),
-                "null",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<JsonModule as ::unity2::ClassIdentity>::class(), "null", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonModule as ::unity2::ClassIdentity>::NAME,
-                    "null",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonModule as ::unity2::ClassIdentity>::NAME,
+                        "null",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn null(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -210,53 +166,33 @@ mod __JsonModule_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_null::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_null::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JsonModule as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<JsonModule as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonModule as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonModule as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: JsonModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JsonModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(JsonModule, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -265,12 +201,8 @@ mod __JsonModule_unity2_raw {
 impl JsonModule {
     #[doc = "`parse(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn parse(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __JsonModule_unity2_raw::parse(
@@ -280,14 +212,11 @@ impl JsonModule {
             )
         }
     }
+
     #[doc = "`serialize(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn serialize(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __JsonModule_unity2_raw::serialize(
@@ -297,14 +226,11 @@ impl JsonModule {
             )
         }
     }
+
     #[doc = "`isnull(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn isnull(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __JsonModule_unity2_raw::isnull(
@@ -314,14 +240,11 @@ impl JsonModule {
             )
         }
     }
+
     #[doc = "`null(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn null(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __JsonModule_unity2_raw::null(
@@ -338,9 +261,7 @@ pub trait IJsonModuleMethods: IJsonModule {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <JsonModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JsonModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JsonModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -353,13 +274,8 @@ impl<__T: IJsonModule> IJsonModuleMethods for __T {}
 impl JsonModule {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JsonModule),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(JsonModule), ::core::stringify!(new),));
         <Self as IJsonModuleMethods>::ctor(this);
         this
     }
@@ -368,9 +284,7 @@ impl JsonModule {
 #[cfg(feature = "moon_sharp-interpreter-core_lib-jsonmodule")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IJsonModule;
-    pub use super::IJsonModuleMethods;
-    pub use super::JsonModule;
+    pub use super::{IJsonModule, IJsonModuleMethods, JsonModule};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

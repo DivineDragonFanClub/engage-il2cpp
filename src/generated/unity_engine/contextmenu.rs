@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-contextmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/contextmenu/ContextMenu.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ContextMenu")]
@@ -30,86 +30,52 @@ mod __ContextMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContextMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ContextMenu as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContextMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContextMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ContextMenu,
-        item_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ContextMenu,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: ContextMenu, item_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ContextMenu, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, item_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContextMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ContextMenu as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContextMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContextMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -118,53 +84,34 @@ mod __ContextMenu_unity2_raw {
         is_validate_function: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ContextMenu,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ContextMenu, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, item_name, is_validate_function, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ContextMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ContextMenu as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ContextMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ContextMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -174,24 +121,9 @@ mod __ContextMenu_unity2_raw {
         priority: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ContextMenu,
-            ::unity2::Il2CppString,
-            bool,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            item_name,
-            is_validate_function,
-            priority,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(ContextMenu, ::unity2::Il2CppString, bool, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, item_name, is_validate_function, priority, __unity2_method_info)
     }
 }
 
@@ -200,26 +132,14 @@ pub trait IContextMenuMethods: IContextMenu {
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, item_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <ContextMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ContextMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(item_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ContextMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ContextMenu_unity2_raw::ctor(__receiver, ::core::convert::Into::into(item_name), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    fn ctor_2(
-        self,
-        item_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        is_validate_function: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor_2(self, item_name: impl ::core::convert::Into<::unity2::Il2CppString>, is_validate_function: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ContextMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContextMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContextMenu_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(item_name),
@@ -236,9 +156,7 @@ pub trait IContextMenuMethods: IContextMenu {
         priority: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ContextMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ContextMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ContextMenu_unity2_raw::ctor_3(
                 __receiver,
                 ::core::convert::Into::into(item_name),
@@ -257,43 +175,24 @@ impl<__T: IContextMenu> IContextMenuMethods for __T {}
 impl ContextMenu {
     #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
     pub fn new(item_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContextMenu),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ContextMenu), ::core::stringify!(new),));
         <Self as IContextMenuMethods>::ctor(this, item_name);
         this
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"]
     pub fn new_2(item_name: ::unity2::Il2CppString, is_validate_function: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContextMenu),
-                ::core::stringify!(new_2),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ContextMenu), ::core::stringify!(new_2),));
         <Self as IContextMenuMethods>::ctor_2(this, item_name, is_validate_function);
         this
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, bool, i32)` — overload selector"]
-    pub fn new_3(
-        item_name: ::unity2::Il2CppString,
-        is_validate_function: bool,
-        priority: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContextMenu),
-                ::core::stringify!(new_3),
-            )
-        });
+    pub fn new_3(item_name: ::unity2::Il2CppString, is_validate_function: bool, priority: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ContextMenu), ::core::stringify!(new_3),));
         <Self as IContextMenuMethods>::ctor_3(this, item_name, is_validate_function, priority);
         this
     }
@@ -302,7 +201,5 @@ impl ContextMenu {
 #[cfg(feature = "unity_engine-contextmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ContextMenu;
-    pub use super::IContextMenu;
-    pub use super::IContextMenuMethods;
+    pub use super::{ContextMenu, IContextMenu, IContextMenuMethods};
 }

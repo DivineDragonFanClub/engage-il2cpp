@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-signalargsreaderwriter_hit-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/signalargsreaderwriter_hit/SignalArgsReaderWriter_Hit.md"))]
     #[::unity2::class(namespace = "Combat", name = "SignalArgsReaderWriter_Hit")]
@@ -25,13 +25,9 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_hit_is_dummy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::class(),
                 "HitIsDummy",
@@ -43,44 +39,29 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitIsDummy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitIsDummy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hit_is_dummy(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_is_dummy::get_offset() as isize),
-        );
+    pub unsafe fn hit_is_dummy(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_hit_is_dummy::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_is_dummy_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -94,18 +75,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitIsDummy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitIsDummy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hit_is_dummy_2(
@@ -113,28 +91,17 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_is_dummy_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hit_is_dummy_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_hand_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::class(),
                 "HitHandType",
@@ -146,44 +113,29 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitHandType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitHandType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hit_hand_type(
-        ev: crate::unity_engine::animationevent::AnimationEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_hand_type::get_offset() as isize),
-        );
+    pub unsafe fn hit_hand_type(ev: crate::unity_engine::animationevent::AnimationEvent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_hit_hand_type::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_hand_type_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -197,18 +149,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitHandType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitHandType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hit_hand_type_2(
@@ -216,27 +165,17 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         value: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_hand_type_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hit_hand_type_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_slash_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -250,18 +189,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitSlashType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitSlashType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hit_slash_type(
@@ -273,23 +209,16 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
             crate::unity_engine::animationevent::AnimationEvent,
             crate::combat::character::Character,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::slashtype::SlashType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_slash_type::get_offset() as isize),
-        );
+        ) -> crate::combat::slashtype::SlashType = ::core::mem::transmute(__lookup_hit_slash_type::get_method_info().method_ptr);
         inner(ev, cp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_slash_type_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <crate::combat::slashtype::SlashType as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -303,18 +232,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitSlashType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitSlashType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hit_slash_type_2(
@@ -326,24 +252,16 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
             crate::unity_engine::animationevent::AnimationEvent,
             crate::combat::slashtype::SlashType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_slash_type_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_hit_slash_type_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_slash_dir {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::class(),
                 "HitSlashDir",
@@ -355,18 +273,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitSlashDir",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitSlashDir",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hit_slash_dir(
@@ -376,23 +291,16 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::animationevent::AnimationEvent,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_slash_dir::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_hit_slash_dir::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hit_slash_dir_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -406,18 +314,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitSlashDir",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitSlashDir",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hit_slash_dir_2(
@@ -429,24 +334,16 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
             crate::unity_engine::animationevent::AnimationEvent,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hit_slash_dir_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_hit_slash_dir_2::get_method_info().method_ptr);
         inner(ev, hit_dir, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hitstop_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::class(),
                 "HitstopScale",
@@ -458,18 +355,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitstopScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitstopScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hitstop_scale(
@@ -479,24 +373,16 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::animationevent::AnimationEvent,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::hitstopscale::HitstopScale = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hitstop_scale::get_offset() as isize),
-        );
+        ) -> crate::combat::hitstopscale::HitstopScale = ::core::mem::transmute(__lookup_hitstop_scale::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hitstop_scale_as_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::class(),
                 "HitstopScaleAsFloat",
@@ -508,44 +394,32 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitstopScaleAsFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitstopScaleAsFloat",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hitstop_scale_as_float(
         ev: crate::unity_engine::animationevent::AnimationEvent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hitstop_scale_as_float::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_hitstop_scale_as_float::get_method_info().method_ptr);
         inner(ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hitstop_scale_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -559,18 +433,15 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
-                    "HitstopScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalArgsReaderWriter_Hit as ::unity2::ClassIdentity>::NAME,
+                        "HitstopScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hitstop_scale_2(
@@ -578,15 +449,8 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
         value: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::animationevent::AnimationEvent,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hitstop_scale_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::animationevent::AnimationEvent, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hitstop_scale_2::get_method_info().method_ptr);
         inner(ev, value, __unity2_method_info)
     }
 }
@@ -594,16 +458,10 @@ mod __SignalArgsReaderWriter_Hit_unity2_raw {
 #[cfg(feature = "combat-signalargsreaderwriter_hit")]
 impl SignalArgsReaderWriter_Hit {
     #[doc = "`HitIsDummy(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn hit_is_dummy(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> bool {
-        unsafe {
-            __SignalArgsReaderWriter_Hit_unity2_raw::hit_is_dummy(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn hit_is_dummy(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> bool {
+        unsafe { __SignalArgsReaderWriter_Hit_unity2_raw::hit_is_dummy(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`HitIsDummy(crate::unity_engine::animationevent::AnimationEvent, bool)` overload"]
     pub fn hit_is_dummy_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -617,17 +475,12 @@ impl SignalArgsReaderWriter_Hit {
             )
         }
     }
+
     #[doc = "`HitHandType(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn hit_hand_type(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> i32 {
-        unsafe {
-            __SignalArgsReaderWriter_Hit_unity2_raw::hit_hand_type(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn hit_hand_type(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> i32 {
+        unsafe { __SignalArgsReaderWriter_Hit_unity2_raw::hit_hand_type(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`HitHandType(crate::unity_engine::animationevent::AnimationEvent, i32)` overload"]
     pub fn hit_hand_type_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -641,6 +494,7 @@ impl SignalArgsReaderWriter_Hit {
             )
         }
     }
+
     #[doc = "`HitSlashType(crate::unity_engine::animationevent::AnimationEvent, crate::combat::character::Character)` overload"]
     pub fn hit_slash_type(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -654,6 +508,7 @@ impl SignalArgsReaderWriter_Hit {
             )
         }
     }
+
     #[doc = "`HitSlashType(crate::unity_engine::animationevent::AnimationEvent, crate::combat::slashtype::SlashType)` overload"]
     pub fn hit_slash_type_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -667,17 +522,14 @@ impl SignalArgsReaderWriter_Hit {
             )
         }
     }
+
     #[doc = "`HitSlashDir(crate::unity_engine::animationevent::AnimationEvent)` overload"]
     pub fn hit_slash_dir(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
     ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __SignalArgsReaderWriter_Hit_unity2_raw::hit_slash_dir(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SignalArgsReaderWriter_Hit_unity2_raw::hit_slash_dir(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`HitSlashDir(crate::unity_engine::animationevent::AnimationEvent, crate::unity_engine::vector3::Vector3)` overload"]
     pub fn hit_slash_dir_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -691,28 +543,19 @@ impl SignalArgsReaderWriter_Hit {
             )
         }
     }
+
     #[doc = "`HitstopScale(crate::unity_engine::animationevent::AnimationEvent)` overload"]
     pub fn hitstop_scale(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
     ) -> crate::combat::hitstopscale::HitstopScale {
-        unsafe {
-            __SignalArgsReaderWriter_Hit_unity2_raw::hitstop_scale(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SignalArgsReaderWriter_Hit_unity2_raw::hitstop_scale(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`HitstopScaleAsFloat(crate::unity_engine::animationevent::AnimationEvent)` overload"]
-    pub fn hitstop_scale_as_float(
-        ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
-    ) -> f32 {
-        unsafe {
-            __SignalArgsReaderWriter_Hit_unity2_raw::hitstop_scale_as_float(
-                ::core::convert::Into::into(ev),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn hitstop_scale_as_float(ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>) -> f32 {
+        unsafe { __SignalArgsReaderWriter_Hit_unity2_raw::hitstop_scale_as_float(::core::convert::Into::into(ev), ::core::option::Option::None) }
     }
+
     #[doc = "`HitstopScale(crate::unity_engine::animationevent::AnimationEvent, i32)` overload"]
     pub fn hitstop_scale_2(
         ev: impl ::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>,
@@ -731,8 +574,7 @@ impl SignalArgsReaderWriter_Hit {
 #[cfg(feature = "combat-signalargsreaderwriter_hit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISignalArgsReaderWriter_Hit;
-    pub use super::SignalArgsReaderWriter_Hit;
+    pub use super::{ISignalArgsReaderWriter_Hit, SignalArgsReaderWriter_Hit};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

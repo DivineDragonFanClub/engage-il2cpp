@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-charptr-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/charptr/CharPtr.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop",
-        name = "CharPtr"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop", name = "CharPtr")]
     #[parent(crate::system::object::Object)]
     pub struct CharPtr {
         #[rename(name = "chars")]
@@ -33,535 +30,316 @@ mod __CharPtr_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item(
-        this: CharPtr,
-        offset: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_item(this: CharPtr, offset: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(CharPtr, i32, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "set_Item", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item(
-        this: CharPtr,
-        offset: i32,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item(this: CharPtr, offset: i32, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, i32, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, offset, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item_2(
-        this: CharPtr,
-        offset: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_item_2(this: CharPtr, offset: u32, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(CharPtr, u32, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_item_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_item_2::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "set_Item", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item_2(
-        this: CharPtr,
-        offset: u32,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item_2(this: CharPtr, offset: u32, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, u32, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item_2::get_method_info().method_ptr);
         inner(this, offset, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item_3(
-        this: CharPtr,
-        offset: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_item_3(this: CharPtr, offset: i64, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(CharPtr, i64, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_item_3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_item_3::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i64 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "set_Item", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item_3(
-        this: CharPtr,
-        offset: i64,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item_3(this: CharPtr, offset: i64, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, i64, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item_3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item_3::get_method_info().method_ptr);
         inner(this, offset, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
         str: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit_2(
         chars: ::unity2::Array<u16>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (:: unity2 :: Array < u16 > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::Array<u16>,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_implicit_2::get_method_info().method_ptr);
         inner(chars, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit_3(
         bytes: ::unity2::Array<u8>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_implicit_3 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::Array<u8>,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_implicit_3::get_method_info().method_ptr);
         inner(bytes, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: CharPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: CharPtr,
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: CharPtr, str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -573,44 +351,25 @@ mod __CharPtr_unity2_raw {
             CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_4(
@@ -624,239 +383,115 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_4::get_method_info().method_ptr);
         inner(this, ptr, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u16> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_5(
-        this: CharPtr,
-        chars: ::unity2::Array<u16>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_5(this: CharPtr, chars: ::unity2::Array<u16>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, ::unity2::Array<u16>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_5::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_5::get_method_info().method_ptr);
         inner(this, chars, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_6(
-        this: CharPtr,
-        chars: ::unity2::Array<u16>,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CharPtr,
-            ::unity2::Array<u16>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_6::get_offset() as isize),
-        );
+    pub unsafe fn ctor_6(this: CharPtr, chars: ::unity2::Array<u16>, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CharPtr, ::unity2::Array<u16>, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_6::get_method_info().method_ptr);
         inner(this, chars, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_7(
-        this: CharPtr,
-        bytes: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_7(this: CharPtr, bytes: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_7::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_7::get_method_info().method_ptr);
         inner(this, bytes, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_8(
-        this: CharPtr,
-        ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_8(this: CharPtr, ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharPtr, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_8::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_8::get_method_info().method_ptr);
         inner(this, ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition(
@@ -864,17 +499,23 @@ mod __CharPtr_unity2_raw {
         offset: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_addition :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_addition::get_method_info().method_ptr);
         inner(ptr, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_subtraction {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_Subtraction",
@@ -886,18 +527,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Subtraction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Subtraction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_subtraction(
@@ -905,40 +543,37 @@ mod __CharPtr_unity2_raw {
         offset: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_subtraction :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_subtraction::get_method_info().method_ptr);
         inner(ptr, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_2(
@@ -946,17 +581,23 @@ mod __CharPtr_unity2_raw {
         offset: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr , u32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_addition_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_addition_2::get_method_info().method_ptr);
         inner(ptr, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_subtraction_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_Subtraction",
@@ -968,18 +609,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Subtraction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Subtraction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_subtraction_2(
@@ -987,203 +625,111 @@ mod __CharPtr_unity2_raw {
         offset: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr , u32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_subtraction_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+            u32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_subtraction_2::get_method_info().method_ptr);
         inner(ptr, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_inc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "inc",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "inc", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "inc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, "inc", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn inc(this: CharPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_inc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_inc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dec {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "dec",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "dec", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "dec",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, "dec", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dec(this: CharPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dec::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dec::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "next",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "next", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "next",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, "next", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn next(
         this: CharPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (CharPtr , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_next :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "prev",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "prev", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "prev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, "prev", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prev(
         this: CharPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (CharPtr , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_prev :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_prev::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "add",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "add", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, "add", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -1191,41 +737,27 @@ mod __CharPtr_unity2_raw {
         ofs: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (CharPtr , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CharPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, ofs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sub {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "sub",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "sub", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "sub",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <CharPtr as ::unity2::ClassIdentity>::NAME, "sub", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sub(
@@ -1233,40 +765,37 @@ mod __CharPtr_unity2_raw {
         ofs: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (CharPtr , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_sub :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CharPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_sub::get_method_info().method_ptr);
         inner(this, ofs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Equality", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality(
@@ -1278,44 +807,32 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             u16,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
         inner(ptr, ch, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Equality", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality_2(
@@ -1327,21 +844,18 @@ mod __CharPtr_unity2_raw {
             u16,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_equality_2::get_method_info().method_ptr);
         inner(ch, ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < u16 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <u16 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_Inequality",
@@ -1353,18 +867,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_inequality(
@@ -1376,21 +887,18 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             u16,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
         inner(ptr, ch, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u16 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_Inequality",
@@ -1402,18 +910,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_inequality_2(
@@ -1425,44 +930,32 @@ mod __CharPtr_unity2_raw {
             u16,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_inequality_2::get_method_info().method_ptr);
         inner(ch, ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_addition_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Addition",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Addition", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Addition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Addition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_addition_3(
@@ -1470,17 +963,23 @@ mod __CharPtr_unity2_raw {
         ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr , crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_op_addition_3 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr =
+            ::core::mem::transmute(__lookup_op_addition_3::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_subtraction_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_Subtraction",
@@ -1492,18 +991,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Subtraction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Subtraction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_subtraction_3(
@@ -1515,44 +1011,32 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_subtraction_3::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_op_subtraction_3::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_less_than {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_LessThan",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_LessThan", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_LessThan",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_LessThan",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_less_than(
@@ -1564,21 +1048,18 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_less_than::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_less_than::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_less_than_or_equal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_LessThanOrEqual",
@@ -1590,18 +1071,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_LessThanOrEqual",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_LessThanOrEqual",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_less_than_or_equal(
@@ -1613,21 +1091,18 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_less_than_or_equal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_less_than_or_equal::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_greater_than {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_GreaterThan",
@@ -1639,18 +1114,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_GreaterThan",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_GreaterThan",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_greater_than(
@@ -1662,21 +1134,18 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_greater_than::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_greater_than::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_greater_than_or_equal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_GreaterThanOrEqual",
@@ -1688,18 +1157,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_GreaterThanOrEqual",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_GreaterThanOrEqual",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_greater_than_or_equal(
@@ -1711,44 +1177,32 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_greater_than_or_equal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_greater_than_or_equal::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "op_Equality",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "op_Equality", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality_3(
@@ -1760,21 +1214,18 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality_3::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_equality_3::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: charptr :: CharPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharPtr as ::unity2::ClassIdentity>::class(),
                 "op_Inequality",
@@ -1786,18 +1237,15 @@ mod __CharPtr_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_inequality_3(
@@ -1809,197 +1257,115 @@ mod __CharPtr_unity2_raw {
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality_3::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_inequality_3::get_method_info().method_ptr);
         inner(ptr1, ptr2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: CharPtr,
-        o: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            CharPtr,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: CharPtr, o: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(CharPtr, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, o, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "GetHashCode",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "GetHashCode", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: CharPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hash_code::get_offset() as isize),
-        );
+    pub unsafe fn get_hash_code(this: CharPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: CharPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: CharPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(CharPtr, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CharPtr as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<CharPtr as ::unity2::ClassIdentity>::class(), "ToString", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharPtr as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharPtr as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string_2(
-        this: CharPtr,
-        length: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string_2(this: CharPtr, length: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(CharPtr, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string_2::get_method_info().method_ptr);
         inner(this, length, __unity2_method_info)
     }
 }
@@ -2010,40 +1376,26 @@ impl CharPtr {
     pub fn op_implicit(
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        unsafe {
-            __CharPtr_unity2_raw::op_implicit(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __CharPtr_unity2_raw::op_implicit(::core::convert::Into::into(str), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(::unity2::Array<u16>)` overload"]
     pub fn op_implicit_2(
         chars: impl ::core::convert::Into<::unity2::Array<u16>>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        unsafe {
-            __CharPtr_unity2_raw::op_implicit_2(
-                ::core::convert::Into::into(chars),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __CharPtr_unity2_raw::op_implicit_2(::core::convert::Into::into(chars), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(::unity2::Array<u8>)` overload"]
     pub fn op_implicit_3(
         bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
-        unsafe {
-            __CharPtr_unity2_raw::op_implicit_3(
-                ::core::convert::Into::into(bytes),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __CharPtr_unity2_raw::op_implicit_3(::core::convert::Into::into(bytes), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Addition(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, i32)` overload"]
     pub fn op_addition(
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         offset: impl ::core::convert::Into<i32>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
@@ -2054,11 +1406,10 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Subtraction(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, i32)` overload"]
     pub fn op_subtraction(
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         offset: impl ::core::convert::Into<i32>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
@@ -2069,11 +1420,10 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, u32)` overload"]
     pub fn op_addition_2(
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         offset: impl ::core::convert::Into<u32>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
@@ -2084,11 +1434,10 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Subtraction(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, u32)` overload"]
     pub fn op_subtraction_2(
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         offset: impl ::core::convert::Into<u32>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
@@ -2099,11 +1448,10 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Equality(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, u16)` overload"]
     pub fn op_equality(
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         ch: impl ::core::convert::Into<u16>,
     ) -> bool {
         unsafe {
@@ -2114,12 +1462,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Equality(u16, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_equality_2(
         ch: impl ::core::convert::Into<u16>,
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_equality_2(
@@ -2129,11 +1476,10 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, u16)` overload"]
     pub fn op_inequality(
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         ch: impl ::core::convert::Into<u16>,
     ) -> bool {
         unsafe {
@@ -2144,12 +1490,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Inequality(u16, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_inequality_2(
         ch: impl ::core::convert::Into<u16>,
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_inequality_2(
@@ -2159,14 +1504,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Addition(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_addition_3(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
             __CharPtr_unity2_raw::op_addition_3(
@@ -2176,14 +1518,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Subtraction(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_subtraction_3(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> i32 {
         unsafe {
             __CharPtr_unity2_raw::op_subtraction_3(
@@ -2193,14 +1532,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_LessThan(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_less_than(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_less_than(
@@ -2210,14 +1546,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_LessThanOrEqual(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_less_than_or_equal(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_less_than_or_equal(
@@ -2227,14 +1560,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_GreaterThan(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_greater_than(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_greater_than(
@@ -2244,14 +1574,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_GreaterThanOrEqual(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_greater_than_or_equal(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_greater_than_or_equal(
@@ -2261,14 +1588,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Equality(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_equality_3(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_equality_3(
@@ -2278,14 +1602,11 @@ impl CharPtr {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
     pub fn op_inequality_3(
-        ptr1: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-        ptr2: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr1: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
+        ptr2: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
     ) -> bool {
         unsafe {
             __CharPtr_unity2_raw::op_inequality_3(
@@ -2302,26 +1623,14 @@ pub trait ICharPtrMethods: ICharPtr {
     #[doc = "`get_Item(i32)` overload"]
     fn get_item(self, offset: impl ::core::convert::Into<i32>) -> u16 {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::get_item(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(i32, u16)` overload"]
-    fn set_item(
-        self,
-        offset: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<u16>,
-    ) -> () {
+    fn set_item(self, offset: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::set_item(
                 __receiver,
                 ::core::convert::Into::into(offset),
@@ -2333,26 +1642,14 @@ pub trait ICharPtrMethods: ICharPtr {
     #[doc = "`get_Item(u32)` overload"]
     fn get_item_2(self, offset: impl ::core::convert::Into<u32>) -> u16 {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::get_item_2(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::get_item_2(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(u32, u16)` overload"]
-    fn set_item_2(
-        self,
-        offset: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<u16>,
-    ) -> () {
+    fn set_item_2(self, offset: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::set_item_2(
                 __receiver,
                 ::core::convert::Into::into(offset),
@@ -2364,26 +1661,14 @@ pub trait ICharPtrMethods: ICharPtr {
     #[doc = "`get_Item(i64)` overload"]
     fn get_item_3(self, offset: impl ::core::convert::Into<i64>) -> u16 {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::get_item_3(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::get_item_3(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(i64, u16)` overload"]
-    fn set_item_3(
-        self,
-        offset: impl ::core::convert::Into<i64>,
-        value: impl ::core::convert::Into<u16>,
-    ) -> () {
+    fn set_item_3(self, offset: impl ::core::convert::Into<i64>, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::set_item_3(
                 __receiver,
                 ::core::convert::Into::into(offset),
@@ -2395,55 +1680,32 @@ pub trait ICharPtrMethods: ICharPtr {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor_2(self, str: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(str), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` overload"]
-    fn ctor_3(
-        self,
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
-    ) -> () {
+    fn ctor_3(self, ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, i32)` overload"]
     fn ctor_4(
         self,
-        ptr: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        >,
+        ptr: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr>,
         index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::ctor_4(
                 __receiver,
                 ::core::convert::Into::into(ptr),
@@ -2455,26 +1717,14 @@ pub trait ICharPtrMethods: ICharPtr {
     #[doc = "`.ctor(::unity2::Array<u16>)` overload"]
     fn ctor_5(self, chars: impl ::core::convert::Into<::unity2::Array<u16>>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::ctor_5(
-                __receiver,
-                ::core::convert::Into::into(chars),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::ctor_5(__receiver, ::core::convert::Into::into(chars), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Array<u16>, i32)` overload"]
-    fn ctor_6(
-        self,
-        chars: impl ::core::convert::Into<::unity2::Array<u16>>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor_6(self, chars: impl ::core::convert::Into<::unity2::Array<u16>>, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::ctor_6(
                 __receiver,
                 ::core::convert::Into::into(chars),
@@ -2486,139 +1736,85 @@ pub trait ICharPtrMethods: ICharPtr {
     #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
     fn ctor_7(self, bytes: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::ctor_7(
-                __receiver,
-                ::core::convert::Into::into(bytes),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::ctor_7(__receiver, ::core::convert::Into::into(bytes), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::IntPtr)` overload"]
     fn ctor_8(self, ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::ctor_8(
-                __receiver,
-                ::core::convert::Into::into(ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::ctor_8(__receiver, ::core::convert::Into::into(ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`inc()` overload"]
     fn inc(self) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::inc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`dec()` overload"]
     fn dec(self) -> () {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::dec(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`next()` overload"]
     fn next(self) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`prev()` overload"]
     fn prev(self) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::prev(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`add(i32)` overload"]
-    fn add(
-        self,
-        ofs: impl ::core::convert::Into<i32>,
-    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
+    fn add(self, ofs: impl ::core::convert::Into<i32>) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(ofs),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::add(__receiver, ::core::convert::Into::into(ofs), ::core::option::Option::None)
         }
     }
     #[doc = "`sub(i32)` overload"]
-    fn sub(
-        self,
-        ofs: impl ::core::convert::Into<i32>,
-    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
+    fn sub(self, ofs: impl ::core::convert::Into<i32>) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::sub(
-                __receiver,
-                ::core::convert::Into::into(ofs),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::sub(__receiver, ::core::convert::Into::into(ofs), ::core::option::Option::None)
         }
     }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     fn equals(self, o: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::equals(
-                __receiver,
-                ::core::convert::Into::into(o),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::equals(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)
         }
     }
     #[doc = "`GetHashCode()` overload"]
     fn get_hash_code(self) -> i32 {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharPtr_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString(i32)` overload"]
     fn to_string_2(self, length: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharPtr_unity2_raw::to_string_2(
-                __receiver,
-                ::core::convert::Into::into(length),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharPtr as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharPtr_unity2_raw::to_string_2(__receiver, ::core::convert::Into::into(length), ::core::option::Option::None)
         }
     }
 }
@@ -2630,109 +1826,64 @@ impl<__T: ICharPtr> ICharPtrMethods for __T {}
 impl CharPtr {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new),));
         <Self as ICharPtrMethods>::ctor(this);
         this
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
     pub fn new_2(str: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_2),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_2),));
         <Self as ICharPtrMethods>::ctor_2(this, str);
         this
     }
 
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr)` — overload selector"]
-    pub fn new_3(
-        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_3),
-            )
-        });
+    pub fn new_3(ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_3),));
         <Self as ICharPtrMethods>::ctor_3(this, ptr);
         this
     }
 
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, i32)` — overload selector"]
-    pub fn new_4(
-        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
-        index: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_4),
-            )
-        });
+    pub fn new_4(ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr, index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_4),));
         <Self as ICharPtrMethods>::ctor_4(this, ptr, index);
         this
     }
 
     #[doc = "`.ctor(::unity2::Array<u16>)` — overload selector"]
     pub fn new_5(chars: ::unity2::Array<u16>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_5),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_5),));
         <Self as ICharPtrMethods>::ctor_5(this, chars);
         this
     }
 
     #[doc = "`.ctor(::unity2::Array<u16>, i32)` — overload selector"]
     pub fn new_6(chars: ::unity2::Array<u16>, index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_6),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_6),));
         <Self as ICharPtrMethods>::ctor_6(this, chars, index);
         this
     }
 
     #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
     pub fn new_7(bytes: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_7),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_7),));
         <Self as ICharPtrMethods>::ctor_7(this, bytes);
         this
     }
 
     #[doc = "`.ctor(::unity2::IntPtr)` — overload selector"]
     pub fn new_8(ptr: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharPtr),
-                ::core::stringify!(new_8),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CharPtr), ::core::stringify!(new_8),));
         <Self as ICharPtrMethods>::ctor_8(this, ptr);
         this
     }
@@ -2741,9 +1892,7 @@ impl CharPtr {
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-charptr")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharPtr;
-    pub use super::ICharPtr;
-    pub use super::ICharPtrMethods;
+    pub use super::{CharPtr, ICharPtr, ICharPtrMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

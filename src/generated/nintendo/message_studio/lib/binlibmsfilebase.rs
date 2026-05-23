@@ -2,10 +2,10 @@
 
 #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/binlibmsfilebase/BinLibmsFileBase.md"))]
     #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "BinLibmsFileBase")]
@@ -30,9 +30,7 @@ mod __BinLibmsFileBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_file_object_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
@@ -45,39 +43,27 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "get_FileObjectPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "get_FileObjectPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_file_object_ptr(
-        this: BinLibmsFileBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn get_file_object_ptr(this: BinLibmsFileBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_file_object_ptr::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_file_object_ptr::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_file_loaded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
@@ -90,41 +76,28 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "get_IsFileLoaded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "get_IsFileLoaded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_file_loaded(
-        this: BinLibmsFileBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_file_loaded(this: BinLibmsFileBase, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_file_loaded::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_file_loaded::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<u8> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
                 "Load",
@@ -136,43 +109,27 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load(
-        this: BinLibmsFileBase,
-        bytes: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BinLibmsFileBase,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+    pub unsafe fn load(this: BinLibmsFileBase, bytes: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BinLibmsFileBase, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(this, bytes, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_free {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
@@ -185,39 +142,27 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "Free",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "Free",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn free(
-        this: BinLibmsFileBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn free(this: BinLibmsFileBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_free::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_free::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
@@ -230,39 +175,27 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: BinLibmsFileBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: BinLibmsFileBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
@@ -275,41 +208,28 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: BinLibmsFileBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: BinLibmsFileBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
                 "InitObject",
@@ -321,18 +241,15 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "InitObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "InitObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_object(
@@ -340,26 +257,16 @@ mod __BinLibmsFileBase_unity2_raw {
         resource_ptr: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            BinLibmsFileBase,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BinLibmsFileBase, ::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_init_object::get_method_info().method_ptr);
         inner(this, resource_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
                 "CloseObject",
@@ -371,43 +278,27 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    "CloseObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        "CloseObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close_object(
-        this: BinLibmsFileBase,
-        object_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BinLibmsFileBase,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_close_object::get_offset() as isize),
-        );
+    pub unsafe fn close_object(this: BinLibmsFileBase, object_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BinLibmsFileBase, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_object::get_method_info().method_ptr);
         inner(this, object_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinLibmsFileBase as ::unity2::ClassIdentity>::class(),
@@ -420,30 +311,20 @@ mod __BinLibmsFileBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinLibmsFileBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BinLibmsFileBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BinLibmsFileBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -453,102 +334,63 @@ pub trait IBinLibmsFileBaseMethods: IBinLibmsFileBase {
     #[doc = "`get_FileObjectPtr()` overload"]
     fn get_file_object_ptr(self) -> ::unity2::IntPtr {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinLibmsFileBase_unity2_raw::get_file_object_ptr(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinLibmsFileBase_unity2_raw::get_file_object_ptr(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsFileLoaded()` overload"]
     fn get_is_file_loaded(self) -> bool {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinLibmsFileBase_unity2_raw::get_is_file_loaded(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinLibmsFileBase_unity2_raw::get_is_file_loaded(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Load(::unity2::Array<u8>)` overload"]
     fn load(self, bytes: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinLibmsFileBase_unity2_raw::load(
-                __receiver,
-                ::core::convert::Into::into(bytes),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinLibmsFileBase_unity2_raw::load(__receiver, ::core::convert::Into::into(bytes), ::core::option::Option::None)
         }
     }
     #[doc = "`Free()` overload"]
     fn free(self) -> () {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinLibmsFileBase_unity2_raw::free(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinLibmsFileBase_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinLibmsFileBase_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitObject(::unity2::IntPtr)` overload"]
-    fn init_object(
-        self,
-        resource_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::IntPtr {
+    fn init_object(self, resource_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::IntPtr {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinLibmsFileBase_unity2_raw::init_object(
-                __receiver,
-                ::core::convert::Into::into(resource_ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinLibmsFileBase_unity2_raw::init_object(__receiver, ::core::convert::Into::into(resource_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`CloseObject(::unity2::IntPtr)` overload"]
     fn close_object(self, object_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinLibmsFileBase_unity2_raw::close_object(
-                __receiver,
-                ::core::convert::Into::into(object_ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinLibmsFileBase_unity2_raw::close_object(__receiver, ::core::convert::Into::into(object_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinLibmsFileBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinLibmsFileBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -576,9 +418,7 @@ impl BinLibmsFileBase {
 #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BinLibmsFileBase;
-    pub use super::IBinLibmsFileBase;
-    pub use super::IBinLibmsFileBaseMethods;
+    pub use super::{BinLibmsFileBase, IBinLibmsFileBase, IBinLibmsFileBaseMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

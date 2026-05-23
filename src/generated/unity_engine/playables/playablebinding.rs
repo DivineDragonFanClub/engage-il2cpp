@@ -2,19 +2,18 @@
 
 #[cfg(feature = "unity_engine-playables-playablebinding-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playablebinding/PlayableBinding_CreateOutputMethod.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Playables",
-        name = "PlayableBinding.CreateOutputMethod"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Playables", name = "PlayableBinding.CreateOutputMethod")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct PlayableBinding_CreateOutputMethod {}
 
@@ -25,14 +24,12 @@ mod __types {
         pub m_stream_name: ::unity2::Il2CppString,
         pub m_source_object: crate::unity_engine::object_2::Object_2,
         pub m_source_binding_type: ::unity2::SystemType,
-        pub m_create_output_method:
-            crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,
+        pub m_create_output_method: crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,
     }
 
     impl ::unity2::ClassIdentity for PlayableBinding {
-        const NAMESPACE: &'static str = "UnityEngine.Playables";
-
         const NAME: &'static str = "PlayableBinding";
+        const NAMESPACE: &'static str = "UnityEngine.Playables";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -43,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for PlayableBinding {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -63,9 +57,7 @@ mod __PlayableBinding_CreateOutputMethod_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -81,18 +73,15 @@ mod __PlayableBinding_CreateOutputMethod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding_CreateOutputMethod as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding_CreateOutputMethod as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -106,21 +95,18 @@ mod __PlayableBinding_CreateOutputMethod_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableBinding_CreateOutputMethod as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -132,18 +118,15 @@ mod __PlayableBinding_CreateOutputMethod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding_CreateOutputMethod as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding_CreateOutputMethod as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -157,13 +140,7 @@ mod __PlayableBinding_CreateOutputMethod_unity2_raw {
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, graph, name, __unity2_method_info)
     }
 }
@@ -171,16 +148,11 @@ mod __PlayableBinding_CreateOutputMethod_unity2_raw {
 #[cfg(feature = "unity_engine-playables-playablebinding")]
 pub trait IPlayableBinding_CreateOutputMethodMethods: IPlayableBinding_CreateOutputMethod {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver =
-                <PlayableBinding_CreateOutputMethod as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <PlayableBinding_CreateOutputMethod as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __PlayableBinding_CreateOutputMethod_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -196,10 +168,9 @@ pub trait IPlayableBinding_CreateOutputMethodMethods: IPlayableBinding_CreateOut
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
         unsafe {
-            let __receiver =
-                <PlayableBinding_CreateOutputMethod as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <PlayableBinding_CreateOutputMethod as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __PlayableBinding_CreateOutputMethod_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -238,9 +209,7 @@ mod __PlayableBinding_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_stream_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableBinding as ::unity2::ClassIdentity>::class(),
@@ -253,41 +222,27 @@ mod __PlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    "get_streamName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        "get_streamName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stream_name(
-        this: PlayableBinding,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlayableBinding,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stream_name::get_offset() as isize),
-        );
+    pub unsafe fn get_stream_name(this: PlayableBinding, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlayableBinding, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_stream_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableBinding as ::unity2::ClassIdentity>::class(),
@@ -300,42 +255,32 @@ mod __PlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    "get_sourceObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        "get_sourceObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_object(
         this: PlayableBinding,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::object_2::Object_2 {
-        let inner: extern "C" fn(
-            PlayableBinding,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_source_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlayableBinding, ::unity2::OptionalMethod) -> crate::unity_engine::object_2::Object_2 =
+            ::core::mem::transmute(__lookup_get_source_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_output {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableBinding as ::unity2::ClassIdentity>::class(),
                 "CreateOutput",
@@ -347,18 +292,15 @@ mod __PlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    "CreateOutput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        "CreateOutput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_output(
@@ -370,23 +312,21 @@ mod __PlayableBinding_unity2_raw {
             PlayableBinding,
             crate::unity_engine::playables::playablegraph::PlayableGraph,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_output::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput =
+            ::core::mem::transmute(__lookup_create_output::get_method_info().method_ptr);
         inner(this, graph, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding_CreateOutputMethod as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableBinding as ::unity2::ClassIdentity>::class(),
                 "CreateInternal",
@@ -398,43 +338,39 @@ mod __PlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    "CreateInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        "CreateInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_internal(
         name: ::unity2::Il2CppString,
         source_object: crate::unity_engine::object_2::Object_2,
         source_type: ::unity2::SystemType,
-        create_function : crate :: unity_engine :: playables :: playablebinding :: PlayableBinding_CreateOutputMethod,
+        create_function: crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: SystemType , crate :: unity_engine :: playables :: playablebinding :: PlayableBinding_CreateOutputMethod , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_internal :: get_offset () as isize) ,) ;
-        inner(
-            name,
-            source_object,
-            source_type,
-            create_function,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::object_2::Object_2,
+            ::unity2::SystemType,
+            crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playablebinding::PlayableBinding =
+            ::core::mem::transmute(__lookup_create_internal::get_method_info().method_ptr);
+        inner(name, source_object, source_type, create_function, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayableBinding as ::unity2::ClassIdentity>::class(),
@@ -447,26 +383,19 @@ mod __PlayableBinding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayableBinding as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayableBinding as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -478,9 +407,7 @@ impl PlayableBinding {
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         source_object: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
         source_type: impl ::core::convert::Into<::unity2::SystemType>,
-        create_function: impl ::core::convert::Into<
-            crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,
-        >,
+        create_function: impl ::core::convert::Into<crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod>,
     ) -> crate::unity_engine::playables::playablebinding::PlayableBinding {
         unsafe {
             __PlayableBinding_unity2_raw::create_internal(
@@ -492,6 +419,7 @@ impl PlayableBinding {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __PlayableBinding_unity2_raw::cctor(::core::option::Option::None) }
@@ -504,44 +432,34 @@ impl PlayableBinding {
     pub fn get_stream_name(self) -> ::unity2::Il2CppString {
         unsafe { __PlayableBinding_unity2_raw::get_stream_name(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_sourceObject()` overload"]
     pub fn get_source_object(self) -> crate::unity_engine::object_2::Object_2 {
-        unsafe {
-            __PlayableBinding_unity2_raw::get_source_object(self, ::core::option::Option::None)
-        }
+        unsafe { __PlayableBinding_unity2_raw::get_source_object(self, ::core::option::Option::None) }
     }
+
     #[doc = "`CreateOutput(crate::unity_engine::playables::playablegraph::PlayableGraph)` overload"]
     pub fn create_output(
         self,
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
     ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        unsafe {
-            __PlayableBinding_unity2_raw::create_output(
-                self,
-                ::core::convert::Into::into(graph),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayableBinding_unity2_raw::create_output(self, ::core::convert::Into::into(graph), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-playables-playablebinding")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlayableBinding_CreateOutputMethod;
-    pub use super::IPlayableBinding_CreateOutputMethodMethods;
-    pub use super::PlayableBinding;
-    pub use super::PlayableBinding_CreateOutputMethod;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        IPlayableBinding_CreateOutputMethod, IPlayableBinding_CreateOutputMethodMethods, PlayableBinding, PlayableBinding_CreateOutputMethod,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, valuetype::IValueType};
 }

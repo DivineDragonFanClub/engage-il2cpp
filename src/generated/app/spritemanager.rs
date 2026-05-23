@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-spritemanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/spritemanager/SpriteManager.md"))]
     #[::unity2::class(namespace = "App", name = "SpriteManager")]
@@ -14,10 +14,8 @@ mod __types {
         #[rename(name = "m_Sprites")]
         pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
         #[rename(name = "m_Dictionary")]
-        pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::sprite::Sprite,
-        >,
+        pub m_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,
     }
 }
 
@@ -33,101 +31,60 @@ mod __SpriteManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SpriteManager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpriteManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpriteManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: SpriteManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SpriteManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SpriteManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteManager as ::unity2::ClassIdentity>::class(),
-                "Load",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SpriteManager as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpriteManager as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpriteManager as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load(
-        this: SpriteManager,
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SpriteManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+    pub unsafe fn load(this: SpriteManager, path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SpriteManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(this, path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpriteManager as ::unity2::ClassIdentity>::class(),
@@ -140,64 +97,42 @@ mod __SpriteManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpriteManager as ::unity2::ClassIdentity>::NAME,
-                    "Unload",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpriteManager as ::unity2::ClassIdentity>::NAME,
+                        "Unload",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload(
-        this: SpriteManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unload(this: SpriteManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SpriteManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SpriteManager as ::unity2::ClassIdentity>::class(),
-                "Get",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SpriteManager as ::unity2::ClassIdentity>::class(), "Get", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpriteManager as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpriteManager as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get(
@@ -205,26 +140,16 @@ mod __SpriteManager_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            SpriteManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SpriteManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpriteManager as ::unity2::ClassIdentity>::class(),
                 "TryGet",
@@ -236,18 +161,15 @@ mod __SpriteManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpriteManager as ::unity2::ClassIdentity>::NAME,
-                    "TryGet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpriteManager as ::unity2::ClassIdentity>::NAME,
+                        "TryGet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get(
@@ -255,15 +177,8 @@ mod __SpriteManager_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            SpriteManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SpriteManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_try_get::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
 }
@@ -273,64 +188,36 @@ pub trait ISpriteManagerMethods: ISpriteManager {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SpriteManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Load(::unity2::Il2CppString)` overload"]
     fn load(self, path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SpriteManager_unity2_raw::load(
-                __receiver,
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SpriteManager_unity2_raw::load(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)
         }
     }
     #[doc = "`Unload()` overload"]
     fn unload(self) -> () {
         unsafe {
-            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SpriteManager_unity2_raw::unload(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Get(::unity2::Il2CppString)` overload"]
-    fn get(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
+    fn get(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SpriteManager_unity2_raw::get(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SpriteManager_unity2_raw::get(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`TryGet(::unity2::Il2CppString)` overload"]
-    fn try_get(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
+    fn try_get(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SpriteManager_unity2_raw::try_get(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SpriteManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SpriteManager_unity2_raw::try_get(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
 }
@@ -342,13 +229,8 @@ impl<__T: ISpriteManager> ISpriteManagerMethods for __T {}
 impl SpriteManager {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SpriteManager),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SpriteManager), ::core::stringify!(new),));
         <Self as ISpriteManagerMethods>::ctor(this);
         this
     }
@@ -357,9 +239,7 @@ impl SpriteManager {
 #[cfg(feature = "app-spritemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISpriteManager;
-    pub use super::ISpriteManagerMethods;
-    pub use super::SpriteManager;
+    pub use super::{ISpriteManager, ISpriteManagerMethods, SpriteManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

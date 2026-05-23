@@ -2,9 +2,9 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interpreterexception-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interpreterexception/InterpreterException.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "InterpreterException")]
@@ -23,11 +23,8 @@ mod __InterpreterException_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -39,43 +36,27 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: InterpreterException,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InterpreterException,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: InterpreterException, message: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InterpreterException, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, message, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<crate::system::object::Object> as ::unity2::IlType>::il_type(),
@@ -91,18 +72,15 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -116,20 +94,14 @@ mod __InterpreterException_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Array<crate::system::object::Object>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, format, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_instruction_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
@@ -142,41 +114,28 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "get_InstructionPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "get_InstructionPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_instruction_ptr(
-        this: InterpreterException,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_instruction_ptr(this: InterpreterException, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(InterpreterException, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_instruction_ptr::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_instruction_ptr::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_instruction_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
                 "set_InstructionPtr",
@@ -188,40 +147,27 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "set_InstructionPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "set_InstructionPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_instruction_ptr(
-        this: InterpreterException,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_instruction_ptr(this: InterpreterException, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpreterException, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_instruction_ptr::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_instruction_ptr::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_call_stack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
@@ -234,41 +180,39 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "get_CallStack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "get_CallStack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_call_stack(
         this: InterpreterException,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-    > {
-        let inner : extern "C" fn (InterpreterException , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: moon_sharp :: interpreter :: debugging :: watchitem :: WatchItem > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_call_stack :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>
+    {
+        let inner: extern "C" fn(
+            InterpreterException,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
+        > = ::core::mem::transmute(__lookup_get_call_stack::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_call_stack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
                     crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-                > as ::unity2::IlType>::il_type(),
-            ];
+                > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
                 "set_CallStack",
@@ -280,18 +224,15 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "set_CallStack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "set_CallStack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_call_stack(
@@ -303,24 +244,16 @@ mod __InterpreterException_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             InterpreterException,
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-            >,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_call_stack::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_call_stack::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_decorated_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
@@ -333,43 +266,28 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "get_DecoratedMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "get_DecoratedMessage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_decorated_message(
-        this: InterpreterException,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            InterpreterException,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_decorated_message::get_offset() as isize),
-        );
+    pub unsafe fn get_decorated_message(this: InterpreterException, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(InterpreterException, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_decorated_message::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_decorated_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
                 "set_DecoratedMessage",
@@ -381,18 +299,15 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "set_DecoratedMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "set_DecoratedMessage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_decorated_message(
@@ -400,24 +315,15 @@ mod __InterpreterException_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            InterpreterException,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_decorated_message::get_offset() as isize),
-        );
+        let inner: extern "C" fn(InterpreterException, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_decorated_message::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_do_not_decorate_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
@@ -430,41 +336,28 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "get_DoNotDecorateMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "get_DoNotDecorateMessage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_do_not_decorate_message(
-        this: InterpreterException,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_do_not_decorate_message(this: InterpreterException, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(InterpreterException, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_do_not_decorate_message::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_do_not_decorate_message::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_do_not_decorate_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
                 "set_DoNotDecorateMessage",
@@ -476,41 +369,32 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "set_DoNotDecorateMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "set_DoNotDecorateMessage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_do_not_decorate_message(
-        this: InterpreterException,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_do_not_decorate_message(this: InterpreterException, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpreterException, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_do_not_decorate_message::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_do_not_decorate_message::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_decorate_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
                 "DecorateMessage",
@@ -522,18 +406,15 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "DecorateMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "DecorateMessage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn decorate_message(
@@ -549,20 +430,14 @@ mod __InterpreterException_unity2_raw {
             crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_decorate_message::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_decorate_message::get_method_info().method_ptr);
         inner(this, script, sref, ip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rethrow {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpreterException as ::unity2::ClassIdentity>::class(),
@@ -575,30 +450,20 @@ mod __InterpreterException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpreterException as ::unity2::ClassIdentity>::NAME,
-                    "Rethrow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpreterException as ::unity2::ClassIdentity>::NAME,
+                        "Rethrow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rethrow(
-        this: InterpreterException,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn rethrow(this: InterpreterException, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpreterException, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_rethrow::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_rethrow::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -608,14 +473,9 @@ pub trait IInterpreterExceptionMethods: IInterpreterException {
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, message: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::ctor(__receiver, ::core::convert::Into::into(message), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]
@@ -625,9 +485,8 @@ pub trait IInterpreterExceptionMethods: IInterpreterException {
         args: impl ::core::convert::Into<::unity2::Array<crate::system::object::Object>>,
     ) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpreterException_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(format),
@@ -639,42 +498,28 @@ pub trait IInterpreterExceptionMethods: IInterpreterException {
     #[doc = "`get_InstructionPtr()` overload"]
     fn get_instruction_ptr(self) -> i32 {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::get_instruction_ptr(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::get_instruction_ptr(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_InstructionPtr(i32)` overload"]
     fn set_instruction_ptr(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::set_instruction_ptr(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::set_instruction_ptr(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CallStack()` overload"]
     fn get_call_stack(
         self,
-    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-        crate::moon_sharp::interpreter::debugging::watchitem::WatchItem,
-    > {
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>
+    {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::get_call_stack(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::get_call_stack(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CallStack(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)` overload"]
@@ -687,62 +532,40 @@ pub trait IInterpreterExceptionMethods: IInterpreterException {
         >,
     ) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::set_call_stack(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::set_call_stack(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DecoratedMessage()` overload"]
     fn get_decorated_message(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::get_decorated_message(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::get_decorated_message(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DecoratedMessage(::unity2::Il2CppString)` overload"]
-    fn set_decorated_message(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_decorated_message(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::set_decorated_message(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::set_decorated_message(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DoNotDecorateMessage()` overload"]
     fn get_do_not_decorate_message(self) -> bool {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __InterpreterException_unity2_raw::get_do_not_decorate_message(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpreterException_unity2_raw::get_do_not_decorate_message(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DoNotDecorateMessage(bool)` overload"]
     fn set_do_not_decorate_message(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpreterException_unity2_raw::set_do_not_decorate_message(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -754,15 +577,12 @@ pub trait IInterpreterExceptionMethods: IInterpreterException {
     fn decorate_message(
         self,
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
-        sref: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
+        sref: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
         ip: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpreterException_unity2_raw::decorate_message(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -775,9 +595,8 @@ pub trait IInterpreterExceptionMethods: IInterpreterException {
     #[doc = "`Rethrow()` overload"]
     fn rethrow(self) -> () {
         unsafe {
-            let __receiver = <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <InterpreterException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpreterException_unity2_raw::rethrow(__receiver, ::core::option::Option::None)
         }
     }
@@ -802,10 +621,7 @@ impl InterpreterException {
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]
-    pub fn new_2(
-        format: ::unity2::Il2CppString,
-        args: ::unity2::Array<crate::system::object::Object>,
-    ) -> Self {
+    pub fn new_2(format: ::unity2::Il2CppString, args: ::unity2::Array<crate::system::object::Object>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -821,7 +637,5 @@ impl InterpreterException {
 #[cfg(feature = "moon_sharp-interpreter-interpreterexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInterpreterException;
-    pub use super::IInterpreterExceptionMethods;
-    pub use super::InterpreterException;
+    pub use super::{IInterpreterException, IInterpreterExceptionMethods, InterpreterException};
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-aktriangle-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriangle/AkTriangle.md"))]
     #[::unity2::class(namespace = "", name = "AkTriangle")]
@@ -30,313 +30,188 @@ mod __AkTriangle_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkTriangle,
-        c_ptr: ::unity2::IntPtr,
-        c_memory_own: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTriangle,
-            ::unity2::IntPtr,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkTriangle, c_ptr: ::unity2::IntPtr, c_memory_own: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkTriangle, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, c_ptr, c_memory_own, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::aktriangle::AkTriangle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "getCPtr",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::aktriangle::AkTriangle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "getCPtr", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "getCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "getCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_ptr(
-        obj: crate::root::aktriangle::AkTriangle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::aktriangle::AkTriangle,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ptr::get_offset() as isize),
-        );
+    pub unsafe fn get_c_ptr(obj: crate::root::aktriangle::AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(crate::root::aktriangle::AkTriangle, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "setCPtr",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "setCPtr", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "setCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "setCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_c_ptr(
-        this: AkTriangle,
-        c_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_c_ptr(this: AkTriangle, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriangle, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_c_ptr::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
         inner(this, c_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "Finalize",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "Finalize", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn finalize(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "Dispose", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispose(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+        let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+        let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u16 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -348,29 +223,15 @@ mod __AkTriangle_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(AkTriangle, u16, u16, u16, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_3::get_offset() as isize),
-            );
-        inner(
-            this,
-            in_pt0,
-            in_pt1,
-            in_pt2,
-            in_surface_info,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, in_pt0, in_pt1, in_pt2, in_surface_info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_point0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
                 "set_point0",
@@ -382,40 +243,27 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "set_point0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "set_point0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_point0(
-        this: AkTriangle,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_point0(this: AkTriangle, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriangle, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_point0::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_point0::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_point0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
@@ -428,41 +276,28 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "get_point0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "get_point0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_point0(
-        this: AkTriangle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_point0(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_point0::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_point0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_point1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
                 "set_point1",
@@ -474,40 +309,27 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "set_point1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "set_point1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_point1(
-        this: AkTriangle,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_point1(this: AkTriangle, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriangle, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_point1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_point1::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_point1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
@@ -520,41 +342,28 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "get_point1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "get_point1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_point1(
-        this: AkTriangle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_point1(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_point1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_point1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_point2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
                 "set_point2",
@@ -566,40 +375,27 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "set_point2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "set_point2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_point2(
-        this: AkTriangle,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_point2(this: AkTriangle, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriangle, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_point2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_point2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_point2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
@@ -612,41 +408,28 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "get_point2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "get_point2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_point2(
-        this: AkTriangle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_point2(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_point2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_point2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_surface {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
                 "set_surface",
@@ -658,40 +441,27 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "set_surface",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "set_surface",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_surface(
-        this: AkTriangle,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_surface(this: AkTriangle, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkTriangle, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_surface::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_surface::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_surface {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkTriangle as ::unity2::ClassIdentity>::class(),
@@ -704,163 +474,99 @@ mod __AkTriangle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "get_surface",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "get_surface",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_surface(
-        this: AkTriangle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
+    pub unsafe fn get_surface(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
         let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_surface::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_surface::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+        let inner: extern "C" fn(AkTriangle, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_size_of {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "GetSizeOf",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "GetSizeOf", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "GetSizeOf",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "GetSizeOf",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_size_of(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_size_of::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_size_of::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::aktriangle::AkTriangle as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkTriangle as ::unity2::ClassIdentity>::class(),
-                "Clone",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::aktriangle::AkTriangle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AkTriangle as ::unity2::ClassIdentity>::class(), "Clone", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkTriangle as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkTriangle as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clone(
-        this: AkTriangle,
-        other: crate::root::aktriangle::AkTriangle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkTriangle,
-            crate::root::aktriangle::AkTriangle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone::get_offset() as isize),
-        );
+    pub unsafe fn clone(this: AkTriangle, other: crate::root::aktriangle::AkTriangle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkTriangle, crate::root::aktriangle::AkTriangle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
 }
@@ -868,16 +574,10 @@ mod __AkTriangle_unity2_raw {
 #[cfg(feature = "root-aktriangle")]
 impl AkTriangle {
     #[doc = "`getCPtr(crate::root::aktriangle::AkTriangle)` overload"]
-    pub fn get_c_ptr(
-        obj: impl ::core::convert::Into<crate::root::aktriangle::AkTriangle>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __AkTriangle_unity2_raw::get_c_ptr(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_c_ptr(obj: impl ::core::convert::Into<crate::root::aktriangle::AkTriangle>) -> ::unity2::IntPtr {
+        unsafe { __AkTriangle_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSizeOf()` overload"]
     pub fn get_size_of() -> i32 {
         unsafe { __AkTriangle_unity2_raw::get_size_of(::core::option::Option::None) }
@@ -887,15 +587,9 @@ impl AkTriangle {
 #[cfg(feature = "root-aktriangle")]
 pub trait IAkTriangleMethods: IAkTriangle {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(
-        self,
-        c_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        c_memory_own: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(c_ptr),
@@ -907,40 +601,28 @@ pub trait IAkTriangleMethods: IAkTriangle {
     #[doc = "`setCPtr(::unity2::IntPtr)` overload"]
     fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriangle_unity2_raw::set_c_ptr(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriangle_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor_2(self) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
         }
     }
@@ -953,9 +635,7 @@ pub trait IAkTriangleMethods: IAkTriangle {
         in_surface_info: impl ::core::convert::Into<u16>,
     ) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::ctor_3(
                 __receiver,
                 ::core::convert::Into::into(in_pt0),
@@ -969,111 +649,71 @@ pub trait IAkTriangleMethods: IAkTriangle {
     #[doc = "`set_point0(u16)` overload"]
     fn set_point0(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriangle_unity2_raw::set_point0(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriangle_unity2_raw::set_point0(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_point0()` overload"]
     fn get_point0(self) -> u16 {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::get_point0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_point1(u16)` overload"]
     fn set_point1(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriangle_unity2_raw::set_point1(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriangle_unity2_raw::set_point1(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_point1()` overload"]
     fn get_point1(self) -> u16 {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::get_point1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_point2(u16)` overload"]
     fn set_point2(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriangle_unity2_raw::set_point2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriangle_unity2_raw::set_point2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_point2()` overload"]
     fn get_point2(self) -> u16 {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::get_point2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_surface(u16)` overload"]
     fn set_surface(self, value: impl ::core::convert::Into<u16>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriangle_unity2_raw::set_surface(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriangle_unity2_raw::set_surface(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_surface()` overload"]
     fn get_surface(self) -> u16 {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::get_surface(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkTriangle_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clone(crate::root::aktriangle::AkTriangle)` overload"]
     fn clone(self, other: impl ::core::convert::Into<crate::root::aktriangle::AkTriangle>) -> () {
         unsafe {
-            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkTriangle_unity2_raw::clone(
-                __receiver,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkTriangle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkTriangle_unity2_raw::clone(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)
         }
     }
 }
@@ -1085,39 +725,24 @@ impl<__T: IAkTriangle> IAkTriangleMethods for __T {}
 impl AkTriangle {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"]
     pub fn new(c_ptr: ::unity2::IntPtr, c_memory_own: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkTriangle),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkTriangle), ::core::stringify!(new),));
         <Self as IAkTriangleMethods>::ctor(this, c_ptr, c_memory_own);
         this
     }
 
     #[doc = "`.ctor()` — no args"]
     pub fn new_2() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkTriangle),
-                ::core::stringify!(new_2),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkTriangle), ::core::stringify!(new_2),));
         <Self as IAkTriangleMethods>::ctor_2(this);
         this
     }
 
     #[doc = "`.ctor(u16, u16, u16, u16)` — overload selector"]
     pub fn new_3(in_pt0: u16, in_pt1: u16, in_pt2: u16, in_surface_info: u16) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkTriangle),
-                ::core::stringify!(new_3),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkTriangle), ::core::stringify!(new_3),));
         <Self as IAkTriangleMethods>::ctor_3(this, in_pt0, in_pt1, in_pt2, in_surface_info);
         this
     }
@@ -1126,9 +751,7 @@ impl AkTriangle {
 #[cfg(feature = "root-aktriangle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkTriangle;
-    pub use super::IAkTriangle;
-    pub use super::IAkTriangleMethods;
+    pub use super::{AkTriangle, IAkTriangle, IAkTriangleMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

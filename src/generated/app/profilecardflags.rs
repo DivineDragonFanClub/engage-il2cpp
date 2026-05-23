@@ -2,19 +2,20 @@
 
 #[cfg(feature = "app-profilecardflags-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardflags/ProfileCardFlags.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardFlags")]
     # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: profilecardflags :: ProfileCardFlags >)]
     pub struct ProfileCardFlags {
         #[rename(name = "m_Dictionary")]
-        pub m_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
+        pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
     }
 }
 
@@ -30,9 +31,7 @@ mod __ProfileCardFlags_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
@@ -45,39 +44,27 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "get_Version",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "get_Version",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_version(
-        this: ProfileCardFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_version(this: ProfileCardFlags, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ProfileCardFlags, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
@@ -90,39 +77,27 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ProfileCardFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ProfileCardFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
@@ -135,39 +110,27 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize(
-        this: ProfileCardFlags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize(this: ProfileCardFlags, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardFlags, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -183,18 +146,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry(
@@ -203,26 +163,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardbgdata::ProfileCardBgData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardbgdata::ProfileCardBgData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -234,18 +187,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_2(
@@ -254,26 +204,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardframedata::ProfileCardFrameData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardframedata::ProfileCardFrameData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_2::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -285,18 +228,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_3(
@@ -310,21 +250,18 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_entry_3::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardtextcolordata::ProfileCardTextColorData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -336,18 +273,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_4(
@@ -361,21 +295,18 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardtextcolordata::ProfileCardTextColorData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_entry_4::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -387,18 +318,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_5(
@@ -412,21 +340,18 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_5::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_entry_5::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -438,18 +363,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_6(
@@ -458,26 +380,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardstampdata::ProfileCardStampData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_6::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardstampdata::ProfileCardStampData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_6::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtitledata :: ProfileCardTitleData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardtitledata::ProfileCardTitleData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -489,18 +404,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_7(
@@ -509,26 +421,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtitledata::ProfileCardTitleData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_7::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtitledata::ProfileCardTitleData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_7::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -540,18 +445,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_8(
@@ -565,21 +467,18 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_8::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_entry_8::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -591,18 +490,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_9(
@@ -616,21 +512,18 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_9::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_entry_9::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcommentdata :: ProfileCardCommentData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardcommentdata::ProfileCardCommentData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -642,18 +535,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_10(
@@ -662,26 +552,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardcommentdata::ProfileCardCommentData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_10::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardcommentdata::ProfileCardCommentData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_10::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -693,18 +576,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn entry_11(
@@ -718,24 +598,16 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entry_11::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_entry_11::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry_12 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Entry",
@@ -747,44 +619,29 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn entry_12(
-        this: ProfileCardFlags,
-        hash: i32,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn entry_12(this: ProfileCardFlags, hash: i32, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardFlags, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_12::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_entry_12::get_method_info().method_ptr);
         inner(this, hash, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -796,18 +653,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist(
@@ -815,25 +669,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardbgdata::ProfileCardBgData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardbgdata::ProfileCardBgData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardbgdata::ProfileCardBgData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -845,18 +691,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_2(
@@ -864,25 +707,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardframedata::ProfileCardFrameData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardframedata::ProfileCardFrameData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardframedata::ProfileCardFrameData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_2::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -894,18 +729,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_3(
@@ -913,25 +745,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtextdecodata::ProfileCardTextDecoData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_3::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextcolordata::ProfileCardTextColorData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -943,18 +767,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_4(
@@ -962,25 +783,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtextcolordata::ProfileCardTextColorData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtextcolordata::ProfileCardTextColorData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_4::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -992,18 +805,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_5(
@@ -1015,21 +825,16 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_5::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exist_5::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1041,18 +846,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_6(
@@ -1060,25 +862,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardstampdata::ProfileCardStampData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardstampdata::ProfileCardStampData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_6::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardstampdata::ProfileCardStampData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_6::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtitledata :: ProfileCardTitleData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtitledata::ProfileCardTitleData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1090,18 +884,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_7(
@@ -1109,25 +900,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardtitledata::ProfileCardTitleData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtitledata::ProfileCardTitleData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_7::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtitledata::ProfileCardTitleData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_7::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1139,18 +922,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_8(
@@ -1162,21 +942,16 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_8::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exist_8::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1188,18 +963,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_9(
@@ -1211,21 +983,16 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_9::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exist_9::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcommentdata :: ProfileCardCommentData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardcommentdata::ProfileCardCommentData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1237,18 +1004,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_10(
@@ -1256,25 +1020,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardcommentdata::ProfileCardCommentData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardcommentdata::ProfileCardCommentData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_10::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardcommentdata::ProfileCardCommentData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_10::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1286,18 +1042,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_exist_11(
@@ -1309,22 +1062,15 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_11::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_exist_11::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist_12 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "IsExist",
@@ -1336,43 +1082,29 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_exist_12(
-        this: ProfileCardFlags,
-        hash: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_exist_12(this: ProfileCardFlags, hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ProfileCardFlags, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_exist_12::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_exist_12::get_method_info().method_ptr);
         inner(this, hash, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1384,18 +1116,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get(
@@ -1403,25 +1132,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardbgdata::ProfileCardBgData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardbgdata::ProfileCardBgData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardbgdata::ProfileCardBgData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1433,18 +1154,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_2(
@@ -1452,25 +1170,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardframedata::ProfileCardFrameData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardframedata::ProfileCardFrameData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardframedata::ProfileCardFrameData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_2::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1482,18 +1192,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_3(
@@ -1501,25 +1208,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtextdecodata::ProfileCardTextDecoData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_3::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextcolordata::ProfileCardTextColorData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1531,18 +1230,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_4(
@@ -1550,25 +1246,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtextcolordata::ProfileCardTextColorData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtextcolordata::ProfileCardTextColorData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_4::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1580,18 +1268,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_5(
@@ -1603,21 +1288,16 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_5::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_5::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1629,18 +1309,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_6(
@@ -1648,25 +1325,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardstampdata::ProfileCardStampData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardstampdata::ProfileCardStampData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_6::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardstampdata::ProfileCardStampData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_6::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtitledata :: ProfileCardTitleData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtitledata::ProfileCardTitleData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1678,18 +1347,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_7(
@@ -1697,25 +1363,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardtitledata::ProfileCardTitleData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtitledata::ProfileCardTitleData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_7::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtitledata::ProfileCardTitleData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_7::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1727,18 +1385,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_8(
@@ -1750,21 +1405,16 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_8::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_8::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1776,18 +1426,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_9(
@@ -1799,21 +1446,16 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_9::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_9::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcommentdata :: ProfileCardCommentData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardcommentdata::ProfileCardCommentData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1825,18 +1467,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_10(
@@ -1844,25 +1483,17 @@ mod __ProfileCardFlags_unity2_raw {
         data: crate::app::profilecardcommentdata::ProfileCardCommentData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardcommentdata::ProfileCardCommentData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_10::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardcommentdata::ProfileCardCommentData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_10::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1874,18 +1505,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_11(
@@ -1897,22 +1525,15 @@ mod __ProfileCardFlags_unity2_raw {
             ProfileCardFlags,
             crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_11::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_11::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_12 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -1924,40 +1545,27 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_12(
-        this: ProfileCardFlags,
-        hash: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_12(this: ProfileCardFlags, hash: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ProfileCardFlags, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_12::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_12::get_method_info().method_ptr);
         inner(this, hash, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::profilecardbgdata::ProfileCardBgData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1973,18 +1581,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set(
@@ -1993,26 +1598,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardbgdata::ProfileCardBgData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardbgdata::ProfileCardBgData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardframedata :: ProfileCardFrameData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardframedata::ProfileCardFrameData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -2024,18 +1622,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_2(
@@ -2044,26 +1639,19 @@ mod __ProfileCardFlags_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardframedata::ProfileCardFrameData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardframedata::ProfileCardFrameData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -2075,18 +1663,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_3(
@@ -2100,430 +1685,16 @@ mod __ProfileCardFlags_unity2_raw {
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_3::get_method_info().method_ptr);
         inner(this, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_4(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtextcolordata::ProfileCardTextColorData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_4::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcharacterstampdata :: ProfileCardCharacterStampData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_5(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_5::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_6 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardstampdata :: ProfileCardStampData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_6(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardstampdata::ProfileCardStampData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardstampdata::ProfileCardStampData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_6::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_7 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtitledata :: ProfileCardTitleData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_7(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardtitledata::ProfileCardTitleData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardtitledata::ProfileCardTitleData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_7::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_8 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_8(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_8::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_9 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_9(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_9::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_10 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardcommentdata :: ProfileCardCommentData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_10(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardcommentdata::ProfileCardCommentData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardcommentdata::ProfileCardCommentData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_10::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_11 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardthemeofeditmapdata :: ProfileCardThemeOfEditMapData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_11(
-        this: ProfileCardFlags,
-        data: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_11::get_offset() as isize),
-        );
-        inner(this, data, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_12 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardtextcolordata::ProfileCardTextColorData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2537,43 +1708,374 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_12(
+    pub unsafe fn set_4(
         this: ProfileCardFlags,
-        hash: i32,
+        data: crate::app::profilecardtextcolordata::ProfileCardTextColorData,
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFlags,
+            crate::app::profilecardtextcolordata::ProfileCardTextColorData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_4::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_5(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFlags,
+            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_5::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardstampdata::ProfileCardStampData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_6(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardstampdata::ProfileCardStampData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardstampdata::ProfileCardStampData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_6::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardtitledata::ProfileCardTitleData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_7(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardtitledata::ProfileCardTitleData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardtitledata::ProfileCardTitleData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_7::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_8(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFlags,
+            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_8::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_9(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFlags,
+            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_9::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardcommentdata::ProfileCardCommentData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_10(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardcommentdata::ProfileCardCommentData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::profilecardcommentdata::ProfileCardCommentData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_10::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_11 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_11(
+        this: ProfileCardFlags,
+        data: crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+        value: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ProfileCardFlags,
+            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_11::get_method_info().method_ptr);
+        inner(this, data, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
+                "Set",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_12(this: ProfileCardFlags, hash: i32, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardFlags, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_12::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_12::get_method_info().method_ptr);
         inner(this, hash, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFlags as ::unity2::ClassIdentity>::class(),
                 "OnSerialize",
@@ -2585,43 +2087,27 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "OnSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "OnSerialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_serialize(
-        this: ProfileCardFlags,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_serialize::get_offset() as isize),
-        );
+    pub unsafe fn on_serialize(this: ProfileCardFlags, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -2637,18 +2123,15 @@ mod __ProfileCardFlags_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
-                    "OnDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFlags as ::unity2::ClassIdentity>::NAME,
+                        "OnDeserialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_deserialize(
@@ -2657,16 +2140,8 @@ mod __ProfileCardFlags_unity2_raw {
         version: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFlags,
-            crate::app::stream_2::Stream_2,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deserialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFlags, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_deserialize::get_method_info().method_ptr);
         inner(this, stream, version, __unity2_method_info)
     }
 }
@@ -2676,27 +2151,21 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`get_Version()` overload"]
     fn get_version(self) -> i32 {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::get_version(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Initialize()` overload"]
     fn initialize(self) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::initialize(__receiver, ::core::option::Option::None)
         }
     }
@@ -2707,9 +2176,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2725,9 +2192,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_2(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2743,9 +2208,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_3(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2761,9 +2224,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_4(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2775,15 +2236,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Entry(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, bool)` overload"]
     fn entry_5(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_5(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2799,9 +2256,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_6(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2817,9 +2272,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_7(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2831,15 +2284,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Entry(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData, bool)` overload"]
     fn entry_8(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_8(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2851,15 +2300,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Entry(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData, bool)` overload"]
     fn entry_9(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_9(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2875,9 +2320,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_10(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2889,15 +2332,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Entry(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, bool)` overload"]
     fn entry_11(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_11(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -2907,15 +2346,9 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         }
     }
     #[doc = "`Entry(i32, bool)` overload"]
-    fn entry_12(
-        self,
-        hash: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn entry_12(self, hash: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::entry_12(
                 __receiver,
                 ::core::convert::Into::into(hash),
@@ -2925,409 +2358,177 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         }
     }
     #[doc = "`IsExist(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]
-    fn is_exist(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
-    ) -> bool {
+    fn is_exist(self, data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]
-    fn is_exist_2(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>,
-    ) -> bool {
+    fn is_exist_2(self, data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_2(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_2(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
-    fn is_exist_3(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
-    ) -> bool {
+    fn is_exist_3(self, data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_3(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_3(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardtextcolordata::ProfileCardTextColorData)` overload"]
-    fn is_exist_4(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardtextcolordata::ProfileCardTextColorData>,
-    ) -> bool {
+    fn is_exist_4(self, data: impl ::core::convert::Into<crate::app::profilecardtextcolordata::ProfileCardTextColorData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_4(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_4(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)` overload"]
-    fn is_exist_5(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-        >,
-    ) -> bool {
+    fn is_exist_5(self, data: impl ::core::convert::Into<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_5(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_5(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardstampdata::ProfileCardStampData)` overload"]
-    fn is_exist_6(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
-    ) -> bool {
+    fn is_exist_6(self, data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_6(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_6(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardtitledata::ProfileCardTitleData)` overload"]
-    fn is_exist_7(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData>,
-    ) -> bool {
+    fn is_exist_7(self, data: impl ::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_7(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_7(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)` overload"]
-    fn is_exist_8(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-        >,
-    ) -> bool {
+    fn is_exist_8(self, data: impl ::core::convert::Into<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_8(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_8(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData)` overload"]
-    fn is_exist_9(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        >,
-    ) -> bool {
+    fn is_exist_9(self, data: impl ::core::convert::Into<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_9(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_9(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardcommentdata::ProfileCardCommentData)` overload"]
-    fn is_exist_10(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData>,
-    ) -> bool {
+    fn is_exist_10(self, data: impl ::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_10(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_10(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)` overload"]
-    fn is_exist_11(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        >,
-    ) -> bool {
+    fn is_exist_11(self, data: impl ::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_11(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_11(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist(i32)` overload"]
     fn is_exist_12(self, hash: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::is_exist_12(
-                __receiver,
-                ::core::convert::Into::into(hash),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::is_exist_12(__receiver, ::core::convert::Into::into(hash), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]
-    fn get(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
-    ) -> bool {
+    fn get(self, data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardframedata::ProfileCardFrameData)` overload"]
-    fn get_2(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>,
-    ) -> bool {
+    fn get_2(self, data: impl ::core::convert::Into<crate::app::profilecardframedata::ProfileCardFrameData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_2(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_2(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
-    fn get_3(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
-    ) -> bool {
+    fn get_3(self, data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_3(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_3(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardtextcolordata::ProfileCardTextColorData)` overload"]
-    fn get_4(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardtextcolordata::ProfileCardTextColorData>,
-    ) -> bool {
+    fn get_4(self, data: impl ::core::convert::Into<crate::app::profilecardtextcolordata::ProfileCardTextColorData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_4(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_4(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)` overload"]
-    fn get_5(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-        >,
-    ) -> bool {
+    fn get_5(self, data: impl ::core::convert::Into<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_5(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_5(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardstampdata::ProfileCardStampData)` overload"]
-    fn get_6(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>,
-    ) -> bool {
+    fn get_6(self, data: impl ::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_6(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_6(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardtitledata::ProfileCardTitleData)` overload"]
-    fn get_7(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData>,
-    ) -> bool {
+    fn get_7(self, data: impl ::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_7(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_7(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)` overload"]
-    fn get_8(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-        >,
-    ) -> bool {
+    fn get_8(self, data: impl ::core::convert::Into<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_8(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_8(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData)` overload"]
-    fn get_9(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        >,
-    ) -> bool {
+    fn get_9(self, data: impl ::core::convert::Into<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_9(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_9(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardcommentdata::ProfileCardCommentData)` overload"]
-    fn get_10(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData>,
-    ) -> bool {
+    fn get_10(self, data: impl ::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_10(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_10(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)` overload"]
-    fn get_11(
-        self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        >,
-    ) -> bool {
+    fn get_11(self, data: impl ::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_11(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_11(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(i32)` overload"]
     fn get_12(self, hash: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::get_12(
-                __receiver,
-                ::core::convert::Into::into(hash),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::get_12(__receiver, ::core::convert::Into::into(hash), ::core::option::Option::None)
         }
     }
     #[doc = "`Set(crate::app::profilecardbgdata::ProfileCardBgData, bool)` overload"]
-    fn set(
-        self,
-        data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set(self, data: impl ::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3343,9 +2544,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_2(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3361,9 +2560,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_3(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3379,9 +2576,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_4(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3393,15 +2588,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Set(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, bool)` overload"]
     fn set_5(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_5(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3417,9 +2608,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_6(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3435,9 +2624,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_7(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3449,15 +2636,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Set(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData, bool)` overload"]
     fn set_8(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_8(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3469,15 +2652,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Set(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData, bool)` overload"]
     fn set_9(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_9(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3493,9 +2672,7 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_10(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3507,15 +2684,11 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
     #[doc = "`Set(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, bool)` overload"]
     fn set_11(
         self,
-        data: impl ::core::convert::Into<
-            crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData,
-        >,
+        data: impl ::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>,
         value: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_11(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -3525,15 +2698,9 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         }
     }
     #[doc = "`Set(i32, bool)` overload"]
-    fn set_12(
-        self,
-        hash: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_12(self, hash: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::set_12(
                 __receiver,
                 ::core::convert::Into::into(hash),
@@ -3543,31 +2710,16 @@ pub trait IProfileCardFlagsMethods: IProfileCardFlags {
         }
     }
     #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    fn on_serialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
+    fn on_serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProfileCardFlags_unity2_raw::on_serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFlags_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn on_deserialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-        version: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn on_deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProfileCardFlags as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFlags_unity2_raw::on_deserialize(
                 __receiver,
                 ::core::convert::Into::into(stream),
@@ -3600,13 +2752,10 @@ impl ProfileCardFlags {
 #[cfg(feature = "app-profilecardflags")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardFlags;
-    pub use super::IProfileCardFlagsMethods;
-    pub use super::ProfileCardFlags;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{IProfileCardFlags, IProfileCardFlagsMethods, ProfileCardFlags};
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
 }

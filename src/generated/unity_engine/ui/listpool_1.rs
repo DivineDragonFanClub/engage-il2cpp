@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-ui-listpool_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/listpool_1/ListPool_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ListPool`1")]
@@ -13,9 +13,7 @@ mod __types {
     pub struct ListPool_1<T0: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "s_ListPool")]
-        pub s_list_pool: crate::unity_engine::ui::objectpool_1::ObjectPool_1<
-            crate::system::collections::generic::list_1::List_1<T0>,
-        >,
+        pub s_list_pool: crate::unity_engine::ui::objectpool_1::ObjectPool_1<crate::system::collections::generic::list_1::List_1<T0>>,
     }
 }
 
@@ -45,8 +43,7 @@ impl<T0: ::unity2::ClassIdentity> ListPool_1<T0> {
 #[cfg(feature = "unity_engine-ui-listpool_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IListPool_1;
-    pub use super::ListPool_1;
+    pub use super::{IListPool_1, ListPool_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

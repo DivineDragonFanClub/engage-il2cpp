@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-reflection-introspectionextensions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/introspectionextensions/IntrospectionExtensions.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "IntrospectionExtensions")]
@@ -25,11 +25,8 @@ mod __IntrospectionExtensions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_type_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IntrospectionExtensions as ::unity2::ClassIdentity>::class(),
                 "GetTypeInfo",
@@ -41,32 +38,23 @@ mod __IntrospectionExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IntrospectionExtensions as ::unity2::ClassIdentity>::NAME,
-                    "GetTypeInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IntrospectionExtensions as ::unity2::ClassIdentity>::NAME,
+                        "GetTypeInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_type_info(
         r#type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::typeinfo::TypeInfo {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::typeinfo::TypeInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> crate::system::reflection::typeinfo::TypeInfo =
+            ::core::mem::transmute(__lookup_get_type_info::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
 }
@@ -74,23 +62,15 @@ mod __IntrospectionExtensions_unity2_raw {
 #[cfg(feature = "system-reflection-introspectionextensions")]
 impl IntrospectionExtensions {
     #[doc = "`GetTypeInfo(::unity2::SystemType)` overload"]
-    pub fn get_type_info(
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> crate::system::reflection::typeinfo::TypeInfo {
-        unsafe {
-            __IntrospectionExtensions_unity2_raw::get_type_info(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_type_info(r#type: impl ::core::convert::Into<::unity2::SystemType>) -> crate::system::reflection::typeinfo::TypeInfo {
+        unsafe { __IntrospectionExtensions_unity2_raw::get_type_info(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "system-reflection-introspectionextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIntrospectionExtensions;
-    pub use super::IntrospectionExtensions;
+    pub use super::{IIntrospectionExtensions, IntrospectionExtensions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

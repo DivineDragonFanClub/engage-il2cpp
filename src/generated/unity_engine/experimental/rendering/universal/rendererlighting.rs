@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-rendererlighting-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/rendererlighting/RendererLighting.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "RendererLighting"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "RendererLighting")]
     #[parent(crate::system::object::Object)]
     pub struct RendererLighting {
         #[static_field]
@@ -52,8 +49,7 @@ mod __types {
         pub k_inverted_filter_prop_i_ds: ::unity2::Array<i32>,
         #[static_field]
         #[rename(name = "s_RenderTextureFormatToUse")]
-        pub s_render_texture_format_to_use:
-            crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        pub s_render_texture_format_to_use: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
         #[static_field]
         #[rename(name = "s_HasSetupRenderTextureFormatToUse")]
         pub s_has_setup_render_texture_format_to_use: bool,
@@ -129,9 +125,7 @@ mod __RendererLighting_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_texture_format {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
@@ -144,34 +138,34 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "GetRenderTextureFormat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "GetRenderTextureFormat",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_render_texture_format(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: graphicsformat :: GraphicsFormat = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_render_texture_format :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat =
+            ::core::mem::transmute(__lookup_get_render_texture_format::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_normal_map_render_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "CreateNormalMapRenderTexture",
@@ -183,18 +177,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "CreateNormalMapRenderTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "CreateNormalMapRenderTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_normal_map_render_texture(
@@ -208,21 +199,20 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_normal_map_render_texture::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_normal_map_render_texture::get_method_info().method_ptr);
         inner(pass, rendering_data, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_blend_style_render_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "CreateBlendStyleRenderTexture",
@@ -234,18 +224,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "CreateBlendStyleRenderTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "CreateBlendStyleRenderTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_blend_style_render_texture(
@@ -261,27 +248,19 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_blend_style_render_texture::get_offset() as isize),
-        );
-        inner(
-            pass,
-            rendering_data,
-            cmd,
-            blend_style_index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_create_blend_style_render_texture::get_method_info().method_ptr);
+        inner(pass, rendering_data, cmd, blend_style_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_blend_style {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "EnableBlendStyle",
@@ -293,18 +272,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "EnableBlendStyle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "EnableBlendStyle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_blend_style(
@@ -313,26 +289,19 @@ mod __RendererLighting_unity2_raw {
         enabled: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_blend_style::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_blend_style::get_method_info().method_ptr);
         inner(cmd, blend_style_index, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_render_textures {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "ReleaseRenderTextures",
@@ -344,18 +313,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseRenderTextures",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseRenderTextures",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_render_textures(
@@ -367,21 +333,28 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_render_textures::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_release_render_textures::get_method_info().method_ptr);
         inner(pass, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_render_light_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: color :: Color as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[
+                    <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                    <i32 as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                    <i32 as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                    <bool as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
+                    <crate::system::collections::generic::list_1::List_1<
+                        crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+                    > as ::unity2::IlType>::il_type(),
+                ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "RenderLightSet",
@@ -393,18 +366,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "RenderLightSet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "RenderLightSet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_light_set(
@@ -413,12 +383,10 @@ mod __RendererLighting_unity2_raw {
         blend_style_index: i32,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         layer_to_render: i32,
-        render_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        render_texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         rt_needs_clear: bool,
         clear_color: crate::unity_engine::color::Color,
-        lights: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        lights: crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(
@@ -430,15 +398,9 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             bool,
             crate::unity_engine::color::Color,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_light_set::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_render_light_set::get_method_info().method_ptr);
         inner(
             pass,
             rendering_data,
@@ -456,10 +418,20 @@ mod __RendererLighting_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_render_light_volume_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[
+                    <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                    <i32 as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                    <i32 as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                    <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                    <crate::system::collections::generic::list_1::List_1<
+                        crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+                    > as ::unity2::IlType>::il_type(),
+                ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "RenderLightVolumeSet",
@@ -471,18 +443,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "RenderLightVolumeSet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "RenderLightVolumeSet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_light_volume_set(
@@ -491,11 +460,9 @@ mod __RendererLighting_unity2_raw {
         blend_style_index: i32,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         layer_to_render: i32,
-        render_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        depth_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        lights: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        render_texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        depth_texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        lights: crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -506,15 +473,9 @@ mod __RendererLighting_unity2_raw {
             i32,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_light_volume_set::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_render_light_volume_set::get_method_info().method_ptr);
         inner(
             pass,
             rendering_data,
@@ -531,10 +492,11 @@ mod __RendererLighting_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_shape_light_shader_globals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "SetShapeLightShaderGlobals",
@@ -546,18 +508,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "SetShapeLightShaderGlobals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "SetShapeLightShaderGlobals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shape_light_shader_globals(
@@ -569,21 +528,16 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shape_light_shader_globals::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_shape_light_shader_globals::get_method_info().method_ptr);
         inner(pass, cmd, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_normalized_inner_radius {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "GetNormalizedInnerRadius",
@@ -595,43 +549,31 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "GetNormalizedInnerRadius",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "GetNormalizedInnerRadius",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_normalized_inner_radius(
         light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_normalized_inner_radius::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_normalized_inner_radius::get_method_info().method_ptr);
         inner(light, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_normalized_angle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "GetNormalizedAngle",
@@ -643,39 +585,32 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "GetNormalizedAngle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "GetNormalizedAngle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_normalized_angle(
-        angle: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_normalized_angle::get_offset() as isize),
-        );
+    pub unsafe fn get_normalized_angle(angle: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_normalized_angle::get_method_info().method_ptr);
         inner(angle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scaled_light_inv_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "GetScaledLightInvMatrix",
@@ -687,18 +622,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "GetScaledLightInvMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "GetScaledLightInvMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_scaled_light_inv_matrix(
@@ -712,21 +644,18 @@ mod __RendererLighting_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_scaled_light_inv_matrix::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_scaled_light_inv_matrix::get_method_info().method_ptr);
         inner(light, ret_matrix, include_rotation, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_point_light_shader_globals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "SetPointLightShaderGlobals",
@@ -738,18 +667,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "SetPointLightShaderGlobals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "SetPointLightShaderGlobals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_point_light_shader_globals(
@@ -761,21 +687,19 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_point_light_shader_globals::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_point_light_shader_globals::get_method_info().method_ptr);
         inner(cmd, light, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_dirty_lighting {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "ClearDirtyLighting",
@@ -787,18 +711,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "ClearDirtyLighting",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "ClearDirtyLighting",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_dirty_lighting(
@@ -812,21 +733,22 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_dirty_lighting::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_clear_dirty_lighting::get_method_info().method_ptr);
         inner(pass, cmd, blend_styles_used, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_render_normals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: drawingsettings :: DrawingSettings as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::drawingsettings::DrawingSettings as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::filteringsettings::FilteringSettings as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "RenderNormals",
@@ -838,18 +760,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "RenderNormals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "RenderNormals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_normals(
@@ -858,7 +777,7 @@ mod __RendererLighting_unity2_raw {
         cull_results: crate::unity_engine::rendering::cullingresults::CullingResults,
         draw_settings: crate::unity_engine::rendering::drawingsettings::DrawingSettings,
         filter_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -869,11 +788,7 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::filteringsettings::FilteringSettings,
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_normals::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_render_normals::get_method_info().method_ptr);
         inner(
             pass,
             context,
@@ -888,10 +803,14 @@ mod __RendererLighting_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_render_lights {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "RenderLights",
@@ -903,18 +822,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "RenderLights",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "RenderLights",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_lights(
@@ -932,28 +848,23 @@ mod __RendererLighting_unity2_raw {
             i32,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_lights::get_offset() as isize),
-        );
-        inner(
-            pass,
-            rendering_data,
-            cmd,
-            layer_to_render,
-            blend_styles_used,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_render_lights::get_method_info().method_ptr);
+        inner(pass, rendering_data, cmd, layer_to_render, blend_styles_used, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_render_light_volumes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: irenderpass2d :: IRenderPass2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "RenderLightVolumes",
@@ -965,18 +876,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "RenderLightVolumes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "RenderLightVolumes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_light_volumes(
@@ -984,8 +892,8 @@ mod __RendererLighting_unity2_raw {
         rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         layer_to_render: i32,
-        render_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
-        depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        render_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        depth_target: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
         blend_styles_used: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -998,11 +906,7 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_light_volumes::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_render_light_volumes::get_method_info().method_ptr);
         inner(
             pass,
             rendering_data,
@@ -1018,15 +922,11 @@ mod __RendererLighting_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_blend_modes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::rendering::blendmode::BlendMode as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::rendering::blendmode::BlendMode as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::rendering::blendmode::BlendMode as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::blendmode::BlendMode as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
@@ -1039,18 +939,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "SetBlendModes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "SetBlendModes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_blend_modes(
@@ -1064,21 +961,18 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::rendering::blendmode::BlendMode,
             crate::unity_engine::rendering::blendmode::BlendMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_blend_modes::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_blend_modes::get_method_info().method_ptr);
         inner(material, src, dst, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_material_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "GetLightMaterialIndex",
@@ -1090,18 +984,15 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "GetLightMaterialIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "GetLightMaterialIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_light_material_index(
@@ -1113,21 +1004,19 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
             bool,
             ::unity2::OptionalMethod,
-        ) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_light_material_index::get_offset() as isize),
-        );
+        ) -> u32 = ::core::mem::transmute(__lookup_get_light_material_index::get_method_info().method_ptr);
         inner(light, is_volume, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_light_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "CreateLightMaterial",
@@ -1139,22 +1028,19 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "CreateLightMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "CreateLightMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_light_material(
-        renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+        renderer_data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
         light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
         is_volume: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -1164,21 +1050,19 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_light_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_create_light_material::get_method_info().method_ptr);
         inner(renderer_data, light, is_volume, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
                 "GetLightMaterial",
@@ -1190,22 +1074,19 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    "GetLightMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        "GetLightMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_light_material(
-        renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+        renderer_data: crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
         light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
         is_volume: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -1215,20 +1096,14 @@ mod __RendererLighting_unity2_raw {
             crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_light_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_light_material::get_method_info().method_ptr);
         inner(renderer_data, light, is_volume, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RendererLighting as ::unity2::ClassIdentity>::class(),
@@ -1241,26 +1116,19 @@ mod __RendererLighting_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RendererLighting as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RendererLighting as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1268,20 +1136,14 @@ mod __RendererLighting_unity2_raw {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-rendererlighting")]
 impl RendererLighting {
     #[doc = "`GetRenderTextureFormat()` overload"]
-    pub fn get_render_texture_format(
-    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
-        unsafe {
-            __RendererLighting_unity2_raw::get_render_texture_format(::core::option::Option::None)
-        }
+    pub fn get_render_texture_format() -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat {
+        unsafe { __RendererLighting_unity2_raw::get_render_texture_format(::core::option::Option::None) }
     }
+
     #[doc = "`CreateNormalMapRenderTexture(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
     pub fn create_normal_map_render_texture(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        rendering_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        rendering_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderingdata::RenderingData>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
     ) -> () {
         unsafe {
@@ -1293,14 +1155,11 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`CreateBlendStyleRenderTexture(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]
     pub fn create_blend_style_render_texture(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        rendering_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        rendering_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderingdata::RenderingData>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         blend_style_index: impl ::core::convert::Into<i32>,
     ) -> () {
@@ -1314,6 +1173,7 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`EnableBlendStyle(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, bool)` overload"]
     pub fn enable_blend_style(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
@@ -1329,11 +1189,10 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`ReleaseRenderTextures(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
     pub fn release_render_textures(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
     ) -> () {
         unsafe {
@@ -1344,26 +1203,19 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`RenderLightSet(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, i32, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, bool, crate::unity_engine::color::Color, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>)` overload"]
     pub fn render_light_set(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        rendering_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        rendering_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderingdata::RenderingData>,
         blend_style_index: impl ::core::convert::Into<i32>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         layer_to_render: impl ::core::convert::Into<i32>,
-        render_texture: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        render_texture: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         rt_needs_clear: impl ::core::convert::Into<bool>,
         clear_color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
         lights: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         >,
     ) -> bool {
         unsafe {
@@ -1381,27 +1233,18 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`RenderLightVolumeSet(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, i32, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>)` overload"]
     pub fn render_light_volume_set(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        rendering_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        rendering_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderingdata::RenderingData>,
         blend_style_index: impl ::core::convert::Into<i32>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         layer_to_render: impl ::core::convert::Into<i32>,
-        render_texture: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_texture: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        render_texture: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_texture: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         lights: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         >,
     ) -> () {
         unsafe {
@@ -1418,11 +1261,10 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`SetShapeLightShaderGlobals(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
     pub fn set_shape_light_shader_globals(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
     ) -> () {
         unsafe {
@@ -1433,38 +1275,26 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`GetNormalizedInnerRadius(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]
     pub fn get_normalized_inner_radius(
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
     ) -> f32 {
-        unsafe {
-            __RendererLighting_unity2_raw::get_normalized_inner_radius(
-                ::core::convert::Into::into(light),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RendererLighting_unity2_raw::get_normalized_inner_radius(::core::convert::Into::into(light), ::core::option::Option::None) }
     }
+
     #[doc = "`GetNormalizedAngle(f32)` overload"]
     pub fn get_normalized_angle(angle: impl ::core::convert::Into<f32>) -> f32 {
-        unsafe {
-            __RendererLighting_unity2_raw::get_normalized_angle(
-                ::core::convert::Into::into(angle),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RendererLighting_unity2_raw::get_normalized_angle(::core::convert::Into::into(angle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetScaledLightInvMatrix(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, *mutcrate::unity_engine::matrix4x4::Matrix4x4, bool)` overload"]
     pub fn get_scaled_light_inv_matrix(
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         include_rotation: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __RendererLighting_unity2_raw::get_scaled_light_inv_matrix(
                 ::core::convert::Into::into(light),
                 __out_0.as_mut_ptr(),
@@ -1474,12 +1304,11 @@ impl RendererLighting {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`SetPointLightShaderGlobals(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]
     pub fn set_point_light_shader_globals(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
     ) -> () {
         unsafe {
             __RendererLighting_unity2_raw::set_point_light_shader_globals(
@@ -1489,11 +1318,10 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`ClearDirtyLighting(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::commandbuffer::CommandBuffer, u32)` overload"]
     pub fn clear_dirty_lighting(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         blend_styles_used: impl ::core::convert::Into<u32>,
     ) -> () {
@@ -1506,26 +1334,15 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`RenderNormals(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::cullingresults::CullingResults, crate::unity_engine::rendering::drawingsettings::DrawingSettings, crate::unity_engine::rendering::filteringsettings::FilteringSettings, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]
     pub fn render_normals(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
-        cull_results: impl ::core::convert::Into<
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-        >,
-        draw_settings: impl ::core::convert::Into<
-            crate::unity_engine::rendering::drawingsettings::DrawingSettings,
-        >,
-        filter_settings: impl ::core::convert::Into<
-            crate::unity_engine::rendering::filteringsettings::FilteringSettings,
-        >,
-        depth_target: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
+        cull_results: impl ::core::convert::Into<crate::unity_engine::rendering::cullingresults::CullingResults>,
+        draw_settings: impl ::core::convert::Into<crate::unity_engine::rendering::drawingsettings::DrawingSettings>,
+        filter_settings: impl ::core::convert::Into<crate::unity_engine::rendering::filteringsettings::FilteringSettings>,
+        depth_target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
     ) -> () {
         unsafe {
             __RendererLighting_unity2_raw::render_normals(
@@ -1539,14 +1356,11 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`RenderLights(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, u32)` overload"]
     pub fn render_lights(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        rendering_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        rendering_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderingdata::RenderingData>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         layer_to_render: impl ::core::convert::Into<i32>,
         blend_styles_used: impl ::core::convert::Into<u32>,
@@ -1562,22 +1376,15 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`RenderLightVolumes(crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D, crate::unity_engine::rendering::universal::renderingdata::RenderingData, crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, u32)` overload"]
     pub fn render_light_volumes(
-        pass: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
-        >,
-        rendering_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-        >,
+        pass: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D>,
+        rendering_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderingdata::RenderingData>,
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         layer_to_render: impl ::core::convert::Into<i32>,
-        render_target: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
-        depth_target: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
-        >,
+        render_target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
+        depth_target: impl ::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>,
         blend_styles_used: impl ::core::convert::Into<u32>,
     ) -> () {
         unsafe {
@@ -1593,6 +1400,7 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`SetBlendModes(crate::unity_engine::material::Material, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode)` overload"]
     pub fn set_blend_modes(
         material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
@@ -1608,11 +1416,10 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`GetLightMaterialIndex(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, bool)` overload"]
     pub fn get_light_material_index(
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         is_volume: impl ::core::convert::Into<bool>,
     ) -> u32 {
         unsafe {
@@ -1623,14 +1430,11 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`CreateLightMaterial(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData, crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, bool)` overload"]
     pub fn create_light_material(
-        renderer_data: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
-        >,
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        renderer_data: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData>,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         is_volume: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
@@ -1642,14 +1446,11 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`GetLightMaterial(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData, crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2, bool)` overload"]
     pub fn get_light_material(
-        renderer_data: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
-        >,
-        light: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        renderer_data: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData>,
+        light: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
         is_volume: impl ::core::convert::Into<bool>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
@@ -1661,6 +1462,7 @@ impl RendererLighting {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RendererLighting_unity2_raw::cctor(::core::option::Option::None) }
@@ -1670,8 +1472,7 @@ impl RendererLighting {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-rendererlighting")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRendererLighting;
-    pub use super::RendererLighting;
+    pub use super::{IRendererLighting, RendererLighting};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

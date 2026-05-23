@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-stackprocinst_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stackprocinst_1/StackProcInst_1.md"))]
     #[::unity2::class(namespace = "App", name = "StackProcInst`1")]
@@ -72,13 +74,10 @@ impl<T0: ::unity2::ClassIdentity> StackProcInst_1<T0> {
 #[cfg(feature = "app-stackprocinst_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStackProcInst_1;
-    pub use super::IStackProcInst_1Methods;
-    pub use super::StackProcInst_1;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IStackProcInst_1, IStackProcInst_1Methods, StackProcInst_1};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::procinst::IProcInst, system::object::IObject};
 }

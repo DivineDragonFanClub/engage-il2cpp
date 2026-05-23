@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-versusservercasualmetadata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::versusservermetadata::{IVersusServerMetaData, VersusServerMetaData};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::versusservermetadata::{IVersusServerMetaData, VersusServerMetaData},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualmetadata/VersusServerCasualMetaData.md"))]
     #[::unity2::class(namespace = "App", name = "VersusServerCasualMetaData")]
@@ -34,9 +36,7 @@ mod __VersusServerCasualMetaData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -49,39 +49,27 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -94,39 +82,27 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_owner_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u64 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -142,18 +118,15 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "SetOwnerInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "SetOwnerInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_owner_info(
@@ -162,26 +135,17 @@ mod __VersusServerCasualMetaData_unity2_raw {
         owner_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VersusServerCasualMetaData,
-            u64,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_owner_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VersusServerCasualMetaData, u64, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_owner_info::get_method_info().method_ptr);
         inner(this, owner_id, owner_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_from {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: versusservermetadata :: VersusServerMetaData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::versusservermetadata::VersusServerMetaData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
                 "CopyFrom",
@@ -193,18 +157,15 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "CopyFrom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "CopyFrom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_from(
@@ -212,24 +173,15 @@ mod __VersusServerCasualMetaData_unity2_raw {
         meta_data: crate::app::versusservermetadata::VersusServerMetaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VersusServerCasualMetaData,
-            crate::app::versusservermetadata::VersusServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_from::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VersusServerCasualMetaData, crate::app::versusservermetadata::VersusServerMetaData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_from::get_method_info().method_ptr);
         inner(this, meta_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_owner_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -242,43 +194,28 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "GetOwnerName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "GetOwnerName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_owner_name(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            VersusServerCasualMetaData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_owner_name::get_offset() as isize),
-        );
+    pub unsafe fn get_owner_name(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_owner_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
                 "Dump",
@@ -290,43 +227,27 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "Dump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "Dump",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dump(
-        this: VersusServerCasualMetaData,
-        opt: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusServerCasualMetaData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump::get_offset() as isize),
-        );
+    pub unsafe fn dump(this: VersusServerCasualMetaData, opt: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dump::get_method_info().method_ptr);
         inner(this, opt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -339,39 +260,27 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn serialize(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_serialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -384,39 +293,27 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn deserialize(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deserialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_owner_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -429,39 +326,27 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "get_OwnerId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "get_OwnerId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_owner_id(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
+    pub unsafe fn get_owner_id(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
         let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_owner_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_owner_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_friend_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
@@ -474,43 +359,28 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "get_FriendName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "get_FriendName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_friend_name(
-        this: VersusServerCasualMetaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            VersusServerCasualMetaData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_friend_name::get_offset() as isize),
-        );
+    pub unsafe fn get_friend_name(this: VersusServerCasualMetaData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_friend_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_friend_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusServerCasualMetaData as ::unity2::ClassIdentity>::class(),
                 "set_FriendName",
@@ -522,18 +392,15 @@ mod __VersusServerCasualMetaData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
-                    "set_FriendName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusServerCasualMetaData as ::unity2::ClassIdentity>::NAME,
+                        "set_FriendName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_friend_name(
@@ -541,15 +408,8 @@ mod __VersusServerCasualMetaData_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VersusServerCasualMetaData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_friend_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VersusServerCasualMetaData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_friend_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -560,9 +420,7 @@ pub trait IVersusServerCasualMetaDataMethods: IVersusServerCasualMetaData {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VersusServerCasualMetaData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -570,23 +428,15 @@ pub trait IVersusServerCasualMetaDataMethods: IVersusServerCasualMetaData {
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VersusServerCasualMetaData_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetOwnerInfo(u64, ::unity2::Il2CppString)` overload"]
-    fn set_owner_info(
-        self,
-        owner_id: impl ::core::convert::Into<u64>,
-        owner_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_owner_info(self, owner_id: impl ::core::convert::Into<u64>, owner_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VersusServerCasualMetaData_unity2_raw::set_owner_info(
                 __receiver,
                 ::core::convert::Into::into(owner_id),
@@ -596,113 +446,67 @@ pub trait IVersusServerCasualMetaDataMethods: IVersusServerCasualMetaData {
         }
     }
     #[doc = "`CopyFrom(crate::app::versusservermetadata::VersusServerMetaData)` overload"]
-    fn copy_from(
-        self,
-        meta_data: impl ::core::convert::Into<crate::app::versusservermetadata::VersusServerMetaData>,
-    ) -> () {
+    fn copy_from(self, meta_data: impl ::core::convert::Into<crate::app::versusservermetadata::VersusServerMetaData>) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::copy_from(
-                __receiver,
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::copy_from(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)
         }
     }
     #[doc = "`GetOwnerName()` overload"]
     fn get_owner_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::get_owner_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::get_owner_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dump(::unity2::Il2CppString)` overload"]
     fn dump(self, opt: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::dump(
-                __receiver,
-                ::core::convert::Into::into(opt),
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::dump(__receiver, ::core::convert::Into::into(opt), ::core::option::Option::None)
         }
     }
     #[doc = "`Serialize()` overload"]
     fn serialize(self) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::serialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize()` overload"]
     fn deserialize(self) -> bool {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::deserialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_OwnerId()` overload"]
     fn get_owner_id(self) -> u64 {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::get_owner_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::get_owner_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_FriendName()` overload"]
     fn get_friend_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::get_friend_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::get_friend_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FriendName(::unity2::Il2CppString)` overload"]
     fn set_friend_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusServerCasualMetaData_unity2_raw::set_friend_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <VersusServerCasualMetaData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusServerCasualMetaData_unity2_raw::set_friend_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -729,13 +533,10 @@ impl VersusServerCasualMetaData {
 #[cfg(feature = "app-versusservercasualmetadata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVersusServerCasualMetaData;
-    pub use super::IVersusServerCasualMetaDataMethods;
-    pub use super::VersusServerCasualMetaData;
-    pub use crate::app::versusservermetadata::IVersusServerMetaData;
+    pub use super::{IVersusServerCasualMetaData, IVersusServerCasualMetaDataMethods, VersusServerCasualMetaData};
     #[cfg(feature = "app-versusservermetadata")]
     pub use crate::app::versusservermetadata::IVersusServerMetaDataMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::versusservermetadata::IVersusServerMetaData, system::object::IObject};
 }

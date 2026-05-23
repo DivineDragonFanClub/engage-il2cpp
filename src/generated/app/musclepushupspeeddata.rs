@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-musclepushupspeeddata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdata_1::{IStructData_1, StructData_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclepushupspeeddata/MusclePushUpSpeedData.md"))]
     #[::unity2::class(namespace = "App", name = "MusclePushUpSpeedData")]
@@ -28,9 +32,7 @@ mod __MusclePushUpSpeedData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -43,43 +45,28 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "get_ID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "get_ID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_id(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MusclePushUpSpeedData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_id::get_offset() as isize),
-        );
+    pub unsafe fn get_id(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
                 "set_ID",
@@ -91,43 +78,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "set_ID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "set_ID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_id(
-        this: MusclePushUpSpeedData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MusclePushUpSpeedData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_id::get_offset() as isize),
-        );
+    pub unsafe fn set_id(this: MusclePushUpSpeedData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -140,41 +111,28 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "get_Level",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "get_Level",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_level(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_level(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_level::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_level::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
                 "set_Level",
@@ -186,40 +144,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "set_Level",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "set_Level",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_level(
-        this: MusclePushUpSpeedData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_level(this: MusclePushUpSpeedData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MusclePushUpSpeedData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_level::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_level::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_speed_min {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -232,41 +177,28 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "get_SpeedMin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "get_SpeedMin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_speed_min(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_speed_min(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_speed_min::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_speed_min::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_speed_min {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
                 "set_SpeedMin",
@@ -278,40 +210,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "set_SpeedMin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "set_SpeedMin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_speed_min(
-        this: MusclePushUpSpeedData,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_speed_min(this: MusclePushUpSpeedData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MusclePushUpSpeedData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_speed_min::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_speed_min::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_speed_max {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -324,41 +243,28 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "get_SpeedMax",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "get_SpeedMax",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_speed_max(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_speed_max(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_speed_max::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_speed_max::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_speed_max {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
                 "set_SpeedMax",
@@ -370,40 +276,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "set_SpeedMax",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "set_SpeedMax",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_speed_max(
-        this: MusclePushUpSpeedData,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_speed_max(this: MusclePushUpSpeedData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MusclePushUpSpeedData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_speed_max::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_speed_max::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_level_up_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -416,41 +309,28 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "get_LevelUpCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "get_LevelUpCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_level_up_count(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_level_up_count(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_level_up_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_level_up_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_level_up_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
                 "set_LevelUpCount",
@@ -462,40 +342,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "set_LevelUpCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "set_LevelUpCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_level_up_count(
-        this: MusclePushUpSpeedData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_level_up_count(this: MusclePushUpSpeedData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MusclePushUpSpeedData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_level_up_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_level_up_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -508,39 +375,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -553,35 +408,26 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
@@ -594,45 +440,28 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "OnBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_build(
-        this: MusclePushUpSpeedData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_build(this: MusclePushUpSpeedData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MusclePushUpSpeedData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_speed_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::musclepushupspeeddata::MusclePushUpSpeedData,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclepushupspeeddata :: MusclePushUpSpeedData > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MusclePushUpSpeedData as ::unity2::ClassIdentity>::class(),
                 "GetSpeedList",
@@ -644,38 +473,27 @@ mod __MusclePushUpSpeedData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
-                    "GetSpeedList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MusclePushUpSpeedData as ::unity2::ClassIdentity>::NAME,
+                        "GetSpeedList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_speed_list(
         level: i32,
-        set_list: *mut crate::system::collections::generic::list_1::List_1<
-            crate::app::musclepushupspeeddata::MusclePushUpSpeedData,
-        >,
+        set_list: *mut crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::app::musclepushupspeeddata::MusclePushUpSpeedData,
-            >,
+            *mut crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_speed_list::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_speed_list::get_method_info().method_ptr);
         inner(level, set_list, __unity2_method_info)
     }
 }
@@ -686,17 +504,14 @@ impl MusclePushUpSpeedData {
     pub fn load() -> () {
         unsafe { __MusclePushUpSpeedData_unity2_raw::load(::core::option::Option::None) }
     }
+
     #[doc = "`GetSpeedList(i32, *mutcrate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>)` overload"]
     pub fn get_speed_list(
         level: impl ::core::convert::Into<i32>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::musclepushupspeeddata::MusclePushUpSpeedData,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData> {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::app::musclepushupspeeddata::MusclePushUpSpeedData,
-                >,
+                crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>,
             >::uninit();
             __MusclePushUpSpeedData_unity2_raw::get_speed_list(
                 ::core::convert::Into::into(level),
@@ -713,137 +528,96 @@ pub trait IMusclePushUpSpeedDataMethods: IMusclePushUpSpeedData {
     #[doc = "`get_ID()` overload"]
     fn get_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MusclePushUpSpeedData_unity2_raw::get_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ID(::unity2::Il2CppString)` overload"]
     fn set_id(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::set_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::set_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Level()` overload"]
     fn get_level(self) -> i32 {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MusclePushUpSpeedData_unity2_raw::get_level(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Level(i32)` overload"]
     fn set_level(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::set_level(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::set_level(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SpeedMin()` overload"]
     fn get_speed_min(self) -> f32 {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::get_speed_min(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::get_speed_min(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SpeedMin(f32)` overload"]
     fn set_speed_min(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::set_speed_min(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::set_speed_min(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SpeedMax()` overload"]
     fn get_speed_max(self) -> f32 {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::get_speed_max(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::get_speed_max(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SpeedMax(f32)` overload"]
     fn set_speed_max(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::set_speed_max(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::set_speed_max(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LevelUpCount()` overload"]
     fn get_level_up_count(self) -> i32 {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::get_level_up_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::get_level_up_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LevelUpCount(i32)` overload"]
     fn set_level_up_count(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MusclePushUpSpeedData_unity2_raw::set_level_up_count(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MusclePushUpSpeedData_unity2_raw::set_level_up_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MusclePushUpSpeedData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnBuild()` overload"]
     fn on_build(self) -> () {
         unsafe {
-            let __receiver = <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MusclePushUpSpeedData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MusclePushUpSpeedData_unity2_raw::on_build(__receiver, ::core::option::Option::None)
         }
     }
@@ -871,19 +645,17 @@ impl MusclePushUpSpeedData {
 #[cfg(feature = "app-musclepushupspeeddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMusclePushUpSpeedData;
-    pub use super::IMusclePushUpSpeedDataMethods;
-    pub use super::MusclePushUpSpeedData;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{IMusclePushUpSpeedData, IMusclePushUpSpeedDataMethods, MusclePushUpSpeedData};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdata_1::IStructData_1;
     #[cfg(feature = "app-structdata_1")]
     pub use crate::app::structdata_1::IStructData_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

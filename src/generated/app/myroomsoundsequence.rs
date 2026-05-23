@@ -2,14 +2,20 @@
 
 #[cfg(feature = "app-myroomsoundsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomSoundSequence")]
@@ -18,21 +24,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundsequence/MyRoomSoundSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MyRoomSoundSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MyRoomSoundSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MyRoomSoundSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -43,10 +42,7 @@ mod __types {
 
     impl ::unity2::IlType for MyRoomSoundSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -77,9 +73,7 @@ mod __MyRoomSoundSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_jukebox {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
@@ -92,41 +86,28 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_IsJukebox",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_IsJukebox",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_jukebox(
-        this: MyRoomSoundSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_jukebox(this: MyRoomSoundSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomSoundSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_jukebox::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_jukebox::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_jukebox {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
                 "set_IsJukebox",
@@ -138,40 +119,27 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_IsJukebox",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_IsJukebox",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_jukebox(
-        this: MyRoomSoundSequence,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_jukebox(this: MyRoomSoundSequence, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomSoundSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_jukebox::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_jukebox::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -187,43 +155,27 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        is_jukebox: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, is_jukebox: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, is_jukebox, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
@@ -236,41 +188,30 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: MyRoomSoundSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            MyRoomSoundSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomSoundSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_sound_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
@@ -283,39 +224,27 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSoundMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSoundMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_sound_menu(
-        this: MyRoomSoundSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_sound_menu(this: MyRoomSoundSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomSoundSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_sound_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_sound_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_entry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
@@ -328,39 +257,27 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "Entry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn entry(
-        this: MyRoomSoundSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn entry(this: MyRoomSoundSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomSoundSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_entry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
@@ -373,39 +290,27 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    "Exit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        "Exit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exit(
-        this: MyRoomSoundSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn exit(this: MyRoomSoundSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomSoundSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomSoundSequence as ::unity2::ClassIdentity>::class(),
@@ -418,30 +323,20 @@ mod __MyRoomSoundSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomSoundSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MyRoomSoundSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MyRoomSoundSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomSoundSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -449,10 +344,7 @@ mod __MyRoomSoundSequence_unity2_raw {
 #[cfg(feature = "app-myroomsoundsequence")]
 impl MyRoomSoundSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_jukebox: impl ::core::convert::Into<bool>,
-    ) -> () {
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>, is_jukebox: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             __MyRoomSoundSequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
@@ -468,73 +360,49 @@ pub trait IMyRoomSoundSequenceMethods: IMyRoomSoundSequence {
     #[doc = "`get_IsJukebox()` overload"]
     fn get_is_jukebox(self) -> bool {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomSoundSequence_unity2_raw::get_is_jukebox(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomSoundSequence_unity2_raw::get_is_jukebox(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsJukebox(bool)` overload"]
     fn set_is_jukebox(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomSoundSequence_unity2_raw::set_is_jukebox(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomSoundSequence_unity2_raw::set_is_jukebox(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDesc()` overload"]
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomSoundSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSoundMenu()` overload"]
     fn create_sound_menu(self) -> () {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomSoundSequence_unity2_raw::create_sound_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomSoundSequence_unity2_raw::create_sound_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Entry()` overload"]
     fn entry(self) -> () {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomSoundSequence_unity2_raw::entry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Exit()` overload"]
     fn exit(self) -> () {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomSoundSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MyRoomSoundSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomSoundSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -562,23 +430,19 @@ impl MyRoomSoundSequence {
 #[cfg(feature = "app-myroomsoundsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomSoundSequence;
-    pub use super::IMyRoomSoundSequenceMethods;
-    pub use super::MyRoomSoundSequence;
-    pub use super::MyRoomSoundSequence_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IMyRoomSoundSequence, IMyRoomSoundSequenceMethods, MyRoomSoundSequence, MyRoomSoundSequence_Label};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

@@ -2,25 +2,24 @@
 
 #[cfg(feature = "root-akwwiseinitializationsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::akbaseplatformsettings::{AkBasePlatformSettings, IAkBasePlatformSettings};
-    use crate::root::akcommonplatformsettings::{
-        AkCommonPlatformSettings, IAkCommonPlatformSettings,
+    use super::*;
+    use crate::{
+        root::{
+            akbaseplatformsettings::{AkBasePlatformSettings, IAkBasePlatformSettings},
+            akcommonplatformsettings::{AkCommonPlatformSettings, IAkCommonPlatformSettings},
+        },
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_CommonPlatformSettings.md"))]
-    #[::unity2::class(
-        namespace = "",
-        name = "AkWwiseInitializationSettings.CommonPlatformSettings"
-    )]
-    #[parent(
-        crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings
-    )]
+    #[::unity2::class(namespace = "", name = "AkWwiseInitializationSettings.CommonPlatformSettings")]
+    #[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings)]
     pub struct AkWwiseInitializationSettings_CommonPlatformSettings {
         #[rename(name = "UserSettings")]
         pub user_settings: crate::root::akcommonusersettings::AkCommonUserSettings,
@@ -34,33 +33,41 @@ mod __types {
     #[::unity2::class(namespace = "", name = "AkWwiseInitializationSettings")]
     #[parent(crate::root::akcommonplatformsettings::AkCommonPlatformSettings)]
     pub struct AkWwiseInitializationSettings {
-# [rename (name = "PlatformSettingsNameList")] pub platform_settings_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [rename (name = "PlatformSettingsList")] pub platform_settings_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings_PlatformSettings > ,
-# [rename (name = "InvalidReferencePlatforms")] pub invalid_reference_platforms : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [rename (name = "UserSettings")] pub user_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings ,
-# [rename (name = "AdvancedSettings")] pub advanced_settings : crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings ,
-# [rename (name = "CommsSettings")] pub comms_settings : crate :: root :: akcommoncommsettings :: AkCommonCommSettings ,
-# [static_field] # [rename (name = "AllGlobalValues")] pub all_global_values : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "m_Instance")] pub m_instance : crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings ,
-# [static_field] # [rename (name = "m_ActivePlatformSettings")] pub m_active_platform_settings : crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings ,
-}
+        #[rename(name = "PlatformSettingsNameList")]
+        pub platform_settings_name_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[rename(name = "PlatformSettingsList")]
+        pub platform_settings_list: crate::system::collections::generic::list_1::List_1<
+            crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings,
+        >,
+        #[rename(name = "InvalidReferencePlatforms")]
+        pub invalid_reference_platforms: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        #[rename(name = "UserSettings")]
+        pub user_settings: crate::root::akcommonusersettings::AkCommonUserSettings,
+        #[rename(name = "AdvancedSettings")]
+        pub advanced_settings: crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings,
+        #[rename(name = "CommsSettings")]
+        pub comms_settings: crate::root::akcommoncommsettings::AkCommonCommSettings,
+        #[static_field]
+        #[rename(name = "AllGlobalValues")]
+        pub all_global_values: ::unity2::Array<::unity2::Il2CppString>,
+        #[static_field]
+        #[rename(name = "m_Instance")]
+        pub m_instance: crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings,
+        #[static_field]
+        #[rename(name = "m_ActivePlatformSettings")]
+        pub m_active_platform_settings: crate::root::akbaseplatformsettings::AkBasePlatformSettings,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_PlatformSettings.md"))]
-    #[::unity2::class(
-        namespace = "",
-        name = "AkWwiseInitializationSettings.PlatformSettings"
-    )]
+    #[::unity2::class(namespace = "", name = "AkWwiseInitializationSettings.PlatformSettings")]
     #[parent(crate::root::akcommonplatformsettings::AkCommonPlatformSettings)]
     pub struct AkWwiseInitializationSettings_PlatformSettings {
         #[rename(name = "IgnorePropertyNameList")]
-        pub ignore_property_name_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub ignore_property_name_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "GlobalPropertyNameList")]
-        pub global_property_name_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub global_property_name_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "_GlobalPropertyHashSet")]
-        pub global_property_hash_set_field:
-            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        pub global_property_hash_set_field: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
     }
 }
 
@@ -76,19 +83,28 @@ mod __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_user_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () , "GetUserSettings" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::class(),
+                "GetUserSettings",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "GetUserSettings" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetUserSettings",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn get_user_settings(
@@ -98,57 +114,75 @@ mod __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw {
         let inner: extern "C" fn(
             AkWwiseInitializationSettings_CommonPlatformSettings,
             ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommonusersettings::AkCommonUserSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_user_settings::get_offset() as isize),
-        );
+        ) -> crate::root::akcommonusersettings::AkCommonUserSettings =
+            ::core::mem::transmute(__lookup_get_user_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_advanced_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () , "GetAdvancedSettings" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::class(),
+                "GetAdvancedSettings",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "GetAdvancedSettings" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetAdvancedSettings",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn get_advanced_settings(
         this: AkWwiseInitializationSettings_CommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
-        let inner : extern "C" fn (AkWwiseInitializationSettings_CommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_advanced_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AkWwiseInitializationSettings_CommonPlatformSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings =
+            ::core::mem::transmute(__lookup_get_advanced_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_comms_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () , "GetCommsSettings" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::class(),
+                "GetCommsSettings",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "GetCommsSettings" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetCommsSettings",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn get_comms_settings(
@@ -158,102 +192,87 @@ mod __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw {
         let inner: extern "C" fn(
             AkWwiseInitializationSettings_CommonPlatformSettings,
             ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommoncommsettings::AkCommonCommSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_comms_settings::get_offset() as isize),
-        );
+        ) -> crate::root::akcommoncommsettings::AkCommonCommSettings =
+            ::core::mem::transmute(__lookup_get_comms_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn ctor(
-        this: AkWwiseInitializationSettings_CommonPlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings_CommonPlatformSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkWwiseInitializationSettings_CommonPlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkWwiseInitializationSettings_CommonPlatformSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
-pub trait IAkWwiseInitializationSettings_CommonPlatformSettingsMethods:
-    IAkWwiseInitializationSettings_CommonPlatformSettings
-{
+pub trait IAkWwiseInitializationSettings_CommonPlatformSettingsMethods: IAkWwiseInitializationSettings_CommonPlatformSettings {
     #[doc = "`GetUserSettings()` overload"]
     fn get_user_settings(self) -> crate::root::akcommonusersettings::AkCommonUserSettings {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::get_user_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::get_user_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAdvancedSettings()` overload"]
-    fn get_advanced_settings(
-        self,
-    ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
+    fn get_advanced_settings(self) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::get_advanced_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::get_advanced_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCommsSettings()` overload"]
     fn get_comms_settings(self) -> crate::root::akcommoncommsettings::AkCommonCommSettings {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::get_comms_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::get_comms_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkWwiseInitializationSettings_CommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_CommonPlatformSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
-impl<__T: IAkWwiseInitializationSettings_CommonPlatformSettings>
-    IAkWwiseInitializationSettings_CommonPlatformSettingsMethods for __T
-{
-}
+impl<__T: IAkWwiseInitializationSettings_CommonPlatformSettings> IAkWwiseInitializationSettings_CommonPlatformSettingsMethods for __T {}
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 impl AkWwiseInitializationSettings_CommonPlatformSettings {
@@ -280,9 +299,7 @@ mod __AkWwiseInitializationSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -295,39 +312,27 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_valid(
-        this: AkWwiseInitializationSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_valid(this: AkWwiseInitializationSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AkWwiseInitializationSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -340,39 +345,27 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: AkWwiseInitializationSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_count(this: AkWwiseInitializationSettings, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkWwiseInitializationSettings, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_user_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -385,42 +378,30 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetUserSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetUserSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_user_settings(
         this: AkWwiseInitializationSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommonusersettings::AkCommonUserSettings {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommonusersettings::AkCommonUserSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_user_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkWwiseInitializationSettings, ::unity2::OptionalMethod) -> crate::root::akcommonusersettings::AkCommonUserSettings =
+            ::core::mem::transmute(__lookup_get_user_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_advanced_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -433,34 +414,33 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetAdvancedSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetAdvancedSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_advanced_settings(
         this: AkWwiseInitializationSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
-        let inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_advanced_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AkWwiseInitializationSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings =
+            ::core::mem::transmute(__lookup_get_advanced_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_comms_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -473,42 +453,30 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetCommsSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetCommsSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_comms_settings(
         this: AkWwiseInitializationSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommoncommsettings::AkCommonCommSettings {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommoncommsettings::AkCommonCommSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_comms_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkWwiseInitializationSettings, ::unity2::OptionalMethod) -> crate::root::akcommoncommsettings::AkCommonCommSettings =
+            ::core::mem::transmute(__lookup_get_comms_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -521,35 +489,30 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_Instance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_Instance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_instance(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_instance :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings =
+            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_platform_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
                 "GetPlatformSettings",
@@ -561,42 +524,30 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetPlatformSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetPlatformSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_platform_settings(
         platform_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akbaseplatformsettings::AkBasePlatformSettings {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::akbaseplatformsettings::AkBasePlatformSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_platform_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::root::akbaseplatformsettings::AkBasePlatformSettings =
+            ::core::mem::transmute(__lookup_get_platform_settings::get_method_info().method_ptr);
         inner(platform_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_active_platform_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -609,40 +560,29 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_ActivePlatformSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_ActivePlatformSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_active_platform_settings(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akbaseplatformsettings::AkBasePlatformSettings {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::akbaseplatformsettings::AkBasePlatformSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_active_platform_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::akbaseplatformsettings::AkBasePlatformSettings =
+            ::core::mem::transmute(__lookup_get_active_platform_settings::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -655,39 +595,27 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: AkWwiseInitializationSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: AkWwiseInitializationSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkWwiseInitializationSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_sound_engine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -700,37 +628,28 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "InitializeSoundEngine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "InitializeSoundEngine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize_sound_engine(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize_sound_engine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_initialize_sound_engine::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_sound_engine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
                 "ResetSoundEngine",
@@ -742,38 +661,27 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "ResetSoundEngine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "ResetSoundEngine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_sound_engine(
-        is_playing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset_sound_engine::get_offset() as isize),
-        );
+    pub unsafe fn reset_sound_engine(is_playing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_reset_sound_engine::get_method_info().method_ptr);
         inner(is_playing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terminate_sound_engine {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -786,37 +694,28 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "TerminateSoundEngine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "TerminateSoundEngine",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn terminate_sound_engine(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_terminate_sound_engine::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terminate_sound_engine::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sleep_for_milliseconds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
                 "SleepForMilliseconds",
@@ -828,38 +727,27 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    "SleepForMilliseconds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        "SleepForMilliseconds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn sleep_for_milliseconds(
-        milliseconds: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f64, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sleep_for_milliseconds::get_offset() as isize),
-        );
+    pub unsafe fn sleep_for_milliseconds(milliseconds: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(f64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sleep_for_milliseconds::get_method_info().method_ptr);
         inner(milliseconds, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -872,39 +760,27 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkWwiseInitializationSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkWwiseInitializationSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkWwiseInitializationSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::class(),
@@ -917,26 +793,19 @@ mod __AkWwiseInitializationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -944,12 +813,10 @@ mod __AkWwiseInitializationSettings_unity2_raw {
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 impl AkWwiseInitializationSettings {
     #[doc = "`get_Instance()` overload"]
-    pub fn get_instance(
-    ) -> crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings {
-        unsafe {
-            __AkWwiseInitializationSettings_unity2_raw::get_instance(::core::option::Option::None)
-        }
+    pub fn get_instance() -> crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings {
+        unsafe { __AkWwiseInitializationSettings_unity2_raw::get_instance(::core::option::Option::None) }
     }
+
     #[doc = "`GetPlatformSettings(::unity2::Il2CppString)` overload"]
     pub fn get_platform_settings(
         platform_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -961,40 +828,29 @@ impl AkWwiseInitializationSettings {
             )
         }
     }
+
     #[doc = "`get_ActivePlatformSettings()` overload"]
-    pub fn get_active_platform_settings(
-    ) -> crate::root::akbaseplatformsettings::AkBasePlatformSettings {
-        unsafe {
-            __AkWwiseInitializationSettings_unity2_raw::get_active_platform_settings(
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_active_platform_settings() -> crate::root::akbaseplatformsettings::AkBasePlatformSettings {
+        unsafe { __AkWwiseInitializationSettings_unity2_raw::get_active_platform_settings(::core::option::Option::None) }
     }
+
     #[doc = "`InitializeSoundEngine()` overload"]
     pub fn initialize_sound_engine() -> bool {
-        unsafe {
-            __AkWwiseInitializationSettings_unity2_raw::initialize_sound_engine(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AkWwiseInitializationSettings_unity2_raw::initialize_sound_engine(::core::option::Option::None) }
     }
+
     #[doc = "`ResetSoundEngine(bool)` overload"]
     pub fn reset_sound_engine(is_playing: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
-            __AkWwiseInitializationSettings_unity2_raw::reset_sound_engine(
-                ::core::convert::Into::into(is_playing),
-                ::core::option::Option::None,
-            )
+            __AkWwiseInitializationSettings_unity2_raw::reset_sound_engine(::core::convert::Into::into(is_playing), ::core::option::Option::None)
         }
     }
+
     #[doc = "`TerminateSoundEngine()` overload"]
     pub fn terminate_sound_engine() -> () {
-        unsafe {
-            __AkWwiseInitializationSettings_unity2_raw::terminate_sound_engine(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AkWwiseInitializationSettings_unity2_raw::terminate_sound_engine(::core::option::Option::None) }
     }
+
     #[doc = "`SleepForMilliseconds(f64)` overload"]
     pub fn sleep_for_milliseconds(milliseconds: impl ::core::convert::Into<f64>) -> () {
         unsafe {
@@ -1004,6 +860,7 @@ impl AkWwiseInitializationSettings {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __AkWwiseInitializationSettings_unity2_raw::cctor(::core::option::Option::None) }
@@ -1016,93 +873,56 @@ pub trait IAkWwiseInitializationSettingsMethods: IAkWwiseInitializationSettings 
     fn get_is_valid(self) -> bool {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::get_is_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Count()` overload"]
     fn get_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::get_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUserSettings()` overload"]
     fn get_user_settings(self) -> crate::root::akcommonusersettings::AkCommonUserSettings {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::get_user_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::get_user_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAdvancedSettings()` overload"]
-    fn get_advanced_settings(
-        self,
-    ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
+    fn get_advanced_settings(self) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::get_advanced_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::get_advanced_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCommsSettings()` overload"]
     fn get_comms_settings(self) -> crate::root::akcommoncommsettings::AkCommonCommSettings {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::get_comms_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::get_comms_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::on_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkWwiseInitializationSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkWwiseInitializationSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkWwiseInitializationSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1135,14 +955,10 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ignore_property_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "IgnorePropertyValue",
                 1,
                 param_types,
@@ -1150,12 +966,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "IgnorePropertyValue" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "IgnorePropertyValue",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ignore_property_value(
@@ -1163,29 +984,18 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
         property_path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings_PlatformSettings,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ignore_property_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkWwiseInitializationSettings_PlatformSettings, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ignore_property_value::get_method_info().method_ptr);
         inner(this, property_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_property_ignored {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "IsPropertyIgnored",
                 1,
                 param_types,
@@ -1193,12 +1003,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "IsPropertyIgnored" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "IsPropertyIgnored",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn is_property_ignored(
@@ -1206,28 +1021,18 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
         property_path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings_PlatformSettings,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_property_ignored::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkWwiseInitializationSettings_PlatformSettings, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_property_ignored::get_method_info().method_ptr);
         inner(this, property_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1235,42 +1040,35 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn ctor(
-        this: AkWwiseInitializationSettings_PlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings_PlatformSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkWwiseInitializationSettings_PlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkWwiseInitializationSettings_PlatformSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_use_global_property_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "SetUseGlobalPropertyValue",
                 2,
                 param_types,
@@ -1278,12 +1076,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "SetUseGlobalPropertyValue" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "SetUseGlobalPropertyValue",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn set_use_global_property_value(
@@ -1292,32 +1095,19 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
         r#use: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings_PlatformSettings,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_use_global_property_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkWwiseInitializationSettings_PlatformSettings, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_use_global_property_value::get_method_info().method_ptr);
         inner(this, property_path, r#use, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_property_values {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::ienumerable::IEnumerable as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::ienumerable::IEnumerable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "SetGlobalPropertyValues",
                 1,
                 param_types,
@@ -1325,12 +1115,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "SetGlobalPropertyValues" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalPropertyValues",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn set_global_property_values(
@@ -1342,25 +1137,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             AkWwiseInitializationSettings_PlatformSettings,
             crate::system::collections::ienumerable::IEnumerable,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_property_values::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_property_values::get_method_info().method_ptr);
         inner(this, enumerable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_using_global_property_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "IsUsingGlobalPropertyValue",
                 1,
                 param_types,
@@ -1368,12 +1155,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "IsUsingGlobalPropertyValue" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "IsUsingGlobalPropertyValue",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn is_using_global_property_value(
@@ -1381,28 +1173,18 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
         property_path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AkWwiseInitializationSettings_PlatformSettings,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_using_global_property_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkWwiseInitializationSettings_PlatformSettings, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_using_global_property_value::get_method_info().method_ptr);
         inner(this, property_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_property_hash_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "get_GlobalPropertyHashSet",
                 0,
                 param_types,
@@ -1410,12 +1192,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "get_GlobalPropertyHashSet" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_GlobalPropertyHashSet",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn get_global_property_hash_set(
@@ -1425,30 +1212,19 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
         let inner: extern "C" fn(
             AkWwiseInitializationSettings_PlatformSettings,
             ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::generic::hashset_1::HashSet_1<
-            ::unity2::Il2CppString,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_property_hash_set::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_global_property_hash_set::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_property_hash_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::hashset_1::HashSet_1<
-                    ::unity2::Il2CppString,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(
-                ),
+                <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::class(),
                 "set_GlobalPropertyHashSet",
                 1,
                 param_types,
@@ -1456,12 +1232,17 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: NAME , "set_GlobalPropertyHashSet" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkWwiseInitializationSettings_PlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_GlobalPropertyHashSet",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn set_global_property_hash_set(
@@ -1473,26 +1254,19 @@ mod __AkWwiseInitializationSettings_PlatformSettings_unity2_raw {
             AkWwiseInitializationSettings_PlatformSettings,
             crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_property_hash_set::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_property_hash_set::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
-pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:
-    IAkWwiseInitializationSettings_PlatformSettings
-{
+pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods: IAkWwiseInitializationSettings_PlatformSettings {
     #[doc = "`IgnorePropertyValue(::unity2::Il2CppString)` overload"]
-    fn ignore_property_value(
-        self,
-        property_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn ignore_property_value(self, property_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::ignore_property_value(
                 __receiver,
                 ::core::convert::Into::into(property_path),
@@ -1501,12 +1275,11 @@ pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:
         }
     }
     #[doc = "`IsPropertyIgnored(::unity2::Il2CppString)` overload"]
-    fn is_property_ignored(
-        self,
-        property_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_property_ignored(self, property_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::is_property_ignored(
                 __receiver,
                 ::core::convert::Into::into(property_path),
@@ -1517,11 +1290,10 @@ pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetUseGlobalPropertyValue(::unity2::Il2CppString, bool)` overload"]
@@ -1531,17 +1303,23 @@ pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:
         r#use: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw :: set_use_global_property_value (__receiver , :: core :: convert :: Into :: into (property_path) , :: core :: convert :: Into :: into (r#use) , :: core :: option :: Option :: None)
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::set_use_global_property_value(
+                __receiver,
+                ::core::convert::Into::into(property_path),
+                ::core::convert::Into::into(r#use),
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`SetGlobalPropertyValues(crate::system::collections::ienumerable::IEnumerable)` overload"]
-    fn set_global_property_values(
-        self,
-        enumerable: impl ::core::convert::Into<crate::system::collections::ienumerable::IEnumerable>,
-    ) -> () {
+    fn set_global_property_values(self, enumerable: impl ::core::convert::Into<crate::system::collections::ienumerable::IEnumerable>) -> () {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::set_global_property_values(
                 __receiver,
                 ::core::convert::Into::into(enumerable),
@@ -1550,43 +1328,47 @@ pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:
         }
     }
     #[doc = "`IsUsingGlobalPropertyValue(::unity2::Il2CppString)` overload"]
-    fn is_using_global_property_value(
-        self,
-        property_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_using_global_property_value(self, property_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw :: is_using_global_property_value (__receiver , :: core :: convert :: Into :: into (property_path) , :: core :: option :: Option :: None)
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::is_using_global_property_value(
+                __receiver,
+                ::core::convert::Into::into(property_path),
+                ::core::option::Option::None,
+            )
         }
     }
     #[doc = "`get_GlobalPropertyHashSet()` overload"]
-    fn get_global_property_hash_set(
-        self,
-    ) -> crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString> {
+    fn get_global_property_hash_set(self) -> crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw :: get_global_property_hash_set (__receiver , :: core :: option :: Option :: None)
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::get_global_property_hash_set(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_GlobalPropertyHashSet(crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"]
     fn set_global_property_hash_set(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
-        >,
+        value: impl ::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>>,
     ) -> () {
         unsafe {
-            let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw :: set_global_property_hash_set (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None)
+            let __receiver = <AkWwiseInitializationSettings_PlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkWwiseInitializationSettings_PlatformSettings_unity2_raw::set_global_property_hash_set(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
         }
     }
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
-impl<__T: IAkWwiseInitializationSettings_PlatformSettings>
-    IAkWwiseInitializationSettings_PlatformSettingsMethods for __T
-{
-}
+impl<__T: IAkWwiseInitializationSettings_PlatformSettings> IAkWwiseInitializationSettings_PlatformSettingsMethods for __T {}
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 impl AkWwiseInitializationSettings_PlatformSettings {
@@ -1607,28 +1389,25 @@ impl AkWwiseInitializationSettings_PlatformSettings {
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkWwiseInitializationSettings;
-    pub use super::AkWwiseInitializationSettings_CommonPlatformSettings;
-    pub use super::AkWwiseInitializationSettings_PlatformSettings;
-    pub use super::IAkWwiseInitializationSettings;
-    pub use super::IAkWwiseInitializationSettingsMethods;
-    pub use super::IAkWwiseInitializationSettings_CommonPlatformSettings;
-    pub use super::IAkWwiseInitializationSettings_CommonPlatformSettingsMethods;
-    pub use super::IAkWwiseInitializationSettings_PlatformSettings;
-    pub use super::IAkWwiseInitializationSettings_PlatformSettingsMethods;
-    pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettings;
+    pub use super::{
+        AkWwiseInitializationSettings, AkWwiseInitializationSettings_CommonPlatformSettings, AkWwiseInitializationSettings_PlatformSettings,
+        IAkWwiseInitializationSettings, IAkWwiseInitializationSettingsMethods, IAkWwiseInitializationSettings_CommonPlatformSettings,
+        IAkWwiseInitializationSettings_CommonPlatformSettingsMethods, IAkWwiseInitializationSettings_PlatformSettings,
+        IAkWwiseInitializationSettings_PlatformSettingsMethods,
+    };
     #[cfg(feature = "root-akbaseplatformsettings")]
     pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettingsMethods;
-    pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettings;
     #[cfg(feature = "root-akcommonplatformsettings")]
     pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettingsMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        root::{akbaseplatformsettings::IAkBasePlatformSettings, akcommonplatformsettings::IAkCommonPlatformSettings},
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

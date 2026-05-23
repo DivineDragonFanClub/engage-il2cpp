@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-itemgainsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemgainsequence/ItemGainSequence.md"))]
     #[::unity2::class(namespace = "App", name = "ItemGainSequence")]
@@ -28,21 +32,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemgainsequence/ItemGainSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ItemGainSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for ItemGainSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "ItemGainSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -53,10 +50,7 @@ mod __types {
 
     impl ::unity2::IlType for ItemGainSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -83,9 +77,7 @@ mod __ItemGainSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -103,18 +95,15 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -132,20 +121,14 @@ mod __ItemGainSequence_unity2_raw {
             ::unity2::Il2CppString,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, unit_item, unit, label, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_gain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemGainSequence as ::unity2::ClassIdentity>::class(),
@@ -158,39 +141,27 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "Gain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "Gain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn gain(
-        this: ItemGainSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn gain(this: ItemGainSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemGainSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_gain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_gain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_branch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemGainSequence as ::unity2::ClassIdentity>::class(),
@@ -203,39 +174,27 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "Branch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "Branch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn branch(
-        this: ItemGainSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn branch(this: ItemGainSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemGainSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_branch::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_branch::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tutorial {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemGainSequence as ::unity2::ClassIdentity>::class(),
@@ -248,41 +207,28 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "Tutorial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "Tutorial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tutorial(
-        this: ItemGainSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tutorial(this: ItemGainSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ItemGainSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tutorial::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tutorial::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_player {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ItemGainSequence as ::unity2::ClassIdentity>::class(),
                 "IsPlayer",
@@ -294,43 +240,27 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_player(
-        this: ItemGainSequence,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ItemGainSequence,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_player::get_offset() as isize),
-        );
+    pub unsafe fn is_player(this: ItemGainSequence, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ItemGainSequence, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_player::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -347,18 +277,15 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -367,25 +294,15 @@ mod __ItemGainSequence_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::itemdata::ItemData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, item, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -404,18 +321,15 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_2(
@@ -433,20 +347,14 @@ mod __ItemGainSequence_unity2_raw {
             ::unity2::Il2CppString,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_2::get_method_info().method_ptr);
         inner(super_, item, unit, label, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -465,18 +373,15 @@ mod __ItemGainSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ItemGainSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_3(
@@ -494,11 +399,7 @@ mod __ItemGainSequence_unity2_raw {
             ::unity2::Il2CppString,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_3::get_method_info().method_ptr);
         inner(super_, unit_item, unit, label, count, __unity2_method_info)
     }
 }
@@ -520,6 +421,7 @@ impl ItemGainSequence {
             )
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, crate::app::unit::Unit, ::unity2::Il2CppString, i32)` overload"]
     pub fn create_bind_2(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -539,6 +441,7 @@ impl ItemGainSequence {
             )
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::unit::Unit, ::unity2::Il2CppString, i32)` overload"]
     pub fn create_bind_3(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -571,9 +474,7 @@ pub trait IItemGainSequenceMethods: IItemGainSequence {
         count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemGainSequence_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit_item),
@@ -587,41 +488,29 @@ pub trait IItemGainSequenceMethods: IItemGainSequence {
     #[doc = "`Gain()` overload"]
     fn gain(self) -> () {
         unsafe {
-            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemGainSequence_unity2_raw::gain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Branch()` overload"]
     fn branch(self) -> () {
         unsafe {
-            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemGainSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Tutorial()` overload"]
     fn tutorial(self) -> () {
         unsafe {
-            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ItemGainSequence_unity2_raw::tutorial(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlayer(crate::app::unit::Unit)` overload"]
     fn is_player(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
-            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ItemGainSequence_unity2_raw::is_player(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ItemGainSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ItemGainSequence_unity2_raw::is_player(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
 }
@@ -632,12 +521,7 @@ impl<__T: IItemGainSequence> IItemGainSequenceMethods for __T {}
 #[cfg(feature = "app-itemgainsequence")]
 impl ItemGainSequence {
     #[doc = "`.ctor(crate::app::unititem::UnitItem, crate::app::unit::Unit, ::unity2::Il2CppString, i32)` — overload selector"]
-    pub fn new(
-        unit_item: crate::app::unititem::UnitItem,
-        unit: crate::app::unit::Unit,
-        label: ::unity2::Il2CppString,
-        count: i32,
-    ) -> Self {
+    pub fn new(unit_item: crate::app::unititem::UnitItem, unit: crate::app::unit::Unit, label: ::unity2::Il2CppString, count: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -653,20 +537,17 @@ impl ItemGainSequence {
 #[cfg(feature = "app-itemgainsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IItemGainSequence;
-    pub use super::IItemGainSequenceMethods;
-    pub use super::ItemGainSequence;
-    pub use super::ItemGainSequence_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IItemGainSequence, IItemGainSequenceMethods, ItemGainSequence, ItemGainSequence_Label};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

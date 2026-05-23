@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-aksegmentinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksegmentinfo/AkSegmentInfo.md"))]
     #[::unity2::class(namespace = "", name = "AkSegmentInfo")]
@@ -30,65 +30,36 @@ mod __AkSegmentInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AkSegmentInfo as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkSegmentInfo,
-        c_ptr: ::unity2::IntPtr,
-        c_memory_own: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkSegmentInfo,
-            ::unity2::IntPtr,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkSegmentInfo, c_ptr: ::unity2::IntPtr, c_memory_own: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkSegmentInfo, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, c_ptr, c_memory_own, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::aksegmentinfo::AkSegmentInfo as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::aksegmentinfo::AkSegmentInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "getCPtr",
@@ -100,43 +71,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "getCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "getCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_ptr(
-        obj: crate::root::aksegmentinfo::AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::aksegmentinfo::AkSegmentInfo,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ptr::get_offset() as isize),
-        );
+    pub unsafe fn get_c_ptr(obj: crate::root::aksegmentinfo::AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(crate::root::aksegmentinfo::AkSegmentInfo, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "setCPtr",
@@ -148,40 +104,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "setCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "setCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_c_ptr(
-        this: AkSegmentInfo,
-        c_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_c_ptr(this: AkSegmentInfo, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_c_ptr::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
         inner(this, c_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -194,39 +137,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -239,41 +170,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_i_current_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_iCurrentPosition",
@@ -285,40 +203,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_iCurrentPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_iCurrentPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_i_current_position(
-        this: AkSegmentInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_i_current_position(this: AkSegmentInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_i_current_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_i_current_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i_current_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -331,41 +236,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_iCurrentPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_iCurrentPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i_current_position(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_i_current_position(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i_current_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i_current_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_i_pre_entry_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_iPreEntryDuration",
@@ -377,40 +269,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_iPreEntryDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_iPreEntryDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_i_pre_entry_duration(
-        this: AkSegmentInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_i_pre_entry_duration(this: AkSegmentInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_i_pre_entry_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_i_pre_entry_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i_pre_entry_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -423,41 +302,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_iPreEntryDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_iPreEntryDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i_pre_entry_duration(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_i_pre_entry_duration(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i_pre_entry_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i_pre_entry_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_i_active_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_iActiveDuration",
@@ -469,40 +335,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_iActiveDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_iActiveDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_i_active_duration(
-        this: AkSegmentInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_i_active_duration(this: AkSegmentInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_i_active_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_i_active_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i_active_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -515,41 +368,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_iActiveDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_iActiveDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i_active_duration(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_i_active_duration(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i_active_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i_active_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_i_post_exit_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_iPostExitDuration",
@@ -561,40 +401,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_iPostExitDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_iPostExitDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_i_post_exit_duration(
-        this: AkSegmentInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_i_post_exit_duration(this: AkSegmentInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_i_post_exit_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_i_post_exit_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i_post_exit_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -607,41 +434,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_iPostExitDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_iPostExitDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i_post_exit_duration(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_i_post_exit_duration(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i_post_exit_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i_post_exit_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_i_remaining_look_ahead_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_iRemainingLookAheadTime",
@@ -653,40 +467,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_iRemainingLookAheadTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_iRemainingLookAheadTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_i_remaining_look_ahead_time(
-        this: AkSegmentInfo,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_i_remaining_look_ahead_time(this: AkSegmentInfo, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_i_remaining_look_ahead_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_i_remaining_look_ahead_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_i_remaining_look_ahead_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -699,41 +500,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_iRemainingLookAheadTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_iRemainingLookAheadTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_i_remaining_look_ahead_time(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_i_remaining_look_ahead_time(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_i_remaining_look_ahead_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_i_remaining_look_ahead_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_f_beat_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_fBeatDuration",
@@ -745,40 +533,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_fBeatDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_fBeatDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_f_beat_duration(
-        this: AkSegmentInfo,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_f_beat_duration(this: AkSegmentInfo, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_f_beat_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_f_beat_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_f_beat_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -791,41 +566,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_fBeatDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_fBeatDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_f_beat_duration(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_f_beat_duration(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_f_beat_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_f_beat_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_f_bar_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_fBarDuration",
@@ -837,40 +599,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_fBarDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_fBarDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_f_bar_duration(
-        this: AkSegmentInfo,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_f_bar_duration(this: AkSegmentInfo, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_f_bar_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_f_bar_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_f_bar_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -883,41 +632,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_fBarDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_fBarDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_f_bar_duration(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_f_bar_duration(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_f_bar_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_f_bar_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_f_grid_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_fGridDuration",
@@ -929,40 +665,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_fGridDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_fGridDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_f_grid_duration(
-        this: AkSegmentInfo,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_f_grid_duration(this: AkSegmentInfo, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_f_grid_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_f_grid_duration::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_f_grid_duration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -975,41 +698,28 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_fGridDuration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_fGridDuration",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_f_grid_duration(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_f_grid_duration(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_f_grid_duration::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_f_grid_duration::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_f_grid_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
                 "set_fGridOffset",
@@ -1021,40 +731,27 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_fGridOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_fGridOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_f_grid_offset(
-        this: AkSegmentInfo,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_f_grid_offset(this: AkSegmentInfo, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_f_grid_offset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_f_grid_offset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_f_grid_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
@@ -1067,75 +764,47 @@ mod __AkSegmentInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_fGridOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_fGridOffset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_f_grid_offset(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_f_grid_offset(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_f_grid_offset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_f_grid_offset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AkSegmentInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AkSegmentInfo as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSegmentInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: AkSegmentInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: AkSegmentInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSegmentInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1143,30 +812,17 @@ mod __AkSegmentInfo_unity2_raw {
 #[cfg(feature = "root-aksegmentinfo")]
 impl AkSegmentInfo {
     #[doc = "`getCPtr(crate::root::aksegmentinfo::AkSegmentInfo)` overload"]
-    pub fn get_c_ptr(
-        obj: impl ::core::convert::Into<crate::root::aksegmentinfo::AkSegmentInfo>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __AkSegmentInfo_unity2_raw::get_c_ptr(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_c_ptr(obj: impl ::core::convert::Into<crate::root::aksegmentinfo::AkSegmentInfo>) -> ::unity2::IntPtr {
+        unsafe { __AkSegmentInfo_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "root-aksegmentinfo")]
 pub trait IAkSegmentInfoMethods: IAkSegmentInfo {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(
-        self,
-        c_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        c_memory_own: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSegmentInfo_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(c_ptr),
@@ -1178,259 +834,154 @@ pub trait IAkSegmentInfoMethods: IAkSegmentInfo {
     #[doc = "`setCPtr(::unity2::IntPtr)` overload"]
     fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_c_ptr(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSegmentInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSegmentInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_iCurrentPosition(i32)` overload"]
     fn set_i_current_position(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_i_current_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_i_current_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_iCurrentPosition()` overload"]
     fn get_i_current_position(self) -> i32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_i_current_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_i_current_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_iPreEntryDuration(i32)` overload"]
     fn set_i_pre_entry_duration(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_i_pre_entry_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_i_pre_entry_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_iPreEntryDuration()` overload"]
     fn get_i_pre_entry_duration(self) -> i32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_i_pre_entry_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_i_pre_entry_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_iActiveDuration(i32)` overload"]
     fn set_i_active_duration(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_i_active_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_i_active_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_iActiveDuration()` overload"]
     fn get_i_active_duration(self) -> i32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_i_active_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_i_active_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_iPostExitDuration(i32)` overload"]
     fn set_i_post_exit_duration(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_i_post_exit_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_i_post_exit_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_iPostExitDuration()` overload"]
     fn get_i_post_exit_duration(self) -> i32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_i_post_exit_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_i_post_exit_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_iRemainingLookAheadTime(i32)` overload"]
     fn set_i_remaining_look_ahead_time(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_i_remaining_look_ahead_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_i_remaining_look_ahead_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_iRemainingLookAheadTime()` overload"]
     fn get_i_remaining_look_ahead_time(self) -> i32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_i_remaining_look_ahead_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_i_remaining_look_ahead_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fBeatDuration(f32)` overload"]
     fn set_f_beat_duration(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_f_beat_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_f_beat_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fBeatDuration()` overload"]
     fn get_f_beat_duration(self) -> f32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_f_beat_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_f_beat_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fBarDuration(f32)` overload"]
     fn set_f_bar_duration(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_f_bar_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_f_bar_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fBarDuration()` overload"]
     fn get_f_bar_duration(self) -> f32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSegmentInfo_unity2_raw::get_f_bar_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fGridDuration(f32)` overload"]
     fn set_f_grid_duration(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_f_grid_duration(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_f_grid_duration(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fGridDuration()` overload"]
     fn get_f_grid_duration(self) -> f32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::get_f_grid_duration(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::get_f_grid_duration(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fGridOffset(f32)` overload"]
     fn set_f_grid_offset(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSegmentInfo_unity2_raw::set_f_grid_offset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSegmentInfo_unity2_raw::set_f_grid_offset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fGridOffset()` overload"]
     fn get_f_grid_offset(self) -> f32 {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSegmentInfo_unity2_raw::get_f_grid_offset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor_2(self) -> () {
         unsafe {
-            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSegmentInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSegmentInfo_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
         }
     }
@@ -1443,13 +994,8 @@ impl<__T: IAkSegmentInfo> IAkSegmentInfoMethods for __T {}
 impl AkSegmentInfo {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"]
     pub fn new(c_ptr: ::unity2::IntPtr, c_memory_own: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AkSegmentInfo),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AkSegmentInfo), ::core::stringify!(new),));
         <Self as IAkSegmentInfoMethods>::ctor(this, c_ptr, c_memory_own);
         this
     }
@@ -1471,9 +1017,7 @@ impl AkSegmentInfo {
 #[cfg(feature = "root-aksegmentinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkSegmentInfo;
-    pub use super::IAkSegmentInfo;
-    pub use super::IAkSegmentInfoMethods;
+    pub use super::{AkSegmentInfo, IAkSegmentInfo, IAkSegmentInfoMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

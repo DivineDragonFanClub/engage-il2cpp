@@ -2,37 +2,58 @@
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-provideroperation_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{
-        AsyncOperationBase_1, IAsyncOperationBase_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/provideroperation_1/ProviderOperation_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.AsyncOperations",
-        name = "ProviderOperation`1"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.AsyncOperations", name = "ProviderOperation`1")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < T0 >)]
     #[parent(crate::system::object::Object)]
-    pub struct ProviderOperation_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_ReleaseDependenciesOnFailure")] pub m_release_dependencies_on_failure : bool ,
-# [rename (name = "m_GetDepCallback")] pub m_get_dep_callback : crate :: system :: action_2 :: Action_2 < i32 , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > > ,
-# [rename (name = "m_GetProgressCallback")] pub m_get_progress_callback : crate :: system :: func_1 :: Func_1 < f32 > ,
-# [rename (name = "m_GetDownloadProgressCallback")] pub m_get_download_progress_callback : crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus > ,
-# [rename (name = "m_WaitForCompletionCallback")] pub m_wait_for_completion_callback : crate :: system :: func_1 :: Func_1 < bool > ,
-# [rename (name = "m_DownloadStatus")] pub m_download_status : crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus ,
-# [rename (name = "m_Provider")] pub m_provider : crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider ,
-# [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ,
-# [rename (name = "m_Location")] pub m_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ,
-# [rename (name = "m_ProvideHandleVersion")] pub m_provide_handle_version : i32 ,
-# [rename (name = "m_NeedsRelease")] pub m_needs_release : bool ,
-# [rename (name = "m_ResourceManager")] pub m_resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
-# [static_field] # [rename (name = "k_OperationWaitingToCompletePercentComplete")] pub k_operation_waiting_to_complete_percent_complete : f32 ,
-# [static_field] # [rename (name = "kInvalidHandleMsg")] pub k_invalid_handle_msg : :: unity2 :: Il2CppString ,
-}
+    pub struct ProviderOperation_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_ReleaseDependenciesOnFailure")]
+        pub m_release_dependencies_on_failure: bool,
+        #[rename(name = "m_GetDepCallback")]
+        pub m_get_dep_callback: crate::system::action_2::Action_2<
+            i32,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>,
+        >,
+        #[rename(name = "m_GetProgressCallback")]
+        pub m_get_progress_callback: crate::system::func_1::Func_1<f32>,
+        #[rename(name = "m_GetDownloadProgressCallback")]
+        pub m_get_download_progress_callback:
+            crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>,
+        #[rename(name = "m_WaitForCompletionCallback")]
+        pub m_wait_for_completion_callback: crate::system::func_1::Func_1<bool>,
+        #[rename(name = "m_DownloadStatus")]
+        pub m_download_status: crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus,
+        #[rename(name = "m_Provider")]
+        pub m_provider: crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,
+        #[rename(name = "m_DepOp")]
+        pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
+        #[rename(name = "m_Location")]
+        pub m_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        #[rename(name = "m_ProvideHandleVersion")]
+        pub m_provide_handle_version: i32,
+        #[rename(name = "m_NeedsRelease")]
+        pub m_needs_release: bool,
+        #[rename(name = "m_ResourceManager")]
+        pub m_resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        #[static_field]
+        #[rename(name = "k_OperationWaitingToCompletePercentComplete")]
+        pub k_operation_waiting_to_complete_percent_complete: f32,
+        #[static_field]
+        #[rename(name = "kInvalidHandleMsg")]
+        pub k_invalid_handle_msg: ::unity2::Il2CppString,
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-provideroperation_1-types")]
@@ -42,22 +63,16 @@ pub use __types::*;
 #[::unity2::methods]
 impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
     #[doc = "`UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key()` overload"]
-    #[method(
-        name = "UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key",
-        args = 0
-    )]
+    #[method(name = "UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key", args = 0)]
     pub fn unity_engine_resource_management_async_operations_i_cachable_get_key(
         self,
     ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey;
 
     #[doc = "`UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]
-    #[method(
-        name = "UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key",
-        args = 1
-    )]
+    #[method(name = "UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key", args = 1)]
     pub fn unity_engine_resource_management_async_operations_i_cachable_set_key(
         self,
-        value : crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey,
+        value: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
     ) -> ();
 
     #[doc = "`get_ProvideHandleVersion()` overload"]
@@ -66,21 +81,18 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
 
     #[doc = "`get_Location()` overload"]
     #[method(name = "get_Location", args = 0)]
-    pub fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
+    pub fn get_location(self) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
 
     #[doc = "`SetDownloadProgressCallback(crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>)` overload"]
     #[method(name = "SetDownloadProgressCallback", args = 1)]
     pub fn set_download_progress_callback(
         self,
-        callback : crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus >,
+        callback: crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>,
     ) -> ();
 
     #[doc = "`SetWaitForCompletionCallback(crate::system::func_1::Func_1<bool>)` overload"]
     #[method(name = "SetWaitForCompletionCallback", args = 1)]
-    pub fn set_wait_for_completion_callback(
-        self,
-        callback: crate::system::func_1::Func_1<bool>,
-    ) -> ();
+    pub fn set_wait_for_completion_callback(self, callback: crate::system::func_1::Func_1<bool>) -> ();
 
     #[doc = "`InvokeWaitForCompletion()` overload"]
     #[method(name = "InvokeWaitForCompletion", args = 0)]
@@ -90,9 +102,7 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
     #[method(name = "GetDownloadStatus", args = 1)]
     pub fn get_download_status(
         self,
-        visited: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::system::object::Object,
-        >,
+        visited: crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>,
     ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
 
     #[doc = "`.ctor()` overload"]
@@ -103,7 +113,9 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
     #[method(name = "GetDependencies", args = 1)]
     pub fn get_dependencies(
         self,
-        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        deps: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
     ) -> ();
 
     #[doc = "`ReleaseDependencies()` overload"]
@@ -118,9 +130,7 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
     #[method(name = "GetDependencies", args = 1)]
     pub fn get_dependencies_2(
         self,
-        dst_list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            crate::system::object::Object,
-        >,
+        dst_list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>,
     ) -> ();
 
     #[doc = "`get_RequestedType()` overload"]
@@ -148,9 +158,13 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
     pub fn init(
         self,
         rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        provider : crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-        dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        provider: crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
     ) -> ();
 
     #[doc = "`Init(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>, bool)` overload"]
@@ -158,9 +172,13 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
     pub fn init_2(
         self,
         rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        provider : crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-        dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        provider: crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
         release_dependencies_on_failure: bool,
     ) -> ();
 
@@ -192,13 +210,10 @@ impl<T0: ::unity2::ClassIdentity> ProviderOperation_1<T0> {
 #[cfg(feature = "unity_engine-resource_management-async_operations-provideroperation_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProviderOperation_1;
-    pub use super::IProviderOperation_1Methods;
-    pub use super::ProviderOperation_1;
-    pub use crate::system::object::IObject;
+    pub use super::{IProviderOperation_1, IProviderOperation_1Methods, ProviderOperation_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
 }

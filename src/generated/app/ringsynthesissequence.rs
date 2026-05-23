@@ -2,70 +2,20 @@
 
 #[cfg(feature = "app-ringsynthesissequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]
-    #[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RingSynthesisSequence_SkipListenerProc {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct RingSynthesisSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RingSynthesisSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RingSynthesisSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingSynthesisSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RingSynthesisSequence_Label {
-        pub fn skip() -> Self {
-            Self { value: 0 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]
-    #[::unity2::class(namespace = "App", name = "RingSynthesisSequence.Result1Proc")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct RingSynthesisSequence_Result1Proc {
-        #[rename(name = "m_RefineRingResult1Window")]
-        pub m_refine_ring_result1_window:
-            crate::app::refineringresult1window::RefineRingResult1Window,
-        #[rename(name = "m_RingData")]
-        pub m_ring_data: crate::app::ringdata::RingData,
-    }
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RingSynthesisSequence")]
@@ -82,9 +32,7 @@ mod __types {
         #[rename(name = "m_SceneResourceHandle")]
         pub m_scene_resource_handle: crate::app::resourcehandle_2::ResourceHandle_2,
         #[rename(name = "m_DisableList")]
-        pub m_disable_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_disable_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "SceneName")]
         pub scene_name: ::unity2::Il2CppString,
         #[rename(name = "m_RingMergeScene")]
@@ -92,13 +40,9 @@ mod __types {
         #[rename(name = "m_EffectObject")]
         pub m_effect_object: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_MaterialRingHandle")]
-        pub m_material_ring_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_material_ring_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_NextRingHandle")]
-        pub m_next_ring_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_next_ring_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_NextRingController")]
         pub m_next_ring_controller: crate::app::commonringcontroller::CommonRingController,
         #[rename(name = "m_NextRingObject")]
@@ -110,8 +54,7 @@ mod __types {
         #[rename(name = "m_EndEventHandler")]
         pub m_end_event_handler: crate::system::action::Action,
         #[rename(name = "m_SkipListenerProc")]
-        pub m_skip_listener_proc:
-            crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc,
+        pub m_skip_listener_proc: crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc,
         #[rename(name = "m_IsSkipped")]
         pub m_is_skipped: bool,
         #[rename(name = "InitRotate")]
@@ -123,6 +66,51 @@ mod __types {
         #[rename(name = "EmitEffect")]
         pub emit_effect: ::unity2::Il2CppString,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]
+    #[::unity2::class(namespace = "App", name = "RingSynthesisSequence.Result1Proc")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RingSynthesisSequence_Result1Proc {
+        #[rename(name = "m_RefineRingResult1Window")]
+        pub m_refine_ring_result1_window: crate::app::refineringresult1window::RefineRingResult1Window,
+        #[rename(name = "m_RingData")]
+        pub m_ring_data: crate::app::ringdata::RingData,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]
+    #[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct RingSynthesisSequence_SkipListenerProc {}
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct RingSynthesisSequence_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RingSynthesisSequence_Label {
+        const NAME: &'static str = "RingSynthesisSequence.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingSynthesisSequence_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl RingSynthesisSequence_Label {
+        pub fn skip() -> Self {
+            Self { value: 0 }
+        }
+    }
 }
 
 #[cfg(feature = "app-ringsynthesissequence-types")]
@@ -131,19 +119,17 @@ pub use __types::*;
 #[cfg(feature = "app-ringsynthesissequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
+mod __RingSynthesisSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_m_pause {
+    pub mod __lookup_get_return_scene_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "get_m_Pause",
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "get_ReturnSceneName",
                 0,
                 param_types,
                 false,
@@ -152,47 +138,35 @@ mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "get_m_Pause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_ReturnSceneName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_m_pause(
-        this: RingSynthesisSequence_SkipListenerProc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_SkipListenerProc,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_pause::get_offset() as isize),
-        );
+    pub unsafe fn get_return_scene_name(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_return_scene_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_m_pause {
+    pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "set_m_Pause",
-                1,
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
                 param_types,
                 false,
             )
@@ -200,48 +174,588 @@ mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "set_m_Pause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_m_pause(
-        this: RingSynthesisSequence_SkipListenerProc,
-        value: bool,
+    pub unsafe fn ctor(
+        this: RingSynthesisSequence,
+        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+        end_event_handler: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RingSynthesisSequence_SkipListenerProc,
-            bool,
+            RingSynthesisSequence,
+            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+            crate::system::action::Action,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_pause::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, result, end_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_create {
+    pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringsynthesissequence :: RingSynthesisSequence as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "Create",
-                1,
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "Init",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "LoadResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResources",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_resources(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "IsLoading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoading",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_loading(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_active_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "ActiveScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "ActiveScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn active_scene(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_active_scene::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_game_objects {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "SetGameObjects",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetGameObjects",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_game_objects(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_game_objects::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_parameter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::commonringcontroller::CommonRingController as ::unity2::IlType>::il_type(),
+                <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "SetParameter",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetParameter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_parameter(
+        this: RingSynthesisSequence,
+        controller: crate::app::commonringcontroller::CommonRingController,
+        data: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingSynthesisSequence,
+            crate::app::commonringcontroller::CommonRingController,
+            crate::app::ringdata::RingData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_parameter::get_method_info().method_ptr);
+        inner(this, controller, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_animation {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "StartAnimation",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartAnimation",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_animation(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_animation::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_synthesis_sound {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "PlaySynthesisSound",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "PlaySynthesisSound",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_synthesis_sound(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_synthesis_sound::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "WaitTick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitTick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn wait_tick(
+        this: RingSynthesisSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_wait_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_next_ring {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "ShowNextRing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "ShowNextRing",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show_next_ring(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show_next_ring::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_dialog {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "OpenDialog",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenDialog",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open_dialog(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_dialog::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_resources {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "UnloadResources",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "UnloadResources",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn unload_resources(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_resources::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_return_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "ReturnScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "ReturnScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn return_scene(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_return_scene::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "End",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "End",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_skip_listener {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "BeginSkipListener",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "BeginSkipListener",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_skip_listener(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_skip_listener::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_skip_lisnter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "EndSkipLisnter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndSkipLisnter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_skip_lisnter(this: RingSynthesisSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_skip_lisnter::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result as ::unity2::IlType>::il_type(),
+                <crate::system::action::Action as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
                 param_types,
                 true,
             )
@@ -249,39 +763,41 @@ mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+        end_event_handler: crate::system::action::Action,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc {
-        let inner : extern "C" fn (crate :: app :: ringsynthesissequence :: RingSynthesisSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringsynthesissequence :: RingSynthesisSequence_SkipListenerProc = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
-        inner(super_, __unity2_method_info)
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+            crate::system::action::Action,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, menu_result, end_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_on_tick {
+    pub mod __lookup_get_create_effect_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "GetCreateEffectPath",
+                1,
                 param_types,
                 false,
             )
@@ -289,46 +805,36 @@ mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetCreateEffectPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_tick(
-        this: RingSynthesisSequence_SkipListenerProc,
+    pub unsafe fn get_create_effect_path(
+        this: RingSynthesisSequence,
+        ring: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_SkipListenerProc,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_tick::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingSynthesisSequence, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_create_effect_path::get_method_info().method_ptr);
+        inner(this, ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_get_loop_effect_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
+                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
+                "GetLoopEffectPath",
+                1,
                 param_types,
                 false,
             )
@@ -336,45 +842,41 @@ mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetLoopEffectPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RingSynthesisSequence_SkipListenerProc,
+    pub unsafe fn get_loop_effect_path(
+        this: RingSynthesisSequence,
+        ring: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_SkipListenerProc,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingSynthesisSequence, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_loop_effect_path::get_method_info().method_ptr);
+        inner(this, ring, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc {
-    #[doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]
-    pub fn create(
-        super_: impl ::core::convert::Into<crate::app::ringsynthesissequence::RingSynthesisSequence>,
-    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc {
+impl RingSynthesisSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        menu_result: impl ::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result>,
+        end_event_handler: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
         unsafe {
-            __RingSynthesisSequence_SkipListenerProc_unity2_raw::create(
+            __RingSynthesisSequence_unity2_raw::create_bind(
                 ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(menu_result),
+                ::core::convert::Into::into(end_event_handler),
                 ::core::option::Option::None,
             )
         }
@@ -382,70 +884,202 @@ impl RingSynthesisSequence_SkipListenerProc {
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
-pub trait IRingSynthesisSequence_SkipListenerProcMethods:
-    IRingSynthesisSequence_SkipListenerProc
-{
-    #[doc = "`get_m_Pause()` overload"]
-    fn get_m_pause(self) -> bool {
+pub trait IRingSynthesisSequenceMethods: IRingSynthesisSequence {
+    #[doc = "`get_ReturnSceneName()` overload"]
+    fn get_return_scene_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingSynthesisSequence_SkipListenerProc_unity2_raw::get_m_pause(
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::get_return_scene_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"]
+    fn ctor(
+        self,
+        result: impl ::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result>,
+        end_event_handler: impl ::core::convert::Into<crate::system::action::Action>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(result),
+                ::core::convert::Into::into(end_event_handler),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`set_m_Pause(bool)` overload"]
-    fn set_m_pause(self, value: impl ::core::convert::Into<bool>) -> () {
+    #[doc = "`Init()` overload"]
+    fn init(self) -> () {
         unsafe {
-            let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingSynthesisSequence_SkipListenerProc_unity2_raw::set_m_pause(
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadResources()` overload"]
+    fn load_resources(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsLoading()` overload"]
+    fn is_loading(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ActiveScene()` overload"]
+    fn active_scene(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::active_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetGameObjects()` overload"]
+    fn set_game_objects(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::set_game_objects(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetParameter(crate::app::commonringcontroller::CommonRingController, crate::app::ringdata::RingData)` overload"]
+    fn set_parameter(
+        self,
+        controller: impl ::core::convert::Into<crate::app::commonringcontroller::CommonRingController>,
+        data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::set_parameter(
                 __receiver,
-                ::core::convert::Into::into(value),
+                ::core::convert::Into::into(controller),
+                ::core::convert::Into::into(data),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`OnTick()` overload"]
-    fn on_tick(self) -> () {
+    #[doc = "`StartAnimation()` overload"]
+    fn start_animation(self) -> () {
         unsafe {
-            let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingSynthesisSequence_SkipListenerProc_unity2_raw::on_tick(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::start_animation(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`PlaySynthesisSound()` overload"]
+    fn play_synthesis_sound(self) -> () {
         unsafe {
-            let __receiver = < RingSynthesisSequence_SkipListenerProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingSynthesisSequence_SkipListenerProc_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::play_synthesis_sound(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitTick()` overload"]
+    fn wait_tick(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::wait_tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowNextRing()` overload"]
+    fn show_next_ring(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::show_next_ring(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenDialog()` overload"]
+    fn open_dialog(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::open_dialog(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadResources()` overload"]
+    fn unload_resources(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::unload_resources(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReturnScene()` overload"]
+    fn return_scene(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::return_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`End()` overload"]
+    fn end(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BeginSkipListener()` overload"]
+    fn begin_skip_listener(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::begin_skip_listener(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EndSkipLisnter()` overload"]
+    fn end_skip_lisnter(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::end_skip_lisnter(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCreateEffectPath(crate::app::ringdata::RingData)` overload"]
+    fn get_create_effect_path(self, ring: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::get_create_effect_path(__receiver, ::core::convert::Into::into(ring), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetLoopEffectPath(crate::app::ringdata::RingData)` overload"]
+    fn get_loop_effect_path(self, ring: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSynthesisSequence_unity2_raw::get_loop_effect_path(__receiver, ::core::convert::Into::into(ring), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
-impl<__T: IRingSynthesisSequence_SkipListenerProc> IRingSynthesisSequence_SkipListenerProcMethods
-    for __T
-{
-}
+impl<__T: IRingSynthesisSequence> IRingSynthesisSequenceMethods for __T {}
 
 #[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl RingSynthesisSequence {
+    #[doc = "`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` — overload selector"]
+    pub fn new(result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, end_event_handler: crate::system::action::Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
+                ::core::stringify!(RingSynthesisSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
+        <Self as IRingSynthesisSequenceMethods>::ctor(this, result, end_event_handler);
         this
     }
 }
@@ -459,10 +1093,11 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringsynthesissequence :: RingSynthesisSequence as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringdata :: RingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringsynthesissequence::RingSynthesisSequence as ::unity2::IlType>::il_type(),
+                <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -474,18 +1109,15 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -493,18 +1125,20 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         ring_data: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc {
-        let inner : extern "C" fn (crate :: app :: ringsynthesissequence :: RingSynthesisSequence , crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringsynthesissequence :: RingSynthesisSequence_Result1Proc = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::app::ringsynthesissequence::RingSynthesisSequence,
+            crate::app::ringdata::RingData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, ring_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -516,18 +1150,15 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -535,24 +1166,15 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         ring_data: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_Result1Proc,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingSynthesisSequence_Result1Proc, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, ring_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
@@ -565,41 +1187,27 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        this: RingSynthesisSequence_Result1Proc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_Result1Proc,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+    pub unsafe fn create(this: RingSynthesisSequence_Result1Proc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence_Result1Proc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_opening {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
@@ -612,41 +1220,27 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    "IsOpening",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        "IsOpening",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_opening(
-        this: RingSynthesisSequence_Result1Proc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_Result1Proc,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_opening::get_offset() as isize),
-        );
+    pub unsafe fn is_opening(this: RingSynthesisSequence_Result1Proc, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingSynthesisSequence_Result1Proc, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_opening::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_key_inputted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
@@ -659,41 +1253,27 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    "IsKeyInputted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        "IsKeyInputted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_key_inputted(
-        this: RingSynthesisSequence_Result1Proc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_Result1Proc,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_key_inputted::get_offset() as isize),
-        );
+    pub unsafe fn is_key_inputted(this: RingSynthesisSequence_Result1Proc, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingSynthesisSequence_Result1Proc, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_key_inputted::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_closing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
@@ -706,41 +1286,27 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    "IsClosing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        "IsClosing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_closing(
-        this: RingSynthesisSequence_Result1Proc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_Result1Proc,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_closing::get_offset() as isize),
-        );
+    pub unsafe fn is_closing(this: RingSynthesisSequence_Result1Proc, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingSynthesisSequence_Result1Proc, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_closing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::class(),
@@ -753,32 +1319,20 @@ mod __RingSynthesisSequence_Result1Proc_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_Result1Proc as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: RingSynthesisSequence_Result1Proc,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence_Result1Proc,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy::get_offset() as isize),
-        );
+    pub unsafe fn destroy(this: RingSynthesisSequence_Result1Proc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence_Result1Proc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -805,80 +1359,55 @@ pub trait IRingSynthesisSequence_Result1ProcMethods: IRingSynthesisSequence_Resu
     #[doc = "`.ctor(crate::app::ringdata::RingData)` overload"]
     fn ctor(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
         unsafe {
-            let __receiver =
-                <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSynthesisSequence_Result1Proc_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_Result1Proc_unity2_raw::ctor(__receiver, ::core::convert::Into::into(ring_data), ::core::option::Option::None)
         }
     }
     #[doc = "`Create()` overload"]
     fn create(self) -> () {
         unsafe {
-            let __receiver =
-                <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSynthesisSequence_Result1Proc_unity2_raw::create(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_Result1Proc_unity2_raw::create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsOpening()` overload"]
     fn is_opening(self) -> bool {
         unsafe {
-            let __receiver =
-                <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSynthesisSequence_Result1Proc_unity2_raw::is_opening(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_Result1Proc_unity2_raw::is_opening(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsKeyInputted()` overload"]
     fn is_key_inputted(self) -> bool {
         unsafe {
-            let __receiver =
-                <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSynthesisSequence_Result1Proc_unity2_raw::is_key_inputted(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_Result1Proc_unity2_raw::is_key_inputted(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsClosing()` overload"]
     fn is_closing(self) -> bool {
         unsafe {
-            let __receiver =
-                <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSynthesisSequence_Result1Proc_unity2_raw::is_closing(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_Result1Proc_unity2_raw::is_closing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Destroy()` overload"]
     fn destroy(self) -> () {
         unsafe {
-            let __receiver =
-                <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSynthesisSequence_Result1Proc_unity2_raw::destroy(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSynthesisSequence_Result1Proc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_Result1Proc_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -905,19 +1434,17 @@ impl RingSynthesisSequence_Result1Proc {
 #[cfg(feature = "app-ringsynthesissequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingSynthesisSequence_unity2_raw {
+mod __RingSynthesisSequence_SkipListenerProc_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_return_scene_name {
+    pub mod __lookup_get_m_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "get_ReturnSceneName",
+                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "get_m_Pause",
                 0,
                 param_types,
                 false,
@@ -926,46 +1453,32 @@ mod __RingSynthesisSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_ReturnSceneName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                        "get_m_Pause",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_return_scene_name(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RingSynthesisSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_return_scene_name::get_offset() as isize),
-        );
+    pub unsafe fn get_m_pause(this: RingSynthesisSequence_SkipListenerProc, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingSynthesisSequence_SkipListenerProc, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_m_pause::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_set_m_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
+                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "set_m_Pause",
+                1,
                 param_types,
                 false,
             )
@@ -973,778 +1486,33 @@ mod __RingSynthesisSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                        "set_m_Pause",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RingSynthesisSequence,
-        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        end_event_handler: crate::system::action::Action,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence,
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-            crate::system::action::Action,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, result, end_event_handler, __unity2_method_info)
+    pub unsafe fn set_m_pause(this: RingSynthesisSequence_SkipListenerProc, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence_SkipListenerProc, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_pause::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_init {
+    pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringsynthesissequence::RingSynthesisSequence as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "LoadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_resources(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoading",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_loading(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_active_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "ActiveScene",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "ActiveScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn active_scene(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_active_scene::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_game_objects {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "SetGameObjects",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetGameObjects",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_game_objects(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_game_objects::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_parameter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: commonringcontroller :: CommonRingController as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringdata :: RingData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "SetParameter",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetParameter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_parameter(
-        this: RingSynthesisSequence,
-        controller: crate::app::commonringcontroller::CommonRingController,
-        data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSynthesisSequence,
-            crate::app::commonringcontroller::CommonRingController,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_parameter::get_offset() as isize),
-        );
-        inner(this, controller, data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_animation {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "StartAnimation",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartAnimation",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_animation(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_animation::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_synthesis_sound {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "PlaySynthesisSound",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "PlaySynthesisSound",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_synthesis_sound(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_synthesis_sound::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "WaitTick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitTick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn wait_tick(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            RingSynthesisSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_tick::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_next_ring {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "ShowNextRing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "ShowNextRing",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show_next_ring(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_next_ring::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_dialog {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "OpenDialog",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenDialog",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_dialog(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_dialog::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_resources {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadResources",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "UnloadResources",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload_resources(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_resources::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_return_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "ReturnScene",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "ReturnScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn return_scene(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_return_scene::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "End",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "End",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_skip_listener {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "BeginSkipListener",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "BeginSkipListener",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn begin_skip_listener(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_begin_skip_listener::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_skip_lisnter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "EndSkipLisnter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndSkipLisnter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_skip_lisnter(
-        this: RingSynthesisSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSynthesisSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_skip_lisnter::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_Result as :: unity2 :: IlType > :: il_type () , < crate :: system :: action :: Action as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
+                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "Create",
+                1,
                 param_types,
                 true,
             )
@@ -1752,51 +1520,38 @@ mod __RingSynthesisSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        menu_result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        end_event_handler: crate::system::action::Action,
+    pub unsafe fn create(
+        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc {
         let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-            crate::system::action::Action,
+            crate::app::ringsynthesissequence::RingSynthesisSequence,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, menu_result, end_event_handler, __unity2_method_info)
+        ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_create_effect_path {
+    pub mod __lookup_on_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "GetCreateEffectPath",
-                1,
+                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                "OnTick",
+                0,
                 param_types,
                 false,
             )
@@ -1804,49 +1559,32 @@ mod __RingSynthesisSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetCreateEffectPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_create_effect_path(
-        this: RingSynthesisSequence,
-        ring: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RingSynthesisSequence,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_create_effect_path::get_offset() as isize),
-        );
-        inner(this, ring, __unity2_method_info)
+    pub unsafe fn on_tick(this: RingSynthesisSequence_SkipListenerProc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence_SkipListenerProc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_loop_effect_path {
+    pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSynthesisSequence as ::unity2::ClassIdentity>::class(),
-                "GetLoopEffectPath",
-                1,
+                <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
                 param_types,
                 false,
             )
@@ -1854,331 +1592,93 @@ mod __RingSynthesisSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSynthesisSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetLoopEffectPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSynthesisSequence_SkipListenerProc as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_loop_effect_path(
-        this: RingSynthesisSequence,
-        ring: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RingSynthesisSequence,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_loop_effect_path::get_offset() as isize),
-        );
-        inner(this, ring, __unity2_method_info)
+    pub unsafe fn ctor(this: RingSynthesisSequence_SkipListenerProc, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSynthesisSequence_SkipListenerProc, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_result: impl ::core::convert::Into<
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        >,
-        end_event_handler: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
-        unsafe {
-            __RingSynthesisSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(menu_result),
-                ::core::convert::Into::into(end_event_handler),
-                ::core::option::Option::None,
-            )
-        }
+impl RingSynthesisSequence_SkipListenerProc {
+    #[doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::ringsynthesissequence::RingSynthesisSequence>,
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc {
+        unsafe { __RingSynthesisSequence_SkipListenerProc_unity2_raw::create(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
-pub trait IRingSynthesisSequenceMethods: IRingSynthesisSequence {
-    #[doc = "`get_ReturnSceneName()` overload"]
-    fn get_return_scene_name(self) -> ::unity2::Il2CppString {
+pub trait IRingSynthesisSequence_SkipListenerProcMethods: IRingSynthesisSequence_SkipListenerProc {
+    #[doc = "`get_m_Pause()` overload"]
+    fn get_m_pause(self) -> bool {
         unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingSynthesisSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingSynthesisSequence_unity2_raw::get_return_scene_name(
+            __RingSynthesisSequence_SkipListenerProc_unity2_raw::get_m_pause(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_m_Pause(bool)` overload"]
+    fn set_m_pause(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <RingSynthesisSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSynthesisSequence_SkipListenerProc_unity2_raw::set_m_pause(
                 __receiver,
+                ::core::convert::Into::into(value),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` overload"]
-    fn ctor(
-        self,
-        result: impl ::core::convert::Into<
-            crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        >,
-        end_event_handler: impl ::core::convert::Into<crate::system::action::Action>,
-    ) -> () {
+    #[doc = "`OnTick()` overload"]
+    fn on_tick(self) -> () {
         unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingSynthesisSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingSynthesisSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::convert::Into::into(end_event_handler),
-                ::core::option::Option::None,
-            )
+            __RingSynthesisSequence_SkipListenerProc_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingSynthesisSequence_SkipListenerProc as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingSynthesisSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadResources()` overload"]
-    fn load_resources(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::load_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsLoading()` overload"]
-    fn is_loading(self) -> bool {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ActiveScene()` overload"]
-    fn active_scene(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::active_scene(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetGameObjects()` overload"]
-    fn set_game_objects(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::set_game_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetParameter(crate::app::commonringcontroller::CommonRingController, crate::app::ringdata::RingData)` overload"]
-    fn set_parameter(
-        self,
-        controller: impl ::core::convert::Into<crate::app::commonringcontroller::CommonRingController>,
-        data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::set_parameter(
-                __receiver,
-                ::core::convert::Into::into(controller),
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartAnimation()` overload"]
-    fn start_animation(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::start_animation(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlaySynthesisSound()` overload"]
-    fn play_synthesis_sound(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::play_synthesis_sound(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`WaitTick()` overload"]
-    fn wait_tick(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::wait_tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ShowNextRing()` overload"]
-    fn show_next_ring(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::show_next_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OpenDialog()` overload"]
-    fn open_dialog(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::open_dialog(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UnloadResources()` overload"]
-    fn unload_resources(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::unload_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReturnScene()` overload"]
-    fn return_scene(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::return_scene(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`End()` overload"]
-    fn end(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BeginSkipListener()` overload"]
-    fn begin_skip_listener(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::begin_skip_listener(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EndSkipLisnter()` overload"]
-    fn end_skip_lisnter(self) -> () {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::end_skip_lisnter(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetCreateEffectPath(crate::app::ringdata::RingData)` overload"]
-    fn get_create_effect_path(
-        self,
-        ring: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::get_create_effect_path(
-                __receiver,
-                ::core::convert::Into::into(ring),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetLoopEffectPath(crate::app::ringdata::RingData)` overload"]
-    fn get_loop_effect_path(
-        self,
-        ring: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingSynthesisSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSynthesisSequence_unity2_raw::get_loop_effect_path(
-                __receiver,
-                ::core::convert::Into::into(ring),
-                ::core::option::Option::None,
-            )
+            __RingSynthesisSequence_SkipListenerProc_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-ringsynthesissequence")]
-impl<__T: IRingSynthesisSequence> IRingSynthesisSequenceMethods for __T {}
+impl<__T: IRingSynthesisSequence_SkipListenerProc> IRingSynthesisSequence_SkipListenerProcMethods for __T {}
 
 #[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence {
-    #[doc = "`.ctor(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-        end_event_handler: crate::system::action::Action,
-    ) -> Self {
+impl RingSynthesisSequence_SkipListenerProc {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingSynthesisSequence),
+                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingSynthesisSequenceMethods>::ctor(this, result, end_event_handler);
+        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
         this
     }
 }
@@ -2186,29 +1686,23 @@ impl RingSynthesisSequence {
 #[cfg(feature = "app-ringsynthesissequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRingSynthesisSequence;
-    pub use super::IRingSynthesisSequenceMethods;
-    pub use super::IRingSynthesisSequence_Result1Proc;
-    pub use super::IRingSynthesisSequence_Result1ProcMethods;
-    pub use super::IRingSynthesisSequence_SkipListenerProc;
-    pub use super::IRingSynthesisSequence_SkipListenerProcMethods;
-    pub use super::RingSynthesisSequence;
-    pub use super::RingSynthesisSequence_Label;
-    pub use super::RingSynthesisSequence_Result1Proc;
-    pub use super::RingSynthesisSequence_SkipListenerProc;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IRingSynthesisSequence, IRingSynthesisSequenceMethods, IRingSynthesisSequence_Result1Proc, IRingSynthesisSequence_Result1ProcMethods,
+        IRingSynthesisSequence_SkipListenerProc, IRingSynthesisSequence_SkipListenerProcMethods, RingSynthesisSequence, RingSynthesisSequence_Label,
+        RingSynthesisSequence_Result1Proc, RingSynthesisSequence_SkipListenerProc,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

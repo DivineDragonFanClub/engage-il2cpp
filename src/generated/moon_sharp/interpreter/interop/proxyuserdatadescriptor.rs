@@ -2,21 +2,17 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-proxyuserdatadescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/proxyuserdatadescriptor/ProxyUserDataDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "ProxyUserDataDescriptor"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "ProxyUserDataDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct ProxyUserDataDescriptor {
         #[rename(name = "m_ProxyDescriptor")]
-        pub m_proxy_descriptor:
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+        pub m_proxy_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         #[rename(name = "m_ProxyFactory")]
         pub m_proxy_factory: crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
     }
@@ -34,10 +30,12 @@ mod __ProxyUserDataDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: iproxyfactory :: IProxyFactory as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -49,24 +47,21 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: ProxyUserDataDescriptor,
         proxy_factory: crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
-        proxy_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+        proxy_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         friendly_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -76,26 +71,14 @@ mod __ProxyUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            proxy_factory,
-            proxy_descriptor,
-            friendly_name,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, proxy_factory, proxy_descriptor, friendly_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_inner_descriptor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -108,34 +91,33 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_InnerDescriptor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_InnerDescriptor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_inner_descriptor(
         this: ProxyUserDataDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
-        let inner : extern "C" fn (ProxyUserDataDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_inner_descriptor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ProxyUserDataDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor =
+            ::core::mem::transmute(__lookup_get_inner_descriptor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -148,43 +130,28 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ProxyUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProxyUserDataDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: ProxyUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ProxyUserDataDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_Name",
@@ -196,43 +163,27 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_name(
-        this: ProxyUserDataDescriptor,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProxyUserDataDescriptor,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name::get_offset() as isize),
-        );
+    pub unsafe fn set_name(this: ProxyUserDataDescriptor, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProxyUserDataDescriptor, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
@@ -245,43 +196,28 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_type(
-        this: ProxyUserDataDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ProxyUserDataDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type::get_offset() as isize),
-        );
+    pub unsafe fn get_type(this: ProxyUserDataDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(ProxyUserDataDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_proxy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "Proxy",
@@ -293,18 +229,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Proxy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Proxy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn proxy(
@@ -312,24 +245,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ProxyUserDataDescriptor,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_proxy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProxyUserDataDescriptor, crate::system::object::Object, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_proxy::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -347,18 +271,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "Index",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "Index",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn index(
@@ -376,27 +297,14 @@ mod __ProxyUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_index::get_offset() as isize),
-        );
-        inner(
-            this,
-            script,
-            obj,
-            index,
-            is_direct_indexing,
-            __unity2_method_info,
-        )
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_index::get_method_info().method_ptr);
+        inner(this, script, obj, index, is_direct_indexing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -415,18 +323,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "SetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "SetIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_index(
@@ -446,30 +351,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_index::get_offset() as isize),
-        );
-        inner(
-            this,
-            script,
-            obj,
-            index,
-            value,
-            is_direct_indexing,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_set_index::get_method_info().method_ptr);
+        inner(this, script, obj, index, value, is_direct_indexing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_as_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::class(),
                 "AsString",
@@ -481,18 +371,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "AsString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "AsString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn as_string(
@@ -500,24 +387,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProxyUserDataDescriptor,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_as_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProxyUserDataDescriptor, crate::system::object::Object, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_as_string::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_meta_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -534,18 +412,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "MetaIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "MetaIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn meta_index(
@@ -561,20 +436,14 @@ mod __ProxyUserDataDescriptor_unity2_raw {
             crate::system::object::Object,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_meta_index::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_meta_index::get_method_info().method_ptr);
         inner(this, script, obj, metaname, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_type_compatible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -590,18 +459,15 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "IsTypeCompatible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProxyUserDataDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "IsTypeCompatible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_type_compatible(
@@ -610,16 +476,8 @@ mod __ProxyUserDataDescriptor_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProxyUserDataDescriptor,
-            ::unity2::SystemType,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_type_compatible::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProxyUserDataDescriptor, ::unity2::SystemType, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_type_compatible::get_method_info().method_ptr);
         inner(this, r#type, obj, __unity2_method_info)
     }
 }
@@ -629,19 +487,13 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, ::unity2::Il2CppString)` overload"]
     fn ctor(
         self,
-        proxy_factory: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
-        >,
-        proxy_descriptor: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-        >,
+        proxy_factory: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory>,
+        proxy_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
         friendly_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(proxy_factory),
@@ -652,27 +504,18 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
         }
     }
     #[doc = "`get_InnerDescriptor()` overload"]
-    fn get_inner_descriptor(
-        self,
-    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
+    fn get_inner_descriptor(self) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProxyUserDataDescriptor_unity2_raw::get_inner_descriptor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProxyUserDataDescriptor_unity2_raw::get_inner_descriptor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
@@ -680,41 +523,24 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
     fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProxyUserDataDescriptor_unity2_raw::set_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProxyUserDataDescriptor_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Type()` overload"]
     fn get_type(self) -> ::unity2::SystemType {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::get_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Proxy(crate::system::object::Object)` overload"]
-    fn proxy(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> crate::system::object::Object {
+    fn proxy(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> crate::system::object::Object {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProxyUserDataDescriptor_unity2_raw::proxy(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProxyUserDataDescriptor_unity2_raw::proxy(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`Index(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]
@@ -727,9 +553,7 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -751,9 +575,7 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
     ) -> bool {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::set_index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -766,20 +588,11 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
         }
     }
     #[doc = "`AsString(crate::system::object::Object)` overload"]
-    fn as_string(
-        self,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> ::unity2::Il2CppString {
+    fn as_string(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProxyUserDataDescriptor_unity2_raw::as_string(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProxyUserDataDescriptor_unity2_raw::as_string(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`MetaIndex(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Il2CppString)` overload"]
@@ -791,9 +604,7 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::meta_index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -811,9 +622,7 @@ pub trait IProxyUserDataDescriptorMethods: IProxyUserDataDescriptor {
     ) -> bool {
         unsafe {
             let __receiver =
-                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProxyUserDataDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProxyUserDataDescriptor_unity2_raw::is_type_compatible(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -832,7 +641,7 @@ impl ProxyUserDataDescriptor {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, ::unity2::Il2CppString)` — overload selector"]
     pub fn new(
         proxy_factory: crate::moon_sharp::interpreter::interop::iproxyfactory::IProxyFactory,
-        proxy_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+        proxy_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         friendly_name: ::unity2::Il2CppString,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
@@ -842,12 +651,7 @@ impl ProxyUserDataDescriptor {
                 ::core::stringify!(new),
             )
         });
-        <Self as IProxyUserDataDescriptorMethods>::ctor(
-            this,
-            proxy_factory,
-            proxy_descriptor,
-            friendly_name,
-        );
+        <Self as IProxyUserDataDescriptorMethods>::ctor(this, proxy_factory, proxy_descriptor, friendly_name);
         this
     }
 }
@@ -855,9 +659,7 @@ impl ProxyUserDataDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-proxyuserdatadescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProxyUserDataDescriptor;
-    pub use super::IProxyUserDataDescriptorMethods;
-    pub use super::ProxyUserDataDescriptor;
+    pub use super::{IProxyUserDataDescriptor, IProxyUserDataDescriptorMethods, ProxyUserDataDescriptor};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

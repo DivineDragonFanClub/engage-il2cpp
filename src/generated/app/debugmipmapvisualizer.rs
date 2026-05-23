@@ -2,17 +2,19 @@
 
 #[cfg(feature = "app-debugmipmapvisualizer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use super::*;
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmipmapvisualizer/DebugMipmapVisualizer.md"))]
     #[::unity2::class(namespace = "App", name = "DebugMipmapVisualizer")]
@@ -44,11 +46,8 @@ mod __DebugMipmapVisualizer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMipmapVisualizer as ::unity2::ClassIdentity>::class(),
                 "GetMaterials",
@@ -60,18 +59,15 @@ mod __DebugMipmapVisualizer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_materials(
@@ -83,22 +79,18 @@ mod __DebugMipmapVisualizer_unity2_raw {
             DebugMipmapVisualizer,
             crate::unity_engine::renderer::Renderer,
             ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_materials::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__lookup_get_materials::get_method_info().method_ptr);
         inner(this, render, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: renderer :: Renderer as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: material :: Material > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::material::Material> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMipmapVisualizer as ::unity2::ClassIdentity>::class(),
                 "SetMaterials",
@@ -110,18 +102,15 @@ mod __DebugMipmapVisualizer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
-                    "SetMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
+                        "SetMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_materials(
@@ -135,21 +124,18 @@ mod __DebugMipmapVisualizer_unity2_raw {
             crate::unity_engine::renderer::Renderer,
             ::unity2::Array<crate::unity_engine::material::Material>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_materials::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_materials::get_method_info().method_ptr);
         inner(this, render, materials, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_renderers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::unity_engine::renderer::Renderer> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::renderer::Renderer> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMipmapVisualizer as ::unity2::ClassIdentity>::class(),
                 "CompareRenderers",
@@ -161,18 +147,15 @@ mod __DebugMipmapVisualizer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
-                    "CompareRenderers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
+                        "CompareRenderers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_renderers(
@@ -186,20 +169,14 @@ mod __DebugMipmapVisualizer_unity2_raw {
             ::unity2::Array<crate::unity_engine::renderer::Renderer>,
             ::unity2::Array<crate::unity_engine::renderer::Renderer>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_renderers::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compare_renderers::get_method_info().method_ptr);
         inner(this, a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMipmapVisualizer as ::unity2::ClassIdentity>::class(),
@@ -212,39 +189,27 @@ mod __DebugMipmapVisualizer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: DebugMipmapVisualizer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: DebugMipmapVisualizer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugMipmapVisualizer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMipmapVisualizer as ::unity2::ClassIdentity>::class(),
@@ -257,39 +222,27 @@ mod __DebugMipmapVisualizer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: DebugMipmapVisualizer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: DebugMipmapVisualizer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugMipmapVisualizer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugMipmapVisualizer as ::unity2::ClassIdentity>::class(),
@@ -302,30 +255,20 @@ mod __DebugMipmapVisualizer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugMipmapVisualizer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugMipmapVisualizer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugMipmapVisualizer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugMipmapVisualizer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -338,14 +281,9 @@ pub trait IDebugMipmapVisualizerMethods: IDebugMipmapVisualizer {
         render: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
     ) -> ::unity2::Array<crate::unity_engine::material::Material> {
         unsafe {
-            let __receiver = <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugMipmapVisualizer_unity2_raw::get_materials(
-                __receiver,
-                ::core::convert::Into::into(render),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugMipmapVisualizer_unity2_raw::get_materials(__receiver, ::core::convert::Into::into(render), ::core::option::Option::None)
         }
     }
     #[doc = "`SetMaterials(crate::unity_engine::renderer::Renderer, ::unity2::Array<crate::unity_engine::material::Material>)` overload"]
@@ -355,9 +293,8 @@ pub trait IDebugMipmapVisualizerMethods: IDebugMipmapVisualizer {
         materials: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
     ) -> () {
         unsafe {
-            let __receiver = <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMipmapVisualizer_unity2_raw::set_materials(
                 __receiver,
                 ::core::convert::Into::into(render),
@@ -373,9 +310,8 @@ pub trait IDebugMipmapVisualizerMethods: IDebugMipmapVisualizer {
         b: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::renderer::Renderer>>,
     ) -> bool {
         unsafe {
-            let __receiver = <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMipmapVisualizer_unity2_raw::compare_renderers(
                 __receiver,
                 ::core::convert::Into::into(a),
@@ -387,27 +323,24 @@ pub trait IDebugMipmapVisualizerMethods: IDebugMipmapVisualizer {
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMipmapVisualizer_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMipmapVisualizer_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DebugMipmapVisualizer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugMipmapVisualizer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -435,25 +368,22 @@ impl DebugMipmapVisualizer {
 #[cfg(feature = "app-debugmipmapvisualizer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugMipmapVisualizer;
-    pub use super::IDebugMipmapVisualizer;
-    pub use super::IDebugMipmapVisualizerMethods;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use super::{DebugMipmapVisualizer, IDebugMipmapVisualizer, IDebugMipmapVisualizerMethods};
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,61 +2,17 @@
 
 #[cfg(feature = "app-mascotcolorchangemenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MascotColorChangeMenu_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MascotColorChangeMenu_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MascotColorChangeMenu.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MascotColorChangeMenu_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MascotColorChangeMenu_Label {
-        pub fn init() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn main() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn exit() -> Self {
-            Self { value: 2 }
-        }
-    }
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))]
     #[::unity2::class(namespace = "App", name = "MascotColorChangeMenu")]
@@ -85,6 +41,44 @@ mod __types {
         #[rename(name = "m_moveTick")]
         pub m_move_tick: f32,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MascotColorChangeMenu_Label {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MascotColorChangeMenu_Label {
+        const NAME: &'static str = "MascotColorChangeMenu.Label";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MascotColorChangeMenu_Label {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MascotColorChangeMenu_Label {
+        pub fn init() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn main() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn exit() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-mascotcolorchangemenu-types")]
@@ -99,9 +93,7 @@ mod __MascotColorChangeMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -114,44 +106,32 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_Content",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_Content",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_content(
         this: MascotColorChangeMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::mascotcolorchangecontent::MascotColorChangeContent {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::mascotcolorchangecontent::MascotColorChangeContent =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_content::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> crate::app::mascotcolorchangecontent::MascotColorChangeContent =
+            ::core::mem::transmute(__lookup_get_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mascotcolorchangecontent :: MascotColorChangeContent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mascotcolorchangecontent::MascotColorChangeContent as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "set_Content",
@@ -163,18 +143,15 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_Content",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_Content",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_content(
@@ -186,20 +163,14 @@ mod __MascotColorChangeMenu_unity2_raw {
             MascotColorChangeMenu,
             crate::app::mascotcolorchangecontent::MascotColorChangeContent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_content::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_content::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_color_palette {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -212,49 +183,37 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_ColorPalette",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_ColorPalette",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_color_palette(
         this: MascotColorChangeMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent> {
         let inner: extern "C" fn(
             MascotColorChangeMenu,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_color_palette::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_color_palette::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_color_palette {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "set_ColorPalette",
@@ -266,47 +225,34 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_ColorPalette",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_ColorPalette",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_color_palette(
         this: MascotColorChangeMenu,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             MascotColorChangeMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_color_palette::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_color_palette::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_select_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -319,39 +265,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetSelectColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetSelectColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_select_color(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_select_color(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_select_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_select_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_radio_check_color_palette {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -364,39 +298,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetRadioCheckColorPalette",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetRadioCheckColorPalette",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_radio_check_color_palette(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_radio_check_color_palette(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_radio_check_color_palette::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_radio_check_color_palette::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -409,39 +331,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_main {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -454,39 +364,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "Main",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "Main",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn main(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn main(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_main::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_main::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -499,39 +397,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_closed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -544,39 +430,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsClosed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsClosed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_closed(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_closed(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_closed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_closed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -589,41 +463,28 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "Exit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "Exit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exit(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn exit(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "KeyUp",
@@ -635,42 +496,28 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_up(
-        this: MascotColorChangeMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_up(this: MascotColorChangeMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_up::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "KeyDown",
@@ -682,42 +529,28 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_down(
-        this: MascotColorChangeMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_down(this: MascotColorChangeMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_down::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_down::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "KeyLeft",
@@ -729,42 +562,28 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyLeft",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyLeft",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_left(
-        this: MascotColorChangeMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_left(this: MascotColorChangeMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_left::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "KeyRight",
@@ -776,40 +595,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyRight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyRight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_right(
-        this: MascotColorChangeMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_right(this: MascotColorChangeMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_right::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -822,41 +628,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn a_call(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn a_call(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -869,41 +661,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn b_call(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+    pub unsafe fn b_call(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_cursor_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -916,39 +694,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "PlayCursorSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "PlayCursorSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_cursor_se(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_cursor_se(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_cursor_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_cursor_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_decide_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -961,39 +727,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "PlayDecideSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "PlayDecideSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_decide_se(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_decide_se(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_decide_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_decide_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_decide_big_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -1006,39 +760,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "PlayDecideBigSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "PlayDecideBigSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_decide_big_se(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_decide_big_se(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_decide_big_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_decide_big_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_cancel_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -1051,39 +793,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "PlayCancelSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "PlayCancelSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_cancel_se(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_cancel_se(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_cancel_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_cancel_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -1096,43 +826,31 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: MascotColorChangeMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -1144,39 +862,27 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu as ::unity2::ClassIdentity>::class(),
@@ -1189,30 +895,20 @@ mod __MascotColorChangeMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MascotColorChangeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MascotColorChangeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1221,12 +917,7 @@ mod __MascotColorChangeMenu_unity2_raw {
 impl MascotColorChangeMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MascotColorChangeMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MascotColorChangeMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -1235,274 +926,191 @@ pub trait IMascotColorChangeMenuMethods: IMascotColorChangeMenu {
     #[doc = "`get_Content()` overload"]
     fn get_content(self) -> crate::app::mascotcolorchangecontent::MascotColorChangeContent {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::get_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::get_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Content(crate::app::mascotcolorchangecontent::MascotColorChangeContent)` overload"]
-    fn set_content(
-        self,
-        value: impl ::core::convert::Into<
-            crate::app::mascotcolorchangecontent::MascotColorChangeContent,
-        >,
-    ) -> () {
+    fn set_content(self, value: impl ::core::convert::Into<crate::app::mascotcolorchangecontent::MascotColorChangeContent>) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::set_content(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::set_content(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ColorPalette()` overload"]
     fn get_color_palette(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent> {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::get_color_palette(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::get_color_palette(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ColorPalette(crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>)` overload"]
     fn set_color_palette(
         self,
         value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::set_color_palette(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::set_color_palette(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSelectColor()` overload"]
     fn set_select_color(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::set_select_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::set_select_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetRadioCheckColorPalette()` overload"]
     fn set_radio_check_color_palette(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::set_radio_check_color_palette(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::set_radio_check_color_palette(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Init()` overload"]
     fn init(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::init(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Main()` overload"]
     fn main(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::main(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Close()` overload"]
     fn close(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsClosed()` overload"]
     fn is_closed(self) -> bool {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::is_closed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Exit()` overload"]
     fn exit(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::exit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`KeyUp(bool)` overload"]
     fn key_up(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::key_up(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyDown(bool)` overload"]
     fn key_down(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::key_down(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyLeft(bool)` overload"]
     fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::key_left(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyRight(bool)` overload"]
     fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::key_right(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayCursorSE()` overload"]
     fn play_cursor_se(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::play_cursor_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::play_cursor_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayDecideSE()` overload"]
     fn play_decide_se(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::play_decide_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::play_decide_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayDecideBigSE()` overload"]
     fn play_decide_big_se(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::play_decide_big_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::play_decide_big_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayCancelSE()` overload"]
     fn play_cancel_se(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::play_cancel_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::play_cancel_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDesc()` overload"]
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MascotColorChangeMenu_unity2_raw::create_desc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MascotColorChangeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1536,9 +1144,7 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_select_index_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1551,39 +1157,27 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "get_SelectIndexX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "get_SelectIndexX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_select_index_x(
-        this: MascotColorChangeMenu_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_select_index_x(this: MascotColorChangeMenu_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_select_index_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_select_index_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_select_index_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1596,42 +1190,29 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "get_SelectIndexY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "get_SelectIndexY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_select_index_y(
-        this: MascotColorChangeMenu_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_select_index_y(this: MascotColorChangeMenu_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_select_index_y::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_select_index_y::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1643,18 +1224,15 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1662,26 +1240,16 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         transform: crate::unity_engine::recttransform::RectTransform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu_CursorTop,
-            crate::unity_engine::recttransform::RectTransform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, crate::unity_engine::recttransform::RectTransform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, transform, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_index_instant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
                 "SetIndexInstant",
@@ -1693,43 +1261,27 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "SetIndexInstant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "SetIndexInstant",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_index_instant(
-        this: MascotColorChangeMenu_CursorTop,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu_CursorTop,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_index_instant::get_offset() as isize),
-        );
+    pub unsafe fn set_index_instant(this: MascotColorChangeMenu_CursorTop, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_index_instant::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_cursor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1746,18 +1298,15 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "MoveCursor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "MoveCursor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn move_cursor(
@@ -1767,26 +1316,15 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         is_trigger: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu_CursorTop,
-            i32,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_cursor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, i32, i32, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_move_cursor::get_method_info().method_ptr);
         inner(this, move_x, move_y, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
@@ -1799,43 +1337,28 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: MascotColorChangeMenu_CursorTop,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: MascotColorChangeMenu_CursorTop, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
                 "SetPosition",
@@ -1847,47 +1370,28 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "SetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "SetPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_position(
-        this: MascotColorChangeMenu_CursorTop,
-        x: f32,
-        y: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu_CursorTop,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position::get_offset() as isize),
-        );
+    pub unsafe fn set_position(this: MascotColorChangeMenu_CursorTop, x: f32, y: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
         inner(this, x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
                 "GetPositionX",
@@ -1899,45 +1403,28 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "GetPositionX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "GetPositionX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_x(
-        this: MascotColorChangeMenu_CursorTop,
-        select_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu_CursorTop,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_position_x::get_offset() as isize),
-        );
+    pub unsafe fn get_position_x(this: MascotColorChangeMenu_CursorTop, select_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_position_x::get_method_info().method_ptr);
         inner(this, select_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::class(),
                 "GetPositionY",
@@ -1949,34 +1436,20 @@ mod __MascotColorChangeMenu_CursorTop_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
-                    "GetPositionY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotColorChangeMenu_CursorTop as ::unity2::ClassIdentity>::NAME,
+                        "GetPositionY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_position_y(
-        this: MascotColorChangeMenu_CursorTop,
-        select_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MascotColorChangeMenu_CursorTop,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_position_y::get_offset() as isize),
-        );
+    pub unsafe fn get_position_y(this: MascotColorChangeMenu_CursorTop, select_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MascotColorChangeMenu_CursorTop, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_position_y::get_method_info().method_ptr);
         inner(this, select_index, __unity2_method_info)
     }
 }
@@ -1987,52 +1460,31 @@ pub trait IMascotColorChangeMenu_CursorTopMethods: IMascotColorChangeMenu_Cursor
     fn get_select_index_x(self) -> i32 {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotColorChangeMenu_CursorTop_unity2_raw::get_select_index_x(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_CursorTop_unity2_raw::get_select_index_x(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SelectIndexY()` overload"]
     fn get_select_index_y(self) -> i32 {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotColorChangeMenu_CursorTop_unity2_raw::get_select_index_y(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_CursorTop_unity2_raw::get_select_index_y(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]
-    fn ctor(
-        self,
-        transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
-    ) -> () {
+    fn ctor(self, transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>) -> () {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotColorChangeMenu_CursorTop_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(transform),
-                ::core::option::Option::None,
-            )
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_CursorTop_unity2_raw::ctor(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)
         }
     }
     #[doc = "`SetIndexInstant(i32)` overload"]
     fn set_index_instant(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_CursorTop_unity2_raw::set_index_instant(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -2049,9 +1501,7 @@ pub trait IMascotColorChangeMenu_CursorTopMethods: IMascotColorChangeMenu_Cursor
     ) -> bool {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_CursorTop_unity2_raw::move_cursor(
                 __receiver,
                 ::core::convert::Into::into(move_x),
@@ -2065,26 +1515,15 @@ pub trait IMascotColorChangeMenu_CursorTopMethods: IMascotColorChangeMenu_Cursor
     fn update(self) -> () {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotColorChangeMenu_CursorTop_unity2_raw::update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotColorChangeMenu_CursorTop_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPosition(f32, f32)` overload"]
-    fn set_position(
-        self,
-        x: impl ::core::convert::Into<f32>,
-        y: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_position(self, x: impl ::core::convert::Into<f32>, y: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_CursorTop_unity2_raw::set_position(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -2097,9 +1536,7 @@ pub trait IMascotColorChangeMenu_CursorTopMethods: IMascotColorChangeMenu_Cursor
     fn get_position_x(self, select_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_CursorTop_unity2_raw::get_position_x(
                 __receiver,
                 ::core::convert::Into::into(select_index),
@@ -2111,9 +1548,7 @@ pub trait IMascotColorChangeMenu_CursorTopMethods: IMascotColorChangeMenu_Cursor
     fn get_position_y(self, select_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
             let __receiver =
-                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotColorChangeMenu_CursorTop as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotColorChangeMenu_CursorTop_unity2_raw::get_position_y(
                 __receiver,
                 ::core::convert::Into::into(select_index),
@@ -2145,23 +1580,20 @@ impl MascotColorChangeMenu_CursorTop {
 #[cfg(feature = "app-mascotcolorchangemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMascotColorChangeMenu;
-    pub use super::IMascotColorChangeMenuMethods;
-    pub use super::IMascotColorChangeMenu_CursorTop;
-    pub use super::IMascotColorChangeMenu_CursorTopMethods;
-    pub use super::MascotColorChangeMenu;
-    pub use super::MascotColorChangeMenu_CursorTop;
-    pub use super::MascotColorChangeMenu_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IMascotColorChangeMenu, IMascotColorChangeMenuMethods, IMascotColorChangeMenu_CursorTop, IMascotColorChangeMenu_CursorTopMethods,
+        MascotColorChangeMenu, MascotColorChangeMenu_CursorTop, MascotColorChangeMenu_Label,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

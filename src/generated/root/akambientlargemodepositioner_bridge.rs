@@ -2,17 +2,19 @@
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::akambientlargemodepositioner::{
-        AkAmbientLargeModePositioner, IAkAmbientLargeModePositioner,
+    use super::*;
+    use crate::{
+        root::akambientlargemodepositioner::{AkAmbientLargeModePositioner, IAkAmbientLargeModePositioner},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akambientlargemodepositioner_bridge/AkAmbientLargeModePositioner_Bridge.md"))]
     #[::unity2::class(namespace = "", name = "AkAmbientLargeModePositioner_Bridge")]
@@ -32,9 +34,7 @@ mod __AkAmbientLargeModePositioner_Bridge_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkAmbientLargeModePositioner_Bridge as ::unity2::ClassIdentity>::class(),
@@ -47,60 +47,39 @@ mod __AkAmbientLargeModePositioner_Bridge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkAmbientLargeModePositioner_Bridge as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkAmbientLargeModePositioner_Bridge as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkAmbientLargeModePositioner_Bridge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkAmbientLargeModePositioner_Bridge,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkAmbientLargeModePositioner_Bridge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkAmbientLargeModePositioner_Bridge, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]
-pub trait IAkAmbientLargeModePositioner_BridgeMethods:
-    IAkAmbientLargeModePositioner_Bridge
-{
+pub trait IAkAmbientLargeModePositioner_BridgeMethods: IAkAmbientLargeModePositioner_Bridge {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <AkAmbientLargeModePositioner_Bridge as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkAmbientLargeModePositioner_Bridge_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkAmbientLargeModePositioner_Bridge as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __AkAmbientLargeModePositioner_Bridge_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]
-impl<__T: IAkAmbientLargeModePositioner_Bridge> IAkAmbientLargeModePositioner_BridgeMethods
-    for __T
-{
-}
+impl<__T: IAkAmbientLargeModePositioner_Bridge> IAkAmbientLargeModePositioner_BridgeMethods for __T {}
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]
 impl AkAmbientLargeModePositioner_Bridge {
@@ -121,25 +100,22 @@ impl AkAmbientLargeModePositioner_Bridge {
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkAmbientLargeModePositioner_Bridge;
-    pub use super::IAkAmbientLargeModePositioner_Bridge;
-    pub use super::IAkAmbientLargeModePositioner_BridgeMethods;
-    pub use crate::root::akambientlargemodepositioner::IAkAmbientLargeModePositioner;
+    pub use super::{AkAmbientLargeModePositioner_Bridge, IAkAmbientLargeModePositioner_Bridge, IAkAmbientLargeModePositioner_BridgeMethods};
     #[cfg(feature = "root-akambientlargemodepositioner")]
     pub use crate::root::akambientlargemodepositioner::IAkAmbientLargeModePositionerMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        root::akambientlargemodepositioner::IAkAmbientLargeModePositioner,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

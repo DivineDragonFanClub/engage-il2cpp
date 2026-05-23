@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-iexposedpropertytable-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iexposedpropertytable/IExposedPropertyTable.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "IExposedPropertyTable")]
@@ -23,9 +23,7 @@ mod __IExposedPropertyTable_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_reference_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -41,18 +39,15 @@ mod __IExposedPropertyTable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IExposedPropertyTable as ::unity2::ClassIdentity>::NAME,
-                    "GetReferenceValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IExposedPropertyTable as ::unity2::ClassIdentity>::NAME,
+                        "GetReferenceValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_reference_value(
@@ -66,11 +61,7 @@ mod __IExposedPropertyTable_unity2_raw {
             crate::unity_engine::propertyname::PropertyName,
             *mut bool,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reference_value::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::object_2::Object_2 = ::core::mem::transmute(__lookup_get_reference_value::get_method_info().method_ptr);
         inner(this, id, id_valid, __unity2_method_info)
     }
 }
@@ -83,9 +74,8 @@ pub trait IIExposedPropertyTableMethods: IIExposedPropertyTable {
         id: impl ::core::convert::Into<crate::unity_engine::propertyname::PropertyName>,
     ) -> (crate::unity_engine::object_2::Object_2, bool) {
         unsafe {
-            let __receiver = <IExposedPropertyTable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <IExposedPropertyTable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
             let __ret = {
                 __IExposedPropertyTable_unity2_raw::get_reference_value(
@@ -106,7 +96,5 @@ impl<__T: IIExposedPropertyTable> IIExposedPropertyTableMethods for __T {}
 #[cfg(feature = "unity_engine-iexposedpropertytable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IExposedPropertyTable;
-    pub use super::IIExposedPropertyTable;
-    pub use super::IIExposedPropertyTableMethods;
+    pub use super::{IExposedPropertyTable, IIExposedPropertyTable, IIExposedPropertyTableMethods};
 }

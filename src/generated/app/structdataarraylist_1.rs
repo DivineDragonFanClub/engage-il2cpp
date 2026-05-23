@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-structdataarraylist_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structlist_1::{IStructList_1, StructList_1};
-    use crate::system::collections::generic::list_1::{IList_1, List_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::structlist_1::{IStructList_1, StructList_1},
+        system::{
+            collections::generic::list_1::{IList_1, List_1},
+            object::{IObject, Object},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdataarraylist_1/StructDataArrayList_1.md"))]
     #[::unity2::class(namespace = "App", name = "StructDataArrayList`1")]
@@ -63,16 +67,15 @@ impl<T0: ::unity2::ClassIdentity> StructDataArrayList_1<T0> {
 #[cfg(feature = "app-structdataarraylist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructDataArrayList_1;
-    pub use super::IStructDataArrayList_1Methods;
-    pub use super::StructDataArrayList_1;
-    pub use crate::app::structlist_1::IStructList_1;
+    pub use super::{IStructDataArrayList_1, IStructDataArrayList_1Methods, StructDataArrayList_1};
     #[cfg(feature = "app-structlist_1")]
     pub use crate::app::structlist_1::IStructList_1Methods;
-    pub use crate::system::collections::generic::list_1::IList_1;
     #[cfg(feature = "system-collections-generic-list_1")]
     pub use crate::system::collections::generic::list_1::IList_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::structlist_1::IStructList_1,
+        system::{collections::generic::list_1::IList_1, object::IObject},
+    };
 }

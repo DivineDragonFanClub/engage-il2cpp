@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-skillarray-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillarray/SkillArray_Entity.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for SkillArray_Entity {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "SkillArray.Entity";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for SkillArray_Entity {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -52,9 +50,7 @@ mod __types {
         #[rename(name = "m_Mask")]
         pub m_mask: crate::app::bitstruct::BitStruct,
         #[rename(name = "m_List")]
-        pub m_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::skillarray::SkillArray_Entity,
-        >,
+        pub m_list: crate::system::collections::generic::list_1::List_1<crate::app::skillarray::SkillArray_Entity>,
         #[rename(name = "m_Flags")]
         pub m_flags: crate::app::skilldata::SkillData_Flags,
         #[rename(name = "m_Cycles")]
@@ -85,9 +81,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for SkillArray_Enumerator {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "SkillArray.Enumerator";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -98,10 +93,7 @@ mod __types {
 
     impl ::unity2::IlType for SkillArray_Enumerator {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -118,9 +110,7 @@ mod __SkillArray_Entity_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -138,18 +128,15 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -160,27 +147,15 @@ mod __SkillArray_Entity_unity2_raw {
         age: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkillArray_Entity,
-            i32,
-            i32,
-            crate::app::skilldata::SkillData_Categorys,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray_Entity, i32, i32, crate::app::skilldata::SkillData_Categorys, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, index, group, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
@@ -193,41 +168,28 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "get_Index",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Index",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_index(
-        this: SkillArray_Entity,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_index(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
                 "set_Index",
@@ -239,40 +201,27 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "set_Index",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Index",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_index(
-        this: SkillArray_Entity,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_index(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
@@ -285,41 +234,28 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "get_Group",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Group",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_group(
-        this: SkillArray_Entity,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_group(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_group::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_group::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
                 "set_Group",
@@ -331,40 +267,27 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "set_Group",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Group",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_group(
-        this: SkillArray_Entity,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_group(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_group::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_group::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_age {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
@@ -377,41 +300,28 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "get_Age",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Age",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_age(
-        this: SkillArray_Entity,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_age(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_age::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_age::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_age {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
                 "set_Age",
@@ -423,40 +333,27 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "set_Age",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Age",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_age(
-        this: SkillArray_Entity,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_age(this: SkillArray_Entity, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray_Entity, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_age::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_age::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_category {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
@@ -469,41 +366,30 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "get_Category",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Category",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_category(
         this: SkillArray_Entity,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData_Categorys {
-        let inner: extern "C" fn(
-            SkillArray_Entity,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData_Categorys = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_category::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Categorys =
+            ::core::mem::transmute(__lookup_get_category::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_category {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -517,18 +403,15 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "set_Category",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "set_Category",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_category(
@@ -536,24 +419,15 @@ mod __SkillArray_Entity_unity2_raw {
         value: crate::app::skilldata::SkillData_Categorys,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkillArray_Entity,
-            crate::app::skilldata::SkillData_Categorys,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_category::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray_Entity, crate::app::skilldata::SkillData_Categorys, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_category::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Entity as ::unity2::ClassIdentity>::class(),
@@ -566,32 +440,20 @@ mod __SkillArray_Entity_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
-                    "get_Skill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Entity as ::unity2::ClassIdentity>::NAME,
+                        "get_Skill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_skill(
-        this: SkillArray_Entity,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray_Entity,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_skill::get_offset() as isize),
-        );
+    pub unsafe fn get_skill(this: SkillArray_Entity, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray_Entity, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -617,65 +479,47 @@ impl SkillArray_Entity {
             )
         }
     }
+
     #[doc = "`get_Index()` overload"]
     pub fn get_index(self) -> i32 {
         unsafe { __SkillArray_Entity_unity2_raw::get_index(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_Index(i32)` overload"]
     pub fn set_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __SkillArray_Entity_unity2_raw::set_index(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SkillArray_Entity_unity2_raw::set_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_Group()` overload"]
     pub fn get_group(self) -> i32 {
         unsafe { __SkillArray_Entity_unity2_raw::get_group(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_Group(i32)` overload"]
     pub fn set_group(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __SkillArray_Entity_unity2_raw::set_group(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SkillArray_Entity_unity2_raw::set_group(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_Age()` overload"]
     pub fn get_age(self) -> i32 {
         unsafe { __SkillArray_Entity_unity2_raw::get_age(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_Age(i32)` overload"]
     pub fn set_age(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __SkillArray_Entity_unity2_raw::set_age(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SkillArray_Entity_unity2_raw::set_age(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_Category()` overload"]
     pub fn get_category(self) -> crate::app::skilldata::SkillData_Categorys {
         unsafe { __SkillArray_Entity_unity2_raw::get_category(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]
-    pub fn set_category(
-        self,
-        value: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
-    ) -> () {
-        unsafe {
-            __SkillArray_Entity_unity2_raw::set_category(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_category(self, value: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>) -> () {
+        unsafe { __SkillArray_Entity_unity2_raw::set_category(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_Skill()` overload"]
     pub fn get_skill(self) -> crate::app::skilldata::SkillData {
         unsafe { __SkillArray_Entity_unity2_raw::get_skill(self, ::core::option::Option::None) }
@@ -691,101 +535,60 @@ mod __SkillArray_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: SkillArray,
-        src: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skillarray::SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+    pub unsafe fn ctor_2(this: SkillArray, src: crate::app::skillarray::SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enumerator {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -798,41 +601,27 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enumerator(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skillarray::SkillArray_Enumerator {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skillarray::SkillArray_Enumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enumerator::get_offset() as isize),
-        );
+    pub unsafe fn get_enumerator(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray_Enumerator {
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray_Enumerator =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -845,318 +634,180 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "get_Flags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "get_Flags",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_flags(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData_Flags {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData_Flags = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_flags::get_offset() as isize),
-        );
+    pub unsafe fn get_flags(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Flags {
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Flags =
+            ::core::mem::transmute(__lookup_get_flags::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test(
-        this: SkillArray,
-        sid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test::get_offset() as isize),
-        );
+    pub unsafe fn test(this: SkillArray, sid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
         inner(this, sid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test_2(
-        this: SkillArray,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_2::get_offset() as isize),
-        );
+    pub unsafe fn test_2(this: SkillArray, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_2::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test_3(
-        this: SkillArray,
-        flags: crate::app::skilldata::SkillData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_3::get_offset() as isize),
-        );
+    pub unsafe fn test_3(this: SkillArray, flags: crate::app::skilldata::SkillData_Flags, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Flags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_3::get_method_info().method_ptr);
         inner(this, flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_States as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_States as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test_4(
-        this: SkillArray,
-        states: crate::app::skilldata::SkillData_States,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_States,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_4::get_offset() as isize),
-        );
+    pub unsafe fn test_4(this: SkillArray, states: crate::app::skilldata::SkillData_States, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_States, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_4::get_method_info().method_ptr);
         inner(this, states, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test_5(
-        this: SkillArray,
-        timing: crate::app::skilldata::SkillData_Timings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Timings,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_5::get_offset() as isize),
-        );
+    pub unsafe fn test_5(this: SkillArray, timing: crate::app::skilldata::SkillData_Timings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Timings, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_5::get_method_info().method_ptr);
         inner(this, timing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Timings as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn test_6(
@@ -1170,45 +821,30 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Timings,
             crate::app::skilldata::SkillData_Timings,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_6::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_test_6::get_method_info().method_ptr);
         inner(this, timing1, timing2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::skilldata::SkillData_TimingMasks as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn test_7(
@@ -1216,101 +852,60 @@ mod __SkillArray_unity2_raw {
         mask: crate::app::skilldata::SkillData_TimingMasks,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_TimingMasks,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_7::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_TimingMasks, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_7::get_method_info().method_ptr);
         inner(this, mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test_8(
-        this: SkillArray,
-        cycle: crate::app::skilldata::SkillData_Cycles,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Cycles,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_8::get_offset() as isize),
-        );
+    pub unsafe fn test_8(this: SkillArray, cycle: crate::app::skilldata::SkillData_Cycles, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Cycles, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_8::get_method_info().method_ptr);
         inner(this, cycle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn test_9(
@@ -1324,45 +919,30 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Cycles,
             crate::app::skilldata::SkillData_Cycles,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_9::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_test_9::get_method_info().method_ptr);
         inner(this, cycle1, cycle2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::skilldata::SkillData_CycleMasks as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn test_10(
@@ -1370,49 +950,30 @@ mod __SkillArray_unity2_raw {
         mask: crate::app::skilldata::SkillData_CycleMasks,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_CycleMasks,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_10::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_CycleMasks, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_10::get_method_info().method_ptr);
         inner(this, mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Targets as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Targets as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn test_11(
@@ -1420,24 +981,15 @@ mod __SkillArray_unity2_raw {
         target: crate::app::skilldata::SkillData_Targets,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Targets,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_11::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Targets, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_11::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bad_states {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -1450,68 +1002,45 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetBadStates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetBadStates",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bad_states(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData_States {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData_States = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bad_states::get_offset() as isize),
-        );
+    pub unsafe fn get_bad_states(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_States {
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_States =
+            ::core::mem::transmute(__lookup_get_bad_states::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Set", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set(
@@ -1520,52 +1049,33 @@ mod __SkillArray_unity2_raw {
         category: crate::app::skilldata::SkillData_Categorys,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::Il2CppString,
-            crate::app::skilldata::SkillData_Categorys,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, ::unity2::Il2CppString, crate::app::skilldata::SkillData_Categorys, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, sid, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Set", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_2(
@@ -1579,47 +1089,32 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData,
             crate::app::skilldata::SkillData_Categorys,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
         inner(this, skill, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Set",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Set", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_3(
@@ -1633,98 +1128,60 @@ mod __SkillArray_unity2_raw {
             ::unity2::Array<::unity2::Il2CppString>,
             crate::app::skilldata::SkillData_Categorys,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_3::get_method_info().method_ptr);
         inner(this, sids, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Set", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_4(
-        this: SkillArray,
-        src: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skillarray::SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_4::get_offset() as isize),
-        );
+    pub unsafe fn set_4(this: SkillArray, src: crate::app::skillarray::SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_4::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Add", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -1740,48 +1197,33 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Categorys,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, sid, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Add", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_2(
@@ -1797,20 +1239,14 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Categorys,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
         inner(this, skill, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_without_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
@@ -1827,18 +1263,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "AddWithoutUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "AddWithoutUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_without_update(
@@ -1854,89 +1287,58 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Categorys,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_without_update::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_without_update::get_method_info().method_ptr);
         inner(this, skill, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_3(
@@ -1950,56 +1352,37 @@ mod __SkillArray_unity2_raw {
             ::unity2::Array<::unity2::Il2CppString>,
             crate::app::skilldata::SkillData_Categorys,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_3::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
         inner(this, sids, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::skilldata::SkillData,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData> as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_4(
         this: SkillArray,
-        skills: crate::system::collections::generic::list_1::List_1<
-            crate::app::skilldata::SkillData,
-        >,
+        skills: crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
         category: crate::app::skilldata::SkillData_Categorys,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
@@ -2008,298 +1391,168 @@ mod __SkillArray_unity2_raw {
             crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
             crate::app::skilldata::SkillData_Categorys,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_4::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_4::get_method_info().method_ptr);
         inner(this, skills, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Add",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Add", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_5(
-        this: SkillArray,
-        src: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skillarray::SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_5::get_offset() as isize),
-        );
+    pub unsafe fn add_5(this: SkillArray, src: crate::app::skillarray::SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_add_5::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove(
-        this: SkillArray,
-        sid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove::get_offset() as isize),
-        );
+    pub unsafe fn remove(this: SkillArray, sid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove::get_method_info().method_ptr);
         inner(this, sid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_2(
-        this: SkillArray,
-        src: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skillarray::SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_2::get_offset() as isize),
-        );
+    pub unsafe fn remove_2(this: SkillArray, src: crate::app::skillarray::SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove_2::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_3(
-        this: SkillArray,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_3::get_offset() as isize),
-        );
+    pub unsafe fn remove_3(this: SkillArray, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove_3::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Remove",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Remove", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Remove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Remove",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_4(
-        this: SkillArray,
-        flags: crate::app::skilldata::SkillData_Flags,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_4::get_offset() as isize),
-        );
+    pub unsafe fn remove_4(this: SkillArray, flags: crate::app::skilldata::SkillData_Flags, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Flags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove_4::get_method_info().method_ptr);
         inner(this, flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Replace",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Replace", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Replace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Replace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn replace(
@@ -2315,164 +1568,95 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData,
             crate::app::skilldata::SkillData_Categorys,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_replace::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_replace::get_method_info().method_ptr);
         inner(this, index, skill, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Replace",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Replace", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Replace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Replace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn replace_2(
-        this: SkillArray,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_replace_2::get_offset() as isize),
-        );
+    pub unsafe fn replace_2(this: SkillArray, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_replace_2::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Move",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Move", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Move",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Move",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn r#move(
-        this: SkillArray,
-        old_index: i32,
-        new_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn r#move(this: SkillArray, old_index: i32, new_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkillArray, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move::get_method_info().method_ptr);
         inner(this, old_index, new_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Sort",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Sort", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Sort",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Sort",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sort(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sort::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_sort::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_give_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetGiveSkill",
@@ -2484,18 +1668,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetGiveSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetGiveSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_give_skill(
@@ -2503,52 +1684,34 @@ mod __SkillArray_unity2_raw {
         give: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_give_skill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_give_skill::get_method_info().method_ptr);
         inner(this, give, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "AddImpl",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "AddImpl", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "AddImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "AddImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_impl(
@@ -2564,48 +1727,33 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Categorys,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_impl::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_impl::get_method_info().method_ptr);
         inner(this, sid, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_impl_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Categorys as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "AddImpl",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "AddImpl", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "AddImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "AddImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_impl_2(
@@ -2621,22 +1769,15 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Categorys,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_impl_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_impl_2::get_method_info().method_ptr);
         inner(this, skill, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "RemoveImpl",
@@ -2648,45 +1789,28 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "RemoveImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "RemoveImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_impl(
-        this: SkillArray,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_impl::get_offset() as isize),
-        );
+    pub unsafe fn remove_impl(this: SkillArray, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_remove_impl::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_impl_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "RemoveImpl",
@@ -2698,40 +1822,27 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "RemoveImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "RemoveImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_impl_2(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn remove_impl_2(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_impl_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_remove_impl_2::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
@@ -2749,18 +1860,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "ReplaceImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "ReplaceImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn replace_impl(
@@ -2778,70 +1886,41 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Categorys,
             i32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_replace_impl::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_replace_impl::get_method_info().method_ptr);
         inner(this, index, skill, category, age, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "MoveImpl",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "MoveImpl", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "MoveImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "MoveImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_impl(
-        this: SkillArray,
-        old_index: i32,
-        new_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn move_impl(this: SkillArray, old_index: i32, new_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkillArray, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_impl::get_method_info().method_ptr);
         inner(this, old_index, new_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_sync_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
@@ -2858,18 +1937,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "AddSyncImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "AddSyncImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_sync_impl(
@@ -2885,120 +1961,68 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData,
             crate::app::skilldata::SkillData_Categorys,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_sync_impl::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_add_sync_impl::get_method_info().method_ptr);
         inner(this, unit, skill, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_give {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "CanGive",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "CanGive", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "CanGive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "CanGive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_give(
-        this: SkillArray,
-        give: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_give::get_offset() as isize),
-        );
+    pub unsafe fn can_give(this: SkillArray, give: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_give::get_method_info().method_ptr);
         inner(this, give, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Commit", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Commit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit(
-        this: SkillArray,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit::get_offset() as isize),
-        );
+    pub unsafe fn commit(this: SkillArray, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_range_i {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -3014,18 +2038,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetItemRangeI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetItemRangeI",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item_range_i(
@@ -3034,25 +2055,15 @@ mod __SkillArray_unity2_raw {
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_range_i::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_range_i::get_method_info().method_ptr);
         inner(this, unit, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_range_o {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -3068,18 +2079,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetItemRangeO",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetItemRangeO",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item_range_o(
@@ -3088,25 +2096,15 @@ mod __SkillArray_unity2_raw {
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_range_o::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_range_o::get_method_info().method_ptr);
         inner(this, unit, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
@@ -3122,18 +2120,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetItemDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetItemDistance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item_distance(
@@ -3142,27 +2137,16 @@ mod __SkillArray_unity2_raw {
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item_distance::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_item_distance::get_method_info().method_ptr);
         inner(this, unit, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rod_range_extend {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetRodRangeExtend",
@@ -3174,18 +2158,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetRodRangeExtend",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetRodRangeExtend",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rod_range_extend(
@@ -3193,24 +2174,15 @@ mod __SkillArray_unity2_raw {
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rod_range_extend::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_rod_range_extend::get_method_info().method_ptr);
         inner(this, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -3223,248 +2195,149 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "UpdateImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "UpdateImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_impl(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_impl(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Copy",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Copy", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Copy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Copy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn copy(
-        this: SkillArray,
-        src: crate::app::skillarray::SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skillarray::SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy::get_offset() as isize),
-        );
+    pub unsafe fn copy(this: SkillArray, src: crate::app::skillarray::SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Change",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Change", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Change",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Change",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn change(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_change::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_exist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "IsExist", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_exist(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_exist(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_exist::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_ignore {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_States as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "IsIgnore",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_States as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "IsIgnore", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "IsIgnore",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "IsIgnore",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_ignore(
@@ -3472,124 +2345,69 @@ mod __SkillArray_unity2_raw {
         state: crate::app::skilldata::SkillData_States,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_States,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_ignore::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_States, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_ignore::get_method_info().method_ptr);
         inner(this, state, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_index_of {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "IndexOf",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "IndexOf", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "IndexOf",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "IndexOf",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn index_of(
-        this: SkillArray,
-        sid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_index_of::get_offset() as isize),
-        );
+    pub unsafe fn index_of(this: SkillArray, sid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_index_of::get_method_info().method_ptr);
         inner(this, sid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_index_of_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "IndexOf",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "IndexOf", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "IndexOf",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "IndexOf",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn index_of_2(
-        this: SkillArray,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_index_of_2::get_offset() as isize),
-        );
+    pub unsafe fn index_of_2(this: SkillArray, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_index_of_2::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -3602,141 +2420,82 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_count(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+    pub unsafe fn get_item(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "GetSkill",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "GetSkill", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_skill(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_skill::get_offset() as isize),
-        );
+    pub unsafe fn get_skill(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "TryGetSkill",
@@ -3748,45 +2507,28 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "TryGetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "TryGetSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_get_skill(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_skill::get_offset() as isize),
-        );
+    pub unsafe fn try_get_skill(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_try_get_skill::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_entity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetEntity",
@@ -3798,18 +2540,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetEntity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetEntity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_entity(
@@ -3817,170 +2556,97 @@ mod __SkillArray_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skillarray::SkillArray_Entity {
-        let inner: extern "C" fn(
-            SkillArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skillarray::SkillArray_Entity = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_entity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> crate::app::skillarray::SkillArray_Entity =
+            ::core::mem::transmute(__lookup_get_entity::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_age {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "GetAge",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "GetAge", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetAge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetAge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_age(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_age(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_age::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_age::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_age_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "GetAge",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "GetAge", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetAge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetAge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_age_2(
-        this: SkillArray,
-        skill: crate::app::skilldata::SkillData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_age_2::get_offset() as isize),
-        );
+    pub unsafe fn get_age_2(this: SkillArray, skill: crate::app::skilldata::SkillData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_age_2::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_decay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "GetDecay",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "GetDecay", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetDecay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetDecay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_decay(
-        this: SkillArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_decay(this: SkillArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_decay::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_decay::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_category {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetCategory",
@@ -3992,18 +2658,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetCategory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetCategory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_category(
@@ -4011,26 +2674,16 @@ mod __SkillArray_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData_Categorys {
-        let inner: extern "C" fn(
-            SkillArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData_Categorys = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_category::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, i32, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Categorys =
+            ::core::mem::transmute(__lookup_get_category::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_category_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetCategory",
@@ -4042,18 +2695,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetCategory",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetCategory",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_category_2(
@@ -4065,45 +2715,29 @@ mod __SkillArray_unity2_raw {
             SkillArray,
             crate::app::skilldata::SkillData,
             ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData_Categorys = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_category_2::get_offset() as isize),
-        );
+        ) -> crate::app::skilldata::SkillData_Categorys = ::core::mem::transmute(__lookup_get_category_2::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Find",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Find", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find(
@@ -4111,49 +2745,30 @@ mod __SkillArray_unity2_raw {
         sid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_find::get_method_info().method_ptr);
         inner(this, sid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Flags as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Find",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Flags as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Find", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_2(
@@ -4161,49 +2776,30 @@ mod __SkillArray_unity2_raw {
         flags: crate::app::skilldata::SkillData_Flags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Flags, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_find_2::get_method_info().method_ptr);
         inner(this, flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_States as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Find",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_States as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Find", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_3(
@@ -4211,49 +2807,30 @@ mod __SkillArray_unity2_raw {
         states: crate::app::skilldata::SkillData_States,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_States,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_States, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_find_3::get_method_info().method_ptr);
         inner(this, states, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData_Works as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "Find",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData_Works as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "Find", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_4(
@@ -4261,25 +2838,19 @@ mod __SkillArray_unity2_raw {
         work: crate::app::skilldata::SkillData_Works,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::skilldata::SkillData_Works,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::skilldata::SkillData_Works, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_find_4::get_method_info().method_ptr);
         inner(this, work, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_aging {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Cycles as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: app :: skilldata :: SkillData , bool > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "UpdateAging",
@@ -4291,18 +2862,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAging",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAging",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_aging(
@@ -4316,21 +2884,19 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Cycles,
             crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_aging::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_update_aging::get_method_info().method_ptr);
         inner(this, cycle, ignore, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_aging_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_Cycles as :: unity2 :: IlType > :: il_type () , < crate :: app :: skilldata :: SkillData_Cycles as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: app :: skilldata :: SkillData , bool > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type(),
+                <crate::app::skilldata::SkillData_Cycles as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "UpdateAging",
@@ -4342,18 +2908,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAging",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAging",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_aging_2(
@@ -4369,21 +2932,18 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_Cycles,
             crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_aging_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_update_aging_2::get_method_info().method_ptr);
         inner(this, cycle1, cycle2, ignore, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_aging_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: skilldata :: SkillData_CycleMasks as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_2 :: Func_2 < crate :: app :: skilldata :: SkillData , bool > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::skilldata::SkillData_CycleMasks as ::unity2::IlType>::il_type(),
+                <crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "UpdateAgingImpl",
@@ -4395,18 +2955,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAgingImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAgingImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_aging_impl(
@@ -4420,20 +2977,14 @@ mod __SkillArray_unity2_raw {
             crate::app::skilldata::SkillData_CycleMasks,
             crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_aging_impl::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_update_aging_impl::get_method_info().method_ptr);
         inner(this, mask, ignore, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_cycles {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -4446,41 +2997,28 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "ClearCycles",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "ClearCycles",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_cycles(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_cycles(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_cycles::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_cycles::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "Serialize",
@@ -4492,45 +3030,28 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: SkillArray,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+    pub unsafe fn serialize(this: SkillArray, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -4542,70 +3063,45 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: SkillArray,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+    pub unsafe fn deserialize(this: SkillArray, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SkillArray, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_work {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::skilldata::SkillData_Works as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "CalcWork",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "CalcWork", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "CalcWork",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "CalcWork",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_work(
@@ -4614,72 +3110,43 @@ mod __SkillArray_unity2_raw {
         work: crate::app::skilldata::SkillData_Works,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            i32,
-            crate::app::skilldata::SkillData_Works,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_work::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, i32, crate::app::skilldata::SkillData_Works, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_calc_work::get_method_info().method_ptr);
         inner(this, value, work, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_power {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SkillArray as ::unity2::ClassIdentity>::class(),
-                "GetPower",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SkillArray as ::unity2::ClassIdentity>::class(), "GetPower", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetPower",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetPower",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_power(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_power(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_power::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_power::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetEfficacyValue",
@@ -4691,45 +3158,28 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetEfficacyValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetEfficacyValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_efficacy_value(
-        this: SkillArray,
-        target: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_efficacy_value::get_offset() as isize),
-        );
+    pub unsafe fn get_efficacy_value(this: SkillArray, target: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_efficacy_value::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_efficacy_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "GetEfficacyMask",
@@ -4741,18 +3191,15 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "GetEfficacyMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "GetEfficacyMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_efficacy_mask(
@@ -4760,26 +3207,16 @@ mod __SkillArray_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData_Attrs {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData_Attrs = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_efficacy_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData_Attrs =
+            ::core::mem::transmute(__lookup_get_efficacy_mask::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_efficacy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "IsEfficacy",
@@ -4791,43 +3228,27 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "IsEfficacy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "IsEfficacy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_efficacy(
-        this: SkillArray,
-        target: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SkillArray,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_efficacy::get_offset() as isize),
-        );
+    pub unsafe fn is_efficacy(this: SkillArray, target: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SkillArray, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_efficacy::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_levels {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -4840,41 +3261,27 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "get_WeaponLevels",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "get_WeaponLevels",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weapon_levels(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::weaponlevels::WeaponLevels {
-        let inner: extern "C" fn(
-            SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::weaponlevels::WeaponLevels = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_levels::get_offset() as isize),
-        );
+    pub unsafe fn get_weapon_levels(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::weaponlevels::WeaponLevels {
+        let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> crate::app::weaponlevels::WeaponLevels =
+            ::core::mem::transmute(__lookup_get_weapon_levels::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_equip_skill_first_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
@@ -4887,41 +3294,28 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEquipSkillFirstNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEquipSkillFirstNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_equip_skill_first_null(
-        this: SkillArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_equip_skill_first_null(this: SkillArray, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkillArray, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_equip_skill_first_null::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_equip_skill_first_null::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_equip_skill_first_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray as ::unity2::ClassIdentity>::class(),
                 "set_IsEquipSkillFirstNull",
@@ -4933,31 +3327,20 @@ mod __SkillArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray as ::unity2::ClassIdentity>::NAME,
-                    "set_IsEquipSkillFirstNull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray as ::unity2::ClassIdentity>::NAME,
+                        "set_IsEquipSkillFirstNull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_equip_skill_first_null(
-        this: SkillArray,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_equip_skill_first_null(this: SkillArray, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_equip_skill_first_null::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_equip_skill_first_null::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -4967,115 +3350,64 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::skillarray::SkillArray)` overload"]
     fn ctor_2(self, src: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEnumerator()` overload"]
     fn get_enumerator(self) -> crate::app::skillarray::SkillArray_Enumerator {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Flags()` overload"]
     fn get_flags(self) -> crate::app::skilldata::SkillData_Flags {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_flags(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Test(::unity2::Il2CppString)` overload"]
     fn test(self, sid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test(
-                __receiver,
-                ::core::convert::Into::into(sid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test(__receiver, ::core::convert::Into::into(sid), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData)` overload"]
     fn test_2(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_2(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_Flags)` overload"]
-    fn test_3(
-        self,
-        flags: impl ::core::convert::Into<crate::app::skilldata::SkillData_Flags>,
-    ) -> bool {
+    fn test_3(self, flags: impl ::core::convert::Into<crate::app::skilldata::SkillData_Flags>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_3(
-                __receiver,
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_3(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_States)` overload"]
-    fn test_4(
-        self,
-        states: impl ::core::convert::Into<crate::app::skilldata::SkillData_States>,
-    ) -> bool {
+    fn test_4(self, states: impl ::core::convert::Into<crate::app::skilldata::SkillData_States>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_4(
-                __receiver,
-                ::core::convert::Into::into(states),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_4(__receiver, ::core::convert::Into::into(states), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_Timings)` overload"]
-    fn test_5(
-        self,
-        timing: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>,
-    ) -> bool {
+    fn test_5(self, timing: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_5(
-                __receiver,
-                ::core::convert::Into::into(timing),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_5(__receiver, ::core::convert::Into::into(timing), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Timings)` overload"]
@@ -5085,9 +3417,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         timing2: impl ::core::convert::Into<crate::app::skilldata::SkillData_Timings>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::test_6(
                 __receiver,
                 ::core::convert::Into::into(timing1),
@@ -5097,35 +3427,17 @@ pub trait ISkillArrayMethods: ISkillArray {
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_TimingMasks)` overload"]
-    fn test_7(
-        self,
-        mask: impl ::core::convert::Into<crate::app::skilldata::SkillData_TimingMasks>,
-    ) -> bool {
+    fn test_7(self, mask: impl ::core::convert::Into<crate::app::skilldata::SkillData_TimingMasks>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_7(
-                __receiver,
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_7(__receiver, ::core::convert::Into::into(mask), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_Cycles)` overload"]
-    fn test_8(
-        self,
-        cycle: impl ::core::convert::Into<crate::app::skilldata::SkillData_Cycles>,
-    ) -> bool {
+    fn test_8(self, cycle: impl ::core::convert::Into<crate::app::skilldata::SkillData_Cycles>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_8(
-                __receiver,
-                ::core::convert::Into::into(cycle),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_8(__receiver, ::core::convert::Into::into(cycle), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_Cycles, crate::app::skilldata::SkillData_Cycles)` overload"]
@@ -5135,9 +3447,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         cycle2: impl ::core::convert::Into<crate::app::skilldata::SkillData_Cycles>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::test_9(
                 __receiver,
                 ::core::convert::Into::into(cycle1),
@@ -5147,43 +3457,23 @@ pub trait ISkillArrayMethods: ISkillArray {
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_CycleMasks)` overload"]
-    fn test_10(
-        self,
-        mask: impl ::core::convert::Into<crate::app::skilldata::SkillData_CycleMasks>,
-    ) -> bool {
+    fn test_10(self, mask: impl ::core::convert::Into<crate::app::skilldata::SkillData_CycleMasks>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_10(
-                __receiver,
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_10(__receiver, ::core::convert::Into::into(mask), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::skilldata::SkillData_Targets)` overload"]
-    fn test_11(
-        self,
-        target: impl ::core::convert::Into<crate::app::skilldata::SkillData_Targets>,
-    ) -> bool {
+    fn test_11(self, target: impl ::core::convert::Into<crate::app::skilldata::SkillData_Targets>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::test_11(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::test_11(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`GetBadStates()` overload"]
     fn get_bad_states(self) -> crate::app::skilldata::SkillData_States {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_bad_states(__receiver, ::core::option::Option::None)
         }
     }
@@ -5194,9 +3484,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(sid),
@@ -5212,9 +3500,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::set_2(
                 __receiver,
                 ::core::convert::Into::into(skill),
@@ -5230,9 +3516,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::set_3(
                 __receiver,
                 ::core::convert::Into::into(sids),
@@ -5244,14 +3528,8 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`Set(crate::app::skillarray::SkillArray)` overload"]
     fn set_4(self, src: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::set_4(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::set_4(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`Add(::unity2::Il2CppString, crate::app::skilldata::SkillData_Categorys, i32)` overload"]
@@ -5262,9 +3540,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         age: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add(
                 __receiver,
                 ::core::convert::Into::into(sid),
@@ -5282,9 +3558,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         age: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_2(
                 __receiver,
                 ::core::convert::Into::into(skill),
@@ -5302,9 +3576,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         age: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_without_update(
                 __receiver,
                 ::core::convert::Into::into(skill),
@@ -5317,9 +3589,7 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
@@ -5330,9 +3600,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_3(
                 __receiver,
                 ::core::convert::Into::into(sids),
@@ -5344,15 +3612,11 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`Add(crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>, crate::app::skilldata::SkillData_Categorys)` overload"]
     fn add_4(
         self,
-        skills: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
-        >,
+        skills: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>>,
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_4(
                 __receiver,
                 ::core::convert::Into::into(skills),
@@ -5364,69 +3628,36 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`Add(crate::app::skillarray::SkillArray)` overload"]
     fn add_5(self, src: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::add_5(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::add_5(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(::unity2::Il2CppString)` overload"]
     fn remove(self, sid: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::remove(
-                __receiver,
-                ::core::convert::Into::into(sid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::remove(__receiver, ::core::convert::Into::into(sid), ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(crate::app::skillarray::SkillArray)` overload"]
     fn remove_2(self, src: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::remove_2(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::remove_2(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(crate::app::skilldata::SkillData)` overload"]
     fn remove_3(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::remove_3(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::remove_3(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`Remove(crate::app::skilldata::SkillData_Flags)` overload"]
-    fn remove_4(
-        self,
-        flags: impl ::core::convert::Into<crate::app::skilldata::SkillData_Flags>,
-    ) -> bool {
+    fn remove_4(self, flags: impl ::core::convert::Into<crate::app::skilldata::SkillData_Flags>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::remove_4(
-                __receiver,
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::remove_4(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
         }
     }
     #[doc = "`Replace(i32, crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Categorys)` overload"]
@@ -5437,9 +3668,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::replace(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -5450,31 +3679,16 @@ pub trait ISkillArrayMethods: ISkillArray {
         }
     }
     #[doc = "`Replace(crate::app::skilldata::SkillData)` overload"]
-    fn replace_2(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> bool {
+    fn replace_2(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::replace_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::replace_2(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`Move(i32, i32)` overload"]
-    fn r#move(
-        self,
-        old_index: impl ::core::convert::Into<i32>,
-        new_index: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    fn r#move(self, old_index: impl ::core::convert::Into<i32>, new_index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::r#move(
                 __receiver,
                 ::core::convert::Into::into(old_index),
@@ -5486,26 +3700,15 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`Sort()` overload"]
     fn sort(self) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::sort(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetGiveSkill(crate::app::skilldata::SkillData)` overload"]
-    fn get_give_skill(
-        self,
-        give: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::app::skilldata::SkillData {
+    fn get_give_skill(self, give: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_give_skill(
-                __receiver,
-                ::core::convert::Into::into(give),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_give_skill(__receiver, ::core::convert::Into::into(give), ::core::option::Option::None)
         }
     }
     #[doc = "`AddImpl(::unity2::Il2CppString, crate::app::skilldata::SkillData_Categorys, i32)` overload"]
@@ -5516,9 +3719,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         age: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_impl(
                 __receiver,
                 ::core::convert::Into::into(sid),
@@ -5536,9 +3737,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         age: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_impl_2(
                 __receiver,
                 ::core::convert::Into::into(skill),
@@ -5549,32 +3748,17 @@ pub trait ISkillArrayMethods: ISkillArray {
         }
     }
     #[doc = "`RemoveImpl(crate::app::skilldata::SkillData)` overload"]
-    fn remove_impl(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> bool {
+    fn remove_impl(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::remove_impl(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::remove_impl(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveImpl(i32)` overload"]
     fn remove_impl_2(self, index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::remove_impl_2(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::remove_impl_2(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`ReplaceImpl(i32, crate::app::skilldata::SkillData, crate::app::skilldata::SkillData_Categorys, i32)` overload"]
@@ -5586,9 +3770,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         age: impl ::core::convert::Into<i32>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::replace_impl(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -5600,15 +3782,9 @@ pub trait ISkillArrayMethods: ISkillArray {
         }
     }
     #[doc = "`MoveImpl(i32, i32)` overload"]
-    fn move_impl(
-        self,
-        old_index: impl ::core::convert::Into<i32>,
-        new_index: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    fn move_impl(self, old_index: impl ::core::convert::Into<i32>, new_index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::move_impl(
                 __receiver,
                 ::core::convert::Into::into(old_index),
@@ -5625,9 +3801,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         category: impl ::core::convert::Into<crate::app::skilldata::SkillData_Categorys>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::add_sync_impl(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -5640,27 +3814,15 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`CanGive(crate::app::skilldata::SkillData)` overload"]
     fn can_give(self, give: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::can_give(
-                __receiver,
-                ::core::convert::Into::into(give),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::can_give(__receiver, ::core::convert::Into::into(give), ::core::option::Option::None)
         }
     }
     #[doc = "`Commit(crate::app::unit::Unit)` overload"]
     fn commit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::commit(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::commit(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetItemRangeI(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
@@ -5670,9 +3832,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
     ) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_item_range_i(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -5688,9 +3848,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
     ) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_item_range_o(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -5706,9 +3864,7 @@ pub trait ISkillArrayMethods: ISkillArray {
         item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
     ) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_item_distance(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -5718,333 +3874,174 @@ pub trait ISkillArrayMethods: ISkillArray {
         }
     }
     #[doc = "`GetRodRangeExtend(crate::app::itemdata::ItemData)` overload"]
-    fn get_rod_range_extend(
-        self,
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> i32 {
+    fn get_rod_range_extend(self, item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_rod_range_extend(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_rod_range_extend(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateImpl()` overload"]
     fn update_impl(self) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::update_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Copy(crate::app::skillarray::SkillArray)` overload"]
     fn copy(self, src: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::copy(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::copy(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`Change(i32)` overload"]
     fn change(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::change(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::change(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`IsExist()` overload"]
     fn is_exist(self) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::is_exist(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsIgnore(crate::app::skilldata::SkillData_States)` overload"]
-    fn is_ignore(
-        self,
-        state: impl ::core::convert::Into<crate::app::skilldata::SkillData_States>,
-    ) -> bool {
+    fn is_ignore(self, state: impl ::core::convert::Into<crate::app::skilldata::SkillData_States>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::is_ignore(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::is_ignore(__receiver, ::core::convert::Into::into(state), ::core::option::Option::None)
         }
     }
     #[doc = "`IndexOf(::unity2::Il2CppString)` overload"]
     fn index_of(self, sid: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::index_of(
-                __receiver,
-                ::core::convert::Into::into(sid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::index_of(__receiver, ::core::convert::Into::into(sid), ::core::option::Option::None)
         }
     }
     #[doc = "`IndexOf(crate::app::skilldata::SkillData)` overload"]
-    fn index_of_2(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> i32 {
+    fn index_of_2(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::index_of_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::index_of_2(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Count()` overload"]
     fn get_count(self) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(i32)` overload"]
     fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSkill(i32)` overload"]
     fn get_skill(self, index: impl ::core::convert::Into<i32>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_skill(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_skill(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`TryGetSkill(i32)` overload"]
-    fn try_get_skill(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::skilldata::SkillData {
+    fn try_get_skill(self, index: impl ::core::convert::Into<i32>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::try_get_skill(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::try_get_skill(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEntity(i32)` overload"]
-    fn get_entity(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::skillarray::SkillArray_Entity {
+    fn get_entity(self, index: impl ::core::convert::Into<i32>) -> crate::app::skillarray::SkillArray_Entity {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_entity(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_entity(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetAge(i32)` overload"]
     fn get_age(self, index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_age(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_age(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetAge(crate::app::skilldata::SkillData)` overload"]
     fn get_age_2(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_age_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_age_2(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDecay(i32)` overload"]
     fn get_decay(self, index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_decay(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_decay(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCategory(i32)` overload"]
-    fn get_category(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::app::skilldata::SkillData_Categorys {
+    fn get_category(self, index: impl ::core::convert::Into<i32>) -> crate::app::skilldata::SkillData_Categorys {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_category(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_category(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCategory(crate::app::skilldata::SkillData)` overload"]
-    fn get_category_2(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::app::skilldata::SkillData_Categorys {
+    fn get_category_2(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> crate::app::skilldata::SkillData_Categorys {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_category_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_category_2(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`Find(::unity2::Il2CppString)` overload"]
-    fn find(
-        self,
-        sid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::skilldata::SkillData {
+    fn find(self, sid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::find(
-                __receiver,
-                ::core::convert::Into::into(sid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::find(__receiver, ::core::convert::Into::into(sid), ::core::option::Option::None)
         }
     }
     #[doc = "`Find(crate::app::skilldata::SkillData_Flags)` overload"]
-    fn find_2(
-        self,
-        flags: impl ::core::convert::Into<crate::app::skilldata::SkillData_Flags>,
-    ) -> crate::app::skilldata::SkillData {
+    fn find_2(self, flags: impl ::core::convert::Into<crate::app::skilldata::SkillData_Flags>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::find_2(
-                __receiver,
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::find_2(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
         }
     }
     #[doc = "`Find(crate::app::skilldata::SkillData_States)` overload"]
-    fn find_3(
-        self,
-        states: impl ::core::convert::Into<crate::app::skilldata::SkillData_States>,
-    ) -> crate::app::skilldata::SkillData {
+    fn find_3(self, states: impl ::core::convert::Into<crate::app::skilldata::SkillData_States>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::find_3(
-                __receiver,
-                ::core::convert::Into::into(states),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::find_3(__receiver, ::core::convert::Into::into(states), ::core::option::Option::None)
         }
     }
     #[doc = "`Find(crate::app::skilldata::SkillData_Works)` overload"]
-    fn find_4(
-        self,
-        work: impl ::core::convert::Into<crate::app::skilldata::SkillData_Works>,
-    ) -> crate::app::skilldata::SkillData {
+    fn find_4(self, work: impl ::core::convert::Into<crate::app::skilldata::SkillData_Works>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::find_4(
-                __receiver,
-                ::core::convert::Into::into(work),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::find_4(__receiver, ::core::convert::Into::into(work), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateAging(crate::app::skilldata::SkillData_Cycles, crate::system::func_2::Func_2<crate::app::skilldata::SkillData,bool>)` overload"]
     fn update_aging(
         self,
         cycle: impl ::core::convert::Into<crate::app::skilldata::SkillData_Cycles>,
-        ignore: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>,
-        >,
+        ignore: impl ::core::convert::Into<crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::update_aging(
                 __receiver,
                 ::core::convert::Into::into(cycle),
@@ -6058,14 +4055,10 @@ pub trait ISkillArrayMethods: ISkillArray {
         self,
         cycle1: impl ::core::convert::Into<crate::app::skilldata::SkillData_Cycles>,
         cycle2: impl ::core::convert::Into<crate::app::skilldata::SkillData_Cycles>,
-        ignore: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>,
-        >,
+        ignore: impl ::core::convert::Into<crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::update_aging_2(
                 __receiver,
                 ::core::convert::Into::into(cycle1),
@@ -6079,14 +4072,10 @@ pub trait ISkillArrayMethods: ISkillArray {
     fn update_aging_impl(
         self,
         mask: impl ::core::convert::Into<crate::app::skilldata::SkillData_CycleMasks>,
-        ignore: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>,
-        >,
+        ignore: impl ::core::convert::Into<crate::system::func_2::Func_2<crate::app::skilldata::SkillData, bool>>,
     ) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::update_aging_impl(
                 __receiver,
                 ::core::convert::Into::into(mask),
@@ -6098,48 +4087,28 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`ClearCycles()` overload"]
     fn clear_cycles(self) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::clear_cycles(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
     fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
     fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcWork(i32, crate::app::skilldata::SkillData_Works)` overload"]
-    fn calc_work(
-        self,
-        value: impl ::core::convert::Into<i32>,
-        work: impl ::core::convert::Into<crate::app::skilldata::SkillData_Works>,
-    ) -> i32 {
+    fn calc_work(self, value: impl ::core::convert::Into<i32>, work: impl ::core::convert::Into<crate::app::skilldata::SkillData_Works>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::calc_work(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -6151,86 +4120,50 @@ pub trait ISkillArrayMethods: ISkillArray {
     #[doc = "`GetPower()` overload"]
     fn get_power(self) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_power(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetEfficacyValue(crate::app::unit::Unit)` overload"]
     fn get_efficacy_value(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_efficacy_value(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_efficacy_value(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEfficacyMask(crate::app::unit::Unit)` overload"]
-    fn get_efficacy_mask(
-        self,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::skilldata::SkillData_Attrs {
+    fn get_efficacy_mask(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::skilldata::SkillData_Attrs {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_efficacy_mask(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_efficacy_mask(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`IsEfficacy(crate::app::unit::Unit)` overload"]
     fn is_efficacy(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::is_efficacy(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::is_efficacy(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`get_WeaponLevels()` overload"]
     fn get_weapon_levels(self) -> crate::app::weaponlevels::WeaponLevels {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SkillArray_unity2_raw::get_weapon_levels(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsEquipSkillFirstNull()` overload"]
     fn get_is_equip_skill_first_null(self) -> bool {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::get_is_equip_skill_first_null(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::get_is_equip_skill_first_null(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsEquipSkillFirstNull(bool)` overload"]
     fn set_is_equip_skill_first_null(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SkillArray_unity2_raw::set_is_equip_skill_first_null(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SkillArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SkillArray_unity2_raw::set_is_equip_skill_first_null(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -6242,26 +4175,16 @@ impl<__T: ISkillArray> ISkillArrayMethods for __T {}
 impl SkillArray {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillArray),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SkillArray), ::core::stringify!(new),));
         <Self as ISkillArrayMethods>::ctor(this);
         this
     }
 
     #[doc = "`.ctor(crate::app::skillarray::SkillArray)` — overload selector"]
     pub fn new_2(src: crate::app::skillarray::SkillArray) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillArray),
-                ::core::stringify!(new_2),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SkillArray), ::core::stringify!(new_2),));
         <Self as ISkillArrayMethods>::ctor_2(this, src);
         this
     }
@@ -6276,11 +4199,8 @@ mod __SkillArray_Enumerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skillarray::SkillArray as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -6292,18 +4212,15 @@ mod __SkillArray_Enumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -6311,24 +4228,15 @@ mod __SkillArray_Enumerator_unity2_raw {
         skill_array: crate::app::skillarray::SkillArray,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SkillArray_Enumerator,
-            crate::app::skillarray::SkillArray,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SkillArray_Enumerator, crate::app::skillarray::SkillArray, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, skill_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
@@ -6341,39 +4249,27 @@ mod __SkillArray_Enumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: SkillArray_Enumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
@@ -6386,39 +4282,27 @@ mod __SkillArray_Enumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "MoveNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_next(
-        this: SkillArray_Enumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn move_next(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
@@ -6431,39 +4315,27 @@ mod __SkillArray_Enumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: SkillArray_Enumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_system_collections_i_enumerator_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
@@ -6476,43 +4348,30 @@ mod __SkillArray_Enumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "System.Collections.IEnumerator.get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "System.Collections.IEnumerator.get_Current",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn system_collections_i_enumerator_get_current(
         this: SkillArray_Enumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            SkillArray_Enumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_system_collections_i_enumerator_get_current::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_system_collections_i_enumerator_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SkillArray_Enumerator as ::unity2::ClassIdentity>::class(),
@@ -6525,32 +4384,20 @@ mod __SkillArray_Enumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SkillArray_Enumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_current(
-        this: SkillArray_Enumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            SkillArray_Enumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
+    pub unsafe fn get_current(this: SkillArray_Enumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(SkillArray_Enumerator, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -6558,59 +4405,43 @@ mod __SkillArray_Enumerator_unity2_raw {
 #[cfg(feature = "app-skillarray")]
 impl SkillArray_Enumerator {
     #[doc = "`.ctor(crate::app::skillarray::SkillArray)` overload"]
-    pub fn ctor(
-        self,
-        skill_array: impl ::core::convert::Into<crate::app::skillarray::SkillArray>,
-    ) -> () {
-        unsafe {
-            __SkillArray_Enumerator_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(skill_array),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor(self, skill_array: impl ::core::convert::Into<crate::app::skillarray::SkillArray>) -> () {
+        unsafe { __SkillArray_Enumerator_unity2_raw::ctor(self, ::core::convert::Into::into(skill_array), ::core::option::Option::None) }
     }
+
     #[doc = "`Dispose()` overload"]
     pub fn dispose(self) -> () {
         unsafe { __SkillArray_Enumerator_unity2_raw::dispose(self, ::core::option::Option::None) }
     }
+
     #[doc = "`MoveNext()` overload"]
     pub fn move_next(self) -> bool {
         unsafe { __SkillArray_Enumerator_unity2_raw::move_next(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Reset()` overload"]
     pub fn reset(self) -> () {
         unsafe { __SkillArray_Enumerator_unity2_raw::reset(self, ::core::option::Option::None) }
     }
+
     #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
     pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object {
-        unsafe {
-            __SkillArray_Enumerator_unity2_raw::system_collections_i_enumerator_get_current(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SkillArray_Enumerator_unity2_raw::system_collections_i_enumerator_get_current(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_Current()` overload"]
     pub fn get_current(self) -> crate::app::skilldata::SkillData {
-        unsafe {
-            __SkillArray_Enumerator_unity2_raw::get_current(self, ::core::option::Option::None)
-        }
+        unsafe { __SkillArray_Enumerator_unity2_raw::get_current(self, ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-skillarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISkillArray;
-    pub use super::ISkillArrayMethods;
-    pub use super::SkillArray;
-    pub use super::SkillArray_Entity;
-    pub use super::SkillArray_Enumerator;
-    pub use crate::system::object::IObject;
+    pub use super::{ISkillArray, ISkillArrayMethods, SkillArray, SkillArray_Entity, SkillArray_Enumerator};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

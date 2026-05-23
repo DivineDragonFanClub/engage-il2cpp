@@ -2,34 +2,71 @@
 
 #[cfg(feature = "app-fishingfish-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_CounterVoiceFlag.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct FishingFish_CounterVoiceFlag {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for FishingFish_CounterVoiceFlag {
+        const NAME: &'static str = "FishingFish.CounterVoiceFlag";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for FishingFish_CounterVoiceFlag {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl FishingFish_CounterVoiceFlag {
+        pub fn wait() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn left() -> Self {
+            Self { value: 2 }
+        }
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_FishState.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct FishingFish_FishState {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for FishingFish_FishState {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "FishingFish.FishState";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +77,7 @@ mod __types {
 
     impl ::unity2::IlType for FishingFish_FishState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -89,54 +123,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_CounterVoiceFlag.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct FishingFish_CounterVoiceFlag {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for FishingFish_CounterVoiceFlag {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "FishingFish.CounterVoiceFlag";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for FishingFish_CounterVoiceFlag {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl FishingFish_CounterVoiceFlag {
-        pub fn wait() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn left() -> Self {
-            Self { value: 2 }
-        }
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingfish/FishingFish.md"))]
     #[::unity2::class(namespace = "App", name = "FishingFish")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -149,9 +135,7 @@ mod __types {
         #[rename(name = "m_LurePos")]
         pub m_lure_pos: crate::unity_engine::vector3::Vector3,
         #[rename(name = "m_ForecastList")]
-        pub m_forecast_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        pub m_forecast_list: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         #[rename(name = "m_SelectedForecastNum")]
         pub m_selected_forecast_num: i32,
         #[rename(name = "m_SizeMult")]
@@ -227,9 +211,7 @@ mod __FishingFish_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_fish_rank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -242,43 +224,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_FishRank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_FishRank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_fish_rank(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::fishing::sizerank::SizeRank {
-        let inner: extern "C" fn(
-            FishingFish,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::fishing::sizerank::SizeRank = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fish_rank::get_offset() as isize),
-        );
+    pub unsafe fn get_fish_rank(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::fishing::sizerank::SizeRank {
+        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> crate::app::fishing::sizerank::SizeRank =
+            ::core::mem::transmute(__lookup_get_fish_rank::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fish_rank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::fishing::sizerank::SizeRank as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::fishing::sizerank::SizeRank as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_FishRank",
@@ -290,18 +257,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_FishRank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_FishRank",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fish_rank(
@@ -309,24 +273,15 @@ mod __FishingFish_unity2_raw {
         value: crate::app::fishing::sizerank::SizeRank,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingFish,
-            crate::app::fishing::sizerank::SizeRank,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fish_rank::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingFish, crate::app::fishing::sizerank::SizeRank, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fish_rank::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_perfect_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -339,41 +294,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsPerfectStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsPerfectStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_perfect_start(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_perfect_start(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_perfect_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_perfect_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_perfect_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsPerfectStart",
@@ -385,40 +327,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsPerfectStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsPerfectStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_perfect_start(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_perfect_start(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_perfect_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_perfect_start::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -431,39 +360,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_counter(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_counter(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_counter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_force_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -476,41 +393,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsForceCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsForceCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_force_counter(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_force_counter(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_force_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_force_counter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_force_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsForceCounter",
@@ -522,40 +426,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsForceCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsForceCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_force_counter(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_force_counter(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_force_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_force_counter::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_danger {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -568,39 +459,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDanger",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDanger",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_danger(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_danger(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_danger::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_danger::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_lethal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -613,41 +492,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsLethal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsLethal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_lethal(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_lethal(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_lethal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_lethal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_lethal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsLethal",
@@ -659,40 +525,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsLethal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsLethal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_lethal(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_lethal(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_lethal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_lethal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_draw_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -705,41 +558,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDrawFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDrawFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_draw_frame(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_draw_frame(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_draw_frame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_draw_frame::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_draw_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsDrawFrame",
@@ -751,40 +591,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsDrawFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsDrawFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_draw_frame(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_draw_frame(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_draw_frame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_draw_frame::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_damage_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -797,41 +624,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDamageFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDamageFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_damage_frame(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_damage_frame(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_damage_frame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_damage_frame::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_damage_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsDamageFrame",
@@ -843,40 +657,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsDamageFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsDamageFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_damage_frame(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_damage_frame(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_damage_frame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_damage_frame::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_distance_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -889,41 +690,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_ShadowDistanceRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_ShadowDistanceRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shadow_distance_rate(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_shadow_distance_rate(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_shadow_distance_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_shadow_distance_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shadow_distance_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_ShadowDistanceRate",
@@ -935,40 +723,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_ShadowDistanceRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_ShadowDistanceRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_shadow_distance_rate(
-        this: FishingFish,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_shadow_distance_rate(this: FishingFish, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_shadow_distance_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_shadow_distance_rate::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fake_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -981,41 +756,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_FakeFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_FakeFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_fake_flag(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_fake_flag(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_fake_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_fake_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fake_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_FakeFlag",
@@ -1027,40 +789,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_FakeFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_FakeFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_fake_flag(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_fake_flag(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_fake_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_fake_flag::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ripple_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1073,39 +822,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_RippleSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_RippleSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ripple_size(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_ripple_size(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ripple_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ripple_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wait_assist_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1118,41 +855,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_WaitAssistFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_WaitAssistFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_wait_assist_flag(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_wait_assist_flag(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_wait_assist_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_wait_assist_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_wait_assist_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_WaitAssistFlag",
@@ -1164,40 +888,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_WaitAssistFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_WaitAssistFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_wait_assist_flag(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_wait_assist_flag(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_wait_assist_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_wait_assist_flag::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_catching {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1210,39 +921,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsCatching",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsCatching",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_catching(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_catching(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_catching::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_catching::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_escape {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1255,39 +954,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEscape",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEscape",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_escape(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_escape(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_escape::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_escape::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_defeat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1300,39 +987,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDefeat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDefeat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_defeat(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_defeat(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_defeat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_defeat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1345,41 +1020,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_Data",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::fishingfishdata::FishingFishData {
-        let inner: extern "C" fn(
-            FishingFish,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::fishingfishdata::FishingFishData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
+    pub unsafe fn get_data(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::fishingfishdata::FishingFishData {
+        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> crate::app::fishingfishdata::FishingFishData =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_size_mult {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1392,39 +1053,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_SizeMult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_SizeMult",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_size_mult(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_size_mult(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_size_mult::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_size_mult::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hp_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1437,39 +1086,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_HPRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_HPRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hp_rate(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_hp_rate(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hp_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hp_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lethal_rate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1482,39 +1119,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_LethalRate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_LethalRate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_lethal_rate(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_lethal_rate(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_lethal_rate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_lethal_rate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_play_counter_splash_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1527,41 +1152,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsPlayCounterSplashSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsPlayCounterSplashSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_play_counter_splash_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_play_counter_splash_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_play_counter_splash_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_play_counter_splash_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_play_counter_splash_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsPlayCounterSplashSE",
@@ -1573,40 +1185,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsPlayCounterSplashSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsPlayCounterSplashSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_play_counter_splash_se(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_play_counter_splash_se(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_play_counter_splash_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_play_counter_splash_se::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_play_ordinal_splash_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1619,41 +1218,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsPlayOrdinalSplashSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsPlayOrdinalSplashSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_play_ordinal_splash_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_play_ordinal_splash_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_play_ordinal_splash_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_play_ordinal_splash_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_play_ordinal_splash_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsPlayOrdinalSplashSE",
@@ -1665,40 +1251,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsPlayOrdinalSplashSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsPlayOrdinalSplashSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_play_ordinal_splash_se(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_play_ordinal_splash_se(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_play_ordinal_splash_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_play_ordinal_splash_se::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_play_lethal_splash_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1711,41 +1284,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "get_IsPlayLethalSplashSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "get_IsPlayLethalSplashSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_play_lethal_splash_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_play_lethal_splash_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_play_lethal_splash_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_play_lethal_splash_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_play_lethal_splash_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "set_IsPlayLethalSplashSE",
@@ -1757,124 +1317,79 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "set_IsPlayLethalSplashSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "set_IsPlayLethalSplashSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_play_lethal_splash_se(
-        this: FishingFish,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_play_lethal_splash_se(this: FishingFish, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_play_lethal_splash_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_play_lethal_splash_se::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingFish as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FishingFish as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingFish as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FishingFish as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_fish {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1887,43 +1402,30 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "InitFish",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "InitFish",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_fish(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_fish(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_fish::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_fish::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_forecast_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::fishing::forecastfishdata::ForecastFishData,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::fishing::forecastfishdata::ForecastFishData,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "SetForecastData",
@@ -1935,47 +1437,34 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SetForecastData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SetForecastData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_forecast_data(
         this: FishingFish,
-        set: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
+        set: crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             FishingFish,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_forecast_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_forecast_data::get_method_info().method_ptr);
         inner(this, set, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_fish {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -1988,39 +1477,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SelectFish",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SelectFish",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn select_fish(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn select_fish(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_fish::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_select_fish::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_fish_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2033,40 +1510,32 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "ResetFishData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "ResetFishData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_fish_data(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_fish_data(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_fish_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_fish_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_configs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: fishingconfig_base :: FishingConfig_Base as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishingconfig_waitcatch :: FishingConfig_WaitCatch as :: unity2 :: IlType > :: il_type () , < crate :: app :: fishingconfig_battle :: FishingConfig_Battle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::fishingconfig_base::FishingConfig_Base as ::unity2::IlType>::il_type(),
+                <crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch as ::unity2::IlType>::il_type(),
+                <crate::app::fishingconfig_battle::FishingConfig_Battle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "SetConfigs",
@@ -2078,18 +1547,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SetConfigs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SetConfigs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_configs(
@@ -2105,20 +1571,14 @@ mod __FishingFish_unity2_raw {
             crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch,
             crate::app::fishingconfig_battle::FishingConfig_Battle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_configs::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_configs::get_method_info().method_ptr);
         inner(this, base_config, wait_catch, battle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_wait_catch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2131,39 +1591,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TickWaitCatch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TickWaitCatch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_wait_catch(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick_wait_catch(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_wait_catch::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_wait_catch::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_catching {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2176,39 +1624,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TickCatching",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TickCatching",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_catching(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick_catching(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_catching::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_catching::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_wait_assist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2221,39 +1657,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TickWaitAssist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TickWaitAssist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_wait_assist(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick_wait_assist(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_wait_assist::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_wait_assist::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_battle_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2266,39 +1690,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "UpdateBattleEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "UpdateBattleEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_battle_effect(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_battle_effect(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_battle_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_battle_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_lethal_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2311,39 +1723,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "UpdateLethalEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "UpdateLethalEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_lethal_effect(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_lethal_effect(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_lethal_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_lethal_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_battle_common {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2356,39 +1756,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "UpdateBattleCommon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "UpdateBattleCommon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_battle_common(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_battle_common(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_battle_common::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_battle_common::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_battle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2401,39 +1789,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TickBattle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TickBattle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_battle(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick_battle(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_battle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_battle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_weak {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2446,39 +1822,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TickWeak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TickWeak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_weak(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick_weak(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_weak::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_weak::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_lethal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2491,41 +1855,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TickLethal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TickLethal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_lethal(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick_lethal(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_lethal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_lethal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_perfect_time_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "SetPerfectTimeAdd",
@@ -2537,42 +1888,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SetPerfectTimeAdd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SetPerfectTimeAdd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_perfect_time_add(
-        this: FishingFish,
-        add: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_perfect_time_add(this: FishingFish, add: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_perfect_time_add::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_perfect_time_add::get_method_info().method_ptr);
         inner(this, add, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_battle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "TryBattle",
@@ -2584,42 +1921,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "TryBattle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "TryBattle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_battle(
-        this: FishingFish,
-        is_assist: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn try_battle(this: FishingFish, is_assist: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_battle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_battle::get_method_info().method_ptr);
         inner(this, is_assist, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_lure_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "UpdateLurePos",
@@ -2631,18 +1954,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "UpdateLurePos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "UpdateLurePos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_lure_pos(
@@ -2650,24 +1970,15 @@ mod __FishingFish_unity2_raw {
         pos: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingFish,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_lure_pos::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingFish, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_lure_pos::get_method_info().method_ptr);
         inner(this, pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_first_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2680,43 +1991,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SetFirstPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SetFirstPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_first_pos(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_first_pos(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_first_pos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_first_pos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_overrite_radical_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "OverriteRadicalParam",
@@ -2728,43 +2024,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "OverriteRadicalParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "OverriteRadicalParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn overrite_radical_param(
-        this: FishingFish,
-        set_power: f32,
-        set_regene: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn overrite_radical_param(this: FishingFish, set_power: f32, set_regene: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_overrite_radical_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_overrite_radical_param::get_method_info().method_ptr);
         inner(this, set_power, set_regene, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_draw_fish {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "DrawFish",
@@ -2776,18 +2057,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "DrawFish",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "DrawFish",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn draw_fish(
@@ -2795,73 +2073,43 @@ mod __FishingFish_unity2_raw {
         stick_vec: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingFish,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_draw_fish::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingFish, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_draw_fish::get_method_info().method_ptr);
         inner(this, stick_vec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingFish as ::unity2::ClassIdentity>::class(),
-                "Damage",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<FishingFish as ::unity2::ClassIdentity>::class(), "Damage", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "Damage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "Damage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn damage(
-        this: FishingFish,
-        damage: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn damage(this: FishingFish, damage: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_damage::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_damage::get_method_info().method_ptr);
         inner(this, damage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_first_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "FirstDamage",
@@ -2873,40 +2121,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "FirstDamage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "FirstDamage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn first_damage(
-        this: FishingFish,
-        damage_rate: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn first_damage(this: FishingFish, damage_rate: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_first_damage::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_first_damage::get_method_info().method_ptr);
         inner(this, damage_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lethal_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2919,39 +2154,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "LethalDamage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "LethalDamage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn lethal_damage(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn lethal_damage(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_lethal_damage::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_lethal_damage::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_recovery {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -2964,39 +2187,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "Recovery",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "Recovery",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn recovery(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn recovery(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_recovery::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_recovery::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_damege_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3009,39 +2220,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "AddDamegeEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "AddDamegeEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_damege_effect(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_damege_effect(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_damege_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_damege_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_recovery_lethal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3054,39 +2253,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "RecoveryLethal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "RecoveryLethal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn recovery_lethal(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn recovery_lethal(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_recovery_lethal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_recovery_lethal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_escape_timer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3099,39 +2286,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "AddEscapeTimer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "AddEscapeTimer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_escape_timer(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_escape_timer(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_escape_timer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_escape_timer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_escape_timer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3144,39 +2319,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "ResetEscapeTimer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "ResetEscapeTimer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_escape_timer(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_escape_timer(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_escape_timer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_escape_timer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_force_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3189,42 +2352,29 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "StartForceCounter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "StartForceCounter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_force_counter(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start_force_counter(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_force_counter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start_force_counter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_radar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::fishingbattlerader::FishingBattleRader as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::fishingbattlerader::FishingBattleRader as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "SetRadar",
@@ -3236,18 +2386,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SetRadar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SetRadar",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_radar(
@@ -3255,24 +2402,15 @@ mod __FishingFish_unity2_raw {
         radar: crate::app::fishingbattlerader::FishingBattleRader,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingFish,
-            crate::app::fishingbattlerader::FishingBattleRader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_radar::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingFish, crate::app::fishingbattlerader::FishingBattleRader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_radar::get_method_info().method_ptr);
         inner(this, radar, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_radar_no_area {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3285,39 +2423,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "EnableRadar_NoArea",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "EnableRadar_NoArea",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_radar_no_area(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_radar_no_area(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_radar_no_area::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_radar_no_area::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_area_radar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3330,39 +2456,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "EnableArea_Radar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "EnableArea_Radar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_area_radar(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_area_radar(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_area_radar::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_area_radar::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_enable_radar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3375,39 +2489,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "IsEnableRadar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "IsEnableRadar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_enable_radar(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_enable_radar(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_enable_radar::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_enable_radar::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_radar {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3420,39 +2522,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "DisableRadar",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "DisableRadar",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_radar(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_radar(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_radar::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_radar::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_active_ui {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3465,39 +2555,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "CheckActiveUI",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "CheckActiveUI",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_active_ui(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn check_active_ui(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_active_ui::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_active_ui::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_lure_obj {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3511,18 +2589,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "SetLureObj",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "SetLureObj",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_lure_obj(
@@ -3530,24 +2605,15 @@ mod __FishingFish_unity2_raw {
         set: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingFish,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_lure_obj::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingFish, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_lure_obj::get_method_info().method_ptr);
         inner(this, set, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_counter_vec {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3560,43 +2626,28 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "GetCounterVec",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "GetCounterVec",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_counter_vec(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            FishingFish,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_counter_vec::get_offset() as isize),
-        );
+    pub unsafe fn get_counter_vec(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_counter_vec::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_catch_ripple {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
                 "AddCatchRipple",
@@ -3608,18 +2659,15 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "AddCatchRipple",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "AddCatchRipple",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_catch_ripple(
@@ -3627,24 +2675,15 @@ mod __FishingFish_unity2_raw {
         add_pos: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            FishingFish,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_catch_ripple::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FishingFish, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_catch_ripple::get_method_info().method_ptr);
         inner(this, add_pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_counter_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3657,39 +2696,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "PlayCounterSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "PlayCounterSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_counter_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_counter_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_counter_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_counter_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_counter_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3702,39 +2729,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "StopCounterSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "StopCounterSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_counter_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_counter_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_counter_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_counter_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_ordinal_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3747,39 +2762,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "PlayOrdinalSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "PlayOrdinalSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_ordinal_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_ordinal_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_ordinal_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_ordinal_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_ordinal_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3792,39 +2795,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "StopOrdinalSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "StopOrdinalSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_ordinal_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_ordinal_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_ordinal_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_ordinal_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_lethal_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3837,39 +2828,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "PlayLethalSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "PlayLethalSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_lethal_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_lethal_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_lethal_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_lethal_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_lethal_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3882,39 +2861,27 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "StopLethalSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "StopLethalSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_lethal_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_lethal_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_lethal_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_lethal_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_stun_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FishingFish as ::unity2::ClassIdentity>::class(),
@@ -3927,72 +2894,46 @@ mod __FishingFish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    "StopStunSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        "StopStunSE",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_stun_se(
-        this: FishingFish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_stun_se(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_stun_se::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_stun_se::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <FishingFish as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<FishingFish as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FishingFish as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FishingFish as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: FishingFish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(FishingFish, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -4002,434 +2943,283 @@ pub trait IFishingFishMethods: IFishingFish {
     #[doc = "`get_FishRank()` overload"]
     fn get_fish_rank(self) -> crate::app::fishing::sizerank::SizeRank {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_fish_rank(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FishRank(crate::app::fishing::sizerank::SizeRank)` overload"]
-    fn set_fish_rank(
-        self,
-        value: impl ::core::convert::Into<crate::app::fishing::sizerank::SizeRank>,
-    ) -> () {
+    fn set_fish_rank(self, value: impl ::core::convert::Into<crate::app::fishing::sizerank::SizeRank>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_fish_rank(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_fish_rank(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsPerfectStart()` overload"]
     fn get_is_perfect_start(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_perfect_start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsPerfectStart(bool)` overload"]
     fn set_is_perfect_start(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_perfect_start(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_perfect_start(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsCounter()` overload"]
     fn get_is_counter(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_counter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsForceCounter()` overload"]
     fn get_is_force_counter(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_force_counter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsForceCounter(bool)` overload"]
     fn set_is_force_counter(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_force_counter(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_force_counter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsDanger()` overload"]
     fn get_is_danger(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_danger(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsLethal()` overload"]
     fn get_is_lethal(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_lethal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsLethal(bool)` overload"]
     fn set_is_lethal(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_lethal(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_lethal(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsDrawFrame()` overload"]
     fn get_is_draw_frame(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_draw_frame(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsDrawFrame(bool)` overload"]
     fn set_is_draw_frame(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_draw_frame(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_draw_frame(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsDamageFrame()` overload"]
     fn get_is_damage_frame(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_damage_frame(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsDamageFrame(bool)` overload"]
     fn set_is_damage_frame(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_damage_frame(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_damage_frame(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ShadowDistanceRate()` overload"]
     fn get_shadow_distance_rate(self) -> f32 {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::get_shadow_distance_rate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::get_shadow_distance_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ShadowDistanceRate(f32)` overload"]
     fn set_shadow_distance_rate(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_shadow_distance_rate(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_shadow_distance_rate(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_FakeFlag()` overload"]
     fn get_fake_flag(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_fake_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FakeFlag(bool)` overload"]
     fn set_fake_flag(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_fake_flag(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_fake_flag(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_RippleSize()` overload"]
     fn get_ripple_size(self) -> i32 {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_ripple_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_WaitAssistFlag()` overload"]
     fn get_wait_assist_flag(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_wait_assist_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_WaitAssistFlag(bool)` overload"]
     fn set_wait_assist_flag(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_wait_assist_flag(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_wait_assist_flag(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsCatching()` overload"]
     fn get_is_catching(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_catching(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsEscape()` overload"]
     fn get_is_escape(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_escape(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsDefeat()` overload"]
     fn get_is_defeat(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_is_defeat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Data()` overload"]
     fn get_data(self) -> crate::app::fishingfishdata::FishingFishData {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SizeMult()` overload"]
     fn get_size_mult(self) -> f32 {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_size_mult(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_HPRate()` overload"]
     fn get_hp_rate(self) -> f32 {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_hp_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_LethalRate()` overload"]
     fn get_lethal_rate(self) -> f32 {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_lethal_rate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsPlayCounterSplashSE()` overload"]
     fn get_is_play_counter_splash_se(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::get_is_play_counter_splash_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::get_is_play_counter_splash_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsPlayCounterSplashSE(bool)` overload"]
     fn set_is_play_counter_splash_se(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_play_counter_splash_se(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_play_counter_splash_se(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsPlayOrdinalSplashSE()` overload"]
     fn get_is_play_ordinal_splash_se(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::get_is_play_ordinal_splash_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::get_is_play_ordinal_splash_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsPlayOrdinalSplashSE(bool)` overload"]
     fn set_is_play_ordinal_splash_se(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_play_ordinal_splash_se(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_play_ordinal_splash_se(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsPlayLethalSplashSE()` overload"]
     fn get_is_play_lethal_splash_se(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::get_is_play_lethal_splash_se(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::get_is_play_lethal_splash_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsPlayLethalSplashSE(bool)` overload"]
     fn set_is_play_lethal_splash_se(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_is_play_lethal_splash_se(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_is_play_lethal_splash_se(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitFish()` overload"]
     fn init_fish(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::init_fish(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetForecastData(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
     fn set_forecast_data(
         self,
-        set: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::fishing::forecastfishdata::ForecastFishData,
-            >,
-        >,
+        set: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>>,
     ) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_forecast_data(
-                __receiver,
-                ::core::convert::Into::into(set),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_forecast_data(__receiver, ::core::convert::Into::into(set), ::core::option::Option::None)
         }
     }
     #[doc = "`SelectFish()` overload"]
     fn select_fish(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::select_fish(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetFishData()` overload"]
     fn reset_fish_data(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::reset_fish_data(__receiver, ::core::option::Option::None)
         }
     }
@@ -4437,15 +3227,11 @@ pub trait IFishingFishMethods: IFishingFish {
     fn set_configs(
         self,
         base_config: impl ::core::convert::Into<crate::app::fishingconfig_base::FishingConfig_Base>,
-        wait_catch: impl ::core::convert::Into<
-            crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch,
-        >,
+        wait_catch: impl ::core::convert::Into<crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch>,
         battle: impl ::core::convert::Into<crate::app::fishingconfig_battle::FishingConfig_Battle>,
     ) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::set_configs(
                 __receiver,
                 ::core::convert::Into::into(base_config),
@@ -4458,145 +3244,98 @@ pub trait IFishingFishMethods: IFishingFish {
     #[doc = "`TickWaitCatch()` overload"]
     fn tick_wait_catch(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::tick_wait_catch(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TickCatching()` overload"]
     fn tick_catching(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::tick_catching(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TickWaitAssist()` overload"]
     fn tick_wait_assist(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::tick_wait_assist(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateBattleEffect()` overload"]
     fn update_battle_effect(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::update_battle_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateLethalEffect()` overload"]
     fn update_lethal_effect(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::update_lethal_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateBattleCommon()` overload"]
     fn update_battle_common(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::update_battle_common(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TickBattle()` overload"]
     fn tick_battle(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::tick_battle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TickWeak()` overload"]
     fn tick_weak(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::tick_weak(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TickLethal()` overload"]
     fn tick_lethal(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::tick_lethal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPerfectTimeAdd(f32)` overload"]
     fn set_perfect_time_add(self, add: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_perfect_time_add(
-                __receiver,
-                ::core::convert::Into::into(add),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_perfect_time_add(__receiver, ::core::convert::Into::into(add), ::core::option::Option::None)
         }
     }
     #[doc = "`TryBattle(bool)` overload"]
     fn try_battle(self, is_assist: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::try_battle(
-                __receiver,
-                ::core::convert::Into::into(is_assist),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::try_battle(__receiver, ::core::convert::Into::into(is_assist), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateLurePos(crate::unity_engine::vector3::Vector3)` overload"]
-    fn update_lure_pos(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn update_lure_pos(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::update_lure_pos(
-                __receiver,
-                ::core::convert::Into::into(pos),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::update_lure_pos(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
         }
     }
     #[doc = "`SetFirstPos()` overload"]
     fn set_first_pos(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::set_first_pos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OverriteRadicalParam(f32, f32)` overload"]
-    fn overrite_radical_param(
-        self,
-        set_power: impl ::core::convert::Into<f32>,
-        set_regene: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn overrite_radical_param(self, set_power: impl ::core::convert::Into<f32>, set_regene: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::overrite_radical_param(
                 __receiver,
                 ::core::convert::Into::into(set_power),
@@ -4606,281 +3345,191 @@ pub trait IFishingFishMethods: IFishingFish {
         }
     }
     #[doc = "`DrawFish(crate::unity_engine::vector2::Vector2)` overload"]
-    fn draw_fish(
-        self,
-        stick_vec: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn draw_fish(self, stick_vec: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::draw_fish(
-                __receiver,
-                ::core::convert::Into::into(stick_vec),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::draw_fish(__receiver, ::core::convert::Into::into(stick_vec), ::core::option::Option::None)
         }
     }
     #[doc = "`Damage(f32)` overload"]
     fn damage(self, damage: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::damage(
-                __receiver,
-                ::core::convert::Into::into(damage),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::damage(__receiver, ::core::convert::Into::into(damage), ::core::option::Option::None)
         }
     }
     #[doc = "`FirstDamage(f32)` overload"]
     fn first_damage(self, damage_rate: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::first_damage(
-                __receiver,
-                ::core::convert::Into::into(damage_rate),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::first_damage(__receiver, ::core::convert::Into::into(damage_rate), ::core::option::Option::None)
         }
     }
     #[doc = "`LethalDamage()` overload"]
     fn lethal_damage(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::lethal_damage(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Recovery()` overload"]
     fn recovery(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::recovery(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddDamegeEffect()` overload"]
     fn add_damege_effect(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::add_damege_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RecoveryLethal()` overload"]
     fn recovery_lethal(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::recovery_lethal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddEscapeTimer()` overload"]
     fn add_escape_timer(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::add_escape_timer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetEscapeTimer()` overload"]
     fn reset_escape_timer(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::reset_escape_timer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartForceCounter()` overload"]
     fn start_force_counter(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::start_force_counter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetRadar(crate::app::fishingbattlerader::FishingBattleRader)` overload"]
-    fn set_radar(
-        self,
-        radar: impl ::core::convert::Into<crate::app::fishingbattlerader::FishingBattleRader>,
-    ) -> () {
+    fn set_radar(self, radar: impl ::core::convert::Into<crate::app::fishingbattlerader::FishingBattleRader>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_radar(
-                __receiver,
-                ::core::convert::Into::into(radar),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_radar(__receiver, ::core::convert::Into::into(radar), ::core::option::Option::None)
         }
     }
     #[doc = "`EnableRadar_NoArea()` overload"]
     fn enable_radar_no_area(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::enable_radar_no_area(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EnableArea_Radar()` overload"]
     fn enable_area_radar(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::enable_area_radar(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsEnableRadar()` overload"]
     fn is_enable_radar(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::is_enable_radar(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DisableRadar()` overload"]
     fn disable_radar(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::disable_radar(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckActiveUI()` overload"]
     fn check_active_ui(self) -> bool {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::check_active_ui(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLureObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_lure_obj(
-        self,
-        set: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn set_lure_obj(self, set: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::set_lure_obj(
-                __receiver,
-                ::core::convert::Into::into(set),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::set_lure_obj(__receiver, ::core::convert::Into::into(set), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCounterVec()` overload"]
     fn get_counter_vec(self) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::get_counter_vec(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddCatchRipple(crate::unity_engine::vector3::Vector3)` overload"]
-    fn add_catch_ripple(
-        self,
-        add_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn add_catch_ripple(self, add_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FishingFish_unity2_raw::add_catch_ripple(
-                __receiver,
-                ::core::convert::Into::into(add_pos),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FishingFish_unity2_raw::add_catch_ripple(__receiver, ::core::convert::Into::into(add_pos), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayCounterSE()` overload"]
     fn play_counter_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::play_counter_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StopCounterSE()` overload"]
     fn stop_counter_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::stop_counter_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayOrdinalSE()` overload"]
     fn play_ordinal_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::play_ordinal_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StopOrdinalSE()` overload"]
     fn stop_ordinal_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::stop_ordinal_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayLethalSE()` overload"]
     fn play_lethal_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::play_lethal_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StopLethalSE()` overload"]
     fn stop_lethal_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::stop_lethal_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StopStunSE()` overload"]
     fn stop_stun_se(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::stop_stun_se(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FishingFish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FishingFish_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -4893,13 +3542,8 @@ impl<__T: IFishingFish> IFishingFishMethods for __T {}
 impl FishingFish {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingFish),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FishingFish), ::core::stringify!(new),));
         <Self as IFishingFishMethods>::ctor(this);
         this
     }
@@ -4908,30 +3552,23 @@ impl FishingFish {
 #[cfg(feature = "app-fishingfish")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingFish;
-    pub use super::FishingFish_CounterVoiceFlag;
-    pub use super::FishingFish_FishState;
-    pub use super::IFishingFish;
-    pub use super::IFishingFishMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{FishingFish, FishingFish_CounterVoiceFlag, FishingFish_FishState, IFishingFish, IFishingFishMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

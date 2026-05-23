@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-bit32module-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/bit32module/Bit32Module.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "Bit32Module")]
@@ -29,173 +29,108 @@ mod __Bit32Module_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_to_u_int32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "ToUInt32",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "ToUInt32", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "ToUInt32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "ToUInt32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_u_int32(
-        v: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            ::unity2::OptionalMethod,
-        ) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_u_int32::get_offset() as isize),
-        );
+    pub unsafe fn to_u_int32(v: crate::moon_sharp::interpreter::dynvalue::DynValue, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_to_u_int32::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_int32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "ToInt32",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "ToInt32", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "ToInt32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "ToInt32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_int32(
-        v: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int32::get_offset() as isize),
-        );
+    pub unsafe fn to_int32(v: crate::moon_sharp::interpreter::dynvalue::DynValue, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_int32::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_n_bit_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "NBitMask",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "NBitMask", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "NBitMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "NBitMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn n_bit_mask(bits: i32, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_n_bit_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> u32 = ::core::mem::transmute(__lookup_n_bit_mask::get_method_info().method_ptr);
         inner(bits, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_bitwise {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type () , < crate :: system :: func_3 :: Func_3 < u32 , u32 , u32 > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "Bitwise",
-                3,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+                <crate::system::func_3::Func_3<u32, u32, u32> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "Bitwise", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "Bitwise",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "Bitwise",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn bitwise(
@@ -209,48 +144,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             crate::system::func_3::Func_3<u32, u32, u32>,
             ::unity2::OptionalMethod,
-        ) -> u32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_bitwise::get_offset() as isize),
-        );
+        ) -> u32 = ::core::mem::transmute(__lookup_bitwise::get_method_info().method_ptr);
         inner(func_name, args, accum_func, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "extract",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "extract", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "extract",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "extract",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -258,48 +181,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_extract::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "replace",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "replace", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "replace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "replace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn replace(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -307,20 +218,14 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_replace::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_replace::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_validate_pos_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -338,18 +243,15 @@ mod __Bit32Module_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "ValidatePosWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "ValidatePosWidth",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn validate_pos_width(
@@ -359,54 +261,37 @@ mod __Bit32Module_unity2_raw {
         width: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_validate_pos_width::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_validate_pos_width::get_method_info().method_ptr);
         inner(func, arg_pos, pos, width, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_arshift {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "arshift",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "arshift", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "arshift",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "arshift",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn arshift(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -414,48 +299,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_arshift::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_arshift::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rshift {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "rshift",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "rshift", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "rshift",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "rshift",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rshift(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -463,48 +336,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rshift::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_rshift::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lshift {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "lshift",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "lshift", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "lshift",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "lshift",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lshift(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -512,48 +373,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lshift::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_lshift::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_band {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "band",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "band", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "band",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "band",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn band(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -561,48 +410,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_band::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_band::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_btest {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "btest",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "btest", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "btest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "btest",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn btest(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -610,48 +447,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_btest::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_btest::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_bor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "bor",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "bor", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "bor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "bor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn bor(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -659,48 +484,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_bor::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_bor::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_bnot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "bnot",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "bnot", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "bnot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "bnot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn bnot(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -708,48 +521,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_bnot::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_bnot::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_bxor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "bxor",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "bxor", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "bxor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "bxor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn bxor(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -757,48 +558,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_bxor::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_bxor::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_lrotate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "lrotate",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "lrotate", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "lrotate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "lrotate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn lrotate(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -806,48 +595,36 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_lrotate::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_lrotate::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rrotate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                "rrotate",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), "rrotate", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    "rrotate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        "rrotate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rrotate(
-        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        execution_context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
         args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
@@ -855,94 +632,59 @@ mod __Bit32Module_unity2_raw {
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rrotate::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_rrotate::get_method_info().method_ptr);
         inner(execution_context, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Bit32Module, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Bit32Module, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(Bit32Module, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Bit32Module as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Bit32Module as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Bit32Module as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Bit32Module as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -950,42 +692,24 @@ mod __Bit32Module_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-core_lib-bit32module")]
 impl Bit32Module {
     #[doc = "`ToUInt32(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn to_u_int32(
-        v: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> u32 {
-        unsafe {
-            __Bit32Module_unity2_raw::to_u_int32(
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn to_u_int32(v: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> u32 {
+        unsafe { __Bit32Module_unity2_raw::to_u_int32(::core::convert::Into::into(v), ::core::option::Option::None) }
     }
+
     #[doc = "`ToInt32(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn to_int32(
-        v: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> i32 {
-        unsafe {
-            __Bit32Module_unity2_raw::to_int32(
-                ::core::convert::Into::into(v),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn to_int32(v: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> i32 {
+        unsafe { __Bit32Module_unity2_raw::to_int32(::core::convert::Into::into(v), ::core::option::Option::None) }
     }
+
     #[doc = "`NBitMask(i32)` overload"]
     pub fn n_bit_mask(bits: impl ::core::convert::Into<i32>) -> u32 {
-        unsafe {
-            __Bit32Module_unity2_raw::n_bit_mask(
-                ::core::convert::Into::into(bits),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Bit32Module_unity2_raw::n_bit_mask(::core::convert::Into::into(bits), ::core::option::Option::None) }
     }
+
     #[doc = "`Bitwise(::unity2::Il2CppString, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, crate::system::func_3::Func_3<u32,u32,u32>)` overload"]
     pub fn bitwise(
         func_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
         accum_func: impl ::core::convert::Into<crate::system::func_3::Func_3<u32, u32, u32>>,
     ) -> u32 {
         unsafe {
@@ -997,14 +721,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`extract(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn extract(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::extract(
@@ -1014,14 +735,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`replace(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn replace(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::replace(
@@ -1031,6 +749,7 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`ValidatePosWidth(::unity2::Il2CppString, i32, i32, i32)` overload"]
     pub fn validate_pos_width(
         func: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1048,14 +767,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`arshift(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn arshift(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::arshift(
@@ -1065,14 +781,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`rshift(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn rshift(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::rshift(
@@ -1082,14 +795,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`lshift(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn lshift(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::lshift(
@@ -1099,14 +809,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`band(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn band(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::band(
@@ -1116,14 +823,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`btest(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn btest(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::btest(
@@ -1133,14 +837,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`bor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn bor(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::bor(
@@ -1150,14 +851,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`bnot(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn bnot(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::bnot(
@@ -1167,14 +865,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`bxor(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn bxor(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::bxor(
@@ -1184,14 +879,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`lrotate(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn lrotate(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::lrotate(
@@ -1201,14 +893,11 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`rrotate(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]
     pub fn rrotate(
-        execution_context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
-        args: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
-        >,
+        execution_context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+        args: impl ::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
             __Bit32Module_unity2_raw::rrotate(
@@ -1218,6 +907,7 @@ impl Bit32Module {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Bit32Module_unity2_raw::cctor(::core::option::Option::None) }
@@ -1229,9 +919,7 @@ pub trait IBit32ModuleMethods: IBit32Module {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Bit32Module as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Bit32Module as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Bit32Module_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1244,13 +932,8 @@ impl<__T: IBit32Module> IBit32ModuleMethods for __T {}
 impl Bit32Module {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Bit32Module),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Bit32Module), ::core::stringify!(new),));
         <Self as IBit32ModuleMethods>::ctor(this);
         this
     }
@@ -1259,9 +942,7 @@ impl Bit32Module {
 #[cfg(feature = "moon_sharp-interpreter-core_lib-bit32module")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Bit32Module;
-    pub use super::IBit32Module;
-    pub use super::IBit32ModuleMethods;
+    pub use super::{Bit32Module, IBit32Module, IBit32ModuleMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

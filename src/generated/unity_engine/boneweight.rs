@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-boneweight-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/boneweight/BoneWeight.md"))]
     #[repr(C)]
@@ -23,9 +25,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for BoneWeight {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "BoneWeight";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -36,10 +37,7 @@ mod __types {
 
     impl ::unity2::IlType for BoneWeight {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -56,9 +54,7 @@ mod __BoneWeight_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_weight0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -71,39 +67,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_weight0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_weight0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weight0(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_weight0(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_weight0::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_weight0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weight1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -116,39 +100,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_weight1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_weight1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weight1(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_weight1(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_weight1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_weight1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weight2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -161,39 +133,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_weight2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_weight2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weight2(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_weight2(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_weight2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_weight2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weight3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -206,39 +166,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_weight3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_weight3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weight3(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_weight3(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_weight3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_weight3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bone_index0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -251,39 +199,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_boneIndex0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_boneIndex0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bone_index0(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_bone_index0(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bone_index0::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bone_index0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bone_index1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -296,39 +232,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_boneIndex1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_boneIndex1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bone_index1(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_bone_index1(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bone_index1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bone_index1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bone_index2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -341,39 +265,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_boneIndex2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_boneIndex2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bone_index2(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_bone_index2(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bone_index2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bone_index2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bone_index3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -386,39 +298,27 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "get_boneIndex3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "get_boneIndex3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bone_index3(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_bone_index3(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bone_index3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bone_index3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BoneWeight as ::unity2::ClassIdentity>::class(),
@@ -431,114 +331,70 @@ mod __BoneWeight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: BoneWeight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: BoneWeight, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BoneWeight, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoneWeight as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BoneWeight as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: BoneWeight,
-        other: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BoneWeight,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: BoneWeight, other: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BoneWeight, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::boneweight::BoneWeight as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BoneWeight as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BoneWeight as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BoneWeight as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BoneWeight as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals_2(
@@ -546,15 +402,8 @@ mod __BoneWeight_unity2_raw {
         other: crate::unity_engine::boneweight::BoneWeight,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            BoneWeight,
-            crate::unity_engine::boneweight::BoneWeight,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BoneWeight, crate::unity_engine::boneweight::BoneWeight, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
 }
@@ -565,60 +414,55 @@ impl BoneWeight {
     pub fn get_weight0(self) -> f32 {
         unsafe { __BoneWeight_unity2_raw::get_weight0(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_weight1()` overload"]
     pub fn get_weight1(self) -> f32 {
         unsafe { __BoneWeight_unity2_raw::get_weight1(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_weight2()` overload"]
     pub fn get_weight2(self) -> f32 {
         unsafe { __BoneWeight_unity2_raw::get_weight2(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_weight3()` overload"]
     pub fn get_weight3(self) -> f32 {
         unsafe { __BoneWeight_unity2_raw::get_weight3(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_boneIndex0()` overload"]
     pub fn get_bone_index0(self) -> i32 {
         unsafe { __BoneWeight_unity2_raw::get_bone_index0(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_boneIndex1()` overload"]
     pub fn get_bone_index1(self) -> i32 {
         unsafe { __BoneWeight_unity2_raw::get_bone_index1(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_boneIndex2()` overload"]
     pub fn get_bone_index2(self) -> i32 {
         unsafe { __BoneWeight_unity2_raw::get_bone_index2(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_boneIndex3()` overload"]
     pub fn get_bone_index3(self) -> i32 {
         unsafe { __BoneWeight_unity2_raw::get_bone_index3(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __BoneWeight_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals(self, other: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __BoneWeight_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __BoneWeight_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::unity_engine::boneweight::BoneWeight)` overload"]
-    pub fn equals_2(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::boneweight::BoneWeight>,
-    ) -> bool {
-        unsafe {
-            __BoneWeight_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals_2(self, other: impl ::core::convert::Into<crate::unity_engine::boneweight::BoneWeight>) -> bool {
+        unsafe { __BoneWeight_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
 }
 
@@ -626,10 +470,9 @@ impl BoneWeight {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::BoneWeight;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

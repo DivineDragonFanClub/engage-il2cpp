@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-serializeddictionary_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::dictionary_2::{Dictionary_2, IDictionary_2};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        collections::generic::dictionary_2::{Dictionary_2, IDictionary_2},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/serializeddictionary_2/SerializedDictionary_2.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SerializedDictionary`2")]
@@ -58,13 +60,10 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SerializedDiction
 #[cfg(feature = "unity_engine-rendering-serializeddictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISerializedDictionary_2;
-    pub use super::ISerializedDictionary_2Methods;
-    pub use super::SerializedDictionary_2;
-    pub use crate::system::collections::generic::dictionary_2::IDictionary_2;
+    pub use super::{ISerializedDictionary_2, ISerializedDictionary_2Methods, SerializedDictionary_2};
     #[cfg(feature = "system-collections-generic-dictionary_2")]
     pub use crate::system::collections::generic::dictionary_2::IDictionary_2Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::dictionary_2::IDictionary_2, object::IObject};
 }

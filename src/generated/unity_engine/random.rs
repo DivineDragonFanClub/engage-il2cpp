@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-random-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/random/Random.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Random")]
@@ -25,153 +25,72 @@ mod __Random_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_init_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Random as ::unity2::ClassIdentity>::class(),
-                "InitState",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Random as ::unity2::ClassIdentity>::class(), "InitState", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "InitState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Random as ::unity2::ClassIdentity>::NAME,
+                        "InitState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_state(seed: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init_state::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init_state::get_method_info().method_ptr);
         inner(seed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Random as ::unity2::ClassIdentity>::class(),
-                "Range",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Random as ::unity2::ClassIdentity>::class(), "Range", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "Range",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Random as ::unity2::ClassIdentity>::NAME, "Range", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn range(
-        min_inclusive: f32,
-        max_inclusive: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_range::get_offset() as isize),
-            );
+    pub unsafe fn range(min_inclusive: f32, max_inclusive: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_range::get_method_info().method_ptr);
         inner(min_inclusive, max_inclusive, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_range_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Random as ::unity2::ClassIdentity>::class(),
-                "Range",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Random as ::unity2::ClassIdentity>::class(), "Range", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "Range",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Random as ::unity2::ClassIdentity>::NAME, "Range", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn range_2(
-        min_inclusive: i32,
-        max_exclusive: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_range_2::get_offset() as isize),
-            );
+    pub unsafe fn range_2(min_inclusive: i32, max_exclusive: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_range_2::get_method_info().method_ptr);
         inner(min_inclusive, max_exclusive, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_random_range_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Random as ::unity2::ClassIdentity>::class(),
                 "RandomRangeInt",
@@ -183,81 +102,53 @@ mod __Random_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "RandomRangeInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Random as ::unity2::ClassIdentity>::NAME,
+                        "RandomRangeInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn random_range_int(
-        min_inclusive: i32,
-        max_exclusive: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn random_range_int(min_inclusive: i32, max_exclusive: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_random_range_int::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_random_range_int::get_method_info().method_ptr);
         inner(min_inclusive, max_exclusive, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Random as ::unity2::ClassIdentity>::class(),
-                "get_value",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Random as ::unity2::ClassIdentity>::class(), "get_value", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "get_value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Random as ::unity2::ClassIdentity>::NAME,
+                        "get_value",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_value(__unity2_method_info: ::unity2::OptionalMethod) -> f32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_inside_unit_sphere {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Random as ::unity2::ClassIdentity>::class(),
@@ -270,41 +161,28 @@ mod __Random_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "get_insideUnitSphere",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Random as ::unity2::ClassIdentity>::NAME,
+                        "get_insideUnitSphere",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_inside_unit_sphere(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_inside_unit_sphere::get_offset() as isize),
-        );
+    pub unsafe fn get_inside_unit_sphere(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_inside_unit_sphere::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_inside_unit_sphere_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Random as ::unity2::ClassIdentity>::class(),
                 "get_insideUnitSphere_Injected",
@@ -316,32 +194,23 @@ mod __Random_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Random as ::unity2::ClassIdentity>::NAME,
-                    "get_insideUnitSphere_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Random as ::unity2::ClassIdentity>::NAME,
+                        "get_insideUnitSphere_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_inside_unit_sphere_injected(
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_inside_unit_sphere_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_inside_unit_sphere_injected::get_method_info().method_ptr);
         inner(ret, __unity2_method_info)
     }
 }
@@ -350,18 +219,11 @@ mod __Random_unity2_raw {
 impl Random {
     #[doc = "`InitState(i32)` overload"]
     pub fn init_state(seed: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __Random_unity2_raw::init_state(
-                ::core::convert::Into::into(seed),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Random_unity2_raw::init_state(::core::convert::Into::into(seed), ::core::option::Option::None) }
     }
+
     #[doc = "`Range(f32, f32)` overload"]
-    pub fn range(
-        min_inclusive: impl ::core::convert::Into<f32>,
-        max_inclusive: impl ::core::convert::Into<f32>,
-    ) -> f32 {
+    pub fn range(min_inclusive: impl ::core::convert::Into<f32>, max_inclusive: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
             __Random_unity2_raw::range(
                 ::core::convert::Into::into(min_inclusive),
@@ -370,11 +232,9 @@ impl Random {
             )
         }
     }
+
     #[doc = "`Range(i32, i32)` overload"]
-    pub fn range_2(
-        min_inclusive: impl ::core::convert::Into<i32>,
-        max_exclusive: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn range_2(min_inclusive: impl ::core::convert::Into<i32>, max_exclusive: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Random_unity2_raw::range_2(
                 ::core::convert::Into::into(min_inclusive),
@@ -383,11 +243,9 @@ impl Random {
             )
         }
     }
+
     #[doc = "`RandomRangeInt(i32, i32)` overload"]
-    pub fn random_range_int(
-        min_inclusive: impl ::core::convert::Into<i32>,
-        max_exclusive: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    pub fn random_range_int(min_inclusive: impl ::core::convert::Into<i32>, max_exclusive: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
             __Random_unity2_raw::random_range_int(
                 ::core::convert::Into::into(min_inclusive),
@@ -396,23 +254,22 @@ impl Random {
             )
         }
     }
+
     #[doc = "`get_value()` overload"]
     pub fn get_value() -> f32 {
         unsafe { __Random_unity2_raw::get_value(::core::option::Option::None) }
     }
+
     #[doc = "`get_insideUnitSphere()` overload"]
     pub fn get_inside_unit_sphere() -> crate::unity_engine::vector3::Vector3 {
         unsafe { __Random_unity2_raw::get_inside_unit_sphere(::core::option::Option::None) }
     }
+
     #[doc = "`get_insideUnitSphere_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     pub fn get_inside_unit_sphere_injected() -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __Random_unity2_raw::get_inside_unit_sphere_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Random_unity2_raw::get_inside_unit_sphere_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -421,8 +278,7 @@ impl Random {
 #[cfg(feature = "unity_engine-random")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRandom;
-    pub use super::Random;
+    pub use super::{IRandom, Random};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

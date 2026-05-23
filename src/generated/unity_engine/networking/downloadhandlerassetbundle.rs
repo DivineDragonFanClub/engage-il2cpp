@@ -2,17 +2,16 @@
 
 #[cfg(feature = "unity_engine-networking-downloadhandlerassetbundle-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::networking::downloadhandler::{DownloadHandler, IDownloadHandler};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::networking::downloadhandler::{DownloadHandler, IDownloadHandler},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/downloadhandlerassetbundle/DownloadHandlerAssetBundle.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Networking",
-        name = "DownloadHandlerAssetBundle"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Networking", name = "DownloadHandlerAssetBundle")]
     #[parent(crate::unity_engine::networking::downloadhandler::DownloadHandler)]
     pub struct DownloadHandlerAssetBundle {}
 }
@@ -29,10 +28,12 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -44,22 +45,19 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
-        obj : crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle,
+        obj: crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
         url: ::unity2::Il2CppString,
         crc: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -69,21 +67,21 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
             ::unity2::Il2CppString,
             u32,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(obj, url, crc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_cached {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: hash128 :: Hash128 as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
                 "CreateCached",
@@ -95,22 +93,19 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "CreateCached",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "CreateCached",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_cached(
-        obj : crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle,
+        obj: crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
         url: ::unity2::Il2CppString,
         name: ::unity2::Il2CppString,
         hash: crate::unity_engine::hash128::Hash128,
@@ -124,20 +119,14 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
             crate::unity_engine::hash128::Hash128,
             u32,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_cached::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_create_cached::get_method_info().method_ptr);
         inner(obj, url, name, hash, crc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create_asset_bundle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -153,18 +142,15 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "InternalCreateAssetBundle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "InternalCreateAssetBundle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_create_asset_bundle(
@@ -173,25 +159,15 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         crc: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DownloadHandlerAssetBundle,
-            ::unity2::Il2CppString,
-            u32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create_asset_bundle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DownloadHandlerAssetBundle, ::unity2::Il2CppString, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_create_asset_bundle::get_method_info().method_ptr);
         inner(this, url, crc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create_asset_bundle_cached {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -209,18 +185,15 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "InternalCreateAssetBundleCached",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "InternalCreateAssetBundleCached",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_create_asset_bundle_cached(
@@ -238,20 +211,14 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
             crate::unity_engine::hash128::Hash128,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_create_asset_bundle_cached::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_internal_create_asset_bundle_cached::get_method_info().method_ptr);
         inner(this, url, name, hash, crc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -267,18 +234,15 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -287,26 +251,20 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         crc: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DownloadHandlerAssetBundle,
-            ::unity2::Il2CppString,
-            u32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DownloadHandlerAssetBundle, ::unity2::Il2CppString, u32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, url, crc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: cachedassetbundle :: CachedAssetBundle as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::cachedassetbundle::CachedAssetBundle as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -318,18 +276,15 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -345,20 +300,14 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
             crate::unity_engine::cachedassetbundle::CachedAssetBundle,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, url, cached_bundle, crc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
@@ -371,41 +320,27 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "GetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "GetData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data(
-        this: DownloadHandlerAssetBundle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            DownloadHandlerAssetBundle,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
+    pub unsafe fn get_data(this: DownloadHandlerAssetBundle, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
@@ -418,41 +353,27 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "GetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "GetText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_text(
-        this: DownloadHandlerAssetBundle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DownloadHandlerAssetBundle,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text::get_offset() as isize),
-        );
+    pub unsafe fn get_text(this: DownloadHandlerAssetBundle, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_asset_bundle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
@@ -465,42 +386,37 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "get_assetBundle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "get_assetBundle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_asset_bundle(
         this: DownloadHandlerAssetBundle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::assetbundle::AssetBundle {
-        let inner: extern "C" fn(
-            DownloadHandlerAssetBundle,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::assetbundle::AssetBundle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_asset_bundle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod) -> crate::unity_engine::assetbundle::AssetBundle =
+            ::core::mem::transmute(__lookup_get_asset_bundle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_cached_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: hash128 :: Hash128 as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::hash128::Hash128 as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::class(),
                 "CreateCached_Injected",
@@ -512,22 +428,19 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
-                    "CreateCached_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerAssetBundle as ::unity2::ClassIdentity>::NAME,
+                        "CreateCached_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_cached_injected(
-        obj : crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle,
+        obj: crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
         url: ::unity2::Il2CppString,
         name: ::unity2::Il2CppString,
         hash: *mut crate::unity_engine::hash128::Hash128,
@@ -541,11 +454,7 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
             *mut crate::unity_engine::hash128::Hash128,
             u32,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_cached_injected::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_create_cached_injected::get_method_info().method_ptr);
         inner(obj, url, name, hash, crc, __unity2_method_info)
     }
 }
@@ -554,9 +463,7 @@ mod __DownloadHandlerAssetBundle_unity2_raw {
 impl DownloadHandlerAssetBundle {
     #[doc = "`Create(crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle, ::unity2::Il2CppString, u32)` overload"]
     pub fn create(
-        obj: impl ::core::convert::Into<
-            crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
-        >,
+        obj: impl ::core::convert::Into<crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle>,
         url: impl ::core::convert::Into<::unity2::Il2CppString>,
         crc: impl ::core::convert::Into<u32>,
     ) -> ::unity2::IntPtr {
@@ -569,11 +476,10 @@ impl DownloadHandlerAssetBundle {
             )
         }
     }
+
     #[doc = "`CreateCached(crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::hash128::Hash128, u32)` overload"]
     pub fn create_cached(
-        obj: impl ::core::convert::Into<
-            crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
-        >,
+        obj: impl ::core::convert::Into<crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle>,
         url: impl ::core::convert::Into<::unity2::Il2CppString>,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         hash: impl ::core::convert::Into<crate::unity_engine::hash128::Hash128>,
@@ -590,18 +496,16 @@ impl DownloadHandlerAssetBundle {
             )
         }
     }
+
     #[doc = "`CreateCached_Injected(crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle, ::unity2::Il2CppString, ::unity2::Il2CppString, *mutcrate::unity_engine::hash128::Hash128, u32)` overload"]
     pub fn create_cached_injected(
-        obj: impl ::core::convert::Into<
-            crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle,
-        >,
+        obj: impl ::core::convert::Into<crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle>,
         url: impl ::core::convert::Into<::unity2::Il2CppString>,
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         crc: impl ::core::convert::Into<u32>,
     ) -> (::unity2::IntPtr, crate::unity_engine::hash128::Hash128) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
             let __ret = {
                 __DownloadHandlerAssetBundle_unity2_raw::create_cached_injected(
                     ::core::convert::Into::into(obj),
@@ -620,16 +524,10 @@ impl DownloadHandlerAssetBundle {
 #[cfg(feature = "unity_engine-networking-downloadhandlerassetbundle")]
 pub trait IDownloadHandlerAssetBundleMethods: IDownloadHandlerAssetBundle {
     #[doc = "`InternalCreateAssetBundle(::unity2::Il2CppString, u32)` overload"]
-    fn internal_create_asset_bundle(
-        self,
-        url: impl ::core::convert::Into<::unity2::Il2CppString>,
-        crc: impl ::core::convert::Into<u32>,
-    ) -> () {
+    fn internal_create_asset_bundle(self, url: impl ::core::convert::Into<::unity2::Il2CppString>, crc: impl ::core::convert::Into<u32>) -> () {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DownloadHandlerAssetBundle_unity2_raw::internal_create_asset_bundle(
                 __receiver,
                 ::core::convert::Into::into(url),
@@ -648,9 +546,7 @@ pub trait IDownloadHandlerAssetBundleMethods: IDownloadHandlerAssetBundle {
     ) -> () {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DownloadHandlerAssetBundle_unity2_raw::internal_create_asset_bundle_cached(
                 __receiver,
                 ::core::convert::Into::into(url),
@@ -662,16 +558,10 @@ pub trait IDownloadHandlerAssetBundleMethods: IDownloadHandlerAssetBundle {
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, u32)` overload"]
-    fn ctor(
-        self,
-        url: impl ::core::convert::Into<::unity2::Il2CppString>,
-        crc: impl ::core::convert::Into<u32>,
-    ) -> () {
+    fn ctor(self, url: impl ::core::convert::Into<::unity2::Il2CppString>, crc: impl ::core::convert::Into<u32>) -> () {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DownloadHandlerAssetBundle_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(url),
@@ -684,16 +574,12 @@ pub trait IDownloadHandlerAssetBundleMethods: IDownloadHandlerAssetBundle {
     fn ctor_2(
         self,
         url: impl ::core::convert::Into<::unity2::Il2CppString>,
-        cached_bundle: impl ::core::convert::Into<
-            crate::unity_engine::cachedassetbundle::CachedAssetBundle,
-        >,
+        cached_bundle: impl ::core::convert::Into<crate::unity_engine::cachedassetbundle::CachedAssetBundle>,
         crc: impl ::core::convert::Into<u32>,
     ) -> () {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DownloadHandlerAssetBundle_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(url),
@@ -707,39 +593,24 @@ pub trait IDownloadHandlerAssetBundleMethods: IDownloadHandlerAssetBundle {
     fn get_data(self) -> ::unity2::Array<u8> {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DownloadHandlerAssetBundle_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DownloadHandlerAssetBundle_unity2_raw::get_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetText()` overload"]
     fn get_text(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DownloadHandlerAssetBundle_unity2_raw::get_text(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DownloadHandlerAssetBundle_unity2_raw::get_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_assetBundle()` overload"]
     fn get_asset_bundle(self) -> crate::unity_engine::assetbundle::AssetBundle {
         unsafe {
             let __receiver =
-                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DownloadHandlerAssetBundle_unity2_raw::get_asset_bundle(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DownloadHandlerAssetBundle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DownloadHandlerAssetBundle_unity2_raw::get_asset_bundle(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -763,11 +634,7 @@ impl DownloadHandlerAssetBundle {
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::cachedassetbundle::CachedAssetBundle, u32)` — overload selector"]
-    pub fn new_2(
-        url: ::unity2::Il2CppString,
-        cached_bundle: crate::unity_engine::cachedassetbundle::CachedAssetBundle,
-        crc: u32,
-    ) -> Self {
+    pub fn new_2(url: ::unity2::Il2CppString, cached_bundle: crate::unity_engine::cachedassetbundle::CachedAssetBundle, crc: u32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -783,13 +650,10 @@ impl DownloadHandlerAssetBundle {
 #[cfg(feature = "unity_engine-networking-downloadhandlerassetbundle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DownloadHandlerAssetBundle;
-    pub use super::IDownloadHandlerAssetBundle;
-    pub use super::IDownloadHandlerAssetBundleMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{DownloadHandlerAssetBundle, IDownloadHandlerAssetBundle, IDownloadHandlerAssetBundleMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::networking::downloadhandler::IDownloadHandler;
     #[cfg(feature = "unity_engine-networking-downloadhandler")]
     pub use crate::unity_engine::networking::downloadhandler::IDownloadHandlerMethods;
+    pub use crate::{system::object::IObject, unity_engine::networking::downloadhandler::IDownloadHandler};
 }

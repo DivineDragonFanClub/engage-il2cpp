@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-charactereffect-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactereffect/CharacterEffect.md"))]
     #[::unity2::class(namespace = "Combat", name = "CharacterEffect")]
@@ -28,13 +28,10 @@ mod __CharacterEffect_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -47,18 +44,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "GetTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "GetTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_transform(
@@ -70,24 +64,17 @@ mod __CharacterEffect_unity2_raw {
             crate::combat::character::Character,
             crate::unity_engine::animationevent::AnimationEvent,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_transform::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(__lookup_get_transform::get_method_info().method_ptr);
         inner(chr, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_particle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -100,18 +87,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "GetParticle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "GetParticle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_particle(
@@ -123,22 +107,15 @@ mod __CharacterEffect_unity2_raw {
             crate::combat::character::Character,
             crate::unity_engine::animationevent::AnimationEvent,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::particlesystem::ParticleSystem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_particle::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::particlesystem::ParticleSystem = ::core::mem::transmute(__lookup_get_particle::get_method_info().method_ptr);
         inner(chr, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::character::Character as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -150,47 +127,30 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CharacterEffect,
-        chr: crate::combat::character::Character,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CharacterEffect,
-            crate::combat::character::Character,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: CharacterEffect, chr: crate::combat::character::Character, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CharacterEffect, crate::combat::character::Character, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, chr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_signal_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -203,18 +163,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "SignalEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "SignalEffect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn signal_effect(
@@ -226,20 +183,14 @@ mod __CharacterEffect_unity2_raw {
             crate::combat::character::Character,
             crate::unity_engine::animationevent::AnimationEvent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_signal_effect::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_signal_effect::get_method_info().method_ptr);
         inner(chr, ev, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
@@ -255,18 +206,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -280,20 +228,14 @@ mod __CharacterEffect_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::transform::Transform,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(this, prefab, parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::tr::TR as ::unity2::IlType>::il_type(),
                 <crate::combat::slashtype::SlashType as ::unity2::IlType>::il_type(),
@@ -310,18 +252,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateHit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_hit(
@@ -337,20 +276,14 @@ mod __CharacterEffect_unity2_raw {
             crate::combat::slashtype::SlashType,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_hit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_hit::get_method_info().method_ptr);
         inner(this, tr, slash_type, effect_level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_pairing_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::combat::tr::TR as ::unity2::IlType>::il_type(),
@@ -366,18 +299,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreatePairingHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreatePairingHit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_pairing_hit(
@@ -391,20 +321,14 @@ mod __CharacterEffect_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             *mut crate::combat::tr::TR,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_pairing_hit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_pairing_hit::get_method_info().method_ptr);
         inner(this, prefab, tr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hit_effect_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::slashtype::SlashType as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -420,18 +344,15 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "GetHitEffectName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "GetHitEffectName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hit_effect_name(
@@ -440,25 +361,15 @@ mod __CharacterEffect_unity2_raw {
         level: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CharacterEffect,
-            crate::combat::slashtype::SlashType,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hit_effect_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterEffect, crate::combat::slashtype::SlashType, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_hit_effect_name::get_method_info().method_ptr);
         inner(this, slash_type, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_guard {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -471,39 +382,27 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateGuard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateGuard",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_guard(
-        this: CharacterEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_guard(this: CharacterEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_guard::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_guard::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_parry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -516,39 +415,27 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateParry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateParry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_parry(
-        this: CharacterEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_parry(this: CharacterEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_parry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_parry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_efficacy_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -561,39 +448,27 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateEfficacyHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateEfficacyHit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_efficacy_hit(
-        this: CharacterEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_efficacy_hit(this: CharacterEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_efficacy_hit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_efficacy_hit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_break {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -606,39 +481,27 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateBreak",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateBreak",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_break(
-        this: CharacterEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_break(this: CharacterEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_break::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_break::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_smash {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterEffect as ::unity2::ClassIdentity>::class(),
@@ -651,30 +514,20 @@ mod __CharacterEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateSmash",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateSmash",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_smash(
-        this: CharacterEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_smash(this: CharacterEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_smash::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_smash::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -694,6 +547,7 @@ impl CharacterEffect {
             )
         }
     }
+
     #[doc = "`GetParticle(crate::combat::character::Character, crate::unity_engine::animationevent::AnimationEvent)` overload"]
     pub fn get_particle(
         chr: impl ::core::convert::Into<crate::combat::character::Character>,
@@ -707,6 +561,7 @@ impl CharacterEffect {
             )
         }
     }
+
     #[doc = "`SignalEffect(crate::combat::character::Character, crate::unity_engine::animationevent::AnimationEvent)` overload"]
     pub fn signal_effect(
         chr: impl ::core::convert::Into<crate::combat::character::Character>,
@@ -727,14 +582,8 @@ pub trait ICharacterEffectMethods: ICharacterEffect {
     #[doc = "`.ctor(crate::combat::character::Character)` overload"]
     fn ctor(self, chr: impl ::core::convert::Into<crate::combat::character::Character>) -> () {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterEffect_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(chr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterEffect_unity2_raw::ctor(__receiver, ::core::convert::Into::into(chr), ::core::option::Option::None)
         }
     }
     #[doc = "`Create(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]
@@ -744,9 +593,7 @@ pub trait ICharacterEffectMethods: ICharacterEffect {
         parent: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
     ) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterEffect_unity2_raw::create(
                 __receiver,
                 ::core::convert::Into::into(prefab),
@@ -762,9 +609,7 @@ pub trait ICharacterEffectMethods: ICharacterEffect {
         effect_level: impl ::core::convert::Into<i32>,
     ) -> crate::combat::tr::TR {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::combat::tr::TR>::uninit();
             __CharacterEffect_unity2_raw::create_hit(
                 __receiver,
@@ -777,14 +622,9 @@ pub trait ICharacterEffectMethods: ICharacterEffect {
         }
     }
     #[doc = "`CreatePairingHit(crate::unity_engine::gameobject::GameObject, *mutcrate::combat::tr::TR)` overload"]
-    fn create_pairing_hit(
-        self,
-        prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::combat::tr::TR {
+    fn create_pairing_hit(self, prefab: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> crate::combat::tr::TR {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::combat::tr::TR>::uninit();
             __CharacterEffect_unity2_raw::create_pairing_hit(
                 __receiver,
@@ -802,9 +642,7 @@ pub trait ICharacterEffectMethods: ICharacterEffect {
         level: impl ::core::convert::Into<i32>,
     ) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterEffect_unity2_raw::get_hit_effect_name(
                 __receiver,
                 ::core::convert::Into::into(slash_type),
@@ -816,48 +654,35 @@ pub trait ICharacterEffectMethods: ICharacterEffect {
     #[doc = "`CreateGuard()` overload"]
     fn create_guard(self) -> () {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterEffect_unity2_raw::create_guard(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateParry()` overload"]
     fn create_parry(self) -> () {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterEffect_unity2_raw::create_parry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateEfficacyHit()` overload"]
     fn create_efficacy_hit(self) -> () {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterEffect_unity2_raw::create_efficacy_hit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterEffect_unity2_raw::create_efficacy_hit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateBreak()` overload"]
     fn create_break(self) -> () {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterEffect_unity2_raw::create_break(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSmash()` overload"]
     fn create_smash(self) -> () {
         unsafe {
-            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterEffect_unity2_raw::create_smash(__receiver, ::core::option::Option::None)
         }
     }
@@ -885,9 +710,7 @@ impl CharacterEffect {
 #[cfg(feature = "combat-charactereffect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterEffect;
-    pub use super::ICharacterEffect;
-    pub use super::ICharacterEffectMethods;
+    pub use super::{CharacterEffect, ICharacterEffect, ICharacterEffectMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

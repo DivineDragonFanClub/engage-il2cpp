@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-generic-equalitycomparer_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/equalitycomparer_1/EqualityComparer_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "EqualityComparer`1")]
@@ -13,8 +13,7 @@ mod __types {
     pub struct EqualityComparer_1<T0: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "defaultComparer")]
-        pub default_comparer:
-            crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>,
+        pub default_comparer: crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>,
     }
 }
 
@@ -26,13 +25,11 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity> EqualityComparer_1<T0> {
     #[doc = "`get_Default()` overload"]
     #[method(name = "get_Default", args = 0)]
-    pub fn get_default(
-    ) -> crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>;
+    pub fn get_default() -> crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>;
 
     #[doc = "`CreateComparer()` overload"]
     #[method(name = "CreateComparer", args = 0)]
-    pub fn create_comparer(
-    ) -> crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>;
+    pub fn create_comparer() -> crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>;
 
     #[doc = "`Equals(T0, T0)` overload"]
     #[method(name = "Equals", args = 2)]
@@ -44,38 +41,19 @@ impl<T0: ::unity2::ClassIdentity> EqualityComparer_1<T0> {
 
     #[doc = "`IndexOf(::unity2::Array<T0>, T0, i32, i32)` overload"]
     #[method(name = "IndexOf", args = 4)]
-    pub fn index_of(
-        self,
-        array: ::unity2::Array<T0>,
-        value: T0,
-        start_index: i32,
-        count: i32,
-    ) -> i32;
+    pub fn index_of(self, array: ::unity2::Array<T0>, value: T0, start_index: i32, count: i32) -> i32;
 
     #[doc = "`LastIndexOf(::unity2::Array<T0>, T0, i32, i32)` overload"]
     #[method(name = "LastIndexOf", args = 4)]
-    pub fn last_index_of(
-        self,
-        array: ::unity2::Array<T0>,
-        value: T0,
-        start_index: i32,
-        count: i32,
-    ) -> i32;
+    pub fn last_index_of(self, array: ::unity2::Array<T0>, value: T0, start_index: i32, count: i32) -> i32;
 
     #[doc = "`System.Collections.IEqualityComparer.GetHashCode(crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IEqualityComparer.GetHashCode", args = 1)]
-    pub fn system_collections_i_equality_comparer_get_hash_code(
-        self,
-        obj: crate::system::object::Object,
-    ) -> i32;
+    pub fn system_collections_i_equality_comparer_get_hash_code(self, obj: crate::system::object::Object) -> i32;
 
     #[doc = "`System.Collections.IEqualityComparer.Equals(crate::system::object::Object, crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IEqualityComparer.Equals", args = 2)]
-    pub fn system_collections_i_equality_comparer_equals(
-        self,
-        x: crate::system::object::Object,
-        y: crate::system::object::Object,
-    ) -> bool;
+    pub fn system_collections_i_equality_comparer_equals(self, x: crate::system::object::Object, y: crate::system::object::Object) -> bool;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -101,9 +79,7 @@ impl<T0: ::unity2::ClassIdentity> EqualityComparer_1<T0> {
 #[cfg(feature = "system-collections-generic-equalitycomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EqualityComparer_1;
-    pub use super::IEqualityComparer_1;
-    pub use super::IEqualityComparer_1Methods;
+    pub use super::{EqualityComparer_1, IEqualityComparer_1, IEqualityComparer_1Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

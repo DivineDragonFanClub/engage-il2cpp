@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-wordwrapstate-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/wordwrapstate/WordWrapState.md"))]
     #[repr(C)]
@@ -29,8 +31,7 @@ mod __types {
         pub max_line_ascender: f32,
         pub max_line_descender: f32,
         pub page_ascender: f32,
-        pub horizontal_alignment:
-            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        pub horizontal_alignment: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
         pub margin_left: f32,
         pub margin_right: f32,
         pub x_advance: f32,
@@ -55,48 +56,25 @@ mod __types {
         pub strikethrough_color: crate::unity_engine::color32::Color32,
         pub highlight_color: crate::unity_engine::color32::Color32,
         pub basic_style_stack: crate::tm_pro::tmp_fontstylestack::TMP_FontStyleStack,
-        pub italic_angle_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
-        pub color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-            crate::unity_engine::color32::Color32,
-        >,
-        pub underline_color_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::unity_engine::color32::Color32,
-            >,
-        pub strikethrough_color_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::unity_engine::color32::Color32,
-            >,
-        pub highlight_color_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::unity_engine::color32::Color32,
-            >,
-        pub highlight_state_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::tm_pro::highlightstate::HighlightState,
-            >,
+        pub italic_angle_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
+        pub color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        pub underline_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        pub strikethrough_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        pub highlight_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32>,
+        pub highlight_state_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::highlightstate::HighlightState>,
         pub color_gradient_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
-            >,
+            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>,
         pub size_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
         pub indent_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
-        pub font_weight_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-            crate::tm_pro::fontweight::FontWeight,
-        >,
+        pub font_weight_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::fontweight::FontWeight>,
         pub style_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
-        pub baseline_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+        pub baseline_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
         pub action_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
         pub material_reference_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::tm_pro::materialreference::MaterialReference,
-            >,
-        pub line_justification_stack:
-            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
-                crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
-            >,
+            crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::materialreference::MaterialReference>,
+        pub line_justification_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        >,
         pub sprite_animation_id: i32,
         pub current_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         pub current_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
@@ -108,9 +86,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for WordWrapState {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "WordWrapState";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -121,10 +98,7 @@ mod __types {
 
     impl ::unity2::IlType for WordWrapState {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -136,10 +110,9 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::WordWrapState;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

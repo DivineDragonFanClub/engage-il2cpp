@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/icanvasraycastfilter/ICanvasRaycastFilter.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ICanvasRaycastFilter")]
@@ -23,9 +23,7 @@ mod __ICanvasRaycastFilter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_raycast_location_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
@@ -41,18 +39,15 @@ mod __ICanvasRaycastFilter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ICanvasRaycastFilter as ::unity2::ClassIdentity>::NAME,
-                    "IsRaycastLocationValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ICanvasRaycastFilter as ::unity2::ClassIdentity>::NAME,
+                        "IsRaycastLocationValid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_raycast_location_valid(
@@ -66,11 +61,7 @@ mod __ICanvasRaycastFilter_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_raycast_location_valid::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_raycast_location_valid::get_method_info().method_ptr);
         inner(this, sp, event_camera, __unity2_method_info)
     }
 }
@@ -84,9 +75,8 @@ pub trait IICanvasRaycastFilterMethods: IICanvasRaycastFilter {
         event_camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> bool {
         unsafe {
-            let __receiver = <ICanvasRaycastFilter as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ICanvasRaycastFilter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ICanvasRaycastFilter_unity2_raw::is_raycast_location_valid(
                 __receiver,
                 ::core::convert::Into::into(sp),
@@ -103,7 +93,5 @@ impl<__T: IICanvasRaycastFilter> IICanvasRaycastFilterMethods for __T {}
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ICanvasRaycastFilter;
-    pub use super::IICanvasRaycastFilter;
-    pub use super::IICanvasRaycastFilterMethods;
+    pub use super::{ICanvasRaycastFilter, IICanvasRaycastFilter, IICanvasRaycastFilterMethods};
 }

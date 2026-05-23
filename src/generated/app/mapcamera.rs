@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-mapcamera-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera_InterpolatorShake.md"))]
     #[::unity2::class(namespace = "App", name = "MapCamera.InterpolatorShake")]
@@ -51,13 +53,8 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_run {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::class(),
                 "Run",
@@ -69,45 +66,27 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
-                    "Run",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
+                        "Run",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn run(
-        this: MapCamera_InterpolatorShake,
-        time: f32,
-        magnitude: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapCamera_InterpolatorShake,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_run::get_offset() as isize),
-        );
+    pub unsafe fn run(this: MapCamera_InterpolatorShake, time: f32, magnitude: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCamera_InterpolatorShake, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_run::get_method_info().method_ptr);
         inner(this, time, magnitude, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::class(),
@@ -120,39 +99,27 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop(
-        this: MapCamera_InterpolatorShake,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop(this: MapCamera_InterpolatorShake, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapCamera_InterpolatorShake, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::class(),
@@ -165,39 +132,27 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick(
-        this: MapCamera_InterpolatorShake,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick(this: MapCamera_InterpolatorShake, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapCamera_InterpolatorShake, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::class(),
@@ -210,41 +165,30 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
-                    "get_Offset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
+                        "get_Offset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_offset(
         this: MapCamera_InterpolatorShake,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            MapCamera_InterpolatorShake,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapCamera_InterpolatorShake, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_offset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::class(),
@@ -257,30 +201,20 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera_InterpolatorShake as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapCamera_InterpolatorShake,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapCamera_InterpolatorShake, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapCamera_InterpolatorShake, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -288,16 +222,10 @@ mod __MapCamera_InterpolatorShake_unity2_raw {
 #[cfg(feature = "app-mapcamera")]
 pub trait IMapCamera_InterpolatorShakeMethods: IMapCamera_InterpolatorShake {
     #[doc = "`Run(f32, f32)` overload"]
-    fn run(
-        self,
-        time: impl ::core::convert::Into<f32>,
-        magnitude: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn run(self, time: impl ::core::convert::Into<f32>, magnitude: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_InterpolatorShake_unity2_raw::run(
                 __receiver,
                 ::core::convert::Into::into(time),
@@ -310,9 +238,7 @@ pub trait IMapCamera_InterpolatorShakeMethods: IMapCamera_InterpolatorShake {
     fn stop(self) -> () {
         unsafe {
             let __receiver =
-                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_InterpolatorShake_unity2_raw::stop(__receiver, ::core::option::Option::None)
         }
     }
@@ -320,9 +246,7 @@ pub trait IMapCamera_InterpolatorShakeMethods: IMapCamera_InterpolatorShake {
     fn tick(self) -> () {
         unsafe {
             let __receiver =
-                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_InterpolatorShake_unity2_raw::tick(__receiver, ::core::option::Option::None)
         }
     }
@@ -330,22 +254,15 @@ pub trait IMapCamera_InterpolatorShakeMethods: IMapCamera_InterpolatorShake {
     fn get_offset(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
             let __receiver =
-                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapCamera_InterpolatorShake_unity2_raw::get_offset(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_InterpolatorShake_unity2_raw::get_offset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapCamera_InterpolatorShake as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_InterpolatorShake_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -379,53 +296,34 @@ mod __MapCamera_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCamera as ::unity2::ClassIdentity>::class(),
-                "GetCamera",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapCamera as ::unity2::ClassIdentity>::class(), "GetCamera", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "GetCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "GetCamera",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_camera(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::camera::Camera {
+    pub unsafe fn get_camera(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_camera::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_camera::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -441,47 +339,28 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_position(
-        pos: crate::unity_engine::vector3::Vector3,
-        speed: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position::get_offset() as isize),
-        );
+    pub unsafe fn set_position(pos: crate::unity_engine::vector3::Vector3, speed: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
         inner(pos, speed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "SetPosition",
@@ -493,41 +372,28 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_position_2(
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position_2::get_offset() as isize),
-        );
+    pub unsafe fn set_position_2(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_position_2::get_method_info().method_ptr);
         inner(x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "SetRotation",
@@ -539,43 +405,28 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetRotation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rotation(
-        rot: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rotation::get_offset() as isize),
-        );
+    pub unsafe fn set_rotation(rot: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rotation::get_method_info().method_ptr);
         inner(rot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "SetDistance",
@@ -587,38 +438,26 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_distance(
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_distance::get_offset() as isize),
-        );
+    pub unsafe fn set_distance(distance: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_distance::get_method_info().method_ptr);
         inner(distance, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
@@ -631,91 +470,55 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "GetRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "GetRotation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rotation(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rotation::get_offset() as isize),
-        );
+    pub unsafe fn get_rotation(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_rotation::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_instant {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCamera as ::unity2::ClassIdentity>::class(),
-                "Instant",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapCamera as ::unity2::ClassIdentity>::class(), "Instant", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "Instant",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "Instant",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn instant(
-        camera: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_instant::get_offset() as isize),
-        );
+    pub unsafe fn instant(camera: crate::unity_engine::camera::Camera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_instant::get_method_info().method_ptr);
         inner(camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_effect_shake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "EffectShake",
@@ -727,43 +530,28 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "EffectShake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "EffectShake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn effect_shake(
-        time: f32,
-        magnitude: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_effect_shake::get_offset() as isize),
-        );
+    pub unsafe fn effect_shake(time: f32, magnitude: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_effect_shake::get_method_info().method_ptr);
         inner(time, magnitude, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_action_shake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "ActionShake",
@@ -775,39 +563,27 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "ActionShake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "ActionShake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn action_shake(
-        time: f32,
-        magnitude: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_action_shake::get_offset() as isize),
-        );
+    pub unsafe fn action_shake(time: f32, magnitude: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_action_shake::get_method_info().method_ptr);
         inner(time, magnitude, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_scroll_strictly {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
@@ -820,35 +596,27 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "CheckScrollStrictly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "CheckScrollStrictly",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_scroll_strictly(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_scroll_strictly::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_check_scroll_strictly::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_scroll_loosely {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
@@ -861,35 +629,27 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "CheckScrollLoosely",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "CheckScrollLoosely",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_scroll_loosely(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_scroll_loosely::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_check_scroll_loosely::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
@@ -902,41 +662,28 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "get_Version",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "get_Version",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_version(
-        this: MapCamera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_version(this: MapCamera, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MapCamera, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "OnSerialize",
@@ -948,43 +695,27 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "OnSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "OnSerialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_serialize(
-        this: MapCamera,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapCamera,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_serialize::get_offset() as isize),
-        );
+    pub unsafe fn on_serialize(this: MapCamera, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCamera, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1000,18 +731,15 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "OnDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "OnDeserialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_deserialize(
@@ -1020,161 +748,96 @@ mod __MapCamera_unity2_raw {
         version: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapCamera,
-            crate::app::stream_2::Stream_2,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deserialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapCamera, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_deserialize::get_method_info().method_ptr);
         inner(this, stream, version, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCamera as ::unity2::ClassIdentity>::class(),
-                "OnTick",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapCamera as ::unity2::ClassIdentity>::class(), "OnTick", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "OnTick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "OnTick",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_tick(this: MapCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_tick::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCamera as ::unity2::ClassIdentity>::class(),
-                "OnUpdate",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapCamera as ::unity2::ClassIdentity>::class(), "OnUpdate", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "OnUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "OnUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_update(this: MapCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCamera as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapCamera as ::unity2::ClassIdentity>::class(), "Commit", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "Commit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit(
-        this: MapCamera,
-        camera: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapCamera,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit::get_offset() as isize),
-        );
+    pub unsafe fn commit(this: MapCamera, camera: crate::unity_engine::camera::Camera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCamera, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
         inner(this, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_param_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "GetParamTime",
@@ -1186,43 +849,27 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "GetParamTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "GetParamTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_param_time(
-        this: MapCamera,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            MapCamera,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_param_time::get_offset() as isize),
-        );
+    pub unsafe fn get_param_time(this: MapCamera, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(MapCamera, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_param_time::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1238,18 +885,15 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetPositionImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetPositionImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_position_impl(
@@ -1258,27 +902,16 @@ mod __MapCamera_unity2_raw {
         speed: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapCamera,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapCamera, crate::unity_engine::vector3::Vector3, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_position_impl::get_method_info().method_ptr);
         inner(this, pos, speed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rotation_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "SetRotationImpl",
@@ -1290,18 +923,15 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetRotationImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetRotationImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_rotation_impl(
@@ -1309,26 +939,16 @@ mod __MapCamera_unity2_raw {
         rot: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapCamera,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rotation_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapCamera, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rotation_impl::get_method_info().method_ptr);
         inner(this, rot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_distance_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "SetDistanceImpl",
@@ -1340,42 +960,28 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "SetDistanceImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "SetDistanceImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_distance_impl(
-        this: MapCamera,
-        distance: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_distance_impl(this: MapCamera, distance: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapCamera, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_distance_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_distance_impl::get_method_info().method_ptr);
         inner(this, distance, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_instant_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapCamera as ::unity2::ClassIdentity>::class(),
                 "InstantImpl",
@@ -1387,76 +993,46 @@ mod __MapCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    "InstantImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        "InstantImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn instant_impl(
-        this: MapCamera,
-        camera: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapCamera,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_instant_impl::get_offset() as isize),
-        );
+    pub unsafe fn instant_impl(this: MapCamera, camera: crate::unity_engine::camera::Camera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapCamera, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_instant_impl::get_method_info().method_ptr);
         inner(this, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapCamera as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapCamera as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapCamera as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapCamera as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapCamera, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1467,11 +1043,9 @@ impl MapCamera {
     pub fn get_camera() -> crate::unity_engine::camera::Camera {
         unsafe { __MapCamera_unity2_raw::get_camera(::core::option::Option::None) }
     }
+
     #[doc = "`SetPosition(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    pub fn set_position(
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        speed: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_position(pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>, speed: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __MapCamera_unity2_raw::set_position(
                 ::core::convert::Into::into(pos),
@@ -1480,11 +1054,9 @@ impl MapCamera {
             )
         }
     }
+
     #[doc = "`SetPosition(i32, i32)` overload"]
-    pub fn set_position_2(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn set_position_2(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __MapCamera_unity2_raw::set_position_2(
                 ::core::convert::Into::into(x),
@@ -1493,44 +1065,29 @@ impl MapCamera {
             )
         }
     }
+
     #[doc = "`SetRotation(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn set_rotation(
-        rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            __MapCamera_unity2_raw::set_rotation(
-                ::core::convert::Into::into(rot),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_rotation(rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
+        unsafe { __MapCamera_unity2_raw::set_rotation(::core::convert::Into::into(rot), ::core::option::Option::None) }
     }
+
     #[doc = "`SetDistance(f32)` overload"]
     pub fn set_distance(distance: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __MapCamera_unity2_raw::set_distance(
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapCamera_unity2_raw::set_distance(::core::convert::Into::into(distance), ::core::option::Option::None) }
     }
+
     #[doc = "`GetRotation()` overload"]
     pub fn get_rotation() -> crate::unity_engine::vector3::Vector3 {
         unsafe { __MapCamera_unity2_raw::get_rotation(::core::option::Option::None) }
     }
+
     #[doc = "`Instant(crate::unity_engine::camera::Camera)` overload"]
     pub fn instant(camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
-        unsafe {
-            __MapCamera_unity2_raw::instant(
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapCamera_unity2_raw::instant(::core::convert::Into::into(camera), ::core::option::Option::None) }
     }
+
     #[doc = "`EffectShake(f32, f32)` overload"]
-    pub fn effect_shake(
-        time: impl ::core::convert::Into<f32>,
-        magnitude: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn effect_shake(time: impl ::core::convert::Into<f32>, magnitude: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __MapCamera_unity2_raw::effect_shake(
                 ::core::convert::Into::into(time),
@@ -1539,11 +1096,9 @@ impl MapCamera {
             )
         }
     }
+
     #[doc = "`ActionShake(f32, f32)` overload"]
-    pub fn action_shake(
-        time: impl ::core::convert::Into<f32>,
-        magnitude: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn action_shake(time: impl ::core::convert::Into<f32>, magnitude: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __MapCamera_unity2_raw::action_shake(
                 ::core::convert::Into::into(time),
@@ -1552,10 +1107,12 @@ impl MapCamera {
             )
         }
     }
+
     #[doc = "`CheckScrollStrictly()` overload"]
     pub fn check_scroll_strictly() -> bool {
         unsafe { __MapCamera_unity2_raw::check_scroll_strictly(::core::option::Option::None) }
     }
+
     #[doc = "`CheckScrollLoosely()` overload"]
     pub fn check_scroll_loosely() -> bool {
         unsafe { __MapCamera_unity2_raw::check_scroll_loosely(::core::option::Option::None) }
@@ -1567,38 +1124,21 @@ pub trait IMapCameraMethods: IMapCamera {
     #[doc = "`get_Version()` overload"]
     fn get_version(self) -> i32 {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_unity2_raw::get_version(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    fn on_serialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
+    fn on_serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapCamera_unity2_raw::on_serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn on_deserialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-        version: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn on_deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_unity2_raw::on_deserialize(
                 __receiver,
                 ::core::convert::Into::into(stream),
@@ -1610,57 +1150,35 @@ pub trait IMapCameraMethods: IMapCamera {
     #[doc = "`OnTick()` overload"]
     fn on_tick(self) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_unity2_raw::on_tick(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnUpdate()` overload"]
     fn on_update(self) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_unity2_raw::on_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Commit(crate::unity_engine::camera::Camera)` overload"]
     fn commit(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapCamera_unity2_raw::commit(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_unity2_raw::commit(__receiver, ::core::convert::Into::into(camera), ::core::option::Option::None)
         }
     }
     #[doc = "`GetParamTime(::unity2::Il2CppString)` overload"]
     fn get_param_time(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapCamera_unity2_raw::get_param_time(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_unity2_raw::get_param_time(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`SetPositionImpl(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    fn set_position_impl(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        speed: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_position_impl(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>, speed: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_unity2_raw::set_position_impl(
                 __receiver,
                 ::core::convert::Into::into(pos),
@@ -1670,56 +1188,30 @@ pub trait IMapCameraMethods: IMapCamera {
         }
     }
     #[doc = "`SetRotationImpl(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_rotation_impl(
-        self,
-        rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_rotation_impl(self, rot: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapCamera_unity2_raw::set_rotation_impl(
-                __receiver,
-                ::core::convert::Into::into(rot),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_unity2_raw::set_rotation_impl(__receiver, ::core::convert::Into::into(rot), ::core::option::Option::None)
         }
     }
     #[doc = "`SetDistanceImpl(f32)` overload"]
     fn set_distance_impl(self, distance: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapCamera_unity2_raw::set_distance_impl(
-                __receiver,
-                ::core::convert::Into::into(distance),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_unity2_raw::set_distance_impl(__receiver, ::core::convert::Into::into(distance), ::core::option::Option::None)
         }
     }
     #[doc = "`InstantImpl(crate::unity_engine::camera::Camera)` overload"]
-    fn instant_impl(
-        self,
-        camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> () {
+    fn instant_impl(self, camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapCamera_unity2_raw::instant_impl(
-                __receiver,
-                ::core::convert::Into::into(camera),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapCamera_unity2_raw::instant_impl(__receiver, ::core::convert::Into::into(camera), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapCamera_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1732,13 +1224,8 @@ impl<__T: IMapCamera> IMapCameraMethods for __T {}
 impl MapCamera {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapCamera),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapCamera), ::core::stringify!(new),));
         <Self as IMapCameraMethods>::ctor(this);
         this
     }
@@ -1747,16 +1234,12 @@ impl MapCamera {
 #[cfg(feature = "app-mapcamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapCamera;
-    pub use super::IMapCameraMethods;
-    pub use super::IMapCamera_InterpolatorShake;
-    pub use super::IMapCamera_InterpolatorShakeMethods;
-    pub use super::MapCamera;
-    pub use super::MapCamera_InterpolatorShake;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{
+        IMapCamera, IMapCameraMethods, IMapCamera_InterpolatorShake, IMapCamera_InterpolatorShakeMethods, MapCamera, MapCamera_InterpolatorShake,
+    };
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
 }

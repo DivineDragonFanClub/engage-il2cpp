@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-ui-maskutilities-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskutilities/MaskUtilities.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "MaskUtilities")]
@@ -25,11 +25,8 @@ mod __MaskUtilities_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_notify2_d_mask_state_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskUtilities as ::unity2::ClassIdentity>::class(),
                 "Notify2DMaskStateChanged",
@@ -41,43 +38,31 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Notify2DMaskStateChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Notify2DMaskStateChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn notify2_d_mask_state_changed(
         mask: crate::unity_engine::component::Component,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::component::Component,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_notify2_d_mask_state_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::component::Component, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_notify2_d_mask_state_changed::get_method_info().method_ptr);
         inner(mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_notify_stencil_state_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::component::Component as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskUtilities as ::unity2::ClassIdentity>::class(),
                 "NotifyStencilStateChanged",
@@ -89,43 +74,31 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "NotifyStencilStateChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "NotifyStencilStateChanged",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn notify_stencil_state_changed(
         mask: crate::unity_engine::component::Component,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::component::Component,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_notify_stencil_state_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::component::Component, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_notify_stencil_state_changed::get_method_info().method_ptr);
         inner(mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_root_sort_override_canvas {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskUtilities as ::unity2::ClassIdentity>::class(),
                 "FindRootSortOverrideCanvas",
@@ -137,41 +110,30 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "FindRootSortOverrideCanvas",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "FindRootSortOverrideCanvas",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_root_sort_override_canvas(
         start: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_root_sort_override_canvas::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_find_root_sort_override_canvas::get_method_info().method_ptr);
         inner(start, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stencil_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
@@ -187,18 +149,15 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetStencilDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetStencilDepth",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_stencil_depth(
@@ -210,20 +169,14 @@ mod __MaskUtilities_unity2_raw {
             crate::unity_engine::transform::Transform,
             crate::unity_engine::transform::Transform,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stencil_depth::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_stencil_depth::get_method_info().method_ptr);
         inner(transform, stop_after, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_descendant_or_self {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
@@ -239,18 +192,15 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "IsDescendantOrSelf",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "IsDescendantOrSelf",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_descendant_or_self(
@@ -262,23 +212,16 @@ mod __MaskUtilities_unity2_raw {
             crate::unity_engine::transform::Transform,
             crate::unity_engine::transform::Transform,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_descendant_or_self::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_descendant_or_self::get_method_info().method_ptr);
         inner(father, child, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_mask_for_clippable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::iclippable::IClippable as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::iclippable::IClippable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskUtilities as ::unity2::ClassIdentity>::class(),
                 "GetRectMaskForClippable",
@@ -290,18 +233,15 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetRectMaskForClippable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetRectMaskForClippable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rect_mask_for_clippable(
@@ -311,25 +251,18 @@ mod __MaskUtilities_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::ui::iclippable::IClippable,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::ui::rectmask2d::RectMask2D = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_mask_for_clippable::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::ui::rectmask2d::RectMask2D =
+            ::core::mem::transmute(__lookup_get_rect_mask_for_clippable::get_method_info().method_ptr);
         inner(clippable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_masks_for_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::ui::rectmask2d::RectMask2D as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::ui::rectmask2d::RectMask2D,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaskUtilities as ::unity2::ClassIdentity>::class(),
@@ -342,80 +275,53 @@ mod __MaskUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    "GetRectMasksForClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        "GetRectMasksForClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rect_masks_for_clip(
         clipper: crate::unity_engine::ui::rectmask2d::RectMask2D,
-        masks: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::rectmask2d::RectMask2D,
-        >,
+        masks: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::ui::rectmask2d::RectMask2D,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::ui::rectmask2d::RectMask2D,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_masks_for_clip::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_rect_masks_for_clip::get_method_info().method_ptr);
         inner(clipper, masks, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaskUtilities as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MaskUtilities as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaskUtilities as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaskUtilities as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MaskUtilities, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MaskUtilities, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MaskUtilities, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -423,38 +329,22 @@ mod __MaskUtilities_unity2_raw {
 #[cfg(feature = "unity_engine-ui-maskutilities")]
 impl MaskUtilities {
     #[doc = "`Notify2DMaskStateChanged(crate::unity_engine::component::Component)` overload"]
-    pub fn notify2_d_mask_state_changed(
-        mask: impl ::core::convert::Into<crate::unity_engine::component::Component>,
-    ) -> () {
-        unsafe {
-            __MaskUtilities_unity2_raw::notify2_d_mask_state_changed(
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn notify2_d_mask_state_changed(mask: impl ::core::convert::Into<crate::unity_engine::component::Component>) -> () {
+        unsafe { __MaskUtilities_unity2_raw::notify2_d_mask_state_changed(::core::convert::Into::into(mask), ::core::option::Option::None) }
     }
+
     #[doc = "`NotifyStencilStateChanged(crate::unity_engine::component::Component)` overload"]
-    pub fn notify_stencil_state_changed(
-        mask: impl ::core::convert::Into<crate::unity_engine::component::Component>,
-    ) -> () {
-        unsafe {
-            __MaskUtilities_unity2_raw::notify_stencil_state_changed(
-                ::core::convert::Into::into(mask),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn notify_stencil_state_changed(mask: impl ::core::convert::Into<crate::unity_engine::component::Component>) -> () {
+        unsafe { __MaskUtilities_unity2_raw::notify_stencil_state_changed(::core::convert::Into::into(mask), ::core::option::Option::None) }
     }
+
     #[doc = "`FindRootSortOverrideCanvas(crate::unity_engine::transform::Transform)` overload"]
     pub fn find_root_sort_override_canvas(
         start: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
     ) -> crate::unity_engine::transform::Transform {
-        unsafe {
-            __MaskUtilities_unity2_raw::find_root_sort_override_canvas(
-                ::core::convert::Into::into(start),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MaskUtilities_unity2_raw::find_root_sort_override_canvas(::core::convert::Into::into(start), ::core::option::Option::None) }
     }
+
     #[doc = "`GetStencilDepth(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]
     pub fn get_stencil_depth(
         transform: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
@@ -468,6 +358,7 @@ impl MaskUtilities {
             )
         }
     }
+
     #[doc = "`IsDescendantOrSelf(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]
     pub fn is_descendant_or_self(
         father: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
@@ -481,25 +372,18 @@ impl MaskUtilities {
             )
         }
     }
+
     #[doc = "`GetRectMaskForClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"]
     pub fn get_rect_mask_for_clippable(
         clippable: impl ::core::convert::Into<crate::unity_engine::ui::iclippable::IClippable>,
     ) -> crate::unity_engine::ui::rectmask2d::RectMask2D {
-        unsafe {
-            __MaskUtilities_unity2_raw::get_rect_mask_for_clippable(
-                ::core::convert::Into::into(clippable),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MaskUtilities_unity2_raw::get_rect_mask_for_clippable(::core::convert::Into::into(clippable), ::core::option::Option::None) }
     }
+
     #[doc = "`GetRectMasksForClip(crate::unity_engine::ui::rectmask2d::RectMask2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>)` overload"]
     pub fn get_rect_masks_for_clip(
         clipper: impl ::core::convert::Into<crate::unity_engine::ui::rectmask2d::RectMask2D>,
-        masks: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::ui::rectmask2d::RectMask2D,
-            >,
-        >,
+        masks: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>>,
     ) -> () {
         unsafe {
             __MaskUtilities_unity2_raw::get_rect_masks_for_clip(
@@ -516,9 +400,7 @@ pub trait IMaskUtilitiesMethods: IMaskUtilities {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MaskUtilities as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaskUtilities as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaskUtilities_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -531,13 +413,8 @@ impl<__T: IMaskUtilities> IMaskUtilitiesMethods for __T {}
 impl MaskUtilities {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaskUtilities),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MaskUtilities), ::core::stringify!(new),));
         <Self as IMaskUtilitiesMethods>::ctor(this);
         this
     }
@@ -546,9 +423,7 @@ impl MaskUtilities {
 #[cfg(feature = "unity_engine-ui-maskutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMaskUtilities;
-    pub use super::IMaskUtilitiesMethods;
-    pub use super::MaskUtilities;
+    pub use super::{IMaskUtilities, IMaskUtilitiesMethods, MaskUtilities};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

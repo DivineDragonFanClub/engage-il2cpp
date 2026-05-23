@@ -2,12 +2,14 @@
 
 #[cfg(feature = "system-action_10-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/action_10/Action_10.md"))]
     #[::unity2::class(namespace = "System", name = "Action`10")]
@@ -52,19 +54,7 @@ impl<
 
     #[doc = "`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8, T9)` overload"]
     #[method(name = "Invoke", args = 10)]
-    pub fn invoke(
-        self,
-        arg1: T0,
-        arg2: T1,
-        arg3: T2,
-        arg4: T3,
-        arg5: T4,
-        arg6: T5,
-        arg7: T6,
-        arg8: T7,
-        arg9: T8,
-        arg10: T9,
-    ) -> ();
+    pub fn invoke(self, arg1: T0, arg2: T1, arg3: T2, arg4: T3, arg5: T4, arg6: T5, arg7: T6, arg8: T7, arg9: T8, arg10: T9) -> ();
 }
 
 #[cfg(feature = "system-action_10")]
@@ -83,16 +73,9 @@ impl<
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Action_10),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAction_10Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>>::ctor(
-            this, object, method,
-        );
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Action_10), ::core::stringify!(new),));
+        <Self as IAction_10Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>>::ctor(this, object, method);
         this
     }
 }
@@ -100,16 +83,12 @@ impl<
 #[cfg(feature = "system-action_10")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Action_10;
-    pub use super::IAction_10;
-    pub use super::IAction_10Methods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{Action_10, IAction_10, IAction_10Methods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

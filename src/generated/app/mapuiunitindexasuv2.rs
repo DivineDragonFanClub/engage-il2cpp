@@ -2,16 +2,20 @@
 
 #[cfg(feature = "app-mapuiunitindexasuv2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect, IBaseMeshEffect};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::basemesheffect::{BaseMeshEffect, IBaseMeshEffect},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapuiunitindexasuv2/MapUIUnitIndexAsUV2.md"))]
     #[::unity2::class(namespace = "App", name = "MapUIUnitIndexAsUV2")]
@@ -34,9 +38,7 @@ mod __MapUIUnitIndexAsUV2_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::class(),
@@ -49,43 +51,29 @@ mod __MapUIUnitIndexAsUV2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapUIUnitIndexAsUV2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapUIUnitIndexAsUV2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIUnitIndexAsUV2, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_modify_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::vertexhelper::VertexHelper as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::class(),
                 "ModifyMesh",
@@ -97,18 +85,15 @@ mod __MapUIUnitIndexAsUV2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::NAME,
-                    "ModifyMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::NAME,
+                        "ModifyMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn modify_mesh(
@@ -116,26 +101,16 @@ mod __MapUIUnitIndexAsUV2_unity2_raw {
         vh: crate::unity_engine::ui::vertexhelper::VertexHelper,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIUnitIndexAsUV2,
-            crate::unity_engine::ui::vertexhelper::VertexHelper,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_modify_mesh::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIUnitIndexAsUV2, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_modify_mesh::get_method_info().method_ptr);
         inner(this, vh, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::class(),
                 "SetUnitIndex",
@@ -147,31 +122,20 @@ mod __MapUIUnitIndexAsUV2_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::NAME,
-                    "SetUnitIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIUnitIndexAsUV2 as ::unity2::ClassIdentity>::NAME,
+                        "SetUnitIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_unit_index(
-        this: MapUIUnitIndexAsUV2,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_unit_index(this: MapUIUnitIndexAsUV2, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIUnitIndexAsUV2, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_unit_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_unit_index::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
 }
@@ -181,39 +145,22 @@ pub trait IMapUIUnitIndexAsUV2Methods: IMapUIUnitIndexAsUV2 {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapUIUnitIndexAsUV2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIUnitIndexAsUV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIUnitIndexAsUV2_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
-    fn modify_mesh(
-        self,
-        vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>,
-    ) -> () {
+    fn modify_mesh(self, vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>) -> () {
         unsafe {
-            let __receiver = <MapUIUnitIndexAsUV2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIUnitIndexAsUV2_unity2_raw::modify_mesh(
-                __receiver,
-                ::core::convert::Into::into(vh),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIUnitIndexAsUV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIUnitIndexAsUV2_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)
         }
     }
     #[doc = "`SetUnitIndex(i32)` overload"]
     fn set_unit_index(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapUIUnitIndexAsUV2 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIUnitIndexAsUV2_unity2_raw::set_unit_index(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIUnitIndexAsUV2 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIUnitIndexAsUV2_unity2_raw::set_unit_index(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
 }
@@ -240,28 +187,26 @@ impl MapUIUnitIndexAsUV2 {
 #[cfg(feature = "app-mapuiunitindexasuv2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapUIUnitIndexAsUV2;
-    pub use super::IMapUIUnitIndexAsUV2Methods;
-    pub use super::MapUIUnitIndexAsUV2;
-    pub use crate::system::object::IObject;
+    pub use super::{IMapUIUnitIndexAsUV2, IMapUIUnitIndexAsUV2Methods, MapUIUnitIndexAsUV2};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
     #[cfg(feature = "unity_engine-ui-basemesheffect")]
     pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
+            object_2::IObject_2, ui::basemesheffect::IBaseMeshEffect,
+        },
+    };
 }

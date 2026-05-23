@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-spaceattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spaceattribute/SpaceAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "SpaceAttribute")]
@@ -29,9 +31,7 @@ mod __SpaceAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpaceAttribute as ::unity2::ClassIdentity>::class(),
@@ -44,38 +44,28 @@ mod __SpaceAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpaceAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpaceAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: SpaceAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SpaceAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SpaceAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -87,31 +77,20 @@ mod __SpaceAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SpaceAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SpaceAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: SpaceAttribute,
-        height: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: SpaceAttribute, height: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SpaceAttribute, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, height, __unity2_method_info)
     }
 }
@@ -121,23 +100,15 @@ pub trait ISpaceAttributeMethods: ISpaceAttribute {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SpaceAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SpaceAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SpaceAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(f32)` overload"]
     fn ctor_2(self, height: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SpaceAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SpaceAttribute_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(height),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SpaceAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SpaceAttribute_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(height), ::core::option::Option::None)
         }
     }
 }
@@ -177,13 +148,10 @@ impl SpaceAttribute {
 #[cfg(feature = "unity_engine-spaceattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISpaceAttribute;
-    pub use super::ISpaceAttributeMethods;
-    pub use super::SpaceAttribute;
-    pub use crate::system::object::IObject;
+    pub use super::{ISpaceAttribute, ISpaceAttributeMethods, SpaceAttribute};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
     #[cfg(feature = "unity_engine-propertyattribute")]
     pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
 }

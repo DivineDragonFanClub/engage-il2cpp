@@ -2,17 +2,19 @@
 
 #[cfg(feature = "app-soundmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use super::*;
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager_ParamFader.md"))]
     #[::unity2::class(namespace = "App", name = "SoundManager.ParamFader")]
@@ -80,26 +82,20 @@ mod __types {
         #[rename(name = "m_eventSeVolume")]
         pub m_event_se_volume: f32,
         #[rename(name = "m_soundHandleList")]
-        pub m_sound_handle_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::soundsystem::SoundSystem_SoundHandle,
-        >,
+        pub m_sound_handle_list: crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle>,
         #[rename(name = "m_deleteSoundHandleList")]
-        pub m_delete_sound_handle_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::soundsystem::SoundSystem_SoundHandle,
-        >,
+        pub m_delete_sound_handle_list: crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle>,
         #[rename(name = "m_GlobalEnumParamStack_MapOrCombat")]
-        pub m_global_enum_param_stack_map_or_combat:
-            crate::system::collections::generic::stack_1::Stack_1<u32>,
+        pub m_global_enum_param_stack_map_or_combat: crate::system::collections::generic::stack_1::Stack_1<u32>,
         #[rename(name = "m_TimeCounterForUpdateOutput")]
         pub m_time_counter_for_update_output: f32,
         #[rename(name = "m_isMuteByGameSkip")]
         pub m_is_mute_by_game_skip: bool,
         #[rename(name = "m_lipSyncDataFileDictionary")]
-        pub m_lip_sync_data_file_dictionary:
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::app::soundsystem::SoundSystem_LipSyncDataFile,
-            >,
+        pub m_lip_sync_data_file_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::soundsystem::SoundSystem_LipSyncDataFile,
+        >,
     }
 }
 
@@ -115,9 +111,7 @@ mod __SoundManager_ParamFader_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
@@ -130,39 +124,27 @@ mod __SoundManager_ParamFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SoundManager_ParamFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
@@ -175,39 +157,27 @@ mod __SoundManager_ParamFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: SoundManager_ParamFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
@@ -220,43 +190,28 @@ mod __SoundManager_ParamFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get(
-        this: SoundManager_ParamFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -268,45 +223,27 @@ mod __SoundManager_ParamFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set(
-        this: SoundManager_ParamFader,
-        param: f32,
-        msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundManager_ParamFader,
-            f32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
+    pub unsafe fn set(this: SoundManager_ParamFader, param: f32, msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager_ParamFader, f32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, param, msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager_ParamFader as ::unity2::ClassIdentity>::class(),
@@ -319,30 +256,20 @@ mod __SoundManager_ParamFader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager_ParamFader as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick(
-        this: SoundManager_ParamFader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick(this: SoundManager_ParamFader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager_ParamFader, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -353,9 +280,7 @@ pub trait ISoundManager_ParamFaderMethods: ISoundManager_ParamFader {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_ParamFader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -363,9 +288,7 @@ pub trait ISoundManager_ParamFaderMethods: ISoundManager_ParamFader {
     fn reset(self) -> () {
         unsafe {
             let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_ParamFader_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
@@ -373,23 +296,15 @@ pub trait ISoundManager_ParamFaderMethods: ISoundManager_ParamFader {
     fn get(self) -> f32 {
         unsafe {
             let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_ParamFader_unity2_raw::get(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Set(f32, i32)` overload"]
-    fn set(
-        self,
-        param: impl ::core::convert::Into<f32>,
-        msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set(self, param: impl ::core::convert::Into<f32>, msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_ParamFader_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(param),
@@ -402,9 +317,7 @@ pub trait ISoundManager_ParamFaderMethods: ISoundManager_ParamFader {
     fn tick(self) -> () {
         unsafe {
             let __receiver =
-                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SoundManager_ParamFader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_ParamFader_unity2_raw::tick(__receiver, ::core::option::Option::None)
         }
     }
@@ -438,9 +351,7 @@ mod __SoundManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -453,44 +364,29 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "get_Param",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "get_Param",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_param(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::soundsystem::SoundSystem_ISoundParam {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_ISoundParam = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_param::get_offset() as isize),
-        );
+    pub unsafe fn get_param(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_ISoundParam {
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_ISoundParam =
+            ::core::mem::transmute(__lookup_get_param::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::soundsystem::SoundSystem_ISoundParam as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::soundsystem::SoundSystem_ISoundParam as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "set_Param",
@@ -502,18 +398,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "set_Param",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "set_Param",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_param(
@@ -521,24 +414,15 @@ mod __SoundManager_unity2_raw {
         value: crate::app::soundsystem::SoundSystem_ISoundParam,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::soundsystem::SoundSystem_ISoundParam,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::soundsystem::SoundSystem_ISoundParam, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_param::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_loader {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -551,44 +435,29 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "get_Loader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "get_Loader",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_loader(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::soundsystem::SoundSystem_ISoundLoad {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_ISoundLoad = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_loader::get_offset() as isize),
-        );
+    pub unsafe fn get_loader(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_ISoundLoad {
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_ISoundLoad =
+            ::core::mem::transmute(__lookup_get_loader::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_loader {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::soundsystem::SoundSystem_ISoundLoad as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::soundsystem::SoundSystem_ISoundLoad as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "set_Loader",
@@ -600,18 +469,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "set_Loader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "set_Loader",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_loader(
@@ -619,24 +485,15 @@ mod __SoundManager_unity2_raw {
         value: crate::app::soundsystem::SoundSystem_ISoundLoad,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::soundsystem::SoundSystem_ISoundLoad,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_loader::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::soundsystem::SoundSystem_ISoundLoad, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_loader::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_player {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -649,44 +506,29 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "get_Player",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "get_Player",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_player(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::soundsystem::SoundSystem_ISoundPlay {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_ISoundPlay = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_player::get_offset() as isize),
-        );
+    pub unsafe fn get_player(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_ISoundPlay {
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_ISoundPlay =
+            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_player {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::soundsystem::SoundSystem_ISoundPlay as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::soundsystem::SoundSystem_ISoundPlay as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "set_Player",
@@ -698,18 +540,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "set_Player",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "set_Player",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_player(
@@ -717,24 +556,15 @@ mod __SoundManager_unity2_raw {
         value: crate::app::soundsystem::SoundSystem_ISoundPlay,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::soundsystem::SoundSystem_ISoundPlay,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_player::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::soundsystem::SoundSystem_ISoundPlay, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_player::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_field_bgm_manager {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -747,41 +577,30 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "get_FieldBgmManager",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "get_FieldBgmManager",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_field_bgm_manager(
         this: SoundManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::fieldbgmmanager::FieldBgmManager {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::fieldbgmmanager::FieldBgmManager = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_field_bgm_manager::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::app::fieldbgmmanager::FieldBgmManager =
+            ::core::mem::transmute(__lookup_get_field_bgm_manager::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_field_bgm_manager {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::fieldbgmmanager::FieldBgmManager as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -795,18 +614,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "set_FieldBgmManager",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "set_FieldBgmManager",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_field_bgm_manager(
@@ -814,66 +630,41 @@ mod __SoundManager_unity2_raw {
         value: crate::app::fieldbgmmanager::FieldBgmManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::fieldbgmmanager::FieldBgmManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_field_bgm_manager::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::fieldbgmmanager::FieldBgmManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_field_bgm_manager::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SoundManager as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -886,81 +677,53 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SoundManager as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_master_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -973,41 +736,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "ResetMasterVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "ResetMasterVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_master_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_master_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_master_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_master_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "Serialize",
@@ -1019,45 +769,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: SoundManager,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+    pub unsafe fn serialize(this: SoundManager, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -1069,45 +802,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: SoundManager,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+    pub unsafe fn deserialize(this: SoundManager, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_language {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::language::Language_Langs as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::language::Language_Langs as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetLanguage",
@@ -1119,18 +835,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetLanguage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetLanguage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_language(
@@ -1138,24 +851,15 @@ mod __SoundManager_unity2_raw {
         language: crate::app::language::Language_Langs,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::language::Language_Langs,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_language::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::language::Language_Langs, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_language::get_method_info().method_ptr);
         inner(this, language, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_se_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -1168,41 +872,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetEventSeVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetEventSeVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_event_se_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_event_se_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_event_se_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_event_se_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_event_loaded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "IsEventLoaded",
@@ -1214,45 +905,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsEventLoaded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsEventLoaded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_event_loaded(
-        this: SoundManager,
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_event_loaded::get_offset() as isize),
-        );
+    pub unsafe fn is_event_loaded(this: SoundManager, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_event_loaded::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_event_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "IsEventPlaying",
@@ -1264,45 +938,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsEventPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsEventPlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_event_playing(
-        this: SoundManager,
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_event_playing::get_offset() as isize),
-        );
+    pub unsafe fn is_event_playing(this: SoundManager, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_event_playing::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_bgm_event_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "IsBgmEventPlaying",
@@ -1314,18 +971,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsBgmEventPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsBgmEventPlaying",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_bgm_event_playing(
@@ -1333,26 +987,16 @@ mod __SoundManager_unity2_raw {
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_bgm_event_playing::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_bgm_event_playing::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_sound_handle_by_event_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FindSoundHandleByEventName",
@@ -1364,18 +1008,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FindSoundHandleByEventName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FindSoundHandleByEventName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_sound_handle_by_event_name(
@@ -1383,26 +1024,16 @@ mod __SoundManager_unity2_raw {
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_sound_handle_by_event_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_SoundHandle =
+            ::core::mem::transmute(__lookup_find_sound_handle_by_event_name::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_sound_handles_by_event_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FindSoundHandlesByEventName",
@@ -1414,49 +1045,36 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FindSoundHandlesByEventName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FindSoundHandlesByEventName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_sound_handles_by_event_name(
         this: SoundManager,
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_SoundHandle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> {
         let inner: extern "C" fn(
             SoundManager,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::soundsystem::SoundSystem_SoundHandle,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_sound_handles_by_event_name::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> =
+            ::core::mem::transmute(__lookup_find_sound_handles_by_event_name::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_sound_handle_by_event_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FindSoundHandleByEventId",
@@ -1468,18 +1086,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FindSoundHandleByEventId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FindSoundHandleByEventId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_sound_handle_by_event_id(
@@ -1487,26 +1102,16 @@ mod __SoundManager_unity2_raw {
         event_id: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
-        let inner: extern "C" fn(
-            SoundManager,
-            u32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_sound_handle_by_event_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, u32, ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_SoundHandle =
+            ::core::mem::transmute(__lookup_find_sound_handle_by_event_id::get_method_info().method_ptr);
         inner(this, event_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_sound_handles_by_event_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FindSoundHandlesByEventId",
@@ -1518,49 +1123,36 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FindSoundHandlesByEventId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FindSoundHandlesByEventId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_sound_handles_by_event_id(
         this: SoundManager,
         event_id: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_SoundHandle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> {
         let inner: extern "C" fn(
             SoundManager,
             u32,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::soundsystem::SoundSystem_SoundHandle,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_sound_handles_by_event_id::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> =
+            ::core::mem::transmute(__lookup_find_sound_handles_by_event_id::get_method_info().method_ptr);
         inner(this, event_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sound_handle_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "GetSoundHandleList",
@@ -1572,47 +1164,35 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetSoundHandleList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetSoundHandleList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sound_handle_list(
         this: SoundManager,
         prefix: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_SoundHandle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> {
         let inner: extern "C" fn(
             SoundManager,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::soundsystem::SoundSystem_SoundHandle,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sound_handle_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> =
+            ::core::mem::transmute(__lookup_get_sound_handle_list::get_method_info().method_ptr);
         inner(this, prefix, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_event_se_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -1625,39 +1205,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsEventSePlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsEventSePlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_event_se_playing(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_event_se_playing(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_event_se_playing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_event_se_playing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_audio_listener_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -1670,41 +1238,30 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetAudioListenerObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetAudioListenerObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_audio_listener_object(
         this: SoundManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_audio_listener_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_audio_listener_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_audio_listener_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -1717,41 +1274,30 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetAudioListenerPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetAudioListenerPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_audio_listener_position(
         this: SoundManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_audio_listener_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_audio_listener_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_audio_listener_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -1764,43 +1310,31 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetAudioListenerRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetAudioListenerRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_audio_listener_rotation(
         this: SoundManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_audio_listener_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_audio_listener_rotation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_sound {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "LoadSound",
@@ -1812,45 +1346,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "LoadSound",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "LoadSound",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_sound(
-        this: SoundManager,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_sound::get_offset() as isize),
-        );
+    pub unsafe fn load_sound(this: SoundManager, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_sound::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_sound_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "LoadSoundAsync",
@@ -1862,43 +1379,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "LoadSoundAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "LoadSoundAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_sound_async(
-        this: SoundManager,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_sound_async::get_offset() as isize),
-        );
+    pub unsafe fn load_sound_async(this: SoundManager, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_sound_async::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_sound {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -1911,41 +1412,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingSound",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingSound",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_sound(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_sound(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_sound::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_sound::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_sound_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "IsLoadingSound",
@@ -1957,45 +1445,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingSound",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingSound",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_sound_2(
-        this: SoundManager,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_sound_2::get_offset() as isize),
-        );
+    pub unsafe fn is_loading_sound_2(this: SoundManager, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_loading_sound_2::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_sound {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "UnloadSound",
@@ -2007,43 +1478,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnloadSound",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnloadSound",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_sound(
-        this: SoundManager,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_sound::get_offset() as isize),
-        );
+    pub unsafe fn unload_sound(this: SoundManager, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_sound::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_sound_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2056,41 +1511,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnloadSoundAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnloadSoundAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_sound_all(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unload_sound_all(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_sound_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unload_sound_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reload_sound_by_set_language {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::language::Language_Voices as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::language::Language_Voices as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "ReloadSoundBySetLanguage",
@@ -2102,18 +1544,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "ReloadSoundBySetLanguage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "ReloadSoundBySetLanguage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reload_sound_by_set_language(
@@ -2121,26 +1560,16 @@ mod __SoundManager_unity2_raw {
         language: crate::app::language::Language_Voices,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::language::Language_Voices,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reload_sound_by_set_language::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::language::Language_Voices, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reload_sound_by_set_language::get_method_info().method_ptr);
         inner(this, language, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "PrepareEvent",
@@ -2152,45 +1581,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prepare_event(
-        this: SoundManager,
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_event::get_offset() as isize),
-        );
+    pub unsafe fn prepare_event(this: SoundManager, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_prepare_event::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "PrepareEvent",
@@ -2202,18 +1614,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_event_2(
@@ -2221,28 +1630,18 @@ mod __SoundManager_unity2_raw {
         event_name_array: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_event_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_prepare_event_2::get_method_info().method_ptr);
         inner(this, event_name_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_event_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2255,18 +1654,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareEventAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareEventAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_event_async(
@@ -2280,24 +1676,17 @@ mod __SoundManager_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_event_async::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_prepare_event_async::get_method_info().method_ptr);
         inner(this, event_name, result_sound_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_event_async_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2310,18 +1699,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareEventAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareEventAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_event_async_2(
@@ -2335,27 +1721,15 @@ mod __SoundManager_unity2_raw {
             ::unity2::Array<::unity2::Il2CppString>,
             *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_event_async_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name_array,
-            result_sound_load,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_prepare_event_async_2::get_method_info().method_ptr);
+        inner(this, event_name_array, result_sound_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unprepare_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "UnprepareEvent",
@@ -2367,18 +1741,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnprepareEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnprepareEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unprepare_event(
@@ -2386,26 +1757,16 @@ mod __SoundManager_unity2_raw {
         event_name_array: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unprepare_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unprepare_event::get_method_info().method_ptr);
         inner(this, event_name_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unprepare_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "UnprepareEvent",
@@ -2417,18 +1778,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnprepareEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnprepareEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unprepare_event_2(
@@ -2436,24 +1794,15 @@ mod __SoundManager_unity2_raw {
         event_name_array: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unprepare_event_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unprepare_event_2::get_method_info().method_ptr);
         inner(this, event_name_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_switch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2469,18 +1818,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareSwitch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareSwitch",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_switch(
@@ -2489,25 +1835,15 @@ mod __SoundManager_unity2_raw {
         switch_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_switch::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_prepare_switch::get_method_info().method_ptr);
         inner(this, switch_group_name, switch_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_switch_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
@@ -2523,18 +1859,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareSwitch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareSwitch",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_switch_2(
@@ -2543,35 +1876,19 @@ mod __SoundManager_unity2_raw {
         switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_switch_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            switch_group_name,
-            switch_name_array,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_prepare_switch_2::get_method_info().method_ptr);
+        inner(this, switch_group_name, switch_name_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_switch_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2584,18 +1901,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareSwitchAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareSwitchAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_switch_async(
@@ -2611,31 +1925,18 @@ mod __SoundManager_unity2_raw {
             ::unity2::Il2CppString,
             *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_switch_async::get_offset() as isize),
-        );
-        inner(
-            this,
-            switch_group_name,
-            switch_name,
-            result_sound_load,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_prepare_switch_async::get_method_info().method_ptr);
+        inner(this, switch_group_name, switch_name, result_sound_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_switch_async_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::soundsystem::SoundSystem_ResultSoundLoad as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2648,18 +1949,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareSwitchAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareSwitchAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_switch_async_2(
@@ -2675,26 +1973,14 @@ mod __SoundManager_unity2_raw {
             ::unity2::Array<::unity2::Il2CppString>,
             *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_switch_async_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            switch_group_name,
-            switch_name_array,
-            result_sound_load,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_prepare_switch_async_2::get_method_info().method_ptr);
+        inner(this, switch_group_name, switch_name_array, result_sound_load, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unprepare_switch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2710,18 +1996,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnprepareSwitch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnprepareSwitch",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unprepare_switch(
@@ -2730,30 +2013,15 @@ mod __SoundManager_unity2_raw {
         switch_name_array: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unprepare_switch::get_offset() as isize),
-        );
-        inner(
-            this,
-            switch_group_name,
-            switch_name_array,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unprepare_switch::get_method_info().method_ptr);
+        inner(this, switch_group_name, switch_name_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unprepare_switch_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
@@ -2769,18 +2037,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnprepareSwitch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnprepareSwitch",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unprepare_switch_2(
@@ -2789,30 +2054,15 @@ mod __SoundManager_unity2_raw {
         switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unprepare_switch_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            switch_group_name,
-            switch_name_array,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unprepare_switch_2::get_method_info().method_ptr);
+        inner(this, switch_group_name, switch_name_array, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_prepare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2825,39 +2075,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "ClearPrepare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "ClearPrepare",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_prepare(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_prepare(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_prepare::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_prepare::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -2870,43 +2108,31 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryGameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryGameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_game_object(
         this: SoundManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_game_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_temporary_game_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_debug_log {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "TryDebugLog",
@@ -2918,39 +2144,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "TryDebugLog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "TryDebugLog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_debug_log(
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn try_debug_log(event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_debug_log::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_debug_log::get_method_info().method_ptr);
         inner(event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
@@ -2967,18 +2181,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PostEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PostEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn post_event(
@@ -2994,26 +2205,14 @@ mod __SoundManager_unity2_raw {
             crate::combat::character::Character,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_post_event::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            character,
-            is_get_position,
-            __unity2_method_info,
-        )
+        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(__lookup_post_event::get_method_info().method_ptr);
+        inner(this, event_name, character, is_get_position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -3031,18 +2230,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PostEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PostEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn post_event_2(
@@ -3060,27 +2256,14 @@ mod __SoundManager_unity2_raw {
             crate::combat::character::Character,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_post_event_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            game_object,
-            character,
-            is_get_position,
-            __unity2_method_info,
-        )
+        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(__lookup_post_event_2::get_method_info().method_ptr);
+        inner(this, event_name, game_object, character, is_get_position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_event_with_temporary_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -3098,18 +2281,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PostEventWithTemporaryGameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PostEventWithTemporaryGameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn post_event_with_temporary_game_object(
@@ -3127,28 +2307,22 @@ mod __SoundManager_unity2_raw {
             crate::combat::character::Character,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_post_event_with_temporary_game_object::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            temporary_game_object,
-            character,
-            is_get_position,
-            __unity2_method_info,
-        )
+        ) -> crate::app::soundsystem::SoundSystem_SoundHandle =
+            ::core::mem::transmute(__lookup_post_event_with_temporary_game_object::get_method_info().method_ptr);
+        inner(this, event_name, temporary_game_object, character, is_get_position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_event_direct {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallback as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::root::akcallbackmanager::AkCallbackManager_EventCallback as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "PostEventDirect",
@@ -3160,18 +2334,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PostEventDirect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PostEventDirect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn post_event_direct(
@@ -3191,29 +2362,22 @@ mod __SoundManager_unity2_raw {
             crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_post_event_direct::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            game_object,
-            flag,
-            callback,
-            cookie,
-            __unity2_method_info,
-        )
+        ) -> crate::app::soundsystem::SoundSystem_SoundHandle = ::core::mem::transmute(__lookup_post_event_direct::get_method_info().method_ptr);
+        inner(this, event_name, game_object, flag, callback, cookie, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_action_on_event_direct {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: root :: akactiononeventtype :: AkActionOnEventType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: root :: akcurveinterpolation :: AkCurveInterpolation as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < u32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::root::akactiononeventtype::AkActionOnEventType as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::root::akcurveinterpolation::AkCurveInterpolation as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <u32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "ExecuteActionOnEventDirect",
@@ -3225,18 +2389,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteActionOnEventDirect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteActionOnEventDirect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute_action_on_event_direct(
@@ -3258,11 +2419,7 @@ mod __SoundManager_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             u32,
             ::unity2::OptionalMethod,
-        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_action_on_event_direct::get_offset() as isize),
-        );
+        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(__lookup_execute_action_on_event_direct::get_method_info().method_ptr);
         inner(
             this,
             event_name,
@@ -3278,9 +2435,7 @@ mod __SoundManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_stop_sound_on_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3296,18 +2451,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "StopSoundOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "StopSoundOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_sound_on_event(
@@ -3316,25 +2468,15 @@ mod __SoundManager_unity2_raw {
         fade_msec: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_sound_on_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_sound_on_event::get_method_info().method_ptr);
         inner(this, event_name, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_sound_on_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3351,18 +2493,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "StopSoundOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "StopSoundOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn stop_sound_on_event_2(
@@ -3378,26 +2517,14 @@ mod __SoundManager_unity2_raw {
             i32,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop_sound_on_event_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            fade_msec,
-            game_object,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_stop_sound_on_event_2::get_method_info().method_ptr);
+        inner(this, event_name, fade_msec, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pause_sound_on_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3413,18 +2540,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PauseSoundOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PauseSoundOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pause_sound_on_event(
@@ -3433,25 +2557,15 @@ mod __SoundManager_unity2_raw {
         fade_msec: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pause_sound_on_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_pause_sound_on_event::get_method_info().method_ptr);
         inner(this, event_name, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pause_sound_on_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3468,18 +2582,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PauseSoundOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PauseSoundOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pause_sound_on_event_2(
@@ -3495,26 +2606,14 @@ mod __SoundManager_unity2_raw {
             i32,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pause_sound_on_event_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            fade_msec,
-            game_object,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_pause_sound_on_event_2::get_method_info().method_ptr);
+        inner(this, event_name, fade_msec, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_sound_on_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3530,18 +2629,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "ResumeSoundOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "ResumeSoundOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_sound_on_event(
@@ -3550,25 +2646,15 @@ mod __SoundManager_unity2_raw {
         fade_msec: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_sound_on_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_resume_sound_on_event::get_method_info().method_ptr);
         inner(this, event_name, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_sound_on_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3585,18 +2671,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "ResumeSoundOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "ResumeSoundOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_sound_on_event_2(
@@ -3612,30 +2695,15 @@ mod __SoundManager_unity2_raw {
             i32,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_sound_on_event_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            event_name,
-            fade_msec,
-            game_object,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_resume_sound_on_event_2::get_method_info().method_ptr);
+        inner(this, event_name, fade_msec, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop_by_playing_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "StopByPlayingId",
@@ -3647,45 +2715,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "StopByPlayingId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "StopByPlayingId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop_by_playing_id(
-        this: SoundManager,
-        playing_id: u32,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop_by_playing_id(this: SoundManager, playing_id: u32, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, u32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_by_playing_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop_by_playing_id::get_method_info().method_ptr);
         inner(this, playing_id, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_play_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "GetPlayPosition",
@@ -3697,18 +2748,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_play_position(
@@ -3718,20 +2766,14 @@ mod __SoundManager_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(SoundManager, u32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_play_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_play_position::get_method_info().method_ptr);
         inner(this, playing_id, position_offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_master_bgm_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -3744,39 +2786,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetMasterBgmVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetMasterBgmVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_master_bgm_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_master_bgm_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_master_bgm_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_master_bgm_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_master_se_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -3789,39 +2819,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetMasterSeVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetMasterSeVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_master_se_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_master_se_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_master_se_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_master_se_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_master_env_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -3834,39 +2852,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetMasterEnvVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetMasterEnvVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_master_env_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_master_env_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_master_env_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_master_env_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_master_voice_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -3879,43 +2885,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetMasterVoiceVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetMasterVoiceVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_master_voice_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_master_voice_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_master_voice_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_master_voice_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_master_bgm_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetMasterBgmVolume",
@@ -3927,45 +2918,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetMasterBgmVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetMasterBgmVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_master_bgm_volume(
-        this: SoundManager,
-        vol: f32,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_master_bgm_volume(this: SoundManager, vol: f32, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_master_bgm_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_master_bgm_volume::get_method_info().method_ptr);
         inner(this, vol, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_master_se_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetMasterSeVolume",
@@ -3977,45 +2951,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetMasterSeVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetMasterSeVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_master_se_volume(
-        this: SoundManager,
-        vol: f32,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_master_se_volume(this: SoundManager, vol: f32, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_master_se_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_master_se_volume::get_method_info().method_ptr);
         inner(this, vol, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_master_env_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetMasterEnvVolume",
@@ -4027,45 +2984,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetMasterEnvVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetMasterEnvVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_master_env_volume(
-        this: SoundManager,
-        vol: f32,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_master_env_volume(this: SoundManager, vol: f32, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_master_env_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_master_env_volume::get_method_info().method_ptr);
         inner(this, vol, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_master_voice_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetMasterVoiceVolume",
@@ -4077,41 +3017,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetMasterVoiceVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetMasterVoiceVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_master_voice_volume(
-        this: SoundManager,
-        vol: f32,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_master_voice_volume(this: SoundManager, vol: f32, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_master_voice_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_master_voice_volume::get_method_info().method_ptr);
         inner(this, vol, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_config_bgm_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -4124,39 +3050,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetConfigBgmVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetConfigBgmVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_config_bgm_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_config_bgm_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_config_bgm_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_config_bgm_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_config_se_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -4169,39 +3083,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetConfigSeVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetConfigSeVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_config_se_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_config_se_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_config_se_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_config_se_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_config_env_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -4214,39 +3116,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetConfigEnvVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetConfigEnvVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_config_env_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_config_env_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_config_env_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_config_env_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_config_voice_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -4259,41 +3149,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetConfigVoiceVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetConfigVoiceVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_config_voice_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_config_voice_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_config_voice_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_config_voice_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_config_bgm_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetConfigBgmVolume",
@@ -4305,42 +3182,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetConfigBgmVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetConfigBgmVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_config_bgm_volume(
-        this: SoundManager,
-        vol: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_config_bgm_volume(this: SoundManager, vol: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_config_bgm_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_config_bgm_volume::get_method_info().method_ptr);
         inner(this, vol, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_config_se_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetConfigSeVolume",
@@ -4352,42 +3215,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetConfigSeVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetConfigSeVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_config_se_volume(
-        this: SoundManager,
-        vol: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_config_se_volume(this: SoundManager, vol: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_config_se_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_config_se_volume::get_method_info().method_ptr);
         inner(this, vol, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_config_env_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetConfigEnvVolume",
@@ -4399,42 +3248,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetConfigEnvVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetConfigEnvVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_config_env_volume(
-        this: SoundManager,
-        vol: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_config_env_volume(this: SoundManager, vol: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_config_env_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_config_env_volume::get_method_info().method_ptr);
         inner(this, vol, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_config_voice_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "SetConfigVoiceVolume",
@@ -4446,40 +3281,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetConfigVoiceVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetConfigVoiceVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_config_voice_volume(
-        this: SoundManager,
-        vol: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_config_voice_volume(this: SoundManager, vol: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_config_voice_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_config_voice_volume::get_method_info().method_ptr);
         inner(this, vol, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -4495,18 +3317,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetVolume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_volume(
@@ -4515,25 +3334,15 @@ mod __SoundManager_unity2_raw {
         game_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            f32,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_volume::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, f32, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_volume::get_method_info().method_ptr);
         inner(this, vol, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_enum_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -4549,18 +3358,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalEnumParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalEnumParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_enum_param(
@@ -4569,25 +3375,15 @@ mod __SoundManager_unity2_raw {
         value: *mut u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            *mut u32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_enum_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, *mut u32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_global_enum_param::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enum_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -4603,18 +3399,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enum_param(
@@ -4623,25 +3416,15 @@ mod __SoundManager_unity2_raw {
         value: *mut u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            *mut u32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enum_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, *mut u32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_enum_param::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -4657,18 +3440,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetGameParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetGameParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_game_param(
@@ -4677,25 +3457,15 @@ mod __SoundManager_unity2_raw {
         value: *mut f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            *mut f32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, *mut f32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_game_param::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_param_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -4712,18 +3482,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetGameParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetGameParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_game_param_2(
@@ -4739,20 +3506,14 @@ mod __SoundManager_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             *mut f32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_param_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_get_game_param_2::get_method_info().method_ptr);
         inner(this, value_name, game_object, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_enum_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -4768,18 +3529,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalEnumParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalEnumParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_enum_param(
@@ -4788,25 +3546,15 @@ mod __SoundManager_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_enum_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_global_enum_param::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_enum_param_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -4822,18 +3570,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalEnumParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalEnumParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_enum_param_2(
@@ -4842,25 +3587,15 @@ mod __SoundManager_unity2_raw {
         value: u32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            u32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_enum_param_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, u32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_global_enum_param_2::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enum_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -4876,18 +3611,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetEnumParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetEnumParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enum_param(
@@ -4896,25 +3628,15 @@ mod __SoundManager_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enum_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_enum_param::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enum_param_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -4931,18 +3653,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetEnumParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetEnumParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enum_param_2(
@@ -4958,20 +3677,14 @@ mod __SoundManager_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enum_param_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_set_enum_param_2::get_method_info().method_ptr);
         inner(this, value_name, value, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_game_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -4987,18 +3700,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetGameParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetGameParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_game_param(
@@ -5007,25 +3717,15 @@ mod __SoundManager_unity2_raw {
         value: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_game_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_set_game_param::get_method_info().method_ptr);
         inner(this, value_name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_game_param_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -5042,18 +3742,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetGameParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetGameParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_game_param_2(
@@ -5069,22 +3766,15 @@ mod __SoundManager_unity2_raw {
             f32,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_game_param_2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_set_game_param_2::get_method_info().method_ptr);
         inner(this, value_name, value, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_push_global_enum_param_map_or_combat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "PushGlobalEnumParam_MapOrCombat",
@@ -5096,18 +3786,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PushGlobalEnumParam_MapOrCombat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PushGlobalEnumParam_MapOrCombat",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn push_global_enum_param_map_or_combat(
@@ -5115,24 +3802,15 @@ mod __SoundManager_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_global_enum_param_map_or_combat::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push_global_enum_param_map_or_combat::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pop_global_enum_param_map_or_combat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -5145,39 +3823,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "PopGlobalEnumParam_MapOrCombat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "PopGlobalEnumParam_MapOrCombat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pop_global_enum_param_map_or_combat(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn pop_global_enum_param_map_or_combat(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pop_global_enum_param_map_or_combat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_pop_global_enum_param_map_or_combat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -5193,18 +3859,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "SetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "SetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_position(
@@ -5218,20 +3881,14 @@ mod __SoundManager_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_position::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_position::get_method_info().method_ptr);
         inner(this, pos, temporary_game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_is_set_phase_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -5244,39 +3901,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_IsSetPhaseBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_IsSetPhaseBgm",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_is_set_phase_bgm(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn field_bgm_is_set_phase_bgm(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_is_set_phase_bgm::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_is_set_phase_bgm::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -5289,41 +3934,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_Init",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_init(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_init(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_init::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_init::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_final {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_Final",
@@ -5335,40 +3967,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_Final",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_Final",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_final(
-        this: SoundManager,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_final(this: SoundManager, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_final::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_final::get_method_info().method_ptr);
         inner(this, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_set_phase_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::chapterdata::ChapterData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -5384,18 +4003,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_SetPhaseBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_SetPhaseBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_set_phase_bgm(
@@ -5404,25 +4020,15 @@ mod __SoundManager_unity2_raw {
         is_encount: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::chapterdata::ChapterData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_set_phase_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::chapterdata::ChapterData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_set_phase_bgm::get_method_info().method_ptr);
         inner(this, chapter, is_encount, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_restore_phase_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -5435,39 +4041,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_RestorePhaseBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_RestorePhaseBgm",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_restore_phase_bgm(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_restore_phase_bgm(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_restore_phase_bgm::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_restore_phase_bgm::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_set_phase_bgm_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -5484,18 +4078,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_SetPhaseBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_SetPhaseBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_set_phase_bgm_2(
@@ -5511,28 +4102,15 @@ mod __SoundManager_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_set_phase_bgm_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            player_phase_bgm,
-            enemy_phase_bgm,
-            ally_phase_bgm,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_field_bgm_set_phase_bgm_2::get_method_info().method_ptr);
+        inner(this, player_phase_bgm, enemy_phase_bgm, ally_phase_bgm, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_play_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_PlayBgm",
@@ -5544,18 +4122,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_PlayBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_PlayBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_play_bgm(
@@ -5563,26 +4138,16 @@ mod __SoundManager_unity2_raw {
         force_type: crate::app::force::Force_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_play_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_play_bgm::get_method_info().method_ptr);
         inner(this, force_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_stop_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_StopBgm",
@@ -5594,42 +4159,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_StopBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_StopBgm",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_stop_bgm(
-        this: SoundManager,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_stop_bgm(this: SoundManager, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_stop_bgm::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_stop_bgm::get_method_info().method_ptr);
         inner(this, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_pause_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_PauseBgm",
@@ -5641,42 +4192,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_PauseBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_PauseBgm",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_pause_bgm(
-        this: SoundManager,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_pause_bgm(this: SoundManager, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_pause_bgm::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_pause_bgm::get_method_info().method_ptr);
         inner(this, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_resume_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_ResumeBgm",
@@ -5688,44 +4225,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_ResumeBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_ResumeBgm",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_resume_bgm(
-        this: SoundManager,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_resume_bgm(this: SoundManager, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_resume_bgm::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_resume_bgm::get_method_info().method_ptr);
         inner(this, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_set_bgm_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_SetBgmVolume",
@@ -5737,43 +4258,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_SetBgmVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_SetBgmVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_set_bgm_volume(
-        this: SoundManager,
-        vol: f32,
-        fade_msec: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_set_bgm_volume(this: SoundManager, vol: f32, fade_msec: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_set_bgm_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_set_bgm_volume::get_method_info().method_ptr);
         inner(this, vol, fade_msec, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_set_war_situation_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_SetWarSituationParam",
@@ -5785,18 +4291,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_SetWarSituationParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_SetWarSituationParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_set_war_situation_param(
@@ -5804,24 +4307,15 @@ mod __SoundManager_unity2_raw {
         value_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_set_war_situation_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_set_war_situation_param::get_method_info().method_ptr);
         inner(this, value_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_restore_war_situation_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -5834,39 +4328,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_RestoreWarSituationParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_RestoreWarSituationParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_restore_war_situation_param(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_restore_war_situation_param(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_restore_war_situation_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_restore_war_situation_param::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_start_special_battle_bgm_continue_turn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -5879,44 +4361,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_StartSpecialBattleBgmContinueTurn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_StartSpecialBattleBgmContinueTurn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_start_special_battle_bgm_continue_turn(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_start_special_battle_bgm_continue_turn(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_field_bgm_start_special_battle_bgm_continue_turn::get_offset()
-                            as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_start_special_battle_bgm_continue_turn::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_set_special_battle_bgm_continue_turn_for_rewind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_SetSpecialBattleBgmContinueTurnForRewind",
@@ -5928,18 +4394,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_SetSpecialBattleBgmContinueTurnForRewind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_SetSpecialBattleBgmContinueTurnForRewind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_set_special_battle_bgm_continue_turn_for_rewind(
@@ -5947,16 +4410,15 @@ mod __SoundManager_unity2_raw {
         turn: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (SoundManager , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_field_bgm_set_special_battle_bgm_continue_turn_for_rewind :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(SoundManager, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_set_special_battle_bgm_continue_turn_for_rewind::get_method_info().method_ptr);
         inner(this, turn, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_change_force_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::force::Force_Type as ::unity2::IlType>::il_type(),
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
@@ -5973,18 +4435,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_ChangeForceType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_ChangeForceType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_change_force_type(
@@ -5994,34 +4453,16 @@ mod __SoundManager_unity2_raw {
         is_turn_elapsed: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::force::Force_Type,
-            crate::app::procinst::ProcInst,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_change_force_type::get_offset() as isize),
-        );
-        inner(
-            this,
-            force_type,
-            super_,
-            is_turn_elapsed,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(SoundManager, crate::app::force::Force_Type, crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_change_force_type::get_method_info().method_ptr);
+        inner(this, force_type, super_, is_turn_elapsed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_change_force_type_imm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_ChangeForceTypeImm",
@@ -6033,18 +4474,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_ChangeForceTypeImm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_ChangeForceTypeImm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_change_force_type_imm(
@@ -6052,24 +4490,15 @@ mod __SoundManager_unity2_raw {
         force_type: crate::app::force::Force_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_change_force_type_imm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_change_force_type_imm::get_method_info().method_ptr);
         inner(this, force_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_set_first_played_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6082,41 +4511,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_SetFirstPlayedFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_SetFirstPlayedFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn field_bgm_set_first_played_flag(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn field_bgm_set_first_played_flag(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_field_bgm_set_first_played_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_field_bgm_set_first_played_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_play_special_battle_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_PlaySpecialBattleBgm",
@@ -6128,18 +4544,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_PlaySpecialBattleBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_PlaySpecialBattleBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_play_special_battle_bgm(
@@ -6147,26 +4560,16 @@ mod __SoundManager_unity2_raw {
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_play_special_battle_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_play_special_battle_bgm::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_pause_special_battle_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_PauseSpecialBattleBgm",
@@ -6178,18 +4581,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_PauseSpecialBattleBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_PauseSpecialBattleBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_pause_special_battle_bgm(
@@ -6197,26 +4597,16 @@ mod __SoundManager_unity2_raw {
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_pause_special_battle_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_field_bgm_pause_special_battle_bgm::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_field_bgm_is_special_battle_bgm_exist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "FieldBgm_IsSpecialBattleBgmExist",
@@ -6228,18 +4618,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "FieldBgm_IsSpecialBattleBgmExist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "FieldBgm_IsSpecialBattleBgmExist",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn field_bgm_is_special_battle_bgm_exist(
@@ -6247,66 +4634,42 @@ mod __SoundManager_unity2_raw {
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_field_bgm_is_special_battle_bgm_exist::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_field_bgm_is_special_battle_bgm_exist::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SoundManager as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SoundManager as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_listener_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6319,39 +4682,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateListenerPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateListenerPosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_listener_position(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_listener_position(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_listener_position::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_listener_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_master_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6364,39 +4715,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMasterVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMasterVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_master_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_master_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_master_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_master_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_config_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6409,39 +4748,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateConfigVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateConfigVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_config_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_config_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_config_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_config_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_map_camera_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6454,39 +4781,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMapCameraHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMapCameraHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_map_camera_height(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_map_camera_height(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_map_camera_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_map_camera_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_sound_handle_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6499,39 +4814,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateSoundHandleList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateSoundHandleList",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_sound_handle_list(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_sound_handle_list(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_sound_handle_list::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_sound_handle_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_output_device {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6544,39 +4847,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UpdateOutputDevice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UpdateOutputDevice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_output_device(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_output_device(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_output_device::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_output_device::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_measure_bus_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6589,39 +4880,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "MeasureBusVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "MeasureBusVolume",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn measure_bus_volume(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn measure_bus_volume(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_measure_bus_volume::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_measure_bus_volume::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_in_bmap_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6634,39 +4913,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsInBmapSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsInBmapSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_in_bmap_sequence(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_in_bmap_sequence(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_in_bmap_sequence::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_in_bmap_sequence::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_in_unit_detail_or_class_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6679,39 +4946,27 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsInUnitDetailOrClassChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsInUnitDetailOrClassChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_in_unit_detail_or_class_change(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_in_unit_detail_or_class_change(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_in_unit_detail_or_class_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_in_unit_detail_or_class_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_in_combat {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6724,41 +4979,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "IsInCombat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "IsInCombat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_in_combat(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_in_combat(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_in_combat::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_in_combat::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_lip_sync_data_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "LoadLipSyncDataAsync",
@@ -6770,18 +5012,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "LoadLipSyncDataAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "LoadLipSyncDataAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_lip_sync_data_async(
@@ -6789,26 +5028,16 @@ mod __SoundManager_unity2_raw {
         lip_sync_data_file_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_lip_sync_data_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_lip_sync_data_async::get_method_info().method_ptr);
         inner(this, lip_sync_data_file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_lip_sync_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "UnloadLipSyncData",
@@ -6820,18 +5049,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnloadLipSyncData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnloadLipSyncData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_lip_sync_data(
@@ -6839,24 +5065,15 @@ mod __SoundManager_unity2_raw {
         lip_sync_data_file_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_lip_sync_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_lip_sync_data::get_method_info().method_ptr);
         inner(this, lip_sync_data_file_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_lip_sync_data_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
@@ -6869,41 +5086,28 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "UnloadLipSyncDataAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "UnloadLipSyncDataAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn unload_lip_sync_data_all(
-        this: SoundManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn unload_lip_sync_data_all(this: SoundManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_lip_sync_data_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_unload_lip_sync_data_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lip_sync_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundManager as ::unity2::ClassIdentity>::class(),
                 "GetLipSyncData",
@@ -6915,18 +5119,15 @@ mod __SoundManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundManager as ::unity2::ClassIdentity>::NAME,
-                    "GetLipSyncData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundManager as ::unity2::ClassIdentity>::NAME,
+                        "GetLipSyncData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lip_sync_data(
@@ -6934,15 +5135,8 @@ mod __SoundManager_unity2_raw {
         event_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::soundsystem::SoundSystem_LipSyncData {
-        let inner: extern "C" fn(
-            SoundManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::soundsystem::SoundSystem_LipSyncData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lip_sync_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::soundsystem::SoundSystem_LipSyncData =
+            ::core::mem::transmute(__lookup_get_lip_sync_data::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
 }
@@ -6951,12 +5145,7 @@ mod __SoundManager_unity2_raw {
 impl SoundManager {
     #[doc = "`TryDebugLog(::unity2::Il2CppString)` overload"]
     pub fn try_debug_log(event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __SoundManager_unity2_raw::try_debug_log(
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SoundManager_unity2_raw::try_debug_log(::core::convert::Into::into(event_name), ::core::option::Option::None) }
     }
 }
 
@@ -6965,239 +5154,134 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`get_Param()` overload"]
     fn get_param(self) -> crate::app::soundsystem::SoundSystem_ISoundParam {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::get_param(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Param(crate::app::soundsystem::SoundSystem_ISoundParam)` overload"]
-    fn set_param(
-        self,
-        value: impl ::core::convert::Into<crate::app::soundsystem::SoundSystem_ISoundParam>,
-    ) -> () {
+    fn set_param(self, value: impl ::core::convert::Into<crate::app::soundsystem::SoundSystem_ISoundParam>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_param(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_param(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Loader()` overload"]
     fn get_loader(self) -> crate::app::soundsystem::SoundSystem_ISoundLoad {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::get_loader(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Loader(crate::app::soundsystem::SoundSystem_ISoundLoad)` overload"]
-    fn set_loader(
-        self,
-        value: impl ::core::convert::Into<crate::app::soundsystem::SoundSystem_ISoundLoad>,
-    ) -> () {
+    fn set_loader(self, value: impl ::core::convert::Into<crate::app::soundsystem::SoundSystem_ISoundLoad>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_loader(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_loader(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Player()` overload"]
     fn get_player(self) -> crate::app::soundsystem::SoundSystem_ISoundPlay {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::get_player(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Player(crate::app::soundsystem::SoundSystem_ISoundPlay)` overload"]
-    fn set_player(
-        self,
-        value: impl ::core::convert::Into<crate::app::soundsystem::SoundSystem_ISoundPlay>,
-    ) -> () {
+    fn set_player(self, value: impl ::core::convert::Into<crate::app::soundsystem::SoundSystem_ISoundPlay>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_player(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_player(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_FieldBgmManager()` overload"]
     fn get_field_bgm_manager(self) -> crate::app::fieldbgmmanager::FieldBgmManager {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_field_bgm_manager(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_field_bgm_manager(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_FieldBgmManager(crate::app::fieldbgmmanager::FieldBgmManager)` overload"]
-    fn set_field_bgm_manager(
-        self,
-        value: impl ::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager>,
-    ) -> () {
+    fn set_field_bgm_manager(self, value: impl ::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_field_bgm_manager(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_field_bgm_manager(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Init()` overload"]
     fn init(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::init(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetMasterVolume()` overload"]
     fn reset_master_volume(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::reset_master_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
     fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
     fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`SetLanguage(crate::app::language::Language_Langs)` overload"]
-    fn set_language(
-        self,
-        language: impl ::core::convert::Into<crate::app::language::Language_Langs>,
-    ) -> () {
+    fn set_language(self, language: impl ::core::convert::Into<crate::app::language::Language_Langs>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_language(
-                __receiver,
-                ::core::convert::Into::into(language),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_language(__receiver, ::core::convert::Into::into(language), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEventSeVolume()` overload"]
     fn get_event_se_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::get_event_se_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsEventLoaded(::unity2::Il2CppString)` overload"]
-    fn is_event_loaded(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_event_loaded(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::is_event_loaded(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::is_event_loaded(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
     #[doc = "`IsEventPlaying(::unity2::Il2CppString)` overload"]
-    fn is_event_playing(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_event_playing(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::is_event_playing(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::is_event_playing(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
     #[doc = "`IsBgmEventPlaying(::unity2::Il2CppString)` overload"]
-    fn is_bgm_event_playing(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn is_bgm_event_playing(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::is_bgm_event_playing(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::is_bgm_event_playing(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
     #[doc = "`FindSoundHandleByEventName(::unity2::Il2CppString)` overload"]
@@ -7206,9 +5290,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::find_sound_handle_by_event_name(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7220,13 +5302,9 @@ pub trait ISoundManagerMethods: ISoundManager {
     fn find_sound_handles_by_event_name(
         self,
         event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_SoundHandle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::find_sound_handles_by_event_name(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7235,215 +5313,121 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`FindSoundHandleByEventId(u32)` overload"]
-    fn find_sound_handle_by_event_id(
-        self,
-        event_id: impl ::core::convert::Into<u32>,
-    ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
+    fn find_sound_handle_by_event_id(self, event_id: impl ::core::convert::Into<u32>) -> crate::app::soundsystem::SoundSystem_SoundHandle {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::find_sound_handle_by_event_id(
-                __receiver,
-                ::core::convert::Into::into(event_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::find_sound_handle_by_event_id(__receiver, ::core::convert::Into::into(event_id), ::core::option::Option::None)
         }
     }
     #[doc = "`FindSoundHandlesByEventId(u32)` overload"]
     fn find_sound_handles_by_event_id(
         self,
         event_id: impl ::core::convert::Into<u32>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_SoundHandle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::find_sound_handles_by_event_id(
-                __receiver,
-                ::core::convert::Into::into(event_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::find_sound_handles_by_event_id(__receiver, ::core::convert::Into::into(event_id), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSoundHandleList(::unity2::Il2CppString)` overload"]
     fn get_sound_handle_list(
         self,
         prefix: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_SoundHandle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_sound_handle_list(
-                __receiver,
-                ::core::convert::Into::into(prefix),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_sound_handle_list(__receiver, ::core::convert::Into::into(prefix), ::core::option::Option::None)
         }
     }
     #[doc = "`IsEventSePlaying()` overload"]
     fn is_event_se_playing(self) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::is_event_se_playing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAudioListenerObject()` overload"]
     fn get_audio_listener_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_audio_listener_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_audio_listener_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAudioListenerPosition()` overload"]
     fn get_audio_listener_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_audio_listener_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_audio_listener_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAudioListenerRotation()` overload"]
     fn get_audio_listener_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_audio_listener_rotation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_audio_listener_rotation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadSound(::unity2::Il2CppString)` overload"]
     fn load_sound(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::load_sound(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::load_sound(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`LoadSoundAsync(::unity2::Il2CppString)` overload"]
     fn load_sound_async(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::load_sound_async(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::load_sound_async(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingSound()` overload"]
     fn is_loading_sound(self) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::is_loading_sound(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingSound(::unity2::Il2CppString)` overload"]
     fn is_loading_sound_2(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::is_loading_sound_2(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::is_loading_sound_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadSound(::unity2::Il2CppString)` overload"]
     fn unload_sound(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::unload_sound(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::unload_sound(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadSoundAll()` overload"]
     fn unload_sound_all(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::unload_sound_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReloadSoundBySetLanguage(crate::app::language::Language_Voices)` overload"]
-    fn reload_sound_by_set_language(
-        self,
-        language: impl ::core::convert::Into<crate::app::language::Language_Voices>,
-    ) -> () {
+    fn reload_sound_by_set_language(self, language: impl ::core::convert::Into<crate::app::language::Language_Voices>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::reload_sound_by_set_language(
-                __receiver,
-                ::core::convert::Into::into(language),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::reload_sound_by_set_language(__receiver, ::core::convert::Into::into(language), ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareEvent(::unity2::Il2CppString)` overload"]
     fn prepare_event(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::prepare_event(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::prepare_event(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn prepare_event_2(
-        self,
-        event_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> bool {
+    fn prepare_event_2(self, event_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::prepare_event_2(
-                __receiver,
-                ::core::convert::Into::into(event_name_array),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::prepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareEventAsync(::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
@@ -7452,12 +5436,8 @@ pub trait ISoundManagerMethods: ISoundManager {
         event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> (bool, crate::app::soundsystem::SoundSystem_ResultSoundLoad) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-            >::uninit();
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::soundsystem::SoundSystem_ResultSoundLoad>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::prepare_event_async(
                     __receiver,
@@ -7475,12 +5455,8 @@ pub trait ISoundManagerMethods: ISoundManager {
         event_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
     ) -> (bool, crate::app::soundsystem::SoundSystem_ResultSoundLoad) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-            >::uninit();
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::soundsystem::SoundSystem_ResultSoundLoad>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::prepare_event_async_2(
                     __receiver,
@@ -7493,35 +5469,17 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`UnprepareEvent(::unity2::Il2CppString)` overload"]
-    fn unprepare_event(
-        self,
-        event_name_array: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn unprepare_event(self, event_name_array: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::unprepare_event(
-                __receiver,
-                ::core::convert::Into::into(event_name_array),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::unprepare_event(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)
         }
     }
     #[doc = "`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn unprepare_event_2(
-        self,
-        event_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn unprepare_event_2(self, event_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::unprepare_event_2(
-                __receiver,
-                ::core::convert::Into::into(event_name_array),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::unprepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
@@ -7531,9 +5489,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         switch_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::prepare_switch(
                 __receiver,
                 ::core::convert::Into::into(switch_group_name),
@@ -7549,9 +5505,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         switch_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::prepare_switch_2(
                 __receiver,
                 ::core::convert::Into::into(switch_group_name),
@@ -7567,12 +5521,8 @@ pub trait ISoundManagerMethods: ISoundManager {
         switch_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> (bool, crate::app::soundsystem::SoundSystem_ResultSoundLoad) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-            >::uninit();
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::soundsystem::SoundSystem_ResultSoundLoad>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::prepare_switch_async(
                     __receiver,
@@ -7592,12 +5542,8 @@ pub trait ISoundManagerMethods: ISoundManager {
         switch_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
     ) -> (bool, crate::app::soundsystem::SoundSystem_ResultSoundLoad) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-            >::uninit();
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::soundsystem::SoundSystem_ResultSoundLoad>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::prepare_switch_async_2(
                     __receiver,
@@ -7617,9 +5563,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         switch_name_array: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::unprepare_switch(
                 __receiver,
                 ::core::convert::Into::into(switch_group_name),
@@ -7635,9 +5579,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         switch_name_array: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::unprepare_switch_2(
                 __receiver,
                 ::core::convert::Into::into(switch_group_name),
@@ -7649,22 +5591,15 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`ClearPrepare()` overload"]
     fn clear_prepare(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::clear_prepare(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTemporaryGameObject()` overload"]
     fn get_temporary_game_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_temporary_game_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_temporary_game_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PostEvent(::unity2::Il2CppString, crate::combat::character::Character, bool)` overload"]
@@ -7675,9 +5610,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         is_get_position: impl ::core::convert::Into<bool>,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::post_event(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7696,9 +5629,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         is_get_position: impl ::core::convert::Into<bool>,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::post_event_2(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7718,9 +5649,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         is_get_position: impl ::core::convert::Into<bool>,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::post_event_with_temporary_game_object(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7737,15 +5666,11 @@ pub trait ISoundManagerMethods: ISoundManager {
         event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         flag: impl ::core::convert::Into<u32>,
-        callback: impl ::core::convert::Into<
-            crate::root::akcallbackmanager::AkCallbackManager_EventCallback,
-        >,
+        callback: impl ::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_EventCallback>,
         cookie: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> crate::app::soundsystem::SoundSystem_SoundHandle {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::post_event_direct(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7763,16 +5688,12 @@ pub trait ISoundManagerMethods: ISoundManager {
         event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
         event_type: impl ::core::convert::Into<crate::root::akactiononeventtype::AkActionOnEventType>,
         msec: impl ::core::convert::Into<i32>,
-        interpolation: impl ::core::convert::Into<
-            crate::root::akcurveinterpolation::AkCurveInterpolation,
-        >,
+        interpolation: impl ::core::convert::Into<crate::root::akcurveinterpolation::AkCurveInterpolation>,
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         playing_id: impl ::core::convert::Into<u32>,
     ) -> crate::root::akresult::AKRESULT {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::execute_action_on_event_direct(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7786,15 +5707,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
-    fn stop_sound_on_event(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn stop_sound_on_event(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::stop_sound_on_event(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7811,9 +5726,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::stop_sound_on_event_2(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7824,15 +5737,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
-    fn pause_sound_on_event(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn pause_sound_on_event(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::pause_sound_on_event(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7849,9 +5756,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::pause_sound_on_event_2(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7862,15 +5767,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
-    fn resume_sound_on_event(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn resume_sound_on_event(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::resume_sound_on_event(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7887,9 +5786,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::resume_sound_on_event_2(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -7900,15 +5797,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`StopByPlayingId(u32, i32)` overload"]
-    fn stop_by_playing_id(
-        self,
-        playing_id: impl ::core::convert::Into<u32>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn stop_by_playing_id(self, playing_id: impl ::core::convert::Into<u32>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::stop_by_playing_id(
                 __receiver,
                 ::core::convert::Into::into(playing_id),
@@ -7918,15 +5809,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`GetPlayPosition(u32, i32)` overload"]
-    fn get_play_position(
-        self,
-        playing_id: impl ::core::convert::Into<u32>,
-        position_offset: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn get_play_position(self, playing_id: impl ::core::convert::Into<u32>, position_offset: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::get_play_position(
                 __receiver,
                 ::core::convert::Into::into(playing_id),
@@ -7938,61 +5823,35 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`GetMasterBgmVolume()` overload"]
     fn get_master_bgm_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_master_bgm_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_master_bgm_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMasterSeVolume()` overload"]
     fn get_master_se_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_master_se_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_master_se_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMasterEnvVolume()` overload"]
     fn get_master_env_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_master_env_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_master_env_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMasterVoiceVolume()` overload"]
     fn get_master_voice_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_master_voice_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_master_voice_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMasterBgmVolume(f32, i32)` overload"]
-    fn set_master_bgm_volume(
-        self,
-        vol: impl ::core::convert::Into<f32>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set_master_bgm_volume(self, vol: impl ::core::convert::Into<f32>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_master_bgm_volume(
                 __receiver,
                 ::core::convert::Into::into(vol),
@@ -8002,15 +5861,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`SetMasterSeVolume(f32, i32)` overload"]
-    fn set_master_se_volume(
-        self,
-        vol: impl ::core::convert::Into<f32>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set_master_se_volume(self, vol: impl ::core::convert::Into<f32>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_master_se_volume(
                 __receiver,
                 ::core::convert::Into::into(vol),
@@ -8020,15 +5873,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`SetMasterEnvVolume(f32, i32)` overload"]
-    fn set_master_env_volume(
-        self,
-        vol: impl ::core::convert::Into<f32>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set_master_env_volume(self, vol: impl ::core::convert::Into<f32>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_master_env_volume(
                 __receiver,
                 ::core::convert::Into::into(vol),
@@ -8038,15 +5885,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`SetMasterVoiceVolume(f32, i32)` overload"]
-    fn set_master_voice_volume(
-        self,
-        vol: impl ::core::convert::Into<f32>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn set_master_voice_volume(self, vol: impl ::core::convert::Into<f32>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_master_voice_volume(
                 __receiver,
                 ::core::convert::Into::into(vol),
@@ -8058,101 +5899,57 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`GetConfigBgmVolume()` overload"]
     fn get_config_bgm_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_config_bgm_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_config_bgm_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetConfigSeVolume()` overload"]
     fn get_config_se_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_config_se_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_config_se_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetConfigEnvVolume()` overload"]
     fn get_config_env_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_config_env_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_config_env_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetConfigVoiceVolume()` overload"]
     fn get_config_voice_volume(self) -> f32 {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_config_voice_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_config_voice_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetConfigBgmVolume(f32)` overload"]
     fn set_config_bgm_volume(self, vol: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_config_bgm_volume(
-                __receiver,
-                ::core::convert::Into::into(vol),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_config_bgm_volume(__receiver, ::core::convert::Into::into(vol), ::core::option::Option::None)
         }
     }
     #[doc = "`SetConfigSeVolume(f32)` overload"]
     fn set_config_se_volume(self, vol: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_config_se_volume(
-                __receiver,
-                ::core::convert::Into::into(vol),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_config_se_volume(__receiver, ::core::convert::Into::into(vol), ::core::option::Option::None)
         }
     }
     #[doc = "`SetConfigEnvVolume(f32)` overload"]
     fn set_config_env_volume(self, vol: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_config_env_volume(
-                __receiver,
-                ::core::convert::Into::into(vol),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_config_env_volume(__receiver, ::core::convert::Into::into(vol), ::core::option::Option::None)
         }
     }
     #[doc = "`SetConfigVoiceVolume(f32)` overload"]
     fn set_config_voice_volume(self, vol: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::set_config_voice_volume(
-                __receiver,
-                ::core::convert::Into::into(vol),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::set_config_voice_volume(__receiver, ::core::convert::Into::into(vol), ::core::option::Option::None)
         }
     }
     #[doc = "`SetVolume(f32, crate::unity_engine::gameobject::GameObject)` overload"]
@@ -8162,9 +5959,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_volume(
                 __receiver,
                 ::core::convert::Into::into(vol),
@@ -8174,14 +5969,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`GetGlobalEnumParam(::unity2::Il2CppString, *mutu32)` overload"]
-    fn get_global_enum_param(
-        self,
-        value_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, u32) {
+    fn get_global_enum_param(self, value_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, u32) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::get_global_enum_param(
@@ -8195,14 +5985,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`GetEnumParam(::unity2::Il2CppString, *mutu32)` overload"]
-    fn get_enum_param(
-        self,
-        value_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, u32) {
+    fn get_enum_param(self, value_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, u32) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::get_enum_param(
@@ -8216,14 +6001,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`GetGameParam(::unity2::Il2CppString, *mutf32)` overload"]
-    fn get_game_param(
-        self,
-        value_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> (bool, f32) {
+    fn get_game_param(self, value_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> (bool, f32) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::get_game_param(
@@ -8243,9 +6023,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> (bool, f32) {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
             let __ret = {
                 __SoundManager_unity2_raw::get_game_param_2(
@@ -8266,9 +6044,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         value: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_global_enum_param(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8278,15 +6054,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`SetGlobalEnumParam(::unity2::Il2CppString, u32)` overload"]
-    fn set_global_enum_param_2(
-        self,
-        value_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<u32>,
-    ) -> bool {
+    fn set_global_enum_param_2(self, value_name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<u32>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_global_enum_param_2(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8302,9 +6072,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         value: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_enum_param(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8321,9 +6089,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_enum_param_2(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8334,15 +6100,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`SetGameParam(::unity2::Il2CppString, f32)` overload"]
-    fn set_game_param(
-        self,
-        value_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> bool {
+    fn set_game_param(self, value_name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<f32>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_game_param(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8359,9 +6119,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_game_param_2(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8372,14 +6130,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`PushGlobalEnumParam_MapOrCombat(::unity2::Il2CppString)` overload"]
-    fn push_global_enum_param_map_or_combat(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn push_global_enum_param_map_or_combat(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::push_global_enum_param_map_or_combat(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -8390,13 +6143,8 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`PopGlobalEnumParam_MapOrCombat()` overload"]
     fn pop_global_enum_param_map_or_combat(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::pop_global_enum_param_map_or_combat(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::pop_global_enum_param_map_or_combat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPosition(crate::unity_engine::vector3::Vector3, crate::unity_engine::gameobject::GameObject)` overload"]
@@ -8406,9 +6154,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         temporary_game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::set_position(
                 __receiver,
                 ::core::convert::Into::into(pos),
@@ -8420,35 +6166,22 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`FieldBgm_IsSetPhaseBgm()` overload"]
     fn field_bgm_is_set_phase_bgm(self) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_is_set_phase_bgm(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_is_set_phase_bgm(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_Init()` overload"]
     fn field_bgm_init(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_init(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_Final(i32)` overload"]
     fn field_bgm_final(self, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_final(
-                __receiver,
-                ::core::convert::Into::into(fade_msec),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_final(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_SetPhaseBgm(crate::app::chapterdata::ChapterData, bool)` overload"]
@@ -8458,9 +6191,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         is_encount: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_set_phase_bgm(
                 __receiver,
                 ::core::convert::Into::into(chapter),
@@ -8472,13 +6203,8 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`FieldBgm_RestorePhaseBgm()` overload"]
     fn field_bgm_restore_phase_bgm(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_restore_phase_bgm(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_restore_phase_bgm(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_SetPhaseBgm(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
@@ -8489,9 +6215,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         ally_phase_bgm: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_set_phase_bgm_2(
                 __receiver,
                 ::core::convert::Into::into(player_phase_bgm),
@@ -8502,70 +6226,37 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`FieldBgm_PlayBgm(crate::app::force::Force_Type)` overload"]
-    fn field_bgm_play_bgm(
-        self,
-        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
-    ) -> () {
+    fn field_bgm_play_bgm(self, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_play_bgm(
-                __receiver,
-                ::core::convert::Into::into(force_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_play_bgm(__receiver, ::core::convert::Into::into(force_type), ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_StopBgm(i32)` overload"]
     fn field_bgm_stop_bgm(self, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_stop_bgm(
-                __receiver,
-                ::core::convert::Into::into(fade_msec),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_stop_bgm(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_PauseBgm(i32)` overload"]
     fn field_bgm_pause_bgm(self, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_pause_bgm(
-                __receiver,
-                ::core::convert::Into::into(fade_msec),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_pause_bgm(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_ResumeBgm(i32)` overload"]
     fn field_bgm_resume_bgm(self, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_resume_bgm(
-                __receiver,
-                ::core::convert::Into::into(fade_msec),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_resume_bgm(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_SetBgmVolume(f32, i32)` overload"]
-    fn field_bgm_set_bgm_volume(
-        self,
-        vol: impl ::core::convert::Into<f32>,
-        fade_msec: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn field_bgm_set_bgm_volume(self, vol: impl ::core::convert::Into<f32>, fade_msec: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_set_bgm_volume(
                 __receiver,
                 ::core::convert::Into::into(vol),
@@ -8575,14 +6266,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`FieldBgm_SetWarSituationParam(::unity2::Il2CppString)` overload"]
-    fn field_bgm_set_war_situation_param(
-        self,
-        value_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn field_bgm_set_war_situation_param(self, value_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_set_war_situation_param(
                 __receiver,
                 ::core::convert::Into::into(value_name),
@@ -8593,36 +6279,21 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`FieldBgm_RestoreWarSituationParam()` overload"]
     fn field_bgm_restore_war_situation_param(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_restore_war_situation_param(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_restore_war_situation_param(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_StartSpecialBattleBgmContinueTurn()` overload"]
     fn field_bgm_start_special_battle_bgm_continue_turn(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_start_special_battle_bgm_continue_turn(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_start_special_battle_bgm_continue_turn(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_SetSpecialBattleBgmContinueTurnForRewind(i32)` overload"]
-    fn field_bgm_set_special_battle_bgm_continue_turn_for_rewind(
-        self,
-        turn: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn field_bgm_set_special_battle_bgm_continue_turn_for_rewind(self, turn: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_set_special_battle_bgm_continue_turn_for_rewind(
                 __receiver,
                 ::core::convert::Into::into(turn),
@@ -8638,9 +6309,7 @@ pub trait ISoundManagerMethods: ISoundManager {
         is_turn_elapsed: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_change_force_type(
                 __receiver,
                 ::core::convert::Into::into(force_type),
@@ -8651,14 +6320,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`FieldBgm_ChangeForceTypeImm(crate::app::force::Force_Type)` overload"]
-    fn field_bgm_change_force_type_imm(
-        self,
-        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
-    ) -> () {
+    fn field_bgm_change_force_type_imm(self, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_change_force_type_imm(
                 __receiver,
                 ::core::convert::Into::into(force_type),
@@ -8669,24 +6333,14 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`FieldBgm_SetFirstPlayedFlag()` overload"]
     fn field_bgm_set_first_played_flag(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::field_bgm_set_first_played_flag(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::field_bgm_set_first_played_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FieldBgm_PlaySpecialBattleBgm(::unity2::Il2CppString)` overload"]
-    fn field_bgm_play_special_battle_bgm(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn field_bgm_play_special_battle_bgm(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_play_special_battle_bgm(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -8695,14 +6349,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`FieldBgm_PauseSpecialBattleBgm(::unity2::Il2CppString)` overload"]
-    fn field_bgm_pause_special_battle_bgm(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn field_bgm_pause_special_battle_bgm(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_pause_special_battle_bgm(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -8711,14 +6360,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`FieldBgm_IsSpecialBattleBgmExist(::unity2::Il2CppString)` overload"]
-    fn field_bgm_is_special_battle_bgm_exist(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn field_bgm_is_special_battle_bgm_exist(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::field_bgm_is_special_battle_bgm_exist(
                 __receiver,
                 ::core::convert::Into::into(event_name),
@@ -8729,132 +6373,84 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateListenerPosition()` overload"]
     fn update_listener_position(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::update_listener_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::update_listener_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMasterVolume()` overload"]
     fn update_master_volume(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::update_master_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::update_master_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateConfigVolume()` overload"]
     fn update_config_volume(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::update_config_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::update_config_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMapCameraHeight()` overload"]
     fn update_map_camera_height(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::update_map_camera_height(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::update_map_camera_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateSoundHandleList()` overload"]
     fn update_sound_handle_list(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::update_sound_handle_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::update_sound_handle_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateOutputDevice()` overload"]
     fn update_output_device(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::update_output_device(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::update_output_device(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MeasureBusVolume()` overload"]
     fn measure_bus_volume(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::measure_bus_volume(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsInBmapSequence()` overload"]
     fn is_in_bmap_sequence(self) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::is_in_bmap_sequence(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsInUnitDetailOrClassChange()` overload"]
     fn is_in_unit_detail_or_class_change(self) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::is_in_unit_detail_or_class_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::is_in_unit_detail_or_class_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsInCombat()` overload"]
     fn is_in_combat(self) -> bool {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::is_in_combat(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadLipSyncDataAsync(::unity2::Il2CppString)` overload"]
-    fn load_lip_sync_data_async(
-        self,
-        lip_sync_data_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn load_lip_sync_data_async(self, lip_sync_data_file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::load_lip_sync_data_async(
                 __receiver,
                 ::core::convert::Into::into(lip_sync_data_file_name),
@@ -8863,14 +6459,9 @@ pub trait ISoundManagerMethods: ISoundManager {
         }
     }
     #[doc = "`UnloadLipSyncData(::unity2::Il2CppString)` overload"]
-    fn unload_lip_sync_data(
-        self,
-        lip_sync_data_file_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn unload_lip_sync_data(self, lip_sync_data_file_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundManager_unity2_raw::unload_lip_sync_data(
                 __receiver,
                 ::core::convert::Into::into(lip_sync_data_file_name),
@@ -8881,29 +6472,15 @@ pub trait ISoundManagerMethods: ISoundManager {
     #[doc = "`UnloadLipSyncDataAll()` overload"]
     fn unload_lip_sync_data_all(self) -> () {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::unload_lip_sync_data_all(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::unload_lip_sync_data_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetLipSyncData(::unity2::Il2CppString)` overload"]
-    fn get_lip_sync_data(
-        self,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::soundsystem::SoundSystem_LipSyncData {
+    fn get_lip_sync_data(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::soundsystem::SoundSystem_LipSyncData {
         unsafe {
-            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundManager_unity2_raw::get_lip_sync_data(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundManager_unity2_raw::get_lip_sync_data(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
 }
@@ -8915,13 +6492,8 @@ impl<__T: ISoundManager> ISoundManagerMethods for __T {}
 impl SoundManager {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundManager),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SoundManager), ::core::stringify!(new),));
         <Self as ISoundManagerMethods>::ctor(this);
         this
     }
@@ -8930,28 +6502,24 @@ impl SoundManager {
 #[cfg(feature = "app-soundmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISoundManager;
-    pub use super::ISoundManagerMethods;
-    pub use super::ISoundManager_ParamFader;
-    pub use super::ISoundManager_ParamFaderMethods;
-    pub use super::SoundManager;
-    pub use super::SoundManager_ParamFader;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use super::{
+        ISoundManager, ISoundManagerMethods, ISoundManager_ParamFader, ISoundManager_ParamFaderMethods, SoundManager, SoundManager_ParamFader,
+    };
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

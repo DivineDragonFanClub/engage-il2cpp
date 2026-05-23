@@ -2,20 +2,23 @@
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoriterelaymapmenu/ProfileCardFavoriteRelayMapMenu_DisposeEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardFavoriteRelayMapMenu.DisposeEventHandler"
-    )]
+    #[::unity2::class(namespace = "App", name = "ProfileCardFavoriteRelayMapMenu.DisposeEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ProfileCardFavoriteRelayMapMenu_DisposeEventHandler {}
 
@@ -23,14 +26,23 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "ProfileCardFavoriteRelayMapMenu")]
     #[parent(crate::app::basicmenu::BasicMenu)]
     pub struct ProfileCardFavoriteRelayMapMenu {
-# [static_field] # [rename (name = "m_MenuItemIndexNone")] pub m_menu_item_index_none : i32 ,
-# [static_field] # [rename (name = "m_MenuItemIndexEmpty")] pub m_menu_item_index_empty : i32 ,
-# [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler ,
-# [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [rename (name = "m_MyProfileCardTemp")] pub m_my_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
-# [rename (name = "m_DecidedMenuItemIndex")] pub m_decided_menu_item_index : i32 ,
-# [rename (name = "m_Sorted")] pub m_sorted : bool ,
-}
+        #[static_field]
+        #[rename(name = "m_MenuItemIndexNone")]
+        pub m_menu_item_index_none: i32,
+        #[static_field]
+        #[rename(name = "m_MenuItemIndexEmpty")]
+        pub m_menu_item_index_empty: i32,
+        #[rename(name = "m_DisposeEventHandler")]
+        pub m_dispose_event_handler: crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        #[rename(name = "m_ProfileCardRoot")]
+        pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        #[rename(name = "m_MyProfileCardTemp")]
+        pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        #[rename(name = "m_DecidedMenuItemIndex")]
+        pub m_decided_menu_item_index: i32,
+        #[rename(name = "m_Sorted")]
+        pub m_sorted: bool,
+    }
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu-types")]
@@ -45,22 +57,31 @@ mod __ProfileCardFavoriteRelayMapMenu_DisposeEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
@@ -74,60 +95,52 @@ mod __ProfileCardFavoriteRelayMapMenu_DisposeEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn invoke(
-        this: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu")]
-pub trait IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods:
-    IProfileCardFavoriteRelayMapMenu_DisposeEventHandler
-{
+pub trait IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods: IProfileCardFavoriteRelayMapMenu_DisposeEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardFavoriteRelayMapMenu_DisposeEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -139,20 +152,16 @@ pub trait IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardFavoriteRelayMapMenu_DisposeEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardFavoriteRelayMapMenu_DisposeEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu")]
-impl<__T: IProfileCardFavoriteRelayMapMenu_DisposeEventHandler>
-    IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods for __T
-{
-}
+impl<__T: IProfileCardFavoriteRelayMapMenu_DisposeEventHandler> IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu")]
 impl ProfileCardFavoriteRelayMapMenu_DisposeEventHandler {
@@ -165,9 +174,7 @@ impl ProfileCardFavoriteRelayMapMenu_DisposeEventHandler {
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -181,10 +188,14 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardroot::ProfileCardRoot as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -196,18 +207,15 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -215,10 +223,18 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         menu_content: crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent,
         profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
-        dispose_event_handler : crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        dispose_event_handler: crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_bind :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent,
+            crate::app::profilecardroot::ProfileCardRoot,
+            crate::app::profilecard::ProfileCard,
+            crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             menu_content,
@@ -232,10 +248,12 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
                 "CreateMenuItem",
@@ -247,54 +265,45 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_menu_item(
-        initial_favorite_map_data : crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData,
+        initial_favorite_map_data: crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
         sorting: bool,
         initial_decided_index: *mut i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
         let inner: extern "C" fn(
             crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
             bool,
             *mut i32,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_menu_item::get_offset() as isize),
-        );
-        inner(
-            initial_favorite_map_data,
-            sorting,
-            initial_decided_index,
-            __unity2_method_info,
-        )
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
+            ::core::mem::transmute(__lookup_create_menu_item::get_method_info().method_ptr);
+        inner(initial_favorite_map_data, sorting, initial_decided_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardroot :: ProfileCardRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecard :: ProfileCard as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardroot::ProfileCardRoot as ::unity2::IlType>::il_type(),
+                <crate::app::profilecard::ProfileCard as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -306,33 +315,37 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: ProfileCardFavoriteRelayMapMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::basicmenucontent::BasicMenuContent,
         profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
         initial_decided_index: i32,
-        dispose_event_handler : crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        dispose_event_handler: crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (ProfileCardFavoriteRelayMapMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , i32 , crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ProfileCardFavoriteRelayMapMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::profilecardroot::ProfileCardRoot,
+            crate::app::profilecard::ProfileCard,
+            i32,
+            crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             menu_item_list,
@@ -348,11 +361,8 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
                 "OnBuild",
@@ -364,43 +374,27 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_build(
-        this: ProfileCardFavoriteRelayMapMenu,
-        is_first_build: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardFavoriteRelayMapMenu,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_build::get_offset() as isize),
-        );
+    pub unsafe fn on_build(this: ProfileCardFavoriteRelayMapMenu, is_first_build: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
         inner(this, is_first_build, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
@@ -413,39 +407,27 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "RebuildMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "RebuildMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn rebuild_menu(
-        this: ProfileCardFavoriteRelayMapMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn rebuild_menu(this: ProfileCardFavoriteRelayMapMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_rebuild_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_rebuild_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
@@ -458,42 +440,29 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ProfileCardFavoriteRelayMapMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProfileCardFavoriteRelayMapMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: ProfileCardFavoriteRelayMapMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_card_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateCardRoot",
@@ -505,18 +474,15 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCardRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCardRoot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_card_root(
@@ -528,22 +494,15 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
             ProfileCardFavoriteRelayMapMenu,
             crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_card_root::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_card_root::get_method_info().method_ptr);
         inner(this, favorite_map_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_decided {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateDecided",
@@ -555,18 +514,15 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDecided",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDecided",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_decided(
@@ -574,24 +530,15 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         menu_item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardFavoriteRelayMapMenu,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_decided::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_update_decided::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
@@ -604,41 +551,30 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn b_call(
         this: ProfileCardFavoriteRelayMapMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ProfileCardFavoriteRelayMapMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_custom_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
@@ -651,41 +587,30 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "CustomCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "CustomCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn custom_call(
         this: ProfileCardFavoriteRelayMapMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            ProfileCardFavoriteRelayMapMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_custom_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
@@ -698,39 +623,27 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: ProfileCardFavoriteRelayMapMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: ProfileCardFavoriteRelayMapMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProfileCardFavoriteRelayMapMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::class(),
@@ -743,26 +656,19 @@ mod __ProfileCardFavoriteRelayMapMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardFavoriteRelayMapMenu as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -772,12 +678,12 @@ impl ProfileCardFavoriteRelayMapMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_content: impl ::core::convert::Into<
-            crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent,
-        >,
+        menu_content: impl ::core::convert::Into<crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent>,
         profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
         my_profile_card_temp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
-        dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler >,
+        dispose_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        >,
     ) -> crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu {
         unsafe {
             __ProfileCardFavoriteRelayMapMenu_unity2_raw::create_bind(
@@ -790,16 +696,13 @@ impl ProfileCardFavoriteRelayMapMenu {
             )
         }
     }
+
     #[doc = "`CreateMenuItem(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData, bool, *muti32)` overload"]
     pub fn create_menu_item(
-        initial_favorite_map_data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        >,
+        initial_favorite_map_data: impl ::core::convert::Into<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>,
         sorting: impl ::core::convert::Into<bool>,
     ) -> (
-        crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         i32,
     ) {
         unsafe {
@@ -815,6 +718,7 @@ impl ProfileCardFavoriteRelayMapMenu {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ProfileCardFavoriteRelayMapMenu_unity2_raw::cctor(::core::option::Option::None) }
@@ -826,22 +730,18 @@ pub trait IProfileCardFavoriteRelayMapMenuMethods: IProfileCardFavoriteRelayMapM
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
         menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
         profile_card_root: impl ::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot>,
         my_profile_card_temp: impl ::core::convert::Into<crate::app::profilecard::ProfileCard>,
         initial_decided_index: impl ::core::convert::Into<i32>,
-        dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler >,
+        dispose_event_handler: impl ::core::convert::Into<
+            crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        >,
     ) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFavoriteRelayMapMenu_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
@@ -858,9 +758,7 @@ pub trait IProfileCardFavoriteRelayMapMenuMethods: IProfileCardFavoriteRelayMapM
     fn on_build(self, is_first_build: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFavoriteRelayMapMenu_unity2_raw::on_build(
                 __receiver,
                 ::core::convert::Into::into(is_first_build),
@@ -872,40 +770,26 @@ pub trait IProfileCardFavoriteRelayMapMenuMethods: IProfileCardFavoriteRelayMapM
     fn rebuild_menu(self) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardFavoriteRelayMapMenu_unity2_raw::rebuild_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFavoriteRelayMapMenu_unity2_raw::rebuild_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardFavoriteRelayMapMenu_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFavoriteRelayMapMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCardRoot(crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData)` overload"]
     fn update_card_root(
         self,
-        favorite_map_data: impl ::core::convert::Into<
-            crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData,
-        >,
+        favorite_map_data: impl ::core::convert::Into<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFavoriteRelayMapMenu_unity2_raw::update_card_root(
                 __receiver,
                 ::core::convert::Into::into(favorite_map_data),
@@ -917,9 +801,7 @@ pub trait IProfileCardFavoriteRelayMapMenuMethods: IProfileCardFavoriteRelayMapM
     fn update_decided(self, menu_item_index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProfileCardFavoriteRelayMapMenu_unity2_raw::update_decided(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -931,39 +813,24 @@ pub trait IProfileCardFavoriteRelayMapMenuMethods: IProfileCardFavoriteRelayMapM
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardFavoriteRelayMapMenu_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFavoriteRelayMapMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CustomCall()` overload"]
     fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardFavoriteRelayMapMenu_unity2_raw::custom_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFavoriteRelayMapMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
             let __receiver =
-                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardFavoriteRelayMapMenu_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ProfileCardFavoriteRelayMapMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProfileCardFavoriteRelayMapMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -975,14 +842,12 @@ impl<__T: IProfileCardFavoriteRelayMapMenu> IProfileCardFavoriteRelayMapMenuMeth
 impl ProfileCardFavoriteRelayMapMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::basicmenucontent::BasicMenuContent,
         profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
         my_profile_card_temp: crate::app::profilecard::ProfileCard,
         initial_decided_index: i32,
-        dispose_event_handler : crate :: app :: profilecardfavoriterelaymapmenu :: ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        dispose_event_handler: crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -1007,25 +872,23 @@ impl ProfileCardFavoriteRelayMapMenu {
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardFavoriteRelayMapMenu;
-    pub use super::IProfileCardFavoriteRelayMapMenuMethods;
-    pub use super::IProfileCardFavoriteRelayMapMenu_DisposeEventHandler;
-    pub use super::IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods;
-    pub use super::ProfileCardFavoriteRelayMapMenu;
-    pub use super::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IProfileCardFavoriteRelayMapMenu, IProfileCardFavoriteRelayMapMenuMethods, IProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+        IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods, ProfileCardFavoriteRelayMapMenu,
+        ProfileCardFavoriteRelayMapMenu_DisposeEventHandler,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

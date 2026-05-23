@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-akplaylistitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akplaylistitem/AkPlaylistItem.md"))]
     #[::unity2::class(namespace = "", name = "AkPlaylistItem")]
@@ -30,13 +30,9 @@ mod __AkPlaylistItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -48,45 +44,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkPlaylistItem,
-        c_ptr: ::unity2::IntPtr,
-        c_memory_own: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AkPlaylistItem,
-            ::unity2::IntPtr,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AkPlaylistItem, c_ptr: ::unity2::IntPtr, c_memory_own: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AkPlaylistItem, ::unity2::IntPtr, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, c_ptr, c_memory_own, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akplaylistitem::AkPlaylistItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -100,43 +78,28 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "getCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "getCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_ptr(
-        obj: crate::root::akplaylistitem::AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            crate::root::akplaylistitem::AkPlaylistItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ptr::get_offset() as isize),
-        );
+    pub unsafe fn get_c_ptr(obj: crate::root::akplaylistitem::AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(crate::root::akplaylistitem::AkPlaylistItem, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_c_ptr::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
                 "setCPtr",
@@ -148,40 +111,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "setCPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "setCPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_c_ptr(
-        this: AkPlaylistItem,
-        c_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_c_ptr(this: AkPlaylistItem, c_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_c_ptr::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_c_ptr::get_method_info().method_ptr);
         inner(this, c_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
@@ -194,39 +144,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
@@ -239,39 +177,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
@@ -284,39 +210,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akplaylistitem::AkPlaylistItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -330,18 +244,15 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -349,24 +260,15 @@ mod __AkPlaylistItem_unity2_raw {
         in_r_copy: crate::root::akplaylistitem::AkPlaylistItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkPlaylistItem,
-            crate::root::akplaylistitem::AkPlaylistItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkPlaylistItem, crate::root::akplaylistitem::AkPlaylistItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, in_r_copy, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_assign {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akplaylistitem::AkPlaylistItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -380,18 +282,15 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "Assign",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "Assign",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn assign(
@@ -403,20 +302,14 @@ mod __AkPlaylistItem_unity2_raw {
             AkPlaylistItem,
             crate::root::akplaylistitem::AkPlaylistItem,
             ::unity2::OptionalMethod,
-        ) -> crate::root::akplaylistitem::AkPlaylistItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_assign::get_offset() as isize),
-        );
+        ) -> crate::root::akplaylistitem::AkPlaylistItem = ::core::mem::transmute(__lookup_assign::get_method_info().method_ptr);
         inner(this, in_r_copy, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_equal_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::root::akplaylistitem::AkPlaylistItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -430,18 +323,15 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "IsEqualTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "IsEqualTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_equal_to(
@@ -449,25 +339,19 @@ mod __AkPlaylistItem_unity2_raw {
         in_r_copy: crate::root::akplaylistitem::AkPlaylistItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AkPlaylistItem,
-            crate::root::akplaylistitem::AkPlaylistItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_equal_to::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkPlaylistItem, crate::root::akplaylistitem::AkPlaylistItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_equal_to::get_method_info().method_ptr);
         inner(this, in_r_copy, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_external_sources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u32 as :: unity2 :: IlType > :: il_type () , < crate :: root :: akexternalsourceinfoarray :: AkExternalSourceInfoArray as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u32 as ::unity2::IlType>::il_type(),
+                <crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
                 "SetExternalSources",
@@ -479,18 +363,15 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "SetExternalSources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "SetExternalSources",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_external_sources(
@@ -504,27 +385,15 @@ mod __AkPlaylistItem_unity2_raw {
             u32,
             crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray,
             ::unity2::OptionalMethod,
-        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_external_sources::get_offset() as isize),
-        );
-        inner(
-            this,
-            in_n_external_src,
-            in_p_external_src,
-            __unity2_method_info,
-        )
+        ) -> crate::root::akresult::AKRESULT = ::core::mem::transmute(__lookup_set_external_sources::get_method_info().method_ptr);
+        inner(this, in_n_external_src, in_p_external_src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_audio_node_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
                 "set_audioNodeID",
@@ -536,40 +405,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "set_audioNodeID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "set_audioNodeID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_audio_node_id(
-        this: AkPlaylistItem,
-        value: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_audio_node_id(this: AkPlaylistItem, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_audio_node_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_audio_node_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_audio_node_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
@@ -582,41 +438,28 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "get_audioNodeID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "get_audioNodeID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_audio_node_id(
-        this: AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
+    pub unsafe fn get_audio_node_id(this: AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_audio_node_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_audio_node_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ms_delay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
                 "set_msDelay",
@@ -628,40 +471,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "set_msDelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "set_msDelay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_ms_delay(
-        this: AkPlaylistItem,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_ms_delay(this: AkPlaylistItem, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_ms_delay::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_ms_delay::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ms_delay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
@@ -674,41 +504,28 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "get_msDelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "get_msDelay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ms_delay(
-        this: AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_ms_delay(this: AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ms_delay::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ms_delay::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_p_custom_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
                 "set_pCustomInfo",
@@ -720,40 +537,27 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "set_pCustomInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "set_pCustomInfo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_p_custom_info(
-        this: AkPlaylistItem,
-        value: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_p_custom_info(this: AkPlaylistItem, value: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_p_custom_info::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_p_custom_info::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_p_custom_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkPlaylistItem as ::unity2::ClassIdentity>::class(),
@@ -766,30 +570,20 @@ mod __AkPlaylistItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
-                    "get_pCustomInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkPlaylistItem as ::unity2::ClassIdentity>::NAME,
+                        "get_pCustomInfo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_p_custom_info(
-        this: AkPlaylistItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn get_p_custom_info(this: AkPlaylistItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(AkPlaylistItem, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_p_custom_info::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_p_custom_info::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -797,30 +591,17 @@ mod __AkPlaylistItem_unity2_raw {
 #[cfg(feature = "root-akplaylistitem")]
 impl AkPlaylistItem {
     #[doc = "`getCPtr(crate::root::akplaylistitem::AkPlaylistItem)` overload"]
-    pub fn get_c_ptr(
-        obj: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>,
-    ) -> ::unity2::IntPtr {
-        unsafe {
-            __AkPlaylistItem_unity2_raw::get_c_ptr(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_c_ptr(obj: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>) -> ::unity2::IntPtr {
+        unsafe { __AkPlaylistItem_unity2_raw::get_c_ptr(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "root-akplaylistitem")]
 pub trait IAkPlaylistItemMethods: IAkPlaylistItem {
     #[doc = "`.ctor(::unity2::IntPtr, bool)` overload"]
-    fn ctor(
-        self,
-        c_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-        c_memory_own: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>, c_memory_own: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(c_ptr),
@@ -832,57 +613,36 @@ pub trait IAkPlaylistItemMethods: IAkPlaylistItem {
     #[doc = "`setCPtr(::unity2::IntPtr)` overload"]
     fn set_c_ptr(self, c_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::set_c_ptr(
-                __receiver,
-                ::core::convert::Into::into(c_ptr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor_2(self) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::ctor_2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::root::akplaylistitem::AkPlaylistItem)` overload"]
-    fn ctor_3(
-        self,
-        in_r_copy: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>,
-    ) -> () {
+    fn ctor_3(self, in_r_copy: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(in_r_copy),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(in_r_copy), ::core::option::Option::None)
         }
     }
     #[doc = "`Assign(crate::root::akplaylistitem::AkPlaylistItem)` overload"]
@@ -891,44 +651,25 @@ pub trait IAkPlaylistItemMethods: IAkPlaylistItem {
         in_r_copy: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>,
     ) -> crate::root::akplaylistitem::AkPlaylistItem {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::assign(
-                __receiver,
-                ::core::convert::Into::into(in_r_copy),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::assign(__receiver, ::core::convert::Into::into(in_r_copy), ::core::option::Option::None)
         }
     }
     #[doc = "`IsEqualTo(crate::root::akplaylistitem::AkPlaylistItem)` overload"]
-    fn is_equal_to(
-        self,
-        in_r_copy: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>,
-    ) -> bool {
+    fn is_equal_to(self, in_r_copy: impl ::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>) -> bool {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::is_equal_to(
-                __receiver,
-                ::core::convert::Into::into(in_r_copy),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::is_equal_to(__receiver, ::core::convert::Into::into(in_r_copy), ::core::option::Option::None)
         }
     }
     #[doc = "`SetExternalSources(u32, crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)` overload"]
     fn set_external_sources(
         self,
         in_n_external_src: impl ::core::convert::Into<u32>,
-        in_p_external_src: impl ::core::convert::Into<
-            crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray,
-        >,
+        in_p_external_src: impl ::core::convert::Into<crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray>,
     ) -> crate::root::akresult::AKRESULT {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::set_external_sources(
                 __receiver,
                 ::core::convert::Into::into(in_n_external_src),
@@ -940,66 +681,42 @@ pub trait IAkPlaylistItemMethods: IAkPlaylistItem {
     #[doc = "`set_audioNodeID(u32)` overload"]
     fn set_audio_node_id(self, value: impl ::core::convert::Into<u32>) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::set_audio_node_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::set_audio_node_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_audioNodeID()` overload"]
     fn get_audio_node_id(self) -> u32 {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::get_audio_node_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_msDelay(i32)` overload"]
     fn set_ms_delay(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::set_ms_delay(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::set_ms_delay(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_msDelay()` overload"]
     fn get_ms_delay(self) -> i32 {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::get_ms_delay(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_pCustomInfo(::unity2::IntPtr)` overload"]
     fn set_p_custom_info(self, value: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkPlaylistItem_unity2_raw::set_p_custom_info(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkPlaylistItem_unity2_raw::set_p_custom_info(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_pCustomInfo()` overload"]
     fn get_p_custom_info(self) -> ::unity2::IntPtr {
         unsafe {
-            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkPlaylistItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkPlaylistItem_unity2_raw::get_p_custom_info(__receiver, ::core::option::Option::None)
         }
     }
@@ -1053,9 +770,7 @@ impl AkPlaylistItem {
 #[cfg(feature = "root-akplaylistitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkPlaylistItem;
-    pub use super::IAkPlaylistItem;
-    pub use super::IAkPlaylistItemMethods;
+    pub use super::{AkPlaylistItem, IAkPlaylistItem, IAkPlaylistItemMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

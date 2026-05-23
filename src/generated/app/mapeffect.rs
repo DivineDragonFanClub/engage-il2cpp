@@ -2,17 +2,32 @@
 
 #[cfg(feature = "app-mapeffect-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::pool::{IPool_List_1, IPool_Node, Pool_List_1, Pool_Node};
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            pool::{IPool_List_1, IPool_Node, Pool_List_1, Pool_Node},
+            singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationPool.md"))]
     #[::unity2::class(namespace = "App", name = "MapEffect.LocationPool")]
     # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: mapeffect :: MapEffect_LocationNode >)]
     pub struct MapEffect_LocationPool {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect.md"))]
+    #[::unity2::class(namespace = "App", name = "MapEffect")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapeffect :: MapEffect >)]
+    pub struct MapEffect {
+        #[static_field]
+        #[rename(name = "s_Root")]
+        pub s_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Pool")]
+        pub m_pool: crate::app::mapeffect::MapEffect_LocationPool,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationNode.md"))]
     #[::unity2::class(namespace = "App", name = "MapEffect.LocationNode")]
@@ -26,17 +41,6 @@ mod __types {
         pub rotation: crate::unity_engine::quaternion::Quaternion,
         #[rename(name = "Effect")]
         pub effect: crate::app::resourceobject::ResourceObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect.md"))]
-    #[::unity2::class(namespace = "App", name = "MapEffect")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapeffect :: MapEffect >)]
-    pub struct MapEffect {
-        #[static_field]
-        #[rename(name = "s_Root")]
-        pub s_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Pool")]
-        pub m_pool: crate::app::mapeffect::MapEffect_LocationPool,
     }
 }
 
@@ -52,9 +56,7 @@ mod __MapEffect_LocationPool_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEffect_LocationPool as ::unity2::ClassIdentity>::class(),
@@ -67,30 +69,20 @@ mod __MapEffect_LocationPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationPool as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationPool as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapEffect_LocationPool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapEffect_LocationPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEffect_LocationPool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -100,9 +92,8 @@ pub trait IMapEffect_LocationPoolMethods: IMapEffect_LocationPool {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapEffect_LocationPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapEffect_LocationPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEffect_LocationPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -130,15 +121,1535 @@ impl MapEffect_LocationPool {
 #[cfg(feature = "app-mapeffect")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapEffect_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_find_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "FindRoot", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "FindRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn find_root(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_find_root::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_create_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "TryCreateRoot",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_create_root(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_try_create_root::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_delete_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "TryDeleteRoot",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "TryDeleteRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_delete_root(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_try_delete_root::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "OnCreate", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_create(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "OnDispose", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_update {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "OnUpdate", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnUpdate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_update(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play(
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
+        inner(name, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_2(name: ::unity2::Il2CppString, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_play_2::get_method_info().method_ptr);
+        inner(name, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::effectdata::EffectData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_3(data: crate::app::effectdata::EffectData, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::effectdata::EffectData, i32, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_play_3::get_method_info().method_ptr);
+        inner(data, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::effectdata::EffectData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_4(
+        data: crate::app::effectdata::EffectData,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(crate::app::effectdata::EffectData, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_play_4::get_method_info().method_ptr);
+        inner(data, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::unitmodel::UnitModel as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_5(
+        name: ::unity2::Il2CppString,
+        model: crate::app::unitmodel::UnitModel,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unitmodel::UnitModel, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_play_5::get_method_info().method_ptr);
+        inner(name, model, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_6(name: ::unity2::Il2CppString, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_play_6::get_method_info().method_ptr);
+        inner(name, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_7(
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_play_7::get_method_info().method_ptr);
+        inner(name, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_playing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "CanPlaying", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "CanPlaying",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_playing(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_can_playing::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::effectsequence::EffectSequence as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_8(
+        seq: crate::app::effectsequence::EffectSequence,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::effectsequence::EffectSequence,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_play_8::get_method_info().method_ptr);
+        inner(seq, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::effectdata::EffectData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Play", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_9(
+        data: crate::app::effectdata::EffectData,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::effectdata::EffectData,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_play_9::get_method_info().method_ptr);
+        inner(data, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Create", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(name: ::unity2::Il2CppString, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(name, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Create", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_2(
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_2::get_method_info().method_ptr);
+        inner(name, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Create", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_3(
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_3::get_method_info().method_ptr);
+        inner(name, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Delete", 3, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete(name: ::unity2::Il2CppString, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete::get_method_info().method_ptr);
+        inner(name, x, z, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Delete", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_2(
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_2::get_method_info().method_ptr);
+        inner(name, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Delete", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_3(position: crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_3::get_method_info().method_ptr);
+        inner(position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exist {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "IsExist", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "IsExist",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exist(
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist::get_method_info().method_ptr);
+        inner(name, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "CreateImpl",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_impl(
+        this: MapEffect,
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MapEffect,
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_impl::get_method_info().method_ptr);
+        inner(this, name, position, rotation, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "DeleteImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "DeleteImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_impl(
+        this: MapEffect,
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapEffect, ::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_impl::get_method_info().method_ptr);
+        inner(this, name, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exist_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "IsExistImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "IsExistImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exist_impl(
+        this: MapEffect,
+        name: ::unity2::Il2CppString,
+        position: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(MapEffect, ::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_exist_impl::get_method_info().method_ptr);
+        inner(this, name, position, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "get_Version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "get_Version",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_version(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "OnSerialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnSerialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_serialize(this: MapEffect, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEffect, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_serialize::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapEffect as ::unity2::ClassIdentity>::class(),
+                "OnDeserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnDeserialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_deserialize(
+        this: MapEffect,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MapEffect, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_deserialize::get_method_info().method_ptr);
+        inner(this, stream, version, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_resume {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Resume", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Resume",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn resume(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_resume::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_shoot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::app::effectshoot::EffectShoot_Callback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), "Shoot", 6, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        "Shoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn shoot(
+        name: ::unity2::Il2CppString,
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        time: f32,
+        delay: f32,
+        callback: crate::app::effectshoot::EffectShoot_Callback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            crate::unity_engine::vector3::Vector3,
+            crate::unity_engine::vector3::Vector3,
+            f32,
+            f32,
+            crate::app::effectshoot::EffectShoot_Callback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_shoot::get_method_info().method_ptr);
+        inner(name, start, goal, time, delay, callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapEffect as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapeffect")]
+impl MapEffect {
+    #[doc = "`FindRoot()` overload"]
+    pub fn find_root() -> crate::unity_engine::gameobject::GameObject {
+        unsafe { __MapEffect_unity2_raw::find_root(::core::option::Option::None) }
+    }
+
+    #[doc = "`TryCreateRoot()` overload"]
+    pub fn try_create_root() -> crate::unity_engine::gameobject::GameObject {
+        unsafe { __MapEffect_unity2_raw::try_create_root(::core::option::Option::None) }
+    }
+
+    #[doc = "`TryDeleteRoot()` overload"]
+    pub fn try_delete_root() -> () {
+        unsafe { __MapEffect_unity2_raw::try_delete_root(::core::option::Option::None) }
+    }
+
+    #[doc = "`Play(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn play(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(::unity2::Il2CppString, i32, i32)` overload"]
+    pub fn play_2(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_2(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(crate::app::effectdata::EffectData, i32, i32)` overload"]
+    pub fn play_3(
+        data: impl ::core::convert::Into<crate::app::effectdata::EffectData>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_3(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(crate::app::effectdata::EffectData, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn play_4(
+        data: impl ::core::convert::Into<crate::app::effectdata::EffectData>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_4(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(::unity2::Il2CppString, crate::app::unitmodel::UnitModel)` overload"]
+    pub fn play_5(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        model: impl ::core::convert::Into<crate::app::unitmodel::UnitModel>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_5(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(model),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
+    pub fn play_6(name: impl ::core::convert::Into<::unity2::Il2CppString>, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_6(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    pub fn play_7(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_7(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CanPlaying()` overload"]
+    pub fn can_playing() -> bool {
+        unsafe { __MapEffect_unity2_raw::can_playing(::core::option::Option::None) }
+    }
+
+    #[doc = "`Play(crate::app::effectsequence::EffectSequence, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    pub fn play_8(
+        seq: impl ::core::convert::Into<crate::app::effectsequence::EffectSequence>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_8(
+                ::core::convert::Into::into(seq),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Play(crate::app::effectdata::EffectData, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    pub fn play_9(
+        data: impl ::core::convert::Into<crate::app::effectdata::EffectData>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::play_9(
+                ::core::convert::Into::into(data),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Create(::unity2::Il2CppString, i32, i32)` overload"]
+    pub fn create(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapEffect_unity2_raw::create(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn create_2(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __MapEffect_unity2_raw::create_2(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    pub fn create_3(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            __MapEffect_unity2_raw::create_3(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Delete(::unity2::Il2CppString, i32, i32)` overload"]
+    pub fn delete(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            __MapEffect_unity2_raw::delete(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Delete(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn delete_2(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            __MapEffect_unity2_raw::delete_2(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Delete(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn delete_3(position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
+        unsafe { __MapEffect_unity2_raw::delete_3(::core::convert::Into::into(position), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsExist(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn is_exist(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> bool {
+        unsafe {
+            __MapEffect_unity2_raw::is_exist(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Shoot(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, crate::app::effectshoot::EffectShoot_Callback)` overload"]
+    pub fn shoot(
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        time: impl ::core::convert::Into<f32>,
+        delay: impl ::core::convert::Into<f32>,
+        callback: impl ::core::convert::Into<crate::app::effectshoot::EffectShoot_Callback>,
+    ) -> () {
+        unsafe {
+            __MapEffect_unity2_raw::shoot(
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(start),
+                ::core::convert::Into::into(goal),
+                ::core::convert::Into::into(time),
+                ::core::convert::Into::into(delay),
+                ::core::convert::Into::into(callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __MapEffect_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-mapeffect")]
+pub trait IMapEffectMethods: IMapEffect {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnUpdate()` overload"]
+    fn on_update(self) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::on_update(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn create_impl(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::create_impl(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::convert::Into::into(rotation),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    fn delete_impl(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::delete_impl(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsExistImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
+    fn is_exist_impl(
+        self,
+        name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::is_exist_impl(
+                __receiver,
+                ::core::convert::Into::into(name),
+                ::core::convert::Into::into(position),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_Version()` overload"]
+    fn get_version(self) -> i32 {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    fn on_serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    fn on_deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::on_deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Resume()` overload"]
+    fn resume(self) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::resume(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapeffect")]
+impl<__T: IMapEffect> IMapEffectMethods for __T {}
+
+#[cfg(feature = "app-mapeffect")]
+impl MapEffect {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapEffect), ::core::stringify!(new),));
+        <Self as IMapEffectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapeffect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapEffect_LocationNode_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEffect_LocationNode as ::unity2::ClassIdentity>::class(),
@@ -151,39 +1662,27 @@ mod __MapEffect_LocationNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
-                    "OnEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
+                        "OnEnter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enter(
-        this: MapEffect_LocationNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enter(this: MapEffect_LocationNode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEffect_LocationNode as ::unity2::ClassIdentity>::class(),
@@ -196,39 +1695,27 @@ mod __MapEffect_LocationNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
-                    "OnExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
+                        "OnExit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_exit(
-        this: MapEffect_LocationNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_exit(this: MapEffect_LocationNode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_exit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_exit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_match {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -244,18 +1731,15 @@ mod __MapEffect_LocationNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
-                    "IsMatch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
+                        "IsMatch",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_match(
@@ -269,20 +1753,14 @@ mod __MapEffect_LocationNode_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_match::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_match::get_method_info().method_ptr);
         inner(this, name, position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_create_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEffect_LocationNode as ::unity2::ClassIdentity>::class(),
@@ -295,39 +1773,27 @@ mod __MapEffect_LocationNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
-                    "TryCreateEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_create_effect(
-        this: MapEffect_LocationNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn try_create_effect(this: MapEffect_LocationNode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_create_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_create_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_delete_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEffect_LocationNode as ::unity2::ClassIdentity>::class(),
@@ -340,39 +1806,27 @@ mod __MapEffect_LocationNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
-                    "TryDeleteEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
+                        "TryDeleteEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn try_delete_effect(
-        this: MapEffect_LocationNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn try_delete_effect(this: MapEffect_LocationNode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_try_delete_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_try_delete_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapEffect_LocationNode as ::unity2::ClassIdentity>::class(),
@@ -385,30 +1839,20 @@ mod __MapEffect_LocationNode_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapEffect_LocationNode as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapEffect_LocationNode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapEffect_LocationNode, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -418,18 +1862,16 @@ pub trait IMapEffect_LocationNodeMethods: IMapEffect_LocationNode {
     #[doc = "`OnEnter()` overload"]
     fn on_enter(self) -> () {
         unsafe {
-            let __receiver = <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEffect_LocationNode_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnExit()` overload"]
     fn on_exit(self) -> () {
         unsafe {
-            let __receiver = <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEffect_LocationNode_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
         }
     }
@@ -440,9 +1882,8 @@ pub trait IMapEffect_LocationNodeMethods: IMapEffect_LocationNode {
         position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEffect_LocationNode_unity2_raw::is_match(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -454,33 +1895,24 @@ pub trait IMapEffect_LocationNodeMethods: IMapEffect_LocationNode {
     #[doc = "`TryCreateEffect()` overload"]
     fn try_create_effect(self) -> () {
         unsafe {
-            let __receiver = <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_LocationNode_unity2_raw::try_create_effect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_LocationNode_unity2_raw::try_create_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TryDeleteEffect()` overload"]
     fn try_delete_effect(self) -> () {
         unsafe {
-            let __receiver = <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_LocationNode_unity2_raw::try_delete_effect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapEffect_LocationNode_unity2_raw::try_delete_effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MapEffect_LocationNode as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapEffect_LocationNode_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -507,2123 +1939,24 @@ impl MapEffect_LocationNode {
 
 #[cfg(feature = "app-mapeffect")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapEffect_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_find_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "FindRoot",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "FindRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn find_root(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_root::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_create_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "TryCreateRoot",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "TryCreateRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_create_root(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_create_root::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_delete_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "TryDeleteRoot",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "TryDeleteRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_delete_root(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_delete_root::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: MapEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "OnUpdate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnUpdate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_update(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play(
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play::get_offset() as isize),
-        );
-        inner(name, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_2(
-        name: ::unity2::Il2CppString,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_2::get_offset() as isize),
-        );
-        inner(name, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectdata::EffectData as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_3(
-        data: crate::app::effectdata::EffectData,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::effectdata::EffectData,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_3::get_offset() as isize),
-        );
-        inner(data, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectdata::EffectData as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_4(
-        data: crate::app::effectdata::EffectData,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::effectdata::EffectData,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_4::get_offset() as isize),
-        );
-        inner(data, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::unitmodel::UnitModel as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_5(
-        name: ::unity2::Il2CppString,
-        model: crate::app::unitmodel::UnitModel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unitmodel::UnitModel,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_5::get_offset() as isize),
-        );
-        inner(name, model, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_6 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_6(
-        name: ::unity2::Il2CppString,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_6::get_offset() as isize),
-        );
-        inner(name, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_7 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_7(
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_7::get_offset() as isize),
-        );
-        inner(name, position, rotation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_playing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "CanPlaying",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "CanPlaying",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_playing(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_playing::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_8 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectsequence::EffectSequence as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_8(
-        seq: crate::app::effectsequence::EffectSequence,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::effectsequence::EffectSequence,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_8::get_offset() as isize),
-        );
-        inner(seq, position, rotation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_9 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::effectdata::EffectData as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Play",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_9(
-        data: crate::app::effectdata::EffectData,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::effectdata::EffectData,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_9::get_offset() as isize),
-        );
-        inner(data, position, rotation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        name: ::unity2::Il2CppString,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create::get_offset() as isize),
-            );
-        inner(name, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Create",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_2(
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_2::get_offset() as isize),
-        );
-        inner(name, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_3(
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_3::get_offset() as isize),
-        );
-        inner(name, position, rotation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete(
-        name: ::unity2::Il2CppString,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete::get_offset() as isize),
-            );
-        inner(name, x, z, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_2(
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_2::get_offset() as isize),
-        );
-        inner(name, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_3(
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_3::get_offset() as isize),
-        );
-        inner(position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "IsExist",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "IsExist",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exist(
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist::get_offset() as isize),
-        );
-        inner(name, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "CreateImpl",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_impl(
-        this: MapEffect,
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        rotation: crate::unity_engine::quaternion::Quaternion,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEffect,
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_impl::get_offset() as isize),
-        );
-        inner(this, name, position, rotation, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "DeleteImpl",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "DeleteImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_impl(
-        this: MapEffect,
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEffect,
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_impl::get_offset() as isize),
-        );
-        inner(this, name, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "IsExistImpl",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "IsExistImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exist_impl(
-        this: MapEffect,
-        name: ::unity2::Il2CppString,
-        position: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapEffect,
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_impl::get_offset() as isize),
-        );
-        inner(this, name, position, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_version {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "get_Version",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "get_Version",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_version(
-        this: MapEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "OnSerialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnSerialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_serialize(
-        this: MapEffect,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEffect,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_serialize::get_offset() as isize),
-        );
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "OnDeserialize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnDeserialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_deserialize(
-        this: MapEffect,
-        stream: crate::app::stream_2::Stream_2,
-        version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapEffect,
-            crate::app::stream_2::Stream_2,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deserialize::get_offset() as isize),
-        );
-        inner(this, stream, version, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_resume {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Resume",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Resume",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn resume(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resume::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_shoot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-                <crate::app::effectshoot::EffectShoot_Callback as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                "Shoot",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    "Shoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn shoot(
-        name: ::unity2::Il2CppString,
-        start: crate::unity_engine::vector3::Vector3,
-        goal: crate::unity_engine::vector3::Vector3,
-        time: f32,
-        delay: f32,
-        callback: crate::app::effectshoot::EffectShoot_Callback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            f32,
-            crate::app::effectshoot::EffectShoot_Callback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_shoot::get_offset() as isize),
-        );
-        inner(
-            name,
-            start,
-            goal,
-            time,
-            delay,
-            callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: MapEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapEffect as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapEffect as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapeffect")]
-impl MapEffect {
-    #[doc = "`FindRoot()` overload"]
-    pub fn find_root() -> crate::unity_engine::gameobject::GameObject {
-        unsafe { __MapEffect_unity2_raw::find_root(::core::option::Option::None) }
-    }
-    #[doc = "`TryCreateRoot()` overload"]
-    pub fn try_create_root() -> crate::unity_engine::gameobject::GameObject {
-        unsafe { __MapEffect_unity2_raw::try_create_root(::core::option::Option::None) }
-    }
-    #[doc = "`TryDeleteRoot()` overload"]
-    pub fn try_delete_root() -> () {
-        unsafe { __MapEffect_unity2_raw::try_delete_root(::core::option::Option::None) }
-    }
-    #[doc = "`Play(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn play(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(::unity2::Il2CppString, i32, i32)` overload"]
-    pub fn play_2(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_2(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(crate::app::effectdata::EffectData, i32, i32)` overload"]
-    pub fn play_3(
-        data: impl ::core::convert::Into<crate::app::effectdata::EffectData>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_3(
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(crate::app::effectdata::EffectData, crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn play_4(
-        data: impl ::core::convert::Into<crate::app::effectdata::EffectData>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_4(
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(::unity2::Il2CppString, crate::app::unitmodel::UnitModel)` overload"]
-    pub fn play_5(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        model: impl ::core::convert::Into<crate::app::unitmodel::UnitModel>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_5(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(model),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
-    pub fn play_6(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_6(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    pub fn play_7(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_7(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanPlaying()` overload"]
-    pub fn can_playing() -> bool {
-        unsafe { __MapEffect_unity2_raw::can_playing(::core::option::Option::None) }
-    }
-    #[doc = "`Play(crate::app::effectsequence::EffectSequence, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    pub fn play_8(
-        seq: impl ::core::convert::Into<crate::app::effectsequence::EffectSequence>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_8(
-                ::core::convert::Into::into(seq),
-                ::core::convert::Into::into(position),
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play(crate::app::effectdata::EffectData, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    pub fn play_9(
-        data: impl ::core::convert::Into<crate::app::effectdata::EffectData>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::play_9(
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(position),
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Create(::unity2::Il2CppString, i32, i32)` overload"]
-    pub fn create(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::create(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn create_2(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::create_2(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    pub fn create_3(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::create_3(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Delete(::unity2::Il2CppString, i32, i32)` overload"]
-    pub fn delete(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::delete(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Delete(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn delete_2(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::delete_2(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Delete(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn delete_3(
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::delete_3(
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsExist(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn is_exist(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> bool {
-        unsafe {
-            __MapEffect_unity2_raw::is_exist(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Shoot(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, crate::app::effectshoot::EffectShoot_Callback)` overload"]
-    pub fn shoot(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        start: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        goal: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        time: impl ::core::convert::Into<f32>,
-        delay: impl ::core::convert::Into<f32>,
-        callback: impl ::core::convert::Into<crate::app::effectshoot::EffectShoot_Callback>,
-    ) -> () {
-        unsafe {
-            __MapEffect_unity2_raw::shoot(
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(start),
-                ::core::convert::Into::into(goal),
-                ::core::convert::Into::into(time),
-                ::core::convert::Into::into(delay),
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __MapEffect_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-mapeffect")]
-pub trait IMapEffectMethods: IMapEffect {
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnUpdate()` overload"]
-    fn on_update(self) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::on_update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]
-    fn create_impl(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::create_impl(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::convert::Into::into(rotation),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DeleteImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    fn delete_impl(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::delete_impl(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsExistImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
-    fn is_exist_impl(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::is_exist_impl(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::convert::Into::into(position),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Version()` overload"]
-    fn get_version(self) -> i32 {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::get_version(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    fn on_serialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::on_serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn on_deserialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-        version: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::on_deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(version),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Resume()` overload"]
-    fn resume(self) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::resume(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MapEffect as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapEffect_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapeffect")]
-impl<__T: IMapEffect> IMapEffectMethods for __T {}
-
-#[cfg(feature = "app-mapeffect")]
-impl MapEffect {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEffect),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEffectMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapeffect")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapEffect;
-    pub use super::IMapEffectMethods;
-    pub use super::IMapEffect_LocationNode;
-    pub use super::IMapEffect_LocationNodeMethods;
-    pub use super::IMapEffect_LocationPool;
-    pub use super::IMapEffect_LocationPoolMethods;
-    pub use super::MapEffect;
-    pub use super::MapEffect_LocationNode;
-    pub use super::MapEffect_LocationPool;
-    pub use crate::app::pool::IPool_List_1;
+    pub use super::{
+        IMapEffect, IMapEffectMethods, IMapEffect_LocationNode, IMapEffect_LocationNodeMethods, IMapEffect_LocationPool,
+        IMapEffect_LocationPoolMethods, MapEffect, MapEffect_LocationNode, MapEffect_LocationPool,
+    };
     #[cfg(feature = "app-pool")]
     pub use crate::app::pool::IPool_List_1Methods;
-    pub use crate::app::pool::IPool_Node;
     #[cfg(feature = "app-pool")]
     pub use crate::app::pool::IPool_NodeMethods;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            pool::{IPool_List_1, IPool_Node},
+            singletonclass_1::ISingletonClass_1,
+        },
+        system::object::IObject,
+    };
 }

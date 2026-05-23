@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-akchannelemitterarray-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akchannelemitterarray/AkChannelEmitterArray.md"))]
     #[::unity2::class(namespace = "", name = "AkChannelEmitterArray")]
@@ -32,11 +32,8 @@ mod __AkChannelEmitterArray_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkChannelEmitterArray as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -48,40 +45,27 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkChannelEmitterArray,
-        in_count: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkChannelEmitterArray, in_count: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkChannelEmitterArray, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, in_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkChannelEmitterArray as ::unity2::ClassIdentity>::class(),
@@ -94,41 +78,28 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: AkChannelEmitterArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
+    pub unsafe fn get_count(this: AkChannelEmitterArray, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
         let inner: extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkChannelEmitterArray as ::unity2::ClassIdentity>::class(),
                 "set_Count",
@@ -140,40 +111,27 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    "set_Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        "set_Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_count(
-        this: AkChannelEmitterArray,
-        value: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_count(this: AkChannelEmitterArray, value: u32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkChannelEmitterArray, u32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkChannelEmitterArray as ::unity2::ClassIdentity>::class(),
@@ -186,39 +144,27 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: AkChannelEmitterArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: AkChannelEmitterArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkChannelEmitterArray as ::unity2::ClassIdentity>::class(),
@@ -231,39 +177,27 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkChannelEmitterArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkChannelEmitterArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkChannelEmitterArray as ::unity2::ClassIdentity>::class(),
@@ -276,39 +210,27 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: AkChannelEmitterArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: AkChannelEmitterArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -326,18 +248,15 @@ mod __AkChannelEmitterArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkChannelEmitterArray as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -355,19 +274,8 @@ mod __AkChannelEmitterArray_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             u32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
-        inner(
-            this,
-            in_pos,
-            in_forward,
-            in_top,
-            in_channel_mask,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
+        inner(this, in_pos, in_forward, in_top, in_channel_mask, __unity2_method_info)
     }
 }
 
@@ -376,62 +284,48 @@ pub trait IAkChannelEmitterArrayMethods: IAkChannelEmitterArray {
     #[doc = "`.ctor(u32)` overload"]
     fn ctor(self, in_count: impl ::core::convert::Into<u32>) -> () {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkChannelEmitterArray_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(in_count),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkChannelEmitterArray_unity2_raw::ctor(__receiver, ::core::convert::Into::into(in_count), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Count()` overload"]
     fn get_count(self) -> u32 {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkChannelEmitterArray_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Count(u32)` overload"]
     fn set_count(self, value: impl ::core::convert::Into<u32>) -> () {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkChannelEmitterArray_unity2_raw::set_count(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkChannelEmitterArray_unity2_raw::set_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkChannelEmitterArray_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkChannelEmitterArray_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkChannelEmitterArray_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
@@ -444,9 +338,8 @@ pub trait IAkChannelEmitterArrayMethods: IAkChannelEmitterArray {
         in_channel_mask: impl ::core::convert::Into<u32>,
     ) -> () {
         unsafe {
-            let __receiver = <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AkChannelEmitterArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkChannelEmitterArray_unity2_raw::add(
                 __receiver,
                 ::core::convert::Into::into(in_pos),
@@ -481,9 +374,7 @@ impl AkChannelEmitterArray {
 #[cfg(feature = "root-akchannelemitterarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkChannelEmitterArray;
-    pub use super::IAkChannelEmitterArray;
-    pub use super::IAkChannelEmitterArrayMethods;
+    pub use super::{AkChannelEmitterArray, IAkChannelEmitterArray, IAkChannelEmitterArrayMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

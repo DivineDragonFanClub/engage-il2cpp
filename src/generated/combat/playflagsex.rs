@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-playflagsex-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playflagsex/PlayFlagsEx.md"))]
     #[::unity2::class(namespace = "Combat", name = "PlayFlagsEx")]
@@ -25,36 +25,25 @@ mod __PlayFlagsEx_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_any {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::playflags::PlayFlags as ::unity2::IlType>::il_type(),
                 <crate::combat::playflags::PlayFlags as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayFlagsEx as ::unity2::ClassIdentity>::class(),
-                "Any",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayFlagsEx as ::unity2::ClassIdentity>::class(), "Any", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayFlagsEx as ::unity2::ClassIdentity>::NAME,
-                    "Any",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayFlagsEx as ::unity2::ClassIdentity>::NAME,
+                        "Any",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn any(
@@ -62,51 +51,33 @@ mod __PlayFlagsEx_unity2_raw {
         rhs: crate::combat::playflags::PlayFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::playflags::PlayFlags,
-            crate::combat::playflags::PlayFlags,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_any::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_any::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_none_of {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::playflags::PlayFlags as ::unity2::IlType>::il_type(),
                 <crate::combat::playflags::PlayFlags as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayFlagsEx as ::unity2::ClassIdentity>::class(),
-                "NoneOf",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayFlagsEx as ::unity2::ClassIdentity>::class(), "NoneOf", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayFlagsEx as ::unity2::ClassIdentity>::NAME,
-                    "NoneOf",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayFlagsEx as ::unity2::ClassIdentity>::NAME,
+                        "NoneOf",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn none_of(
@@ -114,51 +85,33 @@ mod __PlayFlagsEx_unity2_raw {
         rhs: crate::combat::playflags::PlayFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::playflags::PlayFlags,
-            crate::combat::playflags::PlayFlags,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_none_of::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_none_of::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::playflags::PlayFlags as ::unity2::IlType>::il_type(),
                 <crate::combat::playflags::PlayFlags as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayFlagsEx as ::unity2::ClassIdentity>::class(),
-                "All",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayFlagsEx as ::unity2::ClassIdentity>::class(), "All", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayFlagsEx as ::unity2::ClassIdentity>::NAME,
-                    "All",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayFlagsEx as ::unity2::ClassIdentity>::NAME,
+                        "All",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn all(
@@ -166,15 +119,8 @@ mod __PlayFlagsEx_unity2_raw {
         rhs: crate::combat::playflags::PlayFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::playflags::PlayFlags,
-            crate::combat::playflags::PlayFlags,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_all::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_all::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
 }
@@ -194,6 +140,7 @@ impl PlayFlagsEx {
             )
         }
     }
+
     #[doc = "`NoneOf(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"]
     pub fn none_of(
         lhs: impl ::core::convert::Into<crate::combat::playflags::PlayFlags>,
@@ -207,6 +154,7 @@ impl PlayFlagsEx {
             )
         }
     }
+
     #[doc = "`All(crate::combat::playflags::PlayFlags, crate::combat::playflags::PlayFlags)` overload"]
     pub fn all(
         lhs: impl ::core::convert::Into<crate::combat::playflags::PlayFlags>,
@@ -225,8 +173,7 @@ impl PlayFlagsEx {
 #[cfg(feature = "combat-playflagsex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlayFlagsEx;
-    pub use super::PlayFlagsEx;
+    pub use super::{IPlayFlagsEx, PlayFlagsEx};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

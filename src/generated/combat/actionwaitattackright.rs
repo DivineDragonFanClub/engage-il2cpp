@@ -2,12 +2,16 @@
 
 #[cfg(feature = "combat-actionwaitattackright-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::actionbase::{ActionBase, IActionBase};
-    use crate::combat::state::{IState, State};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::{
+            actionbase::{ActionBase, IActionBase},
+            state::{IState, State},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionwaitattackright/ActionWaitAttackRight.md"))]
     #[::unity2::class(namespace = "Combat", name = "ActionWaitAttackRight")]
@@ -27,9 +31,7 @@ mod __ActionWaitAttackRight_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionWaitAttackRight as ::unity2::ClassIdentity>::class(),
@@ -42,41 +44,27 @@ mod __ActionWaitAttackRight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ActionWaitAttackRight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ActionWaitAttackRight,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: ActionWaitAttackRight, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ActionWaitAttackRight, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
@@ -92,18 +80,15 @@ mod __ActionWaitAttackRight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -117,20 +102,14 @@ mod __ActionWaitAttackRight_unity2_raw {
             crate::combat::character::Character,
             crate::combat::phase::Phase,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, chr, phase, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionWaitAttackRight as ::unity2::ClassIdentity>::class(),
@@ -143,39 +122,27 @@ mod __ActionWaitAttackRight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
-                    "OnEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
+                        "OnEnter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enter(
-        this: ActionWaitAttackRight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enter(this: ActionWaitAttackRight, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ActionWaitAttackRight, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionWaitAttackRight as ::unity2::ClassIdentity>::class(),
@@ -188,39 +155,27 @@ mod __ActionWaitAttackRight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
-                    "OnUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
+                        "OnUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_update(
-        this: ActionWaitAttackRight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_update(this: ActionWaitAttackRight, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ActionWaitAttackRight, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ActionWaitAttackRight as ::unity2::ClassIdentity>::class(),
@@ -233,30 +188,20 @@ mod __ActionWaitAttackRight_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
-                    "OnExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ActionWaitAttackRight as ::unity2::ClassIdentity>::NAME,
+                        "OnExit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_exit(
-        this: ActionWaitAttackRight,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_exit(this: ActionWaitAttackRight, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ActionWaitAttackRight, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_exit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_exit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -266,9 +211,8 @@ pub trait IActionWaitAttackRightMethods: IActionWaitAttackRight {
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionWaitAttackRight_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
@@ -279,9 +223,8 @@ pub trait IActionWaitAttackRightMethods: IActionWaitAttackRight {
         phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
     ) -> () {
         unsafe {
-            let __receiver = <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionWaitAttackRight_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(chr),
@@ -293,27 +236,24 @@ pub trait IActionWaitAttackRightMethods: IActionWaitAttackRight {
     #[doc = "`OnEnter()` overload"]
     fn on_enter(self) -> () {
         unsafe {
-            let __receiver = <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionWaitAttackRight_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnUpdate()` overload"]
     fn on_update(self) -> () {
         unsafe {
-            let __receiver = <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionWaitAttackRight_unity2_raw::on_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnExit()` overload"]
     fn on_exit(self) -> () {
         unsafe {
-            let __receiver = <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ActionWaitAttackRight as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ActionWaitAttackRight_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
         }
     }
@@ -325,10 +265,7 @@ impl<__T: IActionWaitAttackRight> IActionWaitAttackRightMethods for __T {}
 #[cfg(feature = "combat-actionwaitattackright")]
 impl ActionWaitAttackRight {
     #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]
-    pub fn new(
-        chr: crate::combat::character::Character,
-        phase: crate::combat::phase::Phase,
-    ) -> Self {
+    pub fn new(chr: crate::combat::character::Character, phase: crate::combat::phase::Phase) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -344,16 +281,15 @@ impl ActionWaitAttackRight {
 #[cfg(feature = "combat-actionwaitattackright")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionWaitAttackRight;
-    pub use super::IActionWaitAttackRight;
-    pub use super::IActionWaitAttackRightMethods;
-    pub use crate::combat::actionbase::IActionBase;
+    pub use super::{ActionWaitAttackRight, IActionWaitAttackRight, IActionWaitAttackRightMethods};
     #[cfg(feature = "combat-actionbase")]
     pub use crate::combat::actionbase::IActionBaseMethods;
-    pub use crate::combat::state::IState;
     #[cfg(feature = "combat-state")]
     pub use crate::combat::state::IStateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::{actionbase::IActionBase, state::IState},
+        system::object::IObject,
+    };
 }

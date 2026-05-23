@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-timeline-timelineundo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineundo/TimelineUndo.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineUndo")]
@@ -25,10 +25,12 @@ mod __TimelineUndo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_push_destroy_undo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: object_2 :: Object_2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::timeline::timelineasset::TimelineAsset as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TimelineUndo as ::unity2::ClassIdentity>::class(),
                 "PushDestroyUndo",
@@ -40,18 +42,15 @@ mod __TimelineUndo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TimelineUndo as ::unity2::ClassIdentity>::NAME,
-                    "PushDestroyUndo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TimelineUndo as ::unity2::ClassIdentity>::NAME,
+                        "PushDestroyUndo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn push_destroy_undo(
@@ -65,17 +64,8 @@ mod __TimelineUndo_unity2_raw {
             crate::unity_engine::object_2::Object_2,
             crate::unity_engine::object_2::Object_2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_destroy_undo::get_offset() as isize),
-        );
-        inner(
-            timeline,
-            thing_to_dirty,
-            object_to_destroy,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_push_destroy_undo::get_method_info().method_ptr);
+        inner(timeline, thing_to_dirty, object_to_destroy, __unity2_method_info)
     }
 }
 
@@ -83,9 +73,7 @@ mod __TimelineUndo_unity2_raw {
 impl TimelineUndo {
     #[doc = "`PushDestroyUndo(crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]
     pub fn push_destroy_undo(
-        timeline: impl ::core::convert::Into<
-            crate::unity_engine::timeline::timelineasset::TimelineAsset,
-        >,
+        timeline: impl ::core::convert::Into<crate::unity_engine::timeline::timelineasset::TimelineAsset>,
         thing_to_dirty: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
         object_to_destroy: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
     ) -> () {
@@ -103,8 +91,7 @@ impl TimelineUndo {
 #[cfg(feature = "unity_engine-timeline-timelineundo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITimelineUndo;
-    pub use super::TimelineUndo;
+    pub use super::{ITimelineUndo, TimelineUndo};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

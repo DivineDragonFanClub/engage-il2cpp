@@ -2,14 +2,16 @@
 
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::profilecardvisualbasemenuitem::{
-        IProfileCardVisualBaseMenuItem, ProfileCardVisualBaseMenuItem,
+    use super::*;
+    use crate::{
+        app::{
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem, ProfileCardVisualBaseMenuItem},
+        },
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualtextdecomenuitem/ProfileCardVisualTextDecoMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "ProfileCardVisualTextDecoMenuItem")]
@@ -29,9 +31,7 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_text_deco_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::class(),
@@ -44,18 +44,15 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_m_TextDecoData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_m_TextDecoData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_text_deco_data(
@@ -65,23 +62,17 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         let inner: extern "C" fn(
             ProfileCardVisualTextDecoMenuItem,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::profilecardtextdecodata::ProfileCardTextDecoData =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_m_text_deco_data::get_offset() as isize),
-            );
+        ) -> crate::app::profilecardtextdecodata::ProfileCardTextDecoData =
+            ::core::mem::transmute(__lookup_get_m_text_deco_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_text_deco_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::class(),
                 "set_m_TextDecoData",
@@ -93,18 +84,15 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_m_TextDecoData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_m_TextDecoData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_text_deco_data(
@@ -116,21 +104,18 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
             ProfileCardVisualTextDecoMenuItem,
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_text_deco_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_m_text_deco_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::profilecardtextdecodata::ProfileCardTextDecoData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -142,18 +127,15 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -167,20 +149,14 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
             crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, text_deco_data, initial_select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_build_menu_item_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::class(),
@@ -193,41 +169,27 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuildMenuItemContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnBuildMenuItemContent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_build_menu_item_content(
-        this: ProfileCardVisualTextDecoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardVisualTextDecoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
-        );
+    pub unsafe fn on_build_menu_item_content(this: ProfileCardVisualTextDecoMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardVisualTextDecoMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_build_menu_item_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_new_arrival {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::class(),
@@ -240,41 +202,27 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsNewArrival",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsNewArrival",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_new_arrival(
-        this: ProfileCardVisualTextDecoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardVisualTextDecoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_new_arrival::get_offset() as isize),
-        );
+    pub unsafe fn is_new_arrival(this: ProfileCardVisualTextDecoMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ProfileCardVisualTextDecoMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_new_arrival::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_already_read {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::class(),
@@ -287,32 +235,20 @@ mod __ProfileCardVisualTextDecoMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetAlreadyRead",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualTextDecoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetAlreadyRead",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_already_read(
-        this: ProfileCardVisualTextDecoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardVisualTextDecoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_already_read::get_offset() as isize),
-        );
+    pub unsafe fn set_already_read(this: ProfileCardVisualTextDecoMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardVisualTextDecoMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_already_read::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -322,26 +258,18 @@ pub trait IProfileCardVisualTextDecoMenuItemMethods: IProfileCardVisualTextDecoM
     #[doc = "`get_m_TextDecoData()` overload"]
     fn get_m_text_deco_data(self) -> crate::app::profilecardtextdecodata::ProfileCardTextDecoData {
         unsafe {
-            let __receiver =
-                <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardVisualTextDecoMenuItem_unity2_raw::get_m_text_deco_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualTextDecoMenuItem_unity2_raw::get_m_text_deco_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_TextDecoData(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)` overload"]
-    fn set_m_text_deco_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
-    ) -> () {
+    fn set_m_text_deco_data(self, value: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardVisualTextDecoMenuItem_unity2_raw::set_m_text_deco_data(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -352,16 +280,13 @@ pub trait IProfileCardVisualTextDecoMenuItemMethods: IProfileCardVisualTextDecoM
     #[doc = "`.ctor(crate::app::profilecardtextdecodata::ProfileCardTextDecoData, bool)` overload"]
     fn ctor(
         self,
-        text_deco_data: impl ::core::convert::Into<
-            crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        >,
+        text_deco_data: impl ::core::convert::Into<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>,
         initial_select: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardVisualTextDecoMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(text_deco_data),
@@ -373,40 +298,28 @@ pub trait IProfileCardVisualTextDecoMenuItemMethods: IProfileCardVisualTextDecoM
     #[doc = "`OnBuildMenuItemContent()` overload"]
     fn on_build_menu_item_content(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardVisualTextDecoMenuItem_unity2_raw::on_build_menu_item_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualTextDecoMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsNewArrival()` overload"]
     fn is_new_arrival(self) -> bool {
         unsafe {
-            let __receiver =
-                <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardVisualTextDecoMenuItem_unity2_raw::is_new_arrival(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualTextDecoMenuItem_unity2_raw::is_new_arrival(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetAlreadyRead()` overload"]
     fn set_already_read(self) -> () {
         unsafe {
-            let __receiver =
-                <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ProfileCardVisualTextDecoMenuItem_unity2_raw::set_already_read(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualTextDecoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualTextDecoMenuItem_unity2_raw::set_already_read(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -417,10 +330,7 @@ impl<__T: IProfileCardVisualTextDecoMenuItem> IProfileCardVisualTextDecoMenuItem
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
 impl ProfileCardVisualTextDecoMenuItem {
     #[doc = "`.ctor(crate::app::profilecardtextdecodata::ProfileCardTextDecoData, bool)` — overload selector"]
-    pub fn new(
-        text_deco_data: crate::app::profilecardtextdecodata::ProfileCardTextDecoData,
-        initial_select: bool,
-    ) -> Self {
+    pub fn new(text_deco_data: crate::app::profilecardtextdecodata::ProfileCardTextDecoData, initial_select: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -428,11 +338,7 @@ impl ProfileCardVisualTextDecoMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IProfileCardVisualTextDecoMenuItemMethods>::ctor(
-            this,
-            text_deco_data,
-            initial_select,
-        );
+        <Self as IProfileCardVisualTextDecoMenuItemMethods>::ctor(this, text_deco_data, initial_select);
         this
     }
 }
@@ -440,16 +346,15 @@ impl ProfileCardVisualTextDecoMenuItem {
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardVisualTextDecoMenuItem;
-    pub use super::IProfileCardVisualTextDecoMenuItemMethods;
-    pub use super::ProfileCardVisualTextDecoMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IProfileCardVisualTextDecoMenuItem, IProfileCardVisualTextDecoMenuItemMethods, ProfileCardVisualTextDecoMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::profilecardvisualbasemenuitem::IProfileCardVisualBaseMenuItem;
     #[cfg(feature = "app-profilecardvisualbasemenuitem")]
     pub use crate::app::profilecardvisualbasemenuitem::IProfileCardVisualBaseMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenuitem::IBasicMenuItem, profilecardvisualbasemenuitem::IProfileCardVisualBaseMenuItem},
+        system::object::IObject,
+    };
 }

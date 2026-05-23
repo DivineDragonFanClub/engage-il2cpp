@@ -2,12 +2,14 @@
 
 #[cfg(feature = "system-eventhandler_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/eventhandler_1/EventHandler_1.md"))]
     #[::unity2::class(namespace = "System", name = "EventHandler`1")]
@@ -51,16 +53,12 @@ impl<T0: ::unity2::ClassIdentity> EventHandler_1<T0> {
 #[cfg(feature = "system-eventhandler_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventHandler_1;
-    pub use super::IEventHandler_1;
-    pub use super::IEventHandler_1Methods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{EventHandler_1, IEventHandler_1, IEventHandler_1Methods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

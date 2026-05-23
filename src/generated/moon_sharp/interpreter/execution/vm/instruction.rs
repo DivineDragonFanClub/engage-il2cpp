@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-instruction-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/instruction/Instruction.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "Instruction")]
@@ -42,33 +42,23 @@ mod __Instruction_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Instruction as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Instruction as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -76,24 +66,15 @@ mod __Instruction_unity2_raw {
         sourceref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Instruction,
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Instruction, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, sourceref, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
@@ -106,42 +87,29 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: Instruction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: Instruction, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Instruction, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_purify_from_new_lines {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
                 "PurifyFromNewLines",
@@ -153,18 +121,15 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "PurifyFromNewLines",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "PurifyFromNewLines",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn purify_from_new_lines(
@@ -176,20 +141,14 @@ mod __Instruction_unity2_raw {
             Instruction,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_purify_from_new_lines::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_purify_from_new_lines::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_gen_spaces {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
@@ -202,47 +161,28 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "GenSpaces",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "GenSpaces",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn gen_spaces(
-        this: Instruction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn gen_spaces(this: Instruction, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Instruction, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_gen_spaces::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_gen_spaces::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_binary {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::io::binarywriter::BinaryWriter as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    crate::moon_sharp::interpreter::symbolref::SymbolRef,
-                    i32,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binarywriter :: BinaryWriter as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , i32 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
                 "WriteBinary",
@@ -254,62 +194,39 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "WriteBinary",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "WriteBinary",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_binary(
         this: Instruction,
         wr: crate::system::io::binarywriter::BinaryWriter,
         base_address: i32,
-        symbol_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::moon_sharp::interpreter::symbolref::SymbolRef,
-            i32,
-        >,
+        symbol_map: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef, i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             Instruction,
             crate::system::io::binarywriter::BinaryWriter,
             i32,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::moon_sharp::interpreter::symbolref::SymbolRef,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef, i32>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_binary::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_write_binary::get_method_info().method_ptr);
         inner(this, wr, base_address, symbol_map, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_symbol {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::io::binarywriter::BinaryWriter as ::unity2::IlType>::il_type(),
-                <crate::moon_sharp::interpreter::symbolref::SymbolRef as ::unity2::IlType>::il_type(
-                ),
-                <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                    crate::moon_sharp::interpreter::symbolref::SymbolRef,
-                    i32,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binarywriter :: BinaryWriter as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , i32 > as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
                 "WriteSymbol",
@@ -321,52 +238,40 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "WriteSymbol",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "WriteSymbol",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_symbol(
         wr: crate::system::io::binarywriter::BinaryWriter,
         symbol_ref: crate::moon_sharp::interpreter::symbolref::SymbolRef,
-        symbol_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::moon_sharp::interpreter::symbolref::SymbolRef,
-            i32,
-        >,
+        symbol_map: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef, i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::system::io::binarywriter::BinaryWriter,
             crate::moon_sharp::interpreter::symbolref::SymbolRef,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::moon_sharp::interpreter::symbolref::SymbolRef,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef, i32>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_symbol::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_write_symbol::get_method_info().method_ptr);
         inner(wr, symbol_ref, symbol_map, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_symbol {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binaryreader :: BinaryReader as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::io::binaryreader::BinaryReader as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
                 "ReadSymbol",
@@ -378,18 +283,15 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "ReadSymbol",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "ReadSymbol",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read_symbol(
@@ -401,21 +303,21 @@ mod __Instruction_unity2_raw {
             crate::system::io::binaryreader::BinaryReader,
             ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_symbol::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef = ::core::mem::transmute(__lookup_read_symbol::get_method_info().method_ptr);
         inner(rd, deserialized_symbols, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_binary {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < crate :: system :: io :: binaryreader :: BinaryReader as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as ::unity2::IlType>::il_type(),
+                <crate::system::io::binaryreader::BinaryReader as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
                 "ReadBinary",
@@ -427,18 +329,15 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "ReadBinary",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "ReadBinary",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read_binary(
@@ -449,23 +348,22 @@ mod __Instruction_unity2_raw {
         deserialized_symbols: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , crate :: system :: io :: binaryreader :: BinaryReader , i32 , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: vm :: instruction :: Instruction = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_read_binary :: get_offset () as isize) ,) ;
-        inner(
-            chunk_ref,
-            rd,
-            base_address,
-            env_table,
-            deserialized_symbols,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+            crate::system::io::binaryreader::BinaryReader,
+            i32,
+            crate::moon_sharp::interpreter::table::Table,
+            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction =
+            ::core::mem::transmute(__lookup_read_binary::get_method_info().method_ptr);
+        inner(chunk_ref, rd, base_address, env_table, deserialized_symbols, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::io::binaryreader::BinaryReader as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
@@ -481,18 +379,15 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "ReadValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "ReadValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read_value(
@@ -504,20 +399,14 @@ mod __Instruction_unity2_raw {
             crate::system::io::binaryreader::BinaryReader,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_read_value::get_method_info().method_ptr);
         inner(rd, env_table, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::io::binarywriter::BinaryWriter as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
@@ -533,18 +422,15 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "DumpValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "DumpValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dump_value(
@@ -558,21 +444,18 @@ mod __Instruction_unity2_raw {
             crate::system::io::binarywriter::BinaryWriter,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump_value::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_dump_value::get_method_info().method_ptr);
         inner(this, wr, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_symbol_references {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef> as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::symbolref::SymbolRef as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Instruction as ::unity2::ClassIdentity>::class(),
                 "GetSymbolReferences",
@@ -584,18 +467,15 @@ mod __Instruction_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Instruction as ::unity2::ClassIdentity>::NAME,
-                    "GetSymbolReferences",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Instruction as ::unity2::ClassIdentity>::NAME,
+                        "GetSymbolReferences",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_symbol_references(
@@ -609,11 +489,7 @@ mod __Instruction_unity2_raw {
             *mut ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
             *mut crate::moon_sharp::interpreter::symbolref::SymbolRef,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_symbol_references::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_symbol_references::get_method_info().method_ptr);
         inner(this, symbol_list, symbol, __unity2_method_info)
     }
 }
@@ -625,10 +501,7 @@ impl Instruction {
         wr: impl ::core::convert::Into<crate::system::io::binarywriter::BinaryWriter>,
         symbol_ref: impl ::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
         symbol_map: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::moon_sharp::interpreter::symbolref::SymbolRef,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef, i32>,
         >,
     ) -> () {
         unsafe {
@@ -640,12 +513,11 @@ impl Instruction {
             )
         }
     }
+
     #[doc = "`ReadSymbol(crate::system::io::binaryreader::BinaryReader, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"]
     pub fn read_symbol(
         rd: impl ::core::convert::Into<crate::system::io::binaryreader::BinaryReader>,
-        deserialized_symbols: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        >,
+        deserialized_symbols: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>>,
     ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef {
         unsafe {
             __Instruction_unity2_raw::read_symbol(
@@ -655,17 +527,14 @@ impl Instruction {
             )
         }
     }
+
     #[doc = "`ReadBinary(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::system::io::binaryreader::BinaryReader, i32, crate::moon_sharp::interpreter::table::Table, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"]
     pub fn read_binary(
-        chunk_ref: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
+        chunk_ref: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>,
         rd: impl ::core::convert::Into<crate::system::io::binaryreader::BinaryReader>,
         base_address: impl ::core::convert::Into<i32>,
         env_table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-        deserialized_symbols: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-        >,
+        deserialized_symbols: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>>,
     ) -> crate::moon_sharp::interpreter::execution::vm::instruction::Instruction {
         unsafe {
             __Instruction_unity2_raw::read_binary(
@@ -678,6 +547,7 @@ impl Instruction {
             )
         }
     }
+
     #[doc = "`ReadValue(crate::system::io::binaryreader::BinaryReader, crate::moon_sharp::interpreter::table::Table)` overload"]
     pub fn read_value(
         rd: impl ::core::convert::Into<crate::system::io::binaryreader::BinaryReader>,
@@ -696,54 +566,30 @@ impl Instruction {
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-instruction")]
 pub trait IInstructionMethods: IInstruction {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]
-    fn ctor(
-        self,
-        sourceref: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
-    ) -> () {
+    fn ctor(self, sourceref: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>) -> () {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Instruction_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(sourceref),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Instruction_unity2_raw::ctor(__receiver, ::core::convert::Into::into(sourceref), ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Instruction_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PurifyFromNewLines(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    fn purify_from_new_lines(
-        self,
-        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> ::unity2::Il2CppString {
+    fn purify_from_new_lines(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Instruction_unity2_raw::purify_from_new_lines(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Instruction_unity2_raw::purify_from_new_lines(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GenSpaces()` overload"]
     fn gen_spaces(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Instruction_unity2_raw::gen_spaces(__receiver, ::core::option::Option::None)
         }
     }
@@ -753,16 +599,11 @@ pub trait IInstructionMethods: IInstruction {
         wr: impl ::core::convert::Into<crate::system::io::binarywriter::BinaryWriter>,
         base_address: impl ::core::convert::Into<i32>,
         symbol_map: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::moon_sharp::interpreter::symbolref::SymbolRef,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef, i32>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Instruction_unity2_raw::write_binary(
                 __receiver,
                 ::core::convert::Into::into(wr),
@@ -779,9 +620,7 @@ pub trait IInstructionMethods: IInstruction {
         value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     ) -> () {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Instruction_unity2_raw::dump_value(
                 __receiver,
                 ::core::convert::Into::into(wr),
@@ -798,21 +637,10 @@ pub trait IInstructionMethods: IInstruction {
         crate::moon_sharp::interpreter::symbolref::SymbolRef,
     ) {
         unsafe {
-            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::moon_sharp::interpreter::symbolref::SymbolRef,
-            >::uninit();
-            __Instruction_unity2_raw::get_symbol_references(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <Instruction as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::moon_sharp::interpreter::symbolref::SymbolRef>::uninit();
+            __Instruction_unity2_raw::get_symbol_references(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
@@ -825,13 +653,8 @@ impl<__T: IInstruction> IInstructionMethods for __T {}
 impl Instruction {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` — overload selector"]
     pub fn new(sourceref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Instruction),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Instruction), ::core::stringify!(new),));
         <Self as IInstructionMethods>::ctor(this, sourceref);
         this
     }
@@ -840,9 +663,7 @@ impl Instruction {
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-instruction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInstruction;
-    pub use super::IInstructionMethods;
-    pub use super::Instruction;
+    pub use super::{IInstruction, IInstructionMethods, Instruction};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

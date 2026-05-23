@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-procdescargt_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procdesc::{IProcDesc, ProcDesc};
-    use crate::app::procdesccallbase::{IProcDescCallBase, ProcDescCallBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procdesc::{IProcDesc, ProcDesc},
+            procdesccallbase::{IProcDescCallBase, ProcDescCallBase},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescargt_1/ProcDescArgT_1.md"))]
     #[::unity2::class(namespace = "App", name = "ProcDescArgT`1")]
@@ -30,11 +34,7 @@ pub use __types::*;
 impl<T0: ::unity2::ClassIdentity> ProcDescArgT_1<T0> {
     #[doc = "`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0>, T0)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        function: crate::system::action_2::Action_2<crate::app::procinst::ProcInst, T0>,
-        arg: T0,
-    ) -> ();
+    pub fn ctor(self, function: crate::system::action_2::Action_2<crate::app::procinst::ProcInst, T0>, arg: T0) -> ();
 
     #[doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "ExecuteImpl", args = 1)]
@@ -44,10 +44,7 @@ impl<T0: ::unity2::ClassIdentity> ProcDescArgT_1<T0> {
 #[cfg(feature = "app-procdescargt_1")]
 impl<T0: ::unity2::ClassIdentity> ProcDescArgT_1<T0> {
     #[doc = "`.ctor(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,T0>, T0)` — overload selector"]
-    pub fn new(
-        function: crate::system::action_2::Action_2<crate::app::procinst::ProcInst, T0>,
-        arg: T0,
-    ) -> Self {
+    pub fn new(function: crate::system::action_2::Action_2<crate::app::procinst::ProcInst, T0>, arg: T0) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -63,16 +60,15 @@ impl<T0: ::unity2::ClassIdentity> ProcDescArgT_1<T0> {
 #[cfg(feature = "app-procdescargt_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProcDescArgT_1;
-    pub use super::IProcDescArgT_1Methods;
-    pub use super::ProcDescArgT_1;
-    pub use crate::app::procdesc::IProcDesc;
+    pub use super::{IProcDescArgT_1, IProcDescArgT_1Methods, ProcDescArgT_1};
     #[cfg(feature = "app-procdesc")]
     pub use crate::app::procdesc::IProcDescMethods;
-    pub use crate::app::procdesccallbase::IProcDescCallBase;
     #[cfg(feature = "app-procdesccallbase")]
     pub use crate::app::procdesccallbase::IProcDescCallBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procdesc::IProcDesc, procdesccallbase::IProcDescCallBase},
+        system::object::IObject,
+    };
 }

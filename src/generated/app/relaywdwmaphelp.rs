@@ -2,24 +2,18 @@
 
 #[cfg(feature = "app-relaywdwmaphelp-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwmaphelp/RelayWdwMapHelp_ShowItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayWdwMapHelp.ShowItem")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelayWdwMapHelp_ShowItem {
-        #[rename(name = "m_Object")]
-        pub m_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Title")]
-        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwmaphelp/RelayWdwMapHelp.md"))]
     #[::unity2::class(namespace = "App", name = "RelayWdwMapHelp")]
@@ -32,186 +26,30 @@ mod __types {
         #[rename(name = "m_MapImage")]
         pub m_map_image: crate::unity_engine::ui::image::Image,
         #[rename(name = "m_ItemList")]
-        pub m_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_item_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_IdRoot")]
         pub m_id_root: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_Id")]
         pub m_id: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_ShowItemList")]
-        pub m_show_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::relaywdwmaphelp::RelayWdwMapHelp_ShowItem,
-        >,
+        pub m_show_item_list: crate::system::collections::generic::list_1::List_1<crate::app::relaywdwmaphelp::RelayWdwMapHelp_ShowItem>,
         #[rename(name = "m_AwardItemList")]
-        pub m_award_item_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+        pub m_award_item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwmaphelp/RelayWdwMapHelp_ShowItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayWdwMapHelp.ShowItem")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelayWdwMapHelp_ShowItem {
+        #[rename(name = "m_Object")]
+        pub m_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Title")]
+        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 }
 
 #[cfg(feature = "app-relaywdwmaphelp-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-relaywdwmaphelp")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayWdwMapHelp_ShowItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayWdwMapHelp_ShowItem,
-        item: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayWdwMapHelp_ShowItem,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set(
-        this: RelayWdwMapHelp_ShowItem,
-        item_data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayWdwMapHelp_ShowItem,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
-        inner(this, item_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaywdwmaphelp")]
-pub trait IRelayWdwMapHelp_ShowItemMethods: IRelayWdwMapHelp_ShowItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        item: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayWdwMapHelp_ShowItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayWdwMapHelp_ShowItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Set(crate::app::itemdata::ItemData)` overload"]
-    fn set(self, item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
-        unsafe {
-            let __receiver =
-                <RelayWdwMapHelp_ShowItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayWdwMapHelp_ShowItem_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(item_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relaywdwmaphelp")]
-impl<__T: IRelayWdwMapHelp_ShowItem> IRelayWdwMapHelp_ShowItemMethods for __T {}
-
-#[cfg(feature = "app-relaywdwmaphelp")]
-impl RelayWdwMapHelp_ShowItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(item: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayWdwMapHelp_ShowItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayWdwMapHelp_ShowItemMethods>::ctor(this, item);
-        this
-    }
-}
 
 #[cfg(feature = "app-relaywdwmaphelp")]
 #[doc(hidden)]
@@ -222,9 +60,7 @@ mod __RelayWdwMapHelp_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayWdwMapHelp as ::unity2::ClassIdentity>::class(),
@@ -237,41 +73,28 @@ mod __RelayWdwMapHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RelayWdwMapHelp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RelayWdwMapHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayWdwMapHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relaydata::RelayData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relaydata::RelayData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayWdwMapHelp as ::unity2::ClassIdentity>::class(),
                 "SetData",
@@ -283,18 +106,15 @@ mod __RelayWdwMapHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data(
@@ -302,27 +122,17 @@ mod __RelayWdwMapHelp_unity2_raw {
         relay_data: crate::app::relaydata::RelayData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelayWdwMapHelp,
-            crate::app::relaydata::RelayData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayWdwMapHelp, crate::app::relaydata::RelayData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
         inner(this, relay_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -336,18 +146,15 @@ mod __RelayWdwMapHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data_2(
@@ -356,29 +163,18 @@ mod __RelayWdwMapHelp_unity2_raw {
         is_replay: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelayWdwMapHelp,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayWdwMapHelp, crate::app::relayservermetadata::RelayServerMetaData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data_2::get_method_info().method_ptr);
         inner(this, meta_data, is_replay, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::relaydata::RelayData as ::unity2::IlType>::il_type(),
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -392,18 +188,15 @@ mod __RelayWdwMapHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayWdwMapHelp as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data_3(
@@ -419,11 +212,7 @@ mod __RelayWdwMapHelp_unity2_raw {
             crate::app::relayservermetadata::RelayServerMetaData,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_data_3::get_method_info().method_ptr);
         inner(this, relay_data, meta_data, is_replay, __unity2_method_info)
     }
 }
@@ -433,26 +222,15 @@ pub trait IRelayWdwMapHelpMethods: IRelayWdwMapHelp {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayWdwMapHelp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetData(crate::app::relaydata::RelayData)` overload"]
-    fn set_data(
-        self,
-        relay_data: impl ::core::convert::Into<crate::app::relaydata::RelayData>,
-    ) -> () {
+    fn set_data(self, relay_data: impl ::core::convert::Into<crate::app::relaydata::RelayData>) -> () {
         unsafe {
-            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayWdwMapHelp_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(relay_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayWdwMapHelp_unity2_raw::set_data(__receiver, ::core::convert::Into::into(relay_data), ::core::option::Option::None)
         }
     }
     #[doc = "`SetData(crate::app::relayservermetadata::RelayServerMetaData, bool)` overload"]
@@ -462,9 +240,7 @@ pub trait IRelayWdwMapHelpMethods: IRelayWdwMapHelp {
         is_replay: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayWdwMapHelp_unity2_raw::set_data_2(
                 __receiver,
                 ::core::convert::Into::into(meta_data),
@@ -481,9 +257,7 @@ pub trait IRelayWdwMapHelpMethods: IRelayWdwMapHelp {
         is_replay: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayWdwMapHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayWdwMapHelp_unity2_raw::set_data_3(
                 __receiver,
                 ::core::convert::Into::into(relay_data),
@@ -516,26 +290,144 @@ impl RelayWdwMapHelp {
 
 #[cfg(feature = "app-relaywdwmaphelp")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayWdwMapHelp_ShowItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayWdwMapHelp_ShowItem,
+        item: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelayWdwMapHelp_ShowItem, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::class(),
+                "Set",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayWdwMapHelp_ShowItem as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set(
+        this: RelayWdwMapHelp_ShowItem,
+        item_data: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelayWdwMapHelp_ShowItem, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
+        inner(this, item_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+pub trait IRelayWdwMapHelp_ShowItemMethods: IRelayWdwMapHelp_ShowItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, item: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <RelayWdwMapHelp_ShowItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayWdwMapHelp_ShowItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Set(crate::app::itemdata::ItemData)` overload"]
+    fn set(self, item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
+        unsafe {
+            let __receiver =
+                <RelayWdwMapHelp_ShowItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayWdwMapHelp_ShowItem_unity2_raw::set(__receiver, ::core::convert::Into::into(item_data), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+impl<__T: IRelayWdwMapHelp_ShowItem> IRelayWdwMapHelp_ShowItemMethods for __T {}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+impl RelayWdwMapHelp_ShowItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(item: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayWdwMapHelp_ShowItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayWdwMapHelp_ShowItemMethods>::ctor(this, item);
+        this
+    }
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IRelayWdwMapHelp;
-    pub use super::IRelayWdwMapHelpMethods;
-    pub use super::IRelayWdwMapHelp_ShowItem;
-    pub use super::IRelayWdwMapHelp_ShowItemMethods;
-    pub use super::RelayWdwMapHelp;
-    pub use super::RelayWdwMapHelp_ShowItem;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IRelayWdwMapHelp, IRelayWdwMapHelpMethods, IRelayWdwMapHelp_ShowItem, IRelayWdwMapHelp_ShowItemMethods, RelayWdwMapHelp,
+        RelayWdwMapHelp_ShowItem,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

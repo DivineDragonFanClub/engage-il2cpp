@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-delegatelist_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/delegatelist_1/DelegateList_1.md"))]
     #[::unity2::class(namespace = "", name = "DelegateList`1")]
@@ -14,20 +14,14 @@ mod __types {
         #[rename(name = "m_acquireFunc")]
         pub m_acquire_func: crate::system::func_2::Func_2<
             crate::system::action_1::Action_1<T0>,
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_1::Action_1<T0>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_1::Action_1<T0>>,
         >,
         #[rename(name = "m_releaseFunc")]
         pub m_release_func: crate::system::action_1::Action_1<
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_1::Action_1<T0>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_1::Action_1<T0>>,
         >,
         #[rename(name = "m_callbacks")]
-        pub m_callbacks: crate::system::collections::generic::linkedlist_1::LinkedList_1<
-            crate::system::action_1::Action_1<T0>,
-        >,
+        pub m_callbacks: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::system::action_1::Action_1<T0>>,
         #[rename(name = "m_invoking")]
         pub m_invoking: bool,
     }
@@ -45,14 +39,10 @@ impl<T0: ::unity2::ClassIdentity> DelegateList_1<T0> {
         self,
         acquire_func: crate::system::func_2::Func_2<
             crate::system::action_1::Action_1<T0>,
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_1::Action_1<T0>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_1::Action_1<T0>>,
         >,
         release_func: crate::system::action_1::Action_1<
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_1::Action_1<T0>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_1::Action_1<T0>>,
         >,
     ) -> ();
 
@@ -87,14 +77,10 @@ impl<T0: ::unity2::ClassIdentity> DelegateList_1<T0> {
     pub fn new(
         acquire_func: crate::system::func_2::Func_2<
             crate::system::action_1::Action_1<T0>,
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_1::Action_1<T0>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_1::Action_1<T0>>,
         >,
         release_func: crate::system::action_1::Action_1<
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_1::Action_1<T0>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_1::Action_1<T0>>,
         >,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
@@ -112,9 +98,7 @@ impl<T0: ::unity2::ClassIdentity> DelegateList_1<T0> {
 #[cfg(feature = "root-delegatelist_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DelegateList_1;
-    pub use super::IDelegateList_1;
-    pub use super::IDelegateList_1Methods;
+    pub use super::{DelegateList_1, IDelegateList_1, IDelegateList_1Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

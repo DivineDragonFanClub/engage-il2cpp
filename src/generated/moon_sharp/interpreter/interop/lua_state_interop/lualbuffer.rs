@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-lualbuffer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/lualbuffer/LuaLBuffer.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop",
-        name = "LuaLBuffer"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop", name = "LuaLBuffer")]
     #[parent(crate::system::object::Object)]
     pub struct LuaLBuffer {}
 }
@@ -28,9 +25,7 @@ mod __LuaLBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_lua_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LuaLBuffer as ::unity2::ClassIdentity>::class(),
@@ -43,35 +38,35 @@ mod __LuaLBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LuaLBuffer as ::unity2::ClassIdentity>::NAME,
-                    "get_LuaState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LuaLBuffer as ::unity2::ClassIdentity>::NAME,
+                        "get_LuaState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lua_state(
         this: LuaLBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState {
-        let inner : extern "C" fn (LuaLBuffer , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: luastate :: LuaState = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_lua_state :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            LuaLBuffer,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState =
+            ::core::mem::transmute(__lookup_get_lua_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_lua_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: luastate :: LuaState as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LuaLBuffer as ::unity2::ClassIdentity>::class(),
                 "set_LuaState",
@@ -83,18 +78,15 @@ mod __LuaLBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LuaLBuffer as ::unity2::ClassIdentity>::NAME,
-                    "set_LuaState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LuaLBuffer as ::unity2::ClassIdentity>::NAME,
+                        "set_LuaState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_lua_state(
@@ -106,44 +98,30 @@ mod __LuaLBuffer_unity2_raw {
             LuaLBuffer,
             crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_lua_state::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_lua_state::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: lua_state_interop :: luastate :: LuaState as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LuaLBuffer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<LuaLBuffer as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LuaLBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LuaLBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -155,11 +133,7 @@ mod __LuaLBuffer_unity2_raw {
             LuaLBuffer,
             crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, l, __unity2_method_info)
     }
 }
@@ -167,50 +141,24 @@ mod __LuaLBuffer_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-lualbuffer")]
 pub trait ILuaLBufferMethods: ILuaLBuffer {
     #[doc = "`get_LuaState()` overload"]
-    fn get_lua_state(
-        self,
-    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState {
+    fn get_lua_state(self) -> crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState {
         unsafe {
-            let __receiver = <LuaLBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LuaLBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LuaLBuffer_unity2_raw::get_lua_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LuaState(crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState)` overload"]
-    fn set_lua_state(
-        self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState,
-        >,
-    ) -> () {
+    fn set_lua_state(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState>) -> () {
         unsafe {
-            let __receiver = <LuaLBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LuaLBuffer_unity2_raw::set_lua_state(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LuaLBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LuaLBuffer_unity2_raw::set_lua_state(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState)` overload"]
-    fn ctor(
-        self,
-        l: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState,
-        >,
-    ) -> () {
+    fn ctor(self, l: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState>) -> () {
         unsafe {
-            let __receiver = <LuaLBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LuaLBuffer_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(l),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LuaLBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LuaLBuffer_unity2_raw::ctor(__receiver, ::core::convert::Into::into(l), ::core::option::Option::None)
         }
     }
 }
@@ -221,16 +169,9 @@ impl<__T: ILuaLBuffer> ILuaLBufferMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-lualbuffer")]
 impl LuaLBuffer {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState)` — overload selector"]
-    pub fn new(
-        l: crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LuaLBuffer),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(l: crate::moon_sharp::interpreter::interop::lua_state_interop::luastate::LuaState) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(LuaLBuffer), ::core::stringify!(new),));
         <Self as ILuaLBufferMethods>::ctor(this, l);
         this
     }
@@ -239,9 +180,7 @@ impl LuaLBuffer {
 #[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-lualbuffer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILuaLBuffer;
-    pub use super::ILuaLBufferMethods;
-    pub use super::LuaLBuffer;
+    pub use super::{ILuaLBuffer, ILuaLBufferMethods, LuaLBuffer};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,22 +2,18 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2dcullresult/Light2DCullResult.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "Light2DCullResult"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "Light2DCullResult")]
     #[parent(crate::system::object::Object)]
     pub struct Light2DCullResult {
         #[rename(name = "m_VisibleLights")]
-        pub m_visible_lights: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        >,
+        pub m_visible_lights:
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>,
     }
 }
 
@@ -33,9 +29,7 @@ mod __Light2DCullResult_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_visible_lights {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DCullResult as ::unity2::ClassIdentity>::class(),
@@ -48,45 +42,34 @@ mod __Light2DCullResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
-                    "get_visibleLights",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
+                        "get_visibleLights",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_visible_lights(
         this: Light2DCullResult,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> {
         let inner: extern "C" fn(
             Light2DCullResult,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_visible_lights::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_visible_lights::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_scene_lit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DCullResult as ::unity2::ClassIdentity>::class(),
@@ -99,41 +82,28 @@ mod __Light2DCullResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
-                    "IsSceneLit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
+                        "IsSceneLit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_scene_lit(
-        this: Light2DCullResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_scene_lit(this: Light2DCullResult, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(Light2DCullResult, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_scene_lit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_scene_lit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_stats_by_layer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DCullResult as ::unity2::ClassIdentity>::class(),
                 "GetLightStatsByLayer",
@@ -145,18 +115,15 @@ mod __Light2DCullResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
-                    "GetLightStatsByLayer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
+                        "GetLightStatsByLayer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_light_stats_by_layer(
@@ -164,17 +131,23 @@ mod __Light2DCullResult_unity2_raw {
         layer: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::experimental::rendering::universal::lightstats::LightStats {
-        let inner : extern "C" fn (Light2DCullResult , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lightstats :: LightStats = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_light_stats_by_layer :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            Light2DCullResult,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lightstats::LightStats =
+            ::core::mem::transmute(__lookup_get_light_stats_by_layer::get_method_info().method_ptr);
         inner(this, layer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DCullResult as ::unity2::ClassIdentity>::class(),
                 "SetupCulling",
@@ -186,36 +159,36 @@ mod __Light2DCullResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
-                    "SetupCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
+                        "SetupCulling",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_culling(
         this: Light2DCullResult,
-        culling_parameters : * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
         camera: crate::unity_engine::camera::Camera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (Light2DCullResult , * mut crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_setup_culling :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            Light2DCullResult,
+            *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
+            crate::unity_engine::camera::Camera,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup_culling::get_method_info().method_ptr);
         inner(this, culling_parameters, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DCullResult as ::unity2::ClassIdentity>::class(),
@@ -228,30 +201,20 @@ mod __Light2DCullResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DCullResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: Light2DCullResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: Light2DCullResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Light2DCullResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -261,25 +224,16 @@ pub trait ILight2DCullResultMethods: ILight2DCullResult {
     #[doc = "`get_visibleLights()` overload"]
     fn get_visible_lights(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> {
         unsafe {
-            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Light2DCullResult_unity2_raw::get_visible_lights(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Light2DCullResult_unity2_raw::get_visible_lights(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsSceneLit()` overload"]
     fn is_scene_lit(self) -> bool {
         unsafe {
-            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Light2DCullResult_unity2_raw::is_scene_lit(__receiver, ::core::option::Option::None)
         }
     }
@@ -289,27 +243,19 @@ pub trait ILight2DCullResultMethods: ILight2DCullResult {
         layer: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::experimental::rendering::universal::lightstats::LightStats {
         unsafe {
-            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Light2DCullResult_unity2_raw::get_light_stats_by_layer(
-                __receiver,
-                ::core::convert::Into::into(layer),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Light2DCullResult_unity2_raw::get_light_stats_by_layer(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupCulling(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, crate::unity_engine::camera::Camera)` overload"]
     fn setup_culling(
         self,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters
-    {
+    ) -> crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters {
         unsafe {
-            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters > :: uninit () ;
+            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>::uninit();
             __Light2DCullResult_unity2_raw::setup_culling(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -322,9 +268,7 @@ pub trait ILight2DCullResultMethods: ILight2DCullResult {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Light2DCullResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Light2DCullResult_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -352,9 +296,7 @@ impl Light2DCullResult {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dcullresult")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILight2DCullResult;
-    pub use super::ILight2DCullResultMethods;
-    pub use super::Light2DCullResult;
+    pub use super::{ILight2DCullResult, ILight2DCullResultMethods, Light2DCullResult};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

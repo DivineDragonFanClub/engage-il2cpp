@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-tmp_offset-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_offset/TMP_Offset.md"))]
     #[repr(C)]
@@ -19,9 +21,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for TMP_Offset {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_Offset";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -32,10 +33,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_Offset {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -52,101 +50,61 @@ mod __TMP_Offset_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "get_left",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "get_left", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_left",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_left",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_left(
-        this: TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_left(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_left::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_left::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "set_left",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "set_left", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "set_left",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "set_left",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_left(
-        this: TMP_Offset,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_left(this: TMP_Offset, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_left::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_left::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
@@ -159,41 +117,28 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_right",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_right",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_right(
-        this: TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_right(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_right::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_right::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
                 "set_right",
@@ -205,129 +150,81 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "set_right",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "set_right",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_right(
-        this: TMP_Offset,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_right(this: TMP_Offset, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_right::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_right::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_top {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "get_top",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "get_top", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_top",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_top",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_top(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_top::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_top::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_top {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "set_top",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "set_top", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "set_top",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "set_top",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_top(
-        this: TMP_Offset,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_top(this: TMP_Offset, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_top::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_top::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bottom {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
@@ -340,41 +237,28 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_bottom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_bottom",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bottom(
-        this: TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_bottom(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bottom::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bottom::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_bottom {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
                 "set_bottom",
@@ -386,40 +270,27 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "set_bottom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "set_bottom",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_bottom(
-        this: TMP_Offset,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_bottom(this: TMP_Offset, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_bottom::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_bottom::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
@@ -432,41 +303,28 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_horizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_horizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_horizontal(
-        this: TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_horizontal(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_horizontal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
                 "set_horizontal",
@@ -478,40 +336,27 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "set_horizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "set_horizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_horizontal(
-        this: TMP_Offset,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_horizontal(this: TMP_Offset, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_horizontal::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
@@ -524,41 +369,28 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_vertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_vertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_vertical(
-        this: TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_vertical(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_vertical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
                 "set_vertical",
@@ -570,189 +402,113 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "set_vertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "set_vertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_vertical(
-        this: TMP_Offset,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_vertical(this: TMP_Offset, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_vertical::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_zero {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "get_zero",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "get_zero", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "get_zero",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "get_zero",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_zero(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_offset::TMP_Offset {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_offset::TMP_Offset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_zero::get_offset() as isize),
-        );
+    pub unsafe fn get_zero(__unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::tmp_offset::TMP_Offset {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::tm_pro::tmp_offset::TMP_Offset =
+            ::core::mem::transmute(__lookup_get_zero::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_Offset,
-        left: f32,
-        right: f32,
-        top: f32,
-        bottom: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TMP_Offset, left: f32, right: f32, top: f32, bottom: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, left, right, top, bottom, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: TMP_Offset,
-        horizontal: f32,
-        vertical: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: TMP_Offset, horizontal: f32, vertical: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_Offset, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, horizontal, vertical, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type(),
@@ -768,18 +524,15 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality(
@@ -787,24 +540,15 @@ mod __TMP_Offset_unity2_raw {
         rhs: crate::tm_pro::tmp_offset::TMP_Offset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_offset::TMP_Offset,
-            crate::tm_pro::tmp_offset::TMP_Offset,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type(),
                 <crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type(),
@@ -820,18 +564,15 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_inequality(
@@ -839,24 +580,15 @@ mod __TMP_Offset_unity2_raw {
         rhs: crate::tm_pro::tmp_offset::TMP_Offset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_offset::TMP_Offset,
-            crate::tm_pro::tmp_offset::TMP_Offset,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_multiply {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -872,18 +604,15 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "op_Multiply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "op_Multiply",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_multiply(
@@ -891,24 +620,15 @@ mod __TMP_Offset_unity2_raw {
         b: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_offset::TMP_Offset {
-        let inner: extern "C" fn(
-            crate::tm_pro::tmp_offset::TMP_Offset,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_offset::TMP_Offset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_multiply::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::tm_pro::tmp_offset::TMP_Offset, f32, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_offset::TMP_Offset =
+            ::core::mem::transmute(__lookup_op_multiply::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Offset as ::unity2::ClassIdentity>::class(),
@@ -921,171 +641,100 @@ mod __TMP_Offset_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TMP_Offset, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: TMP_Offset,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TMP_Offset,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: TMP_Offset, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TMP_Offset, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::tmp_offset::TMP_Offset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals_2(
-        this: TMP_Offset,
-        other: crate::tm_pro::tmp_offset::TMP_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TMP_Offset,
-            crate::tm_pro::tmp_offset::TMP_Offset,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+    pub unsafe fn equals_2(this: TMP_Offset, other: crate::tm_pro::tmp_offset::TMP_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_Offset as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_Offset as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Offset as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Offset as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1096,6 +745,7 @@ impl TMP_Offset {
     pub fn get_zero() -> crate::tm_pro::tmp_offset::TMP_Offset {
         unsafe { __TMP_Offset_unity2_raw::get_zero(::core::option::Option::None) }
     }
+
     #[doc = "`op_Equality(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]
     pub fn op_equality(
         lhs: impl ::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>,
@@ -1109,6 +759,7 @@ impl TMP_Offset {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]
     pub fn op_inequality(
         lhs: impl ::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>,
@@ -1122,6 +773,7 @@ impl TMP_Offset {
             )
         }
     }
+
     #[doc = "`op_Multiply(crate::tm_pro::tmp_offset::TMP_Offset, f32)` overload"]
     pub fn op_multiply(
         a: impl ::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>,
@@ -1135,6 +787,7 @@ impl TMP_Offset {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TMP_Offset_unity2_raw::cctor(::core::option::Option::None) }
@@ -1147,86 +800,62 @@ impl TMP_Offset {
     pub fn get_left(self) -> f32 {
         unsafe { __TMP_Offset_unity2_raw::get_left(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_left(f32)` overload"]
     pub fn set_left(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_Offset_unity2_raw::set_left(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::set_left(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_right()` overload"]
     pub fn get_right(self) -> f32 {
         unsafe { __TMP_Offset_unity2_raw::get_right(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_right(f32)` overload"]
     pub fn set_right(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_Offset_unity2_raw::set_right(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::set_right(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_top()` overload"]
     pub fn get_top(self) -> f32 {
         unsafe { __TMP_Offset_unity2_raw::get_top(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_top(f32)` overload"]
     pub fn set_top(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_Offset_unity2_raw::set_top(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::set_top(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_bottom()` overload"]
     pub fn get_bottom(self) -> f32 {
         unsafe { __TMP_Offset_unity2_raw::get_bottom(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_bottom(f32)` overload"]
     pub fn set_bottom(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_Offset_unity2_raw::set_bottom(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::set_bottom(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_horizontal()` overload"]
     pub fn get_horizontal(self) -> f32 {
         unsafe { __TMP_Offset_unity2_raw::get_horizontal(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_horizontal(f32)` overload"]
     pub fn set_horizontal(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_Offset_unity2_raw::set_horizontal(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::set_horizontal(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_vertical()` overload"]
     pub fn get_vertical(self) -> f32 {
         unsafe { __TMP_Offset_unity2_raw::get_vertical(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_vertical(f32)` overload"]
     pub fn set_vertical(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __TMP_Offset_unity2_raw::set_vertical(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::set_vertical(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(f32, f32, f32, f32)` overload"]
     pub fn ctor(
         self,
@@ -1246,12 +875,9 @@ impl TMP_Offset {
             )
         }
     }
+
     #[doc = "`.ctor(f32, f32)` overload"]
-    pub fn ctor_2(
-        self,
-        horizontal: impl ::core::convert::Into<f32>,
-        vertical: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn ctor_2(self, horizontal: impl ::core::convert::Into<f32>, vertical: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __TMP_Offset_unity2_raw::ctor_2(
                 self,
@@ -1261,32 +887,20 @@ impl TMP_Offset {
             )
         }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __TMP_Offset_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __TMP_Offset_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_Offset_unity2_raw::equals(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::tm_pro::tmp_offset::TMP_Offset)` overload"]
-    pub fn equals_2(
-        self,
-        other: impl ::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>,
-    ) -> bool {
-        unsafe {
-            __TMP_Offset_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals_2(self, other: impl ::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>) -> bool {
+        unsafe { __TMP_Offset_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
 }
 
@@ -1294,10 +908,9 @@ impl TMP_Offset {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_Offset;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

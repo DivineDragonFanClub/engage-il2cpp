@@ -2,33 +2,43 @@
 
 #[cfg(feature = "app-nametypedata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdata_1::{IStructData_1, StructData_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nametypedata/NameTypeData.md"))]
+    #[::unity2::class(namespace = "App", name = "NameTypeData")]
+    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: nametypedata :: NameTypeData >)]
+    pub struct NameTypeData {
+        #[static_field]
+        #[rename(name = "MaxData")]
+        pub max_data: i32,
+        #[rename(name = "SuffixArray")]
+        pub suffix_array: ::unity2::Array<::unity2::Il2CppString>,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nametypedata/NameTypeData_Type.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct NameTypeData_Type {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for NameTypeData_Type {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "NameTypeData.Type";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,10 +49,7 @@ mod __types {
 
     impl ::unity2::IlType for NameTypeData_Type {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -131,17 +138,6 @@ mod __types {
             Self { value: 20 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nametypedata/NameTypeData.md"))]
-    #[::unity2::class(namespace = "App", name = "NameTypeData")]
-    # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: nametypedata :: NameTypeData >)]
-    pub struct NameTypeData {
-        #[static_field]
-        #[rename(name = "MaxData")]
-        pub max_data: i32,
-        #[rename(name = "SuffixArray")]
-        pub suffix_array: ::unity2::Array<::unity2::Il2CppString>,
-    }
 }
 
 #[cfg(feature = "app-nametypedata-types")]
@@ -156,92 +152,59 @@ mod __NameTypeData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NameTypeData as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NameTypeData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <NameTypeData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<NameTypeData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -254,41 +217,28 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Pid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Pid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pid(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_pid(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_pid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
                 "set_Pid",
@@ -300,43 +250,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Pid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Pid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_pid(
-        this: NameTypeData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pid::get_offset() as isize),
-        );
+    pub unsafe fn set_pid(this: NameTypeData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NameTypeData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pid::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -349,47 +283,32 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_name_types(
         this: NameTypeData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::nametypedata::NameTypeData_Type> {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::app::nametypedata::NameTypeData_Type> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_name_types::get_offset() as isize),
-            );
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::nametypedata::NameTypeData_Type> =
+            ::core::mem::transmute(__lookup_get_name_types::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::app::nametypedata::NameTypeData_Type,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::app::nametypedata::NameTypeData_Type> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
                 "set_NameTypes",
@@ -401,18 +320,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_types(
@@ -420,24 +336,15 @@ mod __NameTypeData_unity2_raw {
         value: ::unity2::Array<crate::app::nametypedata::NameTypeData_Type>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::Array<crate::app::nametypedata::NameTypeData_Type>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_types::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, ::unity2::Array<crate::app::nametypedata::NameTypeData_Type>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_types::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -450,41 +357,28 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "GetDebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "GetDebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_debug_name(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_debug_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hub_cook_suffix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::nametypedata::NameTypeData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::nametypedata::NameTypeData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
                 "GetHubCookSuffix",
@@ -496,18 +390,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "GetHubCookSuffix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "GetHubCookSuffix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hub_cook_suffix(
@@ -515,24 +406,15 @@ mod __NameTypeData_unity2_raw {
         to_data: crate::app::nametypedata::NameTypeData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hub_cook_suffix::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_hub_cook_suffix::get_method_info().method_ptr);
         inner(this, to_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_honorific {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -546,41 +428,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "IsHonorific",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "IsHonorific",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_honorific(
-        r#type: crate::app::nametypedata::NameTypeData_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_honorific::get_offset() as isize),
-        );
+    pub unsafe fn is_honorific(r#type: crate::app::nametypedata::NameTypeData_Type, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_honorific::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -593,41 +461,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType0",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type0(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type0::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type0(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type0::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type0 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -641,18 +495,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType0",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType0",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type0(
@@ -660,24 +511,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type0::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type0::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -690,41 +532,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type1(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type1::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type1(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -738,18 +566,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type1(
@@ -757,24 +582,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type1::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -787,41 +603,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type2(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type2::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type2(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -835,18 +637,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type2(
@@ -854,24 +653,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -884,41 +674,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type3(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type3::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type3(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -932,18 +708,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType3",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type3(
@@ -951,24 +724,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type3::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -981,41 +745,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType4",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type4(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type4::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type4(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type4::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1029,18 +779,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType4",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type4(
@@ -1048,24 +795,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type4::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1078,41 +816,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType5",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type5(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type5::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type5(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type5::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1126,18 +850,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType5",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type5(
@@ -1145,24 +866,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type5::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type5::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1175,41 +887,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType6",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType6",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type6(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type6::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type6(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type6::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1223,18 +921,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType6",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType6",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type6(
@@ -1242,24 +937,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type6::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type6::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1272,41 +958,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType7",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType7",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type7(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type7::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type7(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type7::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1320,18 +992,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType7",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType7",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type7(
@@ -1339,24 +1008,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type7::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type7::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1369,41 +1029,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType8",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType8",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type8(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type8::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type8(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type8::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1417,18 +1063,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType8",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType8",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type8(
@@ -1436,24 +1079,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type8::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type8::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1466,41 +1100,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType9",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType9",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type9(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type9::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type9(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type9::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1514,18 +1134,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType9",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType9",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type9(
@@ -1533,24 +1150,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type9::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type9::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1563,41 +1171,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType10",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType10",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type10(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type10::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type10(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type10::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type10 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1611,18 +1205,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType10",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType10",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type10(
@@ -1630,24 +1221,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type10::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type10::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1660,41 +1242,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType11",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType11",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type11(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type11::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type11(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type11::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type11 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1708,18 +1276,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType11",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType11",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type11(
@@ -1727,24 +1292,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type11::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type11::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type12 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1757,41 +1313,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType12",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType12",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type12(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type12::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type12(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type12::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type12 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1805,18 +1347,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType12",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType12",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type12(
@@ -1824,24 +1363,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type12::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type12::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type13 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1854,41 +1384,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType13",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType13",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type13(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type13::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type13(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type13::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type13 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1902,18 +1418,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType13",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType13",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type13(
@@ -1921,24 +1434,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type13::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type13::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type14 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -1951,41 +1455,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType14",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType14",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type14(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type14::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type14(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type14::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type14 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1999,18 +1489,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType14",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType14",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type14(
@@ -2018,24 +1505,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type14::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type14::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type15 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2048,41 +1526,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType15",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType15",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type15(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type15::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type15(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type15::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type15 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2096,18 +1560,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType15",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType15",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type15(
@@ -2115,24 +1576,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type15::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type15::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type16 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2145,41 +1597,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType16",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType16",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type16(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type16::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type16(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type16::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type16 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2193,18 +1631,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType16",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType16",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type16(
@@ -2212,24 +1647,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type16::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type16::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type17 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2242,41 +1668,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType17",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType17",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type17(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type17::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type17(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type17::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type17 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2290,18 +1702,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType17",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType17",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type17(
@@ -2309,24 +1718,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type17::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type17::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type18 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2339,41 +1739,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType18",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType18",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type18(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type18::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type18(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type18::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type18 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2387,18 +1773,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType18",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType18",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type18(
@@ -2406,24 +1789,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type18::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type18::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type19 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2436,41 +1810,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType19",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType19",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type19(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type19::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type19(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type19::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type19 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2484,18 +1844,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType19",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType19",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type19(
@@ -2503,24 +1860,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type19::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type19::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type20 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2533,41 +1881,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType20",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType20",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type20(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type20::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type20(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type20::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type20 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2581,18 +1915,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType20",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType20",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type20(
@@ -2600,24 +1931,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type20::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type20::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type21 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2630,41 +1952,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType21",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType21",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type21(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type21::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type21(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type21::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type21 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2678,18 +1986,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType21",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType21",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type21(
@@ -2697,24 +2002,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type21::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type21::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type22 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2727,41 +2023,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType22",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType22",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type22(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type22::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type22(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type22::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type22 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2775,18 +2057,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType22",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType22",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type22(
@@ -2794,24 +2073,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type22::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type22::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type23 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2824,41 +2094,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType23",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType23",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type23(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type23::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type23(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type23::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type23 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2872,18 +2128,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType23",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType23",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type23(
@@ -2891,24 +2144,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type23::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type23::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type24 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -2921,41 +2165,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType24",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType24",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type24(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type24::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type24(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type24::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type24 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2969,18 +2199,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType24",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType24",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type24(
@@ -2988,24 +2215,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type24::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type24::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type25 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3018,41 +2236,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType25",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType25",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type25(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type25::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type25(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type25::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type25 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3066,18 +2270,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType25",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType25",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type25(
@@ -3085,24 +2286,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type25::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type25::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type26 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3115,41 +2307,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType26",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType26",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type26(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type26::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type26(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type26::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type26 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3163,18 +2341,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType26",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType26",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type26(
@@ -3182,24 +2357,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type26::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type26::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type27 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3212,41 +2378,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType27",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType27",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type27(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type27::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type27(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type27::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type27 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3260,18 +2412,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType27",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType27",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type27(
@@ -3279,24 +2428,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type27::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type27::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type28 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3309,41 +2449,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType28",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType28",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type28(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type28::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type28(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type28::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type28 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3357,18 +2483,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType28",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType28",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type28(
@@ -3376,24 +2499,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type28::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type28::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type29 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3406,41 +2520,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType29",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType29",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type29(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type29::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type29(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type29::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type29 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3454,18 +2554,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType29",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType29",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type29(
@@ -3473,24 +2570,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type29::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type29::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type30 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3503,41 +2591,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType30",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType30",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type30(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type30::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type30(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type30::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type30 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3551,18 +2625,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType30",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType30",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type30(
@@ -3570,24 +2641,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type30::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type30::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type31 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3600,41 +2662,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType31",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType31",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type31(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type31::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type31(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type31::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type31 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3648,18 +2696,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType31",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType31",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type31(
@@ -3667,24 +2712,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type31::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type31::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3697,41 +2733,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type32(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type32::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type32(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type32::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3745,18 +2767,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType32",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type32(
@@ -3764,24 +2783,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type32::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type32::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type33 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3794,41 +2804,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType33",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType33",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type33(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type33::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type33(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type33::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type33 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3842,18 +2838,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType33",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType33",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type33(
@@ -3861,24 +2854,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type33::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type33::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type34 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3891,41 +2875,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType34",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType34",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type34(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type34::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type34(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type34::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type34 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3939,18 +2909,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType34",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType34",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type34(
@@ -3958,24 +2925,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type34::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type34::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type35 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -3988,41 +2946,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType35",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType35",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type35(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type35::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type35(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type35::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type35 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4036,18 +2980,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType35",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType35",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type35(
@@ -4055,24 +2996,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type35::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type35::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type36 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -4085,41 +3017,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType36",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType36",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type36(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type36::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type36(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type36::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type36 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4133,18 +3051,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType36",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType36",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type36(
@@ -4152,24 +3067,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type36::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type36::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type37 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -4182,41 +3088,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType37",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType37",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type37(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type37::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type37(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type37::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type37 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4230,18 +3122,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType37",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType37",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type37(
@@ -4249,24 +3138,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type37::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type37::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type38 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -4279,41 +3159,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType38",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType38",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type38(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type38::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type38(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type38::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type38 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4327,18 +3193,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType38",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType38",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type38(
@@ -4346,24 +3209,15 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type38::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type38::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_type39 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NameTypeData as ::unity2::ClassIdentity>::class(),
@@ -4376,41 +3230,27 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "get_NameType39",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "get_NameType39",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_type39(
-        this: NameTypeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::nametypedata::NameTypeData_Type {
-        let inner: extern "C" fn(
-            NameTypeData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::nametypedata::NameTypeData_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_type39::get_offset() as isize),
-        );
+    pub unsafe fn get_name_type39(this: NameTypeData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type {
+        let inner: extern "C" fn(NameTypeData, ::unity2::OptionalMethod) -> crate::app::nametypedata::NameTypeData_Type =
+            ::core::mem::transmute(__lookup_get_name_type39::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name_type39 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::nametypedata::NameTypeData_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4424,18 +3264,15 @@ mod __NameTypeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NameTypeData as ::unity2::ClassIdentity>::NAME,
-                    "set_NameType39",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NameTypeData as ::unity2::ClassIdentity>::NAME,
+                        "set_NameType39",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_name_type39(
@@ -4443,15 +3280,8 @@ mod __NameTypeData_unity2_raw {
         value: crate::app::nametypedata::NameTypeData_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NameTypeData,
-            crate::app::nametypedata::NameTypeData_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name_type39::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NameTypeData, crate::app::nametypedata::NameTypeData_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name_type39::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -4462,16 +3292,10 @@ impl NameTypeData {
     pub fn load() -> () {
         unsafe { __NameTypeData_unity2_raw::load(::core::option::Option::None) }
     }
+
     #[doc = "`IsHonorific(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    pub fn is_honorific(
-        r#type: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> bool {
-        unsafe {
-            __NameTypeData_unity2_raw::is_honorific(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_honorific(r#type: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> bool {
+        unsafe { __NameTypeData_unity2_raw::is_honorific(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
 }
 
@@ -4480,1082 +3304,610 @@ pub trait INameTypeDataMethods: INameTypeData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Pid()` overload"]
     fn get_pid(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_pid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
     fn set_pid(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_pid(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_pid(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameTypes()` overload"]
     fn get_name_types(self) -> ::unity2::Array<crate::app::nametypedata::NameTypeData_Type> {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_types(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameTypes(::unity2::Array<crate::app::nametypedata::NameTypeData_Type>)` overload"]
-    fn set_name_types(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<crate::app::nametypedata::NameTypeData_Type>>,
-    ) -> () {
+    fn set_name_types(self, value: impl ::core::convert::Into<::unity2::Array<crate::app::nametypedata::NameTypeData_Type>>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_types(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_types(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetHubCookSuffix(crate::app::nametypedata::NameTypeData)` overload"]
-    fn get_hub_cook_suffix(
-        self,
-        to_data: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData>,
-    ) -> ::unity2::Il2CppString {
+    fn get_hub_cook_suffix(self, to_data: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::get_hub_cook_suffix(
-                __receiver,
-                ::core::convert::Into::into(to_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::get_hub_cook_suffix(__receiver, ::core::convert::Into::into(to_data), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType0()` overload"]
     fn get_name_type0(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type0(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType0(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type0(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type0(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type0(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type0(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType1()` overload"]
     fn get_name_type1(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType1(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type1(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type1(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type1(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type1(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType2()` overload"]
     fn get_name_type2(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType2(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type2(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type2(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType3()` overload"]
     fn get_name_type3(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type3(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType3(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type3(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type3(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type3(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type3(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType4()` overload"]
     fn get_name_type4(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type4(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType4(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type4(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type4(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type4(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType5()` overload"]
     fn get_name_type5(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type5(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType5(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type5(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type5(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type5(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type5(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType6()` overload"]
     fn get_name_type6(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type6(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType6(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type6(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type6(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type6(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type6(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType7()` overload"]
     fn get_name_type7(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type7(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType7(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type7(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type7(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type7(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type7(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType8()` overload"]
     fn get_name_type8(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type8(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType8(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type8(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type8(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type8(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type8(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType9()` overload"]
     fn get_name_type9(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type9(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType9(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type9(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type9(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type9(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type9(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType10()` overload"]
     fn get_name_type10(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type10(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType10(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type10(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type10(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type10(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type10(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType11()` overload"]
     fn get_name_type11(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type11(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType11(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type11(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type11(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type11(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type11(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType12()` overload"]
     fn get_name_type12(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type12(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType12(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type12(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type12(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type12(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type12(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType13()` overload"]
     fn get_name_type13(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type13(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType13(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type13(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type13(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type13(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type13(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType14()` overload"]
     fn get_name_type14(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type14(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType14(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type14(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type14(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type14(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type14(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType15()` overload"]
     fn get_name_type15(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type15(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType15(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type15(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type15(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type15(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type15(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType16()` overload"]
     fn get_name_type16(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type16(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType16(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type16(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type16(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type16(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type16(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType17()` overload"]
     fn get_name_type17(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type17(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType17(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type17(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type17(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type17(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type17(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType18()` overload"]
     fn get_name_type18(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type18(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType18(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type18(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type18(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type18(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type18(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType19()` overload"]
     fn get_name_type19(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type19(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType19(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type19(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type19(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type19(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type19(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType20()` overload"]
     fn get_name_type20(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type20(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType20(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type20(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type20(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type20(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type20(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType21()` overload"]
     fn get_name_type21(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type21(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType21(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type21(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type21(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type21(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type21(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType22()` overload"]
     fn get_name_type22(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type22(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType22(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type22(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type22(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type22(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type22(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType23()` overload"]
     fn get_name_type23(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type23(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType23(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type23(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type23(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type23(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type23(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType24()` overload"]
     fn get_name_type24(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type24(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType24(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type24(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type24(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type24(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type24(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType25()` overload"]
     fn get_name_type25(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type25(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType25(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type25(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type25(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type25(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type25(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType26()` overload"]
     fn get_name_type26(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type26(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType26(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type26(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type26(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type26(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type26(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType27()` overload"]
     fn get_name_type27(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type27(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType27(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type27(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type27(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type27(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type27(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType28()` overload"]
     fn get_name_type28(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type28(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType28(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type28(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type28(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type28(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type28(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType29()` overload"]
     fn get_name_type29(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type29(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType29(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type29(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type29(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type29(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type29(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType30()` overload"]
     fn get_name_type30(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type30(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType30(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type30(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type30(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type30(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type30(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType31()` overload"]
     fn get_name_type31(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type31(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType31(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type31(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type31(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type31(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type31(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType32()` overload"]
     fn get_name_type32(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type32(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType32(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type32(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type32(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type32(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type32(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType33()` overload"]
     fn get_name_type33(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type33(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType33(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type33(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type33(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type33(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type33(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType34()` overload"]
     fn get_name_type34(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type34(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType34(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type34(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type34(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type34(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type34(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType35()` overload"]
     fn get_name_type35(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type35(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType35(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type35(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type35(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type35(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type35(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType36()` overload"]
     fn get_name_type36(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type36(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType36(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type36(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type36(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type36(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type36(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType37()` overload"]
     fn get_name_type37(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type37(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType37(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type37(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type37(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type37(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type37(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType38()` overload"]
     fn get_name_type38(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type38(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType38(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type38(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type38(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type38(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type38(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_NameType39()` overload"]
     fn get_name_type39(self) -> crate::app::nametypedata::NameTypeData_Type {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NameTypeData_unity2_raw::get_name_type39(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_NameType39(crate::app::nametypedata::NameTypeData_Type)` overload"]
-    fn set_name_type39(
-        self,
-        value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>,
-    ) -> () {
+    fn set_name_type39(self, value: impl ::core::convert::Into<crate::app::nametypedata::NameTypeData_Type>) -> () {
         unsafe {
-            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __NameTypeData_unity2_raw::set_name_type39(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <NameTypeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NameTypeData_unity2_raw::set_name_type39(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -5567,13 +3919,8 @@ impl<__T: INameTypeData> INameTypeDataMethods for __T {}
 impl NameTypeData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NameTypeData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(NameTypeData), ::core::stringify!(new),));
         <Self as INameTypeDataMethods>::ctor(this);
         this
     }
@@ -5582,26 +3929,21 @@ impl NameTypeData {
 #[cfg(feature = "app-nametypedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INameTypeData;
-    pub use super::INameTypeDataMethods;
-    pub use super::NameTypeData;
-    pub use super::NameTypeData_Type;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{INameTypeData, INameTypeDataMethods, NameTypeData, NameTypeData_Type};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdata_1::IStructData_1;
     #[cfg(feature = "app-structdata_1")]
     pub use crate::app::structdata_1::IStructData_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

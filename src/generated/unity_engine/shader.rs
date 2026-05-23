@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-shader-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::object_2::{IObject_2, Object_2},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shader/Shader.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Shader")]
@@ -26,9 +28,7 @@ mod __Shader_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_shader_hardware_tier {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -41,34 +41,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_globalShaderHardwareTier",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_globalShaderHardwareTier",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_shader_hardware_tier(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: shaderhardwaretier :: ShaderHardwareTier = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_global_shader_hardware_tier :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier =
+            ::core::mem::transmute(__lookup_get_global_shader_hardware_tier::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_shader_hardware_tier {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: shaderhardwaretier :: ShaderHardwareTier as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "set_globalShaderHardwareTier",
@@ -80,137 +77,77 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "set_globalShaderHardwareTier",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "set_globalShaderHardwareTier",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_shader_hardware_tier(
         value: crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_shader_hardware_tier::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_shader_hardware_tier::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "Find",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "Find", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Shader as ::unity2::ClassIdentity>::NAME, "Find", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn find(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::shader::Shader {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::shader::Shader = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find::get_offset() as isize),
-        );
+    pub unsafe fn find(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
+            ::core::mem::transmute(__lookup_find::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_builtin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "FindBuiltin",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "FindBuiltin", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "FindBuiltin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "FindBuiltin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn find_builtin(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::shader::Shader {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::shader::Shader = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_builtin::get_offset() as isize),
-        );
+    pub unsafe fn find_builtin(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
+            ::core::mem::transmute(__lookup_find_builtin::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_maximum_lod {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -223,40 +160,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_maximumLOD",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_maximumLOD",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_maximum_lod(
-        this: Shader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_maximum_lod::get_offset() as isize),
-        );
+    pub unsafe fn get_maximum_lod(this: Shader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_maximum_lod::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_maximum_lod {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "set_maximumLOD",
@@ -268,40 +193,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "set_maximumLOD",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "set_maximumLOD",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_maximum_lod(
-        this: Shader,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_maximum_lod(this: Shader, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_maximum_lod::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_maximum_lod::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_maximum_lod {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -314,37 +226,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_globalMaximumLOD",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_globalMaximumLOD",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_maximum_lod(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_maximum_lod::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_global_maximum_lod::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_maximum_lod {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "set_globalMaximumLOD",
@@ -356,38 +259,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "set_globalMaximumLOD",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "set_globalMaximumLOD",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_maximum_lod(
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_maximum_lod::get_offset() as isize),
-        );
+    pub unsafe fn set_global_maximum_lod(value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_maximum_lod::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_supported {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -400,38 +292,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_isSupported",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_isSupported",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_supported(
-        this: Shader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_supported::get_offset() as isize),
-        );
+    pub unsafe fn get_is_supported(this: Shader, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_supported::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_render_pipeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -444,40 +325,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_globalRenderPipeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_globalRenderPipeline",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_render_pipeline(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_global_render_pipeline(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_global_render_pipeline::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_global_render_pipeline::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_render_pipeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "set_globalRenderPipeline",
@@ -489,87 +358,55 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "set_globalRenderPipeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "set_globalRenderPipeline",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_render_pipeline(
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_render_pipeline(value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_render_pipeline::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_render_pipeline::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_keyword {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "EnableKeyword",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "EnableKeyword", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "EnableKeyword",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "EnableKeyword",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_keyword(
-        keyword: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_keyword(keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_keyword::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_keyword::get_method_info().method_ptr);
         inner(keyword, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_keyword {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "DisableKeyword",
@@ -581,41 +418,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "DisableKeyword",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "DisableKeyword",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_keyword(
-        keyword: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_keyword(keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_keyword::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_keyword::get_method_info().method_ptr);
         inner(keyword, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_keyword_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "IsKeywordEnabled",
@@ -627,39 +451,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "IsKeywordEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "IsKeywordEnabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_keyword_enabled(
-        keyword: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_keyword_enabled(keyword: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_keyword_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_keyword_enabled::get_method_info().method_ptr);
         inner(keyword, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_queue {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -672,38 +484,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_renderQueue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_renderQueue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_render_queue(
-        this: Shader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_render_queue::get_offset() as isize),
-        );
+    pub unsafe fn get_render_queue(this: Shader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_render_queue::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_disable_batching {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -716,43 +517,30 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_disableBatching",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_disableBatching",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_disable_batching(
         this: Shader,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::disablebatchingtype::DisableBatchingType {
-        let inner: extern "C" fn(
-            Shader,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::disablebatchingtype::DisableBatchingType =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_disable_batching::get_offset() as isize),
-            );
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> crate::unity_engine::disablebatchingtype::DisableBatchingType =
+            ::core::mem::transmute(__lookup_get_disable_batching::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_warmup_all_shaders {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -765,175 +553,108 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "WarmupAllShaders",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "WarmupAllShaders",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn warmup_all_shaders(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_warmup_all_shaders::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_warmup_all_shaders::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tag_to_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "TagToID",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "TagToID", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "TagToID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "TagToID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tag_to_id(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn tag_to_id(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tag_to_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tag_to_id::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_id_to_tag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "IDToTag",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "IDToTag", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "IDToTag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "IDToTag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn id_to_tag(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn id_to_tag(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_id_to_tag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_id_to_tag::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_property_to_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "PropertyToID",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "PropertyToID", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "PropertyToID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "PropertyToID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn property_to_id(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn property_to_id(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_property_to_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_property_to_id::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dependency {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetDependency",
@@ -945,18 +666,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetDependency",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetDependency",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dependency(
@@ -964,24 +682,15 @@ mod __Shader_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::shader::Shader {
-        let inner: extern "C" fn(
-            Shader,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::shader::Shader = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_dependency::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::shader::Shader =
+            ::core::mem::transmute(__lookup_get_dependency::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pass_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -994,39 +703,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "get_passCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "get_passCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pass_count(
-        this: Shader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pass_count::get_offset() as isize),
-        );
+    pub unsafe fn get_pass_count(this: Shader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_pass_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_pass_tag_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadertagid::ShaderTagId as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "FindPassTagValue",
@@ -1038,18 +739,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "FindPassTagValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "FindPassTagValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_pass_tag_value(
@@ -1063,25 +761,16 @@ mod __Shader_unity2_raw {
             i32,
             crate::unity_engine::rendering::shadertagid::ShaderTagId,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::shadertagid::ShaderTagId = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_pass_tag_value::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::rendering::shadertagid::ShaderTagId =
+            ::core::mem::transmute(__lookup_find_pass_tag_value::get_method_info().method_ptr);
         inner(this, pass_index, tag_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_find_pass_tag_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "Internal_FindPassTagValue",
@@ -1093,45 +782,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "Internal_FindPassTagValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "Internal_FindPassTagValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_find_pass_tag_value(
-        this: Shader,
-        pass_index: i32,
-        tag_name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn internal_find_pass_tag_value(this: Shader, pass_index: i32, tag_name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(Shader, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_find_pass_tag_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_find_pass_tag_value::get_method_info().method_ptr);
         inner(this, pass_index, tag_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalFloatImpl",
@@ -1143,39 +815,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_float_impl(
-        name: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_float_impl::get_offset() as isize),
-        );
+    pub unsafe fn set_global_float_impl(name: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_float_impl::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -1191,18 +851,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_impl(
@@ -1210,24 +867,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_impl::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -1243,18 +891,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_impl(
@@ -1262,24 +907,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_impl::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
@@ -1295,18 +931,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTextureImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTextureImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_impl(
@@ -1314,25 +947,20 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::texture::Texture,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::texture::Texture,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::texture::Texture, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_texture_impl::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_render_texture_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexture :: RenderTexture as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertexturesubelement :: RenderTextureSubElement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalRenderTextureImpl",
@@ -1344,18 +972,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalRenderTextureImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalRenderTextureImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_render_texture_impl(
@@ -1369,20 +994,14 @@ mod __Shader_unity2_raw {
             crate::unity_engine::rendertexture::RenderTexture,
             crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_render_texture_impl::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_render_texture_impl::get_method_info().method_ptr);
         inner(name, value, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -1398,18 +1017,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBufferImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBufferImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer_impl(
@@ -1417,28 +1033,18 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer_impl::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_graphics_buffer_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -1451,18 +1057,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalGraphicsBufferImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalGraphicsBufferImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_graphics_buffer_impl(
@@ -1470,24 +1073,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::graphicsbuffer::GraphicsBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::graphicsbuffer::GraphicsBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_graphics_buffer_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_graphics_buffer_impl::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -1505,18 +1099,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBufferImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBufferImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer_impl(
@@ -1526,30 +1117,18 @@ mod __Shader_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_constant_buffer_impl::get_method_info().method_ptr);
         inner(name, value, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_graphics_buffer_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
@@ -1564,18 +1143,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantGraphicsBufferImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantGraphicsBufferImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_graphics_buffer_impl(
@@ -1585,28 +1161,16 @@ mod __Shader_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::graphicsbuffer::GraphicsBuffer,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_graphics_buffer_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_constant_graphics_buffer_impl::get_method_info().method_ptr);
         inner(name, value, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatImpl",
@@ -1618,40 +1182,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_float_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_float_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_global_float_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVectorImpl",
@@ -1663,43 +1215,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_vector_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_vector_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_global_vector_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrixImpl",
@@ -1711,43 +1248,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_matrix_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_matrix_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_get_global_matrix_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_texture_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalTextureImpl",
@@ -1759,41 +1281,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalTextureImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalTextureImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_texture_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_texture_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_texture_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_global_texture_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
@@ -1810,18 +1318,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_float_array_impl(
@@ -1831,21 +1336,19 @@ mod __Shader_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(i32, ::unity2::Array<f32>, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_float_array_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_float_array_impl::get_method_info().method_ptr);
         inner(name, values, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalVectorArrayImpl",
@@ -1857,18 +1360,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array_impl(
@@ -1877,26 +1377,20 @@ mod __Shader_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_array_impl::get_method_info().method_ptr);
         inner(name, values, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalMatrixArrayImpl",
@@ -1908,18 +1402,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array_impl(
@@ -1928,27 +1419,16 @@ mod __Shader_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_array_impl::get_method_info().method_ptr);
         inner(name, values, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatArrayImpl",
@@ -1960,41 +1440,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatArrayImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float_array_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<f32> {
+    pub unsafe fn get_global_float_array_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<f32> {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Array<f32> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_global_float_array_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_global_float_array_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVectorArrayImpl",
@@ -2006,44 +1473,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector_array_impl(
         name: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::vector4::Vector4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_array_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> =
+            ::core::mem::transmute(__lookup_get_global_vector_array_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrixArrayImpl",
@@ -2055,44 +1509,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix_array_impl(
         name: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_array_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> =
+            ::core::mem::transmute(__lookup_get_global_matrix_array_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_array_count_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatArrayCountImpl",
@@ -2104,40 +1545,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatArrayCountImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatArrayCountImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float_array_count_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_float_array_count_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_float_array_count_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_global_float_array_count_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_array_count_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVectorArrayCountImpl",
@@ -2149,40 +1578,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorArrayCountImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorArrayCountImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_vector_array_count_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_array_count_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_vector_array_count_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_global_vector_array_count_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_array_count_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrixArrayCountImpl",
@@ -2194,38 +1611,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixArrayCountImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixArrayCountImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_matrix_array_count_impl(
-        name: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_array_count_impl::get_offset() as isize),
-        );
+    pub unsafe fn get_global_matrix_array_count_impl(name: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_global_matrix_array_count_impl::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_global_float_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
@@ -2241,41 +1647,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "ExtractGlobalFloatArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "ExtractGlobalFloatArrayImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn extract_global_float_array_impl(
-        name: i32,
-        val: ::unity2::Array<f32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn extract_global_float_array_impl(name: i32, val: ::unity2::Array<f32>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(i32, ::unity2::Array<f32>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_extract_global_float_array_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_extract_global_float_array_impl::get_method_info().method_ptr);
         inner(name, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_global_vector_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "ExtractGlobalVectorArrayImpl",
@@ -2287,18 +1683,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "ExtractGlobalVectorArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "ExtractGlobalVectorArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_global_vector_array_impl(
@@ -2306,25 +1699,19 @@ mod __Shader_unity2_raw {
         val: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_global_vector_array_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_extract_global_vector_array_impl::get_method_info().method_ptr);
         inner(name, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_global_matrix_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "ExtractGlobalMatrixArrayImpl",
@@ -2336,18 +1723,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "ExtractGlobalMatrixArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "ExtractGlobalMatrixArrayImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_global_matrix_array_impl(
@@ -2355,24 +1739,15 @@ mod __Shader_unity2_raw {
         val: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_global_matrix_array_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_extract_global_matrix_array_impl::get_method_info().method_ptr);
         inner(name, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
@@ -2389,42 +1764,32 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatArray",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_float_array(
-        name: i32,
-        values: ::unity2::Array<f32>,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_float_array(name: i32, values: ::unity2::Array<f32>, count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(i32, ::unity2::Array<f32>, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_float_array::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_float_array::get_method_info().method_ptr);
         inner(name, values, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalVectorArray",
@@ -2436,18 +1801,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array(
@@ -2456,26 +1818,20 @@ mod __Shader_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_array::get_method_info().method_ptr);
         inner(name, values, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalMatrixArray",
@@ -2487,18 +1843,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array(
@@ -2507,26 +1860,19 @@ mod __Shader_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_array::get_method_info().method_ptr);
         inner(name, values, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_global_float_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "ExtractGlobalFloatArray",
@@ -2538,18 +1884,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "ExtractGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "ExtractGlobalFloatArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_global_float_array(
@@ -2557,29 +1900,18 @@ mod __Shader_unity2_raw {
         values: crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::system::collections::generic::list_1::List_1<f32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_global_float_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::system::collections::generic::list_1::List_1<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_extract_global_float_array::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_global_vector_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -2592,52 +1924,37 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "ExtractGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "ExtractGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_global_vector_array(
         name: i32,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_global_vector_array::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_global_vector_array::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_global_matrix_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::matrix4x4::Matrix4x4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -2650,47 +1967,34 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "ExtractGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "ExtractGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_global_matrix_array(
         name: i32,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::matrix4x4::Matrix4x4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_global_matrix_array::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_extract_global_matrix_array::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -2706,44 +2010,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_float(
-        name: ::unity2::Il2CppString,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_float(name: ::unity2::Il2CppString, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_float::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_float::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalFloat",
@@ -2755,136 +2043,84 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_float_2(
-        name_id: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_float_2::get_offset() as isize),
-        );
+    pub unsafe fn set_global_float_2(name_id: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_float_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "SetGlobalInt",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "SetGlobalInt", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_int(
-        name: ::unity2::Il2CppString,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_int(name: ::unity2::Il2CppString, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_int::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_int::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_int_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "SetGlobalInt",
-                2,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "SetGlobalInt", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_int_2(
-        name_id: i32,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_int_2::get_offset() as isize),
-        );
+    pub unsafe fn set_global_int_2(name_id: i32, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_int_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -2900,18 +2136,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector(
@@ -2919,24 +2152,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -2952,18 +2176,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_2(
@@ -2971,24 +2192,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -3004,18 +2216,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_color(
@@ -3023,24 +2232,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_color::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_color_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -3056,43 +2256,27 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_color_2(
-        name_id: i32,
-        value: crate::unity_engine::color::Color,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_color_2::get_offset() as isize),
-        );
+    pub unsafe fn set_global_color_2(name_id: i32, value: crate::unity_engine::color::Color, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_color_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -3108,18 +2292,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix(
@@ -3127,24 +2308,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -3160,18 +2332,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_2(
@@ -3179,24 +2348,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
@@ -3212,18 +2372,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture(
@@ -3231,24 +2388,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::texture::Texture,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::texture::Texture,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::texture::Texture, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_texture::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::texture::Texture as ::unity2::IlType>::il_type(),
@@ -3264,18 +2412,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_2(
@@ -3283,25 +2428,20 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::texture::Texture,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::texture::Texture,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::texture::Texture, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_texture_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexture :: RenderTexture as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertexturesubelement :: RenderTextureSubElement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalTexture",
@@ -3313,18 +2453,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_3(
@@ -3338,21 +2475,19 @@ mod __Shader_unity2_raw {
             crate::unity_engine::rendertexture::RenderTexture,
             crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_texture_3::get_method_info().method_ptr);
         inner(name, value, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_texture_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendertexture :: RenderTexture as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: rendertexturesubelement :: RenderTextureSubElement as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalTexture",
@@ -3364,18 +2499,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_texture_4(
@@ -3389,20 +2521,14 @@ mod __Shader_unity2_raw {
             crate::unity_engine::rendertexture::RenderTexture,
             crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_texture_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_texture_4::get_method_info().method_ptr);
         inner(name_id, value, element, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -3418,18 +2544,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer(
@@ -3437,24 +2560,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -3470,18 +2584,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer_2(
@@ -3489,28 +2600,18 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer_2::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -3523,18 +2624,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer_3(
@@ -3542,28 +2640,18 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::graphicsbuffer::GraphicsBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::unity_engine::graphicsbuffer::GraphicsBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::unity_engine::graphicsbuffer::GraphicsBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer_3::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_buffer_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -3576,18 +2664,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_buffer_4(
@@ -3595,24 +2680,15 @@ mod __Shader_unity2_raw {
         value: crate::unity_engine::graphicsbuffer::GraphicsBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::graphicsbuffer::GraphicsBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_buffer_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_buffer_4::get_method_info().method_ptr);
         inner(name_id, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -3630,18 +2706,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer(
@@ -3657,20 +2730,14 @@ mod __Shader_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_constant_buffer::get_method_info().method_ptr);
         inner(name, value, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -3688,18 +2755,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer_2(
@@ -3709,30 +2773,18 @@ mod __Shader_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_constant_buffer_2::get_method_info().method_ptr);
         inner(name_id, value, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
@@ -3747,18 +2799,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer_3(
@@ -3774,24 +2823,17 @@ mod __Shader_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_constant_buffer_3::get_method_info().method_ptr);
         inner(name, value, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_constant_buffer_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::graphicsbuffer::GraphicsBuffer as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
@@ -3806,18 +2848,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalConstantBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalConstantBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_constant_buffer_4(
@@ -3827,27 +2866,19 @@ mod __Shader_unity2_raw {
         size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::unity_engine::graphicsbuffer::GraphicsBuffer,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_constant_buffer_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_constant_buffer_4::get_method_info().method_ptr);
         inner(name_id, value, offset, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalFloatArray",
@@ -3859,18 +2890,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_float_array_2(
@@ -3878,25 +2906,19 @@ mod __Shader_unity2_raw {
         values: crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<f32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_float_array_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_float_array_2::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_array_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalFloatArray",
@@ -3908,18 +2930,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_float_array_3(
@@ -3927,24 +2946,15 @@ mod __Shader_unity2_raw {
         values: crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::system::collections::generic::list_1::List_1<f32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_float_array_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::system::collections::generic::list_1::List_1<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_float_array_3::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_array_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
@@ -3960,18 +2970,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_float_array_4(
@@ -3979,24 +2986,15 @@ mod __Shader_unity2_raw {
         values: ::unity2::Array<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<f32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_float_array_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Array<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_float_array_4::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_float_array_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Array<f32> as ::unity2::IlType>::il_type(),
@@ -4012,45 +3010,30 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalFloatArray",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_global_float_array_5(
-        name_id: i32,
-        values: ::unity2::Array<f32>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_global_float_array_5(name_id: i32, values: ::unity2::Array<f32>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(i32, ::unity2::Array<f32>, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_global_float_array_5::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_global_float_array_5::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -4063,52 +3046,37 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array_2(
         name: ::unity2::Il2CppString,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_vector_array_2::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -4121,48 +3089,38 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array_3(
         name_id: i32,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_vector_array_3::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalVectorArray",
@@ -4174,18 +3132,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array_4(
@@ -4193,25 +3148,19 @@ mod __Shader_unity2_raw {
         values: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::vector4::Vector4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_array_4::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_array_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalVectorArray",
@@ -4223,18 +3172,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_array_5(
@@ -4242,29 +3188,18 @@ mod __Shader_unity2_raw {
         values: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_array_5::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_array_5::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::matrix4x4::Matrix4x4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -4277,52 +3212,37 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array_2(
         name: ::unity2::Il2CppString,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::matrix4x4::Matrix4x4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_matrix_array_2::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::matrix4x4::Matrix4x4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -4335,48 +3255,38 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array_3(
         name_id: i32,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::matrix4x4::Matrix4x4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_global_matrix_array_3::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalMatrixArray",
@@ -4388,18 +3298,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array_4(
@@ -4407,25 +3314,19 @@ mod __Shader_unity2_raw {
         values: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_array_4::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_array_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "SetGlobalMatrixArray",
@@ -4437,18 +3338,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_array_5(
@@ -4456,26 +3354,16 @@ mod __Shader_unity2_raw {
         values: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_array_5::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_array_5::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloat",
@@ -4487,41 +3375,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_global_float(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_global_float::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_global_float::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloat",
@@ -4533,131 +3408,82 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_float_2::get_offset() as isize),
-        );
+    pub unsafe fn get_global_float_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_global_float_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "GetGlobalInt",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "GetGlobalInt", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_int(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_global_int(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_global_int::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_global_int::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_int_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                "GetGlobalInt",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), "GetGlobalInt", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_int_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_int_2::get_offset() as isize),
-        );
+    pub unsafe fn get_global_int_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_global_int_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVector",
@@ -4669,43 +3495,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_global_vector::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVector",
@@ -4717,43 +3531,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVector",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_vector_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_2::get_offset() as isize),
-        );
+    pub unsafe fn get_global_vector_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_global_vector_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalColor",
@@ -4765,43 +3564,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_color(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_global_color::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_color_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalColor",
@@ -4813,43 +3600,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_color_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_color_2::get_offset() as isize),
-        );
+    pub unsafe fn get_global_color_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::color::Color {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_global_color_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrix",
@@ -4861,43 +3633,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_get_global_matrix::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrix",
@@ -4909,43 +3669,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrix",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_matrix_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_2::get_offset() as isize),
-        );
+    pub unsafe fn get_global_matrix_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_get_global_matrix_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalTexture",
@@ -4957,43 +3702,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_texture(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_texture::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_global_texture::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_texture_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalTexture",
@@ -5005,43 +3738,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_texture_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_texture_2::get_offset() as isize),
-        );
+    pub unsafe fn get_global_texture_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_global_texture_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatArray",
@@ -5053,43 +3771,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatArray",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float_array(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<f32> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<f32> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_float_array::get_offset() as isize),
-        );
+    pub unsafe fn get_global_float_array(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<f32> {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<f32> =
+            ::core::mem::transmute(__lookup_get_global_float_array::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatArray",
@@ -5101,41 +3804,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatArray",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_global_float_array_2(
-        name_id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<f32> {
+    pub unsafe fn get_global_float_array_2(name_id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<f32> {
         let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Array<f32> =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_global_float_array_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_global_float_array_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVectorArray",
@@ -5147,44 +3837,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector_array(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::vector4::Vector4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> =
+            ::core::mem::transmute(__lookup_get_global_vector_array::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalVectorArray",
@@ -5196,44 +3873,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector_array_2(
         name_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::vector4::Vector4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_array_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> =
+            ::core::mem::transmute(__lookup_get_global_vector_array_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrixArray",
@@ -5245,44 +3909,31 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix_array(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_array::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> =
+            ::core::mem::transmute(__lookup_get_global_matrix_array::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_array_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalMatrixArray",
@@ -5294,43 +3945,34 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix_array_2(
         name_id: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_array_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> =
+            ::core::mem::transmute(__lookup_get_global_matrix_array_2::get_method_info().method_ptr);
         inner(name_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_array_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatArray",
@@ -5342,18 +3984,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_float_array_3(
@@ -5361,25 +4000,19 @@ mod __Shader_unity2_raw {
         values: crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<f32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_float_array_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_global_float_array_3::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_float_array_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetGlobalFloatArray",
@@ -5391,18 +4024,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalFloatArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalFloatArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_float_array_4(
@@ -5410,29 +4040,18 @@ mod __Shader_unity2_raw {
         values: crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            crate::system::collections::generic::list_1::List_1<f32>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_float_array_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, crate::system::collections::generic::list_1::List_1<f32>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_global_float_array_4::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_array_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -5445,52 +4064,37 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector_array_3(
         name: ::unity2::Il2CppString,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_array_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_global_vector_array_3::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_array_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -5503,52 +4107,37 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector_array_4(
         name_id: i32,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_array_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_global_vector_array_4::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_array_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::matrix4x4::Matrix4x4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -5561,52 +4150,37 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix_array_3(
         name: ::unity2::Il2CppString,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::matrix4x4::Matrix4x4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_array_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_global_matrix_array_3::get_method_info().method_ptr);
         inner(name, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_array_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::matrix4x4::Matrix4x4,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -5619,88 +4193,53 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix_array_4(
         name_id: i32,
-        values: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::matrix4x4::Matrix4x4,
-        >,
+        values: crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             i32,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_array_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_global_matrix_array_4::get_method_info().method_ptr);
         inner(name_id, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Shader as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Shader as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Shader as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Shader, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5716,18 +4255,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_name(
@@ -5735,24 +4271,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_property_name::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_name_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5768,18 +4295,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyNameId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyNameId",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_name_id(
@@ -5787,24 +4311,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_name_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_property_name_id::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5820,18 +4335,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_type(
@@ -5839,16 +4351,19 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shaderpropertytype::ShaderPropertyType {
-        let inner : extern "C" fn (crate :: unity_engine :: shader :: Shader , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: shaderpropertytype :: ShaderPropertyType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_property_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::shader::Shader,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::shaderpropertytype::ShaderPropertyType =
+            ::core::mem::transmute(__lookup_get_property_type::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_description {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5864,18 +4379,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyDescription",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyDescription",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_description(
@@ -5883,24 +4395,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_description::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_property_description::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5916,18 +4419,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_flags(
@@ -5935,16 +4435,19 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shaderpropertyflags::ShaderPropertyFlags {
-        let inner : extern "C" fn (crate :: unity_engine :: shader :: Shader , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: shaderpropertyflags :: ShaderPropertyFlags = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_property_flags :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::shader::Shader,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::shaderpropertyflags::ShaderPropertyFlags =
+            ::core::mem::transmute(__lookup_get_property_flags::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -5960,18 +4463,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_attributes(
@@ -5979,24 +4479,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_attributes::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_property_attributes::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -6012,18 +4503,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyDefaultValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyDefaultValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_default_value(
@@ -6031,24 +4519,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_default_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_property_default_value::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_texture_dimension {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -6064,18 +4543,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyTextureDimension",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyTextureDimension",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_texture_dimension(
@@ -6083,16 +4559,19 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::texturedimension::TextureDimension {
-        let inner : extern "C" fn (crate :: unity_engine :: shader :: Shader , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: texturedimension :: TextureDimension = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_property_texture_dimension :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::shader::Shader,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::texturedimension::TextureDimension =
+            ::core::mem::transmute(__lookup_get_property_texture_dimension::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_texture_default_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -6108,18 +4587,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyTextureDefaultName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyTextureDefaultName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_texture_default_name(
@@ -6127,24 +4603,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_texture_default_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_property_texture_default_name::get_method_info().method_ptr);
         inner(shader, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_texture_stack_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -6162,18 +4629,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "FindTextureStackImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "FindTextureStackImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_texture_stack_impl(
@@ -6183,32 +4647,15 @@ mod __Shader_unity2_raw {
         layer_index: *mut i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            *mut ::unity2::Il2CppString,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_texture_stack_impl::get_offset() as isize),
-        );
-        inner(
-            s,
-            property_idx,
-            stack_name,
-            layer_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, *mut ::unity2::Il2CppString, *mut i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_find_texture_stack_impl::get_method_info().method_ptr);
+        inner(s, property_idx, stack_name, layer_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_property_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -6224,18 +4671,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "CheckPropertyIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "CheckPropertyIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_property_index(
@@ -6243,24 +4687,15 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_property_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_check_property_index::get_method_info().method_ptr);
         inner(s, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
@@ -6273,40 +4708,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_property_count(
-        this: Shader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_count::get_offset() as isize),
-        );
+    pub unsafe fn get_property_count(this: Shader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Shader, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_property_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_property_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "FindPropertyIndex",
@@ -6318,42 +4741,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "FindPropertyIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "FindPropertyIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn find_property_index(
-        this: Shader,
-        property_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn find_property_index(this: Shader, property_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(Shader, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_find_property_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_find_property_index::get_method_info().method_ptr);
         inner(this, property_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_name_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyName",
@@ -6365,42 +4774,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_property_name_2(
-        this: Shader,
-        property_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_property_name_2(this: Shader, property_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_property_name_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_property_name_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_name_id_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyNameId",
@@ -6412,42 +4807,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyNameId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyNameId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_property_name_id_2(
-        this: Shader,
-        property_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_property_name_id_2(this: Shader, property_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_property_name_id_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_property_name_id_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_type_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyType",
@@ -6459,18 +4840,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_type_2(
@@ -6478,18 +4856,16 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shaderpropertytype::ShaderPropertyType {
-        let inner : extern "C" fn (Shader , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: shaderpropertytype :: ShaderPropertyType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_property_type_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::shaderpropertytype::ShaderPropertyType =
+            ::core::mem::transmute(__lookup_get_property_type_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_description_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyDescription",
@@ -6501,18 +4877,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyDescription",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyDescription",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_description_2(
@@ -6521,22 +4894,15 @@ mod __Shader_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_property_description_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_property_description_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_flags_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyFlags",
@@ -6548,18 +4914,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_flags_2(
@@ -6567,18 +4930,16 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shaderpropertyflags::ShaderPropertyFlags {
-        let inner : extern "C" fn (Shader , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: shaderpropertyflags :: ShaderPropertyFlags = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_property_flags_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::shaderpropertyflags::ShaderPropertyFlags =
+            ::core::mem::transmute(__lookup_get_property_flags_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_attributes_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyAttributes",
@@ -6590,18 +4951,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_attributes_2(
@@ -6609,26 +4967,16 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_attributes_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_property_attributes_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_default_float_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyDefaultFloatValue",
@@ -6640,42 +4988,28 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyDefaultFloatValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyDefaultFloatValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_property_default_float_value(
-        this: Shader,
-        property_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_property_default_float_value(this: Shader, property_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_property_default_float_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_property_default_float_value::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_default_vector_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyDefaultVectorValue",
@@ -6687,18 +5021,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyDefaultVectorValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyDefaultVectorValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_default_vector_value(
@@ -6706,26 +5037,16 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_default_vector_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_property_default_vector_value::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_range_limits {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyRangeLimits",
@@ -6737,18 +5058,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyRangeLimits",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyRangeLimits",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_range_limits(
@@ -6756,26 +5074,16 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            Shader,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_range_limits::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_property_range_limits::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_texture_dimension_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyTextureDimension",
@@ -6787,18 +5095,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyTextureDimension",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyTextureDimension",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_texture_dimension_2(
@@ -6806,18 +5111,16 @@ mod __Shader_unity2_raw {
         property_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::texturedimension::TextureDimension {
-        let inner : extern "C" fn (Shader , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: texturedimension :: TextureDimension = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_property_texture_dimension_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::texturedimension::TextureDimension =
+            ::core::mem::transmute(__lookup_get_property_texture_dimension_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_texture_default_name_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Shader as ::unity2::ClassIdentity>::class(),
                 "GetPropertyTextureDefaultName",
@@ -6829,18 +5132,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyTextureDefaultName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyTextureDefaultName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_texture_default_name_2(
@@ -6849,20 +5149,14 @@ mod __Shader_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Shader, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_property_texture_default_name_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_property_texture_default_name_2::get_method_info().method_ptr);
         inner(this, property_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_texture_stack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -6879,18 +5173,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "FindTextureStack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "FindTextureStack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_texture_stack(
@@ -6900,32 +5191,15 @@ mod __Shader_unity2_raw {
         layer_index: *mut i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Shader,
-            i32,
-            *mut ::unity2::Il2CppString,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_texture_stack::get_offset() as isize),
-        );
-        inner(
-            this,
-            property_index,
-            stack_name,
-            layer_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(Shader, i32, *mut ::unity2::Il2CppString, *mut i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_find_texture_stack::get_method_info().method_ptr);
+        inner(this, property_index, stack_name, layer_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_vector_impl_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -6941,18 +5215,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalVectorImpl_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalVectorImpl_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_vector_impl_injected(
@@ -6960,24 +5231,15 @@ mod __Shader_unity2_raw {
         value: *mut crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            *mut crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_vector_impl_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, *mut crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_vector_impl_injected::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_global_matrix_impl_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -6993,18 +5255,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "SetGlobalMatrixImpl_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "SetGlobalMatrixImpl_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_global_matrix_impl_injected(
@@ -7012,24 +5271,15 @@ mod __Shader_unity2_raw {
         value: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            *mut crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_global_matrix_impl_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, *mut crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_global_matrix_impl_injected::get_method_info().method_ptr);
         inner(name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_vector_impl_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -7045,18 +5295,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalVectorImpl_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalVectorImpl_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_vector_impl_injected(
@@ -7064,24 +5311,15 @@ mod __Shader_unity2_raw {
         ret: *mut crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            *mut crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_vector_impl_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, *mut crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_global_vector_impl_injected::get_method_info().method_ptr);
         inner(name, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_global_matrix_impl_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -7097,18 +5335,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetGlobalMatrixImpl_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetGlobalMatrixImpl_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_global_matrix_impl_injected(
@@ -7116,24 +5351,15 @@ mod __Shader_unity2_raw {
         ret: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            *mut crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_global_matrix_impl_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, *mut crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_global_matrix_impl_injected::get_method_info().method_ptr);
         inner(name, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_default_value_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -7150,18 +5376,15 @@ mod __Shader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Shader as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyDefaultValue_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Shader as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyDefaultValue_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_default_value_injected(
@@ -7175,11 +5398,7 @@ mod __Shader_unity2_raw {
             i32,
             *mut crate::unity_engine::vector4::Vector4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_default_value_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_property_default_value_injected::get_method_info().method_ptr);
         inner(shader, property_index, ret, __unity2_method_info)
     }
 }
@@ -7187,138 +5406,84 @@ mod __Shader_unity2_raw {
 #[cfg(feature = "unity_engine-shader")]
 impl Shader {
     #[doc = "`get_globalShaderHardwareTier()` overload"]
-    pub fn get_global_shader_hardware_tier(
-    ) -> crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier {
-        unsafe {
-            __Shader_unity2_raw::get_global_shader_hardware_tier(::core::option::Option::None)
-        }
+    pub fn get_global_shader_hardware_tier() -> crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier {
+        unsafe { __Shader_unity2_raw::get_global_shader_hardware_tier(::core::option::Option::None) }
     }
+
     #[doc = "`set_globalShaderHardwareTier(crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier)` overload"]
     pub fn set_global_shader_hardware_tier(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::shaderhardwaretier::ShaderHardwareTier>,
     ) -> () {
-        unsafe {
-            __Shader_unity2_raw::set_global_shader_hardware_tier(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::set_global_shader_hardware_tier(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`Find(::unity2::Il2CppString)` overload"]
-    pub fn find(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::shader::Shader {
-        unsafe {
-            __Shader_unity2_raw::find(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn find(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::shader::Shader {
+        unsafe { __Shader_unity2_raw::find(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`FindBuiltin(::unity2::Il2CppString)` overload"]
-    pub fn find_builtin(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::shader::Shader {
-        unsafe {
-            __Shader_unity2_raw::find_builtin(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn find_builtin(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::shader::Shader {
+        unsafe { __Shader_unity2_raw::find_builtin(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`get_globalMaximumLOD()` overload"]
     pub fn get_global_maximum_lod() -> i32 {
         unsafe { __Shader_unity2_raw::get_global_maximum_lod(::core::option::Option::None) }
     }
+
     #[doc = "`set_globalMaximumLOD(i32)` overload"]
     pub fn set_global_maximum_lod(value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __Shader_unity2_raw::set_global_maximum_lod(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::set_global_maximum_lod(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_globalRenderPipeline()` overload"]
     pub fn get_global_render_pipeline() -> ::unity2::Il2CppString {
         unsafe { __Shader_unity2_raw::get_global_render_pipeline(::core::option::Option::None) }
     }
+
     #[doc = "`set_globalRenderPipeline(::unity2::Il2CppString)` overload"]
-    pub fn set_global_render_pipeline(
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __Shader_unity2_raw::set_global_render_pipeline(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_global_render_pipeline(value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __Shader_unity2_raw::set_global_render_pipeline(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`EnableKeyword(::unity2::Il2CppString)` overload"]
     pub fn enable_keyword(keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __Shader_unity2_raw::enable_keyword(
-                ::core::convert::Into::into(keyword),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::enable_keyword(::core::convert::Into::into(keyword), ::core::option::Option::None) }
     }
+
     #[doc = "`DisableKeyword(::unity2::Il2CppString)` overload"]
     pub fn disable_keyword(keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __Shader_unity2_raw::disable_keyword(
-                ::core::convert::Into::into(keyword),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::disable_keyword(::core::convert::Into::into(keyword), ::core::option::Option::None) }
     }
+
     #[doc = "`IsKeywordEnabled(::unity2::Il2CppString)` overload"]
     pub fn is_keyword_enabled(keyword: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Shader_unity2_raw::is_keyword_enabled(
-                ::core::convert::Into::into(keyword),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::is_keyword_enabled(::core::convert::Into::into(keyword), ::core::option::Option::None) }
     }
+
     #[doc = "`WarmupAllShaders()` overload"]
     pub fn warmup_all_shaders() -> () {
         unsafe { __Shader_unity2_raw::warmup_all_shaders(::core::option::Option::None) }
     }
+
     #[doc = "`TagToID(::unity2::Il2CppString)` overload"]
     pub fn tag_to_id(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::tag_to_id(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::tag_to_id(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`IDToTag(i32)` overload"]
     pub fn id_to_tag(name: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            __Shader_unity2_raw::id_to_tag(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::id_to_tag(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`PropertyToID(::unity2::Il2CppString)` overload"]
     pub fn property_to_id(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::property_to_id(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::property_to_id(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`SetGlobalFloatImpl(i32, f32)` overload"]
-    pub fn set_global_float_impl(
-        name: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_global_float_impl(name: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_float_impl(
                 ::core::convert::Into::into(name),
@@ -7327,6 +5492,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorImpl(i32, crate::unity_engine::vector4::Vector4)` overload"]
     pub fn set_global_vector_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7340,6 +5506,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixImpl(i32, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn set_global_matrix_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7353,6 +5520,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalTextureImpl(i32, crate::unity_engine::texture::Texture)` overload"]
     pub fn set_global_texture_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7366,13 +5534,12 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalRenderTextureImpl(i32, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement)` overload"]
     pub fn set_global_render_texture_impl(
         name: impl ::core::convert::Into<i32>,
         value: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
-        element: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
-        >,
+        element: impl ::core::convert::Into<crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_render_texture_impl(
@@ -7383,6 +5550,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalBufferImpl(i32, crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
     pub fn set_global_buffer_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7396,6 +5564,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalGraphicsBufferImpl(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer)` overload"]
     pub fn set_global_graphics_buffer_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7409,6 +5578,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalConstantBufferImpl(i32, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32)` overload"]
     pub fn set_global_constant_buffer_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7426,6 +5596,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalConstantGraphicsBufferImpl(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer, i32, i32)` overload"]
     pub fn set_global_constant_graphics_buffer_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7443,48 +5614,27 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalFloatImpl(i32)` overload"]
     pub fn get_global_float_impl(name: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_float_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_float_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVectorImpl(i32)` overload"]
-    pub fn get_global_vector_impl(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_vector_impl(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
+        unsafe { __Shader_unity2_raw::get_global_vector_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrixImpl(i32)` overload"]
-    pub fn get_global_matrix_impl(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_matrix_impl(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Shader_unity2_raw::get_global_matrix_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalTextureImpl(i32)` overload"]
-    pub fn get_global_texture_impl(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::texture::Texture {
-        unsafe {
-            __Shader_unity2_raw::get_global_texture_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_texture_impl(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::texture::Texture {
+        unsafe { __Shader_unity2_raw::get_global_texture_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`SetGlobalFloatArrayImpl(i32, ::unity2::Array<f32>, i32)` overload"]
     pub fn set_global_float_array_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7500,6 +5650,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorArrayImpl(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32)` overload"]
     pub fn set_global_vector_array_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7515,6 +5666,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixArrayImpl(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, i32)` overload"]
     pub fn set_global_matrix_array_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7530,71 +5682,39 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalFloatArrayImpl(i32)` overload"]
-    pub fn get_global_float_array_impl(
-        name: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<f32> {
-        unsafe {
-            __Shader_unity2_raw::get_global_float_array_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_float_array_impl(name: impl ::core::convert::Into<i32>) -> ::unity2::Array<f32> {
+        unsafe { __Shader_unity2_raw::get_global_float_array_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVectorArrayImpl(i32)` overload"]
-    pub fn get_global_vector_array_impl(
-        name: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector_array_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_vector_array_impl(name: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
+        unsafe { __Shader_unity2_raw::get_global_vector_array_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrixArrayImpl(i32)` overload"]
-    pub fn get_global_matrix_array_impl(
-        name: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix_array_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_matrix_array_impl(name: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
+        unsafe { __Shader_unity2_raw::get_global_matrix_array_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalFloatArrayCountImpl(i32)` overload"]
     pub fn get_global_float_array_count_impl(name: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_float_array_count_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_float_array_count_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVectorArrayCountImpl(i32)` overload"]
     pub fn get_global_vector_array_count_impl(name: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector_array_count_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_vector_array_count_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrixArrayCountImpl(i32)` overload"]
     pub fn get_global_matrix_array_count_impl(name: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix_array_count_impl(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_matrix_array_count_impl(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`ExtractGlobalFloatArrayImpl(i32, ::unity2::Array<f32>)` overload"]
-    pub fn extract_global_float_array_impl(
-        name: impl ::core::convert::Into<i32>,
-        val: impl ::core::convert::Into<::unity2::Array<f32>>,
-    ) -> () {
+    pub fn extract_global_float_array_impl(name: impl ::core::convert::Into<i32>, val: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
         unsafe {
             __Shader_unity2_raw::extract_global_float_array_impl(
                 ::core::convert::Into::into(name),
@@ -7603,6 +5723,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`ExtractGlobalVectorArrayImpl(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn extract_global_vector_array_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7616,6 +5737,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`ExtractGlobalMatrixArrayImpl(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn extract_global_matrix_array_impl(
         name: impl ::core::convert::Into<i32>,
@@ -7629,6 +5751,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloatArray(i32, ::unity2::Array<f32>, i32)` overload"]
     pub fn set_global_float_array(
         name: impl ::core::convert::Into<i32>,
@@ -7644,6 +5767,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorArray(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>, i32)` overload"]
     pub fn set_global_vector_array(
         name: impl ::core::convert::Into<i32>,
@@ -7659,6 +5783,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixArray(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>, i32)` overload"]
     pub fn set_global_matrix_array(
         name: impl ::core::convert::Into<i32>,
@@ -7674,6 +5799,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`ExtractGlobalFloatArray(i32, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
     pub fn extract_global_float_array(
         name: impl ::core::convert::Into<i32>,
@@ -7687,14 +5813,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`ExtractGlobalVectorArray(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn extract_global_vector_array(
         name: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::extract_global_vector_array(
@@ -7704,14 +5827,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`ExtractGlobalMatrixArray(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn extract_global_matrix_array(
         name: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::extract_global_matrix_array(
@@ -7721,11 +5841,9 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloat(::unity2::Il2CppString, f32)` overload"]
-    pub fn set_global_float(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_global_float(name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_float(
                 ::core::convert::Into::into(name),
@@ -7734,11 +5852,9 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloat(i32, f32)` overload"]
-    pub fn set_global_float_2(
-        name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_global_float_2(name_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_float_2(
                 ::core::convert::Into::into(name_id),
@@ -7747,11 +5863,9 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalInt(::unity2::Il2CppString, i32)` overload"]
-    pub fn set_global_int(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn set_global_int(name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_int(
                 ::core::convert::Into::into(name),
@@ -7760,11 +5874,9 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalInt(i32, i32)` overload"]
-    pub fn set_global_int_2(
-        name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn set_global_int_2(name_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_int_2(
                 ::core::convert::Into::into(name_id),
@@ -7773,6 +5885,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVector(::unity2::Il2CppString, crate::unity_engine::vector4::Vector4)` overload"]
     pub fn set_global_vector(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7786,6 +5899,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVector(i32, crate::unity_engine::vector4::Vector4)` overload"]
     pub fn set_global_vector_2(
         name_id: impl ::core::convert::Into<i32>,
@@ -7799,6 +5913,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalColor(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]
     pub fn set_global_color(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7812,11 +5927,9 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalColor(i32, crate::unity_engine::color::Color)` overload"]
-    pub fn set_global_color_2(
-        name_id: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
+    pub fn set_global_color_2(name_id: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_color_2(
                 ::core::convert::Into::into(name_id),
@@ -7825,6 +5938,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrix(::unity2::Il2CppString, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn set_global_matrix(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7838,6 +5952,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrix(i32, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn set_global_matrix_2(
         name_id: impl ::core::convert::Into<i32>,
@@ -7851,6 +5966,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalTexture(::unity2::Il2CppString, crate::unity_engine::texture::Texture)` overload"]
     pub fn set_global_texture(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7864,6 +5980,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalTexture(i32, crate::unity_engine::texture::Texture)` overload"]
     pub fn set_global_texture_2(
         name_id: impl ::core::convert::Into<i32>,
@@ -7877,13 +5994,12 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalTexture(::unity2::Il2CppString, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement)` overload"]
     pub fn set_global_texture_3(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         value: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
-        element: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
-        >,
+        element: impl ::core::convert::Into<crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_texture_3(
@@ -7894,13 +6010,12 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalTexture(i32, crate::unity_engine::rendertexture::RenderTexture, crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement)` overload"]
     pub fn set_global_texture_4(
         name_id: impl ::core::convert::Into<i32>,
         value: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
-        element: impl ::core::convert::Into<
-            crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement,
-        >,
+        element: impl ::core::convert::Into<crate::unity_engine::rendering::rendertexturesubelement::RenderTextureSubElement>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_texture_4(
@@ -7911,6 +6026,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalBuffer(::unity2::Il2CppString, crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
     pub fn set_global_buffer(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7924,6 +6040,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalBuffer(i32, crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
     pub fn set_global_buffer_2(
         name_id: impl ::core::convert::Into<i32>,
@@ -7937,6 +6054,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalBuffer(::unity2::Il2CppString, crate::unity_engine::graphicsbuffer::GraphicsBuffer)` overload"]
     pub fn set_global_buffer_3(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7950,6 +6068,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalBuffer(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer)` overload"]
     pub fn set_global_buffer_4(
         name_id: impl ::core::convert::Into<i32>,
@@ -7963,6 +6082,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalConstantBuffer(::unity2::Il2CppString, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32)` overload"]
     pub fn set_global_constant_buffer(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -7980,6 +6100,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalConstantBuffer(i32, crate::unity_engine::computebuffer::ComputeBuffer, i32, i32)` overload"]
     pub fn set_global_constant_buffer_2(
         name_id: impl ::core::convert::Into<i32>,
@@ -7997,6 +6118,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalConstantBuffer(::unity2::Il2CppString, crate::unity_engine::graphicsbuffer::GraphicsBuffer, i32, i32)` overload"]
     pub fn set_global_constant_buffer_3(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -8014,6 +6136,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalConstantBuffer(i32, crate::unity_engine::graphicsbuffer::GraphicsBuffer, i32, i32)` overload"]
     pub fn set_global_constant_buffer_4(
         name_id: impl ::core::convert::Into<i32>,
@@ -8031,6 +6154,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloatArray(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
     pub fn set_global_float_array_2(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -8044,6 +6168,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloatArray(i32, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
     pub fn set_global_float_array_3(
         name_id: impl ::core::convert::Into<i32>,
@@ -8057,6 +6182,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloatArray(::unity2::Il2CppString, ::unity2::Array<f32>)` overload"]
     pub fn set_global_float_array_4(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -8070,11 +6196,9 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalFloatArray(i32, ::unity2::Array<f32>)` overload"]
-    pub fn set_global_float_array_5(
-        name_id: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<::unity2::Array<f32>>,
-    ) -> () {
+    pub fn set_global_float_array_5(name_id: impl ::core::convert::Into<i32>, values: impl ::core::convert::Into<::unity2::Array<f32>>) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_float_array_5(
                 ::core::convert::Into::into(name_id),
@@ -8083,14 +6207,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorArray(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn set_global_vector_array_2(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_vector_array_2(
@@ -8100,14 +6221,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorArray(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn set_global_vector_array_3(
         name_id: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_vector_array_3(
@@ -8117,6 +6235,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorArray(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn set_global_vector_array_4(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -8130,6 +6249,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorArray(i32, ::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn set_global_vector_array_5(
         name_id: impl ::core::convert::Into<i32>,
@@ -8143,14 +6263,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixArray(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn set_global_matrix_array_2(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_matrix_array_2(
@@ -8160,14 +6277,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixArray(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn set_global_matrix_array_3(
         name_id: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::set_global_matrix_array_3(
@@ -8177,6 +6291,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixArray(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn set_global_matrix_array_4(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -8190,6 +6305,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalMatrixArray(i32, ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn set_global_matrix_array_5(
         name_id: impl ::core::convert::Into<i32>,
@@ -8203,196 +6319,101 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalFloat(::unity2::Il2CppString)` overload"]
     pub fn get_global_float(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_float(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_float(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalFloat(i32)` overload"]
     pub fn get_global_float_2(name_id: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_float_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_float_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalInt(::unity2::Il2CppString)` overload"]
     pub fn get_global_int(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_int(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_int(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalInt(i32)` overload"]
     pub fn get_global_int_2(name_id: impl ::core::convert::Into<i32>) -> i32 {
-        unsafe {
-            __Shader_unity2_raw::get_global_int_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_int_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVector(::unity2::Il2CppString)` overload"]
-    pub fn get_global_vector(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_vector(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::vector4::Vector4 {
+        unsafe { __Shader_unity2_raw::get_global_vector(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVector(i32)` overload"]
-    pub fn get_global_vector_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_vector_2(name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
+        unsafe { __Shader_unity2_raw::get_global_vector_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalColor(::unity2::Il2CppString)` overload"]
-    pub fn get_global_color(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::color::Color {
-        unsafe {
-            __Shader_unity2_raw::get_global_color(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_color(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::color::Color {
+        unsafe { __Shader_unity2_raw::get_global_color(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalColor(i32)` overload"]
-    pub fn get_global_color_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::color::Color {
-        unsafe {
-            __Shader_unity2_raw::get_global_color_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_color_2(name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::color::Color {
+        unsafe { __Shader_unity2_raw::get_global_color_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrix(::unity2::Il2CppString)` overload"]
-    pub fn get_global_matrix(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_matrix(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Shader_unity2_raw::get_global_matrix(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrix(i32)` overload"]
-    pub fn get_global_matrix_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_matrix_2(name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Shader_unity2_raw::get_global_matrix_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalTexture(::unity2::Il2CppString)` overload"]
-    pub fn get_global_texture(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::texture::Texture {
-        unsafe {
-            __Shader_unity2_raw::get_global_texture(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_texture(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::texture::Texture {
+        unsafe { __Shader_unity2_raw::get_global_texture(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalTexture(i32)` overload"]
-    pub fn get_global_texture_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::texture::Texture {
-        unsafe {
-            __Shader_unity2_raw::get_global_texture_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_texture_2(name_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::texture::Texture {
+        unsafe { __Shader_unity2_raw::get_global_texture_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalFloatArray(::unity2::Il2CppString)` overload"]
-    pub fn get_global_float_array(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<f32> {
-        unsafe {
-            __Shader_unity2_raw::get_global_float_array(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_float_array(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Array<f32> {
+        unsafe { __Shader_unity2_raw::get_global_float_array(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalFloatArray(i32)` overload"]
-    pub fn get_global_float_array_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<f32> {
-        unsafe {
-            __Shader_unity2_raw::get_global_float_array_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_float_array_2(name_id: impl ::core::convert::Into<i32>) -> ::unity2::Array<f32> {
+        unsafe { __Shader_unity2_raw::get_global_float_array_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVectorArray(::unity2::Il2CppString)` overload"]
     pub fn get_global_vector_array(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector_array(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_vector_array(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalVectorArray(i32)` overload"]
-    pub fn get_global_vector_array_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        unsafe {
-            __Shader_unity2_raw::get_global_vector_array_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_vector_array_2(name_id: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
+        unsafe { __Shader_unity2_raw::get_global_vector_array_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrixArray(::unity2::Il2CppString)` overload"]
     pub fn get_global_matrix_array(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix_array(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Shader_unity2_raw::get_global_matrix_array(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalMatrixArray(i32)` overload"]
-    pub fn get_global_matrix_array_2(
-        name_id: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
-        unsafe {
-            __Shader_unity2_raw::get_global_matrix_array_2(
-                ::core::convert::Into::into(name_id),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_global_matrix_array_2(name_id: impl ::core::convert::Into<i32>) -> ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> {
+        unsafe { __Shader_unity2_raw::get_global_matrix_array_2(::core::convert::Into::into(name_id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetGlobalFloatArray(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
     pub fn get_global_float_array_3(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -8406,6 +6427,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalFloatArray(i32, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
     pub fn get_global_float_array_4(
         name_id: impl ::core::convert::Into<i32>,
@@ -8419,14 +6441,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalVectorArray(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn get_global_vector_array_3(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::get_global_vector_array_3(
@@ -8436,14 +6455,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalVectorArray(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>)` overload"]
     pub fn get_global_vector_array_4(
         name_id: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::get_global_vector_array_4(
@@ -8453,14 +6469,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalMatrixArray(::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn get_global_matrix_array_3(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::get_global_matrix_array_3(
@@ -8470,14 +6483,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetGlobalMatrixArray(i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>)` overload"]
     pub fn get_global_matrix_array_4(
         name_id: impl ::core::convert::Into<i32>,
-        values: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::matrix4x4::Matrix4x4,
-            >,
-        >,
+        values: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::matrix4x4::Matrix4x4>>,
     ) -> () {
         unsafe {
             __Shader_unity2_raw::get_global_matrix_array_4(
@@ -8487,6 +6497,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyName(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_name(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8500,6 +6511,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyNameId(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_name_id(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8513,6 +6525,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyType(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_type(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8526,6 +6539,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyDescription(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_description(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8539,6 +6553,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyFlags(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_flags(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8552,6 +6567,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyAttributes(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_attributes(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8565,6 +6581,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyDefaultValue(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_default_value(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8578,6 +6595,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyTextureDimension(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_texture_dimension(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8591,6 +6609,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`GetPropertyTextureDefaultName(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn get_property_texture_default_name(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8604,6 +6623,7 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`FindTextureStackImpl(crate::unity_engine::shader::Shader, i32, *mut::unity2::Il2CppString, *muti32)` overload"]
     pub fn find_texture_stack_impl(
         s: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8624,6 +6644,7 @@ impl Shader {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`CheckPropertyIndex(crate::unity_engine::shader::Shader, i32)` overload"]
     pub fn check_property_index(
         s: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
@@ -8637,13 +6658,11 @@ impl Shader {
             )
         }
     }
+
     #[doc = "`SetGlobalVectorImpl_Injected(i32, *mutcrate::unity_engine::vector4::Vector4)` overload"]
-    pub fn set_global_vector_impl_injected(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
+    pub fn set_global_vector_impl_injected(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
             __Shader_unity2_raw::set_global_vector_impl_injected(
                 ::core::convert::Into::into(name),
                 __out_0.as_mut_ptr(),
@@ -8652,13 +6671,11 @@ impl Shader {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`SetGlobalMatrixImpl_Injected(i32, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    pub fn set_global_matrix_impl_injected(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+    pub fn set_global_matrix_impl_injected(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __Shader_unity2_raw::set_global_matrix_impl_injected(
                 ::core::convert::Into::into(name),
                 __out_0.as_mut_ptr(),
@@ -8667,13 +6684,11 @@ impl Shader {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetGlobalVectorImpl_Injected(i32, *mutcrate::unity_engine::vector4::Vector4)` overload"]
-    pub fn get_global_vector_impl_injected(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
+    pub fn get_global_vector_impl_injected(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
             __Shader_unity2_raw::get_global_vector_impl_injected(
                 ::core::convert::Into::into(name),
                 __out_0.as_mut_ptr(),
@@ -8682,13 +6697,11 @@ impl Shader {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetGlobalMatrixImpl_Injected(i32, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    pub fn get_global_matrix_impl_injected(
-        name: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+    pub fn get_global_matrix_impl_injected(name: impl ::core::convert::Into<i32>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __Shader_unity2_raw::get_global_matrix_impl_injected(
                 ::core::convert::Into::into(name),
                 __out_0.as_mut_ptr(),
@@ -8697,14 +6710,14 @@ impl Shader {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetPropertyDefaultValue_Injected(crate::unity_engine::shader::Shader, i32, *mutcrate::unity_engine::vector4::Vector4)` overload"]
     pub fn get_property_default_value_injected(
         shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
         property_index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::vector4::Vector4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
             __Shader_unity2_raw::get_property_default_value_injected(
                 ::core::convert::Into::into(shader),
                 ::core::convert::Into::into(property_index),
@@ -8721,74 +6734,49 @@ pub trait IShaderMethods: IShader {
     #[doc = "`get_maximumLOD()` overload"]
     fn get_maximum_lod(self) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_maximum_lod(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_maximumLOD(i32)` overload"]
     fn set_maximum_lod(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::set_maximum_lod(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::set_maximum_lod(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_isSupported()` overload"]
     fn get_is_supported(self) -> bool {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_is_supported(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_renderQueue()` overload"]
     fn get_render_queue(self) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_render_queue(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_disableBatching()` overload"]
     fn get_disable_batching(self) -> crate::unity_engine::disablebatchingtype::DisableBatchingType {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_disable_batching(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDependency(::unity2::Il2CppString)` overload"]
-    fn get_dependency(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::shader::Shader {
+    fn get_dependency(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::shader::Shader {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_dependency(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_dependency(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`get_passCount()` overload"]
     fn get_pass_count(self) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_pass_count(__receiver, ::core::option::Option::None)
         }
     }
@@ -8799,9 +6787,7 @@ pub trait IShaderMethods: IShader {
         tag_name: impl ::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
     ) -> crate::unity_engine::rendering::shadertagid::ShaderTagId {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::find_pass_tag_value(
                 __receiver,
                 ::core::convert::Into::into(pass_index),
@@ -8811,15 +6797,9 @@ pub trait IShaderMethods: IShader {
         }
     }
     #[doc = "`Internal_FindPassTagValue(i32, i32)` overload"]
-    fn internal_find_pass_tag_value(
-        self,
-        pass_index: impl ::core::convert::Into<i32>,
-        tag_name: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn internal_find_pass_tag_value(self, pass_index: impl ::core::convert::Into<i32>, tag_name: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::internal_find_pass_tag_value(
                 __receiver,
                 ::core::convert::Into::into(pass_index),
@@ -8831,64 +6811,36 @@ pub trait IShaderMethods: IShader {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyCount()` overload"]
     fn get_property_count(self) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_property_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FindPropertyIndex(::unity2::Il2CppString)` overload"]
-    fn find_property_index(
-        self,
-        property_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> i32 {
+    fn find_property_index(self, property_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::find_property_index(
-                __receiver,
-                ::core::convert::Into::into(property_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::find_property_index(__receiver, ::core::convert::Into::into(property_name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyName(i32)` overload"]
-    fn get_property_name_2(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
+    fn get_property_name_2(self, property_index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_name_2(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_name_2(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyNameId(i32)` overload"]
     fn get_property_name_id_2(self, property_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_name_id_2(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_name_id_2(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyType(i32)` overload"]
@@ -8897,30 +6849,15 @@ pub trait IShaderMethods: IShader {
         property_index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::rendering::shaderpropertytype::ShaderPropertyType {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_type_2(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_type_2(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyDescription(i32)` overload"]
-    fn get_property_description_2(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
+    fn get_property_description_2(self, property_index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_description_2(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_description_2(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyFlags(i32)` overload"]
@@ -8929,41 +6866,21 @@ pub trait IShaderMethods: IShader {
         property_index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::rendering::shaderpropertyflags::ShaderPropertyFlags {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_flags_2(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_flags_2(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyAttributes(i32)` overload"]
-    fn get_property_attributes_2(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
+    fn get_property_attributes_2(self, property_index: impl ::core::convert::Into<i32>) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_attributes_2(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_attributes_2(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyDefaultFloatValue(i32)` overload"]
-    fn get_property_default_float_value(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> f32 {
+    fn get_property_default_float_value(self, property_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_property_default_float_value(
                 __receiver,
                 ::core::convert::Into::into(property_index),
@@ -8972,14 +6889,9 @@ pub trait IShaderMethods: IShader {
         }
     }
     #[doc = "`GetPropertyDefaultVectorValue(i32)` overload"]
-    fn get_property_default_vector_value(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
+    fn get_property_default_vector_value(self, property_index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_property_default_vector_value(
                 __receiver,
                 ::core::convert::Into::into(property_index),
@@ -8988,19 +6900,10 @@ pub trait IShaderMethods: IShader {
         }
     }
     #[doc = "`GetPropertyRangeLimits(i32)` overload"]
-    fn get_property_range_limits(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
+    fn get_property_range_limits(self, property_index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Shader_unity2_raw::get_property_range_limits(
-                __receiver,
-                ::core::convert::Into::into(property_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Shader_unity2_raw::get_property_range_limits(__receiver, ::core::convert::Into::into(property_index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyTextureDimension(i32)` overload"]
@@ -9009,9 +6912,7 @@ pub trait IShaderMethods: IShader {
         property_index: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::rendering::texturedimension::TextureDimension {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_property_texture_dimension_2(
                 __receiver,
                 ::core::convert::Into::into(property_index),
@@ -9020,14 +6921,9 @@ pub trait IShaderMethods: IShader {
         }
     }
     #[doc = "`GetPropertyTextureDefaultName(i32)` overload"]
-    fn get_property_texture_default_name_2(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> ::unity2::Il2CppString {
+    fn get_property_texture_default_name_2(self, property_index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Shader_unity2_raw::get_property_texture_default_name_2(
                 __receiver,
                 ::core::convert::Into::into(property_index),
@@ -9036,14 +6932,9 @@ pub trait IShaderMethods: IShader {
         }
     }
     #[doc = "`FindTextureStack(i32, *mut::unity2::Il2CppString, *muti32)` overload"]
-    fn find_texture_stack(
-        self,
-        property_index: impl ::core::convert::Into<i32>,
-    ) -> (bool, ::unity2::Il2CppString, i32) {
+    fn find_texture_stack(self, property_index: impl ::core::convert::Into<i32>) -> (bool, ::unity2::Il2CppString, i32) {
         unsafe {
-            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Shader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<::unity2::Il2CppString>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
             let __ret = {
@@ -9067,13 +6958,8 @@ impl<__T: IShader> IShaderMethods for __T {}
 impl Shader {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Shader),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Shader), ::core::stringify!(new),));
         <Self as IShaderMethods>::ctor(this);
         this
     }
@@ -9082,13 +6968,10 @@ impl Shader {
 #[cfg(feature = "unity_engine-shader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShader;
-    pub use super::IShaderMethods;
-    pub use super::Shader;
-    pub use crate::system::object::IObject;
+    pub use super::{IShader, IShaderMethods, Shader};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
 }

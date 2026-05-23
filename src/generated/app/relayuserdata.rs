@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-relayuserdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData_EnteredBattle.md"))]
     #[::unity2::class(namespace = "App", name = "RelayUserData.EnteredBattle")]
@@ -23,9 +23,7 @@ mod __types {
         #[rename(name = "Version")]
         pub version: u8,
         #[rename(name = "m_EnteredBattles")]
-        pub m_entered_battles: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayuserdata::RelayUserData_EnteredBattle,
-        >,
+        pub m_entered_battles: crate::system::collections::generic::list_1::List_1<crate::app::relayuserdata::RelayUserData_EnteredBattle>,
     }
 }
 
@@ -41,9 +39,7 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
@@ -56,39 +52,27 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RelayUserData_EnteredBattle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RelayUserData_EnteredBattle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
@@ -101,39 +85,27 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_valid(
-        this: RelayUserData_EnteredBattle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_valid(this: RelayUserData_EnteredBattle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
@@ -146,41 +118,28 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: RelayUserData_EnteredBattle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: RelayUserData_EnteredBattle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
                 "Serialize",
@@ -192,18 +151,15 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn serialize(
@@ -211,26 +167,16 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         stream: crate::app::stream_2::Stream_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData_EnteredBattle,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayUserData_EnteredBattle, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -242,18 +188,15 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn deserialize(
@@ -261,24 +204,15 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         stream: crate::app::stream_2::Stream_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData_EnteredBattle,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayUserData_EnteredBattle, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
@@ -291,41 +225,28 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "get_DataId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "get_DataId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data_id(
-        this: RelayUserData_EnteredBattle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
+    pub unsafe fn get_data_id(this: RelayUserData_EnteredBattle, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_data_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_data_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
                 "set_DataId",
@@ -337,40 +258,27 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "set_DataId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "set_DataId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_data_id(
-        this: RelayUserData_EnteredBattle,
-        value: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_data_id(this: RelayUserData_EnteredBattle, value: u64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, u64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_data_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_data_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_player_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
@@ -383,41 +291,28 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "get_PlayerIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "get_PlayerIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_player_index(
-        this: RelayUserData_EnteredBattle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_player_index(this: RelayUserData_EnteredBattle, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_player_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_player_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_player_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
                 "set_PlayerIndex",
@@ -429,40 +324,27 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "set_PlayerIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "set_PlayerIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_player_index(
-        this: RelayUserData_EnteredBattle,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_player_index(this: RelayUserData_EnteredBattle, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_player_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_player_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_awarded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
@@ -475,41 +357,28 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAwarded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAwarded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_awarded(
-        this: RelayUserData_EnteredBattle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_awarded(this: RelayUserData_EnteredBattle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_awarded::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_awarded::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_awarded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::class(),
                 "set_IsAwarded",
@@ -521,34 +390,20 @@ mod __RelayUserData_EnteredBattle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
-                    "set_IsAwarded",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData_EnteredBattle as ::unity2::ClassIdentity>::NAME,
+                        "set_IsAwarded",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_awarded(
-        this: RelayUserData_EnteredBattle,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData_EnteredBattle,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_awarded::get_offset() as isize),
-        );
+    pub unsafe fn set_is_awarded(this: RelayUserData_EnteredBattle, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayUserData_EnteredBattle, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_awarded::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -559,9 +414,7 @@ pub trait IRelayUserData_EnteredBattleMethods: IRelayUserData_EnteredBattle {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayUserData_EnteredBattle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -569,135 +422,80 @@ pub trait IRelayUserData_EnteredBattleMethods: IRelayUserData_EnteredBattle {
     fn is_valid(self) -> bool {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::is_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
     fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
     fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DataId()` overload"]
     fn get_data_id(self) -> u64 {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::get_data_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::get_data_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DataId(u64)` overload"]
     fn set_data_id(self, value: impl ::core::convert::Into<u64>) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::set_data_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::set_data_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PlayerIndex()` overload"]
     fn get_player_index(self) -> i32 {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::get_player_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::get_player_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PlayerIndex(i32)` overload"]
     fn set_player_index(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::set_player_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::set_player_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsAwarded()` overload"]
     fn get_is_awarded(self) -> bool {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::get_is_awarded(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::get_is_awarded(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsAwarded(bool)` overload"]
     fn set_is_awarded(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayUserData_EnteredBattle_unity2_raw::set_is_awarded(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <RelayUserData_EnteredBattle as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_EnteredBattle_unity2_raw::set_is_awarded(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -730,102 +528,62 @@ mod __RelayUserData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayUserData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RelayUserData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: RelayUserData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RelayUserData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RelayUserData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relayuserdata::RelayUserData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayUserData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relayuserdata::RelayUserData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<RelayUserData as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: RelayUserData,
-        from: crate::app::relayuserdata::RelayUserData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData,
-            crate::app::relayuserdata::RelayUserData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+    pub unsafe fn ctor_2(this: RelayUserData, from: crate::app::relayuserdata::RelayUserData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayUserData, crate::app::relayuserdata::RelayUserData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, from, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_entered_battle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayuserdata :: RelayUserData_EnteredBattle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relayuserdata::RelayUserData_EnteredBattle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
                 "AddEnteredBattle",
@@ -837,18 +595,15 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "AddEnteredBattle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "AddEnteredBattle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_entered_battle(
@@ -856,25 +611,17 @@ mod __RelayUserData_unity2_raw {
         new_battle: crate::app::relayuserdata::RelayUserData_EnteredBattle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData,
-            crate::app::relayuserdata::RelayUserData_EnteredBattle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_entered_battle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayUserData, crate::app::relayuserdata::RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_entered_battle::get_method_info().method_ptr);
         inner(this, new_battle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_entered_battle_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayuserdata :: RelayUserData_EnteredBattle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relayuserdata::RelayUserData_EnteredBattle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
                 "AddEnteredBattleImpl",
@@ -886,18 +633,15 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "AddEnteredBattleImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "AddEnteredBattleImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_entered_battle_impl(
@@ -905,26 +649,16 @@ mod __RelayUserData_unity2_raw {
         new_battle: crate::app::relayuserdata::RelayUserData_EnteredBattle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            RelayUserData,
-            crate::app::relayuserdata::RelayUserData_EnteredBattle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_entered_battle_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayUserData, crate::app::relayuserdata::RelayUserData_EnteredBattle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_add_entered_battle_impl::get_method_info().method_ptr);
         inner(this, new_battle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_entered_battle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
                 "GetEnteredBattle",
@@ -936,18 +670,15 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "GetEnteredBattle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "GetEnteredBattle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_entered_battle(
@@ -955,69 +686,43 @@ mod __RelayUserData_unity2_raw {
         data_id: u64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::relayuserdata::RelayUserData_EnteredBattle {
-        let inner: extern "C" fn(
-            RelayUserData,
-            u64,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::relayuserdata::RelayUserData_EnteredBattle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_entered_battle::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelayUserData, u64, ::unity2::OptionalMethod) -> crate::app::relayuserdata::RelayUserData_EnteredBattle =
+            ::core::mem::transmute(__lookup_get_entered_battle::get_method_info().method_ptr);
         inner(this, data_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayUserData as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RelayUserData as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: RelayUserData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayUserData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
                 "Serialize",
@@ -1029,45 +734,28 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: RelayUserData,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+    pub unsafe fn serialize(this: RelayUserData, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayUserData, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
                 "Deserialize",
@@ -1079,43 +767,27 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: RelayUserData,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayUserData,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_deserialize::get_offset() as isize),
-        );
+    pub unsafe fn deserialize(this: RelayUserData, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayUserData, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_entered_battles {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
@@ -1128,45 +800,34 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "get_EnteredBattles",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "get_EnteredBattles",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_entered_battles(
         this: RelayUserData,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relayuserdata::RelayUserData_EnteredBattle,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::relayuserdata::RelayUserData_EnteredBattle> {
         let inner: extern "C" fn(
             RelayUserData,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::relayuserdata::RelayUserData_EnteredBattle,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_entered_battles::get_offset() as isize),
-        );
+        )
+            -> crate::system::collections::generic::list_1::List_1<crate::app::relayuserdata::RelayUserData_EnteredBattle> =
+            ::core::mem::transmute(__lookup_get_entered_battles::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayUserData as ::unity2::ClassIdentity>::class(),
@@ -1179,30 +840,20 @@ mod __RelayUserData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayUserData as ::unity2::ClassIdentity>::NAME,
-                    "DbgDump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayUserData as ::unity2::ClassIdentity>::NAME,
+                        "DbgDump",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dbg_dump(
-        this: RelayUserData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dbg_dump(this: RelayUserData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelayUserData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dbg_dump::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dbg_dump::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1212,133 +863,70 @@ pub trait IRelayUserDataMethods: IRelayUserData {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayUserData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::relayuserdata::RelayUserData)` overload"]
-    fn ctor_2(
-        self,
-        from: impl ::core::convert::Into<crate::app::relayuserdata::RelayUserData>,
-    ) -> () {
+    fn ctor_2(self, from: impl ::core::convert::Into<crate::app::relayuserdata::RelayUserData>) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(from),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(from), ::core::option::Option::None)
         }
     }
     #[doc = "`AddEnteredBattle(crate::app::relayuserdata::RelayUserData_EnteredBattle)` overload"]
-    fn add_entered_battle(
-        self,
-        new_battle: impl ::core::convert::Into<crate::app::relayuserdata::RelayUserData_EnteredBattle>,
-    ) -> () {
+    fn add_entered_battle(self, new_battle: impl ::core::convert::Into<crate::app::relayuserdata::RelayUserData_EnteredBattle>) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::add_entered_battle(
-                __receiver,
-                ::core::convert::Into::into(new_battle),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::add_entered_battle(__receiver, ::core::convert::Into::into(new_battle), ::core::option::Option::None)
         }
     }
     #[doc = "`AddEnteredBattleImpl(crate::app::relayuserdata::RelayUserData_EnteredBattle)` overload"]
-    fn add_entered_battle_impl(
-        self,
-        new_battle: impl ::core::convert::Into<crate::app::relayuserdata::RelayUserData_EnteredBattle>,
-    ) -> bool {
+    fn add_entered_battle_impl(self, new_battle: impl ::core::convert::Into<crate::app::relayuserdata::RelayUserData_EnteredBattle>) -> bool {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::add_entered_battle_impl(
-                __receiver,
-                ::core::convert::Into::into(new_battle),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::add_entered_battle_impl(__receiver, ::core::convert::Into::into(new_battle), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEnteredBattle(u64)` overload"]
-    fn get_entered_battle(
-        self,
-        data_id: impl ::core::convert::Into<u64>,
-    ) -> crate::app::relayuserdata::RelayUserData_EnteredBattle {
+    fn get_entered_battle(self, data_id: impl ::core::convert::Into<u64>) -> crate::app::relayuserdata::RelayUserData_EnteredBattle {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::get_entered_battle(
-                __receiver,
-                ::core::convert::Into::into(data_id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::get_entered_battle(__receiver, ::core::convert::Into::into(data_id), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayUserData_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
     fn serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
     fn deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EnteredBattles()` overload"]
-    fn get_entered_battles(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::relayuserdata::RelayUserData_EnteredBattle,
-    > {
+    fn get_entered_battles(self) -> crate::system::collections::generic::list_1::List_1<crate::app::relayuserdata::RelayUserData_EnteredBattle> {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RelayUserData_unity2_raw::get_entered_battles(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayUserData_unity2_raw::get_entered_battles(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DbgDump()` overload"]
     fn dbg_dump(self) -> () {
         unsafe {
-            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayUserData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayUserData_unity2_raw::dbg_dump(__receiver, ::core::option::Option::None)
         }
     }
@@ -1351,13 +939,8 @@ impl<__T: IRelayUserData> IRelayUserDataMethods for __T {}
 impl RelayUserData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayUserData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RelayUserData), ::core::stringify!(new),));
         <Self as IRelayUserDataMethods>::ctor(this);
         this
     }
@@ -1379,12 +962,10 @@ impl RelayUserData {
 #[cfg(feature = "app-relayuserdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRelayUserData;
-    pub use super::IRelayUserDataMethods;
-    pub use super::IRelayUserData_EnteredBattle;
-    pub use super::IRelayUserData_EnteredBattleMethods;
-    pub use super::RelayUserData;
-    pub use super::RelayUserData_EnteredBattle;
+    pub use super::{
+        IRelayUserData, IRelayUserDataMethods, IRelayUserData_EnteredBattle, IRelayUserData_EnteredBattleMethods, RelayUserData,
+        RelayUserData_EnteredBattle,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-structdictionary_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdictionary_1/StructDictionary_1.md"))]
     #[::unity2::class(namespace = "App", name = "StructDictionary`1")]
@@ -14,10 +14,7 @@ mod __types {
         #[rename(name = "m_keyList")]
         pub m_key_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "m_indexKey")]
-        pub m_index_key: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            i32,
-        >,
+        pub m_index_key: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
         #[rename(name = "m_hashKey")]
         pub m_hash_key: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
     }
@@ -71,9 +68,7 @@ impl<T0: ::unity2::ClassIdentity> StructDictionary_1<T0> {
 
     #[doc = "`GetList()` overload"]
     #[method(name = "GetList", args = 0)]
-    pub fn get_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+    pub fn get_list(self) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -99,9 +94,7 @@ impl<T0: ::unity2::ClassIdentity> StructDictionary_1<T0> {
 #[cfg(feature = "app-structdictionary_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStructDictionary_1;
-    pub use super::IStructDictionary_1Methods;
-    pub use super::StructDictionary_1;
+    pub use super::{IStructDictionary_1, IStructDictionary_1Methods, StructDictionary_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

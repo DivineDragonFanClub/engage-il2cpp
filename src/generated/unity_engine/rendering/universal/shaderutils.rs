@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderutils/ShaderUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderUtils")]
@@ -29,10 +29,9 @@ mod __ShaderUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_shader_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: shaderpathid :: ShaderPathID as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderUtils as ::unity2::ClassIdentity>::class(),
                 "GetShaderPath",
@@ -44,18 +43,15 @@ mod __ShaderUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderUtils as ::unity2::ClassIdentity>::NAME,
-                    "GetShaderPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderUtils as ::unity2::ClassIdentity>::NAME,
+                        "GetShaderPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shader_path(
@@ -65,22 +61,15 @@ mod __ShaderUtils_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shader_path::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_shader_path::get_method_info().method_ptr);
         inner(id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enum_from_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderUtils as ::unity2::ClassIdentity>::class(),
                 "GetEnumFromPath",
@@ -92,36 +81,34 @@ mod __ShaderUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderUtils as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumFromPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderUtils as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumFromPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enum_from_path(
         path: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID {
-        let inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: shaderpathid :: ShaderPathID = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_enum_from_path :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID =
+            ::core::mem::transmute(__lookup_get_enum_from_path::get_method_info().method_ptr);
         inner(path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_lw_shader {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::shader::Shader as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShaderUtils as ::unity2::ClassIdentity>::class(),
                 "IsLWShader",
@@ -133,73 +120,46 @@ mod __ShaderUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderUtils as ::unity2::ClassIdentity>::NAME,
-                    "IsLWShader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderUtils as ::unity2::ClassIdentity>::NAME,
+                        "IsLWShader",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_lw_shader(
-        shader: crate::unity_engine::shader::Shader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::shader::Shader,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_lw_shader::get_offset() as isize),
-        );
+    pub unsafe fn is_lw_shader(shader: crate::unity_engine::shader::Shader, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::shader::Shader, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_lw_shader::get_method_info().method_ptr);
         inner(shader, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShaderUtils as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ShaderUtils as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShaderUtils as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShaderUtils as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -208,39 +168,23 @@ mod __ShaderUtils_unity2_raw {
 impl ShaderUtils {
     #[doc = "`GetShaderPath(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)` overload"]
     pub fn get_shader_path(
-        id: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID,
-        >,
+        id: impl ::core::convert::Into<crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID>,
     ) -> ::unity2::Il2CppString {
-        unsafe {
-            __ShaderUtils_unity2_raw::get_shader_path(
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ShaderUtils_unity2_raw::get_shader_path(::core::convert::Into::into(id), ::core::option::Option::None) }
     }
+
     #[doc = "`GetEnumFromPath(::unity2::Il2CppString)` overload"]
     pub fn get_enum_from_path(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID {
-        unsafe {
-            __ShaderUtils_unity2_raw::get_enum_from_path(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ShaderUtils_unity2_raw::get_enum_from_path(::core::convert::Into::into(path), ::core::option::Option::None) }
     }
+
     #[doc = "`IsLWShader(crate::unity_engine::shader::Shader)` overload"]
-    pub fn is_lw_shader(
-        shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>,
-    ) -> bool {
-        unsafe {
-            __ShaderUtils_unity2_raw::is_lw_shader(
-                ::core::convert::Into::into(shader),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_lw_shader(shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>) -> bool {
+        unsafe { __ShaderUtils_unity2_raw::is_lw_shader(::core::convert::Into::into(shader), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ShaderUtils_unity2_raw::cctor(::core::option::Option::None) }
@@ -250,8 +194,7 @@ impl ShaderUtils {
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShaderUtils;
-    pub use super::ShaderUtils;
+    pub use super::{IShaderUtils, ShaderUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

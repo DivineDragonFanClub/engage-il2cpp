@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-dictionarypool_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/dictionarypool_2/DictionaryPool_2.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DictionaryPool`2")]
@@ -13,9 +13,8 @@ mod __types {
     pub struct DictionaryPool_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "s_Pool")]
-        pub s_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
-        >,
+        pub s_pool:
+            crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>>,
     }
 }
 
@@ -39,9 +38,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DictionaryPool_2<
 
     #[doc = "`Release(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"]
     #[method(name = "Release", args = 1)]
-    pub fn release(
-        to_release: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
-    ) -> ();
+    pub fn release(to_release: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>) -> ();
 
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
@@ -51,8 +48,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DictionaryPool_2<
 #[cfg(feature = "unity_engine-rendering-dictionarypool_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DictionaryPool_2;
-    pub use super::IDictionaryPool_2;
+    pub use super::{DictionaryPool_2, IDictionaryPool_2};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

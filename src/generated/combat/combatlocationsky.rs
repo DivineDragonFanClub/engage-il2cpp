@@ -2,11 +2,13 @@
 
 #[cfg(feature = "combat-combatlocationsky-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::combat::basecombatlocation::{BaseCombatLocation, IBaseCombatLocation};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        combat::basecombatlocation::{BaseCombatLocation, IBaseCombatLocation},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationsky/CombatLocationSky.md"))]
     #[::unity2::class(namespace = "Combat", name = "CombatLocationSky")]
@@ -29,11 +31,8 @@ mod __CombatLocationSky_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::combatrecord::CombatRecord as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatLocationSky as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -45,18 +44,15 @@ mod __CombatLocationSky_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -64,24 +60,15 @@ mod __CombatLocationSky_unity2_raw {
         record: crate::combat::combatrecord::CombatRecord,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatLocationSky,
-            crate::combat::combatrecord::CombatRecord,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatLocationSky, crate::combat::combatrecord::CombatRecord, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, record, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rough_pos_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatLocationSky as ::unity2::ClassIdentity>::class(),
@@ -94,41 +81,28 @@ mod __CombatLocationSky_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
-                    "get_RoughPosCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
+                        "get_RoughPosCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rough_pos_count(
-        this: CombatLocationSky,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_rough_pos_count(this: CombatLocationSky, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CombatLocationSky, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_rough_pos_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_rough_pos_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rough_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatLocationSky as ::unity2::ClassIdentity>::class(),
                 "SetRoughPos",
@@ -140,40 +114,27 @@ mod __CombatLocationSky_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
-                    "SetRoughPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
+                        "SetRoughPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_rough_pos(
-        this: CombatLocationSky,
-        try_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_rough_pos(this: CombatLocationSky, try_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatLocationSky, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rough_pos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_rough_pos::get_method_info().method_ptr);
         inner(this, try_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pattern_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatLocationSky as ::unity2::ClassIdentity>::class(),
@@ -186,41 +147,28 @@ mod __CombatLocationSky_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
-                    "get_PatternCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
+                        "get_PatternCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pattern_count(
-        this: CombatLocationSky,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_pattern_count(this: CombatLocationSky, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CombatLocationSky, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pattern_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_pattern_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_battle_patern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatLocationSky as ::unity2::ClassIdentity>::class(),
                 "SetBattlePatern",
@@ -232,40 +180,27 @@ mod __CombatLocationSky_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
-                    "SetBattlePatern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
+                        "SetBattlePatern",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_battle_patern(
-        this: CombatLocationSky,
-        pattern: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_battle_patern(this: CombatLocationSky, pattern: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatLocationSky, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_battle_patern::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_battle_patern::get_method_info().method_ptr);
         inner(this, pattern, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_location {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatLocationSky as ::unity2::ClassIdentity>::class(),
@@ -278,30 +213,20 @@ mod __CombatLocationSky_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
-                    "CalcLocation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatLocationSky as ::unity2::ClassIdentity>::NAME,
+                        "CalcLocation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_location(
-        this: CombatLocationSky,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calc_location(this: CombatLocationSky, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatLocationSky, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_location::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_location::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -309,77 +234,44 @@ mod __CombatLocationSky_unity2_raw {
 #[cfg(feature = "combat-combatlocationsky")]
 pub trait ICombatLocationSkyMethods: ICombatLocationSky {
     #[doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]
-    fn ctor(
-        self,
-        record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>,
-    ) -> () {
+    fn ctor(self, record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> () {
         unsafe {
-            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatLocationSky_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(record),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatLocationSky_unity2_raw::ctor(__receiver, ::core::convert::Into::into(record), ::core::option::Option::None)
         }
     }
     #[doc = "`get_RoughPosCount()` overload"]
     fn get_rough_pos_count(self) -> i32 {
         unsafe {
-            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatLocationSky_unity2_raw::get_rough_pos_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatLocationSky_unity2_raw::get_rough_pos_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetRoughPos(i32)` overload"]
     fn set_rough_pos(self, try_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatLocationSky_unity2_raw::set_rough_pos(
-                __receiver,
-                ::core::convert::Into::into(try_count),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatLocationSky_unity2_raw::set_rough_pos(__receiver, ::core::convert::Into::into(try_count), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PatternCount()` overload"]
     fn get_pattern_count(self) -> i32 {
         unsafe {
-            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatLocationSky_unity2_raw::get_pattern_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatLocationSky_unity2_raw::get_pattern_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetBattlePatern(i32)` overload"]
     fn set_battle_patern(self, pattern: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatLocationSky_unity2_raw::set_battle_patern(
-                __receiver,
-                ::core::convert::Into::into(pattern),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatLocationSky_unity2_raw::set_battle_patern(__receiver, ::core::convert::Into::into(pattern), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcLocation()` overload"]
     fn calc_location(self) -> () {
         unsafe {
-            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CombatLocationSky as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatLocationSky_unity2_raw::calc_location(__receiver, ::core::option::Option::None)
         }
     }
@@ -407,13 +299,10 @@ impl CombatLocationSky {
 #[cfg(feature = "combat-combatlocationsky")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CombatLocationSky;
-    pub use super::ICombatLocationSky;
-    pub use super::ICombatLocationSkyMethods;
-    pub use crate::combat::basecombatlocation::IBaseCombatLocation;
+    pub use super::{CombatLocationSky, ICombatLocationSky, ICombatLocationSkyMethods};
     #[cfg(feature = "combat-basecombatlocation")]
     pub use crate::combat::basecombatlocation::IBaseCombatLocationMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::basecombatlocation::IBaseCombatLocation, system::object::IObject};
 }

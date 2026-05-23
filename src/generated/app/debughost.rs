@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-debughost-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debughost/DebugHost.md"))]
     #[::unity2::class(namespace = "App", name = "DebugHost")]
@@ -25,190 +25,114 @@ mod __DebugHost_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "Setup", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup(
-        root: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup(root: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "Cleanup",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "Cleanup", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "Cleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "Cleanup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cleanup(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cleanup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cleanup::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "HasEnv",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "HasEnv", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "HasEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "HasEnv",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn has_env(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn has_env(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_env::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_has_env::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "GetEnv",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "GetEnv", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "GetEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "GetEnv",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_env(
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_env::get_offset() as isize),
-        );
+    pub unsafe fn get_env(name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_env::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_user_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugHost as ::unity2::ClassIdentity>::class(),
@@ -221,38 +145,27 @@ mod __DebugHost_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "GetUserName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "GetUserName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_user_name(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_user_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_user_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_user_name::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_connected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugHost as ::unity2::ClassIdentity>::class(),
@@ -265,79 +178,53 @@ mod __DebugHost_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "get_IsConnected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "get_IsConnected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_is_connected(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_connected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_connected::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "get_Root",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "get_Root", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "get_Root",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "get_Root",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_root(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_root(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_root::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_root::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_to_host {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -353,43 +240,27 @@ mod __DebugHost_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "WriteToHost",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "WriteToHost",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn write_to_host(
-        path: ::unity2::Il2CppString,
-        text: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_to_host::get_offset() as isize),
-        );
+    pub unsafe fn write_to_host(path: ::unity2::Il2CppString, text: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_write_to_host::get_method_info().method_ptr);
         inner(path, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_to_host_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
@@ -405,43 +276,27 @@ mod __DebugHost_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "WriteToHost",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "WriteToHost",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn write_to_host_2(
-        path: ::unity2::Il2CppString,
-        data: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_to_host_2::get_offset() as isize),
-        );
+    pub unsafe fn write_to_host_2(path: ::unity2::Il2CppString, data: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_write_to_host_2::get_method_info().method_ptr);
         inner(path, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_to_sd_card {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -457,18 +312,15 @@ mod __DebugHost_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "WriteToSdCard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "WriteToSdCard",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_to_sd_card(
@@ -476,24 +328,15 @@ mod __DebugHost_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_to_sd_card::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_write_to_sd_card::get_method_info().method_ptr);
         inner(path, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_to_sd_card_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
@@ -509,18 +352,15 @@ mod __DebugHost_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "WriteToSdCard",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "WriteToSdCard",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_to_sd_card_2(
@@ -528,109 +368,62 @@ mod __DebugHost_unity2_raw {
         data: ::unity2::Array<u8>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_to_sd_card_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_write_to_sd_card_2::get_method_info().method_ptr);
         inner(path, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exists {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "Exists",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "Exists", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "Exists",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "Exists",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exists(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn exists(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exists::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exists::get_method_info().method_ptr);
         inner(path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugHost as ::unity2::ClassIdentity>::class(),
-                "Load",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<DebugHost as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugHost as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugHost as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+    pub unsafe fn load(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(path, __unity2_method_info)
     }
 }
@@ -639,54 +432,41 @@ mod __DebugHost_unity2_raw {
 impl DebugHost {
     #[doc = "`Setup(::unity2::Il2CppString)` overload"]
     pub fn setup(root: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __DebugHost_unity2_raw::setup(
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DebugHost_unity2_raw::setup(::core::convert::Into::into(root), ::core::option::Option::None) }
     }
+
     #[doc = "`Cleanup()` overload"]
     pub fn cleanup() -> () {
         unsafe { __DebugHost_unity2_raw::cleanup(::core::option::Option::None) }
     }
+
     #[doc = "`HasEnv(::unity2::Il2CppString)` overload"]
     pub fn has_env(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __DebugHost_unity2_raw::has_env(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DebugHost_unity2_raw::has_env(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetEnv(::unity2::Il2CppString)` overload"]
-    pub fn get_env(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DebugHost_unity2_raw::get_env(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_env(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __DebugHost_unity2_raw::get_env(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetUserName()` overload"]
     pub fn get_user_name() -> ::unity2::Il2CppString {
         unsafe { __DebugHost_unity2_raw::get_user_name(::core::option::Option::None) }
     }
+
     #[doc = "`get_IsConnected()` overload"]
     pub fn get_is_connected() -> bool {
         unsafe { __DebugHost_unity2_raw::get_is_connected(::core::option::Option::None) }
     }
+
     #[doc = "`get_Root()` overload"]
     pub fn get_root() -> ::unity2::Il2CppString {
         unsafe { __DebugHost_unity2_raw::get_root(::core::option::Option::None) }
     }
+
     #[doc = "`WriteToHost(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn write_to_host(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    pub fn write_to_host(path: impl ::core::convert::Into<::unity2::Il2CppString>, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
             __DebugHost_unity2_raw::write_to_host(
                 ::core::convert::Into::into(path),
@@ -695,11 +475,9 @@ impl DebugHost {
             )
         }
     }
+
     #[doc = "`WriteToHost(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
-    pub fn write_to_host_2(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        data: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> bool {
+    pub fn write_to_host_2(path: impl ::core::convert::Into<::unity2::Il2CppString>, data: impl ::core::convert::Into<::unity2::Array<u8>>) -> bool {
         unsafe {
             __DebugHost_unity2_raw::write_to_host_2(
                 ::core::convert::Into::into(path),
@@ -708,6 +486,7 @@ impl DebugHost {
             )
         }
     }
+
     #[doc = "`WriteToSdCard(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn write_to_sd_card(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -721,6 +500,7 @@ impl DebugHost {
             )
         }
     }
+
     #[doc = "`WriteToSdCard(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
     pub fn write_to_sd_card_2(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -734,31 +514,22 @@ impl DebugHost {
             )
         }
     }
+
     #[doc = "`Exists(::unity2::Il2CppString)` overload"]
     pub fn exists(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __DebugHost_unity2_raw::exists(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DebugHost_unity2_raw::exists(::core::convert::Into::into(path), ::core::option::Option::None) }
     }
+
     #[doc = "`Load(::unity2::Il2CppString)` overload"]
     pub fn load(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Array<u8> {
-        unsafe {
-            __DebugHost_unity2_raw::load(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DebugHost_unity2_raw::load(::core::convert::Into::into(path), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-debughost")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugHost;
-    pub use super::IDebugHost;
+    pub use super::{DebugHost, IDebugHost};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

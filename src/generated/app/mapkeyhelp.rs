@@ -2,32 +2,31 @@
 
 #[cfg(feature = "app-mapkeyhelp-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapKeyHelp_Mode {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapKeyHelp_Mode {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapKeyHelp.Mode";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -38,10 +37,7 @@ mod __types {
 
     impl ::unity2::IlType for MapKeyHelp_Mode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -65,21 +61,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapKeyHelp_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapKeyHelp_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapKeyHelp.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -90,10 +79,7 @@ mod __types {
 
     impl ::unity2::IlType for MapKeyHelp_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -107,23 +93,35 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
+    #[::unity2::class(namespace = "App", name = "MapKeyHelp")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
+    pub struct MapKeyHelp {
+        #[static_field]
+        #[rename(name = "ShowTime")]
+        pub show_time: f32,
+        #[rename(name = "m_Mode")]
+        pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
+        #[rename(name = "m_TemporaryHidingCount")]
+        pub m_temporary_hiding_count: i32,
+        #[rename(name = "m_LastType")]
+        pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[rename(name = "m_RequestType")]
+        pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+        #[rename(name = "m_Progress")]
+        pub m_progress: f32,
+    }
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapKeyHelp_Types {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapKeyHelp_Types {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapKeyHelp.Types";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -134,10 +132,7 @@ mod __types {
 
     impl ::unity2::IlType for MapKeyHelp_Types {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -242,25 +237,6 @@ mod __types {
             Self { value: 24 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
-    #[::unity2::class(namespace = "App", name = "MapKeyHelp")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
-    pub struct MapKeyHelp {
-        #[static_field]
-        #[rename(name = "ShowTime")]
-        pub show_time: f32,
-        #[rename(name = "m_Mode")]
-        pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
-        #[rename(name = "m_TemporaryHidingCount")]
-        pub m_temporary_hiding_count: i32,
-        #[rename(name = "m_LastType")]
-        pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_RequestType")]
-        pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        #[rename(name = "m_Progress")]
-        pub m_progress: f32,
-    }
 }
 
 #[cfg(feature = "app-mapkeyhelp-types")]
@@ -275,11 +251,8 @@ mod __MapKeyHelp_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
                 "CreateAsync",
@@ -291,39 +264,27 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "CreateAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "CreateAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_async(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_async(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_async::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_async::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_creating {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
@@ -336,76 +297,52 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "IsCreating",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "IsCreating",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_creating(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_creating::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_creating::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapKeyHelp as ::unity2::ClassIdentity>::class(),
-                "Destroy",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapKeyHelp as ::unity2::ClassIdentity>::class(), "Destroy", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_request_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
@@ -418,43 +355,28 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "GetRequestType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "GetRequestType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_request_type(
-        this: MapKeyHelp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapkeyhelp::MapKeyHelp_Types {
-        let inner: extern "C" fn(
-            MapKeyHelp,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mapkeyhelp::MapKeyHelp_Types = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_request_type::get_offset() as isize),
-        );
+    pub unsafe fn get_request_type(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::mapkeyhelp::MapKeyHelp_Types {
+        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> crate::app::mapkeyhelp::MapKeyHelp_Types =
+            ::core::mem::transmute(__lookup_get_request_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_request_to_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapkeyhelp::MapKeyHelp_Types as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapkeyhelp::MapKeyHelp_Types as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
                 "RequestToChange",
@@ -466,18 +388,15 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "RequestToChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "RequestToChange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn request_to_change(
@@ -485,24 +404,15 @@ mod __MapKeyHelp_unity2_raw {
         r#type: crate::app::mapkeyhelp::MapKeyHelp_Types,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapKeyHelp,
-            crate::app::mapkeyhelp::MapKeyHelp_Types,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_request_to_change::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapKeyHelp, crate::app::mapkeyhelp::MapKeyHelp_Types, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_request_to_change::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_immediate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
@@ -515,81 +425,53 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "ShowImmediate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "ShowImmediate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_immediate(
-        this: MapKeyHelp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_immediate(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_immediate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_immediate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapKeyHelp as ::unity2::ClassIdentity>::class(),
-                "Hide",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapKeyHelp as ::unity2::ClassIdentity>::class(), "Hide", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn hide(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_temporary_hiding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
@@ -602,41 +484,28 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "BeginTemporaryHiding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "BeginTemporaryHiding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn begin_temporary_hiding(
-        this: MapKeyHelp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn begin_temporary_hiding(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_begin_temporary_hiding::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_begin_temporary_hiding::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_temporary_hiding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
                 "EndTemporaryHiding",
@@ -648,85 +517,54 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "EndTemporaryHiding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "EndTemporaryHiding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn end_temporary_hiding(
-        this: MapKeyHelp,
-        is_reset_measuring: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn end_temporary_hiding(this: MapKeyHelp, is_reset_measuring: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapKeyHelp, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_temporary_hiding::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_end_temporary_hiding::get_method_info().method_ptr);
         inner(this, is_reset_measuring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapKeyHelp as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapKeyHelp as ::unity2::ClassIdentity>::class(), "OnCreate", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: MapKeyHelp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapKeyHelp as ::unity2::ClassIdentity>::class(),
@@ -739,164 +577,99 @@ mod __MapKeyHelp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: MapKeyHelp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_measure {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapKeyHelp as ::unity2::ClassIdentity>::class(),
-                "Measure",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapKeyHelp as ::unity2::ClassIdentity>::class(), "Measure", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "Measure",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "Measure",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn measure(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_measure::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_measure::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mapkeyhelp::MapKeyHelp_Types as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapKeyHelp as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapkeyhelp::MapKeyHelp_Types as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapKeyHelp as ::unity2::ClassIdentity>::class(), "Setup", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup(
-        this: MapKeyHelp,
-        r#type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapKeyHelp,
-            crate::app::mapkeyhelp::MapKeyHelp_Types,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+    pub unsafe fn setup(this: MapKeyHelp, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapKeyHelp, crate::app::mapkeyhelp::MapKeyHelp_Types, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapKeyHelp as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapKeyHelp as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapKeyHelp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapKeyHelp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -905,17 +678,14 @@ mod __MapKeyHelp_unity2_raw {
 impl MapKeyHelp {
     #[doc = "`CreateAsync(crate::app::procinst::ProcInst)` overload"]
     pub fn create_async(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MapKeyHelp_unity2_raw::create_async(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapKeyHelp_unity2_raw::create_async(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`IsCreating()` overload"]
     pub fn is_creating() -> bool {
         unsafe { __MapKeyHelp_unity2_raw::is_creating(::core::option::Option::None) }
     }
+
     #[doc = "`Destroy()` overload"]
     pub fn destroy() -> () {
         unsafe { __MapKeyHelp_unity2_raw::destroy(::core::option::Option::None) }
@@ -927,120 +697,77 @@ pub trait IMapKeyHelpMethods: IMapKeyHelp {
     #[doc = "`GetRequestType()` overload"]
     fn get_request_type(self) -> crate::app::mapkeyhelp::MapKeyHelp_Types {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::get_request_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RequestToChange(crate::app::mapkeyhelp::MapKeyHelp_Types)` overload"]
-    fn request_to_change(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::mapkeyhelp::MapKeyHelp_Types>,
-    ) -> () {
+    fn request_to_change(self, r#type: impl ::core::convert::Into<crate::app::mapkeyhelp::MapKeyHelp_Types>) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapKeyHelp_unity2_raw::request_to_change(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapKeyHelp_unity2_raw::request_to_change(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`ShowImmediate()` overload"]
     fn show_immediate(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::show_immediate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BeginTemporaryHiding()` overload"]
     fn begin_temporary_hiding(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapKeyHelp_unity2_raw::begin_temporary_hiding(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapKeyHelp_unity2_raw::begin_temporary_hiding(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EndTemporaryHiding(bool)` overload"]
     fn end_temporary_hiding(self, is_reset_measuring: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapKeyHelp_unity2_raw::end_temporary_hiding(
-                __receiver,
-                ::core::convert::Into::into(is_reset_measuring),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapKeyHelp_unity2_raw::end_temporary_hiding(__receiver, ::core::convert::Into::into(is_reset_measuring), ::core::option::Option::None)
         }
     }
     #[doc = "`OnCreate()` overload"]
     fn on_create(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Measure()` overload"]
     fn measure(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::measure(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(crate::app::mapkeyhelp::MapKeyHelp_Types)` overload"]
-    fn setup(
-        self,
-        r#type: impl ::core::convert::Into<crate::app::mapkeyhelp::MapKeyHelp_Types>,
-    ) -> () {
+    fn setup(self, r#type: impl ::core::convert::Into<crate::app::mapkeyhelp::MapKeyHelp_Types>) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapKeyHelp_unity2_raw::setup(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapKeyHelp_unity2_raw::setup(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapKeyHelp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapKeyHelp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1053,13 +780,8 @@ impl<__T: IMapKeyHelp> IMapKeyHelpMethods for __T {}
 impl MapKeyHelp {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapKeyHelp),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapKeyHelp), ::core::stringify!(new),));
         <Self as IMapKeyHelpMethods>::ctor(this);
         this
     }
@@ -1068,25 +790,19 @@ impl MapKeyHelp {
 #[cfg(feature = "app-mapkeyhelp")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapKeyHelp;
-    pub use super::IMapKeyHelpMethods;
-    pub use super::MapKeyHelp;
-    pub use super::MapKeyHelp_Label;
-    pub use super::MapKeyHelp_Mode;
-    pub use super::MapKeyHelp_Types;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IMapKeyHelp, IMapKeyHelpMethods, MapKeyHelp, MapKeyHelp_Label, MapKeyHelp_Mode, MapKeyHelp_Types};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-reflection-ireflectabletype-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/ireflectabletype/IReflectableType.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "IReflectableType")]
@@ -23,9 +23,7 @@ mod __IReflectableType_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_type_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IReflectableType as ::unity2::ClassIdentity>::class(),
@@ -38,32 +36,23 @@ mod __IReflectableType_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IReflectableType as ::unity2::ClassIdentity>::NAME,
-                    "GetTypeInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IReflectableType as ::unity2::ClassIdentity>::NAME,
+                        "GetTypeInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_type_info(
         this: IReflectableType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::typeinfo::TypeInfo {
-        let inner: extern "C" fn(
-            IReflectableType,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::typeinfo::TypeInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IReflectableType, ::unity2::OptionalMethod) -> crate::system::reflection::typeinfo::TypeInfo =
+            ::core::mem::transmute(__lookup_get_type_info::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -73,9 +62,7 @@ pub trait IIReflectableTypeMethods: IIReflectableType {
     #[doc = "`GetTypeInfo()` overload"]
     fn get_type_info(self) -> crate::system::reflection::typeinfo::TypeInfo {
         unsafe {
-            let __receiver = <IReflectableType as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IReflectableType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IReflectableType_unity2_raw::get_type_info(__receiver, ::core::option::Option::None)
         }
     }
@@ -87,7 +74,5 @@ impl<__T: IIReflectableType> IIReflectableTypeMethods for __T {}
 #[cfg(feature = "system-reflection-ireflectabletype")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIReflectableType;
-    pub use super::IIReflectableTypeMethods;
-    pub use super::IReflectableType;
+    pub use super::{IIReflectableType, IIReflectableTypeMethods, IReflectableType};
 }

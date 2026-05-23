@@ -2,18 +2,19 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-gotostatement-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase, NodeBase};
-    use crate::moon_sharp::interpreter::tree::statement::{IStatement, Statement};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::tree::{
+            nodebase::{INodeBase, NodeBase},
+            statement::{IStatement, Statement},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/gotostatement/GotoStatement.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Statements",
-        name = "GotoStatement"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Statements", name = "GotoStatement")]
     #[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
     pub struct GotoStatement {
         #[rename(name = "m_Jump")]
@@ -35,9 +36,7 @@ mod __GotoStatement_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_ref {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
@@ -50,35 +49,32 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "get_SourceRef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "get_SourceRef",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_ref(
         this: GotoStatement,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::debugging::sourceref::SourceRef {
-        let inner : extern "C" fn (GotoStatement , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_source_ref :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(GotoStatement, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::debugging::sourceref::SourceRef =
+            ::core::mem::transmute(__lookup_get_source_ref::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source_ref {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "set_SourceRef",
@@ -90,18 +86,15 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "set_SourceRef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "set_SourceRef",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source_ref(
@@ -109,24 +102,15 @@ mod __GotoStatement_unity2_raw {
         value: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GotoStatement,
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source_ref::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GotoStatement, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_source_ref::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_goto_token {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
@@ -139,44 +123,32 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "get_GotoToken",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "get_GotoToken",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_goto_token(
         this: GotoStatement,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::tree::token::Token {
-        let inner: extern "C" fn(
-            GotoStatement,
-            ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::tree::token::Token = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_goto_token::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GotoStatement, ::unity2::OptionalMethod) -> crate::moon_sharp::interpreter::tree::token::Token =
+            ::core::mem::transmute(__lookup_get_goto_token::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_goto_token {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::tree::token::Token as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "set_GotoToken",
@@ -188,18 +160,15 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "set_GotoToken",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "set_GotoToken",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_goto_token(
@@ -207,24 +176,15 @@ mod __GotoStatement_unity2_raw {
         value: crate::moon_sharp::interpreter::tree::token::Token,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GotoStatement,
-            crate::moon_sharp::interpreter::tree::token::Token,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_goto_token::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GotoStatement, crate::moon_sharp::interpreter::tree::token::Token, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_goto_token::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
@@ -237,43 +197,28 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "get_Label",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "get_Label",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_label(
-        this: GotoStatement,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GotoStatement,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
+    pub unsafe fn get_label(this: GotoStatement, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GotoStatement, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_label::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "set_Label",
@@ -285,43 +230,27 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "set_Label",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "set_Label",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_label(
-        this: GotoStatement,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GotoStatement,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_label::get_offset() as isize),
-        );
+    pub unsafe fn set_label(this: GotoStatement, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GotoStatement, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_label::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_defined_vars_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
@@ -334,41 +263,28 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "get_DefinedVarsCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "get_DefinedVarsCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_defined_vars_count(
-        this: GotoStatement,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_defined_vars_count(this: GotoStatement, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GotoStatement, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_defined_vars_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_defined_vars_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_defined_vars_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "set_DefinedVarsCount",
@@ -380,40 +296,27 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "set_DefinedVarsCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "set_DefinedVarsCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_defined_vars_count(
-        this: GotoStatement,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_defined_vars_count(this: GotoStatement, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GotoStatement, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_defined_vars_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_defined_vars_count::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_last_defined_var_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
@@ -426,43 +329,28 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "get_LastDefinedVarName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "get_LastDefinedVarName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_last_defined_var_name(
-        this: GotoStatement,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            GotoStatement,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_last_defined_var_name::get_offset() as isize),
-        );
+    pub unsafe fn get_last_defined_var_name(this: GotoStatement, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(GotoStatement, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_last_defined_var_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_last_defined_var_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "set_LastDefinedVarName",
@@ -474,18 +362,15 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "set_LastDefinedVarName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "set_LastDefinedVarName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_last_defined_var_name(
@@ -493,74 +378,52 @@ mod __GotoStatement_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GotoStatement,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_last_defined_var_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GotoStatement, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_last_defined_var_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GotoStatement as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GotoStatement as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: GotoStatement,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             GotoStatement,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compile {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "Compile",
@@ -572,18 +435,15 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "Compile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "Compile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile(
@@ -591,24 +451,15 @@ mod __GotoStatement_unity2_raw {
         bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GotoStatement,
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GotoStatement, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
         inner(this, bc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_defined_vars {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -624,18 +475,15 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "SetDefinedVars",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "SetDefinedVars",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_defined_vars(
@@ -644,32 +492,16 @@ mod __GotoStatement_unity2_raw {
         last_defined_vars_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GotoStatement,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_defined_vars::get_offset() as isize),
-        );
-        inner(
-            this,
-            defined_vars_count,
-            last_defined_vars_name,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(GotoStatement, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_defined_vars::get_method_info().method_ptr);
+        inner(this, defined_vars_count, last_defined_vars_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_address {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GotoStatement as ::unity2::ClassIdentity>::class(),
                 "SetAddress",
@@ -681,31 +513,20 @@ mod __GotoStatement_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GotoStatement as ::unity2::ClassIdentity>::NAME,
-                    "SetAddress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GotoStatement as ::unity2::ClassIdentity>::NAME,
+                        "SetAddress",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_address(
-        this: GotoStatement,
-        label_address: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_address(this: GotoStatement, label_address: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GotoStatement, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_address::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_address::get_method_info().method_ptr);
         inner(this, label_address, __unity2_method_info)
     }
 }
@@ -715,164 +536,85 @@ pub trait IGotoStatementMethods: IGotoStatement {
     #[doc = "`get_SourceRef()` overload"]
     fn get_source_ref(self) -> crate::moon_sharp::interpreter::debugging::sourceref::SourceRef {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GotoStatement_unity2_raw::get_source_ref(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SourceRef(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]
-    fn set_source_ref(
-        self,
-        value: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        >,
-    ) -> () {
+    fn set_source_ref(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::set_source_ref(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::set_source_ref(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_GotoToken()` overload"]
     fn get_goto_token(self) -> crate::moon_sharp::interpreter::tree::token::Token {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GotoStatement_unity2_raw::get_goto_token(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_GotoToken(crate::moon_sharp::interpreter::tree::token::Token)` overload"]
-    fn set_goto_token(
-        self,
-        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
-    ) -> () {
+    fn set_goto_token(self, value: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::set_goto_token(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::set_goto_token(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Label()` overload"]
     fn get_label(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GotoStatement_unity2_raw::get_label(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Label(::unity2::Il2CppString)` overload"]
     fn set_label(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::set_label(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::set_label(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DefinedVarsCount()` overload"]
     fn get_defined_vars_count(self) -> i32 {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::get_defined_vars_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::get_defined_vars_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DefinedVarsCount(i32)` overload"]
     fn set_defined_vars_count(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::set_defined_vars_count(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::set_defined_vars_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_LastDefinedVarName()` overload"]
     fn get_last_defined_var_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::get_last_defined_var_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::get_last_defined_var_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_LastDefinedVarName(::unity2::Il2CppString)` overload"]
-    fn set_last_defined_var_name(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_last_defined_var_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::set_last_defined_var_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::set_last_defined_var_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
-    fn ctor(
-        self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
-    ) -> () {
+    fn ctor(self, lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::ctor(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
         }
     }
     #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(
-        self,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
+    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::compile(
-                __receiver,
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
         }
     }
     #[doc = "`SetDefinedVars(i32, ::unity2::Il2CppString)` overload"]
@@ -882,9 +624,7 @@ pub trait IGotoStatementMethods: IGotoStatement {
         last_defined_vars_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GotoStatement_unity2_raw::set_defined_vars(
                 __receiver,
                 ::core::convert::Into::into(defined_vars_count),
@@ -896,14 +636,8 @@ pub trait IGotoStatementMethods: IGotoStatement {
     #[doc = "`SetAddress(i32)` overload"]
     fn set_address(self, label_address: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GotoStatement_unity2_raw::set_address(
-                __receiver,
-                ::core::convert::Into::into(label_address),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GotoStatement as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GotoStatement_unity2_raw::set_address(__receiver, ::core::convert::Into::into(label_address), ::core::option::Option::None)
         }
     }
 }
@@ -914,16 +648,9 @@ impl<__T: IGotoStatement> IGotoStatementMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-gotostatement")]
 impl GotoStatement {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]
-    pub fn new(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GotoStatement),
-                ::core::stringify!(new),
-            )
-        });
+    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GotoStatement), ::core::stringify!(new),));
         <Self as IGotoStatementMethods>::ctor(this, lcontext);
         this
     }
@@ -932,16 +659,15 @@ impl GotoStatement {
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-gotostatement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GotoStatement;
-    pub use super::IGotoStatement;
-    pub use super::IGotoStatementMethods;
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+    pub use super::{GotoStatement, IGotoStatement, IGotoStatementMethods};
     #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
     pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
     #[cfg(feature = "moon_sharp-interpreter-tree-statement")]
     pub use crate::moon_sharp::interpreter::tree::statement::IStatementMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::tree::{nodebase::INodeBase, statement::IStatement},
+        system::object::IObject,
+    };
 }

@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-configurablejoint-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::joint::{IJoint, Joint};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            component::{Component, IComponent},
+            joint::{IJoint, Joint},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/configurablejoint/ConfigurableJoint.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ConfigurableJoint")]
@@ -28,9 +32,7 @@ mod __ConfigurableJoint_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_secondary_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -43,43 +45,31 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_secondaryAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_secondaryAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_secondary_axis(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_secondary_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_secondary_axis::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_secondary_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_secondaryAxis",
@@ -91,18 +81,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_secondaryAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_secondaryAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_secondary_axis(
@@ -110,24 +97,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_secondary_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_secondary_axis::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_x_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -140,35 +118,35 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_xMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_xMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_x_motion(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_x_motion :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ConfigurableJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion =
+            ::core::mem::transmute(__lookup_get_x_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_x_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_xMotion",
@@ -180,18 +158,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_xMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_xMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_x_motion(
@@ -203,20 +178,14 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_x_motion::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_x_motion::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_y_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -229,35 +198,35 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_yMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_yMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_y_motion(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_y_motion :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ConfigurableJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion =
+            ::core::mem::transmute(__lookup_get_y_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_y_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_yMotion",
@@ -269,18 +238,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_yMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_yMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_y_motion(
@@ -292,20 +258,14 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_y_motion::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_y_motion::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -318,35 +278,35 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_zMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_zMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_z_motion(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_z_motion :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ConfigurableJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion =
+            ::core::mem::transmute(__lookup_get_z_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_zMotion",
@@ -358,18 +318,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_zMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_zMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_motion(
@@ -381,20 +338,14 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_z_motion::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_z_motion::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_x_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -407,35 +358,35 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularXMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularXMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_x_motion(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_angular_x_motion :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ConfigurableJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion =
+            ::core::mem::transmute(__lookup_get_angular_x_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_x_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularXMotion",
@@ -447,18 +398,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularXMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularXMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_x_motion(
@@ -470,20 +418,14 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_x_motion::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_angular_x_motion::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_y_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -496,35 +438,35 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_y_motion(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_angular_y_motion :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ConfigurableJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion =
+            ::core::mem::transmute(__lookup_get_angular_y_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_y_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYMotion",
@@ -536,18 +478,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_y_motion(
@@ -559,20 +498,14 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_y_motion::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_angular_y_motion::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_z_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -585,35 +518,35 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularZMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularZMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_z_motion(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_angular_z_motion :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ConfigurableJoint,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion =
+            ::core::mem::transmute(__lookup_get_angular_z_motion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_z_motion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: configurablejointmotion :: ConfigurableJointMotion as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularZMotion",
@@ -625,18 +558,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularZMotion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularZMotion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_z_motion(
@@ -648,20 +578,14 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_z_motion::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_angular_z_motion::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_linear_limit_spring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -674,35 +598,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_linearLimitSpring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_linearLimitSpring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_linear_limit_spring(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_linear_limit_spring :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring =
+            ::core::mem::transmute(__lookup_get_linear_limit_spring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_linear_limit_spring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_linearLimitSpring",
@@ -714,18 +635,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_linearLimitSpring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_linearLimitSpring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_linear_limit_spring(
@@ -733,24 +651,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_linear_limit_spring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimitspring::SoftJointLimitSpring, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_linear_limit_spring::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_x_limit_spring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -763,35 +672,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularXLimitSpring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularXLimitSpring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_x_limit_spring(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_angular_x_limit_spring :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring =
+            ::core::mem::transmute(__lookup_get_angular_x_limit_spring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_x_limit_spring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularXLimitSpring",
@@ -803,18 +709,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularXLimitSpring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularXLimitSpring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_x_limit_spring(
@@ -822,24 +725,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_x_limit_spring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimitspring::SoftJointLimitSpring, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_x_limit_spring::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_yz_limit_spring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -852,35 +746,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYZLimitSpring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYZLimitSpring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_yz_limit_spring(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
-        let inner : extern "C" fn (ConfigurableJoint , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_angular_yz_limit_spring :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring =
+            ::core::mem::transmute(__lookup_get_angular_yz_limit_spring::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_yz_limit_spring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYZLimitSpring",
@@ -892,18 +783,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYZLimitSpring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYZLimitSpring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_yz_limit_spring(
@@ -911,24 +799,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_yz_limit_spring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimitspring::SoftJointLimitSpring, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_yz_limit_spring::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_linear_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -941,45 +820,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_linearLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_linearLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_linear_limit(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::softjointlimit::SoftJointLimit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_linear_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimit::SoftJointLimit =
+            ::core::mem::transmute(__lookup_get_linear_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_linear_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_linearLimit",
@@ -991,18 +857,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_linearLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_linearLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_linear_limit(
@@ -1010,24 +873,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_linear_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_linear_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_low_angular_x_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1040,45 +894,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_lowAngularXLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_lowAngularXLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_low_angular_x_limit(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::softjointlimit::SoftJointLimit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_low_angular_x_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimit::SoftJointLimit =
+            ::core::mem::transmute(__lookup_get_low_angular_x_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_low_angular_x_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_lowAngularXLimit",
@@ -1090,18 +931,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_lowAngularXLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_lowAngularXLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_low_angular_x_limit(
@@ -1109,24 +947,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_low_angular_x_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_low_angular_x_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_high_angular_x_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1139,45 +968,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_highAngularXLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_highAngularXLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_high_angular_x_limit(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::softjointlimit::SoftJointLimit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_high_angular_x_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimit::SoftJointLimit =
+            ::core::mem::transmute(__lookup_get_high_angular_x_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_high_angular_x_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_highAngularXLimit",
@@ -1189,18 +1005,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_highAngularXLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_highAngularXLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_high_angular_x_limit(
@@ -1208,24 +1021,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_high_angular_x_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_high_angular_x_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_y_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1238,45 +1042,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_y_limit(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::softjointlimit::SoftJointLimit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_y_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimit::SoftJointLimit =
+            ::core::mem::transmute(__lookup_get_angular_y_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_y_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYLimit",
@@ -1288,18 +1079,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_y_limit(
@@ -1307,24 +1095,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_y_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_y_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_z_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1337,45 +1116,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularZLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularZLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_z_limit(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::softjointlimit::SoftJointLimit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_z_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::softjointlimit::SoftJointLimit =
+            ::core::mem::transmute(__lookup_get_angular_z_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_z_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularZLimit",
@@ -1387,18 +1153,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularZLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularZLimit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_z_limit(
@@ -1406,24 +1169,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_z_limit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_z_limit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1436,43 +1190,31 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_position(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_target_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetPosition",
@@ -1484,18 +1226,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_position(
@@ -1503,24 +1242,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1533,43 +1263,31 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetVelocity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_velocity(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_velocity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_target_velocity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetVelocity",
@@ -1581,18 +1299,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetVelocity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_velocity(
@@ -1600,24 +1315,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_velocity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_velocity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_x_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1630,41 +1336,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_xDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_xDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_x_drive(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointdrive::JointDrive {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::jointdrive::JointDrive = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_x_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointdrive::JointDrive =
+            ::core::mem::transmute(__lookup_get_x_drive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_x_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1678,18 +1373,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_xDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_xDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_x_drive(
@@ -1697,24 +1389,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_x_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_x_drive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_y_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1727,41 +1410,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_yDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_yDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_y_drive(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointdrive::JointDrive {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::jointdrive::JointDrive = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_y_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointdrive::JointDrive =
+            ::core::mem::transmute(__lookup_get_y_drive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_y_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1775,18 +1447,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_yDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_yDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_y_drive(
@@ -1794,24 +1463,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_y_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_y_drive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1824,41 +1484,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_zDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_zDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_z_drive(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointdrive::JointDrive {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::jointdrive::JointDrive = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_z_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointdrive::JointDrive =
+            ::core::mem::transmute(__lookup_get_z_drive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1872,18 +1521,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_zDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_zDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_drive(
@@ -1891,24 +1537,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_z_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z_drive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -1921,41 +1558,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_rotation(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_target_rotation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1969,18 +1595,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_rotation(
@@ -1988,24 +1611,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_rotation::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_angular_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2018,43 +1632,31 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetAngularVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetAngularVelocity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_angular_velocity(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_angular_velocity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_target_angular_velocity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_angular_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetAngularVelocity",
@@ -2066,18 +1668,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetAngularVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetAngularVelocity",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_angular_velocity(
@@ -2085,24 +1684,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_angular_velocity::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_angular_velocity::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rotation_drive_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2115,43 +1705,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_rotationDriveMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_rotationDriveMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rotation_drive_mode(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rotationdrivemode::RotationDriveMode {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rotationdrivemode::RotationDriveMode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rotation_drive_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::rotationdrivemode::RotationDriveMode =
+            ::core::mem::transmute(__lookup_get_rotation_drive_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_rotation_drive_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rotationdrivemode :: RotationDriveMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rotationdrivemode::RotationDriveMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_rotationDriveMode",
@@ -2163,18 +1742,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_rotationDriveMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_rotationDriveMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_rotation_drive_mode(
@@ -2182,24 +1758,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::rotationdrivemode::RotationDriveMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::rotationdrivemode::RotationDriveMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_rotation_drive_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::rotationdrivemode::RotationDriveMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rotation_drive_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_x_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2212,41 +1779,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularXDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularXDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_x_drive(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointdrive::JointDrive {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::jointdrive::JointDrive = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_x_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointdrive::JointDrive =
+            ::core::mem::transmute(__lookup_get_angular_x_drive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_x_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2260,18 +1816,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularXDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularXDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_x_drive(
@@ -2279,24 +1832,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_x_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_x_drive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_yz_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2309,41 +1853,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYZDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYZDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_yz_drive(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointdrive::JointDrive {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::jointdrive::JointDrive = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_yz_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointdrive::JointDrive =
+            ::core::mem::transmute(__lookup_get_angular_yz_drive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_yz_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2357,18 +1890,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYZDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYZDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_yz_drive(
@@ -2376,24 +1906,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_yz_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_yz_drive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_slerp_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2406,41 +1927,30 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_slerpDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_slerpDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_slerp_drive(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointdrive::JointDrive {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::jointdrive::JointDrive = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_slerp_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointdrive::JointDrive =
+            ::core::mem::transmute(__lookup_get_slerp_drive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_slerp_drive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2454,18 +1964,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_slerpDrive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_slerpDrive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_slerp_drive(
@@ -2473,24 +1980,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_slerp_drive::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_slerp_drive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_projection_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2503,44 +2001,32 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_projectionMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_projectionMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_projection_mode(
         this: ConfigurableJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::jointprojectionmode::JointProjectionMode {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::jointprojectionmode::JointProjectionMode =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_projection_mode::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> crate::unity_engine::jointprojectionmode::JointProjectionMode =
+            ::core::mem::transmute(__lookup_get_projection_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_projection_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: jointprojectionmode :: JointProjectionMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::jointprojectionmode::JointProjectionMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_projectionMode",
@@ -2552,18 +2038,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_projectionMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_projectionMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_projection_mode(
@@ -2571,24 +2054,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: crate::unity_engine::jointprojectionmode::JointProjectionMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            crate::unity_engine::jointprojectionmode::JointProjectionMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_projection_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, crate::unity_engine::jointprojectionmode::JointProjectionMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_projection_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_projection_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2601,41 +2075,28 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_projectionDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_projectionDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_projection_distance(
-        this: ConfigurableJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_projection_distance(this: ConfigurableJoint, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_projection_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_projection_distance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_projection_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_projectionDistance",
@@ -2647,40 +2108,27 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_projectionDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_projectionDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_projection_distance(
-        this: ConfigurableJoint,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_projection_distance(this: ConfigurableJoint, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ConfigurableJoint, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_projection_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_projection_distance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_projection_angle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2693,41 +2141,28 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_projectionAngle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_projectionAngle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_projection_angle(
-        this: ConfigurableJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_projection_angle(this: ConfigurableJoint, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_projection_angle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_projection_angle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_projection_angle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_projectionAngle",
@@ -2739,40 +2174,27 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_projectionAngle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_projectionAngle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_projection_angle(
-        this: ConfigurableJoint,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_projection_angle(this: ConfigurableJoint, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ConfigurableJoint, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_projection_angle::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_projection_angle::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_configured_in_world_space {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2785,41 +2207,28 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_configuredInWorldSpace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_configuredInWorldSpace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_configured_in_world_space(
-        this: ConfigurableJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_configured_in_world_space(this: ConfigurableJoint, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_configured_in_world_space::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_configured_in_world_space::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_configured_in_world_space {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_configuredInWorldSpace",
@@ -2831,40 +2240,27 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_configuredInWorldSpace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_configuredInWorldSpace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_configured_in_world_space(
-        this: ConfigurableJoint,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_configured_in_world_space(this: ConfigurableJoint, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ConfigurableJoint, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_configured_in_world_space::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_configured_in_world_space::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_swap_bodies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2877,41 +2273,28 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_swapBodies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_swapBodies",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_swap_bodies(
-        this: ConfigurableJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_swap_bodies(this: ConfigurableJoint, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_swap_bodies::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_swap_bodies::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_swap_bodies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_swapBodies",
@@ -2923,40 +2306,27 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_swapBodies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_swapBodies",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_swap_bodies(
-        this: ConfigurableJoint,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_swap_bodies(this: ConfigurableJoint, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ConfigurableJoint, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_swap_bodies::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_swap_bodies::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
@@ -2969,41 +2339,28 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ConfigurableJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ConfigurableJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ConfigurableJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_secondary_axis_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_secondaryAxis_Injected",
@@ -3015,18 +2372,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_secondaryAxis_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_secondaryAxis_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_secondary_axis_injected(
@@ -3034,26 +2388,16 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_secondary_axis_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_secondary_axis_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_secondary_axis_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_secondaryAxis_Injected",
@@ -3065,18 +2409,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_secondaryAxis_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_secondaryAxis_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_secondary_axis_injected(
@@ -3084,25 +2425,17 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_secondary_axis_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_secondary_axis_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_linear_limit_spring_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_linearLimitSpring_Injected",
@@ -3114,18 +2447,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_linearLimitSpring_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_linearLimitSpring_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_linear_limit_spring_injected(
@@ -3137,21 +2467,16 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             *mut crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_linear_limit_spring_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_linear_limit_spring_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_linear_limit_spring_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_linearLimitSpring_Injected",
@@ -3163,18 +2488,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_linearLimitSpring_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_linearLimitSpring_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_linear_limit_spring_injected(
@@ -3186,21 +2508,16 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             *mut crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_linear_limit_spring_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_linear_limit_spring_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_x_limit_spring_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularXLimitSpring_Injected",
@@ -3212,18 +2529,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularXLimitSpring_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularXLimitSpring_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_x_limit_spring_injected(
@@ -3235,21 +2549,16 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             *mut crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_x_limit_spring_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_angular_x_limit_spring_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_x_limit_spring_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularXLimitSpring_Injected",
@@ -3261,18 +2570,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularXLimitSpring_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularXLimitSpring_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_x_limit_spring_injected(
@@ -3284,21 +2590,16 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             *mut crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_x_limit_spring_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_angular_x_limit_spring_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_yz_limit_spring_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularYZLimitSpring_Injected",
@@ -3310,18 +2611,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYZLimitSpring_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYZLimitSpring_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_yz_limit_spring_injected(
@@ -3333,21 +2631,16 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             *mut crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_yz_limit_spring_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_angular_yz_limit_spring_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_yz_limit_spring_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: softjointlimitspring :: SoftJointLimitSpring as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYZLimitSpring_Injected",
@@ -3359,18 +2652,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYZLimitSpring_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYZLimitSpring_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_yz_limit_spring_injected(
@@ -3382,24 +2672,16 @@ mod __ConfigurableJoint_unity2_raw {
             ConfigurableJoint,
             *mut crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_yz_limit_spring_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_angular_yz_limit_spring_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_linear_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_linearLimit_Injected",
@@ -3411,18 +2693,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_linearLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_linearLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_linear_limit_injected(
@@ -3430,28 +2709,17 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_linear_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_linear_limit_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_linear_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_linearLimit_Injected",
@@ -3463,18 +2731,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_linearLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_linearLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_linear_limit_injected(
@@ -3482,28 +2747,17 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_linear_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_linear_limit_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_low_angular_x_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_lowAngularXLimit_Injected",
@@ -3515,18 +2769,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_lowAngularXLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_lowAngularXLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_low_angular_x_limit_injected(
@@ -3534,28 +2785,17 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_low_angular_x_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_low_angular_x_limit_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_low_angular_x_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_lowAngularXLimit_Injected",
@@ -3567,18 +2807,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_lowAngularXLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_lowAngularXLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_low_angular_x_limit_injected(
@@ -3586,28 +2823,17 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_low_angular_x_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_low_angular_x_limit_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_high_angular_x_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_highAngularXLimit_Injected",
@@ -3619,18 +2845,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_highAngularXLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_highAngularXLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_high_angular_x_limit_injected(
@@ -3638,28 +2861,17 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_high_angular_x_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_high_angular_x_limit_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_high_angular_x_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_highAngularXLimit_Injected",
@@ -3671,18 +2883,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_highAngularXLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_highAngularXLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_high_angular_x_limit_injected(
@@ -3690,28 +2899,17 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_high_angular_x_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_high_angular_x_limit_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_y_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularYLimit_Injected",
@@ -3723,18 +2921,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_y_limit_injected(
@@ -3742,28 +2937,17 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_y_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_angular_y_limit_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_y_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularYLimit_Injected",
@@ -3775,18 +2959,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_y_limit_injected(
@@ -3794,28 +2975,17 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_y_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_y_limit_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_z_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_angularZLimit_Injected",
@@ -3827,18 +2997,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularZLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularZLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_z_limit_injected(
@@ -3846,28 +3013,17 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_z_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_angular_z_limit_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_z_limit_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::softjointlimit::SoftJointLimit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_angularZLimit_Injected",
@@ -3879,18 +3035,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularZLimit_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularZLimit_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_z_limit_injected(
@@ -3898,26 +3051,16 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::softjointlimit::SoftJointLimit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::softjointlimit::SoftJointLimit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_z_limit_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::softjointlimit::SoftJointLimit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_z_limit_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_position_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetPosition_Injected",
@@ -3929,18 +3072,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetPosition_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetPosition_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_position_injected(
@@ -3948,26 +3088,16 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_position_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_target_position_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_position_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetPosition_Injected",
@@ -3979,18 +3109,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetPosition_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetPosition_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_position_injected(
@@ -3998,26 +3125,16 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_position_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_position_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_velocity_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetVelocity_Injected",
@@ -4029,18 +3146,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetVelocity_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetVelocity_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_velocity_injected(
@@ -4048,26 +3162,16 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_velocity_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_target_velocity_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_velocity_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetVelocity_Injected",
@@ -4079,18 +3183,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetVelocity_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetVelocity_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_velocity_injected(
@@ -4098,24 +3199,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_velocity_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_velocity_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_x_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4129,18 +3221,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_xDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_xDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_x_drive_injected(
@@ -4148,24 +3237,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_x_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_x_drive_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_x_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4179,18 +3259,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_xDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_xDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_x_drive_injected(
@@ -4198,24 +3275,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_x_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_x_drive_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_y_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4229,18 +3297,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_yDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_yDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_y_drive_injected(
@@ -4248,24 +3313,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_y_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_y_drive_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_y_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4279,18 +3335,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_yDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_yDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_y_drive_injected(
@@ -4298,24 +3351,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_y_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_y_drive_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4329,18 +3373,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_zDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_zDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_z_drive_injected(
@@ -4348,24 +3389,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_z_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_z_drive_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4379,18 +3411,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_zDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_zDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_drive_injected(
@@ -4398,24 +3427,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_z_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_z_drive_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_rotation_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4429,18 +3449,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetRotation_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetRotation_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_rotation_injected(
@@ -4448,24 +3465,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_rotation_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_target_rotation_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_rotation_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4479,18 +3487,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetRotation_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetRotation_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_rotation_injected(
@@ -4498,26 +3503,16 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_rotation_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_rotation_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target_angular_velocity_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "get_targetAngularVelocity_Injected",
@@ -4529,18 +3524,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_targetAngularVelocity_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_targetAngularVelocity_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_target_angular_velocity_injected(
@@ -4548,26 +3540,16 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_angular_velocity_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_target_angular_velocity_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_angular_velocity_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ConfigurableJoint as ::unity2::ClassIdentity>::class(),
                 "set_targetAngularVelocity_Injected",
@@ -4579,18 +3561,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_targetAngularVelocity_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_targetAngularVelocity_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_angular_velocity_injected(
@@ -4598,24 +3577,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_angular_velocity_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_angular_velocity_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_x_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4629,18 +3599,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularXDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularXDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_x_drive_injected(
@@ -4648,24 +3615,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_x_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_angular_x_drive_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_x_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4679,18 +3637,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularXDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularXDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_x_drive_injected(
@@ -4698,24 +3653,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_x_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_x_drive_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_angular_yz_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4729,18 +3675,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_angularYZDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_angularYZDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_angular_yz_drive_injected(
@@ -4748,24 +3691,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_angular_yz_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_angular_yz_drive_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_angular_yz_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4779,18 +3713,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_angularYZDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_angularYZDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_angular_yz_drive_injected(
@@ -4798,24 +3729,15 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_angular_yz_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_angular_yz_drive_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_slerp_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4829,18 +3751,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_slerpDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_slerpDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_slerp_drive_injected(
@@ -4848,24 +3767,15 @@ mod __ConfigurableJoint_unity2_raw {
         ret: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_slerp_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_slerp_drive_injected::get_method_info().method_ptr);
         inner(this, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_slerp_drive_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::jointdrive::JointDrive as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4879,18 +3789,15 @@ mod __ConfigurableJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_slerpDrive_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ConfigurableJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_slerpDrive_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_slerp_drive_injected(
@@ -4898,15 +3805,8 @@ mod __ConfigurableJoint_unity2_raw {
         value: *mut crate::unity_engine::jointdrive::JointDrive,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ConfigurableJoint,
-            *mut crate::unity_engine::jointdrive::JointDrive,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_slerp_drive_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ConfigurableJoint, *mut crate::unity_engine::jointdrive::JointDrive, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_slerp_drive_injected::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -4916,839 +3816,420 @@ pub trait IConfigurableJointMethods: IConfigurableJoint {
     #[doc = "`get_secondaryAxis()` overload"]
     fn get_secondary_axis(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_secondary_axis(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_secondary_axis(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_secondaryAxis(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_secondary_axis(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_secondary_axis(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_secondary_axis(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_secondary_axis(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_xMotion()` overload"]
     fn get_x_motion(self) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::get_x_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_xMotion(crate::unity_engine::configurablejointmotion::ConfigurableJointMotion)` overload"]
-    fn set_x_motion(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
-        >,
-    ) -> () {
+    fn set_x_motion(self, value: impl ::core::convert::Into<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_x_motion(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_x_motion(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_yMotion()` overload"]
     fn get_y_motion(self) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::get_y_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_yMotion(crate::unity_engine::configurablejointmotion::ConfigurableJointMotion)` overload"]
-    fn set_y_motion(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
-        >,
-    ) -> () {
+    fn set_y_motion(self, value: impl ::core::convert::Into<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_y_motion(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_y_motion(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_zMotion()` overload"]
     fn get_z_motion(self) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::get_z_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_zMotion(crate::unity_engine::configurablejointmotion::ConfigurableJointMotion)` overload"]
-    fn set_z_motion(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
-        >,
-    ) -> () {
+    fn set_z_motion(self, value: impl ::core::convert::Into<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_z_motion(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_z_motion(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularXMotion()` overload"]
-    fn get_angular_x_motion(
-        self,
-    ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
+    fn get_angular_x_motion(self) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_x_motion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_x_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularXMotion(crate::unity_engine::configurablejointmotion::ConfigurableJointMotion)` overload"]
-    fn set_angular_x_motion(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
-        >,
-    ) -> () {
+    fn set_angular_x_motion(self, value: impl ::core::convert::Into<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_x_motion(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_x_motion(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularYMotion()` overload"]
-    fn get_angular_y_motion(
-        self,
-    ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
+    fn get_angular_y_motion(self) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_y_motion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_y_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularYMotion(crate::unity_engine::configurablejointmotion::ConfigurableJointMotion)` overload"]
-    fn set_angular_y_motion(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
-        >,
-    ) -> () {
+    fn set_angular_y_motion(self, value: impl ::core::convert::Into<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_y_motion(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_y_motion(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularZMotion()` overload"]
-    fn get_angular_z_motion(
-        self,
-    ) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
+    fn get_angular_z_motion(self) -> crate::unity_engine::configurablejointmotion::ConfigurableJointMotion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_z_motion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_z_motion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularZMotion(crate::unity_engine::configurablejointmotion::ConfigurableJointMotion)` overload"]
-    fn set_angular_z_motion(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::configurablejointmotion::ConfigurableJointMotion,
-        >,
-    ) -> () {
+    fn set_angular_z_motion(self, value: impl ::core::convert::Into<crate::unity_engine::configurablejointmotion::ConfigurableJointMotion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_z_motion(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_z_motion(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_linearLimitSpring()` overload"]
-    fn get_linear_limit_spring(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn get_linear_limit_spring(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_linear_limit_spring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_linear_limit_spring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_linearLimitSpring(crate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn set_linear_limit_spring(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-        >,
-    ) -> () {
+    fn set_linear_limit_spring(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_linear_limit_spring(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_linear_limit_spring(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularXLimitSpring()` overload"]
-    fn get_angular_x_limit_spring(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn get_angular_x_limit_spring(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_x_limit_spring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_x_limit_spring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularXLimitSpring(crate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn set_angular_x_limit_spring(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-        >,
-    ) -> () {
+    fn set_angular_x_limit_spring(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_x_limit_spring(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_x_limit_spring(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularYZLimitSpring()` overload"]
-    fn get_angular_yz_limit_spring(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn get_angular_yz_limit_spring(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_yz_limit_spring(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_yz_limit_spring(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularYZLimitSpring(crate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn set_angular_yz_limit_spring(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-        >,
-    ) -> () {
+    fn set_angular_yz_limit_spring(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_yz_limit_spring(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_yz_limit_spring(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_linearLimit()` overload"]
     fn get_linear_limit(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_linear_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_linear_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_linearLimit(crate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_linear_limit(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>,
-    ) -> () {
+    fn set_linear_limit(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_linear_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_linear_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_lowAngularXLimit()` overload"]
     fn get_low_angular_x_limit(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_low_angular_x_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_low_angular_x_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_lowAngularXLimit(crate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_low_angular_x_limit(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>,
-    ) -> () {
+    fn set_low_angular_x_limit(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_low_angular_x_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_low_angular_x_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_highAngularXLimit()` overload"]
     fn get_high_angular_x_limit(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_high_angular_x_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_high_angular_x_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_highAngularXLimit(crate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_high_angular_x_limit(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>,
-    ) -> () {
+    fn set_high_angular_x_limit(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_high_angular_x_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_high_angular_x_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularYLimit()` overload"]
     fn get_angular_y_limit(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_y_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_y_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularYLimit(crate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_angular_y_limit(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>,
-    ) -> () {
+    fn set_angular_y_limit(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_y_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_y_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularZLimit()` overload"]
     fn get_angular_z_limit(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_z_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_z_limit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularZLimit(crate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_angular_z_limit(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>,
-    ) -> () {
+    fn set_angular_z_limit(self, value: impl ::core::convert::Into<crate::unity_engine::softjointlimit::SoftJointLimit>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_z_limit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_z_limit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_targetPosition()` overload"]
     fn get_target_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_target_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_target_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_targetPosition(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_target_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_target_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_target_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_target_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_targetVelocity()` overload"]
     fn get_target_velocity(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_target_velocity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_target_velocity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_targetVelocity(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_target_velocity(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_target_velocity(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_target_velocity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_target_velocity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_xDrive()` overload"]
     fn get_x_drive(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::get_x_drive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_xDrive(crate::unity_engine::jointdrive::JointDrive)` overload"]
-    fn set_x_drive(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>,
-    ) -> () {
+    fn set_x_drive(self, value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_x_drive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_x_drive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_yDrive()` overload"]
     fn get_y_drive(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::get_y_drive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_yDrive(crate::unity_engine::jointdrive::JointDrive)` overload"]
-    fn set_y_drive(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>,
-    ) -> () {
+    fn set_y_drive(self, value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_y_drive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_y_drive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_zDrive()` overload"]
     fn get_z_drive(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::get_z_drive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_zDrive(crate::unity_engine::jointdrive::JointDrive)` overload"]
-    fn set_z_drive(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>,
-    ) -> () {
+    fn set_z_drive(self, value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_z_drive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_z_drive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_targetRotation()` overload"]
     fn get_target_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_target_rotation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_target_rotation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_targetRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    fn set_target_rotation(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> () {
+    fn set_target_rotation(self, value: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_target_rotation(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_target_rotation(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_targetAngularVelocity()` overload"]
     fn get_target_angular_velocity(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_target_angular_velocity(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_target_angular_velocity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_targetAngularVelocity(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_target_angular_velocity(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_target_angular_velocity(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_target_angular_velocity(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_target_angular_velocity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_rotationDriveMode()` overload"]
     fn get_rotation_drive_mode(self) -> crate::unity_engine::rotationdrivemode::RotationDriveMode {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_rotation_drive_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_rotation_drive_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_rotationDriveMode(crate::unity_engine::rotationdrivemode::RotationDriveMode)` overload"]
-    fn set_rotation_drive_mode(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rotationdrivemode::RotationDriveMode>,
-    ) -> () {
+    fn set_rotation_drive_mode(self, value: impl ::core::convert::Into<crate::unity_engine::rotationdrivemode::RotationDriveMode>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_rotation_drive_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_rotation_drive_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularXDrive()` overload"]
     fn get_angular_x_drive(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_x_drive(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_x_drive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularXDrive(crate::unity_engine::jointdrive::JointDrive)` overload"]
-    fn set_angular_x_drive(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>,
-    ) -> () {
+    fn set_angular_x_drive(self, value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_x_drive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_x_drive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_angularYZDrive()` overload"]
     fn get_angular_yz_drive(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_angular_yz_drive(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_angular_yz_drive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_angularYZDrive(crate::unity_engine::jointdrive::JointDrive)` overload"]
-    fn set_angular_yz_drive(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>,
-    ) -> () {
+    fn set_angular_yz_drive(self, value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_angular_yz_drive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_angular_yz_drive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_slerpDrive()` overload"]
     fn get_slerp_drive(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_slerp_drive(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_slerp_drive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_slerpDrive(crate::unity_engine::jointdrive::JointDrive)` overload"]
-    fn set_slerp_drive(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>,
-    ) -> () {
+    fn set_slerp_drive(self, value: impl ::core::convert::Into<crate::unity_engine::jointdrive::JointDrive>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_slerp_drive(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_slerp_drive(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_projectionMode()` overload"]
     fn get_projection_mode(self) -> crate::unity_engine::jointprojectionmode::JointProjectionMode {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_projection_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_projection_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_projectionMode(crate::unity_engine::jointprojectionmode::JointProjectionMode)` overload"]
-    fn set_projection_mode(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::jointprojectionmode::JointProjectionMode>,
-    ) -> () {
+    fn set_projection_mode(self, value: impl ::core::convert::Into<crate::unity_engine::jointprojectionmode::JointProjectionMode>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_projection_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_projection_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_projectionDistance()` overload"]
     fn get_projection_distance(self) -> f32 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_projection_distance(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_projection_distance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_projectionDistance(f32)` overload"]
     fn set_projection_distance(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_projection_distance(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_projection_distance(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_projectionAngle()` overload"]
     fn get_projection_angle(self) -> f32 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_projection_angle(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_projection_angle(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_projectionAngle(f32)` overload"]
     fn set_projection_angle(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_projection_angle(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_projection_angle(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_configuredInWorldSpace()` overload"]
     fn get_configured_in_world_space(self) -> bool {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_configured_in_world_space(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_configured_in_world_space(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_configuredInWorldSpace(bool)` overload"]
     fn set_configured_in_world_space(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::set_configured_in_world_space(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -5759,678 +4240,363 @@ pub trait IConfigurableJointMethods: IConfigurableJoint {
     #[doc = "`get_swapBodies()` overload"]
     fn get_swap_bodies(self) -> bool {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::get_swap_bodies(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::get_swap_bodies(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_swapBodies(bool)` overload"]
     fn set_swap_bodies(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ConfigurableJoint_unity2_raw::set_swap_bodies(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ConfigurableJoint_unity2_raw::set_swap_bodies(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ConfigurableJoint_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_secondaryAxis_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_secondary_axis_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::get_secondary_axis_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::get_secondary_axis_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_secondaryAxis_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn set_secondary_axis_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::set_secondary_axis_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::set_secondary_axis_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_linearLimitSpring_Injected(*mutcrate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn get_linear_limit_spring_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn get_linear_limit_spring_injected(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_linear_limit_spring_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>::uninit();
+            __ConfigurableJoint_unity2_raw::get_linear_limit_spring_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_linearLimitSpring_Injected(*mutcrate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn set_linear_limit_spring_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn set_linear_limit_spring_injected(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_linear_limit_spring_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>::uninit();
+            __ConfigurableJoint_unity2_raw::set_linear_limit_spring_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_angularXLimitSpring_Injected(*mutcrate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn get_angular_x_limit_spring_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn get_angular_x_limit_spring_injected(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_angular_x_limit_spring_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>::uninit();
+            __ConfigurableJoint_unity2_raw::get_angular_x_limit_spring_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_angularXLimitSpring_Injected(*mutcrate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn set_angular_x_limit_spring_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn set_angular_x_limit_spring_injected(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_angular_x_limit_spring_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>::uninit();
+            __ConfigurableJoint_unity2_raw::set_angular_x_limit_spring_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_angularYZLimitSpring_Injected(*mutcrate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn get_angular_yz_limit_spring_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn get_angular_yz_limit_spring_injected(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_angular_yz_limit_spring_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>::uninit();
+            __ConfigurableJoint_unity2_raw::get_angular_yz_limit_spring_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_angularYZLimitSpring_Injected(*mutcrate::unity_engine::softjointlimitspring::SoftJointLimitSpring)` overload"]
-    fn set_angular_yz_limit_spring_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
+    fn set_angular_yz_limit_spring_injected(self) -> crate::unity_engine::softjointlimitspring::SoftJointLimitSpring {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimitspring::SoftJointLimitSpring,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_angular_yz_limit_spring_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimitspring::SoftJointLimitSpring>::uninit();
+            __ConfigurableJoint_unity2_raw::set_angular_yz_limit_spring_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_linearLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
     fn get_linear_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_linear_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::get_linear_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_linearLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
     fn set_linear_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_linear_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::set_linear_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_lowAngularXLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn get_low_angular_x_limit_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
+    fn get_low_angular_x_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_low_angular_x_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::get_low_angular_x_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_lowAngularXLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_low_angular_x_limit_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
+    fn set_low_angular_x_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_low_angular_x_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::set_low_angular_x_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_highAngularXLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn get_high_angular_x_limit_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
+    fn get_high_angular_x_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_high_angular_x_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::get_high_angular_x_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_highAngularXLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
-    fn set_high_angular_x_limit_injected(
-        self,
-    ) -> crate::unity_engine::softjointlimit::SoftJointLimit {
+    fn set_high_angular_x_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_high_angular_x_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::set_high_angular_x_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_angularYLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
     fn get_angular_y_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_angular_y_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::get_angular_y_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_angularYLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
     fn set_angular_y_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_angular_y_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::set_angular_y_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_angularZLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
     fn get_angular_z_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::get_angular_z_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::get_angular_z_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_angularZLimit_Injected(*mutcrate::unity_engine::softjointlimit::SoftJointLimit)` overload"]
     fn set_angular_z_limit_injected(self) -> crate::unity_engine::softjointlimit::SoftJointLimit {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::softjointlimit::SoftJointLimit,
-            >::uninit();
-            __ConfigurableJoint_unity2_raw::set_angular_z_limit_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::softjointlimit::SoftJointLimit>::uninit();
+            __ConfigurableJoint_unity2_raw::set_angular_z_limit_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_targetPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_target_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::get_target_position_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::get_target_position_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_targetPosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn set_target_position_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::set_target_position_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::set_target_position_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_targetVelocity_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_target_velocity_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::get_target_velocity_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::get_target_velocity_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_targetVelocity_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn set_target_velocity_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::set_target_velocity_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::set_target_velocity_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_xDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn get_x_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::get_x_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::get_x_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_xDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn set_x_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::set_x_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::set_x_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_yDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn get_y_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::get_y_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::get_y_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_yDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn set_y_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::set_y_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::set_y_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_zDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn get_z_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::get_z_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::get_z_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_zDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn set_z_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::set_z_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::set_z_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_targetRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
     fn get_target_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            __ConfigurableJoint_unity2_raw::get_target_rotation_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __ConfigurableJoint_unity2_raw::get_target_rotation_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_targetRotation_Injected(*mutcrate::unity_engine::quaternion::Quaternion)` overload"]
     fn set_target_rotation_injected(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            __ConfigurableJoint_unity2_raw::set_target_rotation_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __ConfigurableJoint_unity2_raw::set_target_rotation_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_targetAngularVelocity_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn get_target_angular_velocity_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::get_target_angular_velocity_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::get_target_angular_velocity_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_targetAngularVelocity_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     fn set_target_angular_velocity_injected(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __ConfigurableJoint_unity2_raw::set_target_angular_velocity_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __ConfigurableJoint_unity2_raw::set_target_angular_velocity_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_angularXDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn get_angular_x_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::get_angular_x_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::get_angular_x_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_angularXDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn set_angular_x_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::set_angular_x_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::set_angular_x_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_angularYZDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn get_angular_yz_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::get_angular_yz_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::get_angular_yz_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_angularYZDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn set_angular_yz_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::set_angular_yz_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::set_angular_yz_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`get_slerpDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn get_slerp_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::get_slerp_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::get_slerp_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`set_slerpDrive_Injected(*mutcrate::unity_engine::jointdrive::JointDrive)` overload"]
     fn set_slerp_drive_injected(self) -> crate::unity_engine::jointdrive::JointDrive {
         unsafe {
-            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
-            __ConfigurableJoint_unity2_raw::set_slerp_drive_injected(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <ConfigurableJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::jointdrive::JointDrive>::uninit();
+            __ConfigurableJoint_unity2_raw::set_slerp_drive_injected(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -6458,19 +4624,17 @@ impl ConfigurableJoint {
 #[cfg(feature = "unity_engine-configurablejoint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConfigurableJoint;
-    pub use super::IConfigurableJoint;
-    pub use super::IConfigurableJointMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{ConfigurableJoint, IConfigurableJoint, IConfigurableJointMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::joint::IJoint;
     #[cfg(feature = "unity_engine-joint")]
     pub use crate::unity_engine::joint::IJointMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{component::IComponent, joint::IJoint, object_2::IObject_2},
+    };
 }

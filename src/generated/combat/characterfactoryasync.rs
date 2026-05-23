@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-characterfactoryasync-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterfactoryasync/CharacterFactoryAsync.md"))]
     #[::unity2::class(namespace = "Combat", name = "CharacterFactoryAsync")]
@@ -25,10 +25,12 @@ mod __CharacterFactoryAsync_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::characterappearance::CharacterAppearance as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterFactoryAsync as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -40,18 +42,15 @@ mod __CharacterFactoryAsync_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterFactoryAsync as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterFactoryAsync as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -65,21 +64,19 @@ mod __CharacterFactoryAsync_unity2_raw {
             crate::unity_engine::transform::Transform,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> crate::combat::character::Character = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(appearance, parent, invisible, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_for_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::characterappearance::CharacterAppearance as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterFactoryAsync as ::unity2::ClassIdentity>::class(),
                 "CreateForTalk",
@@ -91,18 +88,15 @@ mod __CharacterFactoryAsync_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterFactoryAsync as ::unity2::ClassIdentity>::NAME,
-                    "CreateForTalk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterFactoryAsync as ::unity2::ClassIdentity>::NAME,
+                        "CreateForTalk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_for_talk(
@@ -116,21 +110,20 @@ mod __CharacterFactoryAsync_unity2_raw {
             crate::unity_engine::transform::Transform,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_for_talk::get_offset() as isize),
-        );
+        ) -> crate::combat::character::Character = ::core::mem::transmute(__lookup_create_for_talk::get_method_info().method_ptr);
         inner(appearance, parent, invisible, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: combat :: characterappearance :: CharacterAppearance as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::combat::characterappearance::CharacterAppearance as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterFactoryAsync as ::unity2::ClassIdentity>::class(),
                 "CreateImpl",
@@ -142,18 +135,15 @@ mod __CharacterFactoryAsync_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterFactoryAsync as ::unity2::ClassIdentity>::NAME,
-                    "CreateImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterFactoryAsync as ::unity2::ClassIdentity>::NAME,
+                        "CreateImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_impl(
@@ -169,18 +159,8 @@ mod __CharacterFactoryAsync_unity2_raw {
             crate::unity_engine::transform::Transform,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_impl::get_offset() as isize),
-        );
-        inner(
-            asset_path,
-            appearance,
-            parent,
-            invisible,
-            __unity2_method_info,
-        )
+        ) -> crate::combat::character::Character = ::core::mem::transmute(__lookup_create_impl::get_method_info().method_ptr);
+        inner(asset_path, appearance, parent, invisible, __unity2_method_info)
     }
 }
 
@@ -201,6 +181,7 @@ impl CharacterFactoryAsync {
             )
         }
     }
+
     #[doc = "`CreateForTalk(crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"]
     pub fn create_for_talk(
         appearance: impl ::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>,
@@ -216,6 +197,7 @@ impl CharacterFactoryAsync {
             )
         }
     }
+
     #[doc = "`CreateImpl(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"]
     pub fn create_impl(
         asset_path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -238,8 +220,7 @@ impl CharacterFactoryAsync {
 #[cfg(feature = "combat-characterfactoryasync")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterFactoryAsync;
-    pub use super::ICharacterFactoryAsync;
+    pub use super::{CharacterFactoryAsync, ICharacterFactoryAsync};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

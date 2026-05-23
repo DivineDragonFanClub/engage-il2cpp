@@ -2,15 +2,29 @@
 
 #[cfg(feature = "system-collections-queue-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "Queue.QueueDebugView")]
     #[parent(crate::system::object::Object)]
     pub struct Queue_QueueDebugView {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueEnumerator.md"))]
+    #[::unity2::class(namespace = "System.Collections", name = "Queue.QueueEnumerator")]
+    #[parent(crate::system::object::Object)]
+    pub struct Queue_QueueEnumerator {
+        #[rename(name = "_q")]
+        pub q: crate::system::collections::queue::Queue,
+        #[rename(name = "_index")]
+        pub index: i32,
+        #[rename(name = "_version")]
+        pub version: i32,
+        #[rename(name = "currentElement")]
+        pub current_element: ::unity2::IlInstance,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "Queue")]
@@ -31,968 +45,10 @@ mod __types {
         #[rename(name = "_syncRoot")]
         pub sync_root: ::unity2::IlInstance,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueEnumerator.md"))]
-    #[::unity2::class(namespace = "System.Collections", name = "Queue.QueueEnumerator")]
-    #[parent(crate::system::object::Object)]
-    pub struct Queue_QueueEnumerator {
-        #[rename(name = "_q")]
-        pub q: crate::system::collections::queue::Queue,
-        #[rename(name = "_index")]
-        pub index: i32,
-        #[rename(name = "_version")]
-        pub version: i32,
-        #[rename(name = "currentElement")]
-        pub current_element: ::unity2::IlInstance,
-    }
 }
 
 #[cfg(feature = "system-collections-queue-types")]
 pub use __types::*;
-
-#[cfg(feature = "system-collections-queue")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Queue_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: Queue,
-        capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Queue, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
-        inner(this, capacity, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_3(
-        this: Queue,
-        capacity: i32,
-        grow_factor: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Queue, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_3::get_offset() as isize),
-            );
-        inner(this, capacity, grow_factor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_4(
-        this: Queue,
-        col: crate::system::collections::icollection::ICollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Queue,
-            crate::system::collections::icollection::ICollection,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_4::get_offset() as isize),
-        );
-        inner(this, col, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "get_Count",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "get_Count",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_count(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_count::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clone {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "Clone",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clone(
-        this: Queue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clone::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_synchronized {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "get_IsSynchronized",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSynchronized",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_synchronized(
-        this: Queue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_synchronized::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sync_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "get_SyncRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "get_SyncRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sync_root(
-        this: Queue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sync_root::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_copy_to {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "CopyTo",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "CopyTo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn copy_to(
-        this: Queue,
-        array: ::unity2::IlInstance,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Queue, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_copy_to::get_offset() as isize),
-            );
-        inner(this, array, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enqueue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "Enqueue",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "Enqueue",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enqueue(
-        this: Queue,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            Queue,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enqueue::get_offset() as isize),
-        );
-        inner(this, obj, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enumerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "GetEnumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "GetEnumerator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_enumerator(
-        this: Queue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            Queue,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enumerator::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dequeue {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "Dequeue",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "Dequeue",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dequeue(
-        this: Queue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dequeue::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_peek {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "Peek",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "Peek",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn peek(
-        this: Queue,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_peek::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_element {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "GetElement",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "GetElement",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_element(
-        this: Queue,
-        i: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            Queue,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_element::get_offset() as isize),
-        );
-        inner(this, i, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_capacity {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Queue as ::unity2::ClassIdentity>::class(),
-                "SetCapacity",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue as ::unity2::ClassIdentity>::NAME,
-                    "SetCapacity",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_capacity(
-        this: Queue,
-        capacity: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Queue, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_capacity::get_offset() as isize),
-            );
-        inner(this, capacity, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-collections-queue")]
-pub trait IQueueMethods: IQueue {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(i32)` overload"]
-    fn ctor_2(self, capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(i32, f32)` overload"]
-    fn ctor_3(
-        self,
-        capacity: impl ::core::convert::Into<i32>,
-        grow_factor: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(capacity),
-                ::core::convert::Into::into(grow_factor),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` overload"]
-    fn ctor_4(
-        self,
-        col: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::ctor_4(
-                __receiver,
-                ::core::convert::Into::into(col),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_Count()` overload"]
-    fn get_count(self) -> i32 {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::get_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Clone()` overload"]
-    fn clone(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::clone(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_IsSynchronized()` overload"]
-    fn get_is_synchronized(self) -> bool {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_SyncRoot()` overload"]
-    fn get_sync_root(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    fn copy_to(
-        self,
-        array: impl ::core::convert::Into<::unity2::IlInstance>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::copy_to(
-                __receiver,
-                ::core::convert::Into::into(array),
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Enqueue(crate::system::object::Object)` overload"]
-    fn enqueue(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::enqueue(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetEnumerator()` overload"]
-    fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Dequeue()` overload"]
-    fn dequeue(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::dequeue(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Peek()` overload"]
-    fn peek(self) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::peek(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetElement(i32)` overload"]
-    fn get_element(self, i: impl ::core::convert::Into<i32>) -> crate::system::object::Object {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::get_element(
-                __receiver,
-                ::core::convert::Into::into(i),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetCapacity(i32)` overload"]
-    fn set_capacity(self, capacity: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_unity2_raw::set_capacity(
-                __receiver,
-                ::core::convert::Into::into(capacity),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-collections-queue")]
-impl<__T: IQueue> IQueueMethods for __T {}
-
-#[cfg(feature = "system-collections-queue")]
-impl Queue {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IQueueMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new_2(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IQueueMethods>::ctor_2(this, capacity);
-        this
-    }
-
-    #[doc = "`.ctor(i32, f32)` — overload selector"]
-    pub fn new_3(capacity: i32, grow_factor: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as IQueueMethods>::ctor_3(this, capacity, grow_factor);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` — overload selector"]
-    pub fn new_4(col: crate::system::collections::icollection::ICollection) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Queue),
-                ::core::stringify!(new_4),
-            )
-        });
-        <Self as IQueueMethods>::ctor_4(this, col);
-        this
-    }
-}
 
 #[cfg(feature = "system-collections-queue")]
 #[doc(hidden)]
@@ -1003,11 +59,8 @@ mod __Queue_QueueEnumerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::queue::Queue as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::queue::Queue as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Queue_QueueEnumerator as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -1019,18 +72,15 @@ mod __Queue_QueueEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1038,24 +88,15 @@ mod __Queue_QueueEnumerator_unity2_raw {
         q: crate::system::collections::queue::Queue,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Queue_QueueEnumerator,
-            crate::system::collections::queue::Queue,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Queue_QueueEnumerator, crate::system::collections::queue::Queue, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, q, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Queue_QueueEnumerator as ::unity2::ClassIdentity>::class(),
@@ -1068,41 +109,27 @@ mod __Queue_QueueEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "Clone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Clone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clone(
-        this: Queue_QueueEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            Queue_QueueEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clone::get_offset() as isize),
-        );
+    pub unsafe fn clone(this: Queue_QueueEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Queue_QueueEnumerator as ::unity2::ClassIdentity>::class(),
@@ -1115,39 +142,27 @@ mod __Queue_QueueEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "MoveNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_next(
-        this: Queue_QueueEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn move_next(this: Queue_QueueEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Queue_QueueEnumerator as ::unity2::ClassIdentity>::class(),
@@ -1160,41 +175,27 @@ mod __Queue_QueueEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_current(
-        this: Queue_QueueEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            Queue_QueueEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
+    pub unsafe fn get_current(this: Queue_QueueEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Queue_QueueEnumerator as ::unity2::ClassIdentity>::class(),
@@ -1207,30 +208,20 @@ mod __Queue_QueueEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue_QueueEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: Queue_QueueEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: Queue_QueueEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1240,52 +231,40 @@ pub trait IQueue_QueueEnumeratorMethods: IQueue_QueueEnumerator {
     #[doc = "`.ctor(crate::system::collections::queue::Queue)` overload"]
     fn ctor(self, q: impl ::core::convert::Into<crate::system::collections::queue::Queue>) -> () {
         unsafe {
-            let __receiver = <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_QueueEnumerator_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(q),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_QueueEnumerator_unity2_raw::ctor(__receiver, ::core::convert::Into::into(q), ::core::option::Option::None)
         }
     }
     #[doc = "`Clone()` overload"]
     fn clone(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Queue_QueueEnumerator_unity2_raw::clone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveNext()` overload"]
     fn move_next(self) -> bool {
         unsafe {
-            let __receiver = <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Queue_QueueEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Current()` overload"]
     fn get_current(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Queue_QueueEnumerator_unity2_raw::get_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_QueueEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Queue_QueueEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Queue_QueueEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
@@ -1312,15 +291,531 @@ impl Queue_QueueEnumerator {
 
 #[cfg(feature = "system-collections-queue")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Queue_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor_2(this: Queue, capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Queue, i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, capacity, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor_3(this: Queue, capacity: i32, grow_factor: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Queue, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, capacity, grow_factor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::icollection::ICollection as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor_4(
+        this: Queue,
+        col: crate::system::collections::icollection::ICollection,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(Queue, crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_4::get_method_info().method_ptr);
+        inner(this, col, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "get_Count", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue as ::unity2::ClassIdentity>::NAME,
+                        "get_Count",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_count(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clone {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "Clone", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, "Clone", e),
+            }
+        }
+    }
+    pub unsafe fn clone(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_clone::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_synchronized {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Queue as ::unity2::ClassIdentity>::class(),
+                "get_IsSynchronized",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSynchronized",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_synchronized(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_synchronized::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sync_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "get_SyncRoot", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue as ::unity2::ClassIdentity>::NAME,
+                        "get_SyncRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sync_root(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_sync_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_copy_to {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IlInstance as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "CopyTo", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, "CopyTo", e),
+            }
+        }
+    }
+    pub unsafe fn copy_to(this: Queue, array: ::unity2::IlInstance, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Queue, ::unity2::IlInstance, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_to::get_method_info().method_ptr);
+        inner(this, array, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enqueue {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "Enqueue", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, "Enqueue", e),
+            }
+        }
+    }
+    pub unsafe fn enqueue(this: Queue, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Queue, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enqueue::get_method_info().method_ptr);
+        inner(this, obj, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enumerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "GetEnumerator", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue as ::unity2::ClassIdentity>::NAME,
+                        "GetEnumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enumerator(
+        this: Queue,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_get_enumerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dequeue {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "Dequeue", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, "Dequeue", e),
+            }
+        }
+    }
+    pub unsafe fn dequeue(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_dequeue::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_peek {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "Peek", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Queue as ::unity2::ClassIdentity>::NAME, "Peek", e),
+            }
+        }
+    }
+    pub unsafe fn peek(this: Queue, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_peek::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_element {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "GetElement", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue as ::unity2::ClassIdentity>::NAME,
+                        "GetElement",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_element(this: Queue, i: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(Queue, i32, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_element::get_method_info().method_ptr);
+        inner(this, i, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_capacity {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Queue as ::unity2::ClassIdentity>::class(), "SetCapacity", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Queue as ::unity2::ClassIdentity>::NAME,
+                        "SetCapacity",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_capacity(this: Queue, capacity: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Queue, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_capacity::get_method_info().method_ptr);
+        inner(this, capacity, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-collections-queue")]
+pub trait IQueueMethods: IQueue {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor_2(self, capacity: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(capacity), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(i32, f32)` overload"]
+    fn ctor_3(self, capacity: impl ::core::convert::Into<i32>, grow_factor: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::ctor_3(
+                __receiver,
+                ::core::convert::Into::into(capacity),
+                ::core::convert::Into::into(grow_factor),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` overload"]
+    fn ctor_4(self, col: impl ::core::convert::Into<crate::system::collections::icollection::ICollection>) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::ctor_4(__receiver, ::core::convert::Into::into(col), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> i32 {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::get_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clone()` overload"]
+    fn clone(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::clone(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsSynchronized()` overload"]
+    fn get_is_synchronized(self) -> bool {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SyncRoot()` overload"]
+    fn get_sync_root(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
+    fn copy_to(self, array: impl ::core::convert::Into<::unity2::IlInstance>, index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::copy_to(
+                __receiver,
+                ::core::convert::Into::into(array),
+                ::core::convert::Into::into(index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Enqueue(crate::system::object::Object)` overload"]
+    fn enqueue(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::enqueue(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEnumerator()` overload"]
+    fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Dequeue()` overload"]
+    fn dequeue(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::dequeue(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Peek()` overload"]
+    fn peek(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::peek(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetElement(i32)` overload"]
+    fn get_element(self, i: impl ::core::convert::Into<i32>) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::get_element(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetCapacity(i32)` overload"]
+    fn set_capacity(self, capacity: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <Queue as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Queue_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(capacity), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-collections-queue")]
+impl<__T: IQueue> IQueueMethods for __T {}
+
+#[cfg(feature = "system-collections-queue")]
+impl Queue {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new),));
+        <Self as IQueueMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new_2(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new_2),));
+        <Self as IQueueMethods>::ctor_2(this, capacity);
+        this
+    }
+
+    #[doc = "`.ctor(i32, f32)` — overload selector"]
+    pub fn new_3(capacity: i32, grow_factor: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new_3),));
+        <Self as IQueueMethods>::ctor_3(this, capacity, grow_factor);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::icollection::ICollection)` — overload selector"]
+    pub fn new_4(col: crate::system::collections::icollection::ICollection) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new_4),));
+        <Self as IQueueMethods>::ctor_4(this, col);
+        this
+    }
+}
+
+#[cfg(feature = "system-collections-queue")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IQueue;
-    pub use super::IQueueMethods;
-    pub use super::IQueue_QueueDebugView;
-    pub use super::IQueue_QueueEnumerator;
-    pub use super::IQueue_QueueEnumeratorMethods;
-    pub use super::Queue;
-    pub use super::Queue_QueueDebugView;
-    pub use super::Queue_QueueEnumerator;
+    pub use super::{
+        IQueue, IQueueMethods, IQueue_QueueDebugView, IQueue_QueueEnumerator, IQueue_QueueEnumeratorMethods, Queue, Queue_QueueDebugView,
+        Queue_QueueEnumerator,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

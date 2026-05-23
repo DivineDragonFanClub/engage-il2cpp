@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-mascotaccchangemenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccchangemenuitem/MascotAccChangeMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "MascotAccChangeMenuItem")]
@@ -31,9 +33,7 @@ mod __MascotAccChangeMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_equip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -46,41 +46,28 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEquip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEquip",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_equip(
-        this: MascotAccChangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_equip(this: MascotAccChangeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_equip::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_equip::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mascotaccdata::MascotAccData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mascotaccdata::MascotAccData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -92,18 +79,15 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -111,24 +95,15 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         mascot_data: crate::app::mascotaccdata::MascotAccData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MascotAccChangeMenuItem,
-            crate::app::mascotaccdata::MascotAccData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MascotAccChangeMenuItem, crate::app::mascotaccdata::MascotAccData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, mascot_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_parts_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -141,41 +116,30 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetPartsType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetPartsType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_parts_type(
         this: MascotAccChangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::mascotaccdata::MascotAccData_PartsType {
-        let inner: extern "C" fn(
-            MascotAccChangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::mascotaccdata::MascotAccData_PartsType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_parts_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> crate::app::mascotaccdata::MascotAccData_PartsType =
+            ::core::mem::transmute(__lookup_get_parts_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -188,39 +152,27 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: MascotAccChangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: MascotAccChangeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -233,41 +185,27 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: MascotAccChangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MascotAccChangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: MascotAccChangeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -280,41 +218,30 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
         this: MascotAccChangeMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            MascotAccChangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_equip_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -327,39 +254,27 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateEquipState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateEquipState",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_equip_state(
-        this: MascotAccChangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_equip_state(this: MascotAccChangeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_equip_state::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_equip_state::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::class(),
@@ -372,32 +287,20 @@ mod __MascotAccChangeMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MascotAccChangeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn a_call(
-        this: MascotAccChangeMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MascotAccChangeMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn a_call(this: MascotAccChangeMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(MascotAccChangeMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -408,65 +311,39 @@ pub trait IMascotAccChangeMenuItemMethods: IMascotAccChangeMenuItem {
     fn get_is_equip(self) -> bool {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotAccChangeMenuItem_unity2_raw::get_is_equip(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotAccChangeMenuItem_unity2_raw::get_is_equip(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::mascotaccdata::MascotAccData)` overload"]
-    fn ctor(
-        self,
-        mascot_data: impl ::core::convert::Into<crate::app::mascotaccdata::MascotAccData>,
-    ) -> () {
+    fn ctor(self, mascot_data: impl ::core::convert::Into<crate::app::mascotaccdata::MascotAccData>) -> () {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotAccChangeMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(mascot_data),
-                ::core::option::Option::None,
-            )
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotAccChangeMenuItem_unity2_raw::ctor(__receiver, ::core::convert::Into::into(mascot_data), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPartsType()` overload"]
     fn get_parts_type(self) -> crate::app::mascotaccdata::MascotAccData_PartsType {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotAccChangeMenuItem_unity2_raw::get_parts_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotAccChangeMenuItem_unity2_raw::get_parts_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotAccChangeMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotAccChangeMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotAccChangeMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
@@ -474,35 +351,23 @@ pub trait IMascotAccChangeMenuItemMethods: IMascotAccChangeMenuItem {
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotAccChangeMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotAccChangeMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateEquipState()` overload"]
     fn update_equip_state(self) -> () {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MascotAccChangeMenuItem_unity2_raw::update_equip_state(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MascotAccChangeMenuItem_unity2_raw::update_equip_state(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MascotAccChangeMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MascotAccChangeMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -530,13 +395,10 @@ impl MascotAccChangeMenuItem {
 #[cfg(feature = "app-mascotaccchangemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMascotAccChangeMenuItem;
-    pub use super::IMascotAccChangeMenuItemMethods;
-    pub use super::MascotAccChangeMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IMascotAccChangeMenuItem, IMascotAccChangeMenuItemMethods, MascotAccChangeMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
 }

@@ -2,15 +2,19 @@
 
 #[cfg(feature = "app-weaponshopbuymenucontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenucontent::{BasicMenuContent, IBasicMenuContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenucontent/WeaponShopBuyMenuContent_KindIcon.md"))]
     #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenuContent.KindIcon")]
@@ -27,9 +31,7 @@ mod __types {
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct WeaponShopBuyMenuContent {
         #[rename(name = "m_KindIcon")]
-        pub m_kind_icon: ::unity2::Array<
-            crate::app::weaponshopbuymenucontent::WeaponShopBuyMenuContent_KindIcon,
-        >,
+        pub m_kind_icon: ::unity2::Array<crate::app::weaponshopbuymenucontent::WeaponShopBuyMenuContent_KindIcon>,
         #[rename(name = "m_ColumnTitleItemText")]
         pub m_column_title_item_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_ColumnTitleStockCountText")]
@@ -55,9 +57,7 @@ mod __WeaponShopBuyMenuContent_KindIcon_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent_KindIcon as ::unity2::ClassIdentity>::class(),
@@ -70,32 +70,20 @@ mod __WeaponShopBuyMenuContent_KindIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent_KindIcon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent_KindIcon as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: WeaponShopBuyMenuContent_KindIcon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenuContent_KindIcon,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: WeaponShopBuyMenuContent_KindIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(WeaponShopBuyMenuContent_KindIcon, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -105,14 +93,10 @@ pub trait IWeaponShopBuyMenuContent_KindIconMethods: IWeaponShopBuyMenuContent_K
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <WeaponShopBuyMenuContent_KindIcon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_KindIcon_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WeaponShopBuyMenuContent_KindIcon as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __WeaponShopBuyMenuContent_KindIcon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -145,9 +129,7 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
@@ -160,39 +142,27 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: WeaponShopBuyMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: WeaponShopBuyMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_after_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
@@ -205,39 +175,27 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "AfterBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn after_build(
-        this: WeaponShopBuyMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn after_build(this: WeaponShopBuyMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_after_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_menu_item_content_max {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
@@ -250,41 +208,28 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetMenuItemContentMax",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetMenuItemContentMax",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_menu_item_content_max(
-        this: WeaponShopBuyMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_menu_item_content_max(this: WeaponShopBuyMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_menu_item_content_max::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_cursor_moved_pos_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcCursorMovedPosY",
@@ -296,18 +241,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcCursorMovedPosY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_cursor_moved_pos_y(
@@ -316,22 +258,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_cursor_moved_pos_y::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetKind",
@@ -343,18 +278,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_kind(
@@ -362,26 +294,16 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WeaponShopBuyMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_prev_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetToPrevKind",
@@ -393,18 +315,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetToPrevKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetToPrevKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_to_prev_kind(
@@ -416,22 +335,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
             WeaponShopBuyMenuContent,
             crate::app::itemdata::ItemData_Kinds,
             ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_to_prev_kind::get_offset() as isize),
-        );
+        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(__lookup_set_to_prev_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_next_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetToNextKind",
@@ -443,18 +355,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetToNextKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetToNextKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_to_next_kind(
@@ -466,22 +375,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
             WeaponShopBuyMenuContent,
             crate::app::itemdata::ItemData_Kinds,
             ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_to_next_kind::get_offset() as isize),
-        );
+        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(__lookup_set_to_next_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_first_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
                 "IsFirstKind",
@@ -493,18 +395,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsFirstKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsFirstKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_first_kind(
@@ -512,26 +411,16 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_first_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WeaponShopBuyMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_first_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_last_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
                 "IsLastKind",
@@ -543,18 +432,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsLastKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsLastKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_last_kind(
@@ -562,24 +448,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_last_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WeaponShopBuyMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_last_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_item_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -595,18 +472,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "EnableItemKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "EnableItemKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_item_kind(
@@ -615,25 +489,15 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         enabled: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            WeaponShopBuyMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_item_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WeaponShopBuyMenuContent, crate::app::itemdata::ItemData_Kinds, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_item_kind::get_method_info().method_ptr);
         inner(this, kind, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_get_kind_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
@@ -646,39 +510,27 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGetKindCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGetKindCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_get_kind_count(
-        this: WeaponShopBuyMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_get_kind_count(this: WeaponShopBuyMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_get_kind_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_get_kind_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_kind_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
@@ -691,39 +543,27 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetKindCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetKindCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_kind_count(
-        this: WeaponShopBuyMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_kind_count(this: WeaponShopBuyMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_kind_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_kind_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::class(),
@@ -736,30 +576,20 @@ mod __WeaponShopBuyMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WeaponShopBuyMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: WeaponShopBuyMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: WeaponShopBuyMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WeaponShopBuyMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -770,9 +600,7 @@ pub trait IWeaponShopBuyMenuContentMethods: IWeaponShopBuyMenuContent {
     fn start(self) -> () {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WeaponShopBuyMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
@@ -780,35 +608,23 @@ pub trait IWeaponShopBuyMenuContentMethods: IWeaponShopBuyMenuContent {
     fn after_build(self) -> () {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::after_build(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMenuItemContentMax()` overload"]
     fn get_menu_item_content_max(self) -> i32 {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::get_menu_item_content_max(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcCursorMovedPosY(i32)` overload"]
     fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WeaponShopBuyMenuContent_unity2_raw::calc_cursor_moved_pos_y(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -817,88 +633,43 @@ pub trait IWeaponShopBuyMenuContentMethods: IWeaponShopBuyMenuContent {
         }
     }
     #[doc = "`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> () {
+    fn set_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::set_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`SetToPrevKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_to_prev_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> crate::app::itemdata::ItemData_Kinds {
+    fn set_to_prev_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> crate::app::itemdata::ItemData_Kinds {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::set_to_prev_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::set_to_prev_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`SetToNextKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_to_next_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> crate::app::itemdata::ItemData_Kinds {
+    fn set_to_next_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> crate::app::itemdata::ItemData_Kinds {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::set_to_next_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::set_to_next_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`IsFirstKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn is_first_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> bool {
+    fn is_first_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> bool {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::is_first_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::is_first_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`IsLastKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn is_last_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> bool {
+    fn is_last_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> bool {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::is_last_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::is_last_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`EnableItemKind(crate::app::itemdata::ItemData_Kinds, bool)` overload"]
@@ -909,9 +680,7 @@ pub trait IWeaponShopBuyMenuContentMethods: IWeaponShopBuyMenuContent {
     ) -> () {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WeaponShopBuyMenuContent_unity2_raw::enable_item_kind(
                 __receiver,
                 ::core::convert::Into::into(kind),
@@ -924,35 +693,23 @@ pub trait IWeaponShopBuyMenuContentMethods: IWeaponShopBuyMenuContent {
     fn update_get_kind_count(self) -> () {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::update_get_kind_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::update_get_kind_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetKindCount()` overload"]
     fn get_kind_count(self) -> i32 {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WeaponShopBuyMenuContent_unity2_raw::get_kind_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WeaponShopBuyMenuContent_unity2_raw::get_kind_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <WeaponShopBuyMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WeaponShopBuyMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -980,28 +737,25 @@ impl WeaponShopBuyMenuContent {
 #[cfg(feature = "app-weaponshopbuymenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IWeaponShopBuyMenuContent;
-    pub use super::IWeaponShopBuyMenuContentMethods;
-    pub use super::IWeaponShopBuyMenuContent_KindIcon;
-    pub use super::IWeaponShopBuyMenuContent_KindIconMethods;
-    pub use super::WeaponShopBuyMenuContent;
-    pub use super::WeaponShopBuyMenuContent_KindIcon;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use super::{
+        IWeaponShopBuyMenuContent, IWeaponShopBuyMenuContentMethods, IWeaponShopBuyMenuContent_KindIcon, IWeaponShopBuyMenuContent_KindIconMethods,
+        WeaponShopBuyMenuContent, WeaponShopBuyMenuContent_KindIcon,
+    };
     #[cfg(feature = "app-basicmenucontent")]
     pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

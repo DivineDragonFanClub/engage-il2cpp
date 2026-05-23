@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-cullingresults-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/cullingresults/CullingResults.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct CullingResults {}
 
     impl ::unity2::ClassIdentity for CullingResults {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "CullingResults";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for CullingResults {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,11 +45,8 @@ mod __CullingResults_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_index_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "GetLightIndexCount",
@@ -63,41 +58,28 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "GetLightIndexCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "GetLightIndexCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_light_index_count(
-        culling_results_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_light_index_count(culling_results_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_light_index_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_light_index_count::get_method_info().method_ptr);
         inner(culling_results_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reflection_probe_index_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "GetReflectionProbeIndexCount",
@@ -109,39 +91,27 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "GetReflectionProbeIndexCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "GetReflectionProbeIndexCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reflection_probe_index_count(
-        culling_results_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_reflection_probe_index_count(culling_results_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_reflection_probe_index_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_reflection_probe_index_count::get_method_info().method_ptr);
         inner(culling_results_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fill_light_and_reflection_probe_indices {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
@@ -157,18 +127,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "FillLightAndReflectionProbeIndices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "FillLightAndReflectionProbeIndices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn fill_light_and_reflection_probe_indices(
@@ -176,26 +143,16 @@ mod __CullingResults_unity2_raw {
         compute_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fill_light_and_reflection_probe_indices::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fill_light_and_reflection_probe_indices::get_method_info().method_ptr);
         inner(culling_results_ptr, compute_buffer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_index_map_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "GetLightIndexMapSize",
@@ -207,39 +164,27 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "GetLightIndexMapSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "GetLightIndexMapSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_light_index_map_size(
-        culling_results_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_light_index_map_size(culling_results_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_light_index_map_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_light_index_map_size::get_method_info().method_ptr);
         inner(culling_results_ptr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fill_light_index_map {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -256,18 +201,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "FillLightIndexMap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "FillLightIndexMap",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn fill_light_index_map(
@@ -276,30 +218,15 @@ mod __CullingResults_unity2_raw {
         index_map_size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fill_light_index_map::get_offset() as isize),
-        );
-        inner(
-            culling_results_ptr,
-            index_map_ptr,
-            index_map_size,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fill_light_index_map::get_method_info().method_ptr);
+        inner(culling_results_ptr, index_map_ptr, index_map_size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_light_index_map {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -316,18 +243,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "SetLightIndexMap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "SetLightIndexMap",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_light_index_map(
@@ -336,30 +260,15 @@ mod __CullingResults_unity2_raw {
         index_map_size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_light_index_map::get_offset() as isize),
-        );
-        inner(
-            culling_results_ptr,
-            index_map_ptr,
-            index_map_size,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_light_index_map::get_method_info().method_ptr);
+        inner(culling_results_ptr, index_map_ptr, index_map_size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_caster_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -376,18 +285,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowCasterBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowCasterBounds",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_caster_bounds(
@@ -396,31 +302,22 @@ mod __CullingResults_unity2_raw {
         bounds: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_caster_bounds::get_offset() as isize),
-        );
-        inner(
-            culling_results_ptr,
-            light_index,
-            bounds,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::IntPtr, i32, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_shadow_caster_bounds::get_method_info().method_ptr);
+        inner(culling_results_ptr, light_index, bounds, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compute_spot_shadow_matrices_and_culling_primitives {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "ComputeSpotShadowMatricesAndCullingPrimitives",
@@ -432,18 +329,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "ComputeSpotShadowMatricesAndCullingPrimitives",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "ComputeSpotShadowMatricesAndCullingPrimitives",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compute_spot_shadow_matrices_and_culling_primitives(
@@ -461,14 +355,7 @@ mod __CullingResults_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_compute_spot_shadow_matrices_and_culling_primitives::get_offset()
-                        as isize,
-                ),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compute_spot_shadow_matrices_and_culling_primitives::get_method_info().method_ptr);
         inner(
             culling_results_ptr,
             active_light_index,
@@ -482,10 +369,19 @@ mod __CullingResults_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compute_directional_shadow_matrices_and_culling_primitives {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "ComputeDirectionalShadowMatricesAndCullingPrimitives",
@@ -497,18 +393,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "ComputeDirectionalShadowMatricesAndCullingPrimitives",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "ComputeDirectionalShadowMatricesAndCullingPrimitives",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compute_directional_shadow_matrices_and_culling_primitives(
@@ -536,14 +429,7 @@ mod __CullingResults_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_compute_directional_shadow_matrices_and_culling_primitives::get_offset(
-                    ) as isize,
-                ),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compute_directional_shadow_matrices_and_culling_primitives::get_method_info().method_ptr);
         inner(
             culling_results_ptr,
             active_light_index,
@@ -562,9 +448,7 @@ mod __CullingResults_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_and_reflection_probe_index_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
@@ -577,44 +461,29 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "get_lightAndReflectionProbeIndexCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "get_lightAndReflectionProbeIndexCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_light_and_reflection_probe_index_count(
-        this: CullingResults,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_light_and_reflection_probe_index_count(this: CullingResults, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CullingResults, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_get_light_and_reflection_probe_index_count::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_get_light_and_reflection_probe_index_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fill_light_and_reflection_probe_indices_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "FillLightAndReflectionProbeIndices",
@@ -626,18 +495,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "FillLightAndReflectionProbeIndices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "FillLightAndReflectionProbeIndices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn fill_light_and_reflection_probe_indices_2(
@@ -645,24 +511,15 @@ mod __CullingResults_unity2_raw {
         compute_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CullingResults,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fill_light_and_reflection_probe_indices_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CullingResults, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fill_light_and_reflection_probe_indices_2::get_method_info().method_ptr);
         inner(this, compute_buffer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_caster_bounds_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type(),
@@ -678,18 +535,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowCasterBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowCasterBounds",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_caster_bounds_2(
@@ -698,26 +552,21 @@ mod __CullingResults_unity2_raw {
         out_bounds: *mut crate::unity_engine::bounds::Bounds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            CullingResults,
-            i32,
-            *mut crate::unity_engine::bounds::Bounds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_caster_bounds_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CullingResults, i32, *mut crate::unity_engine::bounds::Bounds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_shadow_caster_bounds_2::get_method_info().method_ptr);
         inner(this, light_index, out_bounds, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compute_spot_shadow_matrices_and_culling_primitives_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "ComputeSpotShadowMatricesAndCullingPrimitives",
@@ -729,18 +578,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "ComputeSpotShadowMatricesAndCullingPrimitives",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "ComputeSpotShadowMatricesAndCullingPrimitives",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compute_spot_shadow_matrices_and_culling_primitives_2(
@@ -758,14 +604,7 @@ mod __CullingResults_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_compute_spot_shadow_matrices_and_culling_primitives_2::get_offset()
-                        as isize,
-                ),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compute_spot_shadow_matrices_and_culling_primitives_2::get_method_info().method_ptr);
         inner(
             this,
             active_light_index,
@@ -779,10 +618,18 @@ mod __CullingResults_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compute_directional_shadow_matrices_and_culling_primitives_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "ComputeDirectionalShadowMatricesAndCullingPrimitives",
@@ -794,18 +641,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "ComputeDirectionalShadowMatricesAndCullingPrimitives",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "ComputeDirectionalShadowMatricesAndCullingPrimitives",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compute_directional_shadow_matrices_and_culling_primitives_2(
@@ -821,7 +665,19 @@ mod __CullingResults_unity2_raw {
         shadow_split_data: *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (CullingResults , i32 , i32 , i32 , crate :: unity_engine :: vector3 :: Vector3 , i32 , f32 , * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , * mut crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compute_directional_shadow_matrices_and_culling_primitives_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CullingResults,
+            i32,
+            i32,
+            i32,
+            crate::unity_engine::vector3::Vector3,
+            i32,
+            f32,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_compute_directional_shadow_matrices_and_culling_primitives_2::get_method_info().method_ptr);
         inner(
             this,
             active_light_index,
@@ -840,10 +696,9 @@ mod __CullingResults_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -855,18 +710,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
@@ -874,26 +726,16 @@ mod __CullingResults_unity2_raw {
         other: crate::unity_engine::rendering::cullingresults::CullingResults,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            CullingResults,
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CullingResults, crate::unity_engine::rendering::cullingresults::CullingResults, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -905,43 +747,27 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals_2(
-        this: CullingResults,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            CullingResults,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+    pub unsafe fn equals_2(this: CullingResults, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(CullingResults, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
@@ -954,40 +780,39 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: CullingResults,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: CullingResults, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CullingResults, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compute_directional_shadow_matrices_and_culling_primitives_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CullingResults as ::unity2::ClassIdentity>::class(),
                 "ComputeDirectionalShadowMatricesAndCullingPrimitives_Injected",
@@ -999,18 +824,15 @@ mod __CullingResults_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CullingResults as ::unity2::ClassIdentity>::NAME,
-                    "ComputeDirectionalShadowMatricesAndCullingPrimitives_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CullingResults as ::unity2::ClassIdentity>::NAME,
+                        "ComputeDirectionalShadowMatricesAndCullingPrimitives_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compute_directional_shadow_matrices_and_culling_primitives_injected(
@@ -1026,7 +848,20 @@ mod __CullingResults_unity2_raw {
         shadow_split_data: *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (:: unity2 :: IntPtr , i32 , i32 , i32 , * mut crate :: unity_engine :: vector3 :: Vector3 , i32 , f32 , * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , * mut crate :: unity_engine :: matrix4x4 :: Matrix4x4 , * mut crate :: unity_engine :: rendering :: shadowsplitdata :: ShadowSplitData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_compute_directional_shadow_matrices_and_culling_primitives_injected :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            i32,
+            i32,
+            i32,
+            *mut crate::unity_engine::vector3::Vector3,
+            i32,
+            f32,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            *mut crate::unity_engine::matrix4x4::Matrix4x4,
+            *mut crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
+            ::unity2::OptionalMethod,
+        ) -> bool =
+            ::core::mem::transmute(__lookup_compute_directional_shadow_matrices_and_culling_primitives_injected::get_method_info().method_ptr);
         inner(
             culling_results_ptr,
             active_light_index,
@@ -1046,20 +881,12 @@ mod __CullingResults_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-cullingresults")]
 impl CullingResults {
     #[doc = "`GetLightIndexCount(::unity2::IntPtr)` overload"]
-    pub fn get_light_index_count(
-        culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> i32 {
-        unsafe {
-            __CullingResults_unity2_raw::get_light_index_count(
-                ::core::convert::Into::into(culling_results_ptr),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_light_index_count(culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
+        unsafe { __CullingResults_unity2_raw::get_light_index_count(::core::convert::Into::into(culling_results_ptr), ::core::option::Option::None) }
     }
+
     #[doc = "`GetReflectionProbeIndexCount(::unity2::IntPtr)` overload"]
-    pub fn get_reflection_probe_index_count(
-        culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> i32 {
+    pub fn get_reflection_probe_index_count(culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
         unsafe {
             __CullingResults_unity2_raw::get_reflection_probe_index_count(
                 ::core::convert::Into::into(culling_results_ptr),
@@ -1067,6 +894,7 @@ impl CullingResults {
             )
         }
     }
+
     #[doc = "`FillLightAndReflectionProbeIndices(::unity2::IntPtr, crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
     pub fn fill_light_and_reflection_probe_indices(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -1080,17 +908,14 @@ impl CullingResults {
             )
         }
     }
+
     #[doc = "`GetLightIndexMapSize(::unity2::IntPtr)` overload"]
-    pub fn get_light_index_map_size(
-        culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> i32 {
+    pub fn get_light_index_map_size(culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
         unsafe {
-            __CullingResults_unity2_raw::get_light_index_map_size(
-                ::core::convert::Into::into(culling_results_ptr),
-                ::core::option::Option::None,
-            )
+            __CullingResults_unity2_raw::get_light_index_map_size(::core::convert::Into::into(culling_results_ptr), ::core::option::Option::None)
         }
     }
+
     #[doc = "`FillLightIndexMap(::unity2::IntPtr, ::unity2::IntPtr, i32)` overload"]
     pub fn fill_light_index_map(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -1106,6 +931,7 @@ impl CullingResults {
             )
         }
     }
+
     #[doc = "`SetLightIndexMap(::unity2::IntPtr, ::unity2::IntPtr, i32)` overload"]
     pub fn set_light_index_map(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -1121,14 +947,14 @@ impl CullingResults {
             )
         }
     }
+
     #[doc = "`GetShadowCasterBounds(::unity2::IntPtr, i32, *mutcrate::unity_engine::bounds::Bounds)` overload"]
     pub fn get_shadow_caster_bounds(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
         light_index: impl ::core::convert::Into<i32>,
     ) -> (bool, crate::unity_engine::bounds::Bounds) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
             let __ret = {
                 __CullingResults_unity2_raw::get_shadow_caster_bounds(
                     ::core::convert::Into::into(culling_results_ptr),
@@ -1140,6 +966,7 @@ impl CullingResults {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ComputeSpotShadowMatricesAndCullingPrimitives(::unity2::IntPtr, i32, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]
     pub fn compute_spot_shadow_matrices_and_culling_primitives(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -1151,13 +978,9 @@ impl CullingResults {
         crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>::uninit();
             let __ret = {
                 __CullingResults_unity2_raw::compute_spot_shadow_matrices_and_culling_primitives(
                     ::core::convert::Into::into(culling_results_ptr),
@@ -1168,14 +991,10 @@ impl CullingResults {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`ComputeDirectionalShadowMatricesAndCullingPrimitives(::unity2::IntPtr, i32, i32, i32, crate::unity_engine::vector3::Vector3, i32, f32, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]
     pub fn compute_directional_shadow_matrices_and_culling_primitives(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -1192,24 +1011,28 @@ impl CullingResults {
         crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>::uninit();
             let __ret = {
-                __CullingResults_unity2_raw :: compute_directional_shadow_matrices_and_culling_primitives (:: core :: convert :: Into :: into (culling_results_ptr) , :: core :: convert :: Into :: into (active_light_index) , :: core :: convert :: Into :: into (split_index) , :: core :: convert :: Into :: into (split_count) , :: core :: convert :: Into :: into (split_ratio) , :: core :: convert :: Into :: into (shadow_resolution) , :: core :: convert :: Into :: into (shadow_near_plane_offset) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None)
+                __CullingResults_unity2_raw::compute_directional_shadow_matrices_and_culling_primitives(
+                    ::core::convert::Into::into(culling_results_ptr),
+                    ::core::convert::Into::into(active_light_index),
+                    ::core::convert::Into::into(split_index),
+                    ::core::convert::Into::into(split_count),
+                    ::core::convert::Into::into(split_ratio),
+                    ::core::convert::Into::into(shadow_resolution),
+                    ::core::convert::Into::into(shadow_near_plane_offset),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`ComputeDirectionalShadowMatricesAndCullingPrimitives_Injected(::unity2::IntPtr, i32, i32, i32, *mutcrate::unity_engine::vector3::Vector3, i32, f32, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]
     pub fn compute_directional_shadow_matrices_and_culling_primitives_injected(
         culling_results_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -1226,17 +1049,24 @@ impl CullingResults {
         crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>::uninit();
             let __ret = {
-                __CullingResults_unity2_raw :: compute_directional_shadow_matrices_and_culling_primitives_injected (:: core :: convert :: Into :: into (culling_results_ptr) , :: core :: convert :: Into :: into (active_light_index) , :: core :: convert :: Into :: into (split_index) , :: core :: convert :: Into :: into (split_count) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (shadow_resolution) , :: core :: convert :: Into :: into (shadow_near_plane_offset) , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None)
+                __CullingResults_unity2_raw::compute_directional_shadow_matrices_and_culling_primitives_injected(
+                    ::core::convert::Into::into(culling_results_ptr),
+                    ::core::convert::Into::into(active_light_index),
+                    ::core::convert::Into::into(split_index),
+                    ::core::convert::Into::into(split_count),
+                    __out_0.as_mut_ptr(),
+                    ::core::convert::Into::into(shadow_resolution),
+                    ::core::convert::Into::into(shadow_near_plane_offset),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    __out_3.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
             };
             (
                 __ret,
@@ -1253,13 +1083,9 @@ impl CullingResults {
 impl CullingResults {
     #[doc = "`get_lightAndReflectionProbeIndexCount()` overload"]
     pub fn get_light_and_reflection_probe_index_count(self) -> i32 {
-        unsafe {
-            __CullingResults_unity2_raw::get_light_and_reflection_probe_index_count(
-                self,
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __CullingResults_unity2_raw::get_light_and_reflection_probe_index_count(self, ::core::option::Option::None) }
     }
+
     #[doc = "`FillLightAndReflectionProbeIndices(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
     pub fn fill_light_and_reflection_probe_indices_2(
         self,
@@ -1273,14 +1099,11 @@ impl CullingResults {
             )
         }
     }
+
     #[doc = "`GetShadowCasterBounds(i32, *mutcrate::unity_engine::bounds::Bounds)` overload"]
-    pub fn get_shadow_caster_bounds_2(
-        self,
-        light_index: impl ::core::convert::Into<i32>,
-    ) -> (bool, crate::unity_engine::bounds::Bounds) {
+    pub fn get_shadow_caster_bounds_2(self, light_index: impl ::core::convert::Into<i32>) -> (bool, crate::unity_engine::bounds::Bounds) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::bounds::Bounds>::uninit();
             let __ret = {
                 __CullingResults_unity2_raw::get_shadow_caster_bounds_2(
                     self,
@@ -1292,6 +1115,7 @@ impl CullingResults {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`ComputeSpotShadowMatricesAndCullingPrimitives(i32, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]
     pub fn compute_spot_shadow_matrices_and_culling_primitives_2(
         self,
@@ -1303,13 +1127,9 @@ impl CullingResults {
         crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>::uninit();
             let __ret = {
                 __CullingResults_unity2_raw::compute_spot_shadow_matrices_and_culling_primitives_2(
                     self,
@@ -1320,14 +1140,10 @@ impl CullingResults {
                     ::core::option::Option::None,
                 )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`ComputeDirectionalShadowMatricesAndCullingPrimitives(i32, i32, i32, crate::unity_engine::vector3::Vector3, i32, f32, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::rendering::shadowsplitdata::ShadowSplitData)` overload"]
     pub fn compute_directional_shadow_matrices_and_culling_primitives_2(
         self,
@@ -1344,49 +1160,38 @@ impl CullingResults {
         crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowsplitdata::ShadowSplitData>::uninit();
             let __ret = {
-                __CullingResults_unity2_raw :: compute_directional_shadow_matrices_and_culling_primitives_2 (self , :: core :: convert :: Into :: into (active_light_index) , :: core :: convert :: Into :: into (split_index) , :: core :: convert :: Into :: into (split_count) , :: core :: convert :: Into :: into (split_ratio) , :: core :: convert :: Into :: into (shadow_resolution) , :: core :: convert :: Into :: into (shadow_near_plane_offset) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None)
+                __CullingResults_unity2_raw::compute_directional_shadow_matrices_and_culling_primitives_2(
+                    self,
+                    ::core::convert::Into::into(active_light_index),
+                    ::core::convert::Into::into(split_index),
+                    ::core::convert::Into::into(split_count),
+                    ::core::convert::Into::into(split_ratio),
+                    ::core::convert::Into::into(shadow_resolution),
+                    ::core::convert::Into::into(shadow_near_plane_offset),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    __out_2.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
             };
-            (
-                __ret,
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__ret, __out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`Equals(crate::unity_engine::rendering::cullingresults::CullingResults)` overload"]
-    pub fn equals(
-        self,
-        other: impl ::core::convert::Into<
-            crate::unity_engine::rendering::cullingresults::CullingResults,
-        >,
-    ) -> bool {
-        unsafe {
-            __CullingResults_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::cullingresults::CullingResults>) -> bool {
+        unsafe { __CullingResults_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __CullingResults_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __CullingResults_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __CullingResults_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
@@ -1397,10 +1202,9 @@ impl CullingResults {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CullingResults;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

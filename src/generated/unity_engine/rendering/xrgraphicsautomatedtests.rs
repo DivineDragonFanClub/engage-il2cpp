@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrgraphicsautomatedtests/XRGraphicsAutomatedTests.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "XRGraphicsAutomatedTests")]
@@ -29,9 +29,7 @@ mod __XRGraphicsAutomatedTests_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_activated_from_command_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::class(),
@@ -44,37 +42,27 @@ mod __XRGraphicsAutomatedTests_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::NAME,
-                    "get_activatedFromCommandLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::NAME,
+                        "get_activatedFromCommandLine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_activated_from_command_line(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_activated_from_command_line::get_offset() as isize),
-        );
+    pub unsafe fn get_activated_from_command_line(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_activated_from_command_line::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::class(),
@@ -87,35 +75,26 @@ mod __XRGraphicsAutomatedTests_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::NAME,
-                    "get_enabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::NAME,
+                        "get_enabled",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_enabled(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enabled::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_enabled::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::class(),
@@ -128,26 +107,19 @@ mod __XRGraphicsAutomatedTests_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRGraphicsAutomatedTests as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -156,16 +128,14 @@ mod __XRGraphicsAutomatedTests_unity2_raw {
 impl XRGraphicsAutomatedTests {
     #[doc = "`get_activatedFromCommandLine()` overload"]
     pub fn get_activated_from_command_line() -> bool {
-        unsafe {
-            __XRGraphicsAutomatedTests_unity2_raw::get_activated_from_command_line(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __XRGraphicsAutomatedTests_unity2_raw::get_activated_from_command_line(::core::option::Option::None) }
     }
+
     #[doc = "`get_enabled()` overload"]
     pub fn get_enabled() -> bool {
         unsafe { __XRGraphicsAutomatedTests_unity2_raw::get_enabled(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __XRGraphicsAutomatedTests_unity2_raw::cctor(::core::option::Option::None) }
@@ -175,8 +145,7 @@ impl XRGraphicsAutomatedTests {
 #[cfg(feature = "unity_engine-rendering-xrgraphicsautomatedtests")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IXRGraphicsAutomatedTests;
-    pub use super::XRGraphicsAutomatedTests;
+    pub use super::{IXRGraphicsAutomatedTests, XRGraphicsAutomatedTests};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

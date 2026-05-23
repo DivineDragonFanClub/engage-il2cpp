@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsontableconverter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/serialization/json/jsontableconverter/JsonTableConverter.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Serialization.Json",
-        name = "JsonTableConverter"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Serialization.Json", name = "JsonTableConverter")]
     #[parent(crate::system::object::Object)]
     pub struct JsonTableConverter {}
 }
@@ -28,9 +25,7 @@ mod __JsonTableConverter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_table_to_json {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -44,43 +39,31 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "TableToJson",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "TableToJson",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn table_to_json(
         table: crate::moon_sharp::interpreter::table::Table,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_table_to_json::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_table_to_json::get_method_info().method_ptr);
         inner(table, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_object_to_json {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JsonTableConverter as ::unity2::ClassIdentity>::class(),
                 "ObjectToJson",
@@ -92,43 +75,28 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "ObjectToJson",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "ObjectToJson",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn object_to_json(
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_object_to_json::get_offset() as isize),
-        );
+    pub unsafe fn object_to_json(obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::system::object::Object, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_object_to_json::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_escape_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JsonTableConverter as ::unity2::ClassIdentity>::class(),
                 "EscapeString",
@@ -140,44 +108,29 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "EscapeString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "EscapeString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn escape_string(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_escape_string::get_offset() as isize),
-        );
+    pub unsafe fn escape_string(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_escape_string::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_value_json_compatible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JsonTableConverter as ::unity2::ClassIdentity>::class(),
                 "IsValueJsonCompatible",
@@ -189,41 +142,30 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "IsValueJsonCompatible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "IsValueJsonCompatible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_value_json_compatible(
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_value_json_compatible::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_value_json_compatible::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_json_to_table {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
@@ -239,18 +181,15 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "JsonToTable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "JsonToTable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn json_to_table(
@@ -262,21 +201,18 @@ mod __JsonTableConverter_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::script::Script,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_json_to_table::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_json_to_table::get_method_info().method_ptr);
         inner(json, script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_assert_token {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: lexer :: Lexer as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::tree::lexer::Lexer as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::tokentype::TokenType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JsonTableConverter as ::unity2::ClassIdentity>::class(),
                 "AssertToken",
@@ -288,18 +224,15 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "AssertToken",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "AssertToken",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn assert_token(
@@ -311,20 +244,14 @@ mod __JsonTableConverter_unity2_raw {
             crate::moon_sharp::interpreter::tree::lexer::Lexer,
             crate::moon_sharp::interpreter::tree::tokentype::TokenType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_assert_token::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_assert_token::get_method_info().method_ptr);
         inner(l, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_parse_json_array {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::tree::lexer::Lexer as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
@@ -340,18 +267,15 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "ParseJsonArray",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "ParseJsonArray",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn parse_json_array(
@@ -363,20 +287,14 @@ mod __JsonTableConverter_unity2_raw {
             crate::moon_sharp::interpreter::tree::lexer::Lexer,
             crate::moon_sharp::interpreter::script::Script,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_parse_json_array::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_parse_json_array::get_method_info().method_ptr);
         inner(l, script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_parse_json_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::tree::lexer::Lexer as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
@@ -392,18 +310,15 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "ParseJsonObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "ParseJsonObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn parse_json_object(
@@ -415,20 +330,14 @@ mod __JsonTableConverter_unity2_raw {
             crate::moon_sharp::interpreter::tree::lexer::Lexer,
             crate::moon_sharp::interpreter::script::Script,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_parse_json_object::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_parse_json_object::get_method_info().method_ptr);
         inner(l, script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_parse_json_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::tree::lexer::Lexer as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
@@ -444,18 +353,15 @@ mod __JsonTableConverter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
-                    "ParseJsonValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JsonTableConverter as ::unity2::ClassIdentity>::NAME,
+                        "ParseJsonValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn parse_json_value(
@@ -467,11 +373,7 @@ mod __JsonTableConverter_unity2_raw {
             crate::moon_sharp::interpreter::tree::lexer::Lexer,
             crate::moon_sharp::interpreter::script::Script,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_parse_json_value::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_parse_json_value::get_method_info().method_ptr);
         inner(l, script, __unity2_method_info)
     }
 }
@@ -479,49 +381,25 @@ mod __JsonTableConverter_unity2_raw {
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsontableconverter")]
 impl JsonTableConverter {
     #[doc = "`TableToJson(crate::moon_sharp::interpreter::table::Table)` overload"]
-    pub fn table_to_json(
-        table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __JsonTableConverter_unity2_raw::table_to_json(
-                ::core::convert::Into::into(table),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn table_to_json(table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>) -> ::unity2::Il2CppString {
+        unsafe { __JsonTableConverter_unity2_raw::table_to_json(::core::convert::Into::into(table), ::core::option::Option::None) }
     }
+
     #[doc = "`ObjectToJson(crate::system::object::Object)` overload"]
-    pub fn object_to_json(
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __JsonTableConverter_unity2_raw::object_to_json(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn object_to_json(obj: impl ::core::convert::Into<crate::system::object::Object>) -> ::unity2::Il2CppString {
+        unsafe { __JsonTableConverter_unity2_raw::object_to_json(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`EscapeString(::unity2::Il2CppString)` overload"]
-    pub fn escape_string(
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __JsonTableConverter_unity2_raw::escape_string(
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn escape_string(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __JsonTableConverter_unity2_raw::escape_string(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`IsValueJsonCompatible(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn is_value_json_compatible(
-        value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> bool {
-        unsafe {
-            __JsonTableConverter_unity2_raw::is_value_json_compatible(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_value_json_compatible(value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> bool {
+        unsafe { __JsonTableConverter_unity2_raw::is_value_json_compatible(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`JsonToTable(::unity2::Il2CppString, crate::moon_sharp::interpreter::script::Script)` overload"]
     pub fn json_to_table(
         json: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -535,6 +413,7 @@ impl JsonTableConverter {
             )
         }
     }
+
     #[doc = "`AssertToken(crate::moon_sharp::interpreter::tree::lexer::Lexer, crate::moon_sharp::interpreter::tree::tokentype::TokenType)` overload"]
     pub fn assert_token(
         l: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::lexer::Lexer>,
@@ -548,6 +427,7 @@ impl JsonTableConverter {
             )
         }
     }
+
     #[doc = "`ParseJsonArray(crate::moon_sharp::interpreter::tree::lexer::Lexer, crate::moon_sharp::interpreter::script::Script)` overload"]
     pub fn parse_json_array(
         l: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::lexer::Lexer>,
@@ -561,6 +441,7 @@ impl JsonTableConverter {
             )
         }
     }
+
     #[doc = "`ParseJsonObject(crate::moon_sharp::interpreter::tree::lexer::Lexer, crate::moon_sharp::interpreter::script::Script)` overload"]
     pub fn parse_json_object(
         l: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::lexer::Lexer>,
@@ -574,6 +455,7 @@ impl JsonTableConverter {
             )
         }
     }
+
     #[doc = "`ParseJsonValue(crate::moon_sharp::interpreter::tree::lexer::Lexer, crate::moon_sharp::interpreter::script::Script)` overload"]
     pub fn parse_json_value(
         l: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::lexer::Lexer>,
@@ -592,8 +474,7 @@ impl JsonTableConverter {
 #[cfg(feature = "moon_sharp-interpreter-serialization-json-jsontableconverter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IJsonTableConverter;
-    pub use super::JsonTableConverter;
+    pub use super::{IJsonTableConverter, JsonTableConverter};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

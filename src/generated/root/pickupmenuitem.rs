@@ -2,14 +2,14 @@
 
 #[cfg(feature = "root-pickupmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::root::tutoriallisttopbasicmenuitem::{
-        ITutorialListTopBasicMenuItem, TutorialListTopBasicMenuItem,
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem, TutorialListTopBasicMenuItem},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/pickupmenuitem/PickUpMenuItem.md"))]
     #[::unity2::class(namespace = "", name = "PickUpMenuItem")]
@@ -29,10 +29,11 @@ mod __PickUpMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PickUpMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -44,24 +45,21 @@ mod __PickUpMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PickUpMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PickUpMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: PickUpMenuItem,
         is_get_all_tutorial: bool,
-        decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler,
+        decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -69,25 +67,14 @@ mod __PickUpMenuItem_unity2_raw {
             bool,
             crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_get_all_tutorial,
-            decide_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, is_get_all_tutorial, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PickUpMenuItem as ::unity2::ClassIdentity>::class(),
@@ -100,32 +87,20 @@ mod __PickUpMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PickUpMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PickUpMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn a_call(
-        this: PickUpMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            PickUpMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn a_call(this: PickUpMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(PickUpMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -136,14 +111,10 @@ pub trait IPickUpMenuItemMethods: IPickUpMenuItem {
     fn ctor(
         self,
         is_get_all_tutorial: impl ::core::convert::Into<bool>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
-        >,
+        decide_event_handler: impl ::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <PickUpMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PickUpMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PickUpMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(is_get_all_tutorial),
@@ -155,9 +126,7 @@ pub trait IPickUpMenuItemMethods: IPickUpMenuItem {
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <PickUpMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PickUpMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PickUpMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -169,10 +138,7 @@ impl<__T: IPickUpMenuItem> IPickUpMenuItemMethods for __T {}
 #[cfg(feature = "root-pickupmenuitem")]
 impl PickUpMenuItem {
     #[doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        is_get_all_tutorial: bool,
-        decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler,
-    ) -> Self {
+    pub fn new(is_get_all_tutorial: bool, decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -188,16 +154,12 @@ impl PickUpMenuItem {
 #[cfg(feature = "root-pickupmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPickUpMenuItem;
-    pub use super::IPickUpMenuItemMethods;
-    pub use super::PickUpMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IPickUpMenuItem, IPickUpMenuItemMethods, PickUpMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::root::tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItem;
     #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
     pub use crate::root::tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, root::tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItem, system::object::IObject};
 }

@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/parameterdescriptor/ParameterDescriptor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
-        name = "ParameterDescriptor"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors", name = "ParameterDescriptor")]
     #[parent(crate::system::object::Object)]
     pub struct ParameterDescriptor {
         #[rename(name = "m_OriginalType")]
@@ -31,9 +28,7 @@ mod __ParameterDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -46,43 +41,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_Name",
@@ -94,43 +74,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_name(
-        this: ParameterDescriptor,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name::get_offset() as isize),
-        );
+    pub unsafe fn set_name(this: ParameterDescriptor, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -143,43 +107,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_Type",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_type(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_type::get_offset() as isize),
-        );
+    pub unsafe fn get_type(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_Type",
@@ -191,43 +140,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_Type",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_Type",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_type(
-        this: ParameterDescriptor,
-        value: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_type::get_offset() as isize),
-        );
+    pub unsafe fn set_type(this: ParameterDescriptor, value: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -240,41 +173,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_HasDefaultValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_HasDefaultValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_default_value(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_default_value(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_default_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_default_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_has_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_HasDefaultValue",
@@ -286,40 +206,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_HasDefaultValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_HasDefaultValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_has_default_value(
-        this: ParameterDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_has_default_value(this: ParameterDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ParameterDescriptor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_has_default_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_has_default_value::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -332,43 +239,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_DefaultValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_DefaultValue",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_default_value(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_default_value::get_offset() as isize),
-        );
+    pub unsafe fn get_default_value(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_default_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_default_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_DefaultValue",
@@ -380,18 +272,15 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_DefaultValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_DefaultValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_default_value(
@@ -399,24 +288,15 @@ mod __ParameterDescriptor_unity2_raw {
         value: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_default_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ParameterDescriptor, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_default_value::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -429,41 +309,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsOut",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsOut",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_out(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_out(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_out::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_out::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_IsOut",
@@ -475,40 +342,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_IsOut",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_IsOut",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_out(
-        this: ParameterDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_out(this: ParameterDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ParameterDescriptor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_out::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_out::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_ref {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -521,41 +375,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsRef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsRef",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_ref(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_ref(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_ref::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_ref::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_ref {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_IsRef",
@@ -567,40 +408,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_IsRef",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_IsRef",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_ref(
-        this: ParameterDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_ref(this: ParameterDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ParameterDescriptor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_ref::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_ref::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_var_args {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -613,41 +441,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_IsVarArgs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_IsVarArgs",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_var_args(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_var_args(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_var_args::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_var_args::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_var_args {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "set_IsVarArgs",
@@ -659,40 +474,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "set_IsVarArgs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "set_IsVarArgs",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_var_args(
-        this: ParameterDescriptor,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_var_args(this: ParameterDescriptor, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ParameterDescriptor, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_var_args::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_var_args::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_has_been_restricted {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -705,39 +507,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_HasBeenRestricted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_HasBeenRestricted",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_has_been_restricted(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_has_been_restricted(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_has_been_restricted::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_has_been_restricted::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_original_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -750,41 +540,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "get_OriginalType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "get_OriginalType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_original_type(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_original_type::get_offset() as isize),
-        );
+    pub unsafe fn get_original_type(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_original_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -805,18 +581,15 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -840,11 +613,7 @@ mod __ParameterDescriptor_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             name,
@@ -861,9 +630,7 @@ mod __ParameterDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -885,18 +652,15 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -922,11 +686,7 @@ mod __ParameterDescriptor_unity2_raw {
             bool,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(
             this,
             name,
@@ -944,10 +704,9 @@ mod __ParameterDescriptor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: parameterinfo :: ParameterInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::parameterinfo::ParameterInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -959,18 +718,15 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -978,24 +734,15 @@ mod __ParameterDescriptor_unity2_raw {
         pi: crate::system::reflection::parameterinfo::ParameterInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            crate::system::reflection::parameterinfo::ParameterInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ParameterDescriptor, crate::system::reflection::parameterinfo::ParameterInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, pi, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
@@ -1008,43 +755,28 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: ParameterDescriptor,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: ParameterDescriptor, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_restrict_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ParameterDescriptor as ::unity2::ClassIdentity>::class(),
                 "RestrictType",
@@ -1056,43 +788,27 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "RestrictType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "RestrictType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn restrict_type(
-        this: ParameterDescriptor,
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_restrict_type::get_offset() as isize),
-        );
+    pub unsafe fn restrict_type(this: ParameterDescriptor, r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ParameterDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_restrict_type::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_for_wiring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1106,18 +822,15 @@ mod __ParameterDescriptor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
-                    "PrepareForWiring",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ParameterDescriptor as ::unity2::ClassIdentity>::NAME,
+                        "PrepareForWiring",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_for_wiring(
@@ -1125,15 +838,8 @@ mod __ParameterDescriptor_unity2_raw {
         table: crate::moon_sharp::interpreter::table::Table,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ParameterDescriptor,
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_for_wiring::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ParameterDescriptor, crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare_for_wiring::get_method_info().method_ptr);
         inner(this, table, __unity2_method_info)
     }
 }
@@ -1143,191 +849,113 @@ pub trait IParameterDescriptorMethods: IParameterDescriptor {
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
     fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Type()` overload"]
     fn get_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::get_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Type(::unity2::SystemType)` overload"]
     fn set_type(self, value: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HasDefaultValue()` overload"]
     fn get_has_default_value(self) -> bool {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::get_has_default_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::get_has_default_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_HasDefaultValue(bool)` overload"]
     fn set_has_default_value(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_has_default_value(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_has_default_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DefaultValue()` overload"]
     fn get_default_value(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::get_default_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::get_default_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DefaultValue(crate::system::object::Object)` overload"]
-    fn set_default_value(
-        self,
-        value: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn set_default_value(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_default_value(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_default_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsOut()` overload"]
     fn get_is_out(self) -> bool {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::get_is_out(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsOut(bool)` overload"]
     fn set_is_out(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_is_out(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_is_out(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsRef()` overload"]
     fn get_is_ref(self) -> bool {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::get_is_ref(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsRef(bool)` overload"]
     fn set_is_ref(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_is_ref(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_is_ref(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsVarArgs()` overload"]
     fn get_is_var_args(self) -> bool {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::get_is_var_args(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::get_is_var_args(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsVarArgs(bool)` overload"]
     fn set_is_var_args(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::set_is_var_args(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::set_is_var_args(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_HasBeenRestricted()` overload"]
     fn get_has_been_restricted(self) -> bool {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::get_has_been_restricted(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::get_has_been_restricted(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_OriginalType()` overload"]
     fn get_original_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::get_original_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::get_original_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::SystemType, bool, ::unity2::IlInstance, bool, bool, bool)` overload"]
@@ -1342,9 +970,7 @@ pub trait IParameterDescriptorMethods: IParameterDescriptor {
         is_var_args: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1371,9 +997,7 @@ pub trait IParameterDescriptorMethods: IParameterDescriptor {
         type_restriction: impl ::core::convert::Into<::unity2::SystemType>,
     ) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1389,57 +1013,31 @@ pub trait IParameterDescriptorMethods: IParameterDescriptor {
         }
     }
     #[doc = "`.ctor(crate::system::reflection::parameterinfo::ParameterInfo)` overload"]
-    fn ctor_3(
-        self,
-        pi: impl ::core::convert::Into<crate::system::reflection::parameterinfo::ParameterInfo>,
-    ) -> () {
+    fn ctor_3(self, pi: impl ::core::convert::Into<crate::system::reflection::parameterinfo::ParameterInfo>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(pi),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(pi), ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ParameterDescriptor_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RestrictType(::unity2::SystemType)` overload"]
     fn restrict_type(self, r#type: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::restrict_type(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::restrict_type(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]
-    fn prepare_for_wiring(
-        self,
-        table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-    ) -> () {
+    fn prepare_for_wiring(self, table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>) -> () {
         unsafe {
-            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ParameterDescriptor_unity2_raw::prepare_for_wiring(
-                __receiver,
-                ::core::convert::Into::into(table),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ParameterDescriptor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ParameterDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(table), ::core::option::Option::None)
         }
     }
 }
@@ -1466,16 +1064,7 @@ impl ParameterDescriptor {
                 ::core::stringify!(new),
             )
         });
-        <Self as IParameterDescriptorMethods>::ctor(
-            this,
-            name,
-            r#type,
-            has_default_value,
-            default_value,
-            is_out,
-            is_ref,
-            is_var_args,
-        );
+        <Self as IParameterDescriptorMethods>::ctor(this, name, r#type, has_default_value, default_value, is_out, is_ref, is_var_args);
         this
     }
 
@@ -1528,9 +1117,7 @@ impl ParameterDescriptor {
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IParameterDescriptor;
-    pub use super::IParameterDescriptorMethods;
-    pub use super::ParameterDescriptor;
+    pub use super::{IParameterDescriptor, IParameterDescriptorMethods, ParameterDescriptor};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

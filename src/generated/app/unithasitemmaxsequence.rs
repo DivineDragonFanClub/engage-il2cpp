@@ -2,32 +2,31 @@
 
 #[cfg(feature = "app-unithasitemmaxsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct UnitHasItemMaxSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for UnitHasItemMaxSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "UnitHasItemMaxSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -38,10 +37,7 @@ mod __types {
 
     impl ::unity2::IlType for UnitHasItemMaxSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -94,9 +90,7 @@ mod __UnitHasItemMaxSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -114,18 +108,15 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -141,20 +132,14 @@ mod __UnitHasItemMaxSequence_unity2_raw {
             crate::app::unititem::UnitItem,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, unit, unit_item, label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -171,18 +156,15 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -198,20 +180,14 @@ mod __UnitHasItemMaxSequence_unity2_raw {
             crate::app::unititem::UnitItem,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, unit, unit_item, label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_descs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::class(),
@@ -224,41 +200,30 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDescs",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDescs",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_descs(
         this: UnitHasItemMaxSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            UnitHasItemMaxSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_descs::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitHasItemMaxSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_descs::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_get_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::class(),
@@ -271,39 +236,27 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "ShowGetMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "ShowGetMessage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_get_message(
-        this: UnitHasItemMaxSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_get_message(this: UnitHasItemMaxSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitHasItemMaxSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_get_message::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_get_message::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_send_item_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::class(),
@@ -316,39 +269,27 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSendItemMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSendItemMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_send_item_menu(
-        this: UnitHasItemMaxSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_send_item_menu(this: UnitHasItemMaxSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitHasItemMaxSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_send_item_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_send_item_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_branch_discard_or_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::class(),
@@ -361,39 +302,27 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "BranchDiscardOrExecute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "BranchDiscardOrExecute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn branch_discard_or_execute(
-        this: UnitHasItemMaxSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn branch_discard_or_execute(this: UnitHasItemMaxSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitHasItemMaxSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_branch_discard_or_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_branch_discard_or_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_discard_item_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::class(),
@@ -406,39 +335,27 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDiscardItemMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDiscardItemMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_discard_item_menu(
-        this: UnitHasItemMaxSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_discard_item_menu(this: UnitHasItemMaxSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitHasItemMaxSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_discard_item_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_discard_item_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::class(),
@@ -451,30 +368,20 @@ mod __UnitHasItemMaxSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitHasItemMaxSequence as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute(
-        this: UnitHasItemMaxSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute(this: UnitHasItemMaxSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitHasItemMaxSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -510,9 +417,8 @@ pub trait IUnitHasItemMaxSequenceMethods: IUnitHasItemMaxSequence {
         label: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitHasItemMaxSequence_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -525,69 +431,48 @@ pub trait IUnitHasItemMaxSequenceMethods: IUnitHasItemMaxSequence {
     #[doc = "`CreateDescs()` overload"]
     fn create_descs(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitHasItemMaxSequence_unity2_raw::create_descs(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitHasItemMaxSequence_unity2_raw::create_descs(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowGetMessage()` overload"]
     fn show_get_message(self) -> () {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitHasItemMaxSequence_unity2_raw::show_get_message(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitHasItemMaxSequence_unity2_raw::show_get_message(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSendItemMenu()` overload"]
     fn create_send_item_menu(self) -> () {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitHasItemMaxSequence_unity2_raw::create_send_item_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitHasItemMaxSequence_unity2_raw::create_send_item_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BranchDiscardOrExecute()` overload"]
     fn branch_discard_or_execute(self) -> () {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitHasItemMaxSequence_unity2_raw::branch_discard_or_execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitHasItemMaxSequence_unity2_raw::branch_discard_or_execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDiscardItemMenu()` overload"]
     fn create_discard_item_menu(self) -> () {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitHasItemMaxSequence_unity2_raw::create_discard_item_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitHasItemMaxSequence_unity2_raw::create_discard_item_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Execute()` overload"]
     fn execute(self) -> () {
         unsafe {
-            let __receiver = <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnitHasItemMaxSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitHasItemMaxSequence_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
@@ -599,11 +484,7 @@ impl<__T: IUnitHasItemMaxSequence> IUnitHasItemMaxSequenceMethods for __T {}
 #[cfg(feature = "app-unithasitemmaxsequence")]
 impl UnitHasItemMaxSequence {
     #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unititem::UnitItem, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-        label: ::unity2::Il2CppString,
-    ) -> Self {
+    pub fn new(unit: crate::app::unit::Unit, unit_item: crate::app::unititem::UnitItem, label: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -619,23 +500,19 @@ impl UnitHasItemMaxSequence {
 #[cfg(feature = "app-unithasitemmaxsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitHasItemMaxSequence;
-    pub use super::IUnitHasItemMaxSequenceMethods;
-    pub use super::UnitHasItemMaxSequence;
-    pub use super::UnitHasItemMaxSequence_Label;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IUnitHasItemMaxSequence, IUnitHasItemMaxSequenceMethods, UnitHasItemMaxSequence, UnitHasItemMaxSequence_Label};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

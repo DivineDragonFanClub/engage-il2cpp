@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-reflection-icustomattributeprovider-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/icustomattributeprovider/ICustomAttributeProvider.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "ICustomAttributeProvider")]
@@ -23,9 +23,7 @@ mod __ICustomAttributeProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -41,18 +39,15 @@ mod __ICustomAttributeProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ICustomAttributeProvider as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ICustomAttributeProvider as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes(
@@ -66,20 +61,14 @@ mod __ICustomAttributeProvider_unity2_raw {
             ::unity2::SystemType,
             bool,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_custom_attributes::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__lookup_get_custom_attributes::get_method_info().method_ptr);
         inner(this, attribute_type, inherit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_defined {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -95,18 +84,15 @@ mod __ICustomAttributeProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ICustomAttributeProvider as ::unity2::ClassIdentity>::NAME,
-                    "IsDefined",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ICustomAttributeProvider as ::unity2::ClassIdentity>::NAME,
+                        "IsDefined",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_defined(
@@ -115,16 +101,8 @@ mod __ICustomAttributeProvider_unity2_raw {
         inherit: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            ICustomAttributeProvider,
-            ::unity2::SystemType,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_defined::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ICustomAttributeProvider, ::unity2::SystemType, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_defined::get_method_info().method_ptr);
         inner(this, attribute_type, inherit, __unity2_method_info)
     }
 }
@@ -139,9 +117,7 @@ pub trait IICustomAttributeProviderMethods: IICustomAttributeProvider {
     ) -> ::unity2::Array<crate::system::object::Object> {
         unsafe {
             let __receiver =
-                <ICustomAttributeProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ICustomAttributeProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ICustomAttributeProvider_unity2_raw::get_custom_attributes(
                 __receiver,
                 ::core::convert::Into::into(attribute_type),
@@ -151,16 +127,10 @@ pub trait IICustomAttributeProviderMethods: IICustomAttributeProvider {
         }
     }
     #[doc = "`IsDefined(::unity2::SystemType, bool)` overload"]
-    fn is_defined(
-        self,
-        attribute_type: impl ::core::convert::Into<::unity2::SystemType>,
-        inherit: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    fn is_defined(self, attribute_type: impl ::core::convert::Into<::unity2::SystemType>, inherit: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             let __receiver =
-                <ICustomAttributeProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ICustomAttributeProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ICustomAttributeProvider_unity2_raw::is_defined(
                 __receiver,
                 ::core::convert::Into::into(attribute_type),
@@ -177,7 +147,5 @@ impl<__T: IICustomAttributeProvider> IICustomAttributeProviderMethods for __T {}
 #[cfg(feature = "system-reflection-icustomattributeprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ICustomAttributeProvider;
-    pub use super::IICustomAttributeProvider;
-    pub use super::IICustomAttributeProviderMethods;
+    pub use super::{ICustomAttributeProvider, IICustomAttributeProvider, IICustomAttributeProviderMethods};
 }

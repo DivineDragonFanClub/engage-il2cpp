@@ -2,14 +2,18 @@
 
 #[cfg(feature = "app-hubanimalcontroller-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubanimalcontroller/HubAnimalController.md"))]
     #[::unity2::class(namespace = "App", name = "HubAnimalController")]
@@ -40,9 +44,7 @@ mod __HubAnimalController_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAnimalController as ::unity2::ClassIdentity>::class(),
@@ -55,39 +57,27 @@ mod __HubAnimalController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAnimalController as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAnimalController as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: HubAnimalController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: HubAnimalController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAnimalController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAnimalController as ::unity2::ClassIdentity>::class(),
@@ -100,42 +90,29 @@ mod __HubAnimalController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAnimalController as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAnimalController as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: HubAnimalController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: HubAnimalController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAnimalController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enter_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAnimalController as ::unity2::ClassIdentity>::class(),
                 "EnterRange",
@@ -147,18 +124,15 @@ mod __HubAnimalController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAnimalController as ::unity2::ClassIdentity>::NAME,
-                    "EnterRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAnimalController as ::unity2::ClassIdentity>::NAME,
+                        "EnterRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enter_range(
@@ -166,27 +140,17 @@ mod __HubAnimalController_unity2_raw {
         unit: crate::app::hubunitcontroller::HubUnitController,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubAnimalController,
-            crate::app::hubunitcontroller::HubUnitController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enter_range::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAnimalController, crate::app::hubunitcontroller::HubUnitController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enter_range::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_leave_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubunitcontroller::HubUnitController as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAnimalController as ::unity2::ClassIdentity>::class(),
                 "LeaveRange",
@@ -198,18 +162,15 @@ mod __HubAnimalController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAnimalController as ::unity2::ClassIdentity>::NAME,
-                    "LeaveRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAnimalController as ::unity2::ClassIdentity>::NAME,
+                        "LeaveRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn leave_range(
@@ -217,24 +178,15 @@ mod __HubAnimalController_unity2_raw {
         unit: crate::app::hubunitcontroller::HubUnitController,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            HubAnimalController,
-            crate::app::hubunitcontroller::HubUnitController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_leave_range::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubAnimalController, crate::app::hubunitcontroller::HubUnitController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_leave_range::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubAnimalController as ::unity2::ClassIdentity>::class(),
@@ -247,30 +199,20 @@ mod __HubAnimalController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubAnimalController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubAnimalController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubAnimalController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubAnimalController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubAnimalController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -280,59 +222,35 @@ pub trait IHubAnimalControllerMethods: IHubAnimalController {
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAnimalController_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAnimalController_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EnterRange(crate::app::hubunitcontroller::HubUnitController)` overload"]
-    fn enter_range(
-        self,
-        unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>,
-    ) -> () {
+    fn enter_range(self, unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>) -> () {
         unsafe {
-            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAnimalController_unity2_raw::enter_range(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAnimalController_unity2_raw::enter_range(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`LeaveRange(crate::app::hubunitcontroller::HubUnitController)` overload"]
-    fn leave_range(
-        self,
-        unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>,
-    ) -> () {
+    fn leave_range(self, unit: impl ::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>) -> () {
         unsafe {
-            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubAnimalController_unity2_raw::leave_range(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubAnimalController_unity2_raw::leave_range(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HubAnimalController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubAnimalController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -360,22 +278,19 @@ impl HubAnimalController {
 #[cfg(feature = "app-hubanimalcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubAnimalController;
-    pub use super::IHubAnimalController;
-    pub use super::IHubAnimalControllerMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{HubAnimalController, IHubAnimalController, IHubAnimalControllerMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

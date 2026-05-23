@@ -2,19 +2,22 @@
 
 #[cfg(feature = "tm_pro-compute_dt_eventargs-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/compute_dt_eventargs/Compute_DT_EventArgs.md"))]
     #[::unity2::class(namespace = "TMPro", name = "Compute_DT_EventArgs")]
     #[parent(crate::system::object::Object)]
     pub struct Compute_DT_EventArgs {
-# [rename (name = "EventType")] pub event_type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes ,
-# [rename (name = "ProgressPercentage")] pub progress_percentage : f32 ,
-# [rename (name = "Colors")] pub colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
-}
+        #[rename(name = "EventType")]
+        pub event_type: crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
+        #[rename(name = "ProgressPercentage")]
+        pub progress_percentage: f32,
+        #[rename(name = "Colors")]
+        pub colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    }
 }
 
 #[cfg(feature = "tm_pro-compute_dt_eventargs-types")]
@@ -29,10 +32,11 @@ mod __Compute_DT_EventArgs_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Compute_DT_EventArgs as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -44,37 +48,40 @@ mod __Compute_DT_EventArgs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Compute_DT_EventArgs as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Compute_DT_EventArgs as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: Compute_DT_EventArgs,
-        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        r#type: crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
         progress: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (Compute_DT_EventArgs , crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            Compute_DT_EventArgs,
+            crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r#type, progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Compute_DT_EventArgs as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -86,27 +93,29 @@ mod __Compute_DT_EventArgs_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Compute_DT_EventArgs as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Compute_DT_EventArgs as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
         this: Compute_DT_EventArgs,
-        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        r#type: crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
         colors: ::unity2::Array<crate::unity_engine::color::Color>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (Compute_DT_EventArgs , crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes , :: unity2 :: Array < crate :: unity_engine :: color :: Color > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            Compute_DT_EventArgs,
+            crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
+            ::unity2::Array<crate::unity_engine::color::Color>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, r#type, colors, __unity2_method_info)
     }
 }
@@ -116,13 +125,12 @@ pub trait ICompute_DT_EventArgsMethods: ICompute_DT_EventArgs {
     #[doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, f32)` overload"]
     fn ctor(
         self,
-        r#type : impl :: core :: convert :: Into < crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes >,
+        r#type: impl ::core::convert::Into<crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes>,
         progress: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <Compute_DT_EventArgs as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Compute_DT_EventArgs as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Compute_DT_EventArgs_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -134,13 +142,12 @@ pub trait ICompute_DT_EventArgsMethods: ICompute_DT_EventArgs {
     #[doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, ::unity2::Array<crate::unity_engine::color::Color>)` overload"]
     fn ctor_2(
         self,
-        r#type : impl :: core :: convert :: Into < crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes >,
+        r#type: impl ::core::convert::Into<crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes>,
         colors: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::color::Color>>,
     ) -> () {
         unsafe {
-            let __receiver = <Compute_DT_EventArgs as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <Compute_DT_EventArgs as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Compute_DT_EventArgs_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -157,10 +164,7 @@ impl<__T: ICompute_DT_EventArgs> ICompute_DT_EventArgsMethods for __T {}
 #[cfg(feature = "tm_pro-compute_dt_eventargs")]
 impl Compute_DT_EventArgs {
     #[doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, f32)` — overload selector"]
-    pub fn new(
-        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
-        progress: f32,
-    ) -> Self {
+    pub fn new(r#type: crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, progress: f32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -174,7 +178,7 @@ impl Compute_DT_EventArgs {
 
     #[doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, ::unity2::Array<crate::unity_engine::color::Color>)` — overload selector"]
     pub fn new_2(
-        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        r#type: crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
         colors: ::unity2::Array<crate::unity_engine::color::Color>,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
@@ -192,9 +196,7 @@ impl Compute_DT_EventArgs {
 #[cfg(feature = "tm_pro-compute_dt_eventargs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Compute_DT_EventArgs;
-    pub use super::ICompute_DT_EventArgs;
-    pub use super::ICompute_DT_EventArgsMethods;
+    pub use super::{Compute_DT_EventArgs, ICompute_DT_EventArgs, ICompute_DT_EventArgsMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

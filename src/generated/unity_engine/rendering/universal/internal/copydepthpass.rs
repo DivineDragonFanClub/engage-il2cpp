@@ -2,19 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-copydepthpass-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::universal::scriptablerenderpass::{
-        IScriptableRenderPass, ScriptableRenderPass,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/copydepthpass/CopyDepthPass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Internal",
-        name = "CopyDepthPass"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Internal", name = "CopyDepthPass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CopyDepthPass {
         #[rename(name = "m_CopyDepthMaterial")]
@@ -34,9 +31,7 @@ mod __CopyDepthPass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_source {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
@@ -49,35 +44,35 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "get_source",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "get_source",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source(
         this: CopyDepthPass,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
-        let inner : extern "C" fn (CopyDepthPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_source :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CopyDepthPass,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle =
+            ::core::mem::transmute(__lookup_get_source::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_source {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
                 "set_source",
@@ -89,18 +84,15 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "set_source",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "set_source",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_source(
@@ -112,20 +104,14 @@ mod __CopyDepthPass_unity2_raw {
             CopyDepthPass,
             crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_source::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_destination {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
@@ -138,35 +124,35 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "get_destination",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "get_destination",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_destination(
         this: CopyDepthPass,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
-        let inner : extern "C" fn (CopyDepthPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_destination :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            CopyDepthPass,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle =
+            ::core::mem::transmute(__lookup_get_destination::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_destination {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
                 "set_destination",
@@ -178,18 +164,15 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "set_destination",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "set_destination",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_destination(
@@ -201,20 +184,14 @@ mod __CopyDepthPass_unity2_raw {
             CopyDepthPass,
             crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_destination::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_destination::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_allocate_rt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
@@ -227,41 +204,28 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "get_AllocateRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "get_AllocateRT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_allocate_rt(
-        this: CopyDepthPass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_allocate_rt(this: CopyDepthPass, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CopyDepthPass, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_allocate_rt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_allocate_rt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_allocate_rt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
                 "set_AllocateRT",
@@ -273,64 +237,45 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "set_AllocateRT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "set_AllocateRT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_allocate_rt(
-        this: CopyDepthPass,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_allocate_rt(this: CopyDepthPass, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CopyDepthPass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_allocate_rt::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_allocate_rt::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CopyDepthPass as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CopyDepthPass as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -344,50 +289,38 @@ mod __CopyDepthPass_unity2_raw {
             crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, evt, copy_depth_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CopyDepthPass as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<CopyDepthPass as ::unity2::ClassIdentity>::class(), "Setup", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
         this: CopyDepthPass,
         source: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        destination : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+        destination: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -395,21 +328,18 @@ mod __CopyDepthPass_unity2_raw {
             crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
             crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, source, destination, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_camera_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
                 "OnCameraSetup",
@@ -421,24 +351,21 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "OnCameraSetup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "OnCameraSetup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_camera_setup(
         this: CopyDepthPass,
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -446,21 +373,18 @@ mod __CopyDepthPass_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_camera_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_camera_setup::get_method_info().method_ptr);
         inner(this, cmd, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -472,24 +396,21 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: CopyDepthPass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -497,21 +418,16 @@ mod __CopyDepthPass_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_camera_cleanup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CopyDepthPass as ::unity2::ClassIdentity>::class(),
                 "OnCameraCleanup",
@@ -523,18 +439,15 @@ mod __CopyDepthPass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
-                    "OnCameraCleanup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CopyDepthPass as ::unity2::ClassIdentity>::NAME,
+                        "OnCameraCleanup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_camera_cleanup(
@@ -542,15 +455,8 @@ mod __CopyDepthPass_unity2_raw {
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CopyDepthPass,
-            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_camera_cleanup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CopyDepthPass, crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_camera_cleanup::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
 }
@@ -558,97 +464,58 @@ mod __CopyDepthPass_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-universal-internal-copydepthpass")]
 pub trait ICopyDepthPassMethods: ICopyDepthPass {
     #[doc = "`get_source()` overload"]
-    fn get_source(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+    fn get_source(self) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CopyDepthPass_unity2_raw::get_source(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_source(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    fn set_source(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        >,
-    ) -> () {
+    fn set_source(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>) -> () {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CopyDepthPass_unity2_raw::set_source(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CopyDepthPass_unity2_raw::set_source(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_destination()` overload"]
-    fn get_destination(
-        self,
-    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
+    fn get_destination(self) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CopyDepthPass_unity2_raw::get_destination(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_destination(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
     fn set_destination(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>,
     ) -> () {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CopyDepthPass_unity2_raw::set_destination(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CopyDepthPass_unity2_raw::set_destination(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AllocateRT()` overload"]
     fn get_allocate_rt(self) -> bool {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CopyDepthPass_unity2_raw::get_allocate_rt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AllocateRT(bool)` overload"]
     fn set_allocate_rt(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CopyDepthPass_unity2_raw::set_allocate_rt(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CopyDepthPass_unity2_raw::set_allocate_rt(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"]
     fn ctor(
         self,
-        evt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
+        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
         copy_depth_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> () {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CopyDepthPass_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(evt),
@@ -660,17 +527,11 @@ pub trait ICopyDepthPassMethods: ICopyDepthPass {
     #[doc = "`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
     fn setup(
         self,
-        source: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        >,
-        destination: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-        >,
+        source: impl ::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>,
+        destination: impl ::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>,
     ) -> () {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CopyDepthPass_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(source),
@@ -685,12 +546,8 @@ pub trait ICopyDepthPassMethods: ICopyDepthPass {
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __CopyDepthPass_unity2_raw::on_camera_setup(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -703,17 +560,11 @@ pub trait ICopyDepthPassMethods: ICopyDepthPass {
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __CopyDepthPass_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -724,19 +575,10 @@ pub trait ICopyDepthPassMethods: ICopyDepthPass {
         }
     }
     #[doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    fn on_camera_cleanup(
-        self,
-        cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
-    ) -> () {
+    fn on_camera_cleanup(self, cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>) -> () {
         unsafe {
-            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CopyDepthPass_unity2_raw::on_camera_cleanup(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CopyDepthPass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CopyDepthPass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
         }
     }
 }
@@ -751,13 +593,8 @@ impl CopyDepthPass {
         evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
         copy_depth_material: crate::unity_engine::material::Material,
     ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CopyDepthPass),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(CopyDepthPass), ::core::stringify!(new),));
         <Self as ICopyDepthPassMethods>::ctor(this, evt, copy_depth_material);
         this
     }
@@ -766,13 +603,10 @@ impl CopyDepthPass {
 #[cfg(feature = "unity_engine-rendering-universal-internal-copydepthpass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CopyDepthPass;
-    pub use super::ICopyDepthPass;
-    pub use super::ICopyDepthPassMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CopyDepthPass, ICopyDepthPass, ICopyDepthPassMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "tm_pro-tmpro_eventmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmpro_eventmanager/TMPro_EventManager.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMPro_EventManager")]
@@ -13,34 +13,20 @@ mod __types {
     pub struct TMPro_EventManager {
         #[static_field]
         #[rename(name = "COMPUTE_DT_EVENT")]
-        pub compute_dt_event: crate::tm_pro::fastaction_2::FastAction_2<
-            crate::system::object::Object,
-            crate::tm_pro::compute_dt_eventargs::Compute_DT_EventArgs,
-        >,
+        pub compute_dt_event:
+            crate::tm_pro::fastaction_2::FastAction_2<crate::system::object::Object, crate::tm_pro::compute_dt_eventargs::Compute_DT_EventArgs>,
         #[static_field]
         #[rename(name = "MATERIAL_PROPERTY_EVENT")]
-        pub material_property_event: crate::tm_pro::fastaction_2::FastAction_2<
-            bool,
-            crate::unity_engine::material::Material,
-        >,
+        pub material_property_event: crate::tm_pro::fastaction_2::FastAction_2<bool, crate::unity_engine::material::Material>,
         #[static_field]
         #[rename(name = "FONT_PROPERTY_EVENT")]
-        pub font_property_event: crate::tm_pro::fastaction_2::FastAction_2<
-            bool,
-            crate::unity_engine::object_2::Object_2,
-        >,
+        pub font_property_event: crate::tm_pro::fastaction_2::FastAction_2<bool, crate::unity_engine::object_2::Object_2>,
         #[static_field]
         #[rename(name = "SPRITE_ASSET_PROPERTY_EVENT")]
-        pub sprite_asset_property_event: crate::tm_pro::fastaction_2::FastAction_2<
-            bool,
-            crate::unity_engine::object_2::Object_2,
-        >,
+        pub sprite_asset_property_event: crate::tm_pro::fastaction_2::FastAction_2<bool, crate::unity_engine::object_2::Object_2>,
         #[static_field]
         #[rename(name = "TEXTMESHPRO_PROPERTY_EVENT")]
-        pub textmeshpro_property_event: crate::tm_pro::fastaction_2::FastAction_2<
-            bool,
-            crate::unity_engine::object_2::Object_2,
-        >,
+        pub textmeshpro_property_event: crate::tm_pro::fastaction_2::FastAction_2<bool, crate::unity_engine::object_2::Object_2>,
         #[static_field]
         #[rename(name = "DRAG_AND_DROP_MATERIAL_EVENT")]
         pub drag_and_drop_material_event: crate::tm_pro::fastaction_3::FastAction_3<
@@ -53,8 +39,7 @@ mod __types {
         pub text_style_property_event: crate::tm_pro::fastaction_1::FastAction_1<bool>,
         #[static_field]
         #[rename(name = "COLOR_GRADIENT_PROPERTY_EVENT")]
-        pub color_gradient_property_event:
-            crate::tm_pro::fastaction_1::FastAction_1<crate::unity_engine::object_2::Object_2>,
+        pub color_gradient_property_event: crate::tm_pro::fastaction_1::FastAction_1<crate::unity_engine::object_2::Object_2>,
         #[static_field]
         #[rename(name = "TMP_SETTINGS_PROPERTY_EVENT")]
         pub tmp_settings_property_event: crate::tm_pro::fastaction::FastAction,
@@ -63,14 +48,10 @@ mod __types {
         pub resource_load_event: crate::tm_pro::fastaction::FastAction,
         #[static_field]
         #[rename(name = "TEXTMESHPRO_UGUI_PROPERTY_EVENT")]
-        pub textmeshpro_ugui_property_event: crate::tm_pro::fastaction_2::FastAction_2<
-            bool,
-            crate::unity_engine::object_2::Object_2,
-        >,
+        pub textmeshpro_ugui_property_event: crate::tm_pro::fastaction_2::FastAction_2<bool, crate::unity_engine::object_2::Object_2>,
         #[static_field]
         #[rename(name = "TEXT_CHANGED_EVENT")]
-        pub text_changed_event:
-            crate::tm_pro::fastaction_1::FastAction_1<crate::unity_engine::object_2::Object_2>,
+        pub text_changed_event: crate::tm_pro::fastaction_1::FastAction_1<crate::unity_engine::object_2::Object_2>,
     }
 }
 
@@ -86,9 +67,7 @@ mod __TMPro_EventManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_material_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -104,18 +83,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_MATERIAL_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_MATERIAL_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_material_property_changed(
@@ -123,24 +99,15 @@ mod __TMPro_EventManager_unity2_raw {
         mat: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            bool,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_material_property_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(bool, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_material_property_changed::get_method_info().method_ptr);
         inner(is_changed, mat, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_font_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -156,18 +123,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_FONT_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_FONT_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_font_property_changed(
@@ -175,24 +139,15 @@ mod __TMPro_EventManager_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            bool,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_font_property_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(bool, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_font_property_changed::get_method_info().method_ptr);
         inner(is_changed, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_sprite_asset_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -208,18 +163,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_SPRITE_ASSET_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_SPRITE_ASSET_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_sprite_asset_property_changed(
@@ -227,24 +179,15 @@ mod __TMPro_EventManager_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            bool,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_sprite_asset_property_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(bool, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_sprite_asset_property_changed::get_method_info().method_ptr);
         inner(is_changed, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_textmeshpro_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -260,18 +203,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_TEXTMESHPRO_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_TEXTMESHPRO_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_textmeshpro_property_changed(
@@ -279,24 +219,15 @@ mod __TMPro_EventManager_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            bool,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_textmeshpro_property_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(bool, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_textmeshpro_property_changed::get_method_info().method_ptr);
         inner(is_changed, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_drag_and_drop_material_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
@@ -313,18 +244,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_DRAG_AND_DROP_MATERIAL_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_DRAG_AND_DROP_MATERIAL_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_drag_and_drop_material_changed(
@@ -338,22 +266,15 @@ mod __TMPro_EventManager_unity2_raw {
             crate::unity_engine::material::Material,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_drag_and_drop_material_changed::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_drag_and_drop_material_changed::get_method_info().method_ptr);
         inner(sender, current_material, new_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_text_style_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
                 "ON_TEXT_STYLE_PROPERTY_CHANGED",
@@ -365,40 +286,28 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_TEXT_STYLE_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_TEXT_STYLE_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_text_style_property_changed(
-        is_changed: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_text_style_property_changed::get_offset() as isize),
-        );
+    pub unsafe fn on_text_style_property_changed(is_changed: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_text_style_property_changed::get_method_info().method_ptr);
         inner(is_changed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_color_gradient_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
                 "ON_COLOR_GRADIENT_PROPERTY_CHANGED",
@@ -410,43 +319,31 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_COLOR_GRADIENT_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_COLOR_GRADIENT_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_color_gradient_property_changed(
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_color_gradient_property_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_color_gradient_property_changed::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_text_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
                 "ON_TEXT_CHANGED",
@@ -458,41 +355,27 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_TEXT_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_TEXT_CHANGED",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_text_changed(
-        obj: crate::unity_engine::object_2::Object_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_text_changed::get_offset() as isize),
-        );
+    pub unsafe fn on_text_changed(obj: crate::unity_engine::object_2::Object_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_text_changed::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_tmp_settings_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
@@ -505,35 +388,27 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_TMP_SETTINGS_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_TMP_SETTINGS_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_tmp_settings_changed(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_tmp_settings_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_tmp_settings_changed::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_resources_loaded {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
@@ -546,35 +421,26 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_RESOURCES_LOADED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_RESOURCES_LOADED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_resources_loaded(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_resources_loaded::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_resources_loaded::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_textmeshpro_ugui_property_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::object_2::Object_2 as ::unity2::IlType>::il_type(),
@@ -590,18 +456,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_textmeshpro_ugui_property_changed(
@@ -609,25 +472,19 @@ mod __TMPro_EventManager_unity2_raw {
         obj: crate::unity_engine::object_2::Object_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            bool,
-            crate::unity_engine::object_2::Object_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_textmeshpro_ugui_property_changed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(bool, crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_textmeshpro_ugui_property_changed::get_method_info().method_ptr);
         inner(is_changed, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_compute_dt_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: tm_pro :: compute_dt_eventargs :: Compute_DT_EventArgs as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::tm_pro::compute_dt_eventargs::Compute_DT_EventArgs as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
                 "ON_COMPUTE_DT_EVENT",
@@ -639,18 +496,15 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    "ON_COMPUTE_DT_EVENT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        "ON_COMPUTE_DT_EVENT",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_compute_dt_event(
@@ -662,20 +516,14 @@ mod __TMPro_EventManager_unity2_raw {
             crate::system::object::Object,
             crate::tm_pro::compute_dt_eventargs::Compute_DT_EventArgs,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_compute_dt_event::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_compute_dt_event::get_method_info().method_ptr);
         inner(sender, e, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMPro_EventManager as ::unity2::ClassIdentity>::class(),
@@ -688,26 +536,19 @@ mod __TMPro_EventManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMPro_EventManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -727,6 +568,7 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`ON_FONT_PROPERTY_CHANGED(bool, crate::unity_engine::object_2::Object_2)` overload"]
     pub fn on_font_property_changed(
         is_changed: impl ::core::convert::Into<bool>,
@@ -740,6 +582,7 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`ON_SPRITE_ASSET_PROPERTY_CHANGED(bool, crate::unity_engine::object_2::Object_2)` overload"]
     pub fn on_sprite_asset_property_changed(
         is_changed: impl ::core::convert::Into<bool>,
@@ -753,6 +596,7 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`ON_TEXTMESHPRO_PROPERTY_CHANGED(bool, crate::unity_engine::object_2::Object_2)` overload"]
     pub fn on_textmeshpro_property_changed(
         is_changed: impl ::core::convert::Into<bool>,
@@ -766,6 +610,7 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`ON_DRAG_AND_DROP_MATERIAL_CHANGED(crate::unity_engine::gameobject::GameObject, crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]
     pub fn on_drag_and_drop_material_changed(
         sender: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
@@ -781,49 +626,34 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`ON_TEXT_STYLE_PROPERTY_CHANGED(bool)` overload"]
     pub fn on_text_style_property_changed(is_changed: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            __TMPro_EventManager_unity2_raw::on_text_style_property_changed(
-                ::core::convert::Into::into(is_changed),
-                ::core::option::Option::None,
-            )
+            __TMPro_EventManager_unity2_raw::on_text_style_property_changed(::core::convert::Into::into(is_changed), ::core::option::Option::None)
         }
     }
+
     #[doc = "`ON_COLOR_GRADIENT_PROPERTY_CHANGED(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn on_color_gradient_property_changed(
-        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
-        unsafe {
-            __TMPro_EventManager_unity2_raw::on_color_gradient_property_changed(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn on_color_gradient_property_changed(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe { __TMPro_EventManager_unity2_raw::on_color_gradient_property_changed(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`ON_TEXT_CHANGED(crate::unity_engine::object_2::Object_2)` overload"]
-    pub fn on_text_changed(
-        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
-    ) -> () {
-        unsafe {
-            __TMPro_EventManager_unity2_raw::on_text_changed(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn on_text_changed(obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe { __TMPro_EventManager_unity2_raw::on_text_changed(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`ON_TMP_SETTINGS_CHANGED()` overload"]
     pub fn on_tmp_settings_changed() -> () {
-        unsafe {
-            __TMPro_EventManager_unity2_raw::on_tmp_settings_changed(::core::option::Option::None)
-        }
+        unsafe { __TMPro_EventManager_unity2_raw::on_tmp_settings_changed(::core::option::Option::None) }
     }
+
     #[doc = "`ON_RESOURCES_LOADED()` overload"]
     pub fn on_resources_loaded() -> () {
-        unsafe {
-            __TMPro_EventManager_unity2_raw::on_resources_loaded(::core::option::Option::None)
-        }
+        unsafe { __TMPro_EventManager_unity2_raw::on_resources_loaded(::core::option::Option::None) }
     }
+
     #[doc = "`ON_TEXTMESHPRO_UGUI_PROPERTY_CHANGED(bool, crate::unity_engine::object_2::Object_2)` overload"]
     pub fn on_textmeshpro_ugui_property_changed(
         is_changed: impl ::core::convert::Into<bool>,
@@ -837,6 +667,7 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`ON_COMPUTE_DT_EVENT(crate::system::object::Object, crate::tm_pro::compute_dt_eventargs::Compute_DT_EventArgs)` overload"]
     pub fn on_compute_dt_event(
         sender: impl ::core::convert::Into<crate::system::object::Object>,
@@ -850,6 +681,7 @@ impl TMPro_EventManager {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __TMPro_EventManager_unity2_raw::cctor(::core::option::Option::None) }
@@ -859,8 +691,7 @@ impl TMPro_EventManager {
 #[cfg(feature = "tm_pro-tmpro_eventmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMPro_EventManager;
-    pub use super::TMPro_EventManager;
+    pub use super::{ITMPro_EventManager, TMPro_EventManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

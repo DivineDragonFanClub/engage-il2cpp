@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-damagesound-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/damagesound/DamageSound.md"))]
     #[::unity2::class(namespace = "Combat", name = "DamageSound")]
@@ -25,39 +25,27 @@ mod __DamageSound_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::phase::Phase as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationevent::AnimationEvent as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DamageSound as ::unity2::ClassIdentity>::class(),
-                "Play",
-                4,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<DamageSound as ::unity2::ClassIdentity>::class(), "Play", 4, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DamageSound as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DamageSound as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play(
@@ -73,11 +61,7 @@ mod __DamageSound_unity2_raw {
             crate::combat::phase::Phase,
             crate::unity_engine::animationevent::AnimationEvent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
         inner(attacker, damager, phase, ev, __unity2_method_info)
     }
 }
@@ -106,8 +90,7 @@ impl DamageSound {
 #[cfg(feature = "combat-damagesound")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DamageSound;
-    pub use super::IDamageSound;
+    pub use super::{DamageSound, IDamageSound};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

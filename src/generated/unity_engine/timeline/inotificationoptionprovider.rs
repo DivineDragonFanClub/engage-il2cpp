@@ -2,15 +2,12 @@
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/inotificationoptionprovider/INotificationOptionProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Timeline",
-        name = "INotificationOptionProvider"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Timeline", name = "INotificationOptionProvider")]
     pub struct INotificationOptionProvider {}
 }
 
@@ -26,9 +23,7 @@ mod __INotificationOptionProvider_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <INotificationOptionProvider as ::unity2::ClassIdentity>::class(),
@@ -41,25 +36,26 @@ mod __INotificationOptionProvider_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <INotificationOptionProvider as ::unity2::ClassIdentity>::NAME,
-                    "get_flags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <INotificationOptionProvider as ::unity2::ClassIdentity>::NAME,
+                        "get_flags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_flags(
         this: INotificationOptionProvider,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::timeline::notificationflags::NotificationFlags {
-        let inner : extern "C" fn (INotificationOptionProvider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: notificationflags :: NotificationFlags = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_flags :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            INotificationOptionProvider,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::timeline::notificationflags::NotificationFlags =
+            ::core::mem::transmute(__lookup_get_flags::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -70,13 +66,8 @@ pub trait IINotificationOptionProviderMethods: IINotificationOptionProvider {
     fn get_flags(self) -> crate::unity_engine::timeline::notificationflags::NotificationFlags {
         unsafe {
             let __receiver =
-                <INotificationOptionProvider as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __INotificationOptionProvider_unity2_raw::get_flags(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <INotificationOptionProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __INotificationOptionProvider_unity2_raw::get_flags(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -87,7 +78,5 @@ impl<__T: IINotificationOptionProvider> IINotificationOptionProviderMethods for 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IINotificationOptionProvider;
-    pub use super::IINotificationOptionProviderMethods;
-    pub use super::INotificationOptionProvider;
+    pub use super::{IINotificationOptionProvider, IINotificationOptionProviderMethods, INotificationOptionProvider};
 }

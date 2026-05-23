@@ -2,22 +2,18 @@
 
 #[cfg(feature = "moon_sharp-interpreter-serialization-serializationextensions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/serialization/serializationextensions/SerializationExtensions.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Serialization",
-        name = "SerializationExtensions"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Serialization", name = "SerializationExtensions")]
     #[parent(crate::system::object::Object)]
     pub struct SerializationExtensions {
         #[static_field]
         #[rename(name = "LUAKEYWORDS")]
-        pub luakeywords:
-            crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+        pub luakeywords: crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
     }
 }
 
@@ -33,9 +29,7 @@ mod __SerializationExtensions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -52,18 +46,15 @@ mod __SerializationExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn serialize(
@@ -72,28 +63,17 @@ mod __SerializationExtensions_unity2_raw {
         tabs: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::table::Table,
-            bool,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::table::Table, bool, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(table, prefix_return, tabs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_string_identifier_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SerializationExtensions as ::unity2::ClassIdentity>::class(),
                 "IsStringIdentifierValid",
@@ -105,41 +85,30 @@ mod __SerializationExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
-                    "IsStringIdentifierValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
+                        "IsStringIdentifierValid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_string_identifier_valid(
         dyn_value: crate::moon_sharp::interpreter::dynvalue::DynValue,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_string_identifier_valid::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_string_identifier_valid::get_method_info().method_ptr);
         inner(dyn_value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -155,18 +124,15 @@ mod __SerializationExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
-                    "SerializeValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
+                        "SerializeValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn serialize_value(
@@ -174,26 +140,16 @@ mod __SerializationExtensions_unity2_raw {
         tabs: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::dynvalue::DynValue,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_serialize_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::dynvalue::DynValue, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_serialize_value::get_method_info().method_ptr);
         inner(dyn_value, tabs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_escape_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SerializationExtensions as ::unity2::ClassIdentity>::class(),
                 "EscapeString",
@@ -205,41 +161,27 @@ mod __SerializationExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
-                    "EscapeString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
+                        "EscapeString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn escape_string(
-        s: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_escape_string::get_offset() as isize),
-        );
+    pub unsafe fn escape_string(s: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_escape_string::get_method_info().method_ptr);
         inner(s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SerializationExtensions as ::unity2::ClassIdentity>::class(),
@@ -252,26 +194,19 @@ mod __SerializationExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SerializationExtensions as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -293,17 +228,14 @@ impl SerializationExtensions {
             )
         }
     }
+
     #[doc = "`IsStringIdentifierValid(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    pub fn is_string_identifier_valid(
-        dyn_value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> bool {
+    pub fn is_string_identifier_valid(dyn_value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> bool {
         unsafe {
-            __SerializationExtensions_unity2_raw::is_string_identifier_valid(
-                ::core::convert::Into::into(dyn_value),
-                ::core::option::Option::None,
-            )
+            __SerializationExtensions_unity2_raw::is_string_identifier_valid(::core::convert::Into::into(dyn_value), ::core::option::Option::None)
         }
     }
+
     #[doc = "`SerializeValue(crate::moon_sharp::interpreter::dynvalue::DynValue, i32)` overload"]
     pub fn serialize_value(
         dyn_value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
@@ -317,17 +249,12 @@ impl SerializationExtensions {
             )
         }
     }
+
     #[doc = "`EscapeString(::unity2::Il2CppString)` overload"]
-    pub fn escape_string(
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __SerializationExtensions_unity2_raw::escape_string(
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn escape_string(s: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __SerializationExtensions_unity2_raw::escape_string(::core::convert::Into::into(s), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __SerializationExtensions_unity2_raw::cctor(::core::option::Option::None) }
@@ -337,8 +264,7 @@ impl SerializationExtensions {
 #[cfg(feature = "moon_sharp-interpreter-serialization-serializationextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISerializationExtensions;
-    pub use super::SerializationExtensions;
+    pub use super::{ISerializationExtensions, SerializationExtensions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

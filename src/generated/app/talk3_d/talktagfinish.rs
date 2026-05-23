@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-talk3_d-talktagfinish-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::talk3_d::talktag::{ITalkTag, TalkTag};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::talk3_d::talktag::{ITalkTag, TalkTag},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagfinish/TalkTagFinish.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagFinish")]
@@ -26,9 +28,7 @@ mod __TalkTagFinish_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkTagFinish as ::unity2::ClassIdentity>::class(),
@@ -41,41 +41,27 @@ mod __TalkTagFinish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkTagFinish as ::unity2::ClassIdentity>::NAME,
-                    "GetResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkTagFinish as ::unity2::ClassIdentity>::NAME,
+                        "GetResult",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_result(
-        this: TalkTagFinish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::talk3_d::talktag::TalkTag_Result {
-        let inner: extern "C" fn(
-            TalkTagFinish,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::talk3_d::talktag::TalkTag_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_result::get_offset() as isize),
-        );
+    pub unsafe fn get_result(this: TalkTagFinish, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::talk3_d::talktag::TalkTag_Result {
+        let inner: extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod) -> crate::app::talk3_d::talktag::TalkTag_Result =
+            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_need_fade_wait {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkTagFinish as ::unity2::ClassIdentity>::class(),
@@ -88,72 +74,46 @@ mod __TalkTagFinish_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkTagFinish as ::unity2::ClassIdentity>::NAME,
-                    "NeedFadeWait",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkTagFinish as ::unity2::ClassIdentity>::NAME,
+                        "NeedFadeWait",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn need_fade_wait(
-        this: TalkTagFinish,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn need_fade_wait(this: TalkTagFinish, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_need_fade_wait::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_need_fade_wait::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkTagFinish as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TalkTagFinish as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkTagFinish as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkTagFinish as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TalkTagFinish, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -163,27 +123,21 @@ pub trait ITalkTagFinishMethods: ITalkTagFinish {
     #[doc = "`GetResult()` overload"]
     fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result {
         unsafe {
-            let __receiver = <TalkTagFinish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkTagFinish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkTagFinish_unity2_raw::get_result(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`NeedFadeWait()` overload"]
     fn need_fade_wait(self) -> bool {
         unsafe {
-            let __receiver = <TalkTagFinish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkTagFinish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkTagFinish_unity2_raw::need_fade_wait(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TalkTagFinish as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TalkTagFinish as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkTagFinish_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -196,13 +150,8 @@ impl<__T: ITalkTagFinish> ITalkTagFinishMethods for __T {}
 impl TalkTagFinish {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkTagFinish),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TalkTagFinish), ::core::stringify!(new),));
         <Self as ITalkTagFinishMethods>::ctor(this);
         this
     }
@@ -211,13 +160,10 @@ impl TalkTagFinish {
 #[cfg(feature = "app-talk3_d-talktagfinish")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITalkTagFinish;
-    pub use super::ITalkTagFinishMethods;
-    pub use super::TalkTagFinish;
-    pub use crate::app::talk3_d::talktag::ITalkTag;
+    pub use super::{ITalkTagFinish, ITalkTagFinishMethods, TalkTagFinish};
     #[cfg(feature = "app-talk3_d-talktag")]
     pub use crate::app::talk3_d::talktag::ITalkTagMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::talk3_d::talktag::ITalkTag, system::object::IObject};
 }

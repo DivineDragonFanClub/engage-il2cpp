@@ -2,15 +2,12 @@
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/exceptions/operationexception/OperationException.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Exceptions",
-        name = "OperationException"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Exceptions", name = "OperationException")]
     pub struct OperationException {}
 }
 
@@ -26,9 +23,7 @@ mod __OperationException_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <OperationException as ::unity2::ClassIdentity>::class(),
@@ -41,32 +36,20 @@ mod __OperationException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <OperationException as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OperationException as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: OperationException,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            OperationException,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: OperationException, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(OperationException, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -76,9 +59,7 @@ pub trait IOperationExceptionMethods: IOperationException {
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <OperationException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <OperationException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __OperationException_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
@@ -90,7 +71,5 @@ impl<__T: IOperationException> IOperationExceptionMethods for __T {}
 #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IOperationException;
-    pub use super::IOperationExceptionMethods;
-    pub use super::OperationException;
+    pub use super::{IOperationException, IOperationExceptionMethods, OperationException};
 }

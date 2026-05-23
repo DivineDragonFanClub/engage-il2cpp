@@ -2,21 +2,27 @@
 
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::baseinputmodule::{BaseInputModule, IBaseInputModule};
-    use crate::unity_engine::event_systems::pointerinputmodule::{
-        IPointerInputModule, PointerInputModule,
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::{
+                baseinputmodule::{BaseInputModule, IBaseInputModule},
+                pointerinputmodule::{IPointerInputModule, PointerInputModule},
+                uibehaviour::{IUIBehaviour, UIBehaviour},
+            },
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/standaloneinputmodule/StandaloneInputModule.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "StandaloneInputModule")]
@@ -35,8 +41,7 @@ mod __types {
         #[rename(name = "m_CurrentFocusedGameObject")]
         pub m_current_focused_game_object: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_InputPointerEvent")]
-        pub m_input_pointer_event:
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        pub m_input_pointer_event: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
         #[rename(name = "m_HorizontalAxis")]
         pub m_horizontal_axis: ::unity2::Il2CppString,
         #[rename(name = "m_VerticalAxis")]
@@ -55,21 +60,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/standaloneinputmodule/StandaloneInputModule_InputMode.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct StandaloneInputModule_InputMode {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for StandaloneInputModule_InputMode {
-        const NAMESPACE: &'static str = "UnityEngine.EventSystems";
-
         const NAME: &'static str = "StandaloneInputModule.InputMode";
+        const NAMESPACE: &'static str = "UnityEngine.EventSystems";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -80,10 +78,7 @@ mod __types {
 
     impl ::unity2::IlType for StandaloneInputModule_InputMode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -110,9 +105,7 @@ mod __StandaloneInputModule_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -125,39 +118,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_input_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -170,35 +151,33 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_inputMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_inputMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_input_mode(
         this: StandaloneInputModule,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::standaloneinputmodule::StandaloneInputModule_InputMode
-    {
-        let inner : extern "C" fn (StandaloneInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: standaloneinputmodule :: StandaloneInputModule_InputMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_input_mode :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::event_systems::standaloneinputmodule::StandaloneInputModule_InputMode {
+        let inner: extern "C" fn(
+            StandaloneInputModule,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::standaloneinputmodule::StandaloneInputModule_InputMode =
+            ::core::mem::transmute(__lookup_get_input_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_allow_activation_on_mobile_device {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -211,41 +190,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_allowActivationOnMobileDevice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_allowActivationOnMobileDevice",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_allow_activation_on_mobile_device(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_allow_activation_on_mobile_device(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_allow_activation_on_mobile_device::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_allow_activation_on_mobile_device::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_allow_activation_on_mobile_device {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_allowActivationOnMobileDevice",
@@ -257,18 +223,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_allowActivationOnMobileDevice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_allowActivationOnMobileDevice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_allow_activation_on_mobile_device(
@@ -277,20 +240,14 @@ mod __StandaloneInputModule_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(StandaloneInputModule, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_allow_activation_on_mobile_device::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_allow_activation_on_mobile_device::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_force_module_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -303,41 +260,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_forceModuleActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_forceModuleActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_force_module_active(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_force_module_active(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_force_module_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_force_module_active::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_force_module_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_forceModuleActive",
@@ -349,40 +293,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_forceModuleActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_forceModuleActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_force_module_active(
-        this: StandaloneInputModule,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_force_module_active(this: StandaloneInputModule, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_force_module_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_force_module_active::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_input_actions_per_second {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -395,41 +326,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_inputActionsPerSecond",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_inputActionsPerSecond",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_input_actions_per_second(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_input_actions_per_second(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_input_actions_per_second::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_input_actions_per_second::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_input_actions_per_second {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_inputActionsPerSecond",
@@ -441,40 +359,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_inputActionsPerSecond",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_inputActionsPerSecond",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_input_actions_per_second(
-        this: StandaloneInputModule,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_input_actions_per_second(this: StandaloneInputModule, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_input_actions_per_second::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_input_actions_per_second::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_repeat_delay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -487,41 +392,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_repeatDelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_repeatDelay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_repeat_delay(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_repeat_delay(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_repeat_delay::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_repeat_delay::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_repeat_delay {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_repeatDelay",
@@ -533,40 +425,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_repeatDelay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_repeatDelay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_repeat_delay(
-        this: StandaloneInputModule,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_repeat_delay(this: StandaloneInputModule, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_repeat_delay::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_repeat_delay::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_horizontal_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -579,43 +458,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_horizontalAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_horizontalAxis",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_horizontal_axis(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_horizontal_axis::get_offset() as isize),
-        );
+    pub unsafe fn get_horizontal_axis(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_horizontal_axis::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_horizontal_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_horizontalAxis",
@@ -627,18 +491,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_horizontalAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_horizontalAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_horizontal_axis(
@@ -646,24 +507,15 @@ mod __StandaloneInputModule_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_horizontal_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_horizontal_axis::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_vertical_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -676,43 +528,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_verticalAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_verticalAxis",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_vertical_axis(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_vertical_axis::get_offset() as isize),
-        );
+    pub unsafe fn get_vertical_axis(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_vertical_axis::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vertical_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_verticalAxis",
@@ -724,18 +561,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_verticalAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_verticalAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_vertical_axis(
@@ -743,24 +577,15 @@ mod __StandaloneInputModule_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_vertical_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_vertical_axis::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_submit_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -773,43 +598,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_submitButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_submitButton",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_submit_button(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_submit_button::get_offset() as isize),
-        );
+    pub unsafe fn get_submit_button(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_submit_button::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_submit_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_submitButton",
@@ -821,18 +631,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_submitButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_submitButton",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_submit_button(
@@ -840,24 +647,15 @@ mod __StandaloneInputModule_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_submit_button::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_submit_button::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cancel_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -870,43 +668,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_cancelButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_cancelButton",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cancel_button(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cancel_button::get_offset() as isize),
-        );
+    pub unsafe fn get_cancel_button(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_cancel_button::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cancel_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "set_cancelButton",
@@ -918,18 +701,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_cancelButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_cancelButton",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cancel_button(
@@ -937,24 +717,15 @@ mod __StandaloneInputModule_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cancel_button::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cancel_button::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_should_ignore_events_on_no_focus {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -967,39 +738,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ShouldIgnoreEventsOnNoFocus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ShouldIgnoreEventsOnNoFocus",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn should_ignore_events_on_no_focus(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn should_ignore_events_on_no_focus(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_should_ignore_events_on_no_focus::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_should_ignore_events_on_no_focus::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1012,40 +771,31 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "UpdateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "UpdateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_module(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_module(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_mouse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "ReleaseMouse",
@@ -1057,18 +807,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseMouse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseMouse",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_mouse(
@@ -1082,20 +829,14 @@ mod __StandaloneInputModule_unity2_raw {
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_mouse::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_release_mouse::get_method_info().method_ptr);
         inner(this, pointer_event, current_over_go, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_module_supported {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1108,39 +849,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "IsModuleSupported",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "IsModuleSupported",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_module_supported(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_module_supported(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_module_supported::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_module_supported::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_should_activate_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1153,39 +882,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ShouldActivateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ShouldActivateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn should_activate_module(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn should_activate_module(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_should_activate_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_should_activate_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_activate_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1198,39 +915,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ActivateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ActivateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn activate_module(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn activate_module(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_activate_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_activate_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deactivate_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1243,39 +948,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "DeactivateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "DeactivateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deactivate_module(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn deactivate_module(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deactivate_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deactivate_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1288,39 +981,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "Process",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "Process",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_touch_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1333,40 +1014,32 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessTouchEvents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessTouchEvents",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_touch_events(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn process_touch_events(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process_touch_events::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process_touch_events::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_touch_press {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "ProcessTouchPress",
@@ -1378,18 +1051,15 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessTouchPress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessTouchPress",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn process_touch_press(
@@ -1405,20 +1075,14 @@ mod __StandaloneInputModule_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process_touch_press::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_process_touch_press::get_method_info().method_ptr);
         inner(this, pointer_event, pressed, released, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_submit_event_to_selected_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1431,39 +1095,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "SendSubmitEventToSelectedObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "SendSubmitEventToSelectedObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_submit_event_to_selected_object(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn send_submit_event_to_selected_object(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_submit_event_to_selected_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_submit_event_to_selected_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_raw_move_vector {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1476,41 +1128,30 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "GetRawMoveVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "GetRawMoveVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_raw_move_vector(
         this: StandaloneInputModule,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_raw_move_vector::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_raw_move_vector::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_move_event_to_selected_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1523,39 +1164,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "SendMoveEventToSelectedObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "SendMoveEventToSelectedObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_move_event_to_selected_object(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn send_move_event_to_selected_object(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_move_event_to_selected_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_move_event_to_selected_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_mouse_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1568,39 +1197,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessMouseEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessMouseEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_mouse_event(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process_mouse_event(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process_mouse_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process_mouse_event::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_force_auto_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1613,41 +1230,28 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ForceAutoSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ForceAutoSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn force_auto_select(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn force_auto_select(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_force_auto_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_force_auto_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_mouse_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "ProcessMouseEvent",
@@ -1659,40 +1263,27 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessMouseEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessMouseEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_mouse_event_2(
-        this: StandaloneInputModule,
-        id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process_mouse_event_2(this: StandaloneInputModule, id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(StandaloneInputModule, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process_mouse_event_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process_mouse_event_2::get_method_info().method_ptr);
         inner(this, id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_send_update_event_to_selected_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1705,40 +1296,29 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "SendUpdateEventToSelectedObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "SendUpdateEventToSelectedObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn send_update_event_to_selected_object(
-        this: StandaloneInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn send_update_event_to_selected_object(this: StandaloneInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_update_event_to_selected_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_send_update_event_to_selected_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_mouse_press {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
                 "ProcessMousePress",
@@ -1750,35 +1330,34 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessMousePress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessMousePress",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn process_mouse_press(
         this: StandaloneInputModule,
-        data : crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData,
+        data: crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (StandaloneInputModule , crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_process_mouse_press :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            StandaloneInputModule,
+            crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_process_mouse_press::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_focused_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StandaloneInputModule as ::unity2::ClassIdentity>::class(),
@@ -1791,32 +1370,23 @@ mod __StandaloneInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
-                    "GetCurrentFocusedGameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StandaloneInputModule as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentFocusedGameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current_focused_game_object(
         this: StandaloneInputModule,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            StandaloneInputModule,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_focused_game_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(StandaloneInputModule, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_current_focused_game_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1826,45 +1396,32 @@ pub trait IStandaloneInputModuleMethods: IStandaloneInputModule {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandaloneInputModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_inputMode()` overload"]
-    fn get_input_mode(
-        self,
-    ) -> crate::unity_engine::event_systems::standaloneinputmodule::StandaloneInputModule_InputMode
-    {
+    fn get_input_mode(self) -> crate::unity_engine::event_systems::standaloneinputmodule::StandaloneInputModule_InputMode {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_input_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_input_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_allowActivationOnMobileDevice()` overload"]
     fn get_allow_activation_on_mobile_device(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_allow_activation_on_mobile_device(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_allow_activation_on_mobile_device(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_allowActivationOnMobileDevice(bool)` overload"]
     fn set_allow_activation_on_mobile_device(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandaloneInputModule_unity2_raw::set_allow_activation_on_mobile_device(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1875,46 +1432,32 @@ pub trait IStandaloneInputModuleMethods: IStandaloneInputModule {
     #[doc = "`get_forceModuleActive()` overload"]
     fn get_force_module_active(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_force_module_active(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_force_module_active(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_forceModuleActive(bool)` overload"]
     fn set_force_module_active(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::set_force_module_active(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::set_force_module_active(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_inputActionsPerSecond()` overload"]
     fn get_input_actions_per_second(self) -> f32 {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_input_actions_per_second(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_input_actions_per_second(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_inputActionsPerSecond(f32)` overload"]
     fn set_input_actions_per_second(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandaloneInputModule_unity2_raw::set_input_actions_per_second(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1925,164 +1468,108 @@ pub trait IStandaloneInputModuleMethods: IStandaloneInputModule {
     #[doc = "`get_repeatDelay()` overload"]
     fn get_repeat_delay(self) -> f32 {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_repeat_delay(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_repeat_delay(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_repeatDelay(f32)` overload"]
     fn set_repeat_delay(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::set_repeat_delay(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::set_repeat_delay(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_horizontalAxis()` overload"]
     fn get_horizontal_axis(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_horizontal_axis(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_horizontal_axis(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_horizontalAxis(::unity2::Il2CppString)` overload"]
     fn set_horizontal_axis(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::set_horizontal_axis(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::set_horizontal_axis(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_verticalAxis()` overload"]
     fn get_vertical_axis(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_vertical_axis(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_vertical_axis(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_verticalAxis(::unity2::Il2CppString)` overload"]
     fn set_vertical_axis(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::set_vertical_axis(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::set_vertical_axis(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_submitButton()` overload"]
     fn get_submit_button(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_submit_button(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_submit_button(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_submitButton(::unity2::Il2CppString)` overload"]
     fn set_submit_button(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::set_submit_button(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::set_submit_button(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_cancelButton()` overload"]
     fn get_cancel_button(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_cancel_button(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_cancel_button(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_cancelButton(::unity2::Il2CppString)` overload"]
     fn set_cancel_button(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::set_cancel_button(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::set_cancel_button(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`ShouldIgnoreEventsOnNoFocus()` overload"]
     fn should_ignore_events_on_no_focus(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::should_ignore_events_on_no_focus(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::should_ignore_events_on_no_focus(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateModule()` overload"]
     fn update_module(self) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::update_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::update_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseMouse(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::gameobject::GameObject)` overload"]
     fn release_mouse(
         self,
-        pointer_event: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        pointer_event: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
         current_over_go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandaloneInputModule_unity2_raw::release_mouse(
                 __receiver,
                 ::core::convert::Into::into(pointer_event),
@@ -2094,85 +1581,61 @@ pub trait IStandaloneInputModuleMethods: IStandaloneInputModule {
     #[doc = "`IsModuleSupported()` overload"]
     fn is_module_supported(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::is_module_supported(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::is_module_supported(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShouldActivateModule()` overload"]
     fn should_activate_module(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::should_activate_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::should_activate_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ActivateModule()` overload"]
     fn activate_module(self) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::activate_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::activate_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeactivateModule()` overload"]
     fn deactivate_module(self) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::deactivate_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::deactivate_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Process()` overload"]
     fn process(self) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandaloneInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessTouchEvents()` overload"]
     fn process_touch_events(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::process_touch_events(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::process_touch_events(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessTouchPress(crate::unity_engine::event_systems::pointereventdata::PointerEventData, bool, bool)` overload"]
     fn process_touch_press(
         self,
-        pointer_event: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        pointer_event: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
         pressed: impl ::core::convert::Into<bool>,
         released: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __StandaloneInputModule_unity2_raw::process_touch_press(
                 __receiver,
                 ::core::convert::Into::into(pointer_event),
@@ -2185,114 +1648,76 @@ pub trait IStandaloneInputModuleMethods: IStandaloneInputModule {
     #[doc = "`SendSubmitEventToSelectedObject()` overload"]
     fn send_submit_event_to_selected_object(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::send_submit_event_to_selected_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::send_submit_event_to_selected_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetRawMoveVector()` overload"]
     fn get_raw_move_vector(self) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_raw_move_vector(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_raw_move_vector(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SendMoveEventToSelectedObject()` overload"]
     fn send_move_event_to_selected_object(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::send_move_event_to_selected_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::send_move_event_to_selected_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessMouseEvent()` overload"]
     fn process_mouse_event(self) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::process_mouse_event(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::process_mouse_event(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ForceAutoSelect()` overload"]
     fn force_auto_select(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::force_auto_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::force_auto_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessMouseEvent(i32)` overload"]
     fn process_mouse_event_2(self, id: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::process_mouse_event_2(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::process_mouse_event_2(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
         }
     }
     #[doc = "`SendUpdateEventToSelectedObject()` overload"]
     fn send_update_event_to_selected_object(self) -> bool {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::send_update_event_to_selected_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::send_update_event_to_selected_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessMousePress(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"]
     fn process_mouse_press(
         self,
-        data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData >,
+        data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData>,
     ) -> () {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::process_mouse_press(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::process_mouse_press(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCurrentFocusedGameObject()` overload"]
     fn get_current_focused_game_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __StandaloneInputModule_unity2_raw::get_current_focused_game_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <StandaloneInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __StandaloneInputModule_unity2_raw::get_current_focused_game_object(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2319,38 +1744,35 @@ impl StandaloneInputModule {
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStandaloneInputModule;
-    pub use super::IStandaloneInputModuleMethods;
-    pub use super::StandaloneInputModule;
-    pub use super::StandaloneInputModule_InputMode;
-    pub use crate::system::object::IObject;
+    pub use super::{IStandaloneInputModule, IStandaloneInputModuleMethods, StandaloneInputModule, StandaloneInputModule_InputMode};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::baseinputmodule::IBaseInputModule;
     #[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
     pub use crate::unity_engine::event_systems::baseinputmodule::IBaseInputModuleMethods;
-    pub use crate::unity_engine::event_systems::pointerinputmodule::IPointerInputModule;
     #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
     pub use crate::unity_engine::event_systems::pointerinputmodule::IPointerInputModuleMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::{baseinputmodule::IBaseInputModule, pointerinputmodule::IPointerInputModule, uibehaviour::IUIBehaviour},
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

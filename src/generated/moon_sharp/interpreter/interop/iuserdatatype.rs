@@ -2,9 +2,9 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatatype-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/iuserdatatype/IUserDataType.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IUserDataType")]
@@ -23,37 +23,26 @@ mod __IUserDataType_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IUserDataType as ::unity2::ClassIdentity>::class(),
-                "Index",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<IUserDataType as ::unity2::ClassIdentity>::class(), "Index", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataType as ::unity2::ClassIdentity>::NAME,
-                    "Index",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataType as ::unity2::ClassIdentity>::NAME,
+                        "Index",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn index(
@@ -69,26 +58,14 @@ mod __IUserDataType_unity2_raw {
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             bool,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_index::get_offset() as isize),
-        );
-        inner(
-            this,
-            script,
-            index,
-            is_direct_indexing,
-            __unity2_method_info,
-        )
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_index::get_method_info().method_ptr);
+        inner(this, script, index, is_direct_indexing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
@@ -106,18 +83,15 @@ mod __IUserDataType_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataType as ::unity2::ClassIdentity>::NAME,
-                    "SetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataType as ::unity2::ClassIdentity>::NAME,
+                        "SetIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_index(
@@ -135,27 +109,14 @@ mod __IUserDataType_unity2_raw {
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             bool,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_index::get_offset() as isize),
-        );
-        inner(
-            this,
-            script,
-            index,
-            value,
-            is_direct_indexing,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_set_index::get_method_info().method_ptr);
+        inner(this, script, index, value, is_direct_indexing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_meta_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -171,18 +132,15 @@ mod __IUserDataType_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUserDataType as ::unity2::ClassIdentity>::NAME,
-                    "MetaIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUserDataType as ::unity2::ClassIdentity>::NAME,
+                        "MetaIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn meta_index(
@@ -196,11 +154,7 @@ mod __IUserDataType_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_meta_index::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_meta_index::get_method_info().method_ptr);
         inner(this, script, metaname, __unity2_method_info)
     }
 }
@@ -215,9 +169,7 @@ pub trait IIUserDataTypeMethods: IIUserDataType {
         is_direct_indexing: impl ::core::convert::Into<bool>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <IUserDataType as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IUserDataType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IUserDataType_unity2_raw::index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -236,9 +188,7 @@ pub trait IIUserDataTypeMethods: IIUserDataType {
         is_direct_indexing: impl ::core::convert::Into<bool>,
     ) -> bool {
         unsafe {
-            let __receiver = <IUserDataType as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IUserDataType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IUserDataType_unity2_raw::set_index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -256,9 +206,7 @@ pub trait IIUserDataTypeMethods: IIUserDataType {
         metaname: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <IUserDataType as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IUserDataType as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IUserDataType_unity2_raw::meta_index(
                 __receiver,
                 ::core::convert::Into::into(script),
@@ -275,7 +223,5 @@ impl<__T: IIUserDataType> IIUserDataTypeMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-interop-iuserdatatype")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIUserDataType;
-    pub use super::IIUserDataTypeMethods;
-    pub use super::IUserDataType;
+    pub use super::{IIUserDataType, IIUserDataTypeMethods, IUserDataType};
 }

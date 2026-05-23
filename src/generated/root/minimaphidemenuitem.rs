@@ -2,14 +2,14 @@
 
 #[cfg(feature = "root-minimaphidemenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::root::mapnavigationminimapbasicmenuitem::{
-        IMapNavigationMiniMapBasicMenuItem, MapNavigationMiniMapBasicMenuItem,
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::mapnavigationminimapbasicmenuitem::{IMapNavigationMiniMapBasicMenuItem, MapNavigationMiniMapBasicMenuItem},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/minimaphidemenuitem/MiniMapHideMenuItem.md"))]
     #[::unity2::class(namespace = "", name = "MiniMapHideMenuItem")]
@@ -29,9 +29,7 @@ mod __MiniMapHideMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapHideMenuItem as ::unity2::ClassIdentity>::class(),
@@ -44,39 +42,27 @@ mod __MiniMapHideMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapHideMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapHideMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MiniMapHideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MiniMapHideMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapHideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapHideMenuItem as ::unity2::ClassIdentity>::class(),
@@ -89,30 +75,20 @@ mod __MiniMapHideMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapHideMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapHideMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: MiniMapHideMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: MiniMapHideMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MiniMapHideMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -122,18 +98,14 @@ pub trait IMiniMapHideMenuItemMethods: IMiniMapHideMenuItem {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MiniMapHideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MiniMapHideMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MiniMapHideMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
-            let __receiver = <MiniMapHideMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MiniMapHideMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MiniMapHideMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
@@ -161,16 +133,14 @@ impl MiniMapHideMenuItem {
 #[cfg(feature = "root-minimaphidemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMiniMapHideMenuItem;
-    pub use super::IMiniMapHideMenuItemMethods;
-    pub use super::MiniMapHideMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IMiniMapHideMenuItem, IMiniMapHideMenuItemMethods, MiniMapHideMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItem;
     #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
     pub use crate::root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::basicmenuitem::IBasicMenuItem, root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItem, system::object::IObject,
+    };
 }

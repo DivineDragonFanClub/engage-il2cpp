@@ -2,34 +2,33 @@
 
 #[cfg(feature = "root-lightprobegenerator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/lightprobegenerator/LightProbeGenerator_LightProbePlacementType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct LightProbeGenerator_LightProbePlacementType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for LightProbeGenerator_LightProbePlacementType {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "LightProbeGenerator.LightProbePlacementType";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for LightProbeGenerator_LightProbePlacementType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -62,11 +58,9 @@ mod __types {
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct LightProbeGenerator {
         #[rename(name = "LightProbeVolumes")]
-        pub light_probe_volumes:
-            ::unity2::Array<crate::root::lightprobegenerator::LightProbeGenerator_LightProbeArea>,
+        pub light_probe_volumes: ::unity2::Array<crate::root::lightprobegenerator::LightProbeGenerator_LightProbeArea>,
         #[rename(name = "PlacementAlgorithm")]
-        pub placement_algorithm:
-            crate::root::lightprobegenerator::LightProbeGenerator_LightProbePlacementType,
+        pub placement_algorithm: crate::root::lightprobegenerator::LightProbeGenerator_LightProbePlacementType,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/lightprobegenerator/LightProbeGenerator_LightProbeArea.md"))]
@@ -94,9 +88,7 @@ mod __LightProbeGenerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_gen_probes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightProbeGenerator as ::unity2::ClassIdentity>::class(),
@@ -109,39 +101,27 @@ mod __LightProbeGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GenProbes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GenProbes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn gen_probes(
-        this: LightProbeGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn gen_probes(this: LightProbeGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LightProbeGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_gen_probes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_gen_probes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_probes_for_volume_grid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -157,18 +137,15 @@ mod __LightProbeGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetProbesForVolume_Grid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetProbesForVolume_Grid",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_probes_for_volume_grid(
@@ -176,29 +153,21 @@ mod __LightProbeGenerator_unity2_raw {
         probe_volume: crate::unity_engine::bounds::Bounds,
         subdivisions: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> {
         let inner: extern "C" fn(
             LightProbeGenerator,
             crate::unity_engine::bounds::Bounds,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_probes_for_volume_grid::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> =
+            ::core::mem::transmute(__lookup_get_probes_for_volume_grid::get_method_info().method_ptr);
         inner(this, probe_volume, subdivisions, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_probes_for_volume_random {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::bounds::Bounds as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -214,18 +183,15 @@ mod __LightProbeGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
-                    "GetProbesForVolume_Random",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
+                        "GetProbesForVolume_Random",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_probes_for_volume_random(
@@ -233,29 +199,21 @@ mod __LightProbeGenerator_unity2_raw {
         probe_volume: crate::unity_engine::bounds::Bounds,
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> {
         let inner: extern "C" fn(
             LightProbeGenerator,
             crate::unity_engine::bounds::Bounds,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_probes_for_volume_random::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> =
+            ::core::mem::transmute(__lookup_get_probes_for_volume_random::get_method_info().method_ptr);
         inner(this, probe_volume, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightProbeGenerator as ::unity2::ClassIdentity>::class(),
@@ -268,30 +226,20 @@ mod __LightProbeGenerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightProbeGenerator as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: LightProbeGenerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: LightProbeGenerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LightProbeGenerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -301,9 +249,7 @@ pub trait ILightProbeGeneratorMethods: ILightProbeGenerator {
     #[doc = "`GenProbes()` overload"]
     fn gen_probes(self) -> () {
         unsafe {
-            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LightProbeGenerator_unity2_raw::gen_probes(__receiver, ::core::option::Option::None)
         }
     }
@@ -312,12 +258,9 @@ pub trait ILightProbeGeneratorMethods: ILightProbeGenerator {
         self,
         probe_volume: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>,
         subdivisions: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> {
         unsafe {
-            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LightProbeGenerator_unity2_raw::get_probes_for_volume_grid(
                 __receiver,
                 ::core::convert::Into::into(probe_volume),
@@ -331,12 +274,9 @@ pub trait ILightProbeGeneratorMethods: ILightProbeGenerator {
         self,
         probe_volume: impl ::core::convert::Into<crate::unity_engine::bounds::Bounds>,
         count: impl ::core::convert::Into<i32>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> {
         unsafe {
-            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LightProbeGenerator_unity2_raw::get_probes_for_volume_random(
                 __receiver,
                 ::core::convert::Into::into(probe_volume),
@@ -348,9 +288,7 @@ pub trait ILightProbeGeneratorMethods: ILightProbeGenerator {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LightProbeGenerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LightProbeGenerator_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -384,9 +322,7 @@ mod __LightProbeGenerator_LightProbeArea_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LightProbeGenerator_LightProbeArea as ::unity2::ClassIdentity>::class(),
@@ -399,32 +335,20 @@ mod __LightProbeGenerator_LightProbeArea_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LightProbeGenerator_LightProbeArea as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LightProbeGenerator_LightProbeArea as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: LightProbeGenerator_LightProbeArea,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            LightProbeGenerator_LightProbeArea,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: LightProbeGenerator_LightProbeArea, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(LightProbeGenerator_LightProbeArea, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -434,14 +358,10 @@ pub trait ILightProbeGenerator_LightProbeAreaMethods: ILightProbeGenerator_Light
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <LightProbeGenerator_LightProbeArea as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __LightProbeGenerator_LightProbeArea_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LightProbeGenerator_LightProbeArea as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __LightProbeGenerator_LightProbeArea_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -468,32 +388,26 @@ impl LightProbeGenerator_LightProbeArea {
 #[cfg(feature = "root-lightprobegenerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILightProbeGenerator;
-    pub use super::ILightProbeGeneratorMethods;
-    pub use super::ILightProbeGenerator_LightProbeArea;
-    pub use super::ILightProbeGenerator_LightProbeAreaMethods;
-    pub use super::LightProbeGenerator;
-    pub use super::LightProbeGenerator_LightProbeArea;
-    pub use super::LightProbeGenerator_LightProbePlacementType;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ILightProbeGenerator, ILightProbeGeneratorMethods, ILightProbeGenerator_LightProbeArea, ILightProbeGenerator_LightProbeAreaMethods,
+        LightProbeGenerator, LightProbeGenerator_LightProbeArea, LightProbeGenerator_LightProbePlacementType,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

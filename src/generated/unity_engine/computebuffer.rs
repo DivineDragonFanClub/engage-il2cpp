@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-computebuffer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/computebuffer/ComputeBuffer.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ComputeBuffer")]
@@ -28,9 +28,7 @@ mod __ComputeBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
@@ -43,39 +41,27 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: ComputeBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: ComputeBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
@@ -88,41 +74,28 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: ComputeBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: ComputeBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -134,41 +107,33 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose_2(
-        this: ComputeBuffer,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose_2(this: ComputeBuffer, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBuffer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose_2::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffertype :: ComputeBufferType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffermode :: ComputeBufferMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffertype::ComputeBufferType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffermode::ComputeBufferMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
                 "InitBuffer",
@@ -180,18 +145,15 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InitBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InitBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init_buffer(
@@ -207,23 +169,16 @@ mod __ComputeBuffer_unity2_raw {
             crate::unity_engine::computebuffertype::ComputeBufferType,
             crate::unity_engine::computebuffermode::ComputeBufferMode,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init_buffer::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_init_buffer::get_method_info().method_ptr);
         inner(count, stride, r#type, usage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
                 "DestroyBuffer",
@@ -235,115 +190,73 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "DestroyBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "DestroyBuffer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_buffer(
-        buf: crate::unity_engine::computebuffer::ComputeBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_buffer::get_offset() as isize),
-        );
+    pub unsafe fn destroy_buffer(buf: crate::unity_engine::computebuffer::ComputeBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_buffer::get_method_info().method_ptr);
         inner(buf, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeBuffer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ComputeBuffer as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ComputeBuffer,
-        count: i32,
-        stride: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ComputeBuffer, count: i32, stride: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBuffer, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, count, stride, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffertype :: ComputeBufferType as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeBuffer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffertype::ComputeBufferType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ComputeBuffer as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -353,50 +266,35 @@ mod __ComputeBuffer_unity2_raw {
         r#type: crate::unity_engine::computebuffertype::ComputeBufferType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ComputeBuffer,
-            i32,
-            i32,
-            crate::unity_engine::computebuffertype::ComputeBufferType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ComputeBuffer, i32, i32, crate::unity_engine::computebuffertype::ComputeBufferType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, count, stride, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffertype :: ComputeBufferType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffermode :: ComputeBufferMode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeBuffer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffertype::ComputeBufferType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffermode::ComputeBufferMode as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ComputeBuffer as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -414,44 +312,35 @@ mod __ComputeBuffer_unity2_raw {
             crate::unity_engine::computebuffertype::ComputeBufferType,
             crate::unity_engine::computebuffermode::ComputeBufferMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, count, stride, r#type, usage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffertype :: ComputeBufferType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: computebuffermode :: ComputeBufferMode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ComputeBuffer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                5,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffertype::ComputeBufferType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::computebuffermode::ComputeBufferMode as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ComputeBuffer as ::unity2::ClassIdentity>::class(), ".ctor", 5, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_4(
@@ -471,28 +360,14 @@ mod __ComputeBuffer_unity2_raw {
             crate::unity_engine::computebuffermode::ComputeBufferMode,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_4::get_offset() as isize),
-        );
-        inner(
-            this,
-            count,
-            stride,
-            r#type,
-            usage,
-            stack_depth,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor_4::get_method_info().method_ptr);
+        inner(this, count, stride, r#type, usage, stack_depth, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
@@ -505,39 +380,27 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Release",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Release",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release(
-        this: ComputeBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release(this: ComputeBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
@@ -550,39 +413,27 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "get_count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "get_count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_count(
-        this: ComputeBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_count(this: ComputeBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ComputeBuffer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stride {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
@@ -595,39 +446,27 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "get_stride",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "get_stride",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stride(
-        this: ComputeBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_stride(this: ComputeBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(ComputeBuffer, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_stride::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_stride::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_native_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -646,18 +485,15 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InternalSetNativeData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InternalSetNativeData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_native_data(
@@ -669,19 +505,8 @@ mod __ComputeBuffer_unity2_raw {
         elem_size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ComputeBuffer,
-            ::unity2::IntPtr,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_native_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ComputeBuffer, ::unity2::IntPtr, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_set_native_data::get_method_info().method_ptr);
         inner(
             this,
             data,
@@ -696,9 +521,7 @@ mod __ComputeBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IlInstance as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -717,18 +540,15 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InternalSetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InternalSetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_data(
@@ -740,19 +560,8 @@ mod __ComputeBuffer_unity2_raw {
         elem_size: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ComputeBuffer,
-            ::unity2::IlInstance,
-            i32,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_set_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ComputeBuffer, ::unity2::IlInstance, i32, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_internal_set_data::get_method_info().method_ptr);
         inner(
             this,
             data,
@@ -767,11 +576,8 @@ mod __ComputeBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBuffer as ::unity2::ClassIdentity>::class(),
                 "set_name",
@@ -783,34 +589,20 @@ mod __ComputeBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                    "set_name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                        "set_name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_name(
-        this: ComputeBuffer,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ComputeBuffer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name::get_offset() as isize),
-        );
+    pub unsafe fn set_name(this: ComputeBuffer, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ComputeBuffer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -834,16 +626,10 @@ impl ComputeBuffer {
             )
         }
     }
+
     #[doc = "`DestroyBuffer(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
-    pub fn destroy_buffer(
-        buf: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>,
-    ) -> () {
-        unsafe {
-            __ComputeBuffer_unity2_raw::destroy_buffer(
-                ::core::convert::Into::into(buf),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn destroy_buffer(buf: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>) -> () {
+        unsafe { __ComputeBuffer_unity2_raw::destroy_buffer(::core::convert::Into::into(buf), ::core::option::Option::None) }
     }
 }
 
@@ -852,44 +638,28 @@ pub trait IComputeBufferMethods: IComputeBuffer {
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ComputeBuffer_unity2_raw::dispose_2(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ComputeBuffer_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(i32, i32)` overload"]
-    fn ctor(
-        self,
-        count: impl ::core::convert::Into<i32>,
-        stride: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, count: impl ::core::convert::Into<i32>, stride: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(count),
@@ -906,9 +676,7 @@ pub trait IComputeBufferMethods: IComputeBuffer {
         r#type: impl ::core::convert::Into<crate::unity_engine::computebuffertype::ComputeBufferType>,
     ) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(count),
@@ -927,9 +695,7 @@ pub trait IComputeBufferMethods: IComputeBuffer {
         usage: impl ::core::convert::Into<crate::unity_engine::computebuffermode::ComputeBufferMode>,
     ) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::ctor_3(
                 __receiver,
                 ::core::convert::Into::into(count),
@@ -950,9 +716,7 @@ pub trait IComputeBufferMethods: IComputeBuffer {
         stack_depth: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::ctor_4(
                 __receiver,
                 ::core::convert::Into::into(count),
@@ -967,27 +731,21 @@ pub trait IComputeBufferMethods: IComputeBuffer {
     #[doc = "`Release()` overload"]
     fn release(self) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::release(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_count()` overload"]
     fn get_count(self) -> i32 {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::get_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_stride()` overload"]
     fn get_stride(self) -> i32 {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::get_stride(__receiver, ::core::option::Option::None)
         }
     }
@@ -998,47 +756,33 @@ pub trait IComputeBufferMethods: IComputeBuffer {
         compute_buffer_start_index: impl ::core::convert::Into<i32>,
         count: impl ::core::convert::Into<i32>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ComputeBuffer as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                4,
-            )
-        });
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<ComputeBuffer as ::unity2::ClassIdentity>::class(), "SetData", 4));
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
-                "SetData",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ComputeBuffer as ::unity2::ClassIdentity>::NAME,
+                    "SetData",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let __f: extern "C" fn(
                 ComputeBuffer,
                 crate::system::collections::generic::list_1::List_1<M0>,
@@ -1068,9 +812,7 @@ pub trait IComputeBufferMethods: IComputeBuffer {
         elem_size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::internal_set_native_data(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -1092,9 +834,7 @@ pub trait IComputeBufferMethods: IComputeBuffer {
         elem_size: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBuffer_unity2_raw::internal_set_data(
                 __receiver,
                 ::core::convert::Into::into(data),
@@ -1109,14 +849,8 @@ pub trait IComputeBufferMethods: IComputeBuffer {
     #[doc = "`set_name(::unity2::Il2CppString)` overload"]
     fn set_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ComputeBuffer_unity2_raw::set_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ComputeBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ComputeBuffer_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -1128,23 +862,14 @@ impl<__T: IComputeBuffer> IComputeBufferMethods for __T {}
 impl ComputeBuffer {
     #[doc = "`.ctor(i32, i32)` — overload selector"]
     pub fn new(count: i32, stride: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ComputeBuffer),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ComputeBuffer), ::core::stringify!(new),));
         <Self as IComputeBufferMethods>::ctor(this, count, stride);
         this
     }
 
     #[doc = "`.ctor(i32, i32, crate::unity_engine::computebuffertype::ComputeBufferType)` — overload selector"]
-    pub fn new_2(
-        count: i32,
-        stride: i32,
-        r#type: crate::unity_engine::computebuffertype::ComputeBufferType,
-    ) -> Self {
+    pub fn new_2(count: i32, stride: i32, r#type: crate::unity_engine::computebuffertype::ComputeBufferType) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1197,9 +922,7 @@ impl ComputeBuffer {
 #[cfg(feature = "unity_engine-computebuffer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ComputeBuffer;
-    pub use super::IComputeBuffer;
-    pub use super::IComputeBufferMethods;
+    pub use super::{ComputeBuffer, IComputeBuffer, IComputeBufferMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

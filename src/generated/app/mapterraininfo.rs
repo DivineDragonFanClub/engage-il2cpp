@@ -2,31 +2,85 @@
 
 #[cfg(feature = "app-mapterraininfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapTerrainInfo_Side {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
+        const NAME: &'static str = "MapTerrainInfo.Side";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for MapTerrainInfo_Side {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl MapTerrainInfo_Side {
+        pub fn left() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn right() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 2 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "MapTerrainInfo")]
+    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapterraininfo :: MapTerrainInfo >)]
+    pub struct MapTerrainInfo {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity2::Il2CppString,
+        #[rename(name = "m_PrefabHandle")]
+        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_MapTerrainInfoSingles")]
+        pub m_map_terrain_info_singles: ::unity2::Array<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle>,
+        #[static_field]
+        #[rename(name = "m_CalcUnit")]
+        pub m_calc_unit: crate::app::unit::Unit,
+        #[static_field]
+        #[rename(name = "m_BattleInfo")]
+        pub m_battle_info: crate::app::battleinfo::BattleInfo,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapTerrainInfo_Element {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapTerrainInfo_Element {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapTerrainInfo.Element";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,10 +91,7 @@ mod __types {
 
     impl ::unity2::IlType for MapTerrainInfo_Element {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -126,76 +177,6 @@ mod __types {
         }
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct MapTerrainInfo_Side {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "MapTerrainInfo.Side";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for MapTerrainInfo_Side {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl MapTerrainInfo_Side {
-        pub fn left() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn right() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn num() -> Self {
-            Self { value: 2 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "MapTerrainInfo")]
-    # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapterraininfo :: MapTerrainInfo >)]
-    pub struct MapTerrainInfo {
-        #[static_field]
-        #[rename(name = "PrefabPath")]
-        pub prefab_path: ::unity2::Il2CppString,
-        #[rename(name = "m_PrefabHandle")]
-        pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        #[rename(name = "m_MapTerrainInfoSingles")]
-        pub m_map_terrain_info_singles:
-            ::unity2::Array<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle>,
-        #[static_field]
-        #[rename(name = "m_CalcUnit")]
-        pub m_calc_unit: crate::app::unit::Unit,
-        #[static_field]
-        #[rename(name = "m_BattleInfo")]
-        pub m_battle_info: crate::app::battleinfo::BattleInfo,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))]
     #[::unity2::class(namespace = "App", name = "MapTerrainInfo.MapTerrainInfoSingle")]
     #[parent(crate::system::object::Object)]
@@ -205,11 +186,9 @@ mod __types {
         #[rename(name = "m_ElemGameObjects")]
         pub m_elem_game_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_ElemTitleTextMeshes")]
-        pub m_elem_title_text_meshes:
-            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        pub m_elem_title_text_meshes: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
         #[rename(name = "m_ElemValueTextMeshes")]
-        pub m_elem_value_text_meshes:
-            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        pub m_elem_value_text_meshes: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
         #[rename(name = "m_IsValid")]
         pub m_is_valid: bool,
         #[rename(name = "m_IsShow")]
@@ -241,9 +220,7 @@ mod __MapTerrainInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -256,36 +233,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -298,39 +266,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "IsLoading",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "IsLoading",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -343,39 +299,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "ShowAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "ShowAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show_all(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show_all(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -388,39 +332,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "HideAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "HideAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_all(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_all(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_show_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -433,39 +365,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "EventShowAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "EventShowAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn event_show_all(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn event_show_all(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_event_show_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_event_show_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_hide_all {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -478,39 +398,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "EventHideAll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "EventHideAll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn event_hide_all(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn event_hide_all(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_event_hide_all::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_event_hide_all::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_show_any {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -523,43 +431,28 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "IsShowAny",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "IsShowAny",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_show_any(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_show_any(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_show_any::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_show_any::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
                 "GetCurrentUnit",
@@ -571,40 +464,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetCurrentUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_current_unit(
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
+    pub unsafe fn get_current_unit(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
         let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_current_unit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_current_unit::get_method_info().method_ptr);
         inner(x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -617,39 +497,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -662,39 +530,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -707,39 +563,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "CreateObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "CreateObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_objects(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_objects(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_objects::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -752,39 +596,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "DeleteObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "DeleteObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_objects(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_objects(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_objects::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -797,34 +629,30 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_Left",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Left",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_left(
         this: MapTerrainInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle {
-        let inner : extern "C" fn (MapTerrainInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapterraininfo :: MapTerrainInfo_MapTerrainInfoSingle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_left :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle =
+            ::core::mem::transmute(__lookup_get_left::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -837,34 +665,30 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_Right",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Right",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_right(
         this: MapTerrainInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle {
-        let inner : extern "C" fn (MapTerrainInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapterraininfo :: MapTerrainInfo_MapTerrainInfoSingle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_right :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle =
+            ::core::mem::transmute(__lookup_get_right::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -877,35 +701,32 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_Edit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_Edit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_edit(
         this: MapTerrainInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle {
-        let inner : extern "C" fn (MapTerrainInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapterraininfo :: MapTerrainInfo_MapTerrainInfoSingle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_edit :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle =
+            ::core::mem::transmute(__lookup_get_edit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: mapterraininfo :: MapTerrainInfo_MapTerrainInfoSingle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
                 "set_Edit",
@@ -917,18 +738,15 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "set_Edit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "set_Edit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_edit(
@@ -936,24 +754,15 @@ mod __MapTerrainInfo_unity2_raw {
         value: crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo,
-            crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_edit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapTerrainInfo, crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_edit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -966,39 +775,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "CreateEdit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "CreateEdit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_edit(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_edit(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_edit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_edit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_edit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -1011,39 +808,27 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    "DeleteEdit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        "DeleteEdit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_edit(
-        this: MapTerrainInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_edit(this: MapTerrainInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapTerrainInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_edit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_edit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo as ::unity2::ClassIdentity>::class(),
@@ -1056,26 +841,19 @@ mod __MapTerrainInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1083,10 +861,7 @@ mod __MapTerrainInfo_unity2_raw {
 #[cfg(feature = "app-mapterraininfo")]
 impl MapTerrainInfo {
     #[doc = "`GetCurrentUnit(i32, i32)` overload"]
-    pub fn get_current_unit(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> crate::app::unit::Unit {
+    pub fn get_current_unit(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::unit::Unit {
         unsafe {
             __MapTerrainInfo_unity2_raw::get_current_unit(
                 ::core::convert::Into::into(x),
@@ -1095,6 +870,7 @@ impl MapTerrainInfo {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __MapTerrainInfo_unity2_raw::cctor(::core::option::Option::None) }
@@ -1106,162 +882,119 @@ pub trait IMapTerrainInfoMethods: IMapTerrainInfo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoading()` overload"]
     fn is_loading(self) -> bool {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::is_loading(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowAll()` overload"]
     fn show_all(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::show_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HideAll()` overload"]
     fn hide_all(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::hide_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EventShowAll()` overload"]
     fn event_show_all(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::event_show_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EventHideAll()` overload"]
     fn event_hide_all(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::event_hide_all(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsShowAny()` overload"]
     fn is_show_any(self) -> bool {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::is_show_any(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnCreate()` overload"]
     fn on_create(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateObjects()` overload"]
     fn create_objects(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::create_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteObjects()` overload"]
     fn delete_objects(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::delete_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Left()` overload"]
     fn get_left(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::get_left(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Right()` overload"]
     fn get_right(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::get_right(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Edit()` overload"]
     fn get_edit(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::get_edit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Edit(crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle)` overload"]
-    fn set_edit(
-        self,
-        value: impl ::core::convert::Into<
-            crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle,
-        >,
-    ) -> () {
+    fn set_edit(self, value: impl ::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle>) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapTerrainInfo_unity2_raw::set_edit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapTerrainInfo_unity2_raw::set_edit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateEdit()` overload"]
     fn create_edit(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::create_edit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteEdit()` overload"]
     fn delete_edit(self) -> () {
         unsafe {
-            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapTerrainInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapTerrainInfo_unity2_raw::delete_edit(__receiver, ::core::option::Option::None)
         }
     }
@@ -1295,9 +1028,7 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::app::mapterraininfo::MapTerrainInfo_Side as ::unity2::IlType>::il_type(),
@@ -1313,18 +1044,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "CreateObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "CreateObjects",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_objects(
@@ -1338,20 +1066,14 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::app::mapterraininfo::MapTerrainInfo_Side,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_objects::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_objects::get_method_info().method_ptr);
         inner(this, prefab_obj, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_element {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapterraininfo::MapTerrainInfo_Element as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -1368,18 +1090,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "CreateElement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "CreateElement",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_element(
@@ -1395,20 +1114,14 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_element::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_element::get_method_info().method_ptr);
         inner(this, elem, parent_obj, obj_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_pair_element {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapterraininfo::MapTerrainInfo_Element as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -1425,18 +1138,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "CreatePairElement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "CreatePairElement",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_pair_element(
@@ -1452,20 +1162,14 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_pair_element::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_pair_element::get_method_info().method_ptr);
         inner(this, elem, parent_obj, obj_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -1478,41 +1182,27 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "DestroyObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "DestroyObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_objects(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_objects::get_offset() as isize),
-        );
+    pub unsafe fn destroy_objects(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_destroy_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -1525,41 +1215,27 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
+    pub unsafe fn show(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -1572,41 +1248,27 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hide::get_offset() as isize),
-        );
+    pub unsafe fn hide(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -1619,41 +1281,27 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "EventShow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "EventShow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn event_show(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_show::get_offset() as isize),
-        );
+    pub unsafe fn event_show(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_event_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -1666,41 +1314,27 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "EventHide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "EventHide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn event_hide(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_event_hide::get_offset() as isize),
-        );
+    pub unsafe fn event_hide(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_event_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -1713,43 +1347,28 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "IsShow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "IsShow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_show(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_show::get_offset() as isize),
-        );
+    pub unsafe fn is_show(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
                 "SetVisible",
@@ -1761,47 +1380,28 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "SetVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "SetVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_visible(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        is_visible: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_visible::get_offset() as isize),
-        );
+    pub unsafe fn set_visible(this: MapTerrainInfo_MapTerrainInfoSingle, is_visible: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_visible::get_method_info().method_ptr);
         inner(this, is_visible, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_terrain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
                 "GetTerrain",
@@ -1813,47 +1413,28 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "GetTerrain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "GetTerrain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_terrain(
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::terraindata_2::TerrainData_2 {
-        let inner: extern "C" fn(
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::terraindata_2::TerrainData_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_terrain::get_offset() as isize),
-        );
+    pub unsafe fn get_terrain(x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 {
+        let inner: extern "C" fn(i32, i32, ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 =
+            ::core::mem::transmute(__lookup_get_terrain::get_method_info().method_ptr);
         inner(x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -1865,47 +1446,28 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
+    pub unsafe fn set(this: MapTerrainInfo_MapTerrainInfoSingle, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -1917,18 +1479,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_2(
@@ -1936,24 +1495,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         terrain: crate::app::terraindata_2::TerrainData_2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            crate::app::terraindata_2::TerrainData_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, crate::app::terraindata_2::TerrainData_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
         inner(this, terrain, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
                 <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
@@ -1971,18 +1521,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "SetImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "SetImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_impl(
@@ -2000,20 +1547,14 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_impl::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_impl::get_method_info().method_ptr);
         inner(this, terrain, overlap, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_element {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapterraininfo::MapTerrainInfo_Element as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2032,18 +1573,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "SetElement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "SetElement",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_element(
@@ -2063,28 +1601,14 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_element::get_offset() as isize),
-        );
-        inner(
-            this,
-            element,
-            name,
-            value,
-            is_force,
-            is_color_reverse,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_element::get_method_info().method_ptr);
+        inner(this, element, name, value, is_force, is_color_reverse, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_element_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapterraininfo::MapTerrainInfo_Element as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2102,18 +1626,15 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    "SetElement",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        "SetElement",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_element_2(
@@ -2131,20 +1652,14 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
             ::unity2::Il2CppString,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_element_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_element_2::get_method_info().method_ptr);
         inner(this, element, name, value, is_force, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::class(),
@@ -2157,32 +1672,20 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapTerrainInfo_MapTerrainInfoSingle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapTerrainInfo_MapTerrainInfoSingle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MapTerrainInfo_MapTerrainInfoSingle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapTerrainInfo_MapTerrainInfoSingle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2190,10 +1693,7 @@ mod __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw {
 #[cfg(feature = "app-mapterraininfo")]
 impl MapTerrainInfo_MapTerrainInfoSingle {
     #[doc = "`GetTerrain(i32, i32)` overload"]
-    pub fn get_terrain(
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> crate::app::terraindata_2::TerrainData_2 {
+    pub fn get_terrain(x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> crate::app::terraindata_2::TerrainData_2 {
         unsafe {
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::get_terrain(
                 ::core::convert::Into::into(x),
@@ -2205,9 +1705,7 @@ impl MapTerrainInfo_MapTerrainInfoSingle {
 }
 
 #[cfg(feature = "app-mapterraininfo")]
-pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
-    IMapTerrainInfo_MapTerrainInfoSingle
-{
+pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods: IMapTerrainInfo_MapTerrainInfoSingle {
     #[doc = "`CreateObjects(crate::unity_engine::gameobject::GameObject, crate::app::mapterraininfo::MapTerrainInfo_Side)` overload"]
     fn create_objects(
         self,
@@ -2215,10 +1713,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         side: impl ::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Side>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::create_objects(
                 __receiver,
                 ::core::convert::Into::into(prefab_obj),
@@ -2235,10 +1732,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::create_element(
                 __receiver,
                 ::core::convert::Into::into(elem),
@@ -2256,10 +1752,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         obj_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::create_pair_element(
                 __receiver,
                 ::core::convert::Into::into(elem),
@@ -2272,88 +1767,63 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
     #[doc = "`DestroyObjects()` overload"]
     fn destroy_objects(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::destroy_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::destroy_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Show()` overload"]
     fn show(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::show(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EventShow()` overload"]
     fn event_show(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::event_show(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::event_show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EventHide()` overload"]
     fn event_hide(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::event_hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::event_hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsShow()` overload"]
     fn is_show(self) -> bool {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::is_show(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::is_show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetVisible(bool)` overload"]
     fn set_visible(self, is_visible: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set_visible(
                 __receiver,
                 ::core::convert::Into::into(is_visible),
@@ -2364,10 +1834,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
     #[doc = "`Set(i32, i32)` overload"]
     fn set(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -2377,20 +1846,12 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         }
     }
     #[doc = "`Set(crate::app::terraindata_2::TerrainData_2)` overload"]
-    fn set_2(
-        self,
-        terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>,
-    ) -> () {
+    fn set_2(self, terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set_2(
-                __receiver,
-                ::core::convert::Into::into(terrain),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set_2(__receiver, ::core::convert::Into::into(terrain), ::core::option::Option::None)
         }
     }
     #[doc = "`SetImpl(crate::app::terraindata_2::TerrainData_2, crate::app::terraindata_2::TerrainData_2, i32, i32)` overload"]
@@ -2402,10 +1863,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         z: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set_impl(
                 __receiver,
                 ::core::convert::Into::into(terrain),
@@ -2426,10 +1886,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         is_color_reverse: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set_element(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -2450,10 +1909,9 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
         is_force: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::set_element_2(
                 __receiver,
                 ::core::convert::Into::into(element),
@@ -2467,23 +1925,16 @@ pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapTerrainInfo_MapTerrainInfoSingle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapTerrainInfo_MapTerrainInfoSingle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapterraininfo")]
-impl<__T: IMapTerrainInfo_MapTerrainInfoSingle> IMapTerrainInfo_MapTerrainInfoSingleMethods
-    for __T
-{
-}
+impl<__T: IMapTerrainInfo_MapTerrainInfoSingle> IMapTerrainInfo_MapTerrainInfoSingleMethods for __T {}
 
 #[cfg(feature = "app-mapterraininfo")]
 impl MapTerrainInfo_MapTerrainInfoSingle {
@@ -2504,24 +1955,20 @@ impl MapTerrainInfo_MapTerrainInfoSingle {
 #[cfg(feature = "app-mapterraininfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapTerrainInfo;
-    pub use super::IMapTerrainInfoMethods;
-    pub use super::IMapTerrainInfo_MapTerrainInfoSingle;
-    pub use super::IMapTerrainInfo_MapTerrainInfoSingleMethods;
-    pub use super::MapTerrainInfo;
-    pub use super::MapTerrainInfo_Element;
-    pub use super::MapTerrainInfo_MapTerrainInfoSingle;
-    pub use super::MapTerrainInfo_Side;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{
+        IMapTerrainInfo, IMapTerrainInfoMethods, IMapTerrainInfo_MapTerrainInfoSingle, IMapTerrainInfo_MapTerrainInfoSingleMethods, MapTerrainInfo,
+        MapTerrainInfo_Element, MapTerrainInfo_MapTerrainInfoSingle, MapTerrainInfo_Side,
+    };
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::singletonclass_1::ISingletonClass_1,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

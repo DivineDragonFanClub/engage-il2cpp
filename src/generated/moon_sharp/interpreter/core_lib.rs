@@ -27,10 +27,7 @@ pub use debugmodule::{DebugModule, IDebugModule};
 #[cfg(any(feature = "moon_sharp-interpreter-core_lib-dynamicmodule-types"))]
 pub mod dynamicmodule;
 #[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule-types")]
-pub use dynamicmodule::{
-    DynamicModule, DynamicModule_DynamicExprWrapper, IDynamicModule,
-    IDynamicModule_DynamicExprWrapper,
-};
+pub use dynamicmodule::{DynamicModule, DynamicModule_DynamicExprWrapper, IDynamicModule, IDynamicModule_DynamicExprWrapper};
 #[cfg(feature = "moon_sharp-interpreter-core_lib-dynamicmodule")]
 pub use dynamicmodule::{IDynamicModuleMethods, IDynamicModule_DynamicExprWrapperMethods};
 #[cfg(any(feature = "moon_sharp-interpreter-core_lib-errorhandlingmodule-types"))]

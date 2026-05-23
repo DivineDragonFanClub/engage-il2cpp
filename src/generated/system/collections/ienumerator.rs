@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-ienumerator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/ienumerator/IEnumerator.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "IEnumerator")]
@@ -23,9 +23,7 @@ mod __IEnumerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_move_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IEnumerator as ::unity2::ClassIdentity>::class(),
@@ -38,39 +36,27 @@ mod __IEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "MoveNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "MoveNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn move_next(
-        this: IEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn move_next(this: IEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(IEnumerator, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_move_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IEnumerator as ::unity2::ClassIdentity>::class(),
@@ -83,74 +69,46 @@ mod __IEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_current(
-        this: IEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            IEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
+    pub unsafe fn get_current(this: IEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(IEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IEnumerator as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<IEnumerator as ::unity2::ClassIdentity>::class(), "Reset", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reset(this: IEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(IEnumerator, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+        let inner: extern "C" fn(IEnumerator, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -160,27 +118,21 @@ pub trait IIEnumeratorMethods: IIEnumerator {
     #[doc = "`MoveNext()` overload"]
     fn move_next(self) -> bool {
         unsafe {
-            let __receiver = <IEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Current()` overload"]
     fn get_current(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <IEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <IEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
@@ -192,7 +144,5 @@ impl<__T: IIEnumerator> IIEnumeratorMethods for __T {}
 #[cfg(feature = "system-collections-ienumerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IEnumerator;
-    pub use super::IIEnumerator;
-    pub use super::IIEnumeratorMethods;
+    pub use super::{IEnumerator, IIEnumerator, IIEnumeratorMethods};
 }

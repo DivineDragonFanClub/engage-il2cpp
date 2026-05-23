@@ -6,8 +6,7 @@ pub mod animationoutputweightprocessor;
 pub use animationoutputweightprocessor::IAnimationOutputWeightProcessorMethods;
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor-types")]
 pub use animationoutputweightprocessor::{
-    AnimationOutputWeightProcessor, AnimationOutputWeightProcessor_WeightInfo,
-    IAnimationOutputWeightProcessor,
+    AnimationOutputWeightProcessor, AnimationOutputWeightProcessor_WeightInfo, IAnimationOutputWeightProcessor,
 };
 #[cfg(any(feature = "unity_engine-timeline-animationplayableasset-types"))]
 pub mod animationplayableasset;
@@ -15,8 +14,7 @@ pub mod animationplayableasset;
 pub use animationplayableasset::IAnimationPlayableAssetMethods;
 #[cfg(feature = "unity_engine-timeline-animationplayableasset-types")]
 pub use animationplayableasset::{
-    AnimationPlayableAsset, AnimationPlayableAsset_AnimationPlayableAssetUpgrade,
-    AnimationPlayableAsset_LoopMode, IAnimationPlayableAsset,
+    AnimationPlayableAsset, AnimationPlayableAsset_AnimationPlayableAssetUpgrade, AnimationPlayableAsset_LoopMode, IAnimationPlayableAsset,
     IAnimationPlayableAsset_AnimationPlayableAssetUpgrade,
 };
 #[cfg(any(feature = "unity_engine-timeline-animationtrack-types"))]
@@ -24,10 +22,7 @@ pub mod animationtrack;
 #[cfg(feature = "unity_engine-timeline-animationtrack")]
 pub use animationtrack::IAnimationTrackMethods;
 #[cfg(feature = "unity_engine-timeline-animationtrack-types")]
-pub use animationtrack::{
-    AnimationTrack, AnimationTrack_AnimationTrackUpgrade, IAnimationTrack,
-    IAnimationTrack_AnimationTrackUpgrade,
-};
+pub use animationtrack::{AnimationTrack, AnimationTrack_AnimationTrackUpgrade, IAnimationTrack, IAnimationTrack_AnimationTrackUpgrade};
 #[cfg(any(feature = "unity_engine-timeline-appliedoffsetmode-types"))]
 pub mod appliedoffsetmode;
 #[cfg(feature = "unity_engine-timeline-appliedoffsetmode-types")]
@@ -83,9 +78,7 @@ pub mod ignoreonplayabletrackattribute;
 #[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
 pub use ignoreonplayabletrackattribute::IIgnoreOnPlayableTrackAttributeMethods;
 #[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute-types")]
-pub use ignoreonplayabletrackattribute::{
-    IIgnoreOnPlayableTrackAttribute, IgnoreOnPlayableTrackAttribute,
-};
+pub use ignoreonplayabletrackattribute::{IIgnoreOnPlayableTrackAttribute, IgnoreOnPlayableTrackAttribute};
 #[cfg(any(feature = "unity_engine-timeline-iinterval-types"))]
 pub mod iinterval;
 #[cfg(feature = "unity_engine-timeline-iinterval")]
@@ -227,9 +220,7 @@ pub use signalemitter::{ISignalEmitter, SignalEmitter};
 #[cfg(any(feature = "unity_engine-timeline-signalreceiver-types"))]
 pub mod signalreceiver;
 #[cfg(feature = "unity_engine-timeline-signalreceiver-types")]
-pub use signalreceiver::{
-    ISignalReceiver, ISignalReceiver_EventKeyValue, SignalReceiver, SignalReceiver_EventKeyValue,
-};
+pub use signalreceiver::{ISignalReceiver, ISignalReceiver_EventKeyValue, SignalReceiver, SignalReceiver_EventKeyValue};
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
 pub use signalreceiver::{ISignalReceiverMethods, ISignalReceiver_EventKeyValueMethods};
 #[cfg(any(feature = "unity_engine-timeline-supportschildtracksattribute-types"))]
@@ -237,24 +228,17 @@ pub mod supportschildtracksattribute;
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
 pub use supportschildtracksattribute::ISupportsChildTracksAttributeMethods;
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute-types")]
-pub use supportschildtracksattribute::{
-    ISupportsChildTracksAttribute, SupportsChildTracksAttribute,
-};
+pub use supportschildtracksattribute::{ISupportsChildTracksAttribute, SupportsChildTracksAttribute};
 #[cfg(any(feature = "unity_engine-timeline-timefieldattribute-types"))]
 pub mod timefieldattribute;
 #[cfg(feature = "unity_engine-timeline-timefieldattribute")]
 pub use timefieldattribute::ITimeFieldAttributeMethods;
 #[cfg(feature = "unity_engine-timeline-timefieldattribute-types")]
-pub use timefieldattribute::{
-    ITimeFieldAttribute, TimeFieldAttribute, TimeFieldAttribute_UseEditMode,
-};
+pub use timefieldattribute::{ITimeFieldAttribute, TimeFieldAttribute, TimeFieldAttribute_UseEditMode};
 #[cfg(any(feature = "unity_engine-timeline-timelineasset-types"))]
 pub mod timelineasset;
 #[cfg(feature = "unity_engine-timeline-timelineasset-types")]
-pub use timelineasset::{
-    ITimelineAsset, ITimelineAsset_EditorSettings, TimelineAsset, TimelineAsset_DurationMode,
-    TimelineAsset_EditorSettings,
-};
+pub use timelineasset::{ITimelineAsset, ITimelineAsset_EditorSettings, TimelineAsset, TimelineAsset_DurationMode, TimelineAsset_EditorSettings};
 #[cfg(feature = "unity_engine-timeline-timelineasset")]
 pub use timelineasset::{ITimelineAssetMethods, ITimelineAsset_EditorSettingsMethods};
 #[cfg(any(feature = "unity_engine-timeline-timelineclip-types"))]
@@ -263,8 +247,8 @@ pub mod timelineclip;
 pub use timelineclip::ITimelineClipMethods;
 #[cfg(feature = "unity_engine-timeline-timelineclip-types")]
 pub use timelineclip::{
-    ITimelineClip, ITimelineClip_TimelineClipUpgrade, TimelineClip, TimelineClip_BlendCurveMode,
-    TimelineClip_ClipExtrapolation, TimelineClip_TimelineClipUpgrade,
+    ITimelineClip, ITimelineClip_TimelineClipUpgrade, TimelineClip, TimelineClip_BlendCurveMode, TimelineClip_ClipExtrapolation,
+    TimelineClip_TimelineClipUpgrade,
 };
 #[cfg(any(feature = "unity_engine-timeline-timelineclipcapsextensions-types"))]
 pub mod timelineclipcapsextensions;
@@ -289,10 +273,7 @@ pub mod timenotificationbehaviour;
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
 pub use timenotificationbehaviour::ITimeNotificationBehaviourMethods;
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour-types")]
-pub use timenotificationbehaviour::{
-    ITimeNotificationBehaviour, TimeNotificationBehaviour,
-    TimeNotificationBehaviour_NotificationEntry,
-};
+pub use timenotificationbehaviour::{ITimeNotificationBehaviour, TimeNotificationBehaviour, TimeNotificationBehaviour_NotificationEntry};
 #[cfg(any(feature = "unity_engine-timeline-timeutility-types"))]
 pub mod timeutility;
 #[cfg(feature = "unity_engine-timeline-timeutility-types")]

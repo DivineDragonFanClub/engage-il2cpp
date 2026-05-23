@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-photographselectweaponmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectweaponmenuitem/PhotographSelectWeaponMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographSelectWeaponMenuItem")]
@@ -33,9 +35,7 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::class(),
@@ -48,39 +48,27 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_IsCurrent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_IsCurrent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_current(
-        this: PhotographSelectWeaponMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_current(this: PhotographSelectWeaponMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PhotographSelectWeaponMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_current::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::class(),
@@ -93,42 +81,35 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_WeaponData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_WeaponData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_weapon_data(
         this: PhotographSelectWeaponMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            PhotographSelectWeaponMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographSelectWeaponMenuItem, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
+            ::core::mem::transmute(__lookup_get_weapon_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemdata :: ItemData as :: unity2 :: IlType > :: il_type () , < crate :: app :: photographdisposmanager :: PhotographDisposManager as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+                <crate::app::photographdisposmanager::PhotographDisposManager as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -140,18 +121,15 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -167,26 +145,14 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
             crate::app::photographdisposmanager::PhotographDisposManager,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            weapon_data,
-            dispos_manager,
-            is_current,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, weapon_data, dispos_manager, is_current, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::class(),
@@ -199,39 +165,27 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: PhotographSelectWeaponMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: PhotographSelectWeaponMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PhotographSelectWeaponMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::class(),
@@ -244,41 +198,30 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: PhotographSelectWeaponMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            PhotographSelectWeaponMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographSelectWeaponMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::class(),
@@ -291,32 +234,23 @@ mod __PhotographSelectWeaponMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectWeaponMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn b_call(
         this: PhotographSelectWeaponMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            PhotographSelectWeaponMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PhotographSelectWeaponMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -327,42 +261,28 @@ pub trait IPhotographSelectWeaponMenuItemMethods: IPhotographSelectWeaponMenuIte
     fn get_is_current(self) -> bool {
         unsafe {
             let __receiver =
-                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectWeaponMenuItem_unity2_raw::get_is_current(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectWeaponMenuItem_unity2_raw::get_is_current(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_WeaponData()` overload"]
     fn get_weapon_data(self) -> crate::app::itemdata::ItemData {
         unsafe {
             let __receiver =
-                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectWeaponMenuItem_unity2_raw::get_weapon_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectWeaponMenuItem_unity2_raw::get_weapon_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::itemdata::ItemData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"]
     fn ctor(
         self,
         weapon_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-        dispos_manager: impl ::core::convert::Into<
-            crate::app::photographdisposmanager::PhotographDisposManager,
-        >,
+        dispos_manager: impl ::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>,
         is_current: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
             let __receiver =
-                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PhotographSelectWeaponMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(weapon_data),
@@ -376,39 +296,24 @@ pub trait IPhotographSelectWeaponMenuItemMethods: IPhotographSelectWeaponMenuIte
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectWeaponMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectWeaponMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectWeaponMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectWeaponMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __PhotographSelectWeaponMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <PhotographSelectWeaponMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PhotographSelectWeaponMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -431,12 +336,7 @@ impl PhotographSelectWeaponMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IPhotographSelectWeaponMenuItemMethods>::ctor(
-            this,
-            weapon_data,
-            dispos_manager,
-            is_current,
-        );
+        <Self as IPhotographSelectWeaponMenuItemMethods>::ctor(this, weapon_data, dispos_manager, is_current);
         this
     }
 }
@@ -444,13 +344,10 @@ impl PhotographSelectWeaponMenuItem {
 #[cfg(feature = "app-photographselectweaponmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPhotographSelectWeaponMenuItem;
-    pub use super::IPhotographSelectWeaponMenuItemMethods;
-    pub use super::PhotographSelectWeaponMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IPhotographSelectWeaponMenuItem, IPhotographSelectWeaponMenuItemMethods, PhotographSelectWeaponMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
 }

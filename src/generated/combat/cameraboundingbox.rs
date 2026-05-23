@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-cameraboundingbox-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameraboundingbox/CameraBoundingBox.md"))]
     #[::unity2::class(namespace = "Combat", name = "CameraBoundingBox")]
@@ -38,9 +38,7 @@ mod __CameraBoundingBox_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -57,18 +55,15 @@ mod __CameraBoundingBox_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -84,26 +79,14 @@ mod __CameraBoundingBox_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            follow_pos,
-            look_at_pos,
-            screen_space_reprojection_ratio,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, follow_pos, look_at_pos, screen_space_reprojection_ratio, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_append {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -119,18 +102,15 @@ mod __CameraBoundingBox_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
-                    "Append",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
+                        "Append",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn append(
@@ -139,25 +119,15 @@ mod __CameraBoundingBox_unity2_raw {
         size: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CameraBoundingBox,
-            crate::unity_engine::vector3::Vector3,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_append::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CameraBoundingBox, crate::unity_engine::vector3::Vector3, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_append::get_method_info().method_ptr);
         inner(this, pos, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_box {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CameraBoundingBox as ::unity2::ClassIdentity>::class(),
@@ -170,39 +140,27 @@ mod __CameraBoundingBox_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
-                    "CreateBox",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
+                        "CreateBox",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_box(
-        this: CameraBoundingBox,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_box(this: CameraBoundingBox, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CameraBoundingBox, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_box::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_box::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_box_center {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CameraBoundingBox as ::unity2::ClassIdentity>::class(),
@@ -215,43 +173,28 @@ mod __CameraBoundingBox_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
-                    "GetBoxCenter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
+                        "GetBoxCenter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_box_center(
-        this: CameraBoundingBox,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CameraBoundingBox,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_box_center::get_offset() as isize),
-        );
+    pub unsafe fn get_box_center(this: CameraBoundingBox, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(CameraBoundingBox, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_box_center::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_nearest_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CameraBoundingBox as ::unity2::ClassIdentity>::class(),
                 "GetNearestDistance",
@@ -263,42 +206,28 @@ mod __CameraBoundingBox_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
-                    "GetNearestDistance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
+                        "GetNearestDistance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_nearest_distance(
-        this: CameraBoundingBox,
-        fov: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_nearest_distance(this: CameraBoundingBox, fov: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CameraBoundingBox, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_nearest_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_nearest_distance::get_method_info().method_ptr);
         inner(this, fov, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pos_in_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CameraBoundingBox as ::unity2::ClassIdentity>::class(),
                 "PosInCamera",
@@ -310,18 +239,15 @@ mod __CameraBoundingBox_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
-                    "PosInCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraBoundingBox as ::unity2::ClassIdentity>::NAME,
+                        "PosInCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pos_in_camera(
@@ -333,11 +259,7 @@ mod __CameraBoundingBox_unity2_raw {
             CameraBoundingBox,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pos_in_camera::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_pos_in_camera::get_method_info().method_ptr);
         inner(this, pos, __unity2_method_info)
     }
 }
@@ -352,9 +274,7 @@ pub trait ICameraBoundingBoxMethods: ICameraBoundingBox {
         screen_space_reprojection_ratio: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CameraBoundingBox_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(follow_pos),
@@ -365,15 +285,9 @@ pub trait ICameraBoundingBoxMethods: ICameraBoundingBox {
         }
     }
     #[doc = "`Append(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    fn append(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        size: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn append(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>, size: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CameraBoundingBox_unity2_raw::append(
                 __receiver,
                 ::core::convert::Into::into(pos),
@@ -385,48 +299,29 @@ pub trait ICameraBoundingBoxMethods: ICameraBoundingBox {
     #[doc = "`CreateBox()` overload"]
     fn create_box(self) -> () {
         unsafe {
-            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CameraBoundingBox_unity2_raw::create_box(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetBoxCenter()` overload"]
     fn get_box_center(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CameraBoundingBox_unity2_raw::get_box_center(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetNearestDistance(f32)` overload"]
     fn get_nearest_distance(self, fov: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
-            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CameraBoundingBox_unity2_raw::get_nearest_distance(
-                __receiver,
-                ::core::convert::Into::into(fov),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CameraBoundingBox_unity2_raw::get_nearest_distance(__receiver, ::core::convert::Into::into(fov), ::core::option::Option::None)
         }
     }
     #[doc = "`PosInCamera(crate::unity_engine::vector3::Vector3)` overload"]
-    fn pos_in_camera(
-        self,
-        pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
+    fn pos_in_camera(self, pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CameraBoundingBox_unity2_raw::pos_in_camera(
-                __receiver,
-                ::core::convert::Into::into(pos),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CameraBoundingBox as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CameraBoundingBox_unity2_raw::pos_in_camera(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)
         }
     }
 }
@@ -449,12 +344,7 @@ impl CameraBoundingBox {
                 ::core::stringify!(new),
             )
         });
-        <Self as ICameraBoundingBoxMethods>::ctor(
-            this,
-            follow_pos,
-            look_at_pos,
-            screen_space_reprojection_ratio,
-        );
+        <Self as ICameraBoundingBoxMethods>::ctor(this, follow_pos, look_at_pos, screen_space_reprojection_ratio);
         this
     }
 }
@@ -462,9 +352,7 @@ impl CameraBoundingBox {
 #[cfg(feature = "combat-cameraboundingbox")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CameraBoundingBox;
-    pub use super::ICameraBoundingBox;
-    pub use super::ICameraBoundingBoxMethods;
+    pub use super::{CameraBoundingBox, ICameraBoundingBox, ICameraBoundingBoxMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

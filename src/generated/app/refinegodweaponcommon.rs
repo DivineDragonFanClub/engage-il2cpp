@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-refinegodweaponcommon-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponcommon/RefineGodWeaponCommon.md"))]
     #[::unity2::class(namespace = "App", name = "RefineGodWeaponCommon")]
@@ -25,11 +25,8 @@ mod __RefineGodWeaponCommon_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_capacity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineGodWeaponCommon as ::unity2::ClassIdentity>::class(),
                 "GetCapacity",
@@ -41,41 +38,28 @@ mod __RefineGodWeaponCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineGodWeaponCommon as ::unity2::ClassIdentity>::NAME,
-                    "GetCapacity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineGodWeaponCommon as ::unity2::ClassIdentity>::NAME,
+                        "GetCapacity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_capacity(
-        god_unit: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_capacity(god_unit: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_capacity::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_capacity::get_method_info().method_ptr);
         inner(god_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_efficacy_skills {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineGodWeaponCommon as ::unity2::ClassIdentity>::class(),
                 "HasEfficacySkills",
@@ -87,39 +71,27 @@ mod __RefineGodWeaponCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineGodWeaponCommon as ::unity2::ClassIdentity>::NAME,
-                    "HasEfficacySkills",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineGodWeaponCommon as ::unity2::ClassIdentity>::NAME,
+                        "HasEfficacySkills",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn has_efficacy_skills(
-        item_data: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn has_efficacy_skills(item_data: crate::app::itemdata::ItemData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_efficacy_skills::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_has_efficacy_skills::get_method_info().method_ptr);
         inner(item_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineGodWeaponCommon as ::unity2::ClassIdentity>::class(),
@@ -132,30 +104,20 @@ mod __RefineGodWeaponCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineGodWeaponCommon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineGodWeaponCommon as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RefineGodWeaponCommon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RefineGodWeaponCommon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefineGodWeaponCommon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -164,23 +126,12 @@ mod __RefineGodWeaponCommon_unity2_raw {
 impl RefineGodWeaponCommon {
     #[doc = "`GetCapacity(crate::app::godunit::GodUnit)` overload"]
     pub fn get_capacity(god_unit: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> i32 {
-        unsafe {
-            __RefineGodWeaponCommon_unity2_raw::get_capacity(
-                ::core::convert::Into::into(god_unit),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RefineGodWeaponCommon_unity2_raw::get_capacity(::core::convert::Into::into(god_unit), ::core::option::Option::None) }
     }
+
     #[doc = "`HasEfficacySkills(crate::app::itemdata::ItemData)` overload"]
-    pub fn has_efficacy_skills(
-        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
-        unsafe {
-            __RefineGodWeaponCommon_unity2_raw::has_efficacy_skills(
-                ::core::convert::Into::into(item_data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn has_efficacy_skills(item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
+        unsafe { __RefineGodWeaponCommon_unity2_raw::has_efficacy_skills(::core::convert::Into::into(item_data), ::core::option::Option::None) }
     }
 }
 
@@ -189,9 +140,8 @@ pub trait IRefineGodWeaponCommonMethods: IRefineGodWeaponCommon {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RefineGodWeaponCommon as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <RefineGodWeaponCommon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefineGodWeaponCommon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -219,9 +169,7 @@ impl RefineGodWeaponCommon {
 #[cfg(feature = "app-refinegodweaponcommon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineGodWeaponCommon;
-    pub use super::IRefineGodWeaponCommonMethods;
-    pub use super::RefineGodWeaponCommon;
+    pub use super::{IRefineGodWeaponCommon, IRefineGodWeaponCommonMethods, RefineGodWeaponCommon};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

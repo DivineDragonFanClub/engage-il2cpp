@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-textgenerationsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textgenerationsettings/TextGenerationSettings.md"))]
     #[repr(C)]
@@ -33,9 +35,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for TextGenerationSettings {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "TextGenerationSettings";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -46,10 +47,7 @@ mod __types {
 
     impl ::unity2::IlType for TextGenerationSettings {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -66,9 +64,7 @@ mod __TextGenerationSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_compare_colors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -84,18 +80,15 @@ mod __TextGenerationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
-                    "CompareColors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
+                        "CompareColors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_colors(
@@ -109,20 +102,14 @@ mod __TextGenerationSettings_unity2_raw {
             crate::unity_engine::color::Color,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_colors::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compare_colors::get_method_info().method_ptr);
         inner(this, left, right, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_vector2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
@@ -138,18 +125,15 @@ mod __TextGenerationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
-                    "CompareVector2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
+                        "CompareVector2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_vector2(
@@ -163,21 +147,16 @@ mod __TextGenerationSettings_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_vector2::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_compare_vector2::get_method_info().method_ptr);
         inner(this, left, right, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::textgenerationsettings::TextGenerationSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextGenerationSettings as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -189,18 +168,15 @@ mod __TextGenerationSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextGenerationSettings as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
@@ -212,11 +188,7 @@ mod __TextGenerationSettings_unity2_raw {
             TextGenerationSettings,
             crate::unity_engine::textgenerationsettings::TextGenerationSettings,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
 }
@@ -238,6 +210,7 @@ impl TextGenerationSettings {
             )
         }
     }
+
     #[doc = "`CompareVector2(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]
     pub fn compare_vector2(
         self,
@@ -253,20 +226,10 @@ impl TextGenerationSettings {
             )
         }
     }
+
     #[doc = "`Equals(crate::unity_engine::textgenerationsettings::TextGenerationSettings)` overload"]
-    pub fn equals(
-        self,
-        other: impl ::core::convert::Into<
-            crate::unity_engine::textgenerationsettings::TextGenerationSettings,
-        >,
-    ) -> bool {
-        unsafe {
-            __TextGenerationSettings_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::textgenerationsettings::TextGenerationSettings>) -> bool {
+        unsafe { __TextGenerationSettings_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
 }
 
@@ -274,10 +237,9 @@ impl TextGenerationSettings {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TextGenerationSettings;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

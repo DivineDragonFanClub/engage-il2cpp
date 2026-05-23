@@ -2,15 +2,19 @@
 
 #[cfg(feature = "app-gridmenucontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenucontent::{BasicMenuContent, IBasicMenuContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gridmenucontent/GridMenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "GridMenuContent")]
@@ -36,9 +40,7 @@ mod __GridMenuContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_menu_item_content_max {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -51,41 +53,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetMenuItemContentMax",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetMenuItemContentMax",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_menu_item_content_max(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_menu_item_content_max(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_menu_item_content_max::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_cursor_moved_pos_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcCursorMovedPosX",
@@ -97,42 +86,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcCursorMovedPosX",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosX",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_cursor_moved_pos_x(
-        this: GridMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_cursor_moved_pos_x(this: GridMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_cursor_moved_pos_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_x::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_cursor_moved_pos_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcCursorMovedPosY",
@@ -144,40 +119,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcCursorMovedPosY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: GridMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_cursor_moved_pos_y(this: GridMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_cursor_moved_pos_y::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_obj_reference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -190,39 +152,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "InitObjReference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "InitObjReference",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_obj_reference(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_obj_reference(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_obj_reference::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_obj_reference::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_w {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -235,39 +185,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcW",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcW",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_w(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_w(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_w::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_h {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -280,43 +218,29 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcH",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcH",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_h(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_h(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_h::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cycle_menu_item_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "CycleMenuItemContent",
@@ -328,18 +252,15 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CycleMenuItemContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CycleMenuItemContent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cycle_menu_item_content(
@@ -349,20 +270,14 @@ mod __GridMenuContent_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(GridMenuContent, bool, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_cycle_menu_item_content::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_cycle_menu_item_content::get_method_info().method_ptr);
         inner(this, is_forward, cycle_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_line_height_for_scroll {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -375,39 +290,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetLineHeightForScroll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetLineHeightForScroll",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_line_height_for_scroll(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_line_height_for_scroll(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_line_height_for_scroll::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_line_height_for_scroll::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -420,41 +323,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_column {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcColumn",
@@ -466,42 +356,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcColumn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcColumn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_column(
-        this: GridMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn calc_column(this: GridMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GridMenuContent, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_column::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_column::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_row {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcRow",
@@ -513,44 +389,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcRow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcRow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_row(
-        this: GridMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn calc_row(this: GridMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GridMenuContent, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_row::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_row::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_menu_item_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcMenuItemIndex",
@@ -562,45 +422,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcMenuItemIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcMenuItemIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_menu_item_index(
-        this: GridMenuContent,
-        row: i32,
-        column: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn calc_menu_item_index(this: GridMenuContent, row: i32, column: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GridMenuContent, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_menu_item_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_menu_item_index::get_method_info().method_ptr);
         inner(this, row, column, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cell_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetCellSize",
@@ -612,43 +455,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetCellSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetCellSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_cell_size(
-        this: GridMenuContent,
-        w: f32,
-        h: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_cell_size(this: GridMenuContent, w: f32, h: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, f32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_cell_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_cell_size::get_method_info().method_ptr);
         inner(this, w, h, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cell_w {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetCellW",
@@ -660,42 +488,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetCellW",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetCellW",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_cell_w(
-        this: GridMenuContent,
-        w: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_cell_w(this: GridMenuContent, w: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_cell_w::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_cell_w::get_method_info().method_ptr);
         inner(this, w, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cell_h {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetCellH",
@@ -707,40 +521,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetCellH",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetCellH",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_cell_h(
-        this: GridMenuContent,
-        h: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_cell_h(this: GridMenuContent, h: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_cell_h::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_cell_h::get_method_info().method_ptr);
         inner(this, h, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cell_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -753,41 +554,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetCellSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetCellSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cell_size(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            GridMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cell_size::get_offset() as isize),
-        );
+    pub unsafe fn get_cell_size(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_cell_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cell_w {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -800,39 +587,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetCellW",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetCellW",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cell_w(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_cell_w(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_cell_w::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_cell_w::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cell_h {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -845,41 +620,28 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetCellH",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetCellH",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cell_h(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_cell_h(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_cell_h::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_cell_h::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_column_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetColumnCount",
@@ -891,40 +653,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetColumnCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetColumnCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_column_count(
-        this: GridMenuContent,
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_column_count(this: GridMenuContent, count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_column_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_column_count::get_method_info().method_ptr);
         inner(this, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -937,39 +686,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetColumnCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetColumnCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column_count(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_column_count(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_column_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_column_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_cursor_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -982,39 +719,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCursorSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCursorSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_cursor_size(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_cursor_size(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_cursor_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_cursor_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1027,35 +752,26 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1068,39 +784,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gridmenucontent::GridMenuContent {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gridmenucontent::GridMenuContent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::gridmenucontent::GridMenuContent {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::gridmenucontent::GridMenuContent =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1113,39 +817,27 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GridMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GridMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GridMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GridMenuContent as ::unity2::ClassIdentity>::class(),
@@ -1158,26 +850,19 @@ mod __GridMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GridMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GridMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1188,10 +873,12 @@ impl GridMenuContent {
     pub fn load_prefab_async() -> () {
         unsafe { __GridMenuContent_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`Create()` overload"]
     pub fn create() -> crate::app::gridmenucontent::GridMenuContent {
         unsafe { __GridMenuContent_unity2_raw::create(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __GridMenuContent_unity2_raw::cctor(::core::option::Option::None) }
@@ -1203,21 +890,14 @@ pub trait IGridMenuContentMethods: IGridMenuContent {
     #[doc = "`GetMenuItemContentMax()` overload"]
     fn get_menu_item_content_max(self) -> i32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::get_menu_item_content_max(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcCursorMovedPosX(i32)` overload"]
     fn calc_cursor_moved_pos_x(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::calc_cursor_moved_pos_x(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -1228,9 +908,7 @@ pub trait IGridMenuContentMethods: IGridMenuContent {
     #[doc = "`CalcCursorMovedPosY(i32)` overload"]
     fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::calc_cursor_moved_pos_y(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -1241,43 +919,28 @@ pub trait IGridMenuContentMethods: IGridMenuContent {
     #[doc = "`InitObjReference()` overload"]
     fn init_obj_reference(self) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::init_obj_reference(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::init_obj_reference(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcW()` overload"]
     fn calc_w(self) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcH()` overload"]
     fn calc_h(self) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CycleMenuItemContent(bool, i32)` overload"]
-    fn cycle_menu_item_content(
-        self,
-        is_forward: impl ::core::convert::Into<bool>,
-        cycle_count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn cycle_menu_item_content(self, is_forward: impl ::core::convert::Into<bool>, cycle_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::cycle_menu_item_content(
                 __receiver,
                 ::core::convert::Into::into(is_forward),
@@ -1289,60 +952,35 @@ pub trait IGridMenuContentMethods: IGridMenuContent {
     #[doc = "`GetLineHeightForScroll()` overload"]
     fn get_line_height_for_scroll(self) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::get_line_height_for_scroll(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::get_line_height_for_scroll(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcColumn(i32)` overload"]
     fn calc_column(self, menu_item_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::calc_column(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::calc_column(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcRow(i32)` overload"]
     fn calc_row(self, menu_item_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::calc_row(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::calc_row(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcMenuItemIndex(i32, i32)` overload"]
-    fn calc_menu_item_index(
-        self,
-        row: impl ::core::convert::Into<i32>,
-        column: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn calc_menu_item_index(self, row: impl ::core::convert::Into<i32>, column: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::calc_menu_item_index(
                 __receiver,
                 ::core::convert::Into::into(row),
@@ -1352,15 +990,9 @@ pub trait IGridMenuContentMethods: IGridMenuContent {
         }
     }
     #[doc = "`SetCellSize(f32, f32)` overload"]
-    fn set_cell_size(
-        self,
-        w: impl ::core::convert::Into<f32>,
-        h: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_cell_size(self, w: impl ::core::convert::Into<f32>, h: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::set_cell_size(
                 __receiver,
                 ::core::convert::Into::into(w),
@@ -1372,96 +1004,63 @@ pub trait IGridMenuContentMethods: IGridMenuContent {
     #[doc = "`SetCellW(f32)` overload"]
     fn set_cell_w(self, w: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::set_cell_w(
-                __receiver,
-                ::core::convert::Into::into(w),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::set_cell_w(__receiver, ::core::convert::Into::into(w), ::core::option::Option::None)
         }
     }
     #[doc = "`SetCellH(f32)` overload"]
     fn set_cell_h(self, h: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::set_cell_h(
-                __receiver,
-                ::core::convert::Into::into(h),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::set_cell_h(__receiver, ::core::convert::Into::into(h), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCellSize()` overload"]
     fn get_cell_size(self) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::get_cell_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCellW()` overload"]
     fn get_cell_w(self) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::get_cell_w(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCellH()` overload"]
     fn get_cell_h(self) -> f32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::get_cell_h(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetColumnCount(i32)` overload"]
     fn set_column_count(self, count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::set_column_count(
-                __receiver,
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::set_column_count(__receiver, ::core::convert::Into::into(count), ::core::option::Option::None)
         }
     }
     #[doc = "`GetColumnCount()` overload"]
     fn get_column_count(self) -> i32 {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCursorSize()` overload"]
     fn update_cursor_size(self) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GridMenuContent_unity2_raw::update_cursor_size(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GridMenuContent_unity2_raw::update_cursor_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GridMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GridMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1489,25 +1088,22 @@ impl GridMenuContent {
 #[cfg(feature = "app-gridmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GridMenuContent;
-    pub use super::IGridMenuContent;
-    pub use super::IGridMenuContentMethods;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use super::{GridMenuContent, IGridMenuContent, IGridMenuContentMethods};
     #[cfg(feature = "app-basicmenucontent")]
     pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

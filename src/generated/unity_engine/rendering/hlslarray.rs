@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-rendering-hlslarray-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hlslarray/HLSLArray.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HLSLArray")]
@@ -28,54 +28,30 @@ mod __HLSLArray_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HLSLArray as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<HLSLArray as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HLSLArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HLSLArray as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HLSLArray,
-        array_size: i32,
-        element_type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HLSLArray,
-            i32,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HLSLArray, array_size: i32, element_type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HLSLArray, i32, ::unity2::SystemType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, array_size, element_type, __unity2_method_info)
     }
 }
@@ -83,15 +59,9 @@ mod __HLSLArray_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-hlslarray")]
 pub trait IHLSLArrayMethods: IHLSLArray {
     #[doc = "`.ctor(i32, ::unity2::SystemType)` overload"]
-    fn ctor(
-        self,
-        array_size: impl ::core::convert::Into<i32>,
-        element_type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> () {
+    fn ctor(self, array_size: impl ::core::convert::Into<i32>, element_type: impl ::core::convert::Into<::unity2::SystemType>) -> () {
         unsafe {
-            let __receiver = <HLSLArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <HLSLArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HLSLArray_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(array_size),
@@ -109,13 +79,8 @@ impl<__T: IHLSLArray> IHLSLArrayMethods for __T {}
 impl HLSLArray {
     #[doc = "`.ctor(i32, ::unity2::SystemType)` — overload selector"]
     pub fn new(array_size: i32, element_type: ::unity2::SystemType) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HLSLArray),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HLSLArray), ::core::stringify!(new),));
         <Self as IHLSLArrayMethods>::ctor(this, array_size, element_type);
         this
     }
@@ -124,7 +89,5 @@ impl HLSLArray {
 #[cfg(feature = "unity_engine-rendering-hlslarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HLSLArray;
-    pub use super::IHLSLArray;
-    pub use super::IHLSLArrayMethods;
+    pub use super::{HLSLArray, IHLSLArray, IHLSLArrayMethods};
 }

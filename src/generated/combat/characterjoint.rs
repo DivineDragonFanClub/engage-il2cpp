@@ -2,14 +2,18 @@
 
 #[cfg(feature = "combat-characterjoint-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterjoint/CharacterJoint.md"))]
     #[::unity2::class(namespace = "Combat", name = "CharacterJoint")]
@@ -218,9 +222,7 @@ mod __CharacterJoint_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_cp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -233,43 +235,28 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_CP",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_CP",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cp(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cp::get_offset() as isize),
-        );
+    pub unsafe fn get_cp(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::combat::character::Character =
+            ::core::mem::transmute(__lookup_get_cp::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -281,18 +268,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -300,26 +284,16 @@ mod __CharacterJoint_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tr_ato_b {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "GetTR_AtoB",
@@ -331,18 +305,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "GetTR_AtoB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "GetTR_AtoB",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_tr_ato_b(
@@ -350,24 +321,15 @@ mod __CharacterJoint_unity2_raw {
         s: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::tr::TR {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::tr::TR = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_tr_ato_b::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::combat::tr::TR =
+            ::core::mem::transmute(__lookup_get_tr_ato_b::get_method_info().method_ptr);
         inner(this, s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -380,41 +342,28 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_IsLateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_IsLateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_late_update(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_late_update(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_IsLateUpdate",
@@ -426,40 +375,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_IsLateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_IsLateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_late_update(
-        this: CharacterJoint,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_late_update(this: CharacterJoint, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_late_update::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_available {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -472,39 +408,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAvailable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAvailable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_available(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_available(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_available::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_available::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_run_scheduler {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -517,39 +441,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "RunScheduler",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "RunScheduler",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn run_scheduler(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn run_scheduler(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_run_scheduler::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_run_scheduler::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -562,39 +474,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -607,39 +507,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "LateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "LateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn late_update(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn late_update(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_trans_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -652,43 +540,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_trans_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_trans_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_trans_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_trans_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_c_trans_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_trans_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_c_trans_position",
@@ -700,18 +576,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_c_trans_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_c_trans_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_c_trans_position(
@@ -719,24 +592,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_trans_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_trans_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_trans_ride_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -749,43 +613,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_trans_ride_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_trans_ride_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_trans_ride_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_trans_ride_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_c_trans_ride_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_trans_ride_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_c_trans_ride_position",
@@ -797,18 +649,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_c_trans_ride_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_c_trans_ride_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_c_trans_ride_position(
@@ -816,24 +665,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_trans_ride_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_trans_ride_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_hip_jnt_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -846,43 +686,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_hip_jnt_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_hip_jnt_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_hip_jnt_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_hip_jnt_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_c_hip_jnt_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_hip_jnt_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_c_hip_jnt_position",
@@ -894,18 +722,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_c_hip_jnt_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_c_hip_jnt_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_c_hip_jnt_position(
@@ -913,24 +738,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_hip_jnt_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_hip_jnt_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_head_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -943,43 +759,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_head_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_head_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_head_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_head_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_c_head_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_head_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_c_head_loc_position",
@@ -991,18 +795,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_c_head_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_c_head_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_c_head_loc_position(
@@ -1010,24 +811,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_head_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_head_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ride_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1040,43 +832,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_ride_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_ride_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_ride_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ride_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_c_ride_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_ride_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_c_ride_loc_position",
@@ -1088,18 +868,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_c_ride_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_c_ride_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_c_ride_loc_position(
@@ -1107,24 +884,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_ride_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_ride_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_spine2_jnt_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1137,43 +905,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_spine2_jnt_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_spine2_jnt_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_spine2_jnt_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_spine2_jnt_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_c_spine2_jnt_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_c_spine2_jnt_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_c_spine2_jnt_position",
@@ -1185,18 +941,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_c_spine2_jnt_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_c_spine2_jnt_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_c_spine2_jnt_position(
@@ -1204,24 +957,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_c_spine2_jnt_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_c_spine2_jnt_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_wpn1_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1234,43 +978,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_wpn1_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_wpn1_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_wpn1_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_wpn1_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_l_wpn1_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_l_wpn1_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_l_wpn1_loc_position",
@@ -1282,18 +1014,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_l_wpn1_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_l_wpn1_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_l_wpn1_loc_position(
@@ -1301,24 +1030,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_l_wpn1_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_l_wpn1_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_wpn1_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1331,43 +1051,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_wpn1_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_wpn1_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_wpn1_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_wpn1_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_r_wpn1_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_r_wpn1_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_r_wpn1_loc_position",
@@ -1379,18 +1087,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_r_wpn1_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_r_wpn1_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_r_wpn1_loc_position(
@@ -1398,24 +1103,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_r_wpn1_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_r_wpn1_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hand01_jnt_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1428,43 +1124,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_hand01_jnt_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_hand01_jnt_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_hand01_jnt_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hand01_jnt_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_hand01_jnt_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hand01_jnt_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_hand01_jnt_position",
@@ -1476,18 +1160,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_hand01_jnt_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_hand01_jnt_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_hand01_jnt_position(
@@ -1495,24 +1176,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hand01_jnt_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hand01_jnt_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_leg_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1525,43 +1197,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_leg_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_leg_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_leg_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_leg_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_l_leg_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_l_leg_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_l_leg_loc_position",
@@ -1573,18 +1233,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_l_leg_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_l_leg_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_l_leg_loc_position(
@@ -1592,24 +1249,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_l_leg_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_l_leg_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_leg_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1622,43 +1270,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_leg_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_leg_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_leg_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_leg_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_r_leg_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_r_leg_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_r_leg_loc_position",
@@ -1670,18 +1306,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_r_leg_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_r_leg_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_r_leg_loc_position(
@@ -1689,24 +1322,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_r_leg_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_r_leg_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_limb_f_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1719,43 +1343,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_limbF_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_limbF_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_limb_f_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_limb_f_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_l_limb_f_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_l_limb_f_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_l_limbF_loc_position",
@@ -1767,18 +1379,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_l_limbF_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_l_limbF_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_l_limb_f_loc_position(
@@ -1786,24 +1395,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_l_limb_f_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_l_limb_f_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_limb_r_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1816,43 +1416,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_limbR_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_limbR_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_limb_r_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_limb_r_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_l_limb_r_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_l_limb_r_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_l_limbR_loc_position",
@@ -1864,18 +1452,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_l_limbR_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_l_limbR_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_l_limb_r_loc_position(
@@ -1883,24 +1468,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_l_limb_r_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_l_limb_r_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_limb_f_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -1913,43 +1489,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_limbF_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_limbF_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_limb_f_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_limb_f_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_r_limb_f_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_r_limb_f_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_r_limbF_loc_position",
@@ -1961,18 +1525,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_r_limbF_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_r_limbF_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_r_limb_f_loc_position(
@@ -1980,24 +1541,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_r_limb_f_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_r_limb_f_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_limb_r_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2010,43 +1562,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_limbR_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_limbR_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_limb_r_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_limb_r_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_r_limb_r_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_r_limb_r_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_r_limbR_loc_position",
@@ -2058,18 +1598,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_r_limbR_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_r_limbR_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_r_limb_r_loc_position(
@@ -2077,24 +1614,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_r_limb_r_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_r_limb_r_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cam_look_at_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2107,43 +1635,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_camLookAt_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_camLookAt_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cam_look_at_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cam_look_at_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_cam_look_at_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cam_look_at_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_camLookAt_loc_position",
@@ -2155,18 +1671,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_camLookAt_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_camLookAt_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cam_look_at_loc_position(
@@ -2174,24 +1687,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cam_look_at_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cam_look_at_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cam_follow_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2204,43 +1708,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_camFollow_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_camFollow_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cam_follow_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cam_follow_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_cam_follow_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cam_follow_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_camFollow_loc_position",
@@ -2252,18 +1744,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_camFollow_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_camFollow_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cam_follow_loc_position(
@@ -2271,24 +1760,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cam_follow_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cam_follow_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_look_at_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2301,43 +1781,31 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_lookAt_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_lookAt_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_look_at_loc_position(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_look_at_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_look_at_loc_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_look_at_loc_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
                 "set_lookAt_loc_position",
@@ -2349,18 +1817,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "set_lookAt_loc_position",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "set_lookAt_loc_position",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_look_at_loc_position(
@@ -2368,24 +1833,15 @@ mod __CharacterJoint_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_look_at_loc_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_look_at_loc_position::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_position_cache {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2398,39 +1854,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "UpdatePositionCache",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "UpdatePositionCache",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_position_cache(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_position_cache(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_position_cache::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_position_cache::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_trans {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2443,41 +1887,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_trans",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_trans",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_trans(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_trans::get_offset() as isize),
-        );
+    pub unsafe fn get_c_trans(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_trans::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_trans_ride {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2490,41 +1920,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_trans_ride",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_trans_ride",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_trans_ride(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_trans_ride::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_trans_ride::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_hip_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2537,41 +1956,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_hip_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_hip_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_hip_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_hip_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_c_hip_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_hip_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_head_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2584,41 +1989,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_head_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_head_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_head_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_head_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_c_head_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_head_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_ride_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2631,41 +2022,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_ride_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_ride_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_ride_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_ride_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_c_ride_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_ride_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_wpn1_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2678,41 +2055,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_wpn1_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_wpn1_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_wpn1_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_wpn1_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_l_wpn1_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_wpn1_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_wpn1_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2725,41 +2088,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_wpn1_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_wpn1_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_wpn1_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_wpn1_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_r_wpn1_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_wpn1_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hand01_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2772,41 +2121,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_hand01_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_hand01_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hand01_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hand01_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_hand01_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_hand01_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_leg_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2819,41 +2154,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_leg_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_leg_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_leg_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_leg_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_l_leg_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_leg_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_leg_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2866,41 +2187,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_leg_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_leg_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_leg_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_leg_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_r_leg_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_leg_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_limb_f_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2913,41 +2220,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_limbF_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_limbF_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_limb_f_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_limb_f_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_limb_f_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_limb_r_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -2960,41 +2256,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_limbR_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_limbR_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_limb_r_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_limb_r_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_limb_r_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_limb_f_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3007,41 +2292,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_limbF_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_limbF_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_limb_f_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_limb_f_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_limb_f_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_limb_r_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3054,41 +2328,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_limbR_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_limbR_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_limb_r_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_limb_r_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_limb_r_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cam_look_at_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3101,41 +2364,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_camLookAt_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_camLookAt_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cam_look_at_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cam_look_at_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_cam_look_at_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cam_follow_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3148,41 +2400,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_camFollow_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_camFollow_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cam_follow_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cam_follow_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_cam_follow_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_look_at_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3195,41 +2436,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_lookAt_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_lookAt_loc",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_look_at_loc(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_look_at_loc::get_offset() as isize),
-        );
+    pub unsafe fn get_look_at_loc(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_look_at_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_look_at_ride_loc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3242,41 +2469,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_lookAt_ride_loc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_lookAt_ride_loc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_look_at_ride_loc(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_look_at_ride_loc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_look_at_ride_loc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_neck_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3289,41 +2505,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_neck_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_neck_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_neck_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_neck_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_c_neck_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_neck_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_head_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3336,41 +2538,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_head_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_head_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_c_head_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_head_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_c_head_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_head_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_spine1_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3383,41 +2571,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_spine1_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_spine1_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_spine1_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_spine1_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_spine1_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_spine2_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3430,41 +2607,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_spine2_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_spine2_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_spine2_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_spine2_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_spine2_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_cla_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3477,41 +2643,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_cla_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_cla_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_cla_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_cla_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_l_cla_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_cla_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_cla_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3524,41 +2676,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_cla_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_cla_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_cla_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_cla_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_r_cla_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_cla_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_arm1_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3571,41 +2709,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_arm1_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_arm1_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_arm1_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_arm1_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_l_arm1_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_arm1_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_arm1_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3618,41 +2742,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_arm1_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_arm1_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_arm1_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_arm1_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_r_arm1_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_arm1_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_arm3_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3665,41 +2775,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_arm3_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_arm3_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_arm3_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_arm3_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_l_arm3_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_arm3_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_arm3_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3712,41 +2808,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_arm3_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_arm3_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_arm3_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_arm3_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_r_arm3_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_arm3_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_leg1_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3759,41 +2841,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_leg1_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_leg1_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_leg1_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_leg1_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_l_leg1_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_leg1_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_leg1_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3806,41 +2874,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_leg1_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_leg1_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_leg1_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_leg1_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_r_leg1_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_leg1_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_leg3_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3853,41 +2907,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_leg3_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_leg3_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_leg3_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_leg3_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_l_leg3_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_leg3_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_leg3_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3900,41 +2940,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_leg3_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_leg3_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_leg3_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_leg3_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_r_leg3_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_leg3_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_shldr_armr_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3947,41 +2973,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_shldrArmr_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_shldrArmr_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_shldr_armr_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_shldr_armr_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_shldr_armr_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_shldr_armr_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -3994,41 +3009,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_shldrArmr_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_shldrArmr_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_shldr_armr_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_shldr_armr_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_shldr_armr_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_arm1vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4041,41 +3045,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_arm1vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_arm1vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_arm1vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_arm1vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_arm1vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_arm1vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4088,41 +3081,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_arm1vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_arm1vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_arm1vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_arm1vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_arm1vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_arm2vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4135,41 +3117,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_arm2vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_arm2vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_arm2vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_arm2vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_arm2vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_arm2vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4182,41 +3153,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_arm2vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_arm2vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_arm2vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_arm2vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_arm2vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_leg1vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4229,41 +3189,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_leg1vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_leg1vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_leg1vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_leg1vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_leg1vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_leg1vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4276,41 +3225,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_leg1vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_leg1vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_leg1vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_leg1vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_leg1vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_leg2vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4323,41 +3261,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_leg2vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_leg2vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_l_leg2vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_leg2vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_leg2vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_leg2vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4370,41 +3297,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_leg2vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_leg2vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_r_leg2vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_leg2vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_leg2vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_l_bust_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4417,41 +3333,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_l_bust_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_l_bust_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_l_bust_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_l_bust_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_l_bust_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_l_bust_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_r_bust_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4464,41 +3366,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_r_bust_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_r_bust_jnt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_r_bust_jnt(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_r_bust_jnt::get_offset() as isize),
-        );
+    pub unsafe fn get_r_bust_jnt(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_r_bust_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_spine1vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4511,41 +3399,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_spine1vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_spine1vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_spine1vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_spine1vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_spine1vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_c_spine2vol_jnt {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4558,41 +3435,30 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "get_c_spine2vol_jnt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "get_c_spine2vol_jnt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_c_spine2vol_jnt(
         this: CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_c_spine2vol_jnt::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_c_spine2vol_jnt::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_import_cache_from_hierarchy_cache {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::hierarchycache::HierarchyCache as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -4606,18 +3472,15 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "ImportCacheFromHierarchyCache",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "ImportCacheFromHierarchyCache",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn import_cache_from_hierarchy_cache(
@@ -4625,24 +3488,15 @@ mod __CharacterJoint_unity2_raw {
         hc: crate::combat::hierarchycache::HierarchyCache,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CharacterJoint,
-            crate::combat::hierarchycache::HierarchyCache,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_import_cache_from_hierarchy_cache::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CharacterJoint, crate::combat::hierarchycache::HierarchyCache, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_import_cache_from_hierarchy_cache::get_method_info().method_ptr);
         inner(this, hc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_flush {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4655,39 +3509,27 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    "Flush",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        "Flush",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn flush(
-        this: CharacterJoint,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn flush(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_flush::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_flush::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CharacterJoint as ::unity2::ClassIdentity>::class(),
@@ -4700,27 +3542,20 @@ mod __CharacterJoint_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CharacterJoint as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CharacterJoint as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: CharacterJoint, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CharacterJoint, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -4730,1087 +3565,665 @@ pub trait ICharacterJointMethods: ICharacterJoint {
     #[doc = "`get_CP()` overload"]
     fn get_cp(self) -> crate::combat::character::Character {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_cp(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(::unity2::Il2CppString)` overload"]
-    fn get_item(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::transform::Transform {
+    fn get_item(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_item(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetTR_AtoB(::unity2::Il2CppString)` overload"]
-    fn get_tr_ato_b(
-        self,
-        s: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::tr::TR {
+    fn get_tr_ato_b(self, s: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::combat::tr::TR {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_tr_ato_b(
-                __receiver,
-                ::core::convert::Into::into(s),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_tr_ato_b(__receiver, ::core::convert::Into::into(s), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsLateUpdate()` overload"]
     fn get_is_late_update(self) -> bool {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_is_late_update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_is_late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsLateUpdate(bool)` overload"]
     fn set_is_late_update(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_is_late_update(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_is_late_update(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsAvailable()` overload"]
     fn get_is_available(self) -> bool {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_is_available(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RunScheduler()` overload"]
     fn run_scheduler(self) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::run_scheduler(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LateUpdate()` overload"]
     fn late_update(self) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_trans_position()` overload"]
     fn get_c_trans_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_trans_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_trans_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_c_trans_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_c_trans_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_c_trans_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_c_trans_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_c_trans_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_trans_ride_position()` overload"]
     fn get_c_trans_ride_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_trans_ride_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_trans_ride_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_c_trans_ride_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_c_trans_ride_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_c_trans_ride_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_c_trans_ride_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_c_trans_ride_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_hip_jnt_position()` overload"]
     fn get_c_hip_jnt_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_hip_jnt_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_hip_jnt_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_c_hip_jnt_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_c_hip_jnt_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_c_hip_jnt_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_c_hip_jnt_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_c_hip_jnt_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_head_loc_position()` overload"]
     fn get_c_head_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_head_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_head_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_c_head_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_c_head_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_c_head_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_c_head_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_c_head_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_ride_loc_position()` overload"]
     fn get_c_ride_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_ride_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_ride_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_c_ride_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_c_ride_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_c_ride_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_c_ride_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_c_ride_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_spine2_jnt_position()` overload"]
     fn get_c_spine2_jnt_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_spine2_jnt_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_spine2_jnt_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_c_spine2_jnt_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_c_spine2_jnt_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_c_spine2_jnt_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_c_spine2_jnt_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_c_spine2_jnt_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_wpn1_loc_position()` overload"]
     fn get_l_wpn1_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_l_wpn1_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_l_wpn1_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_l_wpn1_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_l_wpn1_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_l_wpn1_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_l_wpn1_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_l_wpn1_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_wpn1_loc_position()` overload"]
     fn get_r_wpn1_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_r_wpn1_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_r_wpn1_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_r_wpn1_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_r_wpn1_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_r_wpn1_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_r_wpn1_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_r_wpn1_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_hand01_jnt_position()` overload"]
     fn get_hand01_jnt_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_hand01_jnt_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_hand01_jnt_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_hand01_jnt_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_hand01_jnt_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_hand01_jnt_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_hand01_jnt_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_hand01_jnt_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_leg_loc_position()` overload"]
     fn get_l_leg_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_l_leg_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_l_leg_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_l_leg_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_l_leg_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_l_leg_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_l_leg_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_l_leg_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_leg_loc_position()` overload"]
     fn get_r_leg_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_r_leg_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_r_leg_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_r_leg_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_r_leg_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_r_leg_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_r_leg_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_r_leg_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_limbF_loc_position()` overload"]
     fn get_l_limb_f_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_l_limb_f_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_l_limb_f_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_l_limbF_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_l_limb_f_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_l_limb_f_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_l_limb_f_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_l_limb_f_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_limbR_loc_position()` overload"]
     fn get_l_limb_r_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_l_limb_r_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_l_limb_r_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_l_limbR_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_l_limb_r_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_l_limb_r_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_l_limb_r_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_l_limb_r_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_limbF_loc_position()` overload"]
     fn get_r_limb_f_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_r_limb_f_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_r_limb_f_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_r_limbF_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_r_limb_f_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_r_limb_f_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_r_limb_f_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_r_limb_f_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_limbR_loc_position()` overload"]
     fn get_r_limb_r_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_r_limb_r_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_r_limb_r_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_r_limbR_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_r_limb_r_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_r_limb_r_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_r_limb_r_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_r_limb_r_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_camLookAt_loc_position()` overload"]
     fn get_cam_look_at_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_cam_look_at_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_cam_look_at_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_camLookAt_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_cam_look_at_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_cam_look_at_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_cam_look_at_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_cam_look_at_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_camFollow_loc_position()` overload"]
     fn get_cam_follow_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_cam_follow_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_cam_follow_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_camFollow_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_cam_follow_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_cam_follow_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_cam_follow_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_cam_follow_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_lookAt_loc_position()` overload"]
     fn get_look_at_loc_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_look_at_loc_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_look_at_loc_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_lookAt_loc_position(crate::unity_engine::vector3::Vector3)` overload"]
-    fn set_look_at_loc_position(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn set_look_at_loc_position(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::set_look_at_loc_position(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::set_look_at_loc_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdatePositionCache()` overload"]
     fn update_position_cache(self) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::update_position_cache(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::update_position_cache(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_trans()` overload"]
     fn get_c_trans(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_trans(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_trans_ride()` overload"]
     fn get_c_trans_ride(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_trans_ride(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_hip_jnt()` overload"]
     fn get_c_hip_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_hip_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_head_loc()` overload"]
     fn get_c_head_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_head_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_ride_loc()` overload"]
     fn get_c_ride_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_ride_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_wpn1_loc()` overload"]
     fn get_l_wpn1_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_wpn1_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_wpn1_loc()` overload"]
     fn get_r_wpn1_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_wpn1_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_hand01_jnt()` overload"]
     fn get_hand01_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_hand01_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_leg_loc()` overload"]
     fn get_l_leg_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_leg_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_leg_loc()` overload"]
     fn get_r_leg_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_leg_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_limbF_loc()` overload"]
     fn get_l_limb_f_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_limb_f_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_limbR_loc()` overload"]
     fn get_l_limb_r_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_limb_r_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_limbF_loc()` overload"]
     fn get_r_limb_f_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_limb_f_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_limbR_loc()` overload"]
     fn get_r_limb_r_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_limb_r_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_camLookAt_loc()` overload"]
     fn get_cam_look_at_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_cam_look_at_loc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_cam_look_at_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_camFollow_loc()` overload"]
     fn get_cam_follow_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_cam_follow_loc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_cam_follow_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_lookAt_loc()` overload"]
     fn get_look_at_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_look_at_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_lookAt_ride_loc()` overload"]
     fn get_look_at_ride_loc(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_look_at_ride_loc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_look_at_ride_loc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_neck_jnt()` overload"]
     fn get_c_neck_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_neck_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_head_jnt()` overload"]
     fn get_c_head_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_head_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_spine1_jnt()` overload"]
     fn get_c_spine1_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_spine1_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_spine2_jnt()` overload"]
     fn get_c_spine2_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_c_spine2_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_cla_jnt()` overload"]
     fn get_l_cla_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_cla_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_cla_jnt()` overload"]
     fn get_r_cla_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_cla_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_arm1_jnt()` overload"]
     fn get_l_arm1_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_arm1_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_arm1_jnt()` overload"]
     fn get_r_arm1_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_arm1_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_arm3_jnt()` overload"]
     fn get_l_arm3_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_arm3_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_arm3_jnt()` overload"]
     fn get_r_arm3_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_arm3_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_leg1_jnt()` overload"]
     fn get_l_leg1_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_leg1_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_leg1_jnt()` overload"]
     fn get_r_leg1_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_leg1_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_leg3_jnt()` overload"]
     fn get_l_leg3_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_leg3_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_leg3_jnt()` overload"]
     fn get_r_leg3_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_leg3_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_shldrArmr_jnt()` overload"]
     fn get_l_shldr_armr_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_l_shldr_armr_jnt(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_l_shldr_armr_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_shldrArmr_jnt()` overload"]
     fn get_r_shldr_armr_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_r_shldr_armr_jnt(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_r_shldr_armr_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_arm1vol_jnt()` overload"]
     fn get_l_arm1vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_arm1vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_arm1vol_jnt()` overload"]
     fn get_r_arm1vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_arm1vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_arm2vol_jnt()` overload"]
     fn get_l_arm2vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_arm2vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_arm2vol_jnt()` overload"]
     fn get_r_arm2vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_arm2vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_leg1vol_jnt()` overload"]
     fn get_l_leg1vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_leg1vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_leg1vol_jnt()` overload"]
     fn get_r_leg1vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_leg1vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_leg2vol_jnt()` overload"]
     fn get_l_leg2vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_leg2vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_leg2vol_jnt()` overload"]
     fn get_r_leg2vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_leg2vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_l_bust_jnt()` overload"]
     fn get_l_bust_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_l_bust_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_r_bust_jnt()` overload"]
     fn get_r_bust_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::get_r_bust_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_spine1vol_jnt()` overload"]
     fn get_c_spine1vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_spine1vol_jnt(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_spine1vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_c_spine2vol_jnt()` overload"]
     fn get_c_spine2vol_jnt(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::get_c_spine2vol_jnt(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::get_c_spine2vol_jnt(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ImportCacheFromHierarchyCache(crate::combat::hierarchycache::HierarchyCache)` overload"]
-    fn import_cache_from_hierarchy_cache(
-        self,
-        hc: impl ::core::convert::Into<crate::combat::hierarchycache::HierarchyCache>,
-    ) -> () {
+    fn import_cache_from_hierarchy_cache(self, hc: impl ::core::convert::Into<crate::combat::hierarchycache::HierarchyCache>) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CharacterJoint_unity2_raw::import_cache_from_hierarchy_cache(
-                __receiver,
-                ::core::convert::Into::into(hc),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CharacterJoint_unity2_raw::import_cache_from_hierarchy_cache(__receiver, ::core::convert::Into::into(hc), ::core::option::Option::None)
         }
     }
     #[doc = "`Flush()` overload"]
     fn flush(self) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::flush(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CharacterJoint as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CharacterJoint_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -5838,22 +4251,19 @@ impl CharacterJoint {
 #[cfg(feature = "combat-characterjoint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterJoint;
-    pub use super::ICharacterJoint;
-    pub use super::ICharacterJointMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CharacterJoint, ICharacterJoint, ICharacterJointMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

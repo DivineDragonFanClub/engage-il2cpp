@@ -2,25 +2,21 @@
 
 #[cfg(feature = "tm_pro-fastaction_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction_2/FastAction_2.md"))]
     #[::unity2::class(namespace = "TMPro", name = "FastAction`2")]
     #[parent(crate::system::object::Object)]
     pub struct FastAction_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
         #[rename(name = "delegates")]
-        pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<
-            crate::system::action_2::Action_2<T0, T1>,
-        >,
+        pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::system::action_2::Action_2<T0, T1>>,
         #[rename(name = "lookup")]
         pub lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<
             crate::system::action_2::Action_2<T0, T1>,
-            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
-                crate::system::action_2::Action_2<T0, T1>,
-            >,
+            crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action_2::Action_2<T0, T1>>,
         >,
     }
 }
@@ -52,13 +48,8 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> FastAction_2<T0, 
 impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> FastAction_2<T0, T1> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FastAction_2),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(FastAction_2), ::core::stringify!(new),));
         <Self as IFastAction_2Methods<T0, T1>>::ctor(this);
         this
     }
@@ -67,9 +58,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> FastAction_2<T0, 
 #[cfg(feature = "tm_pro-fastaction_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FastAction_2;
-    pub use super::IFastAction_2;
-    pub use super::IFastAction_2Methods;
+    pub use super::{FastAction_2, IFastAction_2, IFastAction_2Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

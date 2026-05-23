@@ -2,25 +2,17 @@
 
 #[cfg(feature = "app-ringselectmenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu_RingMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "RingSelectMenu.RingMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RingSelectMenu_RingMenuItem {
-        #[rename(name = "m_isGod")]
-        pub m_is_god: bool,
-        #[rename(name = "m_god")]
-        pub m_god: crate::app::godunit::GodUnit,
-        #[rename(name = "m_ring")]
-        pub m_ring: crate::app::unitring::UnitRing,
-    }
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu.md"))]
     #[::unity2::class(namespace = "App", name = "RingSelectMenu")]
@@ -36,15 +28,12 @@ mod __types {
         #[rename(name = "m_ringSelectRoot")]
         pub m_ring_select_root: crate::app::ringselectroot::RingSelectRoot,
         #[rename(name = "m_menuSelect")]
-        pub m_menu_select: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuselect::BasicMenuSelect,
-        >,
+        pub m_menu_select: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect>,
         #[rename(name = "m_selectPage")]
         pub m_select_page: i32,
         #[static_field]
         #[rename(name = "m_gidPageName")]
-        pub m_gid_page_name:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub m_gid_page_name: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[static_field]
         #[rename(name = "m_isUnitChangeAnim")]
         pub m_is_unit_change_anim: bool,
@@ -53,15 +42,1203 @@ mod __types {
         pub m_is_unit_change_equip: bool,
         #[static_field]
         #[rename(name = "m_ringUnitList")]
-        pub m_ring_unit_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unit::Unit,
-            ::unity2::Il2CppString,
-        >,
+        pub m_ring_unit_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, ::unity2::Il2CppString>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu_RingMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RingSelectMenu.RingMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RingSelectMenu_RingMenuItem {
+        #[rename(name = "m_isGod")]
+        pub m_is_god: bool,
+        #[rename(name = "m_god")]
+        pub m_god: crate::app::godunit::GodUnit,
+        #[rename(name = "m_ring")]
+        pub m_ring: crate::app::unitring::UnitRing,
     }
 }
 
 #[cfg(feature = "app-ringselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-ringselectmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingSelectMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pool_god_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetPoolGodNum",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetPoolGodNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pool_god_num(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_pool_god_num::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pool_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetPoolGod",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetPoolGod",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pool_god(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
+            ::core::mem::transmute(__lookup_get_pool_god::get_method_info().method_ptr);
+        inner(index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_ignore_for_relay {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "IsIgnoreForRelay",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsIgnoreForRelay",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_ignore_for_relay(god: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_ignore_for_relay::get_method_info().method_ptr);
+        inner(god, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_ignore_for_relay_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "IsIgnoreForRelay",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsIgnoreForRelay",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_ignore_for_relay_2(unit_ring: crate::app::unitring::UnitRing, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_ignore_for_relay_2::get_method_info().method_ptr);
+        inner(unit_ring, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::ringselectmenucontent::RingSelectMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::unitstatussetter::UnitStatusSetter as ::unity2::IlType>::il_type(),
+                <crate::app::ringselectroot::RingSelectRoot as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "Create",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        menu_content: crate::app::ringselectmenucontent::RingSelectMenuContent,
+        status_setter: crate::app::unitstatussetter::UnitStatusSetter,
+        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringselectmenu::RingSelectMenu {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            crate::app::ringselectmenucontent::RingSelectMenuContent,
+            crate::app::unitstatussetter::UnitStatusSetter,
+            crate::app::ringselectroot::RingSelectRoot,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::ringselectmenu::RingSelectMenu = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(super_, unit, menu_content, status_setter, ring_select_root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_ring_category {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "CreateRingCategory",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateRingCategory",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_ring_category(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_create_ring_category::get_method_info().method_ptr);
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_menu_item_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::ringselectroot::RingSelectRoot as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "CreateMenuItemList",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuItemList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_menu_item_list(
+        unit: crate::app::unit::Unit,
+        page: i32,
+        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
+        default_menu_item_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            i32,
+            crate::app::ringselectroot::RingSelectRoot,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
+            ::core::mem::transmute(__lookup_create_menu_item_list::get_method_info().method_ptr);
+        inner(unit, page, ring_select_root, default_menu_item_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_menu_item_list_for_versus {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "CreateMenuItemListForVersus",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuItemListForVersus",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_menu_item_list_for_versus(
+        unit: crate::app::unit::Unit,
+        default_index: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            *mut i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> =
+            ::core::mem::transmute(__lookup_create_menu_item_list_for_versus::get_method_info().method_ptr);
+        inner(unit, default_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_rebuild_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "RebuildMenu",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "RebuildMenu",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn rebuild_menu(
+        this: RingSelectMenu,
+        display_index: i32,
+        equip_unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingSelectMenu, i32, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rebuild_menu::get_method_info().method_ptr);
+        inner(this, display_index, equip_unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "SaveSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SaveSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save_select(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_empty_common {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "IsEmptyCommon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsEmptyCommon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_empty_common(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_empty_common::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_display_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetDisplayIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetDisplayIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_display_index(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_display_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::ringselectmenucontent::RingSelectMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unitstatussetter::UnitStatusSetter as ::unity2::IlType>::il_type(),
+                <crate::app::ringselectroot::RingSelectRoot as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                6,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingSelectMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::ringselectmenucontent::RingSelectMenuContent,
+        unit: crate::app::unit::Unit,
+        status_setter: crate::app::unitstatussetter::UnitStatusSetter,
+        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
+        page: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingSelectMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::ringselectmenucontent::RingSelectMenuContent,
+            crate::app::unit::Unit,
+            crate::app::unitstatussetter::UnitStatusSetter,
+            crate::app::ringselectroot::RingSelectRoot,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            unit,
+            status_setter,
+            ring_select_root,
+            page,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_x_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "XCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "XCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn x_call(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_custom_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "CustomCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CustomCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn custom_call(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_custom_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_status {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "UpdateStatus",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateStatus",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_status(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_status::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_page_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetPageNum",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetPageNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_page_num(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_page_num::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_page_god_gid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetPageGodGid",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetPageGodGid",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_page_god_gid(this: RingSelectMenu, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingSelectMenu, i32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_page_god_gid::get_method_info().method_ptr);
+        inner(this, index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_select_page {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetSelectPage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectPage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_select_page(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_select_page::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_select_ring {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetSelectRing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectRing",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_select_ring(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing =
+            ::core::mem::transmute(__lookup_get_select_ring::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_select_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                "GetSelectGod",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectGod",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_select_god(this: RingSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
+            ::core::mem::transmute(__lookup_get_select_god::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringselectmenu")]
+impl RingSelectMenu {
+    #[doc = "`GetPoolGodNum()` overload"]
+    pub fn get_pool_god_num() -> i32 {
+        unsafe { __RingSelectMenu_unity2_raw::get_pool_god_num(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetPoolGod(i32)` overload"]
+    pub fn get_pool_god(index: impl ::core::convert::Into<i32>) -> crate::app::godunit::GodUnit {
+        unsafe { __RingSelectMenu_unity2_raw::get_pool_god(::core::convert::Into::into(index), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsIgnoreForRelay(crate::app::godunit::GodUnit)` overload"]
+    pub fn is_ignore_for_relay(god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> bool {
+        unsafe { __RingSelectMenu_unity2_raw::is_ignore_for_relay(::core::convert::Into::into(god), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsIgnoreForRelay(crate::app::unitring::UnitRing)` overload"]
+    pub fn is_ignore_for_relay_2(unit_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>) -> bool {
+        unsafe { __RingSelectMenu_unity2_raw::is_ignore_for_relay_2(::core::convert::Into::into(unit_ring), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::ringselectmenucontent::RingSelectMenuContent, crate::app::unitstatussetter::UnitStatusSetter, crate::app::ringselectroot::RingSelectRoot)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        menu_content: impl ::core::convert::Into<crate::app::ringselectmenucontent::RingSelectMenuContent>,
+        status_setter: impl ::core::convert::Into<crate::app::unitstatussetter::UnitStatusSetter>,
+        ring_select_root: impl ::core::convert::Into<crate::app::ringselectroot::RingSelectRoot>,
+    ) -> crate::app::ringselectmenu::RingSelectMenu {
+        unsafe {
+            __RingSelectMenu_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(status_setter),
+                ::core::convert::Into::into(ring_select_root),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`CreateRingCategory(crate::app::unit::Unit)` overload"]
+    pub fn create_ring_category(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
+        unsafe { __RingSelectMenu_unity2_raw::create_ring_category(::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateMenuItemList(crate::app::unit::Unit, i32, crate::app::ringselectroot::RingSelectRoot, *muti32)` overload"]
+    pub fn create_menu_item_list(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        page: impl ::core::convert::Into<i32>,
+        ring_select_root: impl ::core::convert::Into<crate::app::ringselectroot::RingSelectRoot>,
+    ) -> (
+        crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        i32,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __RingSelectMenu_unity2_raw::create_menu_item_list(
+                    ::core::convert::Into::into(unit),
+                    ::core::convert::Into::into(page),
+                    ::core::convert::Into::into(ring_select_root),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+
+    #[doc = "`CreateMenuItemListForVersus(crate::app::unit::Unit, *muti32)` overload"]
+    pub fn create_menu_item_list_for_versus(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> (
+        crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        i32,
+    ) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __RingSelectMenu_unity2_raw::create_menu_item_list_for_versus(
+                    ::core::convert::Into::into(unit),
+                    __out_0.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init())
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RingSelectMenu_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-ringselectmenu")]
+pub trait IRingSelectMenuMethods: IRingSelectMenu {
+    #[doc = "`RebuildMenu(i32, crate::app::unit::Unit)` overload"]
+    fn rebuild_menu(self, display_index: impl ::core::convert::Into<i32>, equip_unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::rebuild_menu(
+                __receiver,
+                ::core::convert::Into::into(display_index),
+                ::core::convert::Into::into(equip_unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SaveSelect()` overload"]
+    fn save_select(self) -> () {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::save_select(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsEmptyCommon()` overload"]
+    fn is_empty_common(self) -> bool {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::is_empty_common(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDisplayIndex()` overload"]
+    fn get_display_index(self) -> i32 {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_display_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringselectmenucontent::RingSelectMenuContent, crate::app::unit::Unit, crate::app::unitstatussetter::UnitStatusSetter, crate::app::ringselectroot::RingSelectRoot, i32)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::ringselectmenucontent::RingSelectMenuContent>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        status_setter: impl ::core::convert::Into<crate::app::unitstatussetter::UnitStatusSetter>,
+        ring_select_root: impl ::core::convert::Into<crate::app::ringselectroot::RingSelectRoot>,
+        page: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(status_setter),
+                ::core::convert::Into::into(ring_select_root),
+                ::core::convert::Into::into(page),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`XCall()` overload"]
+    fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CustomCall()` overload"]
+    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit()` overload"]
+    fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateStatus()` overload"]
+    fn update_status(self) -> () {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::update_status(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetPageNum()` overload"]
+    fn get_page_num(self) -> i32 {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_page_num(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetPageGodGid(i32)` overload"]
+    fn get_page_god_gid(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_page_god_gid(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSelectPage()` overload"]
+    fn get_select_page(self) -> i32 {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_select_page(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSelectRing()` overload"]
+    fn get_select_ring(self) -> crate::app::unitring::UnitRing {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_select_ring(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSelectGod()` overload"]
+    fn get_select_god(self) -> crate::app::godunit::GodUnit {
+        unsafe {
+            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_unity2_raw::get_select_god(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringselectmenu")]
+impl<__T: IRingSelectMenu> IRingSelectMenuMethods for __T {}
+
+#[cfg(feature = "app-ringselectmenu")]
+impl RingSelectMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringselectmenucontent::RingSelectMenuContent, crate::app::unit::Unit, crate::app::unitstatussetter::UnitStatusSetter, crate::app::ringselectroot::RingSelectRoot, i32)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::ringselectmenucontent::RingSelectMenuContent,
+        unit: crate::app::unit::Unit,
+        status_setter: crate::app::unitstatussetter::UnitStatusSetter,
+        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
+        page: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectMenuMethods>::ctor(this, menu_item_list, menu_content, unit, status_setter, ring_select_root, page);
+        this
+    }
+}
 
 #[cfg(feature = "app-ringselectmenu")]
 #[doc(hidden)]
@@ -72,9 +1249,7 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_ring_sort_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -87,41 +1262,28 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_RingSortId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_RingSortId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ring_sort_id(
-        this: RingSelectMenu_RingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_ring_sort_id(this: RingSelectMenu_RingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ring_sort_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_ring_sort_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ring_sort_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
                 "set_RingSortId",
@@ -133,40 +1295,27 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_RingSortId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_RingSortId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_ring_sort_id(
-        this: RingSelectMenu_RingMenuItem,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_ring_sort_id(this: RingSelectMenu_RingMenuItem, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingSelectMenu_RingMenuItem, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_ring_sort_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_ring_sort_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
@@ -184,18 +1333,15 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -213,20 +1359,14 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
             crate::app::unitring::UnitRing,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, is_god, god, ring, ring_sort_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -239,39 +1379,27 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_god(
-        this: RingSelectMenu_RingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_god(this: RingSelectMenu_RingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_god::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_god::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -284,41 +1412,27 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_god(
-        this: RingSelectMenu_RingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godunit::GodUnit {
-        let inner: extern "C" fn(
-            RingSelectMenu_RingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god::get_offset() as isize),
-        );
+    pub unsafe fn get_god(this: RingSelectMenu_RingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
+            ::core::mem::transmute(__lookup_get_god::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_common {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -331,41 +1445,27 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetCommon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetCommon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_common(
-        this: RingSelectMenu_RingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unitring::UnitRing {
-        let inner: extern "C" fn(
-            RingSelectMenu_RingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_common::get_offset() as isize),
-        );
+    pub unsafe fn get_common(this: RingSelectMenu_RingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing {
+        let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing =
+            ::core::mem::transmute(__lookup_get_common::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -378,41 +1478,30 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
         this: RingSelectMenu_RingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            RingSelectMenu_RingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
@@ -429,18 +1518,15 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "CalcAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "CalcAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_attribute(
@@ -454,20 +1540,14 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
             crate::app::godunit::GodUnit,
             crate::app::unitring::UnitRing,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_attribute::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_calc_attribute::get_method_info().method_ptr);
         inner(unit, god, ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -480,41 +1560,30 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: RingSelectMenu_RingMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingSelectMenu_RingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::class(),
@@ -527,30 +1596,20 @@ mod __RingSelectMenu_RingMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectMenu_RingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: RingSelectMenu_RingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: RingSelectMenu_RingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingSelectMenu_RingMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -580,27 +1639,16 @@ pub trait IRingSelectMenu_RingMenuItemMethods: IRingSelectMenu_RingMenuItem {
     fn get_ring_sort_id(self) -> i32 {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::get_ring_sort_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::get_ring_sort_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_RingSortId(i32)` overload"]
     fn set_ring_sort_id(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::set_ring_sort_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::set_ring_sort_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` overload"]
@@ -613,9 +1661,7 @@ pub trait IRingSelectMenu_RingMenuItemMethods: IRingSelectMenu_RingMenuItem {
     ) -> () {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingSelectMenu_RingMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(is_god),
@@ -630,78 +1676,48 @@ pub trait IRingSelectMenu_RingMenuItemMethods: IRingSelectMenu_RingMenuItem {
     fn is_god(self) -> bool {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::is_god(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::is_god(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetGod()` overload"]
     fn get_god(self) -> crate::app::godunit::GodUnit {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::get_god(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::get_god(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCommon()` overload"]
     fn get_common(self) -> crate::app::unitring::UnitRing {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::get_common(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::get_common(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildAttribute()` overload"]
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectMenu_RingMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingSelectMenu_RingMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectMenu_RingMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -712,12 +1728,7 @@ impl<__T: IRingSelectMenu_RingMenuItem> IRingSelectMenu_RingMenuItemMethods for 
 #[cfg(feature = "app-ringselectmenu")]
 impl RingSelectMenu_RingMenuItem {
     #[doc = "`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` — overload selector"]
-    pub fn new(
-        is_god: bool,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::unitring::UnitRing,
-        ring_sort_id: i32,
-    ) -> Self {
+    pub fn new(is_god: bool, god: crate::app::godunit::GodUnit, ring: crate::app::unitring::UnitRing, ring_sort_id: i32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -732,1594 +1743,21 @@ impl RingSelectMenu_RingMenuItem {
 
 #[cfg(feature = "app-ringselectmenu")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingSelectMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pool_god_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetPoolGodNum",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetPoolGodNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pool_god_num(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pool_god_num::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pool_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetPoolGod",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetPoolGod",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pool_god(
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godunit::GodUnit {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pool_god::get_offset() as isize),
-            );
-        inner(index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_ignore_for_relay {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "IsIgnoreForRelay",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsIgnoreForRelay",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_ignore_for_relay(
-        god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_ignore_for_relay::get_offset() as isize),
-            );
-        inner(god, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_ignore_for_relay_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "IsIgnoreForRelay",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsIgnoreForRelay",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_ignore_for_relay_2(
-        unit_ring: crate::app::unitring::UnitRing,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_ignore_for_relay_2::get_offset() as isize),
-            );
-        inner(unit_ring, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringselectmenucontent :: RingSelectMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringselectroot :: RingSelectRoot as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "Create",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        menu_content: crate::app::ringselectmenucontent::RingSelectMenuContent,
-        status_setter: crate::app::unitstatussetter::UnitStatusSetter,
-        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringselectmenu::RingSelectMenu {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            crate::app::ringselectmenucontent::RingSelectMenuContent,
-            crate::app::unitstatussetter::UnitStatusSetter,
-            crate::app::ringselectroot::RingSelectRoot,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringselectmenu::RingSelectMenu = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
-        inner(
-            super_,
-            unit,
-            menu_content,
-            status_setter,
-            ring_select_root,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_ring_category {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "CreateRingCategory",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateRingCategory",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_ring_category(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_ring_category::get_offset() as isize),
-            );
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu_item_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::ringselectroot::RingSelectRoot as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "CreateMenuItemList",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenuItemList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_menu_item_list(
-        unit: crate::app::unit::Unit,
-        page: i32,
-        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
-        default_menu_item_index: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
-    {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            i32,
-            crate::app::ringselectroot::RingSelectRoot,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_menu_item_list::get_offset() as isize),
-        );
-        inner(
-            unit,
-            page,
-            ring_select_root,
-            default_menu_item_index,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu_item_list_for_versus {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "CreateMenuItemListForVersus",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenuItemListForVersus",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_menu_item_list_for_versus(
-        unit: crate::app::unit::Unit,
-        default_index: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>
-    {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_menu_item_list_for_versus::get_offset() as isize),
-        );
-        inner(unit, default_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_rebuild_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "RebuildMenu",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "RebuildMenu",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn rebuild_menu(
-        this: RingSelectMenu,
-        display_index: i32,
-        equip_unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            i32,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rebuild_menu::get_offset() as isize),
-        );
-        inner(this, display_index, equip_unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "SaveSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SaveSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn save_select(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_select::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_empty_common {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "IsEmptyCommon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsEmptyCommon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_empty_common(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_empty_common::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_display_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetDisplayIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetDisplayIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_display_index(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_display_index::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringselectmenucontent :: RingSelectMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitstatussetter :: UnitStatusSetter as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringselectroot :: RingSelectRoot as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                6,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingSelectMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::ringselectmenucontent::RingSelectMenuContent,
-        unit: crate::app::unit::Unit,
-        status_setter: crate::app::unitstatussetter::UnitStatusSetter,
-        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
-        page: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::ringselectmenucontent::RingSelectMenuContent,
-            crate::app::unit::Unit,
-            crate::app::unitstatussetter::UnitStatusSetter,
-            crate::app::ringselectroot::RingSelectRoot,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            unit,
-            status_setter,
-            ring_select_root,
-            page,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_x_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "XCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "XCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn x_call(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_x_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_custom_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "CustomCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CustomCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn custom_call(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_custom_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_status {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "UpdateStatus",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateStatus",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_status(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_status::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_page_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetPageNum",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetPageNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_page_num(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_page_num::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_page_god_gid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetPageGodGid",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetPageGodGid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_page_god_gid(
-        this: RingSelectMenu,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_page_god_gid::get_offset() as isize),
-        );
-        inner(this, index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_page {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetSelectPage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectPage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_select_page(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingSelectMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_select_page::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_ring {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetSelectRing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectRing",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_select_ring(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unitring::UnitRing {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select_ring::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                "GetSelectGod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectGod",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_select_god(
-        this: RingSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godunit::GodUnit {
-        let inner: extern "C" fn(
-            RingSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select_god::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingSelectMenu as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringselectmenu")]
-impl RingSelectMenu {
-    #[doc = "`GetPoolGodNum()` overload"]
-    pub fn get_pool_god_num() -> i32 {
-        unsafe { __RingSelectMenu_unity2_raw::get_pool_god_num(::core::option::Option::None) }
-    }
-    #[doc = "`GetPoolGod(i32)` overload"]
-    pub fn get_pool_god(index: impl ::core::convert::Into<i32>) -> crate::app::godunit::GodUnit {
-        unsafe {
-            __RingSelectMenu_unity2_raw::get_pool_god(
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsIgnoreForRelay(crate::app::godunit::GodUnit)` overload"]
-    pub fn is_ignore_for_relay(
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> bool {
-        unsafe {
-            __RingSelectMenu_unity2_raw::is_ignore_for_relay(
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsIgnoreForRelay(crate::app::unitring::UnitRing)` overload"]
-    pub fn is_ignore_for_relay_2(
-        unit_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-    ) -> bool {
-        unsafe {
-            __RingSelectMenu_unity2_raw::is_ignore_for_relay_2(
-                ::core::convert::Into::into(unit_ring),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::ringselectmenucontent::RingSelectMenuContent, crate::app::unitstatussetter::UnitStatusSetter, crate::app::ringselectroot::RingSelectRoot)` overload"]
-    pub fn create(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        menu_content: impl ::core::convert::Into<
-            crate::app::ringselectmenucontent::RingSelectMenuContent,
-        >,
-        status_setter: impl ::core::convert::Into<crate::app::unitstatussetter::UnitStatusSetter>,
-        ring_select_root: impl ::core::convert::Into<crate::app::ringselectroot::RingSelectRoot>,
-    ) -> crate::app::ringselectmenu::RingSelectMenu {
-        unsafe {
-            __RingSelectMenu_unity2_raw::create(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(status_setter),
-                ::core::convert::Into::into(ring_select_root),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateRingCategory(crate::app::unit::Unit)` overload"]
-    pub fn create_ring_category(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
-        unsafe {
-            __RingSelectMenu_unity2_raw::create_ring_category(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateMenuItemList(crate::app::unit::Unit, i32, crate::app::ringselectroot::RingSelectRoot, *muti32)` overload"]
-    pub fn create_menu_item_list(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        page: impl ::core::convert::Into<i32>,
-        ring_select_root: impl ::core::convert::Into<crate::app::ringselectroot::RingSelectRoot>,
-    ) -> (
-        crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        i32,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __RingSelectMenu_unity2_raw::create_menu_item_list(
-                    ::core::convert::Into::into(unit),
-                    ::core::convert::Into::into(page),
-                    ::core::convert::Into::into(ring_select_root),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`CreateMenuItemListForVersus(crate::app::unit::Unit, *muti32)` overload"]
-    pub fn create_menu_item_list_for_versus(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> (
-        crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        i32,
-    ) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __RingSelectMenu_unity2_raw::create_menu_item_list_for_versus(
-                    ::core::convert::Into::into(unit),
-                    __out_0.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init())
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RingSelectMenu_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ringselectmenu")]
-pub trait IRingSelectMenuMethods: IRingSelectMenu {
-    #[doc = "`RebuildMenu(i32, crate::app::unit::Unit)` overload"]
-    fn rebuild_menu(
-        self,
-        display_index: impl ::core::convert::Into<i32>,
-        equip_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::rebuild_menu(
-                __receiver,
-                ::core::convert::Into::into(display_index),
-                ::core::convert::Into::into(equip_unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SaveSelect()` overload"]
-    fn save_select(self) -> () {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::save_select(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsEmptyCommon()` overload"]
-    fn is_empty_common(self) -> bool {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::is_empty_common(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDisplayIndex()` overload"]
-    fn get_display_index(self) -> i32 {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_display_index(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringselectmenucontent::RingSelectMenuContent, crate::app::unit::Unit, crate::app::unitstatussetter::UnitStatusSetter, crate::app::ringselectroot::RingSelectRoot, i32)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::ringselectmenucontent::RingSelectMenuContent,
-        >,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        status_setter: impl ::core::convert::Into<crate::app::unitstatussetter::UnitStatusSetter>,
-        ring_select_root: impl ::core::convert::Into<crate::app::ringselectroot::RingSelectRoot>,
-        page: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(status_setter),
-                ::core::convert::Into::into(ring_select_root),
-                ::core::convert::Into::into(page),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`XCall()` overload"]
-    fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CustomCall()` overload"]
-    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateStatus()` overload"]
-    fn update_status(self) -> () {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::update_status(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPageNum()` overload"]
-    fn get_page_num(self) -> i32 {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_page_num(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetPageGodGid(i32)` overload"]
-    fn get_page_god_gid(self, index: impl ::core::convert::Into<i32>) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_page_god_gid(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSelectPage()` overload"]
-    fn get_select_page(self) -> i32 {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_select_page(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSelectRing()` overload"]
-    fn get_select_ring(self) -> crate::app::unitring::UnitRing {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_select_ring(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetSelectGod()` overload"]
-    fn get_select_god(self) -> crate::app::godunit::GodUnit {
-        unsafe {
-            let __receiver = <RingSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingSelectMenu_unity2_raw::get_select_god(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-ringselectmenu")]
-impl<__T: IRingSelectMenu> IRingSelectMenuMethods for __T {}
-
-#[cfg(feature = "app-ringselectmenu")]
-impl RingSelectMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringselectmenucontent::RingSelectMenuContent, crate::app::unit::Unit, crate::app::unitstatussetter::UnitStatusSetter, crate::app::ringselectroot::RingSelectRoot, i32)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::ringselectmenucontent::RingSelectMenuContent,
-        unit: crate::app::unit::Unit,
-        status_setter: crate::app::unitstatussetter::UnitStatusSetter,
-        ring_select_root: crate::app::ringselectroot::RingSelectRoot,
-        page: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSelectMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSelectMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            unit,
-            status_setter,
-            ring_select_root,
-            page,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-ringselectmenu")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IRingSelectMenu;
-    pub use super::IRingSelectMenuMethods;
-    pub use super::IRingSelectMenu_RingMenuItem;
-    pub use super::IRingSelectMenu_RingMenuItemMethods;
-    pub use super::RingSelectMenu;
-    pub use super::RingSelectMenu_RingMenuItem;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IRingSelectMenu, IRingSelectMenuMethods, IRingSelectMenu_RingMenuItem, IRingSelectMenu_RingMenuItemMethods, RingSelectMenu,
+        RingSelectMenu_RingMenuItem,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst},
+        system::object::IObject,
+    };
 }

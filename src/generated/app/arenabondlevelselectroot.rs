@@ -2,14 +2,18 @@
 
 #[cfg(feature = "app-arenabondlevelselectroot-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectroot/ArenaBondLevelSelectRoot.md"))]
     #[::unity2::class(namespace = "App", name = "ArenaBondLevelSelectRoot")]
@@ -19,15 +23,13 @@ mod __types {
         #[rename(name = "PrefabPath")]
         pub prefab_path: ::unity2::Il2CppString,
         #[rename(name = "m_MenuContent")]
-        pub m_menu_content:
-            crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent,
+        pub m_menu_content: crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent,
         #[rename(name = "m_LevelSetter")]
         pub m_level_setter: crate::app::arenabondlevelselectsetter::ArenaBondLevelSelectSetter,
         #[rename(name = "m_BondSetter")]
         pub m_bond_setter: crate::app::menubondsetter::MenuBondSetter,
         #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
+        pub m_decide_event_handler: crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu,
         #[rename(name = "m_SelectUnit")]
@@ -49,9 +51,7 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -64,35 +64,26 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -105,35 +96,26 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -146,36 +128,33 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type () , < crate :: app :: arenabondlevelselectmenu :: ArenaBondLevelSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::ringcleaningsequence::RingCleaningSequence_GodType as ::unity2::IlType>::il_type(),
+                <crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -187,18 +166,15 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -206,7 +182,7 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         select_unit: crate::app::unit::Unit,
         select_god: crate::app::godunit::GodUnit,
         select_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        decide_event_handler : crate :: app :: arenabondlevelselectmenu :: ArenaBondLevelSelectMenu_DecideEventHandler,
+        decide_event_handler: crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::arenabondlevelselectroot::ArenaBondLevelSelectRoot {
         let inner: extern "C" fn(
@@ -216,30 +192,22 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::arenabondlevelselectroot::ArenaBondLevelSelectRoot =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(
-            super_,
-            select_unit,
-            select_god,
-            select_type,
-            decide_event_handler,
-            __unity2_method_info,
-        )
+        ) -> crate::app::arenabondlevelselectroot::ArenaBondLevelSelectRoot =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, select_unit, select_god, select_type, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type () , < crate :: app :: arenabondlevelselectmenu :: ArenaBondLevelSelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::ringcleaningsequence::RingCleaningSequence_GodType as ::unity2::IlType>::il_type(),
+                <crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -251,18 +219,15 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -271,7 +236,7 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         select_unit: crate::app::unit::Unit,
         select_god: crate::app::godunit::GodUnit,
         select_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        decide_event_handler : crate :: app :: arenabondlevelselectmenu :: ArenaBondLevelSelectMenu_DecideEventHandler,
+        decide_event_handler: crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -282,11 +247,7 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
             crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
             crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(
             this,
             super_,
@@ -301,11 +262,8 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_chara_info_play_anim {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
                 "CharaInfoPlayAnim",
@@ -317,18 +275,15 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "CharaInfoPlayAnim",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "CharaInfoPlayAnim",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn chara_info_play_anim(
@@ -336,24 +291,15 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         anim_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondLevelSelectRoot,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_chara_info_play_anim::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArenaBondLevelSelectRoot, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_chara_info_play_anim::get_method_info().method_ptr);
         inner(this, anim_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -370,18 +316,15 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnSelectMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnSelectMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select_menu_item(
@@ -391,27 +334,22 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         to_lv: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondLevelSelectRoot,
-            crate::app::godunit::GodUnit,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select_menu_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ArenaBondLevelSelectRoot, crate::app::godunit::GodUnit, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select_menu_item::get_method_info().method_ptr);
         inner(this, god, from_lv, to_lv, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decide_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: godunit :: GodUnit as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
+                <crate::app::ringcleaningsequence::RingCleaningSequence_GodType as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
                 "OnDecideMenuItem",
@@ -423,18 +361,15 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnDecideMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnDecideMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_decide_menu_item(
@@ -454,28 +389,14 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_decide_menu_item::get_offset() as isize),
-        );
-        inner(
-            this,
-            god,
-            r#type,
-            start,
-            exp,
-            use_count,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_on_decide_menu_item::get_method_info().method_ptr);
+        inner(this, god, r#type, start, exp, use_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_change_god_to_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -488,39 +409,27 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnChangeGodToNext",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnChangeGodToNext",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_change_god_to_next(
-        this: ArenaBondLevelSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_change_god_to_next(this: ArenaBondLevelSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ArenaBondLevelSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_change_god_to_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_change_god_to_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_change_god_to_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -533,39 +442,27 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    "OnChangeGodToPrev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        "OnChangeGodToPrev",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_change_god_to_prev(
-        this: ArenaBondLevelSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_change_god_to_prev(this: ArenaBondLevelSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ArenaBondLevelSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_change_god_to_prev::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_change_god_to_prev::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::class(),
@@ -578,30 +475,20 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondLevelSelectRoot as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ArenaBondLevelSelectRoot,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ArenaBondLevelSelectRoot, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ArenaBondLevelSelectRoot, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -610,33 +497,26 @@ mod __ArenaBondLevelSelectRoot_unity2_raw {
 impl ArenaBondLevelSelectRoot {
     #[doc = "`LoadPrefabAsync()` overload"]
     pub fn load_prefab_async() -> () {
-        unsafe {
-            __ArenaBondLevelSelectRoot_unity2_raw::load_prefab_async(::core::option::Option::None)
-        }
+        unsafe { __ArenaBondLevelSelectRoot_unity2_raw::load_prefab_async(::core::option::Option::None) }
     }
+
     #[doc = "`IsLoadingPrefab()` overload"]
     pub fn is_loading_prefab() -> bool {
-        unsafe {
-            __ArenaBondLevelSelectRoot_unity2_raw::is_loading_prefab(::core::option::Option::None)
-        }
+        unsafe { __ArenaBondLevelSelectRoot_unity2_raw::is_loading_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`UnloadPrefab()` overload"]
     pub fn unload_prefab() -> () {
-        unsafe {
-            __ArenaBondLevelSelectRoot_unity2_raw::unload_prefab(::core::option::Option::None)
-        }
+        unsafe { __ArenaBondLevelSelectRoot_unity2_raw::unload_prefab(::core::option::Option::None) }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         select_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         select_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        select_type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
-        >,
+        select_type: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler>,
     ) -> crate::app::arenabondlevelselectroot::ArenaBondLevelSelectRoot {
         unsafe {
             __ArenaBondLevelSelectRoot_unity2_raw::create_bind(
@@ -659,18 +539,12 @@ pub trait IArenaBondLevelSelectRootMethods: IArenaBondLevelSelectRoot {
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         select_unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         select_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        select_type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,
-        >,
+        select_type: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArenaBondLevelSelectRoot_unity2_raw::create(
                 __receiver,
                 ::core::convert::Into::into(super_),
@@ -683,15 +557,10 @@ pub trait IArenaBondLevelSelectRootMethods: IArenaBondLevelSelectRoot {
         }
     }
     #[doc = "`CharaInfoPlayAnim(::unity2::Il2CppString)` overload"]
-    fn chara_info_play_anim(
-        self,
-        anim_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn chara_info_play_anim(self, anim_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArenaBondLevelSelectRoot_unity2_raw::chara_info_play_anim(
                 __receiver,
                 ::core::convert::Into::into(anim_name),
@@ -708,9 +577,7 @@ pub trait IArenaBondLevelSelectRootMethods: IArenaBondLevelSelectRoot {
     ) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArenaBondLevelSelectRoot_unity2_raw::on_select_menu_item(
                 __receiver,
                 ::core::convert::Into::into(god),
@@ -724,18 +591,14 @@ pub trait IArenaBondLevelSelectRootMethods: IArenaBondLevelSelectRoot {
     fn on_decide_menu_item(
         self,
         god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-        r#type: impl ::core::convert::Into<
-            crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-        >,
+        r#type: impl ::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>,
         start: impl ::core::convert::Into<bool>,
         exp: impl ::core::convert::Into<i32>,
         use_count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArenaBondLevelSelectRoot_unity2_raw::on_decide_menu_item(
                 __receiver,
                 ::core::convert::Into::into(god),
@@ -751,35 +614,23 @@ pub trait IArenaBondLevelSelectRootMethods: IArenaBondLevelSelectRoot {
     fn on_change_god_to_next(self) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArenaBondLevelSelectRoot_unity2_raw::on_change_god_to_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArenaBondLevelSelectRoot_unity2_raw::on_change_god_to_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnChangeGodToPrev()` overload"]
     fn on_change_god_to_prev(self) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArenaBondLevelSelectRoot_unity2_raw::on_change_god_to_prev(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ArenaBondLevelSelectRoot_unity2_raw::on_change_god_to_prev(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ArenaBondLevelSelectRoot as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ArenaBondLevelSelectRoot_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -807,22 +658,19 @@ impl ArenaBondLevelSelectRoot {
 #[cfg(feature = "app-arenabondlevelselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondLevelSelectRoot;
-    pub use super::IArenaBondLevelSelectRoot;
-    pub use super::IArenaBondLevelSelectRootMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{ArenaBondLevelSelectRoot, IArenaBondLevelSelectRoot, IArenaBondLevelSelectRootMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-magicsignaltrack-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsignaltrack/MagicSignalTrack.md"))]
     #[::unity2::class(namespace = "Combat", name = "MagicSignalTrack")]
@@ -18,9 +18,7 @@ mod __types {
         #[rename(name = "m_IsSubBullet")]
         pub m_is_sub_bullet: bool,
         #[rename(name = "Signals")]
-        pub signals: crate::system::collections::generic::list_1::List_1<
-            crate::combat::magicsignal::MagicSignal,
-        >,
+        pub signals: crate::system::collections::generic::list_1::List_1<crate::combat::magicsignal::MagicSignal>,
     }
 }
 
@@ -36,9 +34,7 @@ mod __MagicSignalTrack_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalTrack as ::unity2::ClassIdentity>::class(),
@@ -51,41 +47,28 @@ mod __MagicSignalTrack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
-                    "get_EndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
+                        "get_EndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_end_time(
-        this: MagicSignalTrack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_end_time(this: MagicSignalTrack, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MagicSignalTrack, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_end_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalTrack as ::unity2::ClassIdentity>::class(),
                 "set_EndTime",
@@ -97,40 +80,27 @@ mod __MagicSignalTrack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
-                    "set_EndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
+                        "set_EndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_end_time(
-        this: MagicSignalTrack,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_end_time(this: MagicSignalTrack, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MagicSignalTrack, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_end_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -147,18 +117,15 @@ mod __MagicSignalTrack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -168,28 +135,16 @@ mod __MagicSignalTrack_unity2_raw {
         is_sub_bullet: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MagicSignalTrack,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MagicSignalTrack, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, title, help, is_sub_bullet, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::magiccommand::MagicCommand as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::magiccommand::MagicCommand as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MagicSignalTrack as ::unity2::ClassIdentity>::class(),
                 "Find",
@@ -201,18 +156,15 @@ mod __MagicSignalTrack_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
-                    "Find",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MagicSignalTrack as ::unity2::ClassIdentity>::NAME,
+                        "Find",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find(
@@ -224,11 +176,7 @@ mod __MagicSignalTrack_unity2_raw {
             MagicSignalTrack,
             crate::combat::magiccommand::MagicCommand,
             ::unity2::OptionalMethod,
-        ) -> crate::combat::magicsignal::MagicSignal = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find::get_offset() as isize),
-        );
+        ) -> crate::combat::magicsignal::MagicSignal = ::core::mem::transmute(__lookup_find::get_method_info().method_ptr);
         inner(this, cmd, __unity2_method_info)
     }
 }
@@ -238,23 +186,15 @@ pub trait IMagicSignalTrackMethods: IMagicSignalTrack {
     #[doc = "`get_EndTime()` overload"]
     fn get_end_time(self) -> f32 {
         unsafe {
-            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalTrack_unity2_raw::get_end_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EndTime(f32)` overload"]
     fn set_end_time(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalTrack_unity2_raw::set_end_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalTrack_unity2_raw::set_end_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
@@ -265,9 +205,7 @@ pub trait IMagicSignalTrackMethods: IMagicSignalTrack {
         is_sub_bullet: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MagicSignalTrack_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(title),
@@ -278,19 +216,10 @@ pub trait IMagicSignalTrackMethods: IMagicSignalTrack {
         }
     }
     #[doc = "`Find(crate::combat::magiccommand::MagicCommand)` overload"]
-    fn find(
-        self,
-        cmd: impl ::core::convert::Into<crate::combat::magiccommand::MagicCommand>,
-    ) -> crate::combat::magicsignal::MagicSignal {
+    fn find(self, cmd: impl ::core::convert::Into<crate::combat::magiccommand::MagicCommand>) -> crate::combat::magicsignal::MagicSignal {
         unsafe {
-            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MagicSignalTrack_unity2_raw::find(
-                __receiver,
-                ::core::convert::Into::into(cmd),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MagicSignalTrack as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MagicSignalTrack_unity2_raw::find(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)
         }
     }
 }
@@ -301,11 +230,7 @@ impl<__T: IMagicSignalTrack> IMagicSignalTrackMethods for __T {}
 #[cfg(feature = "combat-magicsignaltrack")]
 impl MagicSignalTrack {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` — overload selector"]
-    pub fn new(
-        title: ::unity2::Il2CppString,
-        help: ::unity2::Il2CppString,
-        is_sub_bullet: bool,
-    ) -> Self {
+    pub fn new(title: ::unity2::Il2CppString, help: ::unity2::Il2CppString, is_sub_bullet: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -321,9 +246,7 @@ impl MagicSignalTrack {
 #[cfg(feature = "combat-magicsignaltrack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMagicSignalTrack;
-    pub use super::IMagicSignalTrackMethods;
-    pub use super::MagicSignalTrack;
+    pub use super::{IMagicSignalTrack, IMagicSignalTrackMethods, MagicSignalTrack};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

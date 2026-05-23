@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-playreportevent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/playreportevent/PlayReportEvent.md"))]
     #[::unity2::class(namespace = "App", name = "PlayReportEvent")]
@@ -32,352 +32,214 @@ mod __PlayReportEvent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "End",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "End", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "End",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "End",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_end::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_2(
-        key: ::unity2::Il2CppString,
-        val: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_2(key: ::unity2::Il2CppString, val: u64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, u64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
         inner(key, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_3(
-        key: ::unity2::Il2CppString,
-        val: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_3(key: ::unity2::Il2CppString, val: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
         inner(key, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f64 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_4(
-        key: ::unity2::Il2CppString,
-        val: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_4(key: ::unity2::Il2CppString, val: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_4::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_4::get_method_info().method_ptr);
         inner(key, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_5(
-        key: ::unity2::Il2CppString,
-        val: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_5::get_offset() as isize),
-        );
+    pub unsafe fn add_5(key: ::unity2::Il2CppString, val: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_5::get_method_info().method_ptr);
         inner(key, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_6(
-        key: ::unity2::Il2CppString,
-        val: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_6(key: ::unity2::Il2CppString, val: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_6::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_6::get_method_info().method_ptr);
         inner(key, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_7(
-        key: ::unity2::Il2CppString,
-        val: ::unity2::Array<u8>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Array<u8>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_7::get_offset() as isize),
-        );
+    pub unsafe fn add_7(key: ::unity2::Il2CppString, val: ::unity2::Array<u8>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Array<u8>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_7::get_method_info().method_ptr);
         inner(key, val, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_struct {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayReportEvent as ::unity2::ClassIdentity>::class(),
                 "AddStruct",
@@ -389,39 +251,27 @@ mod __PlayReportEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "AddStruct",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "AddStruct",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_struct(
-        key: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add_struct(key: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add_struct::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add_struct::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_add_report {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayReportEvent as ::unity2::ClassIdentity>::class(),
@@ -434,35 +284,26 @@ mod __PlayReportEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    "PrepareAddReport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        "PrepareAddReport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_add_report(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_add_report::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_prepare_add_report::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayReportEvent as ::unity2::ClassIdentity>::class(),
@@ -475,39 +316,27 @@ mod __PlayReportEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PlayReportEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PlayReportEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlayReportEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlayReportEvent as ::unity2::ClassIdentity>::class(),
@@ -520,26 +349,19 @@ mod __PlayReportEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -550,50 +372,38 @@ impl PlayReportEvent {
     pub fn end() -> () {
         unsafe { __PlayReportEvent_unity2_raw::end(::core::option::Option::None) }
     }
+
     pub fn add<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         key: impl ::core::convert::Into<::unity2::Il2CppString>,
         val: impl ::core::convert::Into<i64>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-            )
-        });
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "Add", 2));
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                "Add",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                    "Add",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(::unity2::Il2CppString, i64, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(::unity2::Il2CppString, i64, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 ::core::convert::Into::into(key),
@@ -602,11 +412,9 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, u64)` overload"]
-    pub fn add_2(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        val: impl ::core::convert::Into<u64>,
-    ) -> () {
+    pub fn add_2(key: impl ::core::convert::Into<::unity2::Il2CppString>, val: impl ::core::convert::Into<u64>) -> () {
         unsafe {
             __PlayReportEvent_unity2_raw::add_2(
                 ::core::convert::Into::into(key),
@@ -615,11 +423,9 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, f32)` overload"]
-    pub fn add_3(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        val: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn add_3(key: impl ::core::convert::Into<::unity2::Il2CppString>, val: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __PlayReportEvent_unity2_raw::add_3(
                 ::core::convert::Into::into(key),
@@ -628,11 +434,9 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, f64)` overload"]
-    pub fn add_4(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        val: impl ::core::convert::Into<f64>,
-    ) -> () {
+    pub fn add_4(key: impl ::core::convert::Into<::unity2::Il2CppString>, val: impl ::core::convert::Into<f64>) -> () {
         unsafe {
             __PlayReportEvent_unity2_raw::add_4(
                 ::core::convert::Into::into(key),
@@ -641,11 +445,9 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn add_5(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        val: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    pub fn add_5(key: impl ::core::convert::Into<::unity2::Il2CppString>, val: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             __PlayReportEvent_unity2_raw::add_5(
                 ::core::convert::Into::into(key),
@@ -654,11 +456,9 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, bool)` overload"]
-    pub fn add_6(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        val: impl ::core::convert::Into<bool>,
-    ) -> () {
+    pub fn add_6(key: impl ::core::convert::Into<::unity2::Il2CppString>, val: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             __PlayReportEvent_unity2_raw::add_6(
                 ::core::convert::Into::into(key),
@@ -667,11 +467,9 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]
-    pub fn add_7(
-        key: impl ::core::convert::Into<::unity2::Il2CppString>,
-        val: impl ::core::convert::Into<::unity2::Array<u8>>,
-    ) -> () {
+    pub fn add_7(key: impl ::core::convert::Into<::unity2::Il2CppString>, val: impl ::core::convert::Into<::unity2::Array<u8>>) -> () {
         unsafe {
             __PlayReportEvent_unity2_raw::add_7(
                 ::core::convert::Into::into(key),
@@ -680,119 +478,89 @@ impl PlayReportEvent {
             )
         }
     }
+
     #[doc = "`AddStruct(::unity2::Il2CppString)` overload"]
     pub fn add_struct(key: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __PlayReportEvent_unity2_raw::add_struct(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __PlayReportEvent_unity2_raw::add_struct(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`PrepareAddReport()` overload"]
     pub fn prepare_add_report() -> () {
         unsafe { __PlayReportEvent_unity2_raw::prepare_add_report(::core::option::Option::None) }
     }
+
     pub fn to_bytes<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         data: impl ::core::convert::Into<M0>,
     ) -> ::unity2::Array<u8> {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "ToBytes",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "ToBytes", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                "ToBytes",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                    "ToBytes",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(M0, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(M0, ::unity2::OptionalMethod) -> ::unity2::Array<u8> = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(data),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(data), ::core::option::Option::Some(__mi_opaque))
         }
     }
+
     pub fn from_bytes<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         bytes: impl ::core::convert::Into<::unity2::Array<u8>>,
     ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <PlayReportEvent as ::unity2::ClassIdentity>::class(),
-                "FromBytes",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<PlayReportEvent as ::unity2::ClassIdentity>::class(), "FromBytes", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
-                "FromBytes",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <PlayReportEvent as ::unity2::ClassIdentity>::NAME,
+                    "FromBytes",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(::unity2::Array<u8>, ::unity2::OptionalMethod) -> M0 =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(::unity2::Array<u8>, ::unity2::OptionalMethod) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(bytes),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(bytes), ::core::option::Option::Some(__mi_opaque))
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __PlayReportEvent_unity2_raw::cctor(::core::option::Option::None) }
@@ -804,9 +572,7 @@ pub trait IPlayReportEventMethods: IPlayReportEvent {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PlayReportEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PlayReportEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlayReportEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -834,9 +600,7 @@ impl PlayReportEvent {
 #[cfg(feature = "app-playreportevent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlayReportEvent;
-    pub use super::IPlayReportEventMethods;
-    pub use super::PlayReportEvent;
+    pub use super::{IPlayReportEvent, IPlayReportEventMethods, PlayReportEvent};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

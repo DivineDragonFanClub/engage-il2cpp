@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-unsafegenericpool_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/unsafegenericpool_1/UnsafeGenericPool_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "UnsafeGenericPool`1")]
@@ -29,9 +29,7 @@ impl<T0: ::unity2::ClassIdentity> UnsafeGenericPool_1<T0> {
 
     #[doc = "`Get(*mutT0)` overload"]
     #[method(name = "Get", args = 1)]
-    pub fn get_2(
-        value: *mut T0,
-    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0>;
+    pub fn get_2(value: *mut T0) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0>;
 
     #[doc = "`Release(T0)` overload"]
     #[method(name = "Release", args = 1)]
@@ -45,8 +43,7 @@ impl<T0: ::unity2::ClassIdentity> UnsafeGenericPool_1<T0> {
 #[cfg(feature = "unity_engine-rendering-unsafegenericpool_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnsafeGenericPool_1;
-    pub use super::UnsafeGenericPool_1;
+    pub use super::{IUnsafeGenericPool_1, UnsafeGenericPool_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

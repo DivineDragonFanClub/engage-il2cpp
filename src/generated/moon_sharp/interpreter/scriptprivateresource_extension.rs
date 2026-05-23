@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-scriptprivateresource_extension-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/scriptprivateresource_extension/ScriptPrivateResource_Extension.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter",
-        name = "ScriptPrivateResource_Extension"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "ScriptPrivateResource_Extension")]
     #[parent(crate::system::object::Object)]
     pub struct ScriptPrivateResource_Extension {}
 }
@@ -28,10 +25,11 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_check_script_ownership {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::class(),
                 "CheckScriptOwnership",
@@ -43,22 +41,19 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
-                    "CheckScriptOwnership",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
+                        "CheckScriptOwnership",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_script_ownership(
-        containing_resource : crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource,
+        containing_resource: crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
         values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -66,21 +61,18 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
             crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
             ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_script_ownership::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_check_script_ownership::get_method_info().method_ptr);
         inner(containing_resource, values, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_script_ownership_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::dynvalue::DynValue as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::class(),
                 "CheckScriptOwnership",
@@ -92,22 +84,19 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
-                    "CheckScriptOwnership",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
+                        "CheckScriptOwnership",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_script_ownership_2(
-        containing_resource : crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource,
+        containing_resource: crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
         value: crate::moon_sharp::interpreter::dynvalue::DynValue,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -115,21 +104,18 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
             crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_script_ownership_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_check_script_ownership_2::get_method_info().method_ptr);
         inner(containing_resource, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_script_ownership_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::class(),
                 "CheckScriptOwnership",
@@ -141,18 +127,15 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
-                    "CheckScriptOwnership",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
+                        "CheckScriptOwnership",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_script_ownership_3(
@@ -164,21 +147,18 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
             crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
             crate::moon_sharp::interpreter::script::Script,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_script_ownership_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_check_script_ownership_3::get_method_info().method_ptr);
         inner(resource, script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_script_ownership_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::class(),
                 "CheckScriptOwnership",
@@ -190,34 +170,27 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
-                    "CheckScriptOwnership",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPrivateResource_Extension as ::unity2::ClassIdentity>::NAME,
+                        "CheckScriptOwnership",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_script_ownership_4(
-        containing_resource : crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource,
-        item_resource : crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource,
+        containing_resource: crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
+        item_resource: crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
             crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_script_ownership_4::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_check_script_ownership_4::get_method_info().method_ptr);
         inner(containing_resource, item_resource, __unity2_method_info)
     }
 }
@@ -226,12 +199,8 @@ mod __ScriptPrivateResource_Extension_unity2_raw {
 impl ScriptPrivateResource_Extension {
     #[doc = "`CheckScriptOwnership(crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
     pub fn check_script_ownership(
-        containing_resource: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
-        >,
-        values: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
+        containing_resource: impl ::core::convert::Into<crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource>,
+        values: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>,
     ) -> () {
         unsafe {
             __ScriptPrivateResource_Extension_unity2_raw::check_script_ownership(
@@ -241,11 +210,10 @@ impl ScriptPrivateResource_Extension {
             )
         }
     }
+
     #[doc = "`CheckScriptOwnership(crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
     pub fn check_script_ownership_2(
-        containing_resource: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
-        >,
+        containing_resource: impl ::core::convert::Into<crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource>,
         value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     ) -> () {
         unsafe {
@@ -256,11 +224,10 @@ impl ScriptPrivateResource_Extension {
             )
         }
     }
+
     #[doc = "`CheckScriptOwnership(crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource, crate::moon_sharp::interpreter::script::Script)` overload"]
     pub fn check_script_ownership_3(
-        resource: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
-        >,
+        resource: impl ::core::convert::Into<crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource>,
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
     ) -> () {
         unsafe {
@@ -271,14 +238,11 @@ impl ScriptPrivateResource_Extension {
             )
         }
     }
+
     #[doc = "`CheckScriptOwnership(crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource, crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource)` overload"]
     pub fn check_script_ownership_4(
-        containing_resource: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
-        >,
-        item_resource: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource,
-        >,
+        containing_resource: impl ::core::convert::Into<crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource>,
+        item_resource: impl ::core::convert::Into<crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource>,
     ) -> () {
         unsafe {
             __ScriptPrivateResource_Extension_unity2_raw::check_script_ownership_4(
@@ -293,8 +257,7 @@ impl ScriptPrivateResource_Extension {
 #[cfg(feature = "moon_sharp-interpreter-scriptprivateresource_extension")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptPrivateResource_Extension;
-    pub use super::ScriptPrivateResource_Extension;
+    pub use super::{IScriptPrivateResource_Extension, ScriptPrivateResource_Extension};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

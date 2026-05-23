@@ -2,15 +2,48 @@
 
 #[cfg(feature = "app-rangedata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md"))]
+    #[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
+    #[parent(crate::system::object::Object)]
+    pub struct RangeData_DirOffsets {
+        #[rename(name = "m_Offsets")]
+        pub m_offsets: ::unity2::Array<
+            crate::system::collections::generic::dictionary_2::Dictionary_2<
+                ::unity2::Il2CppString,
+                crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,
+            >,
+        >,
+        #[rename(name = "m_Centers")]
+        pub m_centers:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::app::rangedata::RangeData_Targets>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md"))]
+    #[::unity2::class(namespace = "App", name = "RangeData")]
+    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
+    pub struct RangeData {
+        #[rename(name = "m_Values")]
+        pub m_values: ::unity2::Array<i8>,
+        #[static_field]
+        #[rename(name = "s_DirOffsets")]
+        pub s_dir_offsets: crate::app::rangedata::RangeData_DirOffsets,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md"))]
     #[repr(C)]
@@ -22,9 +55,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for RangeData_Offset {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RangeData.Offset";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -35,30 +67,20 @@ mod __types {
 
     impl ::unity2::IlType for RangeData_Offset {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct RangeData_Targets {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for RangeData_Targets {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RangeData.Targets";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -69,10 +91,7 @@ mod __types {
 
     impl ::unity2::IlType for RangeData_Targets {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -97,177 +116,10 @@ mod __types {
             Self { value: 4 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md"))]
-    #[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
-    #[parent(crate::system::object::Object)]
-    pub struct RangeData_DirOffsets {
-        #[rename(name = "m_Offsets")]
-        pub m_offsets: ::unity2::Array<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                ::unity2::Il2CppString,
-                crate::system::collections::generic::list_1::List_1<
-                    crate::app::rangedata::RangeData_Offset,
-                >,
-            >,
-        >,
-        #[rename(name = "m_Centers")]
-        pub m_centers: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::app::rangedata::RangeData_Targets,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md"))]
-    #[::unity2::class(namespace = "App", name = "RangeData")]
-    # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
-    pub struct RangeData {
-        #[rename(name = "m_Values")]
-        pub m_values: ::unity2::Array<i8>,
-        #[static_field]
-        #[rename(name = "s_DirOffsets")]
-        pub s_dir_offsets: crate::app::rangedata::RangeData_DirOffsets,
-    }
 }
 
 #[cfg(feature = "app-rangedata-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-rangedata")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RangeData_Offset_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <crate::app::rangedata::RangeData_Targets as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData_Offset as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_Offset as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RangeData_Offset,
-        x: i32,
-        z: i32,
-        target: crate::app::rangedata::RangeData_Targets,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RangeData_Offset,
-            i32,
-            i32,
-            crate::app::rangedata::RangeData_Targets,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, x, z, target, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_to_string {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData_Offset as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_Offset as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn to_string(
-        this: RangeData_Offset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RangeData_Offset,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-rangedata")]
-impl RangeData_Offset {
-    #[doc = "`.ctor(i32, i32, crate::app::rangedata::RangeData_Targets)` overload"]
-    pub fn ctor(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        target: impl ::core::convert::Into<crate::app::rangedata::RangeData_Targets>,
-    ) -> () {
-        unsafe {
-            __RangeData_Offset_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(x),
-                ::core::convert::Into::into(z),
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ToString()` overload"]
-    pub fn to_string(self) -> ::unity2::Il2CppString {
-        unsafe { __RangeData_Offset_unity2_raw::to_string(self, ::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "app-rangedata")]
 #[doc(hidden)]
@@ -278,9 +130,7 @@ mod __RangeData_DirOffsets_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData_DirOffsets as ::unity2::ClassIdentity>::class(),
@@ -293,39 +143,27 @@ mod __RangeData_DirOffsets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RangeData_DirOffsets,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RangeData_DirOffsets, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData_DirOffsets, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_center {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::rangedata::RangeData_Targets as ::unity2::IlType>::il_type(),
@@ -341,18 +179,15 @@ mod __RangeData_DirOffsets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
-                    "AddCenter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
+                        "AddCenter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_center(
@@ -366,22 +201,15 @@ mod __RangeData_DirOffsets_unity2_raw {
             ::unity2::Il2CppString,
             crate::app::rangedata::RangeData_Targets,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_center::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_center::get_method_info().method_ptr);
         inner(this, name, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_center {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData_DirOffsets as ::unity2::ClassIdentity>::class(),
                 "GetCenter",
@@ -393,18 +221,15 @@ mod __RangeData_DirOffsets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
-                    "GetCenter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
+                        "GetCenter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_center(
@@ -412,26 +237,16 @@ mod __RangeData_DirOffsets_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::rangedata::RangeData_Targets {
-        let inner: extern "C" fn(
-            RangeData_DirOffsets,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rangedata::RangeData_Targets = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_center::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RangeData_DirOffsets, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::rangedata::RangeData_Targets =
+            ::core::mem::transmute(__lookup_get_center::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_offest {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData_DirOffsets as ::unity2::ClassIdentity>::class(),
                 "GetOffest",
@@ -443,18 +258,15 @@ mod __RangeData_DirOffsets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
-                    "GetOffest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
+                        "GetOffest",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_offest(
@@ -463,20 +275,23 @@ mod __RangeData_DirOffsets_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         ::unity2::Il2CppString,
-        crate::system::collections::generic::list_1::List_1<
-            crate::app::rangedata::RangeData_Offset,
-        >,
+        crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,
     > {
-        let inner : extern "C" fn (RangeData_DirOffsets , crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_offest :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            RangeData_DirOffsets,
+            crate::app::dir_2::Dir_Type,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,
+        > = ::core::mem::transmute(__lookup_get_offest::get_method_info().method_ptr);
         inner(this, dir, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData_DirOffsets as ::unity2::ClassIdentity>::class(),
@@ -489,30 +304,20 @@ mod __RangeData_DirOffsets_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_DirOffsets as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: RangeData_DirOffsets,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: RangeData_DirOffsets, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData_DirOffsets, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -522,9 +327,8 @@ pub trait IRangeData_DirOffsetsMethods: IRangeData_DirOffsets {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_DirOffsets_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -535,9 +339,8 @@ pub trait IRangeData_DirOffsetsMethods: IRangeData_DirOffsets {
         target: impl ::core::convert::Into<crate::app::rangedata::RangeData_Targets>,
     ) -> () {
         unsafe {
-            let __receiver = <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_DirOffsets_unity2_raw::add_center(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -547,19 +350,11 @@ pub trait IRangeData_DirOffsetsMethods: IRangeData_DirOffsets {
         }
     }
     #[doc = "`GetCenter(::unity2::Il2CppString)` overload"]
-    fn get_center(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::rangedata::RangeData_Targets {
+    fn get_center(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::rangedata::RangeData_Targets {
         unsafe {
-            let __receiver = <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_DirOffsets_unity2_raw::get_center(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_DirOffsets_unity2_raw::get_center(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetOffest(crate::app::dir_2::Dir_Type)` overload"]
@@ -568,27 +363,19 @@ pub trait IRangeData_DirOffsetsMethods: IRangeData_DirOffsets {
         dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
         ::unity2::Il2CppString,
-        crate::system::collections::generic::list_1::List_1<
-            crate::app::rangedata::RangeData_Offset,
-        >,
+        crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,
     > {
         unsafe {
-            let __receiver = <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_DirOffsets_unity2_raw::get_offest(
-                __receiver,
-                ::core::convert::Into::into(dir),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_DirOffsets_unity2_raw::get_offest(__receiver, ::core::convert::Into::into(dir), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <RangeData_DirOffsets as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_DirOffsets_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
@@ -622,50 +409,33 @@ mod __RangeData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), "Load", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn load(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -678,41 +448,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value1(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value1(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value1",
@@ -724,40 +481,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value1(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value1(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value1::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value1::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -770,41 +514,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value2(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value2(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value2",
@@ -816,40 +547,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value2(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value2(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -862,41 +580,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value3(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value3(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value3::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value3",
@@ -908,40 +613,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value3",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value3",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value3(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value3(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value3::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -954,41 +646,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value4",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value4(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value4(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value4::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value4::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value4",
@@ -1000,40 +679,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value4",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value4(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value4(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value4::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value4::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -1046,41 +712,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value5",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value5(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value5(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value5::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value5::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value5",
@@ -1092,40 +745,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value5",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value5",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value5(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value5(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value5::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value5::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -1138,41 +778,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value6",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value6",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value6(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value6(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value6::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value6::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value6",
@@ -1184,40 +811,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value6",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value6",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value6(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value6(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value6::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value6::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -1230,41 +844,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value7",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value7",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value7(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value7(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value7::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value7::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value7",
@@ -1276,40 +877,27 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value7",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value7",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value7(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value7(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value7::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value7::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
@@ -1322,41 +910,28 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "get_Value8",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "get_Value8",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value8(
-        this: RangeData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_value8(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value8::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value8::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i8 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RangeData as ::unity2::ClassIdentity>::class(),
                 "set_Value8",
@@ -1368,230 +943,149 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "set_Value8",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "set_Value8",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value8(
-        this: RangeData,
-        value: i8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value8(this: RangeData, value: i8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RangeData, i8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value8::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value8::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                "OnBuild",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), "OnBuild", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "OnBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "OnBuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_build(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_on_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), "Commit", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "Commit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn commit(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_center {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                "GetCenter",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), "GetCenter", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "GetCenter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "GetCenter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_center(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::rangedata::RangeData_Targets {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::rangedata::RangeData_Targets = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_center::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::rangedata::RangeData_Targets =
+            ::core::mem::transmute(__lookup_get_center::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_offsets {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::dir_2::Dir_Type as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                "GetOffsets",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), "GetOffsets", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "GetOffsets",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "GetOffsets",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_offsets(
         name: ::unity2::Il2CppString,
         dir: crate::app::dir_2::Dir_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> {
         let inner: extern "C" fn(
             ::unity2::Il2CppString,
             crate::app::dir_2::Dir_Type,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::rangedata::RangeData_Offset,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_offsets::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> =
+            ::core::mem::transmute(__lookup_get_offsets::get_method_info().method_ptr);
         inner(name, dir, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotation_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::rangedata::RangeData_Offset,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1605,124 +1099,80 @@ mod __RangeData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    "RotationOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        "RotationOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rotation_offset(
-        list: crate::system::collections::generic::list_1::List_1<
-            crate::app::rangedata::RangeData_Offset,
-        >,
+        list: crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,
         angle: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> {
         let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::rangedata::RangeData_Offset,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,
             f32,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::rangedata::RangeData_Offset,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotation_offset::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> =
+            ::core::mem::transmute(__lookup_rotation_offset::get_method_info().method_ptr);
         inner(list, angle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: RangeData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(RangeData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RangeData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<RangeData as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RangeData as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1733,27 +1183,22 @@ impl RangeData {
     pub fn load() -> () {
         unsafe { __RangeData_unity2_raw::load(::core::option::Option::None) }
     }
+
     #[doc = "`Commit()` overload"]
     pub fn commit() -> () {
         unsafe { __RangeData_unity2_raw::commit(::core::option::Option::None) }
     }
+
     #[doc = "`GetCenter(::unity2::Il2CppString)` overload"]
-    pub fn get_center(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::rangedata::RangeData_Targets {
-        unsafe {
-            __RangeData_unity2_raw::get_center(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_center(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::rangedata::RangeData_Targets {
+        unsafe { __RangeData_unity2_raw::get_center(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetOffsets(::unity2::Il2CppString, crate::app::dir_2::Dir_Type)` overload"]
     pub fn get_offsets(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         dir: impl ::core::convert::Into<crate::app::dir_2::Dir_Type>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> {
         unsafe {
             __RangeData_unity2_raw::get_offsets(
                 ::core::convert::Into::into(name),
@@ -1762,16 +1207,12 @@ impl RangeData {
             )
         }
     }
+
     #[doc = "`RotationOffset(crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>, f32)` overload"]
     pub fn rotation_offset(
-        list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::rangedata::RangeData_Offset,
-            >,
-        >,
+        list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>>,
         angle: impl ::core::convert::Into<f32>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> {
         unsafe {
             __RangeData_unity2_raw::rotation_offset(
                 ::core::convert::Into::into(list),
@@ -1780,6 +1221,7 @@ impl RangeData {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RangeData_unity2_raw::cctor(::core::option::Option::None) }
@@ -1791,194 +1233,126 @@ pub trait IRangeDataMethods: IRangeData {
     #[doc = "`get_Value1()` overload"]
     fn get_value1(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value1(i8)` overload"]
     fn set_value1(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value1(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value1(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value2()` overload"]
     fn get_value2(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value2(i8)` overload"]
     fn set_value2(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value3()` overload"]
     fn get_value3(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value3(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value3(i8)` overload"]
     fn set_value3(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value3(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value3(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value4()` overload"]
     fn get_value4(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value4(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value4(i8)` overload"]
     fn set_value4(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value4(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value5()` overload"]
     fn get_value5(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value5(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value5(i8)` overload"]
     fn set_value5(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value5(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value5(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value6()` overload"]
     fn get_value6(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value6(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value6(i8)` overload"]
     fn set_value6(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value6(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value6(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value7()` overload"]
     fn get_value7(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value7(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value7(i8)` overload"]
     fn set_value7(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value7(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value7(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value8()` overload"]
     fn get_value8(self) -> i8 {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::get_value8(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value8(i8)` overload"]
     fn set_value8(self, value: impl ::core::convert::Into<i8>) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RangeData_unity2_raw::set_value8(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RangeData_unity2_raw::set_value8(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`OnBuild()` overload"]
     fn on_build(self) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::on_build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RangeData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RangeData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1991,13 +1365,8 @@ impl<__T: IRangeData> IRangeDataMethods for __T {}
 impl RangeData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RangeData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(RangeData), ::core::stringify!(new),));
         <Self as IRangeDataMethods>::ctor(this);
         this
     }
@@ -2005,31 +1374,134 @@ impl RangeData {
 
 #[cfg(feature = "app-rangedata")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RangeData_Offset_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::rangedata::RangeData_Targets as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RangeData_Offset as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_Offset as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RangeData_Offset,
+        x: i32,
+        z: i32,
+        target: crate::app::rangedata::RangeData_Targets,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RangeData_Offset, i32, i32, crate::app::rangedata::RangeData_Targets, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, x, z, target, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RangeData_Offset as ::unity2::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RangeData_Offset as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn to_string(this: RangeData_Offset, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RangeData_Offset, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-rangedata")]
+impl RangeData_Offset {
+    #[doc = "`.ctor(i32, i32, crate::app::rangedata::RangeData_Targets)` overload"]
+    pub fn ctor(
+        self,
+        x: impl ::core::convert::Into<i32>,
+        z: impl ::core::convert::Into<i32>,
+        target: impl ::core::convert::Into<crate::app::rangedata::RangeData_Targets>,
+    ) -> () {
+        unsafe {
+            __RangeData_Offset_unity2_raw::ctor(
+                self,
+                ::core::convert::Into::into(x),
+                ::core::convert::Into::into(z),
+                ::core::convert::Into::into(target),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(self) -> ::unity2::Il2CppString {
+        unsafe { __RangeData_Offset_unity2_raw::to_string(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-rangedata")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IRangeData;
-    pub use super::IRangeDataMethods;
-    pub use super::IRangeData_DirOffsets;
-    pub use super::IRangeData_DirOffsetsMethods;
-    pub use super::RangeData;
-    pub use super::RangeData_DirOffsets;
-    pub use super::RangeData_Offset;
-    pub use super::RangeData_Targets;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{
+        IRangeData, IRangeDataMethods, IRangeData_DirOffsets, IRangeData_DirOffsetsMethods, RangeData, RangeData_DirOffsets, RangeData_Offset,
+        RangeData_Targets,
+    };
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

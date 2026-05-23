@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-androidjavarunnableproxy-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::androidjavaproxy::{AndroidJavaProxy, IAndroidJavaProxy};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::androidjavaproxy::{AndroidJavaProxy, IAndroidJavaProxy},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavarunnableproxy/AndroidJavaRunnableProxy.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaRunnableProxy")]
@@ -29,10 +31,9 @@ mod __AndroidJavaRunnableProxy_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: androidjavarunnable :: AndroidJavaRunnable as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::androidjavarunnable::AndroidJavaRunnable as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AndroidJavaRunnableProxy as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -44,18 +45,15 @@ mod __AndroidJavaRunnableProxy_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidJavaRunnableProxy as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidJavaRunnableProxy as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -67,11 +65,7 @@ mod __AndroidJavaRunnableProxy_unity2_raw {
             AndroidJavaRunnableProxy,
             crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, runnable, __unity2_method_info)
     }
 }
@@ -79,22 +73,11 @@ mod __AndroidJavaRunnableProxy_unity2_raw {
 #[cfg(feature = "unity_engine-androidjavarunnableproxy")]
 pub trait IAndroidJavaRunnableProxyMethods: IAndroidJavaRunnableProxy {
     #[doc = "`.ctor(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` overload"]
-    fn ctor(
-        self,
-        runnable: impl ::core::convert::Into<
-            crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,
-        >,
-    ) -> () {
+    fn ctor(self, runnable: impl ::core::convert::Into<crate::unity_engine::androidjavarunnable::AndroidJavaRunnable>) -> () {
         unsafe {
             let __receiver =
-                <AndroidJavaRunnableProxy as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AndroidJavaRunnableProxy_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(runnable),
-                ::core::option::Option::None,
-            )
+                <AndroidJavaRunnableProxy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AndroidJavaRunnableProxy_unity2_raw::ctor(__receiver, ::core::convert::Into::into(runnable), ::core::option::Option::None)
         }
     }
 }
@@ -121,13 +104,10 @@ impl AndroidJavaRunnableProxy {
 #[cfg(feature = "unity_engine-androidjavarunnableproxy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AndroidJavaRunnableProxy;
-    pub use super::IAndroidJavaRunnableProxy;
-    pub use super::IAndroidJavaRunnableProxyMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AndroidJavaRunnableProxy, IAndroidJavaRunnableProxy, IAndroidJavaRunnableProxyMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::androidjavaproxy::IAndroidJavaProxy;
     #[cfg(feature = "unity_engine-androidjavaproxy")]
     pub use crate::unity_engine::androidjavaproxy::IAndroidJavaProxyMethods;
+    pub use crate::{system::object::IObject, unity_engine::androidjavaproxy::IAndroidJavaProxy};
 }

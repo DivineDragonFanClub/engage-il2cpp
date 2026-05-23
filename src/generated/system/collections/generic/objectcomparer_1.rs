@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-objectcomparer_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::collections::generic::comparer_1::{Comparer_1, IComparer_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        collections::generic::comparer_1::{Comparer_1, IComparer_1},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/objectcomparer_1/ObjectComparer_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "ObjectComparer`1")]
@@ -57,13 +59,10 @@ impl<T0: ::unity2::ClassIdentity> ObjectComparer_1<T0> {
 #[cfg(feature = "system-collections-generic-objectcomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IObjectComparer_1;
-    pub use super::IObjectComparer_1Methods;
-    pub use super::ObjectComparer_1;
-    pub use crate::system::collections::generic::comparer_1::IComparer_1;
+    pub use super::{IObjectComparer_1, IObjectComparer_1Methods, ObjectComparer_1};
     #[cfg(feature = "system-collections-generic-comparer_1")]
     pub use crate::system::collections::generic::comparer_1::IComparer_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::generic::comparer_1::IComparer_1, object::IObject};
 }

@@ -2,23 +2,24 @@
 
 #[cfg(feature = "app-ringselectconfirmdialog-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicdialog::{BasicDialog, IBasicDialog};
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes};
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::yesnodialog::{IYesNoDialog, YesNoDialog};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicdialog::{BasicDialog, IBasicDialog},
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+            yesnodialog::{IYesNoDialog, YesNoDialog},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectconfirmdialog/RingSelectConfirmDialog_ConfirmYesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RingSelectConfirmDialog.ConfirmYesDialogItem"
-    )]
+    #[::unity2::class(namespace = "App", name = "RingSelectConfirmDialog.ConfirmYesDialogItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct RingSelectConfirmDialog_ConfirmYesDialogItem {}
 
@@ -50,11 +51,8 @@ mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -66,18 +64,15 @@ mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -85,24 +80,15 @@ mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingSelectConfirmDialog_ConfirmYesDialogItem,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingSelectConfirmDialog_ConfirmYesDialogItem, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(),
@@ -115,43 +101,31 @@ mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: RingSelectConfirmDialog_ConfirmYesDialogItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingSelectConfirmDialog_ConfirmYesDialogItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingSelectConfirmDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_old {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(),
                 "RemoveOld",
@@ -163,18 +137,15 @@ mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
-                    "RemoveOld",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        "RemoveOld",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_old(
@@ -182,27 +153,20 @@ mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingSelectConfirmDialog_ConfirmYesDialogItem,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_old::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingSelectConfirmDialog_ConfirmYesDialogItem, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_old::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringselectconfirmdialog")]
-pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:
-    IRingSelectConfirmDialog_ConfirmYesDialogItem
-{
+pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods: IRingSelectConfirmDialog_ConfirmYesDialogItem {
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -213,17 +177,18 @@ pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveOld(crate::app::unit::Unit)` overload"]
     fn remove_old(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = < RingSelectConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RingSelectConfirmDialog_ConfirmYesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw::remove_old(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -234,10 +199,7 @@ pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:
 }
 
 #[cfg(feature = "app-ringselectconfirmdialog")]
-impl<__T: IRingSelectConfirmDialog_ConfirmYesDialogItem>
-    IRingSelectConfirmDialog_ConfirmYesDialogItemMethods for __T
-{
-}
+impl<__T: IRingSelectConfirmDialog_ConfirmYesDialogItem> IRingSelectConfirmDialog_ConfirmYesDialogItemMethods for __T {}
 
 #[cfg(feature = "app-ringselectconfirmdialog")]
 impl RingSelectConfirmDialog_ConfirmYesDialogItem {
@@ -264,9 +226,7 @@ mod __RingSelectConfirmDialog_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -283,18 +243,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindGod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_god(
@@ -308,20 +265,14 @@ mod __RingSelectConfirmDialog_unity2_raw {
             crate::app::unit::Unit,
             crate::app::godunit::GodUnit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_god::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_god::get_method_info().method_ptr);
         inner(super_, unit, next_god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_ring {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -338,18 +289,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindRing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindRing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_ring(
@@ -363,20 +311,14 @@ mod __RingSelectConfirmDialog_unity2_raw {
             crate::app::unit::Unit,
             crate::app::unitring::UnitRing,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_ring::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_ring::get_method_info().method_ptr);
         inner(super_, unit, next_ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -394,18 +336,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -421,22 +360,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
             crate::app::godunit::GodUnit,
             crate::app::unitring::UnitRing,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, unit, next_god, next_ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_set_title {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateSetTitle",
@@ -448,43 +380,28 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateSetTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateSetTitle",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_set_title(
-        next_god: crate::app::godunit::GodUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_set_title::get_offset() as isize),
-        );
+    pub unsafe fn create_set_title(next_god: crate::app::godunit::GodUnit, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_set_title::get_method_info().method_ptr);
         inner(next_god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_set_title_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateSetTitle",
@@ -496,41 +413,30 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateSetTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateSetTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_set_title_2(
         next_ring: crate::app::unitring::UnitRing,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::unitring::UnitRing,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_set_title_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_set_title_2::get_method_info().method_ptr);
         inner(next_ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_set_title_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -547,18 +453,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateSetTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateSetTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_set_title_3(
@@ -567,30 +470,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         is_armlet: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_set_title_3::get_offset() as isize),
-        );
-        inner(
-            next_name,
-            old_equip_unit_name,
-            is_armlet,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_set_title_3::get_method_info().method_ptr);
+        inner(next_name, old_equip_unit_name, is_armlet, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_change_title {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
@@ -606,18 +494,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateChangeTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateChangeTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_change_title(
@@ -625,24 +510,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         next_god: crate::app::godunit::GodUnit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_change_title::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_change_title::get_method_info().method_ptr);
         inner(unit, next_god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_change_title_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
@@ -658,18 +534,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateChangeTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateChangeTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_change_title_2(
@@ -677,24 +550,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         next_ring: crate::app::unitring::UnitRing,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::unitring::UnitRing,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_change_title_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_change_title_2::get_method_info().method_ptr);
         inner(unit, next_ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_change_title_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -713,18 +577,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateChangeTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateChangeTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_change_title_3(
@@ -742,11 +603,7 @@ mod __RingSelectConfirmDialog_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_change_title_3::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_create_change_title_3::get_method_info().method_ptr);
         inner(
             remove_name,
             next_name,
@@ -760,11 +617,8 @@ mod __RingSelectConfirmDialog_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_remove_title {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::godunit::GodUnit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateRemoveTitle",
@@ -776,43 +630,31 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateRemoveTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateRemoveTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_remove_title(
         remove_god: crate::app::godunit::GodUnit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::godunit::GodUnit,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_remove_title::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::godunit::GodUnit, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_remove_title::get_method_info().method_ptr);
         inner(remove_god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_remove_title_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog as ::unity2::ClassIdentity>::class(),
                 "CreateRemoveTitle",
@@ -824,41 +666,30 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateRemoveTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateRemoveTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_remove_title_2(
         remove_ring: crate::app::unitring::UnitRing,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::unitring::UnitRing,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_remove_title_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_remove_title_2::get_method_info().method_ptr);
         inner(remove_ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_remove_title_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -874,18 +705,15 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateRemoveTitle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateRemoveTitle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_remove_title_3(
@@ -893,28 +721,18 @@ mod __RingSelectConfirmDialog_unity2_raw {
         is_armlet: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_remove_title_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_create_remove_title_3::get_method_info().method_ptr);
         inner(remove_name, is_armlet, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -926,47 +744,34 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RingSelectConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RingSelectConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, menu_item_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingSelectConfirmDialog as ::unity2::ClassIdentity>::class(),
@@ -979,26 +784,19 @@ mod __RingSelectConfirmDialog_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingSelectConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1020,6 +818,7 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateBindRing(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]
     pub fn create_bind_ring(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1035,6 +834,7 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1052,28 +852,17 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateSetTitle(crate::app::godunit::GodUnit)` overload"]
-    pub fn create_set_title(
-        next_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingSelectConfirmDialog_unity2_raw::create_set_title(
-                ::core::convert::Into::into(next_god),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_set_title(next_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> ::unity2::Il2CppString {
+        unsafe { __RingSelectConfirmDialog_unity2_raw::create_set_title(::core::convert::Into::into(next_god), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateSetTitle(crate::app::unitring::UnitRing)` overload"]
-    pub fn create_set_title_2(
-        next_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingSelectConfirmDialog_unity2_raw::create_set_title_2(
-                ::core::convert::Into::into(next_ring),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_set_title_2(next_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>) -> ::unity2::Il2CppString {
+        unsafe { __RingSelectConfirmDialog_unity2_raw::create_set_title_2(::core::convert::Into::into(next_ring), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateSetTitle(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
     pub fn create_set_title_3(
         next_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1089,6 +878,7 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateChangeTitle(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
     pub fn create_change_title(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1102,6 +892,7 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateChangeTitle(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]
     pub fn create_change_title_2(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
@@ -1115,6 +906,7 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateChangeTitle(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, bool)` overload"]
     pub fn create_change_title_3(
         remove_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1134,28 +926,17 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`CreateRemoveTitle(crate::app::godunit::GodUnit)` overload"]
-    pub fn create_remove_title(
-        remove_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingSelectConfirmDialog_unity2_raw::create_remove_title(
-                ::core::convert::Into::into(remove_god),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_remove_title(remove_god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> ::unity2::Il2CppString {
+        unsafe { __RingSelectConfirmDialog_unity2_raw::create_remove_title(::core::convert::Into::into(remove_god), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateRemoveTitle(crate::app::unitring::UnitRing)` overload"]
-    pub fn create_remove_title_2(
-        remove_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingSelectConfirmDialog_unity2_raw::create_remove_title_2(
-                ::core::convert::Into::into(remove_ring),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_remove_title_2(remove_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>) -> ::unity2::Il2CppString {
+        unsafe { __RingSelectConfirmDialog_unity2_raw::create_remove_title_2(::core::convert::Into::into(remove_ring), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateRemoveTitle(::unity2::Il2CppString, bool)` overload"]
     pub fn create_remove_title_3(
         remove_name: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1169,6 +950,7 @@ impl RingSelectConfirmDialog {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RingSelectConfirmDialog_unity2_raw::cctor(::core::option::Option::None) }
@@ -1180,22 +962,12 @@ pub trait IRingSelectConfirmDialogMethods: IRingSelectConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RingSelectConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingSelectConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::option::Option::None,
-            )
+                <RingSelectConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingSelectConfirmDialog_unity2_raw::ctor(__receiver, ::core::convert::Into::into(menu_item_list), ::core::option::Option::None)
         }
     }
 }
@@ -1206,11 +978,7 @@ impl<__T: IRingSelectConfirmDialog> IRingSelectConfirmDialogMethods for __T {}
 #[cfg(feature = "app-ringselectconfirmdialog")]
 impl RingSelectConfirmDialog {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
+    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1226,34 +994,31 @@ impl RingSelectConfirmDialog {
 #[cfg(feature = "app-ringselectconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRingSelectConfirmDialog;
-    pub use super::IRingSelectConfirmDialogMethods;
-    pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItem;
-    pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItemMethods;
-    pub use super::RingSelectConfirmDialog;
-    pub use super::RingSelectConfirmDialog_ConfirmYesDialogItem;
-    pub use crate::app::basicdialog::IBasicDialog;
+    pub use super::{
+        IRingSelectConfirmDialog, IRingSelectConfirmDialogMethods, IRingSelectConfirmDialog_ConfirmYesDialogItem,
+        IRingSelectConfirmDialog_ConfirmYesDialogItemMethods, RingSelectConfirmDialog, RingSelectConfirmDialog_ConfirmYesDialogItem,
+    };
     #[cfg(feature = "app-basicdialog")]
     pub use crate::app::basicdialog::IBasicDialogMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     #[cfg(feature = "app-basicdialogitemyes")]
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::yesnodialog::IYesNoDialog;
     #[cfg(feature = "app-yesnodialog")]
     pub use crate::app::yesnodialog::IYesNoDialogMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            basicdialog::IBasicDialog, basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenu::IBasicMenu,
+            basicmenuitem::IBasicMenuItem, procinst::IProcInst, yesnodialog::IYesNoDialog,
+        },
+        system::object::IObject,
+    };
 }

@@ -2,27 +2,21 @@
 
 #[cfg(feature = "root-akgameobjenvironmentdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akgameobjenvironmentdata/AkGameObjEnvironmentData.md"))]
     #[::unity2::class(namespace = "", name = "AkGameObjEnvironmentData")]
     #[parent(crate::system::object::Object)]
     pub struct AkGameObjEnvironmentData {
         #[rename(name = "activeEnvironments")]
-        pub active_environments: crate::system::collections::generic::list_1::List_1<
-            crate::root::akenvironment::AkEnvironment,
-        >,
+        pub active_environments: crate::system::collections::generic::list_1::List_1<crate::root::akenvironment::AkEnvironment>,
         #[rename(name = "activeEnvironmentsFromPortals")]
-        pub active_environments_from_portals: crate::system::collections::generic::list_1::List_1<
-            crate::root::akenvironment::AkEnvironment,
-        >,
+        pub active_environments_from_portals: crate::system::collections::generic::list_1::List_1<crate::root::akenvironment::AkEnvironment>,
         #[rename(name = "activePortals")]
-        pub active_portals: crate::system::collections::generic::list_1::List_1<
-            crate::root::akenvironmentportal::AkEnvironmentPortal,
-        >,
+        pub active_portals: crate::system::collections::generic::list_1::List_1<crate::root::akenvironmentportal::AkEnvironmentPortal>,
         #[rename(name = "auxSendValues")]
         pub aux_send_values: crate::root::akauxsendarray::AkAuxSendArray,
         #[rename(name = "lastPosition")]
@@ -48,11 +42,8 @@ mod __AkGameObjEnvironmentData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_add_highest_priority_environments_from_portals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::class(),
                 "AddHighestPriorityEnvironmentsFromPortals",
@@ -64,18 +55,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "AddHighestPriorityEnvironmentsFromPortals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "AddHighestPriorityEnvironmentsFromPortals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_highest_priority_environments_from_portals(
@@ -83,28 +71,16 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         position: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkGameObjEnvironmentData,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_add_highest_priority_environments_from_portals::get_offset() as isize,
-                ),
-        );
+        let inner: extern "C" fn(AkGameObjEnvironmentData, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_highest_priority_environments_from_portals::get_method_info().method_ptr);
         inner(this, position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_highest_priority_environments {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::class(),
                 "AddHighestPriorityEnvironments",
@@ -116,18 +92,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "AddHighestPriorityEnvironments",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "AddHighestPriorityEnvironments",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_highest_priority_environments(
@@ -135,24 +108,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         position: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkGameObjEnvironmentData,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_highest_priority_environments::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjEnvironmentData, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_highest_priority_environments::get_method_info().method_ptr);
         inner(this, position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_aux_send {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -168,18 +132,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAuxSend",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAuxSend",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_aux_send(
@@ -193,22 +154,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_aux_send::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_aux_send::get_method_info().method_ptr);
         inner(this, game_object, position, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_add_environment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::class(),
                 "TryAddEnvironment",
@@ -220,18 +174,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "TryAddEnvironment",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "TryAddEnvironment",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_add_environment(
@@ -239,26 +190,16 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         env: crate::root::akenvironment::AkEnvironment,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkGameObjEnvironmentData,
-            crate::root::akenvironment::AkEnvironment,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_add_environment::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjEnvironmentData, crate::root::akenvironment::AkEnvironment, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_add_environment::get_method_info().method_ptr);
         inner(this, env, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_environment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::class(),
                 "RemoveEnvironment",
@@ -270,18 +211,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "RemoveEnvironment",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "RemoveEnvironment",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_environment(
@@ -289,24 +227,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         env: crate::root::akenvironment::AkEnvironment,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkGameObjEnvironmentData,
-            crate::root::akenvironment::AkEnvironment,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_environment::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjEnvironmentData, crate::root::akenvironment::AkEnvironment, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_environment::get_method_info().method_ptr);
         inner(this, env, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_ak_environment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
@@ -322,18 +251,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "AddAkEnvironment",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "AddAkEnvironment",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_ak_environment(
@@ -347,27 +273,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
             crate::unity_engine::collider::Collider,
             crate::unity_engine::collider::Collider,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_ak_environment::get_offset() as isize),
-        );
-        inner(
-            this,
-            environment_collider,
-            game_object_collider,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_add_ak_environment::get_method_info().method_ptr);
+        inner(this, environment_collider, game_object_collider, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ak_environment_belongs_to_active_portals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akenvironment::AkEnvironment as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::class(),
                 "AkEnvironmentBelongsToActivePortals",
@@ -379,18 +293,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "AkEnvironmentBelongsToActivePortals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "AkEnvironmentBelongsToActivePortals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ak_environment_belongs_to_active_portals(
@@ -398,24 +309,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         env: crate::root::akenvironment::AkEnvironment,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            AkGameObjEnvironmentData,
-            crate::root::akenvironment::AkEnvironment,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ak_environment_belongs_to_active_portals::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkGameObjEnvironmentData, crate::root::akenvironment::AkEnvironment, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_ak_environment_belongs_to_active_portals::get_method_info().method_ptr);
         inner(this, env, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_ak_environment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::collider::Collider as ::unity2::IlType>::il_type(),
@@ -431,18 +333,15 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    "RemoveAkEnvironment",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        "RemoveAkEnvironment",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_ak_environment(
@@ -456,25 +355,14 @@ mod __AkGameObjEnvironmentData_unity2_raw {
             crate::unity_engine::collider::Collider,
             crate::unity_engine::collider::Collider,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_ak_environment::get_offset() as isize),
-        );
-        inner(
-            this,
-            environment_collider,
-            game_object_collider,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_remove_ak_environment::get_method_info().method_ptr);
+        inner(this, environment_collider, game_object_collider, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::class(),
@@ -487,30 +375,20 @@ mod __AkGameObjEnvironmentData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkGameObjEnvironmentData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkGameObjEnvironmentData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkGameObjEnvironmentData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkGameObjEnvironmentData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -518,15 +396,10 @@ mod __AkGameObjEnvironmentData_unity2_raw {
 #[cfg(feature = "root-akgameobjenvironmentdata")]
 pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
     #[doc = "`AddHighestPriorityEnvironmentsFromPortals(crate::unity_engine::vector3::Vector3)` overload"]
-    fn add_highest_priority_environments_from_portals(
-        self,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn add_highest_priority_environments_from_portals(self, position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::add_highest_priority_environments_from_portals(
                 __receiver,
                 ::core::convert::Into::into(position),
@@ -535,15 +408,10 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
         }
     }
     #[doc = "`AddHighestPriorityEnvironments(crate::unity_engine::vector3::Vector3)` overload"]
-    fn add_highest_priority_environments(
-        self,
-        position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> () {
+    fn add_highest_priority_environments(self, position: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::add_highest_priority_environments(
                 __receiver,
                 ::core::convert::Into::into(position),
@@ -559,9 +427,7 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
     ) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::update_aux_send(
                 __receiver,
                 ::core::convert::Into::into(game_object),
@@ -571,37 +437,19 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
         }
     }
     #[doc = "`TryAddEnvironment(crate::root::akenvironment::AkEnvironment)` overload"]
-    fn try_add_environment(
-        self,
-        env: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-    ) -> () {
+    fn try_add_environment(self, env: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkGameObjEnvironmentData_unity2_raw::try_add_environment(
-                __receiver,
-                ::core::convert::Into::into(env),
-                ::core::option::Option::None,
-            )
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkGameObjEnvironmentData_unity2_raw::try_add_environment(__receiver, ::core::convert::Into::into(env), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveEnvironment(crate::root::akenvironment::AkEnvironment)` overload"]
-    fn remove_environment(
-        self,
-        env: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-    ) -> () {
+    fn remove_environment(self, env: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkGameObjEnvironmentData_unity2_raw::remove_environment(
-                __receiver,
-                ::core::convert::Into::into(env),
-                ::core::option::Option::None,
-            )
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkGameObjEnvironmentData_unity2_raw::remove_environment(__receiver, ::core::convert::Into::into(env), ::core::option::Option::None)
         }
     }
     #[doc = "`AddAkEnvironment(crate::unity_engine::collider::Collider, crate::unity_engine::collider::Collider)` overload"]
@@ -612,9 +460,7 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
     ) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::add_ak_environment(
                 __receiver,
                 ::core::convert::Into::into(environment_collider),
@@ -624,15 +470,10 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
         }
     }
     #[doc = "`AkEnvironmentBelongsToActivePortals(crate::root::akenvironment::AkEnvironment)` overload"]
-    fn ak_environment_belongs_to_active_portals(
-        self,
-        env: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>,
-    ) -> bool {
+    fn ak_environment_belongs_to_active_portals(self, env: impl ::core::convert::Into<crate::root::akenvironment::AkEnvironment>) -> bool {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::ak_environment_belongs_to_active_portals(
                 __receiver,
                 ::core::convert::Into::into(env),
@@ -648,9 +489,7 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
     ) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::remove_ak_environment(
                 __receiver,
                 ::core::convert::Into::into(environment_collider),
@@ -663,9 +502,7 @@ pub trait IAkGameObjEnvironmentDataMethods: IAkGameObjEnvironmentData {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkGameObjEnvironmentData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkGameObjEnvironmentData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -693,9 +530,7 @@ impl AkGameObjEnvironmentData {
 #[cfg(feature = "root-akgameobjenvironmentdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkGameObjEnvironmentData;
-    pub use super::IAkGameObjEnvironmentData;
-    pub use super::IAkGameObjEnvironmentDataMethods;
+    pub use super::{AkGameObjEnvironmentData, IAkGameObjEnvironmentData, IAkGameObjEnvironmentDataMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

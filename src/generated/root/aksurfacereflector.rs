@@ -2,14 +2,18 @@
 
 #[cfg(feature = "root-aksurfacereflector-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksurfacereflector/AkSurfaceReflector.md"))]
     #[::unity2::class(namespace = "", name = "AkSurfaceReflector")]
@@ -40,9 +44,7 @@ mod __AkSurfaceReflector_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -55,41 +57,28 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "GetID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "GetID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_id(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
+    pub unsafe fn get_id(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_associated_room {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akroom::AkRoom as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akroom::AkRoom as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
                 "SetAssociatedRoom",
@@ -101,18 +90,15 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "SetAssociatedRoom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "SetAssociatedRoom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_associated_room(
@@ -120,24 +106,15 @@ mod __AkSurfaceReflector_unity2_raw {
         room: crate::root::akroom::AkRoom,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkSurfaceReflector,
-            crate::root::akroom::AkRoom,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_associated_room::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkSurfaceReflector, crate::root::akroom::AkRoom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_associated_room::get_method_info().method_ptr);
         inner(this, room, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -150,39 +127,27 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "SetGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "SetGeometry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_geometry(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_geometry(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_geometry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_geometry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -195,39 +160,27 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGeometry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_geometry(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_geometry(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_geometry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -240,39 +193,27 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "RemoveGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "RemoveGeometry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_geometry(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn remove_geometry(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_geometry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_remove_geometry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_geometry_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::meshfilter::MeshFilter as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -286,41 +227,30 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "RemoveGeometrySet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "RemoveGeometrySet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_geometry_set(
         mesh_filter: crate::unity_engine::meshfilter::MeshFilter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::meshfilter::MeshFilter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_geometry_set::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::meshfilter::MeshFilter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_geometry_set::get_method_info().method_ptr);
         inner(mesh_filter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -333,39 +263,27 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -378,39 +296,27 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -423,39 +329,27 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ak_geometry_set_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::meshfilter::MeshFilter as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -469,41 +363,30 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    "GetAkGeometrySetID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        "GetAkGeometrySetID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ak_geometry_set_id(
         mesh_filter: crate::unity_engine::meshfilter::MeshFilter,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> u64 {
-        let inner: extern "C" fn(
-            crate::unity_engine::meshfilter::MeshFilter,
-            ::unity2::OptionalMethod,
-        ) -> u64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_ak_geometry_set_id::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::meshfilter::MeshFilter, ::unity2::OptionalMethod) -> u64 =
+            ::core::mem::transmute(__lookup_get_ak_geometry_set_id::get_method_info().method_ptr);
         inner(mesh_filter, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSurfaceReflector as ::unity2::ClassIdentity>::class(),
@@ -516,30 +399,20 @@ mod __AkSurfaceReflector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSurfaceReflector as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkSurfaceReflector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkSurfaceReflector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSurfaceReflector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -547,26 +420,13 @@ mod __AkSurfaceReflector_unity2_raw {
 #[cfg(feature = "root-aksurfacereflector")]
 impl AkSurfaceReflector {
     #[doc = "`RemoveGeometrySet(crate::unity_engine::meshfilter::MeshFilter)` overload"]
-    pub fn remove_geometry_set(
-        mesh_filter: impl ::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>,
-    ) -> () {
-        unsafe {
-            __AkSurfaceReflector_unity2_raw::remove_geometry_set(
-                ::core::convert::Into::into(mesh_filter),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn remove_geometry_set(mesh_filter: impl ::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>) -> () {
+        unsafe { __AkSurfaceReflector_unity2_raw::remove_geometry_set(::core::convert::Into::into(mesh_filter), ::core::option::Option::None) }
     }
+
     #[doc = "`GetAkGeometrySetID(crate::unity_engine::meshfilter::MeshFilter)` overload"]
-    pub fn get_ak_geometry_set_id(
-        mesh_filter: impl ::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>,
-    ) -> u64 {
-        unsafe {
-            __AkSurfaceReflector_unity2_raw::get_ak_geometry_set_id(
-                ::core::convert::Into::into(mesh_filter),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_ak_geometry_set_id(mesh_filter: impl ::core::convert::Into<crate::unity_engine::meshfilter::MeshFilter>) -> u64 {
+        unsafe { __AkSurfaceReflector_unity2_raw::get_ak_geometry_set_id(::core::convert::Into::into(mesh_filter), ::core::option::Option::None) }
     }
 }
 
@@ -575,94 +435,63 @@ pub trait IAkSurfaceReflectorMethods: IAkSurfaceReflector {
     #[doc = "`GetID()` overload"]
     fn get_id(self) -> u64 {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSurfaceReflector_unity2_raw::get_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetAssociatedRoom(crate::root::akroom::AkRoom)` overload"]
-    fn set_associated_room(
-        self,
-        room: impl ::core::convert::Into<crate::root::akroom::AkRoom>,
-    ) -> () {
+    fn set_associated_room(self, room: impl ::core::convert::Into<crate::root::akroom::AkRoom>) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSurfaceReflector_unity2_raw::set_associated_room(
-                __receiver,
-                ::core::convert::Into::into(room),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSurfaceReflector_unity2_raw::set_associated_room(__receiver, ::core::convert::Into::into(room), ::core::option::Option::None)
         }
     }
     #[doc = "`SetGeometry()` overload"]
     fn set_geometry(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSurfaceReflector_unity2_raw::set_geometry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateGeometry()` overload"]
     fn update_geometry(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSurfaceReflector_unity2_raw::update_geometry(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSurfaceReflector_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveGeometry()` overload"]
     fn remove_geometry(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkSurfaceReflector_unity2_raw::remove_geometry(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSurfaceReflector_unity2_raw::remove_geometry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSurfaceReflector_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSurfaceReflector_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSurfaceReflector_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkSurfaceReflector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSurfaceReflector_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -690,22 +519,19 @@ impl AkSurfaceReflector {
 #[cfg(feature = "root-aksurfacereflector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkSurfaceReflector;
-    pub use super::IAkSurfaceReflector;
-    pub use super::IAkSurfaceReflectorMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{AkSurfaceReflector, IAkSurfaceReflector, IAkSurfaceReflectorMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

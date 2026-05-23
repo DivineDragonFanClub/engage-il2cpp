@@ -2,18 +2,24 @@
 
 #[cfg(feature = "app-minimappanelframefordangerallrenderer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::minimappanelbase::{IMiniMapPanelBase, MiniMapPanelBase};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::graphic::{Graphic, IGraphic};
-    use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::minimappanelbase::{IMiniMapPanelBase, MiniMapPanelBase},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::{
+                graphic::{Graphic, IGraphic},
+                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
+            },
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimappanelframefordangerallrenderer/MiniMapPanelFrameForDangerAllRenderer.md"))]
     #[::unity2::class(namespace = "App", name = "MiniMapPanelFrameForDangerAllRenderer")]
@@ -42,9 +48,7 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_source_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::class(),
@@ -57,18 +61,15 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetSourceMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetSourceMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_source_materials(
@@ -78,21 +79,15 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         let inner: extern "C" fn(
             MiniMapPanelFrameForDangerAllRenderer,
             ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_source_materials::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::material::Material> =
+            ::core::mem::transmute(__lookup_get_source_materials::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_map_panel_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::class(),
@@ -105,18 +100,15 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
-                    "GetMapPanelMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
+                        "GetMapPanelMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_map_panel_materials(
@@ -126,21 +118,15 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         let inner: extern "C" fn(
             MiniMapPanelFrameForDangerAllRenderer,
             ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_map_panel_materials::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::material::Material> =
+            ::core::mem::transmute(__lookup_get_map_panel_materials::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_panel_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::class(),
@@ -153,41 +139,27 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
-                    "CreatePanelMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
+                        "CreatePanelMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_panel_mesh(
-        this: MiniMapPanelFrameForDangerAllRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MiniMapPanelFrameForDangerAllRenderer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_panel_mesh::get_offset() as isize),
-        );
+    pub unsafe fn create_panel_mesh(this: MiniMapPanelFrameForDangerAllRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapPanelFrameForDangerAllRenderer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_panel_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_panel_danger_all_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::class(),
@@ -200,41 +172,27 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
-                    "CreatePanelDangerAllMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
+                        "CreatePanelDangerAllMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_panel_danger_all_mesh(
-        this: MiniMapPanelFrameForDangerAllRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MiniMapPanelFrameForDangerAllRenderer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_panel_danger_all_mesh::get_offset() as isize),
-        );
+    pub unsafe fn create_panel_danger_all_mesh(this: MiniMapPanelFrameForDangerAllRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapPanelFrameForDangerAllRenderer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_panel_danger_all_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::class(),
@@ -247,97 +205,75 @@ mod __MiniMapPanelFrameForDangerAllRenderer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MiniMapPanelFrameForDangerAllRenderer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MiniMapPanelFrameForDangerAllRenderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MiniMapPanelFrameForDangerAllRenderer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MiniMapPanelFrameForDangerAllRenderer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MiniMapPanelFrameForDangerAllRenderer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-minimappanelframefordangerallrenderer")]
-pub trait IMiniMapPanelFrameForDangerAllRendererMethods:
-    IMiniMapPanelFrameForDangerAllRenderer
-{
+pub trait IMiniMapPanelFrameForDangerAllRendererMethods: IMiniMapPanelFrameForDangerAllRenderer {
     #[doc = "`GetSourceMaterials()` overload"]
     fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
         unsafe {
-            let __receiver = < MiniMapPanelFrameForDangerAllRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::get_source_materials(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MiniMapPanelFrameForDangerAllRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMapPanelMaterials()` overload"]
     fn get_map_panel_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
         unsafe {
-            let __receiver = < MiniMapPanelFrameForDangerAllRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::get_map_panel_materials(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MiniMapPanelFrameForDangerAllRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::get_map_panel_materials(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreatePanelMesh()` overload"]
     fn create_panel_mesh(self) -> () {
         unsafe {
-            let __receiver = < MiniMapPanelFrameForDangerAllRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::create_panel_mesh(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MiniMapPanelFrameForDangerAllRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::create_panel_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreatePanelDangerAllMesh()` overload"]
     fn create_panel_danger_all_mesh(self) -> () {
         unsafe {
-            let __receiver = < MiniMapPanelFrameForDangerAllRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::create_panel_danger_all_mesh(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MiniMapPanelFrameForDangerAllRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::create_panel_danger_all_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < MiniMapPanelFrameForDangerAllRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MiniMapPanelFrameForDangerAllRenderer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MiniMapPanelFrameForDangerAllRenderer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-minimappanelframefordangerallrenderer")]
-impl<__T: IMiniMapPanelFrameForDangerAllRenderer> IMiniMapPanelFrameForDangerAllRendererMethods
-    for __T
-{
-}
+impl<__T: IMiniMapPanelFrameForDangerAllRenderer> IMiniMapPanelFrameForDangerAllRendererMethods for __T {}
 
 #[cfg(feature = "app-minimappanelframefordangerallrenderer")]
 impl MiniMapPanelFrameForDangerAllRenderer {
@@ -358,34 +294,35 @@ impl MiniMapPanelFrameForDangerAllRenderer {
 #[cfg(feature = "app-minimappanelframefordangerallrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMiniMapPanelFrameForDangerAllRenderer;
-    pub use super::IMiniMapPanelFrameForDangerAllRendererMethods;
-    pub use super::MiniMapPanelFrameForDangerAllRenderer;
-    pub use crate::app::minimappanelbase::IMiniMapPanelBase;
+    pub use super::{IMiniMapPanelFrameForDangerAllRenderer, IMiniMapPanelFrameForDangerAllRendererMethods, MiniMapPanelFrameForDangerAllRenderer};
     #[cfg(feature = "app-minimappanelbase")]
     pub use crate::app::minimappanelbase::IMiniMapPanelBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::graphic::IGraphic;
     #[cfg(feature = "unity_engine-ui-graphic")]
     pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
     #[cfg(feature = "unity_engine-ui-maskablegraphic")]
     pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
+    pub use crate::{
+        app::minimappanelbase::IMiniMapPanelBase,
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
+        },
+    };
 }

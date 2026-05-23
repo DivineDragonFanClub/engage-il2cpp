@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2dlookuptexture/Light2DLookupTexture.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "Light2DLookupTexture"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "Light2DLookupTexture")]
     #[parent(crate::system::object::Object)]
     pub struct Light2DLookupTexture {
         #[static_field]
@@ -35,9 +32,7 @@ mod __Light2DLookupTexture_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_light_lookup_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DLookupTexture as ::unity2::ClassIdentity>::class(),
@@ -50,39 +45,27 @@ mod __Light2DLookupTexture_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
-                    "GetLightLookupTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
+                        "GetLightLookupTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_light_lookup_texture(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_light_lookup_texture::get_offset() as isize),
-        );
+    pub unsafe fn get_light_lookup_texture(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_light_lookup_texture::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_falloff_lookup_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DLookupTexture as ::unity2::ClassIdentity>::class(),
@@ -95,39 +78,27 @@ mod __Light2DLookupTexture_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
-                    "GetFalloffLookupTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
+                        "GetFalloffLookupTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_falloff_lookup_texture(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_falloff_lookup_texture::get_offset() as isize),
-        );
+    pub unsafe fn get_falloff_lookup_texture(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_falloff_lookup_texture::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_point_light_lookup_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DLookupTexture as ::unity2::ClassIdentity>::class(),
@@ -140,39 +111,27 @@ mod __Light2DLookupTexture_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
-                    "CreatePointLightLookupTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
+                        "CreatePointLightLookupTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_point_light_lookup_texture(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture2d::Texture2D {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture2d::Texture2D = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_point_light_lookup_texture::get_offset() as isize),
-        );
+    pub unsafe fn create_point_light_lookup_texture(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D =
+            ::core::mem::transmute(__lookup_create_point_light_lookup_texture::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_falloff_lookup_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Light2DLookupTexture as ::unity2::ClassIdentity>::class(),
@@ -185,30 +144,20 @@ mod __Light2DLookupTexture_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
-                    "CreateFalloffLookupTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Light2DLookupTexture as ::unity2::ClassIdentity>::NAME,
+                        "CreateFalloffLookupTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_falloff_lookup_texture(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture2d::Texture2D {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture2d::Texture2D = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_falloff_lookup_texture::get_offset() as isize),
-        );
+    pub unsafe fn create_falloff_lookup_texture(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::texture2d::Texture2D =
+            ::core::mem::transmute(__lookup_create_falloff_lookup_texture::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -217,43 +166,29 @@ mod __Light2DLookupTexture_unity2_raw {
 impl Light2DLookupTexture {
     #[doc = "`GetLightLookupTexture()` overload"]
     pub fn get_light_lookup_texture() -> crate::unity_engine::texture::Texture {
-        unsafe {
-            __Light2DLookupTexture_unity2_raw::get_light_lookup_texture(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Light2DLookupTexture_unity2_raw::get_light_lookup_texture(::core::option::Option::None) }
     }
+
     #[doc = "`GetFalloffLookupTexture()` overload"]
     pub fn get_falloff_lookup_texture() -> crate::unity_engine::texture::Texture {
-        unsafe {
-            __Light2DLookupTexture_unity2_raw::get_falloff_lookup_texture(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Light2DLookupTexture_unity2_raw::get_falloff_lookup_texture(::core::option::Option::None) }
     }
+
     #[doc = "`CreatePointLightLookupTexture()` overload"]
     pub fn create_point_light_lookup_texture() -> crate::unity_engine::texture2d::Texture2D {
-        unsafe {
-            __Light2DLookupTexture_unity2_raw::create_point_light_lookup_texture(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Light2DLookupTexture_unity2_raw::create_point_light_lookup_texture(::core::option::Option::None) }
     }
+
     #[doc = "`CreateFalloffLookupTexture()` overload"]
     pub fn create_falloff_lookup_texture() -> crate::unity_engine::texture2d::Texture2D {
-        unsafe {
-            __Light2DLookupTexture_unity2_raw::create_falloff_lookup_texture(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Light2DLookupTexture_unity2_raw::create_falloff_lookup_texture(::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILight2DLookupTexture;
-    pub use super::Light2DLookupTexture;
+    pub use super::{ILight2DLookupTexture, Light2DLookupTexture};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

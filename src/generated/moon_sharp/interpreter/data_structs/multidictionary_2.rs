@@ -2,23 +2,17 @@
 
 #[cfg(feature = "moon_sharp-interpreter-data_structs-multidictionary_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/multidictionary_2/MultiDictionary_2.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.DataStructs",
-        name = "MultiDictionary`2"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "MultiDictionary`2")]
     #[parent(crate::system::object::Object)]
     pub struct MultiDictionary_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
         #[rename(name = "m_Map")]
-        pub m_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            T0,
-            crate::system::collections::generic::list_1::List_1<T1>,
-        >,
+        pub m_map: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, crate::system::collections::generic::list_1::List_1<T1>>,
         #[rename(name = "m_DefaultRet")]
         pub m_default_ret: ::unity2::Array<T1>,
     }
@@ -36,10 +30,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MultiDictionary_2
 
     #[doc = "`.ctor(crate::system::collections::generic::iequalitycomparer_1_interface::IEqualityComparer_1_Interface<T0>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(
-        self,
-        eq_comparer : crate :: system :: collections :: generic :: iequalitycomparer_1_interface :: IEqualityComparer_1_Interface < T0 >,
-    ) -> ();
+    pub fn ctor_2(self, eq_comparer: crate::system::collections::generic::iequalitycomparer_1_interface::IEqualityComparer_1_Interface<T0>) -> ();
 
     #[doc = "`Add(T0, T1)` overload"]
     #[method(name = "Add", args = 2)]
@@ -47,10 +38,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MultiDictionary_2
 
     #[doc = "`Find(T0)` overload"]
     #[method(name = "Find", args = 1)]
-    pub fn find(
-        self,
-        key: T0,
-    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<T1>;
+    pub fn find(self, key: T0) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<T1>;
 
     #[doc = "`ContainsKey(T0)` overload"]
     #[method(name = "ContainsKey", args = 1)]
@@ -89,9 +77,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MultiDictionary_2
     }
 
     #[doc = "`.ctor(crate::system::collections::generic::iequalitycomparer_1_interface::IEqualityComparer_1_Interface<T0>)` — overload selector"]
-    pub fn new_2(
-        eq_comparer : crate :: system :: collections :: generic :: iequalitycomparer_1_interface :: IEqualityComparer_1_Interface < T0 >,
-    ) -> Self {
+    pub fn new_2(eq_comparer: crate::system::collections::generic::iequalitycomparer_1_interface::IEqualityComparer_1_Interface<T0>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -107,9 +93,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MultiDictionary_2
 #[cfg(feature = "moon_sharp-interpreter-data_structs-multidictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMultiDictionary_2;
-    pub use super::IMultiDictionary_2Methods;
-    pub use super::MultiDictionary_2;
+    pub use super::{IMultiDictionary_2, IMultiDictionary_2Methods, MultiDictionary_2};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

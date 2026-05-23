@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-bitfield64-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfield64/BitField64.md"))]
     #[::unity2::class(namespace = "App", name = "BitField64")]
@@ -29,540 +31,305 @@ mod __BitField64_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor_2(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_3(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+    pub unsafe fn ctor_3(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Set", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Set",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Set", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_2::get_offset() as isize),
-        );
+    pub unsafe fn set_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Clear", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Clear", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_2::get_offset() as isize),
-        );
+    pub unsafe fn clear_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Change",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Change", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Change",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Change",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn change(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_change::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Change",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Change", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Change",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Change",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn change_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_2::get_offset() as isize),
-        );
+    pub unsafe fn change_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Copy",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Copy", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Copy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Copy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn copy(
-        this: BitField64,
-        f: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn copy(this: BitField64, f: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_copy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_copy::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Copy",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Copy", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Copy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Copy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn copy_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_2::get_offset() as isize),
-        );
+    pub unsafe fn copy_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_or_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <i64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitField64 as ::unity2::ClassIdentity>::class(),
                 "SetOrClear",
@@ -574,45 +341,28 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "SetOrClear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "SetOrClear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_or_clear(
-        this: BitField64,
-        is_set: bool,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_or_clear(this: BitField64, is_set: bool, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, bool, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_or_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_or_clear::get_method_info().method_ptr);
         inner(this, is_set, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exclusive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i64 as ::unity2::IlType>::il_type(),
-                <i64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type(), <i64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitField64 as ::unity2::ClassIdentity>::class(),
                 "Exclusive",
@@ -624,516 +374,296 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Exclusive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Exclusive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exclusive(
-        this: BitField64,
-        n: i64,
-        m: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn exclusive(this: BitField64, n: i64, m: i64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(BitField64, i64, i64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exclusive::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exclusive::get_method_info().method_ptr);
         inner(this, n, m, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Mask",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Mask", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Mask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Mask",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn mask(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
+    pub unsafe fn mask(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_mask::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_mask::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_mask_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Mask",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Mask", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Mask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Mask",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn mask_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mask_2::get_offset() as isize),
-        );
+    pub unsafe fn mask_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(__lookup_mask_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn test(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_test::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_test::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_test_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Test",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Test", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Test",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Test",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn test_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_test_2::get_offset() as isize),
-        );
+    pub unsafe fn test_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_test_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_not {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Not",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Not", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Not",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Not",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn not(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn not(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_not::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_not::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_not_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Not",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Not", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Not",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Not",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn not_2(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_not_2::get_offset() as isize),
-        );
+    pub unsafe fn not_2(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_not_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Reset", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reset(this: BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+        let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Reset", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_2(
-        this: BitField64,
-        f: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_2(this: BitField64, f: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_2::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Reset", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_3(
-        this: BitField64,
-        f: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset_3::get_offset() as isize),
-        );
+    pub unsafe fn reset_3(this: BitField64, f: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset_3::get_method_info().method_ptr);
         inner(this, f, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitField64 as ::unity2::ClassIdentity>::class(),
@@ -1146,39 +676,27 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "get_ValueType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "get_ValueType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value_type(
-        this: BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
+    pub unsafe fn get_value_type(this: BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
         let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitField64 as ::unity2::ClassIdentity>::class(),
@@ -1191,41 +709,28 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "get_Value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "get_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
+    pub unsafe fn get_value(this: BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
         let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitField64 as ::unity2::ClassIdentity>::class(),
                 "set_Value",
@@ -1237,40 +742,27 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "set_Value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "set_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value(
-        this: BitField64,
-        value: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value(this: BitField64, value: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BitField64, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
@@ -1286,43 +778,27 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_equality(
-        lhs: crate::app::bitfield64::BitField64,
-        rhs: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::bitfield64::BitField64,
-            i64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality::get_offset() as isize),
-        );
+    pub unsafe fn op_equality(lhs: crate::app::bitfield64::BitField64, rhs: i64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::bitfield64::BitField64, i64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
@@ -1338,43 +814,27 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn op_inequality(
-        lhs: crate::app::bitfield64::BitField64,
-        rhs: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::bitfield64::BitField64,
-            i64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality::get_offset() as isize),
-        );
+    pub unsafe fn op_inequality(lhs: crate::app::bitfield64::BitField64, rhs: i64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::bitfield64::BitField64, i64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type(),
                 <crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type(),
@@ -1390,18 +850,15 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality_2(
@@ -1409,24 +866,15 @@ mod __BitField64_unity2_raw {
         rhs: crate::app::bitfield64::BitField64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::bitfield64::BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::bitfield64::BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_equality_2::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type(),
                 <crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type(),
@@ -1442,18 +890,15 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_inequality_2(
@@ -1461,124 +906,69 @@ mod __BitField64_unity2_raw {
         rhs: crate::app::bitfield64::BitField64,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::bitfield64::BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::bitfield64::BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_op_inequality_2::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: BitField64,
-        rhs_obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: BitField64, rhs_obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BitField64, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, rhs_obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BitField64 as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::bitfield64::BitField64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BitField64 as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals_2(
-        this: BitField64,
-        rhs: crate::app::bitfield64::BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BitField64,
-            crate::app::bitfield64::BitField64,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+    pub unsafe fn equals_2(this: BitField64, rhs: crate::app::bitfield64::BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BitField64, crate::app::bitfield64::BitField64, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitField64 as ::unity2::ClassIdentity>::class(),
@@ -1591,30 +981,20 @@ mod __BitField64_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitField64 as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitField64 as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: BitField64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: BitField64, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BitField64, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1622,10 +1002,7 @@ mod __BitField64_unity2_raw {
 #[cfg(feature = "app-bitfield64")]
 impl BitField64 {
     #[doc = "`op_Equality(crate::app::bitfield64::BitField64, i64)` overload"]
-    pub fn op_equality(
-        lhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>,
-        rhs: impl ::core::convert::Into<i64>,
-    ) -> bool {
+    pub fn op_equality(lhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>, rhs: impl ::core::convert::Into<i64>) -> bool {
         unsafe {
             __BitField64_unity2_raw::op_equality(
                 ::core::convert::Into::into(lhs),
@@ -1634,11 +1011,9 @@ impl BitField64 {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::app::bitfield64::BitField64, i64)` overload"]
-    pub fn op_inequality(
-        lhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>,
-        rhs: impl ::core::convert::Into<i64>,
-    ) -> bool {
+    pub fn op_inequality(lhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>, rhs: impl ::core::convert::Into<i64>) -> bool {
         unsafe {
             __BitField64_unity2_raw::op_inequality(
                 ::core::convert::Into::into(lhs),
@@ -1647,6 +1022,7 @@ impl BitField64 {
             )
         }
     }
+
     #[doc = "`op_Equality(crate::app::bitfield64::BitField64, crate::app::bitfield64::BitField64)` overload"]
     pub fn op_equality_2(
         lhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>,
@@ -1660,6 +1036,7 @@ impl BitField64 {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::app::bitfield64::BitField64, crate::app::bitfield64::BitField64)` overload"]
     pub fn op_inequality_2(
         lhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>,
@@ -1680,152 +1057,84 @@ pub trait IBitField64Methods: IBitField64 {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(i64)` overload"]
     fn ctor_2(self, f: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::app::bitfield64::BitField64)` overload"]
     fn ctor_3(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::ctor_3(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::ctor_3(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Set(i64)` overload"]
     fn set(self, f: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::set(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Set(crate::app::bitfield64::BitField64)` overload"]
     fn set_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::set_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::set_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear(i64)` overload"]
     fn clear(self, f: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::clear(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::clear(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear(crate::app::bitfield64::BitField64)` overload"]
     fn clear_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::clear_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::clear_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Change(i64)` overload"]
     fn change(self, f: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::change(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::change(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Change(crate::app::bitfield64::BitField64)` overload"]
     fn change_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::change_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::change_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Copy(i32)` overload"]
     fn copy(self, f: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::copy(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::copy(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Copy(crate::app::bitfield64::BitField64)` overload"]
     fn copy_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::copy_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::copy_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`SetOrClear(bool, i64)` overload"]
-    fn set_or_clear(
-        self,
-        is_set: impl ::core::convert::Into<bool>,
-        f: impl ::core::convert::Into<i64>,
-    ) -> () {
+    fn set_or_clear(self, is_set: impl ::core::convert::Into<bool>, f: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::set_or_clear(
                 __receiver,
                 ::core::convert::Into::into(is_set),
@@ -1835,15 +1144,9 @@ pub trait IBitField64Methods: IBitField64 {
         }
     }
     #[doc = "`Exclusive(i64, i64)` overload"]
-    fn exclusive(
-        self,
-        n: impl ::core::convert::Into<i64>,
-        m: impl ::core::convert::Into<i64>,
-    ) -> bool {
+    fn exclusive(self, n: impl ::core::convert::Into<i64>, m: impl ::core::convert::Into<i64>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::exclusive(
                 __receiver,
                 ::core::convert::Into::into(n),
@@ -1855,188 +1158,112 @@ pub trait IBitField64Methods: IBitField64 {
     #[doc = "`Mask(i64)` overload"]
     fn mask(self, f: impl ::core::convert::Into<i64>) -> i64 {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::mask(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::mask(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Mask(crate::app::bitfield64::BitField64)` overload"]
     fn mask_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> i64 {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::mask_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::mask_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(i64)` overload"]
     fn test(self, f: impl ::core::convert::Into<i64>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::test(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::test(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Test(crate::app::bitfield64::BitField64)` overload"]
     fn test_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::test_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::test_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Not(i64)` overload"]
     fn not(self, f: impl ::core::convert::Into<i64>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::not(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::not(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Not(crate::app::bitfield64::BitField64)` overload"]
     fn not_2(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::not_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::not_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset(i64)` overload"]
     fn reset_2(self, f: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::reset_2(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::reset_2(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`Reset(crate::app::bitfield64::BitField64)` overload"]
     fn reset_3(self, f: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::reset_3(
-                __receiver,
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::reset_3(__receiver, ::core::convert::Into::into(f), ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ValueType()` overload"]
     fn get_value_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::get_value_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value()` overload"]
     fn get_value(self) -> i64 {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::get_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value(i64)` overload"]
     fn set_value(self, value: impl ::core::convert::Into<i64>) -> () {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::set_value(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     fn equals(self, rhs_obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::equals(
-                __receiver,
-                ::core::convert::Into::into(rhs_obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::equals(__receiver, ::core::convert::Into::into(rhs_obj), ::core::option::Option::None)
         }
     }
     #[doc = "`Equals(crate::app::bitfield64::BitField64)` overload"]
     fn equals_2(self, rhs: impl ::core::convert::Into<crate::app::bitfield64::BitField64>) -> bool {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BitField64_unity2_raw::equals_2(
-                __receiver,
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BitField64_unity2_raw::equals_2(__receiver, ::core::convert::Into::into(rhs), ::core::option::Option::None)
         }
     }
     #[doc = "`GetHashCode()` overload"]
     fn get_hash_code(self) -> i32 {
         unsafe {
-            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BitField64 as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BitField64_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
         }
     }
@@ -2049,39 +1276,24 @@ impl<__T: IBitField64> IBitField64Methods for __T {}
 impl BitField64 {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BitField64),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BitField64), ::core::stringify!(new),));
         <Self as IBitField64Methods>::ctor(this);
         this
     }
 
     #[doc = "`.ctor(i64)` — overload selector"]
     pub fn new_2(f: i64) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BitField64),
-                ::core::stringify!(new_2),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BitField64), ::core::stringify!(new_2),));
         <Self as IBitField64Methods>::ctor_2(this, f);
         this
     }
 
     #[doc = "`.ctor(crate::app::bitfield64::BitField64)` — overload selector"]
     pub fn new_3(f: crate::app::bitfield64::BitField64) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BitField64),
-                ::core::stringify!(new_3),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BitField64), ::core::stringify!(new_3),));
         <Self as IBitField64Methods>::ctor_3(this, f);
         this
     }
@@ -2090,13 +1302,10 @@ impl BitField64 {
 #[cfg(feature = "app-bitfield64")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BitField64;
-    pub use super::IBitField64;
-    pub use super::IBitField64Methods;
-    pub use crate::app::bitfieldcommon::IBitFieldCommon;
+    pub use super::{BitField64, IBitField64, IBitField64Methods};
     #[cfg(feature = "app-bitfieldcommon")]
     pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::bitfieldcommon::IBitFieldCommon, system::object::IObject};
 }

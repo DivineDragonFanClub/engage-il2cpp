@@ -2,18 +2,19 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerendererfeature/ScriptableRendererFeature.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "ScriptableRendererFeature"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ScriptableRendererFeature")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     pub struct ScriptableRendererFeature {
         #[rename(name = "m_Active")]
@@ -33,9 +34,7 @@ mod __ScriptableRendererFeature_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -48,39 +47,27 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "get_isActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "get_isActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_active(
-        this: ScriptableRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_active(this: ScriptableRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_active::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -93,40 +80,31 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create(
-        this: ScriptableRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create(this: ScriptableRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_render_passes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
                 "AddRenderPasses",
@@ -138,24 +116,21 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "AddRenderPasses",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "AddRenderPasses",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_render_passes(
         this: ScriptableRendererFeature,
         renderer: crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -163,20 +138,14 @@ mod __ScriptableRendererFeature_unity2_raw {
             crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_render_passes::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_render_passes::get_method_info().method_ptr);
         inner(this, renderer, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -189,39 +158,27 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: ScriptableRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: ScriptableRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_validate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -234,41 +191,28 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "OnValidate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "OnValidate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_validate(
-        this: ScriptableRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_validate(this: ScriptableRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_validate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_validate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
                 "SetActive",
@@ -280,40 +224,27 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "SetActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "SetActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_active(
-        this: ScriptableRendererFeature,
-        active: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_active(this: ScriptableRendererFeature, active: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
         inner(this, active, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -326,41 +257,28 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: ScriptableRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: ScriptableRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -372,40 +290,27 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose_2(
-        this: ScriptableRendererFeature,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose_2(this: ScriptableRendererFeature, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose_2::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptableRendererFeature as ::unity2::ClassIdentity>::class(),
@@ -418,30 +323,20 @@ mod __ScriptableRendererFeature_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptableRendererFeature as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ScriptableRendererFeature,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ScriptableRendererFeature, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -452,40 +347,27 @@ pub trait IScriptableRendererFeatureMethods: IScriptableRendererFeature {
     fn get_is_active(self) -> bool {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ScriptableRendererFeature_unity2_raw::get_is_active(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRendererFeature_unity2_raw::get_is_active(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Create()` overload"]
     fn create(self) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRendererFeature_unity2_raw::create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn add_render_passes(
         self,
-        renderer: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,
-        >,
+        renderer: impl ::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __ScriptableRendererFeature_unity2_raw::add_render_passes(
                 __receiver,
                 ::core::convert::Into::into(renderer),
@@ -499,76 +381,47 @@ pub trait IScriptableRendererFeatureMethods: IScriptableRendererFeature {
     fn on_enable(self) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ScriptableRendererFeature_unity2_raw::on_enable(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRendererFeature_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnValidate()` overload"]
     fn on_validate(self) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ScriptableRendererFeature_unity2_raw::on_validate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRendererFeature_unity2_raw::on_validate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetActive(bool)` overload"]
     fn set_active(self, active: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ScriptableRendererFeature_unity2_raw::set_active(
-                __receiver,
-                ::core::convert::Into::into(active),
-                ::core::option::Option::None,
-            )
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRendererFeature_unity2_raw::set_active(__receiver, ::core::convert::Into::into(active), ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ScriptableRendererFeature_unity2_raw::dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRendererFeature_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ScriptableRendererFeature_unity2_raw::dispose_2(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ScriptableRendererFeature_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ScriptableRendererFeature as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptableRendererFeature_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -596,16 +449,15 @@ impl ScriptableRendererFeature {
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptableRendererFeature;
-    pub use super::IScriptableRendererFeatureMethods;
-    pub use super::ScriptableRendererFeature;
-    pub use crate::system::object::IObject;
+    pub use super::{IScriptableRendererFeature, IScriptableRendererFeatureMethods, ScriptableRendererFeature};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

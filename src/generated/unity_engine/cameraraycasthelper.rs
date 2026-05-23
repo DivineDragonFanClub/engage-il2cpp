@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-cameraraycasthelper-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cameraraycasthelper/CameraRaycastHelper.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "CameraRaycastHelper")]
@@ -25,9 +25,7 @@ mod __CameraRaycastHelper_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_try {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
@@ -45,18 +43,15 @@ mod __CameraRaycastHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
-                    "RaycastTry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
+                        "RaycastTry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_try(
@@ -72,20 +67,14 @@ mod __CameraRaycastHelper_unity2_raw {
             f32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_try::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_raycast_try::get_method_info().method_ptr);
         inner(cam, ray, distance, layer_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_try2_d {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
@@ -103,18 +92,15 @@ mod __CameraRaycastHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
-                    "RaycastTry2D",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
+                        "RaycastTry2D",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_try2_d(
@@ -130,20 +116,14 @@ mod __CameraRaycastHelper_unity2_raw {
             f32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_try2_d::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_raycast_try2_d::get_method_info().method_ptr);
         inner(cam, ray, distance, layer_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_try_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
@@ -161,18 +141,15 @@ mod __CameraRaycastHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
-                    "RaycastTry_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
+                        "RaycastTry_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_try_injected(
@@ -188,20 +165,14 @@ mod __CameraRaycastHelper_unity2_raw {
             f32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_try_injected::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_raycast_try_injected::get_method_info().method_ptr);
         inner(cam, ray, distance, layer_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_raycast_try2_d_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::ray::Ray as ::unity2::IlType>::il_type(),
@@ -219,18 +190,15 @@ mod __CameraRaycastHelper_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
-                    "RaycastTry2D_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CameraRaycastHelper as ::unity2::ClassIdentity>::NAME,
+                        "RaycastTry2D_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn raycast_try2_d_injected(
@@ -246,11 +214,7 @@ mod __CameraRaycastHelper_unity2_raw {
             f32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_raycast_try2_d_injected::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_raycast_try2_d_injected::get_method_info().method_ptr);
         inner(cam, ray, distance, layer_mask, __unity2_method_info)
     }
 }
@@ -274,6 +238,7 @@ impl CameraRaycastHelper {
             )
         }
     }
+
     #[doc = "`RaycastTry2D(crate::unity_engine::camera::Camera, crate::unity_engine::ray::Ray, f32, i32)` overload"]
     pub fn raycast_try2_d(
         cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
@@ -291,15 +256,13 @@ impl CameraRaycastHelper {
             )
         }
     }
+
     #[doc = "`RaycastTry_Injected(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::ray::Ray, f32, i32)` overload"]
     pub fn raycast_try_injected(
         cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
         distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-    ) -> (
-        crate::unity_engine::gameobject::GameObject,
-        crate::unity_engine::ray::Ray,
-    ) {
+    ) -> (crate::unity_engine::gameobject::GameObject, crate::unity_engine::ray::Ray) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::ray::Ray>::uninit();
             let __ret = {
@@ -314,15 +277,13 @@ impl CameraRaycastHelper {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`RaycastTry2D_Injected(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::ray::Ray, f32, i32)` overload"]
     pub fn raycast_try2_d_injected(
         cam: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
         distance: impl ::core::convert::Into<f32>,
         layer_mask: impl ::core::convert::Into<i32>,
-    ) -> (
-        crate::unity_engine::gameobject::GameObject,
-        crate::unity_engine::ray::Ray,
-    ) {
+    ) -> (crate::unity_engine::gameobject::GameObject, crate::unity_engine::ray::Ray) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::ray::Ray>::uninit();
             let __ret = {
@@ -342,8 +303,7 @@ impl CameraRaycastHelper {
 #[cfg(feature = "unity_engine-cameraraycasthelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CameraRaycastHelper;
-    pub use super::ICameraRaycastHelper;
+    pub use super::{CameraRaycastHelper, ICameraRaycastHelper};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

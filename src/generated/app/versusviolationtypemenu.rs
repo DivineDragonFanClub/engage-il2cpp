@@ -2,35 +2,37 @@
 
 #[cfg(feature = "app-versusviolationtypemenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct VersusViolationTypeMenu {
-        #[rename(name = "m_DecideCallback")]
-        pub m_decide_callback:
-            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
-    }
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md"))]
     #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu.DecideCallback")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct VersusViolationTypeMenu_DecideCallback {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct VersusViolationTypeMenu {
+        #[rename(name = "m_DecideCallback")]
+        pub m_decide_callback: crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "VersusViolationTypeMenu.VersusViolationTypeMenuItem"
-    )]
+    #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu.VersusViolationTypeMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem {}
 }
@@ -41,336 +43,13 @@ pub use __types::*;
 #[cfg(feature = "app-versusviolationtypemenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusViolationTypeMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-        decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, menu_content, decide_callback, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusviolationtypemenucontent :: VersusViolationTypeMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VersusViolationTypeMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-        decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VersusViolationTypeMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            decide_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: VersusViolationTypeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            VersusViolationTypeMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: VersusViolationTypeMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            VersusViolationTypeMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        menu_content: impl ::core::convert::Into<
-            crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-        >,
-        decide_callback: impl ::core::convert::Into<
-            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
-        >,
-    ) -> () {
-        unsafe {
-            __VersusViolationTypeMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-pub trait IVersusViolationTypeMenuMethods: IVersusViolationTypeMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-        >,
-        decide_callback: impl ::core::convert::Into<
-            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <VersusViolationTypeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusViolationTypeMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <VersusViolationTypeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusViolationTypeMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <VersusViolationTypeMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusViolationTypeMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl<__T: IVersusViolationTypeMenu> IVersusViolationTypeMenuMethods for __T {}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-impl VersusViolationTypeMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
-        decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusViolationTypeMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusViolationTypeMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            decide_callback,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __VersusViolationTypeMenu_DecideCallback_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -386,18 +65,15 @@ mod __VersusViolationTypeMenu_DecideCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusViolationTypeMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusViolationTypeMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -411,27 +87,19 @@ mod __VersusViolationTypeMenu_DecideCallback_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-versusviolationtypemenu")]
-pub trait IVersusViolationTypeMenu_DecideCallbackMethods:
-    IVersusViolationTypeMenu_DecideCallback
-{
+pub trait IVersusViolationTypeMenu_DecideCallbackMethods: IVersusViolationTypeMenu_DecideCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < VersusViolationTypeMenu_DecideCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <VersusViolationTypeMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __VersusViolationTypeMenu_DecideCallback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -443,10 +111,7 @@ pub trait IVersusViolationTypeMenu_DecideCallbackMethods:
 }
 
 #[cfg(feature = "app-versusviolationtypemenu")]
-impl<__T: IVersusViolationTypeMenu_DecideCallback> IVersusViolationTypeMenu_DecideCallbackMethods
-    for __T
-{
-}
+impl<__T: IVersusViolationTypeMenu_DecideCallback> IVersusViolationTypeMenu_DecideCallbackMethods for __T {}
 
 #[cfg(feature = "app-versusviolationtypemenu")]
 impl VersusViolationTypeMenu_DecideCallback {
@@ -467,53 +132,183 @@ impl VersusViolationTypeMenu_DecideCallback {
 #[cfg(feature = "app-versusviolationtypemenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VersusViolationTypeMenu_VersusViolationTypeMenuItem_unity2_raw {
+mod __VersusViolationTypeMenu_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< VersusViolationTypeMenu_VersusViolationTypeMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VersusViolationTypeMenu_VersusViolationTypeMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn get_name(
-        this: VersusViolationTypeMenu_VersusViolationTypeMenuItem,
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+        decide_callback: crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    ) -> () {
         let inner: extern "C" fn(
-            VersusViolationTypeMenu_VersusViolationTypeMenuItem,
+            crate::app::procinst::ProcInst,
+            crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, menu_content, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VersusViolationTypeMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+        decide_callback: crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VersusViolationTypeMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+            crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(this: VersusViolationTypeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(VersusViolationTypeMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusViolationTypeMenu as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusViolationTypeMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(this: VersusViolationTypeMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(VersusViolationTypeMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-versusviolationtypemenu")]
-pub trait IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods:
-    IVersusViolationTypeMenu_VersusViolationTypeMenuItem
-{
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+impl VersusViolationTypeMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        menu_content: impl ::core::convert::Into<crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent>,
+        decide_callback: impl ::core::convert::Into<crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback>,
+    ) -> () {
         unsafe {
-            let __receiver = < VersusViolationTypeMenu_VersusViolationTypeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __VersusViolationTypeMenu_VersusViolationTypeMenuItem_unity2_raw::get_name(
-                __receiver,
+            __VersusViolationTypeMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(decide_callback),
                 ::core::option::Option::None,
             )
         }
@@ -521,39 +316,149 @@ pub trait IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods:
 }
 
 #[cfg(feature = "app-versusviolationtypemenu")]
-impl<__T: IVersusViolationTypeMenu_VersusViolationTypeMenuItem>
-    IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods for __T
-{
+pub trait IVersusViolationTypeMenuMethods: IVersusViolationTypeMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent>,
+        decide_callback: impl ::core::convert::Into<crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <VersusViolationTypeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusViolationTypeMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(decide_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <VersusViolationTypeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusViolationTypeMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <VersusViolationTypeMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusViolationTypeMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+impl<__T: IVersusViolationTypeMenu> IVersusViolationTypeMenuMethods for __T {}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+impl VersusViolationTypeMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent, crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+        decide_callback: crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusViolationTypeMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusViolationTypeMenuMethods>::ctor(this, menu_item_list, menu_content, decide_callback);
+        this
+    }
 }
 
 #[cfg(feature = "app-versusviolationtypemenu")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VersusViolationTypeMenu_VersusViolationTypeMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VersusViolationTypeMenu_VersusViolationTypeMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusViolationTypeMenu_VersusViolationTypeMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(
+        this: VersusViolationTypeMenu_VersusViolationTypeMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(VersusViolationTypeMenu_VersusViolationTypeMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+pub trait IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods: IVersusViolationTypeMenu_VersusViolationTypeMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <VersusViolationTypeMenu_VersusViolationTypeMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __VersusViolationTypeMenu_VersusViolationTypeMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+impl<__T: IVersusViolationTypeMenu_VersusViolationTypeMenuItem> IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods for __T {}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IVersusViolationTypeMenu;
-    pub use super::IVersusViolationTypeMenuMethods;
-    pub use super::IVersusViolationTypeMenu_DecideCallback;
-    pub use super::IVersusViolationTypeMenu_DecideCallbackMethods;
-    pub use super::IVersusViolationTypeMenu_VersusViolationTypeMenuItem;
-    pub use super::IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods;
-    pub use super::VersusViolationTypeMenu;
-    pub use super::VersusViolationTypeMenu_DecideCallback;
-    pub use super::VersusViolationTypeMenu_VersusViolationTypeMenuItem;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IVersusViolationTypeMenu, IVersusViolationTypeMenuMethods, IVersusViolationTypeMenu_DecideCallback,
+        IVersusViolationTypeMenu_DecideCallbackMethods, IVersusViolationTypeMenu_VersusViolationTypeMenuItem,
+        IVersusViolationTypeMenu_VersusViolationTypeMenuItemMethods, VersusViolationTypeMenu, VersusViolationTypeMenu_DecideCallback,
+        VersusViolationTypeMenu_VersusViolationTypeMenuItem,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

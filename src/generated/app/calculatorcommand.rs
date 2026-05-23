@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-calculatorcommand-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorcommand/CalculatorCommand.md"))]
     #[::unity2::class(namespace = "App", name = "CalculatorCommand")]
@@ -25,9 +25,7 @@ mod __CalculatorCommand_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -40,41 +38,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_header {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -87,41 +71,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_Header",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_Header",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_header(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_header::get_offset() as isize),
-        );
+    pub unsafe fn get_header(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_header::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_footer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -134,41 +104,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_Footer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_Footer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_footer(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_footer::get_offset() as isize),
-        );
+    pub unsafe fn get_footer(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_footer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_full_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -181,41 +137,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_FullName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_FullName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_full_name(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_full_name::get_offset() as isize),
-        );
+    pub unsafe fn get_full_name(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_full_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -228,39 +170,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_HashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_HashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_arg_num {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -273,39 +203,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_ArgNum",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_ArgNum",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_arg_num(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_arg_num(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_arg_num::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_arg_num::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_help {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -318,41 +236,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_Help",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_Help",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_help(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_help::get_offset() as isize),
-        );
+    pub unsafe fn get_help(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_help::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -365,41 +269,28 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -411,43 +302,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_2(
-        this: CalculatorCommand,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_2::get_offset() as isize),
-        );
+    pub unsafe fn get_2(this: CalculatorCommand, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(CalculatorCommand, crate::system::object::Object, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_2::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -463,18 +338,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_3(
@@ -483,27 +355,16 @@ mod __CalculatorCommand_unity2_raw {
         obj2: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_3::get_method_info().method_ptr);
         inner(this, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -515,40 +376,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set(
-        this: CalculatorCommand,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set(this: CalculatorCommand, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CalculatorCommand, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -564,18 +412,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_2(
@@ -584,25 +429,15 @@ mod __CalculatorCommand_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            f32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, f32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_2::get_method_info().method_ptr);
         inner(this, value, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -619,18 +454,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_3(
@@ -646,22 +478,15 @@ mod __CalculatorCommand_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_3::get_method_info().method_ptr);
         inner(this, value, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Add",
@@ -673,40 +498,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add(
-        this: CalculatorCommand,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn add(this: CalculatorCommand, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CalculatorCommand, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_add::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -722,18 +534,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_2(
@@ -742,25 +551,15 @@ mod __CalculatorCommand_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            f32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, f32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
         inner(this, value, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -777,18 +576,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_3(
@@ -804,22 +600,15 @@ mod __CalculatorCommand_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_3::get_method_info().method_ptr);
         inner(this, value, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Scale",
@@ -831,40 +620,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Scale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Scale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn scale(
-        this: CalculatorCommand,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn scale(this: CalculatorCommand, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CalculatorCommand, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_scale::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_scale::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_scale_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -880,18 +656,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Scale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Scale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn scale_2(
@@ -900,25 +673,15 @@ mod __CalculatorCommand_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            f32,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_scale_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, f32, crate::system::object::Object, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_scale_2::get_method_info().method_ptr);
         inner(this, value, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_scale_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -935,18 +698,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Scale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Scale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn scale_3(
@@ -962,20 +722,14 @@ mod __CalculatorCommand_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_scale_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_scale_3::get_method_info().method_ptr);
         inner(this, value, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -988,41 +742,28 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn func(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn func(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_func::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_func::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Func",
@@ -1034,43 +775,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn func_2(
-        this: CalculatorCommand,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_2::get_offset() as isize),
-        );
+    pub unsafe fn func_2(this: CalculatorCommand, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(CalculatorCommand, crate::system::object::Object, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_func_2::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1086,18 +811,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn func_3(
@@ -1106,26 +828,17 @@ mod __CalculatorCommand_unity2_raw {
         obj2: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            crate::system::object::Object,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, crate::system::object::Object, crate::system::object::Object, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_func_3::get_method_info().method_ptr);
         inner(this, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Func",
@@ -1137,18 +850,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn func_4(
@@ -1156,25 +866,19 @@ mod __CalculatorCommand_unity2_raw {
         args: crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            crate::system::collections::generic::list_1::List_1<f32>,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_4::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, crate::system::collections::generic::list_1::List_1<f32>, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_func_4::get_method_info().method_ptr);
         inner(this, args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_5 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Func",
@@ -1186,18 +890,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn func_5(
@@ -1211,21 +912,19 @@ mod __CalculatorCommand_unity2_raw {
             crate::system::collections::generic::list_1::List_1<f32>,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_5::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_func_5::get_method_info().method_ptr);
         inner(this, args, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_6 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Func",
@@ -1237,18 +936,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn func_6(
@@ -1264,22 +960,15 @@ mod __CalculatorCommand_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_6::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_func_6::get_method_info().method_ptr);
         inner(this, args, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_7 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "Func",
@@ -1291,43 +980,27 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn func_7(
-        this: CalculatorCommand,
-        arg: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_7::get_offset() as isize),
-        );
+    pub unsafe fn func_7(this: CalculatorCommand, arg: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_func_7::get_method_info().method_ptr);
         inner(this, arg, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1343,18 +1016,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn func_8(
@@ -1363,25 +1033,15 @@ mod __CalculatorCommand_unity2_raw {
         obj: crate::system::object::Object,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::Il2CppString,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_8::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::Il2CppString, crate::system::object::Object, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_func_8::get_method_info().method_ptr);
         inner(this, arg, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_func_9 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -1398,18 +1058,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "Func",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "Func",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn func_9(
@@ -1425,20 +1082,14 @@ mod __CalculatorCommand_unity2_raw {
             crate::system::object::Object,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_func_9::get_offset() as isize),
-        );
+        ) -> f32 = ::core::mem::transmute(__lookup_func_9::get_method_info().method_ptr);
         inner(this, arg, obj1, obj2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_manager {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -1451,44 +1102,32 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "get_Manager",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "get_Manager",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_manager(
         this: CalculatorCommand,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::calculatormanager::CalculatorManager {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::calculatormanager::CalculatorManager = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_manager::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> crate::app::calculatormanager::CalculatorManager =
+            ::core::mem::transmute(__lookup_get_manager::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_manager {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::calculatormanager::CalculatorManager as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::calculatormanager::CalculatorManager as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "set_Manager",
@@ -1500,18 +1139,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "set_Manager",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "set_Manager",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_manager(
@@ -1519,24 +1155,15 @@ mod __CalculatorCommand_unity2_raw {
         value: crate::app::calculatormanager::CalculatorManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            crate::app::calculatormanager::CalculatorManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_manager::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, crate::app::calculatormanager::CalculatorManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_manager::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_debug_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -1549,41 +1176,28 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "IsDebugDump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "IsDebugDump",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_debug_dump(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_debug_dump(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_debug_dump::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_debug_dump::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_debug_dump {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
                 "SetDebugDump",
@@ -1595,18 +1209,15 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    "SetDebugDump",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        "SetDebugDump",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_debug_dump(
@@ -1614,24 +1225,15 @@ mod __CalculatorCommand_unity2_raw {
         enable: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::calculatorcommand::CalculatorCommand {
-        let inner: extern "C" fn(
-            CalculatorCommand,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::calculatorcommand::CalculatorCommand = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_debug_dump::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CalculatorCommand, bool, ::unity2::OptionalMethod) -> crate::app::calculatorcommand::CalculatorCommand =
+            ::core::mem::transmute(__lookup_set_debug_dump::get_method_info().method_ptr);
         inner(this, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CalculatorCommand as ::unity2::ClassIdentity>::class(),
@@ -1644,30 +1246,20 @@ mod __CalculatorCommand_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CalculatorCommand as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CalculatorCommand,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CalculatorCommand, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1677,86 +1269,64 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Header()` overload"]
     fn get_header(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_header(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Footer()` overload"]
     fn get_footer(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_footer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_FullName()` overload"]
     fn get_full_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_full_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_HashCode()` overload"]
     fn get_hash_code(self) -> i32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ArgNum()` overload"]
     fn get_arg_num(self) -> i32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_arg_num(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Help()` overload"]
     fn get_help(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_help(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Get()` overload"]
     fn get(self) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::system::object::Object)` overload"]
     fn get_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::get_2(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::get_2(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`Get(crate::system::object::Object, crate::system::object::Object)` overload"]
@@ -1766,9 +1336,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_3(
                 __receiver,
                 ::core::convert::Into::into(obj1),
@@ -1780,26 +1348,14 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`Set(f32)` overload"]
     fn set(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::set(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::set(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Set(f32, crate::system::object::Object)` overload"]
-    fn set_2(
-        self,
-        value: impl ::core::convert::Into<f32>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn set_2(self, value: impl ::core::convert::Into<f32>, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::set_2(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1816,9 +1372,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::set_3(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1831,26 +1385,14 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`Add(f32)` overload"]
     fn add(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::add(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::add(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Add(f32, crate::system::object::Object)` overload"]
-    fn add_2(
-        self,
-        value: impl ::core::convert::Into<f32>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn add_2(self, value: impl ::core::convert::Into<f32>, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::add_2(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1867,9 +1409,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::add_3(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1882,26 +1422,14 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`Scale(f32)` overload"]
     fn scale(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::scale(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::scale(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Scale(f32, crate::system::object::Object)` overload"]
-    fn scale_2(
-        self,
-        value: impl ::core::convert::Into<f32>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> () {
+    fn scale_2(self, value: impl ::core::convert::Into<f32>, obj: impl ::core::convert::Into<crate::system::object::Object>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::scale_2(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1918,9 +1446,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::scale_3(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -1933,23 +1459,15 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`Func()` overload"]
     fn func(self) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::func(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Func(crate::system::object::Object)` overload"]
     fn func_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::func_2(
-                __receiver,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::func_2(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)
         }
     }
     #[doc = "`Func(crate::system::object::Object, crate::system::object::Object)` overload"]
@@ -1959,9 +1477,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::func_3(
                 __receiver,
                 ::core::convert::Into::into(obj1),
@@ -1971,19 +1487,10 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         }
     }
     #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    fn func_4(
-        self,
-        args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>,
-    ) -> f32 {
+    fn func_4(self, args: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32>>) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::func_4(
-                __receiver,
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::func_4(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)
         }
     }
     #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"]
@@ -1993,9 +1500,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::func_5(
                 __receiver,
                 ::core::convert::Into::into(args),
@@ -2012,9 +1517,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::func_6(
                 __receiver,
                 ::core::convert::Into::into(args),
@@ -2027,26 +1530,14 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`Func(::unity2::Il2CppString)` overload"]
     fn func_7(self, arg: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::func_7(
-                __receiver,
-                ::core::convert::Into::into(arg),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::func_7(__receiver, ::core::convert::Into::into(arg), ::core::option::Option::None)
         }
     }
     #[doc = "`Func(::unity2::Il2CppString, crate::system::object::Object)` overload"]
-    fn func_8(
-        self,
-        arg: impl ::core::convert::Into<::unity2::Il2CppString>,
-        obj: impl ::core::convert::Into<crate::system::object::Object>,
-    ) -> f32 {
+    fn func_8(self, arg: impl ::core::convert::Into<::unity2::Il2CppString>, obj: impl ::core::convert::Into<crate::system::object::Object>) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::func_8(
                 __receiver,
                 ::core::convert::Into::into(arg),
@@ -2063,9 +1554,7 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
         obj2: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> f32 {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::func_9(
                 __receiver,
                 ::core::convert::Into::into(arg),
@@ -2078,59 +1567,35 @@ pub trait ICalculatorCommandMethods: ICalculatorCommand {
     #[doc = "`get_Manager()` overload"]
     fn get_manager(self) -> crate::app::calculatormanager::CalculatorManager {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::get_manager(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Manager(crate::app::calculatormanager::CalculatorManager)` overload"]
-    fn set_manager(
-        self,
-        value: impl ::core::convert::Into<crate::app::calculatormanager::CalculatorManager>,
-    ) -> () {
+    fn set_manager(self, value: impl ::core::convert::Into<crate::app::calculatormanager::CalculatorManager>) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::set_manager(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::set_manager(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`IsDebugDump()` overload"]
     fn is_debug_dump(self) -> bool {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::is_debug_dump(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetDebugDump(bool)` overload"]
-    fn set_debug_dump(
-        self,
-        enable: impl ::core::convert::Into<bool>,
-    ) -> crate::app::calculatorcommand::CalculatorCommand {
+    fn set_debug_dump(self, enable: impl ::core::convert::Into<bool>) -> crate::app::calculatorcommand::CalculatorCommand {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CalculatorCommand_unity2_raw::set_debug_dump(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CalculatorCommand_unity2_raw::set_debug_dump(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CalculatorCommand as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CalculatorCommand_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2158,9 +1623,7 @@ impl CalculatorCommand {
 #[cfg(feature = "app-calculatorcommand")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CalculatorCommand;
-    pub use super::ICalculatorCommand;
-    pub use super::ICalculatorCommandMethods;
+    pub use super::{CalculatorCommand, ICalculatorCommand, ICalculatorCommandMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

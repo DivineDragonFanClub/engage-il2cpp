@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-levelupsequnece-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/levelupsequnece/LevelUpSequnece.md"))]
     #[::unity2::class(namespace = "App", name = "LevelUpSequnece")]
@@ -35,8 +37,7 @@ mod __types {
         #[rename(name = "m_NowCapabilityIndex")]
         pub m_now_capability_index: i32,
         #[rename(name = "m_CapabilityOrder")]
-        pub m_capability_order:
-            ::unity2::Array<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
+        pub m_capability_order: ::unity2::Array<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
     }
 }
 
@@ -52,9 +53,7 @@ mod __LevelUpSequnece_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -72,18 +71,15 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -94,34 +90,15 @@ mod __LevelUpSequnece_unity2_raw {
         is_talk: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LevelUpSequnece,
-            crate::app::unit::Unit,
-            i32,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            level,
-            is_show_chara_image,
-            is_talk,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(LevelUpSequnece, crate::app::unit::Unit, i32, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, level, is_show_chara_image, is_talk, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -137,18 +114,15 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -157,25 +131,15 @@ mod __LevelUpSequnece_unity2_raw {
         grow: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LevelUpSequnece,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LevelUpSequnece, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, unit, grow, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -188,39 +152,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -233,39 +185,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_res_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -278,41 +218,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "GetResName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "GetResName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_res_name(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            LevelUpSequnece,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_res_name::get_offset() as isize),
-        );
+    pub unsafe fn get_res_name(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_res_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -325,39 +251,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "Prepare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "Prepare",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prepare(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn prepare(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reflect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -370,39 +284,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "Reflect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "Reflect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reflect(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reflect(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reflect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reflect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reload_actor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -415,39 +317,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "ReloadActor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "ReloadActor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reload_actor(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reload_actor(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reload_actor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reload_actor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_reload_actor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -460,39 +350,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "WaitReloadActor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "WaitReloadActor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn wait_reload_actor(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn wait_reload_actor(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_reload_actor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_wait_reload_actor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -505,39 +383,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "Effect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "Effect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn effect(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn effect(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_effect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_effect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_res {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -550,39 +416,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingRes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingRes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_res(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_res(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_res::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_res::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -595,39 +449,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "Open",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "Open",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -640,39 +482,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "WaitAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "WaitAnime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn wait_anime(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn wait_anime(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_wait_anime::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_param_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -685,39 +515,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CheckParamChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "CheckParamChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_param_change(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn check_param_change(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_param_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_param_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_up_param_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -730,39 +548,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "GetUpParamCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "GetUpParamCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_up_param_count(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_up_param_count(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_up_param_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_up_param_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_limit_param_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -775,39 +581,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "GetLimitParamCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "GetLimitParamCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_limit_param_count(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_limit_param_count(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_limit_param_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_limit_param_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_talk_mid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -820,39 +614,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CalcTalkMid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "CalcTalkMid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_talk_mid(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calc_talk_mid(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_talk_mid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_talk_mid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_talk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -865,39 +647,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "Talk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "Talk",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn talk(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn talk(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_talk::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_talk::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_wait {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -910,39 +680,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "KeyWait",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "KeyWait",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_wait(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_wait(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_wait::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_wait::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -955,39 +713,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "Release",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "Release",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn release(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_release::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_release::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_learn_job_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
@@ -1000,39 +746,27 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "LearnJobSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "LearnJobSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn learn_job_skill(
-        this: LevelUpSequnece,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn learn_job_skill(this: LevelUpSequnece, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_learn_job_skill::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_learn_job_skill::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1051,18 +785,15 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -1073,34 +804,15 @@ mod __LevelUpSequnece_unity2_raw {
         is_talk: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            i32,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            unit,
-            level,
-            is_show_chara_image,
-            is_talk,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, unit, level, is_show_chara_image, is_talk, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_class_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1117,18 +829,15 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindClassChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindClassChange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_class_change(
@@ -1137,27 +846,16 @@ mod __LevelUpSequnece_unity2_raw {
         after_unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_class_change::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind_class_change::get_method_info().method_ptr);
         inner(super_, before_unit, after_unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LevelUpSequnece as ::unity2::ClassIdentity>::class(),
                 "CreateBindImpl",
@@ -1169,18 +867,15 @@ mod __LevelUpSequnece_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LevelUpSequnece as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_impl(
@@ -1188,15 +883,8 @@ mod __LevelUpSequnece_unity2_raw {
         super_: crate::app::procinst::ProcInst,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LevelUpSequnece,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LevelUpSequnece, crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind_impl::get_method_info().method_ptr);
         inner(this, super_, __unity2_method_info)
     }
 }
@@ -1222,6 +910,7 @@ impl LevelUpSequnece {
             )
         }
     }
+
     #[doc = "`CreateBindClassChange(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
     pub fn create_bind_class_change(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1250,9 +939,7 @@ pub trait ILevelUpSequneceMethods: ILevelUpSequnece {
         is_talk: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1264,15 +951,9 @@ pub trait ILevelUpSequneceMethods: ILevelUpSequnece {
         }
     }
     #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    fn ctor_2(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        grow: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    fn ctor_2(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, grow: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1284,200 +965,141 @@ pub trait ILevelUpSequneceMethods: ILevelUpSequnece {
     #[doc = "`OnCreate()` overload"]
     fn on_create(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetResName()` overload"]
     fn get_res_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::get_res_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Prepare()` overload"]
     fn prepare(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::prepare(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reflect()` overload"]
     fn reflect(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::reflect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReloadActor()` overload"]
     fn reload_actor(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::reload_actor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitReloadActor()` overload"]
     fn wait_reload_actor(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LevelUpSequnece_unity2_raw::wait_reload_actor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LevelUpSequnece_unity2_raw::wait_reload_actor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Effect()` overload"]
     fn effect(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::effect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingRes()` overload"]
     fn is_loading_res(self) -> bool {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::is_loading_res(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Open()` overload"]
     fn open(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::open(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitAnime()` overload"]
     fn wait_anime(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::wait_anime(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckParamChange()` overload"]
     fn check_param_change(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LevelUpSequnece_unity2_raw::check_param_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LevelUpSequnece_unity2_raw::check_param_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUpParamCount()` overload"]
     fn get_up_param_count(self) -> i32 {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LevelUpSequnece_unity2_raw::get_up_param_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LevelUpSequnece_unity2_raw::get_up_param_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetLimitParamCount()` overload"]
     fn get_limit_param_count(self) -> i32 {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LevelUpSequnece_unity2_raw::get_limit_param_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LevelUpSequnece_unity2_raw::get_limit_param_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcTalkMid()` overload"]
     fn calc_talk_mid(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::calc_talk_mid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Talk()` overload"]
     fn talk(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::talk(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`KeyWait()` overload"]
     fn key_wait(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::key_wait(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Release()` overload"]
     fn release(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::release(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LearnJobSkill()` overload"]
     fn learn_job_skill(self) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LevelUpSequnece_unity2_raw::learn_job_skill(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst)` overload"]
-    fn create_bind_impl(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
+    fn create_bind_impl(self, super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
         unsafe {
-            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LevelUpSequnece_unity2_raw::create_bind_impl(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LevelUpSequnece as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LevelUpSequnece_unity2_raw::create_bind_impl(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)
         }
     }
 }
@@ -1488,12 +1110,7 @@ impl<__T: ILevelUpSequnece> ILevelUpSequneceMethods for __T {}
 #[cfg(feature = "app-levelupsequnece")]
 impl LevelUpSequnece {
     #[doc = "`.ctor(crate::app::unit::Unit, i32, bool, bool)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        level: i32,
-        is_show_chara_image: bool,
-        is_talk: bool,
-    ) -> Self {
+    pub fn new(unit: crate::app::unit::Unit, level: i32, is_show_chara_image: bool, is_talk: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -1522,13 +1139,10 @@ impl LevelUpSequnece {
 #[cfg(feature = "app-levelupsequnece")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILevelUpSequnece;
-    pub use super::ILevelUpSequneceMethods;
-    pub use super::LevelUpSequnece;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{ILevelUpSequnece, ILevelUpSequneceMethods, LevelUpSequnece};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::procinst::IProcInst, system::object::IObject};
 }

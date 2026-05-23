@@ -2,26 +2,30 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customoffscreencamera/CustomOffscreenCamera.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "CustomOffscreenCamera"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "CustomOffscreenCamera")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct CustomOffscreenCamera {
-# [rename (name = "m_PPVolumeProfile")] pub m_pp_volume_profile : crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile ,
-# [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [rename (name = "m_AdditionalCameraData")] pub m_additional_camera_data : crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData ,
-}
+        #[rename(name = "m_PPVolumeProfile")]
+        pub m_pp_volume_profile: crate::unity_engine::rendering::volumeprofile::VolumeProfile,
+        #[rename(name = "m_Camera")]
+        pub m_camera: crate::unity_engine::camera::Camera,
+        #[rename(name = "m_AdditionalCameraData")]
+        pub m_additional_camera_data: crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera-types")]
@@ -36,9 +40,7 @@ mod __CustomOffscreenCamera_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_profile {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomOffscreenCamera as ::unity2::ClassIdentity>::class(),
@@ -51,43 +53,30 @@ mod __CustomOffscreenCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
-                    "get_profile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
+                        "get_profile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_profile(
         this: CustomOffscreenCamera,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::volumeprofile::VolumeProfile {
-        let inner: extern "C" fn(
-            CustomOffscreenCamera,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::volumeprofile::VolumeProfile =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_profile::get_offset() as isize),
-            );
+        let inner: extern "C" fn(CustomOffscreenCamera, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::volumeprofile::VolumeProfile =
+            ::core::mem::transmute(__lookup_get_profile::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomOffscreenCamera as ::unity2::ClassIdentity>::class(),
@@ -100,39 +89,27 @@ mod __CustomOffscreenCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: CustomOffscreenCamera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: CustomOffscreenCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomOffscreenCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomOffscreenCamera as ::unity2::ClassIdentity>::class(),
@@ -145,40 +122,31 @@ mod __CustomOffscreenCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: CustomOffscreenCamera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: CustomOffscreenCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomOffscreenCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_custom_begin_frame_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::camera::Camera> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomOffscreenCamera as ::unity2::ClassIdentity>::class(),
                 "CustomBeginFrameRendering",
@@ -190,18 +158,15 @@ mod __CustomOffscreenCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
-                    "CustomBeginFrameRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
+                        "CustomBeginFrameRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn custom_begin_frame_rendering(
@@ -215,20 +180,14 @@ mod __CustomOffscreenCamera_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             ::unity2::Array<crate::unity_engine::camera::Camera>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_custom_begin_frame_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_custom_begin_frame_rendering::get_method_info().method_ptr);
         inner(this, context, cameras, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomOffscreenCamera as ::unity2::ClassIdentity>::class(),
@@ -241,30 +200,20 @@ mod __CustomOffscreenCamera_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomOffscreenCamera as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CustomOffscreenCamera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CustomOffscreenCamera, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomOffscreenCamera, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -274,45 +223,36 @@ pub trait ICustomOffscreenCameraMethods: ICustomOffscreenCamera {
     #[doc = "`get_profile()` overload"]
     fn get_profile(self) -> crate::unity_engine::rendering::volumeprofile::VolumeProfile {
         unsafe {
-            let __receiver = <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomOffscreenCamera_unity2_raw::get_profile(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomOffscreenCamera_unity2_raw::get_profile(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomOffscreenCamera_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomOffscreenCamera_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CustomBeginFrameRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]
     fn custom_begin_frame_rendering(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         cameras: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::camera::Camera>>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomOffscreenCamera_unity2_raw::custom_begin_frame_rendering(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -324,9 +264,8 @@ pub trait ICustomOffscreenCameraMethods: ICustomOffscreenCamera {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomOffscreenCamera as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomOffscreenCamera_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -354,22 +293,19 @@ impl CustomOffscreenCamera {
 #[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomOffscreenCamera;
-    pub use super::ICustomOffscreenCamera;
-    pub use super::ICustomOffscreenCameraMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CustomOffscreenCamera, ICustomOffscreenCamera, ICustomOffscreenCameraMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

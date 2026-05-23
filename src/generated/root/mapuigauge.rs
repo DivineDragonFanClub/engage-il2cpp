@@ -2,37 +2,34 @@
 
 #[cfg(feature = "root-mapuigauge-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use super::*;
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuigauge/MapUIGauge_SuppressType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapUIGauge_SuppressType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapUIGauge_SuppressType {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "MapUIGauge.SuppressType";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -43,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for MapUIGauge_SuppressType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -58,21 +52,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapuigauge/MapUIGauge_IconIndex.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapUIGauge_IconIndex {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapUIGauge_IconIndex {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "MapUIGauge.IconIndex";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -83,10 +70,7 @@ mod __types {
 
     impl ::unity2::IlType for MapUIGauge_IconIndex {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -788,10 +772,8 @@ mod __types {
         #[rename(name = "m_Sprites")]
         pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
         #[rename(name = "m_Dictionary")]
-        pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            crate::unity_engine::sprite::Sprite,
-        >,
+        pub m_dictionary:
+            crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, crate::unity_engine::sprite::Sprite>,
         #[rename(name = "m_Time")]
         pub m_time: f32,
         #[rename(name = "m_WaitFrame")]
@@ -827,17 +809,13 @@ mod __types {
         #[rename(name = "m_HpAfterBattle")]
         pub m_hp_after_battle: i32,
         #[rename(name = "m_TargetList")]
-        pub m_target_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_target_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_InfluencerList")]
-        pub m_influencer_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_influencer_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_TempList")]
-        pub m_temp_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_temp_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_InitList")]
-        pub m_init_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+        pub m_init_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
         #[rename(name = "m_TargetIndex")]
         pub m_target_index: i32,
         #[rename(name = "m_IsPriorWeaponRange")]
@@ -867,138 +845,86 @@ mod __MapUIGauge_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), "Start", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                "OnEnable",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), "OnEnable", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -1011,42 +937,29 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_sprites {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::u2d::spriteatlas::SpriteAtlas as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "RegisterSprites",
@@ -1058,18 +971,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "RegisterSprites",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "RegisterSprites",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_sprites(
@@ -1077,26 +987,16 @@ mod __MapUIGauge_unity2_raw {
         sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_sprites::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::unity_engine::u2d::spriteatlas::SpriteAtlas, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_register_sprites::get_method_info().method_ptr);
         inner(this, sprite_atlas, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sprite {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "GetSprite",
@@ -1108,45 +1008,28 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetSprite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetSprite",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sprite(
-        this: MapUIGauge,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sprite::get_offset() as isize),
-        );
+    pub unsafe fn get_sprite(this: MapUIGauge, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite {
+        let inner: extern "C" fn(MapUIGauge, i32, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_get_sprite::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sprite_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "GetSprite",
@@ -1158,18 +1041,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetSprite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetSprite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sprite_2(
@@ -1177,26 +1057,16 @@ mod __MapUIGauge_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::sprite::Sprite {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::sprite::Sprite = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sprite_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::sprite::Sprite =
+            ::core::mem::transmute(__lookup_get_sprite_2::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_icon_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "GetIconIndex",
@@ -1208,18 +1078,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetIconIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetIconIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_icon_index(
@@ -1227,24 +1094,15 @@ mod __MapUIGauge_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::mapuigauge::MapUIGauge_IconIndex {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::mapuigauge::MapUIGauge_IconIndex = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_icon_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::root::mapuigauge::MapUIGauge_IconIndex =
+            ::core::mem::transmute(__lookup_get_icon_index::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -1257,42 +1115,29 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_visible(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_visible(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_enable_suppress_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::mapuigauge::MapUIGauge_SuppressType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::mapuigauge::MapUIGauge_SuppressType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "IsEnableSuppressFlag",
@@ -1304,18 +1149,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "IsEnableSuppressFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "IsEnableSuppressFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_enable_suppress_flag(
@@ -1323,26 +1165,16 @@ mod __MapUIGauge_unity2_raw {
         suppress_flag: crate::root::mapuigauge::MapUIGauge_SuppressType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::root::mapuigauge::MapUIGauge_SuppressType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enable_suppress_flag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::root::mapuigauge::MapUIGauge_SuppressType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_enable_suppress_flag::get_method_info().method_ptr);
         inner(this, suppress_flag, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_hp_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "InitHpForecast",
@@ -1354,40 +1186,27 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "InitHpForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "InitHpForecast",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_hp_forecast(
-        this: MapUIGauge,
-        is_all: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_hp_forecast(this: MapUIGauge, is_all: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_hp_forecast::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_hp_forecast::get_method_info().method_ptr);
         inner(this, is_all, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_hp_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1404,18 +1223,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "SetHpForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "SetHpForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_hp_forecast(
@@ -1425,32 +1241,15 @@ mod __MapUIGauge_unity2_raw {
         is_prior_weapon_range: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_hp_forecast::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            needs_forecast_oneself,
-            is_prior_weapon_range,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_hp_forecast::get_method_info().method_ptr);
+        inner(this, unit, needs_forecast_oneself, is_prior_weapon_range, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_hp_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -1463,39 +1262,27 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "UpdateHpForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "UpdateHpForecast",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_hp_forecast(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_hp_forecast(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_hp_forecast::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_hp_forecast::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_hp_forecast_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -1508,41 +1295,28 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "PrepareHpForecastTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "PrepareHpForecastTarget",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prepare_hp_forecast_target(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn prepare_hp_forecast_target(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare_hp_forecast_target::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_prepare_hp_forecast_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_use_item_for_heal_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "CanUseItemForHealForecast",
@@ -1554,18 +1328,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CanUseItemForHealForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CanUseItemForHealForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_use_item_for_heal_forecast(
@@ -1573,76 +1344,43 @@ mod __MapUIGauge_unity2_raw {
         item_data: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_use_item_for_heal_forecast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_use_item_for_heal_forecast::get_method_info().method_ptr);
         inner(this, item_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                "GetImage",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), "GetImage", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_image(
-        this: MapUIGauge,
-        performer: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_image::get_offset() as isize),
-        );
+    pub unsafe fn get_image(this: MapUIGauge, performer: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_image::get_method_info().method_ptr);
         inner(this, performer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_unit_target_for_damage_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "IsUnitTargetForDamageForecast",
@@ -1654,18 +1392,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "IsUnitTargetForDamageForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "IsUnitTargetForDamageForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_unit_target_for_damage_forecast(
@@ -1673,24 +1408,15 @@ mod __MapUIGauge_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_unit_target_for_damage_forecast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_unit_target_for_damage_forecast::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -1706,18 +1432,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CanAttack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CanAttack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_attack(
@@ -1726,27 +1449,16 @@ mod __MapUIGauge_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_attack::get_method_info().method_ptr);
         inner(this, attacker, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_unit_target_for_heal_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "IsUnitTargetForHealForecast",
@@ -1758,18 +1470,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "IsUnitTargetForHealForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "IsUnitTargetForHealForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_unit_target_for_heal_forecast(
@@ -1777,26 +1486,16 @@ mod __MapUIGauge_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_unit_target_for_heal_forecast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_unit_target_for_heal_forecast::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_unit_influencer_for_damage_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "IsUnitInfluencerForDamageForecast",
@@ -1808,18 +1507,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "IsUnitInfluencerForDamageForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "IsUnitInfluencerForDamageForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_unit_influencer_for_damage_forecast(
@@ -1827,26 +1523,16 @@ mod __MapUIGauge_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_unit_influencer_for_damage_forecast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_unit_influencer_for_damage_forecast::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_unit_influencer_for_heal_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "IsUnitInfluencerForHealForecast",
@@ -1858,18 +1544,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "IsUnitInfluencerForHealForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "IsUnitInfluencerForHealForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_unit_influencer_for_heal_forecast(
@@ -1877,24 +1560,15 @@ mod __MapUIGauge_unity2_raw {
         unit: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_unit_influencer_for_heal_forecast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_unit_influencer_for_heal_forecast::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_hp_forecast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -1907,41 +1581,30 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CalcHpForecast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CalcHpForecast",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_hp_forecast(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_hp_forecast::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_calc_hp_forecast::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_breath_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -1957,18 +1620,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetBreathSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetBreathSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_breath_skill(
@@ -1982,20 +1642,14 @@ mod __MapUIGauge_unity2_raw {
             crate::app::unit::Unit,
             crate::app::unititem::UnitItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_breath_skill::get_offset() as isize),
-        );
+        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(__lookup_get_breath_skill::get_method_info().method_ptr);
         inner(this, target, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_battle_info_for_breath {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -2012,18 +1666,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CalcBattleInfoForBreath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CalcBattleInfoForBreath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_battle_info_for_breath(
@@ -2039,22 +1690,15 @@ mod __MapUIGauge_unity2_raw {
             crate::app::unititem::UnitItem,
             crate::app::skilldata::SkillData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_battle_info_for_breath::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_calc_battle_info_for_breath::get_method_info().method_ptr);
         inner(this, target, unit_item, breath_skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_battle_info_for_engage_wait {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "CalcBattleInfoForEngageWait",
@@ -2066,18 +1710,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CalcBattleInfoForEngageWait",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CalcBattleInfoForEngageWait",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_battle_info_for_engage_wait(
@@ -2085,24 +1726,15 @@ mod __MapUIGauge_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_battle_info_for_engage_wait::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_battle_info_for_engage_wait::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_battle_info_for_heal_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -2118,18 +1750,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CalcBattleInfoForHealItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CalcBattleInfoForHealItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_battle_info_for_heal_item(
@@ -2138,25 +1767,15 @@ mod __MapUIGauge_unity2_raw {
         unit_item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_battle_info_for_heal_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_battle_info_for_heal_item::get_method_info().method_ptr);
         inner(this, target, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_battle_info_for_normal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -2172,18 +1791,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CalcBattleInfoForNormal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CalcBattleInfoForNormal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_battle_info_for_normal(
@@ -2192,25 +1808,15 @@ mod __MapUIGauge_unity2_raw {
         unit_item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_battle_info_for_normal::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calc_battle_info_for_normal::get_method_info().method_ptr);
         inner(this, target, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_heal_item_used {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -2226,18 +1832,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "IsHealItemUsed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "IsHealItemUsed",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_heal_item_used(
@@ -2246,25 +1849,15 @@ mod __MapUIGauge_unity2_raw {
         unit_item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_heal_item_used::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_heal_item_used::get_method_info().method_ptr);
         inner(this, unit, unit_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_hp_heal_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -2282,18 +1875,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "CalcHpHealItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "CalcHpHealItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_hp_heal_item(
@@ -2311,27 +1901,14 @@ mod __MapUIGauge_unity2_raw {
             *mut i32,
             *mut i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_hp_heal_item::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            unit_item,
-            before_hp,
-            after_hp,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_calc_hp_heal_item::get_method_info().method_ptr);
+        inner(this, unit, unit_item, before_hp, after_hp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_battle_info_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -2347,18 +1924,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetBattleInfoFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetBattleInfoFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_battle_info_flag(
@@ -2372,24 +1946,15 @@ mod __MapUIGauge_unity2_raw {
             crate::app::unit::Unit,
             crate::app::unit::Unit,
             ::unity2::OptionalMethod,
-        ) -> crate::app::battleinfo::BattleInfo_Flags = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_battle_info_flag::get_offset() as isize),
-        );
+        ) -> crate::app::battleinfo::BattleInfo_Flags = ::core::mem::transmute(__lookup_get_battle_info_flag::get_method_info().method_ptr);
         inner(this, performer, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stack_hp_diff {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "StackHpDiff",
@@ -2401,71 +1966,42 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "StackHpDiff",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "StackHpDiff",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stack_hp_diff(
-        this: MapUIGauge,
-        hp_before_battle: i32,
-        hp_after_battle: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stack_hp_diff(this: MapUIGauge, hp_before_battle: i32, hp_after_battle: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapUIGauge, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stack_hp_diff::get_offset() as isize),
-            );
-        inner(
-            this,
-            hp_before_battle,
-            hp_after_battle,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_stack_hp_diff::get_method_info().method_ptr);
+        inner(this, hp_before_battle, hp_after_battle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                "GetItem",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), "GetItem", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "GetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "GetItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -2473,24 +2009,15 @@ mod __MapUIGauge_unity2_raw {
         target: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, target, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sprites {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2503,86 +2030,57 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_Sprites",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_Sprites",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sprites(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::sprite::Sprite> {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::unity_engine::sprite::Sprite> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sprites::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::sprite::Sprite> =
+            ::core::mem::transmute(__lookup_get_sprites::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                "get_Time",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), "get_Time", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_Time",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_Time",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_time(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_time(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wait_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2595,39 +2093,27 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_WaitFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_WaitFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_wait_frame(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_wait_frame(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_wait_frame::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_wait_frame::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wait_frame_for_after_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2640,39 +2126,27 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_WaitFrameForAfterEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_WaitFrameForAfterEvent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_wait_frame_for_after_event(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_wait_frame_for_after_event(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_wait_frame_for_after_event::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_wait_frame_for_after_event::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2685,39 +2159,27 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_IsVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_IsVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_visible(
-        this: MapUIGauge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_visible(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_suppress_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2730,44 +2192,32 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_SuppressFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_SuppressFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_suppress_flag(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::mapuigauge::MapUIGauge_SuppressType {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::mapuigauge::MapUIGauge_SuppressType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_suppress_flag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::root::mapuigauge::MapUIGauge_SuppressType =
+            ::core::mem::transmute(__lookup_get_suppress_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_suppress_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::root::mapuigauge::MapUIGauge_SuppressType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::root::mapuigauge::MapUIGauge_SuppressType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
                 "set_SuppressFlag",
@@ -2779,18 +2229,15 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "set_SuppressFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "set_SuppressFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_suppress_flag(
@@ -2798,24 +2245,15 @@ mod __MapUIGauge_unity2_raw {
         value: crate::root::mapuigauge::MapUIGauge_SuppressType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            crate::root::mapuigauge::MapUIGauge_SuppressType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_suppress_flag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, crate::root::mapuigauge::MapUIGauge_SuppressType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_suppress_flag::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alpha_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2828,41 +2266,30 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_AlphaCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_AlphaCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_alpha_curve(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_alpha_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_alpha_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shine_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2875,41 +2302,30 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_ShineCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_ShineCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shine_curve(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shine_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_shine_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_can_break_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2922,41 +2338,30 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_CanBreakCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_CanBreakCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_can_break_curve(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_can_break_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_can_break_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count_max_scale_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -2969,41 +2374,30 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_CountMaxScaleCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_CountMaxScaleCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_count_max_scale_curve(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_count_max_scale_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_count_max_scale_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_count_max_alpha_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapUIGauge as ::unity2::ClassIdentity>::class(),
@@ -3016,115 +2410,75 @@ mod __MapUIGauge_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    "get_CountMaxAlphaCurve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        "get_CountMaxAlphaCurve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_count_max_alpha_curve(
         this: MapUIGauge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            MapUIGauge,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_count_max_alpha_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_count_max_alpha_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapUIGauge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(MapUIGauge, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapUIGauge as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<MapUIGauge as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapUIGauge as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapUIGauge as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -3142,139 +2496,78 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RegisterSprites(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
-    fn register_sprites(
-        self,
-        sprite_atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>,
-    ) -> () {
+    fn register_sprites(self, sprite_atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::register_sprites(
-                __receiver,
-                ::core::convert::Into::into(sprite_atlas),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::register_sprites(__receiver, ::core::convert::Into::into(sprite_atlas), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSprite(i32)` overload"]
-    fn get_sprite(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::sprite::Sprite {
+    fn get_sprite(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_sprite(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_sprite(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSprite(::unity2::Il2CppString)` overload"]
-    fn get_sprite_2(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::sprite::Sprite {
+    fn get_sprite_2(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_sprite_2(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_sprite_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetIconIndex(::unity2::Il2CppString)` overload"]
-    fn get_icon_index(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::root::mapuigauge::MapUIGauge_IconIndex {
+    fn get_icon_index(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::root::mapuigauge::MapUIGauge_IconIndex {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_icon_index(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_icon_index(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateVisible()` overload"]
     fn update_visible(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsEnableSuppressFlag(crate::root::mapuigauge::MapUIGauge_SuppressType)` overload"]
-    fn is_enable_suppress_flag(
-        self,
-        suppress_flag: impl ::core::convert::Into<crate::root::mapuigauge::MapUIGauge_SuppressType>,
-    ) -> bool {
+    fn is_enable_suppress_flag(self, suppress_flag: impl ::core::convert::Into<crate::root::mapuigauge::MapUIGauge_SuppressType>) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::is_enable_suppress_flag(
-                __receiver,
-                ::core::convert::Into::into(suppress_flag),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::is_enable_suppress_flag(__receiver, ::core::convert::Into::into(suppress_flag), ::core::option::Option::None)
         }
     }
     #[doc = "`InitHpForecast(bool)` overload"]
     fn init_hp_forecast(self, is_all: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::init_hp_forecast(
-                __receiver,
-                ::core::convert::Into::into(is_all),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::init_hp_forecast(__receiver, ::core::convert::Into::into(is_all), ::core::option::Option::None)
         }
     }
     #[doc = "`SetHpForecast(crate::app::unit::Unit, bool, bool)` overload"]
@@ -3285,9 +2578,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         is_prior_weapon_range: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::set_hp_forecast(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3300,67 +2591,36 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
     #[doc = "`UpdateHpForecast()` overload"]
     fn update_hp_forecast(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::update_hp_forecast(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PrepareHpForecastTarget()` overload"]
     fn prepare_hp_forecast_target(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::prepare_hp_forecast_target(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::prepare_hp_forecast_target(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CanUseItemForHealForecast(crate::app::itemdata::ItemData)` overload"]
-    fn can_use_item_for_heal_forecast(
-        self,
-        item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> bool {
+    fn can_use_item_for_heal_forecast(self, item_data: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::can_use_item_for_heal_forecast(
-                __receiver,
-                ::core::convert::Into::into(item_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::can_use_item_for_heal_forecast(__receiver, ::core::convert::Into::into(item_data), ::core::option::Option::None)
         }
     }
     #[doc = "`GetImage(crate::app::unit::Unit)` overload"]
     fn get_image(self, performer: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_image(
-                __receiver,
-                ::core::convert::Into::into(performer),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_image(__receiver, ::core::convert::Into::into(performer), ::core::option::Option::None)
         }
     }
     #[doc = "`IsUnitTargetForDamageForecast(crate::app::unit::Unit)` overload"]
-    fn is_unit_target_for_damage_forecast(
-        self,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
+    fn is_unit_target_for_damage_forecast(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::is_unit_target_for_damage_forecast(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::is_unit_target_for_damage_forecast(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
@@ -3370,9 +2630,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         target: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::can_attack(
                 __receiver,
                 ::core::convert::Into::into(attacker),
@@ -3382,30 +2640,16 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         }
     }
     #[doc = "`IsUnitTargetForHealForecast(crate::app::unit::Unit)` overload"]
-    fn is_unit_target_for_heal_forecast(
-        self,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
+    fn is_unit_target_for_heal_forecast(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::is_unit_target_for_heal_forecast(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::is_unit_target_for_heal_forecast(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`IsUnitInfluencerForDamageForecast(crate::app::unit::Unit)` overload"]
-    fn is_unit_influencer_for_damage_forecast(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
+    fn is_unit_influencer_for_damage_forecast(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::is_unit_influencer_for_damage_forecast(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3414,27 +2658,16 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         }
     }
     #[doc = "`IsUnitInfluencerForHealForecast(crate::app::unit::Unit)` overload"]
-    fn is_unit_influencer_for_heal_forecast(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
+    fn is_unit_influencer_for_heal_forecast(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::is_unit_influencer_for_heal_forecast(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::is_unit_influencer_for_heal_forecast(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcHpForecast()` overload"]
     fn calc_hp_forecast(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::calc_hp_forecast(__receiver, ::core::option::Option::None)
         }
     }
@@ -3445,9 +2678,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_breath_skill(
                 __receiver,
                 ::core::convert::Into::into(target),
@@ -3464,9 +2695,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         breath_skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
     ) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::calc_battle_info_for_breath(
                 __receiver,
                 ::core::convert::Into::into(target),
@@ -3477,19 +2706,10 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         }
     }
     #[doc = "`CalcBattleInfoForEngageWait(crate::app::unit::Unit)` overload"]
-    fn calc_battle_info_for_engage_wait(
-        self,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    fn calc_battle_info_for_engage_wait(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::calc_battle_info_for_engage_wait(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::calc_battle_info_for_engage_wait(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`CalcBattleInfoForHealItem(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
@@ -3499,9 +2719,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::calc_battle_info_for_heal_item(
                 __receiver,
                 ::core::convert::Into::into(target),
@@ -3517,9 +2735,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::calc_battle_info_for_normal(
                 __receiver,
                 ::core::convert::Into::into(target),
@@ -3535,9 +2751,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::is_heal_item_used(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -3553,9 +2767,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> (i32, i32) {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
             __MapUIGauge_unity2_raw::calc_hp_heal_item(
@@ -3576,9 +2788,7 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         target: impl ::core::convert::Into<crate::app::unit::Unit>,
     ) -> crate::app::battleinfo::BattleInfo_Flags {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_battle_info_flag(
                 __receiver,
                 ::core::convert::Into::into(performer),
@@ -3588,15 +2798,9 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         }
     }
     #[doc = "`StackHpDiff(i32, i32)` overload"]
-    fn stack_hp_diff(
-        self,
-        hp_before_battle: impl ::core::convert::Into<i32>,
-        hp_after_battle: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn stack_hp_diff(self, hp_before_battle: impl ::core::convert::Into<i32>, hp_after_battle: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::stack_hp_diff(
                 __receiver,
                 ::core::convert::Into::into(hp_before_battle),
@@ -3606,151 +2810,100 @@ pub trait IMapUIGaugeMethods: IMapUIGauge {
         }
     }
     #[doc = "`GetItem(crate::app::unit::Unit)` overload"]
-    fn get_item(
-        self,
-        target: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::app::unititem::UnitItem {
+    fn get_item(self, target: impl ::core::convert::Into<crate::app::unit::Unit>) -> crate::app::unititem::UnitItem {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(target),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_item(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Sprites()` overload"]
     fn get_sprites(self) -> ::unity2::Array<crate::unity_engine::sprite::Sprite> {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_sprites(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Time()` overload"]
     fn get_time(self) -> f32 {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_WaitFrame()` overload"]
     fn get_wait_frame(self) -> f32 {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_wait_frame(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_WaitFrameForAfterEvent()` overload"]
     fn get_wait_frame_for_after_event(self) -> f32 {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_wait_frame_for_after_event(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_wait_frame_for_after_event(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsVisible()` overload"]
     fn get_is_visible(self) -> bool {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_is_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SuppressFlag()` overload"]
     fn get_suppress_flag(self) -> crate::root::mapuigauge::MapUIGauge_SuppressType {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_suppress_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SuppressFlag(crate::root::mapuigauge::MapUIGauge_SuppressType)` overload"]
-    fn set_suppress_flag(
-        self,
-        value: impl ::core::convert::Into<crate::root::mapuigauge::MapUIGauge_SuppressType>,
-    ) -> () {
+    fn set_suppress_flag(self, value: impl ::core::convert::Into<crate::root::mapuigauge::MapUIGauge_SuppressType>) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::set_suppress_flag(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::set_suppress_flag(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AlphaCurve()` overload"]
     fn get_alpha_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_alpha_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ShineCurve()` overload"]
     fn get_shine_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_shine_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CanBreakCurve()` overload"]
     fn get_can_break_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::get_can_break_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CountMaxScaleCurve()` overload"]
     fn get_count_max_scale_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_count_max_scale_curve(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_count_max_scale_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CountMaxAlphaCurve()` overload"]
     fn get_count_max_alpha_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapUIGauge_unity2_raw::get_count_max_alpha_curve(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapUIGauge_unity2_raw::get_count_max_alpha_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapUIGauge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapUIGauge_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -3763,13 +2916,8 @@ impl<__T: IMapUIGauge> IMapUIGaugeMethods for __T {}
 impl MapUIGauge {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapUIGauge),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(MapUIGauge), ::core::stringify!(new),));
         <Self as IMapUIGaugeMethods>::ctor(this);
         this
     }
@@ -3778,33 +2926,26 @@ impl MapUIGauge {
 #[cfg(feature = "root-mapuigauge")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapUIGauge;
-    pub use super::IMapUIGaugeMethods;
-    pub use super::MapUIGauge;
-    pub use super::MapUIGauge_IconIndex;
-    pub use super::MapUIGauge_SuppressType;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use super::{IMapUIGauge, IMapUIGaugeMethods, MapUIGauge, MapUIGauge_IconIndex, MapUIGauge_SuppressType};
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

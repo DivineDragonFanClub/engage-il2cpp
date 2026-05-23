@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-debugsavedatamenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugsavedatamenu/DebugSaveDataMenu.md"))]
     #[::unity2::class(namespace = "App", name = "DebugSaveDataMenu")]
@@ -25,11 +25,8 @@ mod __DebugSaveDataMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_save {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugSaveDataMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBindSave",
@@ -41,41 +38,28 @@ mod __DebugSaveDataMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugSaveDataMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindSave",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugSaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindSave",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_save(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_save(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_save::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_save::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugSaveDataMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBindLoad",
@@ -87,39 +71,27 @@ mod __DebugSaveDataMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugSaveDataMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindLoad",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugSaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindLoad",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_load(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_load(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_load::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_load::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugSaveDataMenu as ::unity2::ClassIdentity>::class(),
@@ -132,30 +104,20 @@ mod __DebugSaveDataMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugSaveDataMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugSaveDataMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugSaveDataMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugSaveDataMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugSaveDataMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -163,26 +125,13 @@ mod __DebugSaveDataMenu_unity2_raw {
 #[cfg(feature = "app-debugsavedatamenu")]
 impl DebugSaveDataMenu {
     #[doc = "`CreateBindSave(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_save(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __DebugSaveDataMenu_unity2_raw::create_bind_save(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_save(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __DebugSaveDataMenu_unity2_raw::create_bind_save(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateBindLoad(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_load(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __DebugSaveDataMenu_unity2_raw::create_bind_load(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_load(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __DebugSaveDataMenu_unity2_raw::create_bind_load(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -191,9 +140,7 @@ pub trait IDebugSaveDataMenuMethods: IDebugSaveDataMenu {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DebugSaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DebugSaveDataMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugSaveDataMenu_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -221,9 +168,7 @@ impl DebugSaveDataMenu {
 #[cfg(feature = "app-debugsavedatamenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugSaveDataMenu;
-    pub use super::IDebugSaveDataMenu;
-    pub use super::IDebugSaveDataMenuMethods;
+    pub use super::{DebugSaveDataMenu, IDebugSaveDataMenu, IDebugSaveDataMenuMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

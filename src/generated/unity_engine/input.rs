@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-input-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/input/Input.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Input")]
@@ -25,430 +25,244 @@ mod __Input_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_key_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetKeyInt",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetKeyInt", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetKeyInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetKeyInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key_int(
-        key: crate::unity_engine::keycode::KeyCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keycode::KeyCode,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key_int::get_offset() as isize),
-        );
+    pub unsafe fn get_key_int(key: crate::unity_engine::keycode::KeyCode, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::keycode::KeyCode, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_key_int::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_key_up_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetKeyUpInt",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetKeyUpInt", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetKeyUpInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetKeyUpInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key_up_int(
-        key: crate::unity_engine::keycode::KeyCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keycode::KeyCode,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key_up_int::get_offset() as isize),
-        );
+    pub unsafe fn get_key_up_int(key: crate::unity_engine::keycode::KeyCode, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::keycode::KeyCode, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_key_up_int::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_key_down_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetKeyDownInt",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetKeyDownInt", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetKeyDownInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetKeyDownInt",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key_down_int(
-        key: crate::unity_engine::keycode::KeyCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keycode::KeyCode,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key_down_int::get_offset() as isize),
-        );
+    pub unsafe fn get_key_down_int(key: crate::unity_engine::keycode::KeyCode, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::keycode::KeyCode, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_key_down_int::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetAxis",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetAxis", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Input as ::unity2::ClassIdentity>::NAME, "GetAxis", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_axis(
-        axis_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_axis(axis_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_axis::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_axis::get_method_info().method_ptr);
         inner(axis_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_axis_raw {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetAxisRaw",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetAxisRaw", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetAxisRaw",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetAxisRaw",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_axis_raw(
-        axis_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_axis_raw(axis_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_axis_raw::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_axis_raw::get_method_info().method_ptr);
         inner(axis_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetButton",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetButton", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetButton",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_button(
-        button_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_button(button_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_button::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_button::get_method_info().method_ptr);
         inner(button_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_button_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetButtonDown",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetButtonDown", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetButtonDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetButtonDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_button_down(
-        button_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_button_down(button_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_button_down::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_button_down::get_method_info().method_ptr);
         inner(button_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_button_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetButtonUp",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetButtonUp", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetButtonUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetButtonUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_button_up(
-        button_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_button_up(button_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_button_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_button_up::get_method_info().method_ptr);
         inner(button_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_button {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetMouseButton",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetMouseButton", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetMouseButton",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetMouseButton",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mouse_button(
-        button: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_button::get_offset() as isize),
-        );
+    pub unsafe fn get_mouse_button(button: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_mouse_button::get_method_info().method_ptr);
         inner(button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_button_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "GetMouseButtonDown",
@@ -460,40 +274,28 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetMouseButtonDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetMouseButtonDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mouse_button_down(
-        button: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_button_down::get_offset() as isize),
-        );
+    pub unsafe fn get_mouse_button_down(button: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_mouse_button_down::get_method_info().method_ptr);
         inner(button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_button_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "GetMouseButtonUp",
@@ -505,230 +307,128 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetMouseButtonUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetMouseButtonUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mouse_button_up(
-        button: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_button_up::get_offset() as isize),
-        );
+    pub unsafe fn get_mouse_button_up(button: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_mouse_button_up::get_method_info().method_ptr);
         inner(button, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_touch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetTouch",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetTouch", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetTouch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetTouch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_touch(
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::touch::Touch {
-        let inner: extern "C" fn(
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::touch::Touch = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_touch::get_offset() as isize),
-        );
+    pub unsafe fn get_touch(index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::touch::Touch {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> crate::unity_engine::touch::Touch =
+            ::core::mem::transmute(__lookup_get_touch::get_method_info().method_ptr);
         inner(index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetKey",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetKey", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetKey",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Input as ::unity2::ClassIdentity>::NAME, "GetKey", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key(
-        key: crate::unity_engine::keycode::KeyCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keycode::KeyCode,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key::get_offset() as isize),
-        );
+    pub unsafe fn get_key(key: crate::unity_engine::keycode::KeyCode, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::keycode::KeyCode, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_key::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_key_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetKeyUp",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetKeyUp", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetKeyUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetKeyUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key_up(
-        key: crate::unity_engine::keycode::KeyCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keycode::KeyCode,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key_up::get_offset() as isize),
-        );
+    pub unsafe fn get_key_up(key: crate::unity_engine::keycode::KeyCode, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::keycode::KeyCode, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_key_up::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_key_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "GetKeyDown",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::keycode::KeyCode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "GetKeyDown", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetKeyDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetKeyDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key_down(
-        key: crate::unity_engine::keycode::KeyCode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::unity_engine::keycode::KeyCode,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key_down::get_offset() as isize),
-        );
+    pub unsafe fn get_key_down(key: crate::unity_engine::keycode::KeyCode, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::unity_engine::keycode::KeyCode, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_key_down::get_method_info().method_ptr);
         inner(key, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -741,39 +441,27 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_mousePosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_mousePosition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mouse_position(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_position::get_offset() as isize),
-        );
+    pub unsafe fn get_mouse_position(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_mouse_position::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_scroll_delta {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -786,39 +474,27 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_mouseScrollDelta",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_mouseScrollDelta",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mouse_scroll_delta(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_scroll_delta::get_offset() as isize),
-        );
+    pub unsafe fn get_mouse_scroll_delta(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_mouse_scroll_delta::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ime_composition_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -831,41 +507,31 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_imeCompositionMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_imeCompositionMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ime_composition_mode(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::imecompositionmode::IMECompositionMode {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::imecompositionmode::IMECompositionMode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_ime_composition_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::imecompositionmode::IMECompositionMode =
+            ::core::mem::transmute(__lookup_get_ime_composition_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ime_composition_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: imecompositionmode :: IMECompositionMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::imecompositionmode::IMECompositionMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "set_imeCompositionMode",
@@ -877,41 +543,30 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "set_imeCompositionMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "set_imeCompositionMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_ime_composition_mode(
         value: crate::unity_engine::imecompositionmode::IMECompositionMode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::imecompositionmode::IMECompositionMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_ime_composition_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::imecompositionmode::IMECompositionMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_ime_composition_mode::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_composition_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -924,38 +579,27 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_compositionString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_compositionString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_composition_string(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_composition_string(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_composition_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_composition_string::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_composition_cursor_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -968,41 +612,28 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_compositionCursorPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_compositionCursorPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_composition_cursor_pos(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_composition_cursor_pos::get_offset() as isize),
-        );
+    pub unsafe fn get_composition_cursor_pos(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_composition_cursor_pos::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_composition_cursor_pos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "set_compositionCursorPos",
@@ -1014,41 +645,27 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "set_compositionCursorPos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "set_compositionCursorPos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_composition_cursor_pos(
-        value: crate::unity_engine::vector2::Vector2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_composition_cursor_pos::get_offset() as isize),
-        );
+    pub unsafe fn set_composition_cursor_pos(value: crate::unity_engine::vector2::Vector2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_composition_cursor_pos::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_present {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -1061,76 +678,52 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_mousePresent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_mousePresent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mouse_present(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_present::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_mouse_present::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_touch_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "get_touchCount",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "get_touchCount", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_touchCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_touchCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_touch_count(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_touch_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_touch_count::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_touch_supported {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
@@ -1143,80 +736,54 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_touchSupported",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_touchSupported",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_touch_supported(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_touch_supported::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_touch_supported::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_touches {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Input as ::unity2::ClassIdentity>::class(),
-                "get_touches",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Input as ::unity2::ClassIdentity>::class(), "get_touches", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_touches",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_touches",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_touches(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::unity_engine::touch::Touch> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::unity_engine::touch::Touch> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_touches::get_offset() as isize),
-        );
+    pub unsafe fn get_touches(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::touch::Touch> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::touch::Touch> =
+            ::core::mem::transmute(__lookup_get_touches::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_touch_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::touch::Touch as ::unity2::IlType>::il_type(),
@@ -1232,45 +799,28 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "GetTouch_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "GetTouch_Injected",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_touch_injected(
-        index: i32,
-        ret: *mut crate::unity_engine::touch::Touch,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            i32,
-            *mut crate::unity_engine::touch::Touch,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_touch_injected::get_offset() as isize),
-        );
+    pub unsafe fn get_touch_injected(index: i32, ret: *mut crate::unity_engine::touch::Touch, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, *mut crate::unity_engine::touch::Touch, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_touch_injected::get_method_info().method_ptr);
         inner(index, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_position_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "get_mousePosition_Injected",
@@ -1282,43 +832,28 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_mousePosition_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_mousePosition_Injected",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mouse_position_injected(
-        ret: *mut crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_position_injected::get_offset() as isize),
-        );
+    pub unsafe fn get_mouse_position_injected(ret: *mut crate::unity_engine::vector3::Vector3, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_mouse_position_injected::get_method_info().method_ptr);
         inner(ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mouse_scroll_delta_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "get_mouseScrollDelta_Injected",
@@ -1330,43 +865,31 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_mouseScrollDelta_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_mouseScrollDelta_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mouse_scroll_delta_injected(
         ret: *mut crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mouse_scroll_delta_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_mouse_scroll_delta_injected::get_method_info().method_ptr);
         inner(ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_composition_cursor_pos_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "get_compositionCursorPos_Injected",
@@ -1378,43 +901,31 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "get_compositionCursorPos_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "get_compositionCursorPos_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_composition_cursor_pos_injected(
         ret: *mut crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_composition_cursor_pos_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_composition_cursor_pos_injected::get_method_info().method_ptr);
         inner(ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_composition_cursor_pos_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Input as ::unity2::ClassIdentity>::class(),
                 "set_compositionCursorPos_Injected",
@@ -1426,32 +937,23 @@ mod __Input_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Input as ::unity2::ClassIdentity>::NAME,
-                    "set_compositionCursorPos_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Input as ::unity2::ClassIdentity>::NAME,
+                        "set_compositionCursorPos_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_composition_cursor_pos_injected(
         value: *mut crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_composition_cursor_pos_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(*mut crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_composition_cursor_pos_injected::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
 }
@@ -1459,271 +961,176 @@ mod __Input_unity2_raw {
 #[cfg(feature = "unity_engine-input")]
 impl Input {
     #[doc = "`GetKeyInt(crate::unity_engine::keycode::KeyCode)` overload"]
-    pub fn get_key_int(
-        key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>,
-    ) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_key_int(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_key_int(key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>) -> bool {
+        unsafe { __Input_unity2_raw::get_key_int(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKeyUpInt(crate::unity_engine::keycode::KeyCode)` overload"]
-    pub fn get_key_up_int(
-        key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>,
-    ) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_key_up_int(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_key_up_int(key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>) -> bool {
+        unsafe { __Input_unity2_raw::get_key_up_int(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKeyDownInt(crate::unity_engine::keycode::KeyCode)` overload"]
-    pub fn get_key_down_int(
-        key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>,
-    ) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_key_down_int(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_key_down_int(key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>) -> bool {
+        unsafe { __Input_unity2_raw::get_key_down_int(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`GetAxis(::unity2::Il2CppString)` overload"]
     pub fn get_axis(axis_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe {
-            __Input_unity2_raw::get_axis(
-                ::core::convert::Into::into(axis_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_axis(::core::convert::Into::into(axis_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetAxisRaw(::unity2::Il2CppString)` overload"]
     pub fn get_axis_raw(axis_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> f32 {
-        unsafe {
-            __Input_unity2_raw::get_axis_raw(
-                ::core::convert::Into::into(axis_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_axis_raw(::core::convert::Into::into(axis_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetButton(::unity2::Il2CppString)` overload"]
     pub fn get_button(button_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_button(
-                ::core::convert::Into::into(button_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_button(::core::convert::Into::into(button_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetButtonDown(::unity2::Il2CppString)` overload"]
-    pub fn get_button_down(
-        button_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_button_down(
-                ::core::convert::Into::into(button_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_button_down(button_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __Input_unity2_raw::get_button_down(::core::convert::Into::into(button_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetButtonUp(::unity2::Il2CppString)` overload"]
     pub fn get_button_up(button_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_button_up(
-                ::core::convert::Into::into(button_name),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_button_up(::core::convert::Into::into(button_name), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMouseButton(i32)` overload"]
     pub fn get_mouse_button(button: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_mouse_button(
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_mouse_button(::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMouseButtonDown(i32)` overload"]
     pub fn get_mouse_button_down(button: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_mouse_button_down(
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_mouse_button_down(::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMouseButtonUp(i32)` overload"]
     pub fn get_mouse_button_up(button: impl ::core::convert::Into<i32>) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_mouse_button_up(
-                ::core::convert::Into::into(button),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_mouse_button_up(::core::convert::Into::into(button), ::core::option::Option::None) }
     }
+
     #[doc = "`GetTouch(i32)` overload"]
     pub fn get_touch(index: impl ::core::convert::Into<i32>) -> crate::unity_engine::touch::Touch {
-        unsafe {
-            __Input_unity2_raw::get_touch(
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_touch(::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKey(crate::unity_engine::keycode::KeyCode)` overload"]
     pub fn get_key(key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_key(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Input_unity2_raw::get_key(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKeyUp(crate::unity_engine::keycode::KeyCode)` overload"]
-    pub fn get_key_up(
-        key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>,
-    ) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_key_up(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_key_up(key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>) -> bool {
+        unsafe { __Input_unity2_raw::get_key_up(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`GetKeyDown(crate::unity_engine::keycode::KeyCode)` overload"]
-    pub fn get_key_down(
-        key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>,
-    ) -> bool {
-        unsafe {
-            __Input_unity2_raw::get_key_down(
-                ::core::convert::Into::into(key),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_key_down(key: impl ::core::convert::Into<crate::unity_engine::keycode::KeyCode>) -> bool {
+        unsafe { __Input_unity2_raw::get_key_down(::core::convert::Into::into(key), ::core::option::Option::None) }
     }
+
     #[doc = "`get_mousePosition()` overload"]
     pub fn get_mouse_position() -> crate::unity_engine::vector3::Vector3 {
         unsafe { __Input_unity2_raw::get_mouse_position(::core::option::Option::None) }
     }
+
     #[doc = "`get_mouseScrollDelta()` overload"]
     pub fn get_mouse_scroll_delta() -> crate::unity_engine::vector2::Vector2 {
         unsafe { __Input_unity2_raw::get_mouse_scroll_delta(::core::option::Option::None) }
     }
+
     #[doc = "`get_imeCompositionMode()` overload"]
-    pub fn get_ime_composition_mode() -> crate::unity_engine::imecompositionmode::IMECompositionMode
-    {
+    pub fn get_ime_composition_mode() -> crate::unity_engine::imecompositionmode::IMECompositionMode {
         unsafe { __Input_unity2_raw::get_ime_composition_mode(::core::option::Option::None) }
     }
+
     #[doc = "`set_imeCompositionMode(crate::unity_engine::imecompositionmode::IMECompositionMode)` overload"]
-    pub fn set_ime_composition_mode(
-        value: impl ::core::convert::Into<crate::unity_engine::imecompositionmode::IMECompositionMode>,
-    ) -> () {
-        unsafe {
-            __Input_unity2_raw::set_ime_composition_mode(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_ime_composition_mode(value: impl ::core::convert::Into<crate::unity_engine::imecompositionmode::IMECompositionMode>) -> () {
+        unsafe { __Input_unity2_raw::set_ime_composition_mode(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_compositionString()` overload"]
     pub fn get_composition_string() -> ::unity2::Il2CppString {
         unsafe { __Input_unity2_raw::get_composition_string(::core::option::Option::None) }
     }
+
     #[doc = "`get_compositionCursorPos()` overload"]
     pub fn get_composition_cursor_pos() -> crate::unity_engine::vector2::Vector2 {
         unsafe { __Input_unity2_raw::get_composition_cursor_pos(::core::option::Option::None) }
     }
+
     #[doc = "`set_compositionCursorPos(crate::unity_engine::vector2::Vector2)` overload"]
-    pub fn set_composition_cursor_pos(
-        value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
-        unsafe {
-            __Input_unity2_raw::set_composition_cursor_pos(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_composition_cursor_pos(value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
+        unsafe { __Input_unity2_raw::set_composition_cursor_pos(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_mousePresent()` overload"]
     pub fn get_mouse_present() -> bool {
         unsafe { __Input_unity2_raw::get_mouse_present(::core::option::Option::None) }
     }
+
     #[doc = "`get_touchCount()` overload"]
     pub fn get_touch_count() -> i32 {
         unsafe { __Input_unity2_raw::get_touch_count(::core::option::Option::None) }
     }
+
     #[doc = "`get_touchSupported()` overload"]
     pub fn get_touch_supported() -> bool {
         unsafe { __Input_unity2_raw::get_touch_supported(::core::option::Option::None) }
     }
+
     #[doc = "`get_touches()` overload"]
     pub fn get_touches() -> ::unity2::Array<crate::unity_engine::touch::Touch> {
         unsafe { __Input_unity2_raw::get_touches(::core::option::Option::None) }
     }
+
     #[doc = "`GetTouch_Injected(i32, *mutcrate::unity_engine::touch::Touch)` overload"]
-    pub fn get_touch_injected(
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::touch::Touch {
+    pub fn get_touch_injected(index: impl ::core::convert::Into<i32>) -> crate::unity_engine::touch::Touch {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::touch::Touch>::uninit();
-            __Input_unity2_raw::get_touch_injected(
-                ::core::convert::Into::into(index),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::touch::Touch>::uninit();
+            __Input_unity2_raw::get_touch_injected(::core::convert::Into::into(index), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`get_mousePosition_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]
     pub fn get_mouse_position_injected() -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __Input_unity2_raw::get_mouse_position_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Input_unity2_raw::get_mouse_position_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`get_mouseScrollDelta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
     pub fn get_mouse_scroll_delta_injected() -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __Input_unity2_raw::get_mouse_scroll_delta_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __Input_unity2_raw::get_mouse_scroll_delta_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`get_compositionCursorPos_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
     pub fn get_composition_cursor_pos_injected() -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __Input_unity2_raw::get_composition_cursor_pos_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __Input_unity2_raw::get_composition_cursor_pos_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`set_compositionCursorPos_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]
     pub fn set_composition_cursor_pos_injected() -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
-            __Input_unity2_raw::set_composition_cursor_pos_injected(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector2::Vector2>::uninit();
+            __Input_unity2_raw::set_composition_cursor_pos_injected(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
@@ -1732,8 +1139,7 @@ impl Input {
 #[cfg(feature = "unity_engine-input")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInput;
-    pub use super::Input;
+    pub use super::{IInput, Input};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

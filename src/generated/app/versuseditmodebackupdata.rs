@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-versuseditmodebackupdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuseditmodebackupdata/VersusEditModeBackupData.md"))]
     #[::unity2::class(namespace = "App", name = "VersusEditModeBackupData")]
@@ -36,9 +36,7 @@ mod __VersusEditModeBackupData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusEditModeBackupData as ::unity2::ClassIdentity>::class(),
@@ -51,39 +49,27 @@ mod __VersusEditModeBackupData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: VersusEditModeBackupData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: VersusEditModeBackupData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusEditModeBackupData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusEditModeBackupData as ::unity2::ClassIdentity>::class(),
@@ -96,39 +82,27 @@ mod __VersusEditModeBackupData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
-                    "Serialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
+                        "Serialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn serialize(
-        this: VersusEditModeBackupData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn serialize(this: VersusEditModeBackupData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusEditModeBackupData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_serialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusEditModeBackupData as ::unity2::ClassIdentity>::class(),
@@ -141,41 +115,28 @@ mod __VersusEditModeBackupData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
-                    "Deserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
+                        "Deserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deserialize(
-        this: VersusEditModeBackupData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn deserialize(this: VersusEditModeBackupData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(VersusEditModeBackupData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deserialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <VersusEditModeBackupData as ::unity2::ClassIdentity>::class(),
                 "FindUnit",
@@ -187,18 +148,15 @@ mod __VersusEditModeBackupData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
-                    "FindUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VersusEditModeBackupData as ::unity2::ClassIdentity>::NAME,
+                        "FindUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_unit(
@@ -206,15 +164,8 @@ mod __VersusEditModeBackupData_unity2_raw {
         pid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            VersusEditModeBackupData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_unit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VersusEditModeBackupData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_find_unit::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
 }
@@ -225,9 +176,7 @@ pub trait IVersusEditModeBackupDataMethods: IVersusEditModeBackupData {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VersusEditModeBackupData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -235,43 +184,24 @@ pub trait IVersusEditModeBackupDataMethods: IVersusEditModeBackupData {
     fn serialize(self) -> () {
         unsafe {
             let __receiver =
-                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusEditModeBackupData_unity2_raw::serialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusEditModeBackupData_unity2_raw::serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Deserialize()` overload"]
     fn deserialize(self) -> () {
         unsafe {
             let __receiver =
-                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusEditModeBackupData_unity2_raw::deserialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusEditModeBackupData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FindUnit(::unity2::Il2CppString)` overload"]
-    fn find_unit(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::unit::Unit {
+    fn find_unit(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VersusEditModeBackupData_unity2_raw::find_unit(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+                <VersusEditModeBackupData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VersusEditModeBackupData_unity2_raw::find_unit(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
 }
@@ -298,9 +228,7 @@ impl VersusEditModeBackupData {
 #[cfg(feature = "app-versuseditmodebackupdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IVersusEditModeBackupData;
-    pub use super::IVersusEditModeBackupDataMethods;
-    pub use super::VersusEditModeBackupData;
+    pub use super::{IVersusEditModeBackupData, IVersusEditModeBackupDataMethods, VersusEditModeBackupData};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

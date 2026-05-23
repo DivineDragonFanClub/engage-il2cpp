@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-collections-generic-comparer_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/comparer_1/Comparer_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "Comparer`1")]
@@ -37,11 +37,7 @@ impl<T0: ::unity2::ClassIdentity> Comparer_1<T0> {
 
     #[doc = "`System.Collections.IComparer.Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IComparer.Compare", args = 2)]
-    pub fn system_collections_i_comparer_compare(
-        self,
-        x: crate::system::object::Object,
-        y: crate::system::object::Object,
-    ) -> i32;
+    pub fn system_collections_i_comparer_compare(self, x: crate::system::object::Object, y: crate::system::object::Object) -> i32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -52,13 +48,8 @@ impl<T0: ::unity2::ClassIdentity> Comparer_1<T0> {
 impl<T0: ::unity2::ClassIdentity> Comparer_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Comparer_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Comparer_1), ::core::stringify!(new),));
         <Self as IComparer_1Methods<T0>>::ctor(this);
         this
     }
@@ -67,9 +58,7 @@ impl<T0: ::unity2::ClassIdentity> Comparer_1<T0> {
 #[cfg(feature = "system-collections-generic-comparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Comparer_1;
-    pub use super::IComparer_1;
-    pub use super::IComparer_1Methods;
+    pub use super::{Comparer_1, IComparer_1, IComparer_1Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

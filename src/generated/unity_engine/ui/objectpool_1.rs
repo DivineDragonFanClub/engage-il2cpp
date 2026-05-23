@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-ui-objectpool_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/objectpool_1/ObjectPool_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "ObjectPool`1")]
@@ -66,13 +66,8 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1<T0> {
         action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
         action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
     ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ObjectPool_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ObjectPool_1), ::core::stringify!(new),));
         <Self as IObjectPool_1Methods<T0>>::ctor(this, action_on_get, action_on_release);
         this
     }
@@ -81,9 +76,7 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1<T0> {
 #[cfg(feature = "unity_engine-ui-objectpool_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IObjectPool_1;
-    pub use super::IObjectPool_1Methods;
-    pub use super::ObjectPool_1;
+    pub use super::{IObjectPool_1, IObjectPool_1Methods, ObjectPool_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

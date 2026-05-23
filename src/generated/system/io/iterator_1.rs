@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-io-iterator_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/iterator_1/Iterator_1.md"))]
     #[::unity2::class(namespace = "System.IO", name = "Iterator`1")]
@@ -48,9 +48,7 @@ impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 
     #[doc = "`MoveNext()` overload"]
     #[method(name = "MoveNext", args = 0)]
@@ -62,9 +60,7 @@ impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
     #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
     #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
@@ -75,13 +71,8 @@ impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
 impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Iterator_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Iterator_1), ::core::stringify!(new),));
         <Self as IIterator_1Methods<T0>>::ctor(this);
         this
     }
@@ -90,9 +81,7 @@ impl<T0: ::unity2::ClassIdentity> Iterator_1<T0> {
 #[cfg(feature = "system-io-iterator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIterator_1;
-    pub use super::IIterator_1Methods;
-    pub use super::Iterator_1;
+    pub use super::{IIterator_1, IIterator_1Methods, Iterator_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

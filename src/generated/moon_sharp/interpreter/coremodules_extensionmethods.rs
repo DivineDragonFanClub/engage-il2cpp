@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coremodules_extensionmethods/CoreModules_ExtensionMethods.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter",
-        name = "CoreModules_ExtensionMethods"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "CoreModules_ExtensionMethods")]
     #[parent(crate::system::object::Object)]
     pub struct CoreModules_ExtensionMethods {}
 }
@@ -28,10 +25,11 @@ mod __CoreModules_ExtensionMethods_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_has {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: coremodules :: CoreModules as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: coremodules :: CoreModules as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::coremodules::CoreModules as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::coremodules::CoreModules as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CoreModules_ExtensionMethods as ::unity2::ClassIdentity>::class(),
                 "Has",
@@ -43,18 +41,15 @@ mod __CoreModules_ExtensionMethods_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CoreModules_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
-                    "Has",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CoreModules_ExtensionMethods as ::unity2::ClassIdentity>::NAME,
+                        "Has",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn has(
@@ -66,11 +61,7 @@ mod __CoreModules_ExtensionMethods_unity2_raw {
             crate::moon_sharp::interpreter::coremodules::CoreModules,
             crate::moon_sharp::interpreter::coremodules::CoreModules,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_has::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_has::get_method_info().method_ptr);
         inner(val, flag, __unity2_method_info)
     }
 }
@@ -95,8 +86,7 @@ impl CoreModules_ExtensionMethods {
 #[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CoreModules_ExtensionMethods;
-    pub use super::ICoreModules_ExtensionMethods;
+    pub use super::{CoreModules_ExtensionMethods, ICoreModules_ExtensionMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

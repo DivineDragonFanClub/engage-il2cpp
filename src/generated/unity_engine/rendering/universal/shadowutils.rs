@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shadowutils/ShadowUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShadowUtils")]
@@ -32,51 +32,47 @@ mod __ShadowUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ShadowUtils as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ShadowUtils as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_extract_directional_light_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowdata :: ShadowData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowdata::ShadowData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "ExtractDirectionalLightMatrix",
@@ -88,18 +84,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "ExtractDirectionalLightMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "ExtractDirectionalLightMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_directional_light_matrix(
@@ -112,7 +105,7 @@ mod __ShadowUtils_unity2_raw {
         shadow_resolution: i32,
         shadow_near_plane: f32,
         cascade_split_distance: *mut crate::unity_engine::vector4::Vector4,
-        shadow_slice_data : * mut crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData,
+        shadow_slice_data: *mut crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
         view_matrix: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         proj_matrix: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -131,11 +124,7 @@ mod __ShadowUtils_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_directional_light_matrix::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_extract_directional_light_matrix::get_method_info().method_ptr);
         inner(
             cull_results,
             shadow_data,
@@ -156,10 +145,20 @@ mod __ShadowUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_extract_directional_light_matrix_no_cascade {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowdata :: ShadowData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowdata::ShadowData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "ExtractDirectionalLightMatrix_NoCascade",
@@ -171,18 +170,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "ExtractDirectionalLightMatrix_NoCascade",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "ExtractDirectionalLightMatrix_NoCascade",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_directional_light_matrix_no_cascade(
@@ -194,7 +190,7 @@ mod __ShadowUtils_unity2_raw {
         shadow_resolution: i32,
         shadow_near_plane: f32,
         cascade_split_distance: *mut crate::unity_engine::vector4::Vector4,
-        shadow_slice_data : * mut crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData,
+        shadow_slice_data: *mut crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
         view_matrix: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         proj_matrix: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -212,13 +208,7 @@ mod __ShadowUtils_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_extract_directional_light_matrix_no_cascade::get_offset() as isize,
-                ),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_extract_directional_light_matrix_no_cascade::get_method_info().method_ptr);
         inner(
             cull_results,
             shadow_data,
@@ -238,10 +228,15 @@ mod __ShadowUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_extract_spot_light_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: cullingresults :: CullingResults as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowdata :: ShadowData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::cullingresults::CullingResults as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowdata::ShadowData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "ExtractSpotLightMatrix",
@@ -253,18 +248,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "ExtractSpotLightMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "ExtractSpotLightMatrix",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn extract_spot_light_matrix(
@@ -284,11 +276,7 @@ mod __ShadowUtils_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_extract_spot_light_matrix::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_extract_spot_light_matrix::get_method_info().method_ptr);
         inner(
             cull_results,
             shadow_data,
@@ -303,10 +291,15 @@ mod __ShadowUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_render_shadow_slice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowdrawingsettings :: ShadowDrawingSettings as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "RenderShadowSlice",
@@ -318,24 +311,21 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "RenderShadowSlice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "RenderShadowSlice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_shadow_slice(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        context : * mut crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext,
-        shadow_slice_data : * mut crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData,
+        context: *mut crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        shadow_slice_data: *mut crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
         settings: *mut crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
         proj: crate::unity_engine::matrix4x4::Matrix4x4,
         view: crate::unity_engine::matrix4x4::Matrix4x4,
@@ -349,29 +339,20 @@ mod __ShadowUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_shadow_slice::get_offset() as isize),
-        );
-        inner(
-            cmd,
-            context,
-            shadow_slice_data,
-            settings,
-            proj,
-            view,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_render_shadow_slice::get_method_info().method_ptr);
+        inner(cmd, context, shadow_slice_data, settings, proj, view, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_render_shadow_slice_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadowdrawingsettings :: ShadowDrawingSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "RenderShadowSlice",
@@ -383,24 +364,21 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "RenderShadowSlice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "RenderShadowSlice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_shadow_slice_2(
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-        context : * mut crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext,
-        shadow_slice_data : * mut crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData,
+        context: *mut crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        shadow_slice_data: *mut crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
         settings: *mut crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -410,26 +388,14 @@ mod __ShadowUtils_unity2_raw {
             *mut crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
             *mut crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_shadow_slice_2::get_offset() as isize),
-        );
-        inner(
-            cmd,
-            context,
-            shadow_slice_data,
-            settings,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_render_shadow_slice_2::get_method_info().method_ptr);
+        inner(cmd, context, shadow_slice_data, settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_tile_resolution_in_atlas {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -446,18 +412,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxTileResolutionInAtlas",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxTileResolutionInAtlas",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_max_tile_resolution_in_atlas(
@@ -467,21 +430,19 @@ mod __ShadowUtils_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
         let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_tile_resolution_in_atlas::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_tile_resolution_in_atlas::get_method_info().method_ptr);
         inner(atlas_width, atlas_height, tile_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_slice_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "ApplySliceTransform",
@@ -493,22 +454,19 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "ApplySliceTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "ApplySliceTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn apply_slice_transform(
-        shadow_slice_data : * mut crate :: unity_engine :: rendering :: universal :: shadowslicedata :: ShadowSliceData,
+        shadow_slice_data: *mut crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
         atlas_width: i32,
         atlas_height: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -518,26 +476,21 @@ mod __ShadowUtils_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_apply_slice_transform::get_offset() as isize),
-        );
-        inner(
-            shadow_slice_data,
-            atlas_width,
-            atlas_height,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_apply_slice_transform::get_method_info().method_ptr);
+        inner(shadow_slice_data, atlas_width, atlas_height, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_bias {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: visiblelight :: VisibleLight as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: shadowdata :: ShadowData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: matrix4x4 :: Matrix4x4 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::visiblelight::VisibleLight as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::shadowdata::ShadowData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "GetShadowBias",
@@ -549,18 +502,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowBias",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowBias",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_bias(
@@ -578,11 +528,7 @@ mod __ShadowUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             f32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_bias::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(__lookup_get_shadow_bias::get_method_info().method_ptr);
         inner(
             shadow_light,
             shadow_light_index,
@@ -596,10 +542,12 @@ mod __ShadowUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_setup_shadow_caster_constant_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: visiblelight :: VisibleLight as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector4 :: Vector4 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::visiblelight::VisibleLight as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowUtils as ::unity2::ClassIdentity>::class(),
                 "SetupShadowCasterConstantBuffer",
@@ -611,18 +559,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "SetupShadowCasterConstantBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "SetupShadowCasterConstantBuffer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_shadow_caster_constant_buffer(
@@ -636,20 +581,14 @@ mod __ShadowUtils_unity2_raw {
             *mut crate::unity_engine::rendering::visiblelight::VisibleLight,
             crate::unity_engine::vector4::Vector4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_shadow_caster_constant_buffer::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_shadow_caster_constant_buffer::get_method_info().method_ptr);
         inner(cmd, shadow_light, shadow_bias, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_temporary_shadow_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -666,18 +605,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "GetTemporaryShadowTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "GetTemporaryShadowTexture",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_temporary_shadow_texture(
@@ -686,25 +622,15 @@ mod __ShadowUtils_unity2_raw {
         bits: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendertexture::RenderTexture {
-        let inner: extern "C" fn(
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendertexture::RenderTexture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_temporary_shadow_texture::get_offset() as isize),
-        );
+        let inner: extern "C" fn(i32, i32, i32, ::unity2::OptionalMethod) -> crate::unity_engine::rendertexture::RenderTexture =
+            ::core::mem::transmute(__lookup_get_temporary_shadow_texture::get_method_info().method_ptr);
         inner(width, height, bits, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -720,18 +646,15 @@ mod __ShadowUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowUtils as ::unity2::ClassIdentity>::NAME,
-                    "GetShadowTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowUtils as ::unity2::ClassIdentity>::NAME,
+                        "GetShadowTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shadow_transform(
@@ -743,11 +666,7 @@ mod __ShadowUtils_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shadow_transform::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_get_shadow_transform::get_method_info().method_ptr);
         inner(proj, view, __unity2_method_info)
     }
 }
@@ -758,6 +677,7 @@ impl ShadowUtils {
     pub fn cctor() -> () {
         unsafe { __ShadowUtils_unity2_raw::cctor(::core::option::Option::None) }
     }
+
     #[doc = "`ExtractDirectionalLightMatrix(*mutcrate::unity_engine::rendering::cullingresults::CullingResults, *mutcrate::unity_engine::rendering::universal::shadowdata::ShadowData, i32, i32, i32, i32, i32, f32, *mutcrate::unity_engine::vector4::Vector4, *mutcrate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn extract_directional_light_matrix(
         shadow_light_index: impl ::core::convert::Into<i32>,
@@ -776,21 +696,12 @@ impl ShadowUtils {
         crate::unity_engine::matrix4x4::Matrix4x4,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::cullingresults::CullingResults,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowdata::ShadowData,
-            >::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
-            >::uninit();
-            let mut __out_4 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_5 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::cullingresults::CullingResults>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowdata::ShadowData>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_5 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             let __ret = {
                 __ShadowUtils_unity2_raw::extract_directional_light_matrix(
                     __out_0.as_mut_ptr(),
@@ -819,6 +730,7 @@ impl ShadowUtils {
             )
         }
     }
+
     #[doc = "`ExtractDirectionalLightMatrix_NoCascade(*mutcrate::unity_engine::rendering::cullingresults::CullingResults, *mutcrate::unity_engine::rendering::universal::shadowdata::ShadowData, i32, i32, i32, i32, f32, *mutcrate::unity_engine::vector4::Vector4, *mutcrate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn extract_directional_light_matrix_no_cascade(
         shadow_light_index: impl ::core::convert::Into<i32>,
@@ -836,21 +748,12 @@ impl ShadowUtils {
         crate::unity_engine::matrix4x4::Matrix4x4,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::cullingresults::CullingResults,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowdata::ShadowData,
-            >::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
-            >::uninit();
-            let mut __out_4 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_5 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::cullingresults::CullingResults>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowdata::ShadowData>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector4::Vector4>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_5 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             let __ret = {
                 __ShadowUtils_unity2_raw::extract_directional_light_matrix_no_cascade(
                     __out_0.as_mut_ptr(),
@@ -878,6 +781,7 @@ impl ShadowUtils {
             )
         }
     }
+
     #[doc = "`ExtractSpotLightMatrix(*mutcrate::unity_engine::rendering::cullingresults::CullingResults, *mutcrate::unity_engine::rendering::universal::shadowdata::ShadowData, i32, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn extract_spot_light_matrix(
         shadow_light_index: impl ::core::convert::Into<i32>,
@@ -890,18 +794,11 @@ impl ShadowUtils {
         crate::unity_engine::matrix4x4::Matrix4x4,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::cullingresults::CullingResults,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowdata::ShadowData,
-            >::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_4 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::cullingresults::CullingResults>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowdata::ShadowData>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             let __ret = {
                 __ShadowUtils_unity2_raw::extract_spot_light_matrix(
                     __out_0.as_mut_ptr(),
@@ -923,6 +820,7 @@ impl ShadowUtils {
             )
         }
     }
+
     #[doc = "`RenderShadowSlice(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData, *mutcrate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings, crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn render_shadow_slice(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
@@ -934,15 +832,9 @@ impl ShadowUtils {
         crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings>::uninit();
             __ShadowUtils_unity2_raw::render_shadow_slice(
                 ::core::convert::Into::into(cmd),
                 __out_0.as_mut_ptr(),
@@ -952,13 +844,10 @@ impl ShadowUtils {
                 ::core::convert::Into::into(view),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`RenderShadowSlice(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData, *mutcrate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings)` overload"]
     pub fn render_shadow_slice_2(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
@@ -968,15 +857,9 @@ impl ShadowUtils {
         crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::shadowdrawingsettings::ShadowDrawingSettings>::uninit();
             __ShadowUtils_unity2_raw::render_shadow_slice_2(
                 ::core::convert::Into::into(cmd),
                 __out_0.as_mut_ptr(),
@@ -984,13 +867,10 @@ impl ShadowUtils {
                 __out_2.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`GetMaxTileResolutionInAtlas(i32, i32, i32)` overload"]
     pub fn get_max_tile_resolution_in_atlas(
         atlas_width: impl ::core::convert::Into<i32>,
@@ -1006,15 +886,14 @@ impl ShadowUtils {
             )
         }
     }
+
     #[doc = "`ApplySliceTransform(*mutcrate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData, i32, i32)` overload"]
     pub fn apply_slice_transform(
         atlas_width: impl ::core::convert::Into<i32>,
         atlas_height: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData>::uninit();
             __ShadowUtils_unity2_raw::apply_slice_transform(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(atlas_width),
@@ -1024,6 +903,7 @@ impl ShadowUtils {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetShadowBias(*mutcrate::unity_engine::rendering::visiblelight::VisibleLight, i32, *mutcrate::unity_engine::rendering::universal::shadowdata::ShadowData, crate::unity_engine::matrix4x4::Matrix4x4, f32)` overload"]
     pub fn get_shadow_bias(
         shadow_light_index: impl ::core::convert::Into<i32>,
@@ -1035,12 +915,8 @@ impl ShadowUtils {
         crate::unity_engine::rendering::universal::shadowdata::ShadowData,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::visiblelight::VisibleLight,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::shadowdata::ShadowData,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::visiblelight::VisibleLight>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::shadowdata::ShadowData>::uninit();
             let __ret = {
                 __ShadowUtils_unity2_raw::get_shadow_bias(
                     __out_0.as_mut_ptr(),
@@ -1054,15 +930,14 @@ impl ShadowUtils {
             (__ret, __out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`SetupShadowCasterConstantBuffer(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::visiblelight::VisibleLight, crate::unity_engine::vector4::Vector4)` overload"]
     pub fn setup_shadow_caster_constant_buffer(
         cmd: impl ::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>,
         shadow_bias: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
     ) -> crate::unity_engine::rendering::visiblelight::VisibleLight {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::visiblelight::VisibleLight,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::visiblelight::VisibleLight>::uninit();
             __ShadowUtils_unity2_raw::setup_shadow_caster_constant_buffer(
                 ::core::convert::Into::into(cmd),
                 __out_0.as_mut_ptr(),
@@ -1072,6 +947,7 @@ impl ShadowUtils {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetTemporaryShadowTexture(i32, i32, i32)` overload"]
     pub fn get_temporary_shadow_texture(
         width: impl ::core::convert::Into<i32>,
@@ -1087,6 +963,7 @@ impl ShadowUtils {
             )
         }
     }
+
     #[doc = "`GetShadowTransform(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn get_shadow_transform(
         proj: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -1105,8 +982,7 @@ impl ShadowUtils {
 #[cfg(feature = "unity_engine-rendering-universal-shadowutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShadowUtils;
-    pub use super::ShadowUtils;
+    pub use super::{IShadowUtils, ShadowUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

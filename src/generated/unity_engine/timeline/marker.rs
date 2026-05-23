@@ -2,12 +2,16 @@
 
 #[cfg(feature = "unity_engine-timeline-marker-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/marker/Marker.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "Marker")]
@@ -30,80 +34,50 @@ mod __Marker_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Marker as ::unity2::ClassIdentity>::class(),
-                "get_parent",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Marker as ::unity2::ClassIdentity>::class(), "get_parent", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    "get_parent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Marker as ::unity2::ClassIdentity>::NAME,
+                        "get_parent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_parent(
-        this: Marker,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::timeline::trackasset::TrackAsset {
-        let inner: extern "C" fn(
-            Marker,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::timeline::trackasset::TrackAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_parent::get_offset() as isize),
-        );
+    pub unsafe fn get_parent(this: Marker, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset {
+        let inner: extern "C" fn(Marker, ::unity2::OptionalMethod) -> crate::unity_engine::timeline::trackasset::TrackAsset =
+            ::core::mem::transmute(__lookup_get_parent::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Marker as ::unity2::ClassIdentity>::class(),
-                "set_parent",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Marker as ::unity2::ClassIdentity>::class(), "set_parent", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    "set_parent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Marker as ::unity2::ClassIdentity>::NAME,
+                        "set_parent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_parent(
@@ -111,113 +85,70 @@ mod __Marker_unity2_raw {
         value: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Marker,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_parent::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Marker, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_parent::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Marker as ::unity2::ClassIdentity>::class(),
-                "get_time",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Marker as ::unity2::ClassIdentity>::class(), "get_time", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    "get_time",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Marker as ::unity2::ClassIdentity>::NAME,
+                        "get_time",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_time(this: Marker, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
-        let inner: extern "C" fn(Marker, ::unity2::OptionalMethod) -> f64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_time::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Marker, ::unity2::OptionalMethod) -> f64 = ::core::mem::transmute(__lookup_get_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Marker as ::unity2::ClassIdentity>::class(),
-                "set_time",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Marker as ::unity2::ClassIdentity>::class(), "set_time", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    "set_time",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Marker as ::unity2::ClassIdentity>::NAME,
+                        "set_time",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_time(
-        this: Marker,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_time(this: Marker, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Marker, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_timeline_i_marker_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Marker as ::unity2::ClassIdentity>::class(),
                 "UnityEngine.Timeline.IMarker.Initialize",
@@ -229,18 +160,15 @@ mod __Marker_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.Timeline.IMarker.Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Marker as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.Timeline.IMarker.Initialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_timeline_i_marker_initialize(
@@ -248,48 +176,31 @@ mod __Marker_unity2_raw {
         parent_track: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Marker,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unity_engine_timeline_i_marker_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Marker, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unity_engine_timeline_i_marker_initialize::get_method_info().method_ptr);
         inner(this, parent_track, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: timeline :: trackasset :: TrackAsset as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Marker as ::unity2::ClassIdentity>::class(),
-                "OnInitialize",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::timeline::trackasset::TrackAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Marker as ::unity2::ClassIdentity>::class(), "OnInitialize", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    "OnInitialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Marker as ::unity2::ClassIdentity>::NAME,
+                        "OnInitialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_initialize(
@@ -297,56 +208,27 @@ mod __Marker_unity2_raw {
         a_pent: crate::unity_engine::timeline::trackasset::TrackAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Marker,
-            crate::unity_engine::timeline::trackasset::TrackAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Marker, crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_initialize::get_method_info().method_ptr);
         inner(this, a_pent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Marker as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Marker as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Marker as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Marker as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: Marker, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Marker, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Marker, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -356,48 +238,29 @@ pub trait IMarkerMethods: IMarker {
     #[doc = "`get_parent()` overload"]
     fn get_parent(self) -> crate::unity_engine::timeline::trackasset::TrackAsset {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Marker_unity2_raw::get_parent(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_parent(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn set_parent(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
+    fn set_parent(self, value: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Marker_unity2_raw::set_parent(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Marker_unity2_raw::set_parent(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_time()` overload"]
     fn get_time(self) -> f64 {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Marker_unity2_raw::get_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_time(f64)` overload"]
     fn set_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Marker_unity2_raw::set_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Marker_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.Timeline.IMarker.Initialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
@@ -406,9 +269,7 @@ pub trait IMarkerMethods: IMarker {
         parent_track: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
     ) -> () {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Marker_unity2_raw::unity_engine_timeline_i_marker_initialize(
                 __receiver,
                 ::core::convert::Into::into(parent_track),
@@ -417,27 +278,16 @@ pub trait IMarkerMethods: IMarker {
         }
     }
     #[doc = "`OnInitialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]
-    fn on_initialize(
-        self,
-        a_pent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>,
-    ) -> () {
+    fn on_initialize(self, a_pent: impl ::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>) -> () {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Marker_unity2_raw::on_initialize(
-                __receiver,
-                ::core::convert::Into::into(a_pent),
-                ::core::option::Option::None,
-            )
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Marker_unity2_raw::on_initialize(__receiver, ::core::convert::Into::into(a_pent), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Marker as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Marker_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -450,13 +300,8 @@ impl<__T: IMarker> IMarkerMethods for __T {}
 impl Marker {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Marker),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Marker), ::core::stringify!(new),));
         <Self as IMarkerMethods>::ctor(this);
         this
     }
@@ -465,16 +310,15 @@ impl Marker {
 #[cfg(feature = "unity_engine-timeline-marker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMarker;
-    pub use super::IMarkerMethods;
-    pub use super::Marker;
-    pub use crate::system::object::IObject;
+    pub use super::{IMarker, IMarkerMethods, Marker};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

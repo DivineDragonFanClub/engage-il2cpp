@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-gmap-gmappathcollection-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gmappathcollection/GmapPathCollection.md"))]
     #[::unity2::class(namespace = "App.Gmap", name = "GmapPathCollection")]
@@ -14,9 +14,7 @@ mod __types {
         #[rename(name = "m_Root")]
         pub m_root: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_PathList")]
-        pub m_path_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_path_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
     }
 }
 
@@ -32,9 +30,7 @@ mod __GmapPathCollection_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -48,18 +44,15 @@ mod __GmapPathCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -67,24 +60,15 @@ mod __GmapPathCollection_unity2_raw {
         root: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GmapPathCollection,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapPathCollection, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathCollection as ::unity2::ClassIdentity>::class(),
@@ -97,39 +81,27 @@ mod __GmapPathCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_visible(
-        this: GmapPathCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_visible(this: GmapPathCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -143,18 +115,15 @@ mod __GmapPathCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                    "SetChild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
+                        "SetChild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child(
@@ -162,28 +131,17 @@ mod __GmapPathCollection_unity2_raw {
         path_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GmapPathCollection,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_child::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GmapPathCollection, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_child::get_method_info().method_ptr);
         inner(this, path_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_for_each {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::unity_engine::gameobject::GameObject,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathCollection as ::unity2::ClassIdentity>::class(),
                 "ForEach",
@@ -195,18 +153,15 @@ mod __GmapPathCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                    "ForEach",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
+                        "ForEach",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn for_each(
@@ -218,20 +173,14 @@ mod __GmapPathCollection_unity2_raw {
             GmapPathCollection,
             crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_for_each::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_for_each::get_method_info().method_ptr);
         inner(this, action, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_path_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GmapPathCollection as ::unity2::ClassIdentity>::class(),
@@ -244,39 +193,27 @@ mod __GmapPathCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                    "UpdatePathList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
+                        "UpdatePathList",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_path_list(
-        this: GmapPathCollection,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_path_list(this: GmapPathCollection, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GmapPathCollection, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_path_list::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_path_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_appear_gmap_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
                 <crate::app::gmapspot::GmapSpot as ::unity2::IlType>::il_type(),
@@ -292,18 +229,15 @@ mod __GmapPathCollection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
-                    "CheckAppearGmapPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GmapPathCollection as ::unity2::ClassIdentity>::NAME,
+                        "CheckAppearGmapPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_appear_gmap_path(
@@ -317,11 +251,7 @@ mod __GmapPathCollection_unity2_raw {
             *mut crate::app::gmapspot::GmapSpot,
             *mut crate::app::gmapspot::GmapSpot,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_appear_gmap_path::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_check_appear_gmap_path::get_method_info().method_ptr);
         inner(this, start_spot, appear_spot, __unity2_method_info)
     }
 }
@@ -329,77 +259,38 @@ mod __GmapPathCollection_unity2_raw {
 #[cfg(feature = "app-gmap-gmappathcollection")]
 pub trait IGmapPathCollectionMethods: IGmapPathCollection {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathCollection_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathCollection_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateVisible()` overload"]
     fn update_visible(self) -> () {
         unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathCollection_unity2_raw::update_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathCollection_unity2_raw::update_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetChild(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_child(
-        self,
-        path_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn set_child(self, path_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathCollection_unity2_raw::set_child(
-                __receiver,
-                ::core::convert::Into::into(path_object),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathCollection_unity2_raw::set_child(__receiver, ::core::convert::Into::into(path_object), ::core::option::Option::None)
         }
     }
     #[doc = "`ForEach(crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>)` overload"]
-    fn for_each(
-        self,
-        action: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>,
-        >,
-    ) -> () {
+    fn for_each(self, action: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>>) -> () {
         unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathCollection_unity2_raw::for_each(
-                __receiver,
-                ::core::convert::Into::into(action),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathCollection_unity2_raw::for_each(__receiver, ::core::convert::Into::into(action), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdatePathList()` overload"]
     fn update_path_list(self) -> () {
         unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GmapPathCollection_unity2_raw::update_path_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GmapPathCollection_unity2_raw::update_path_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckAppearGmapPath(*mutcrate::app::gmapspot::GmapSpot, *mutcrate::app::gmapspot::GmapSpot)` overload"]
@@ -411,9 +302,7 @@ pub trait IGmapPathCollectionMethods: IGmapPathCollection {
         crate::app::gmapspot::GmapSpot,
     ) {
         unsafe {
-            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GmapPathCollection as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::gmapspot::GmapSpot>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<crate::app::gmapspot::GmapSpot>::uninit();
             let __ret = {
@@ -451,9 +340,7 @@ impl GmapPathCollection {
 #[cfg(feature = "app-gmap-gmappathcollection")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapPathCollection;
-    pub use super::IGmapPathCollection;
-    pub use super::IGmapPathCollectionMethods;
+    pub use super::{GmapPathCollection, IGmapPathCollection, IGmapPathCollectionMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

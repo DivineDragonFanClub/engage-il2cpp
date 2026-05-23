@@ -2,22 +2,24 @@
 
 #[cfg(feature = "app-mapdeploymoveimage-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::mapimagecore_1::{IMapImageCore_1, MapImageCore_1};
-    use crate::app::mapimagecoresbyte::{IMapImageCoreSbyte, MapImageCoreSbyte};
-    use crate::app::mapimageindex::{IMapImageIndex, MapImageIndex};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            mapimagecore_1::{IMapImageCore_1, MapImageCore_1},
+            mapimagecoresbyte::{IMapImageCoreSbyte, MapImageCoreSbyte},
+            mapimageindex::{IMapImageIndex, MapImageIndex},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploymoveimage/MapDeployMoveImage.md"))]
     #[::unity2::class(namespace = "App", name = "MapDeployMoveImage")]
     #[parent(crate::app::mapimagecoresbyte::MapImageCoreSbyte)]
     pub struct MapDeployMoveImage {
         #[rename(name = "m_Display")]
-        pub m_display: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-            crate::app::mapdeploy::MapDeploy,
-        >,
+        pub m_display: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>,
     }
 }
 
@@ -33,9 +35,7 @@ mod __MapDeployMoveImage_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_display {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
@@ -48,41 +48,36 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    "get_Display",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        "get_Display",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_display(
         this: MapDeployMoveImage,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-        crate::app::mapdeploy::MapDeploy,
-    > {
-        let inner : extern "C" fn (MapDeployMoveImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_display :: get_offset () as isize) ,) ;
+    ) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> {
+        let inner: extern "C" fn(
+            MapDeployMoveImage,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> =
+            ::core::mem::transmute(__lookup_get_display::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_display {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-                    crate::app::mapdeploy::MapDeploy,
-                > as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
+                crate::app::mapdeploy::MapDeploy,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
                 "set_Display",
@@ -94,47 +89,34 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    "set_Display",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        "set_Display",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_display(
         this: MapDeployMoveImage,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-            crate::app::mapdeploy::MapDeploy,
-        >,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             MapDeployMoveImage,
-            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-                crate::app::mapdeploy::MapDeploy,
-            >,
+            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_display::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_display::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
@@ -147,43 +129,28 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: MapDeployMoveImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: MapDeployMoveImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapDeployMoveImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
                 "Get",
@@ -195,45 +162,28 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    "Get",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        "Get",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get(
-        this: MapDeployMoveImage,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get(this: MapDeployMoveImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(MapDeployMoveImage, i32, i32, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get::get_method_info().method_ptr);
         inner(this, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pure {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
                 "GetPure",
@@ -245,45 +195,28 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    "GetPure",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        "GetPure",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pure(
-        this: MapDeployMoveImage,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i8 {
+    pub unsafe fn get_pure(this: MapDeployMoveImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i8 {
         let inner: extern "C" fn(MapDeployMoveImage, i32, i32, ::unity2::OptionalMethod) -> i8 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pure::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_pure::get_method_info().method_ptr);
         inner(this, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bool {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
                 "GetBool",
@@ -295,41 +228,27 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    "GetBool",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        "GetBool",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_bool(
-        this: MapDeployMoveImage,
-        x: i32,
-        z: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_bool(this: MapDeployMoveImage, x: i32, z: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapDeployMoveImage, i32, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bool::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_bool::get_method_info().method_ptr);
         inner(this, x, z, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapDeployMoveImage as ::unity2::ClassIdentity>::class(),
@@ -342,30 +261,20 @@ mod __MapDeployMoveImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapDeployMoveImage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapDeployMoveImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapDeployMoveImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapDeployMoveImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -373,53 +282,33 @@ mod __MapDeployMoveImage_unity2_raw {
 #[cfg(feature = "app-mapdeploymoveimage")]
 pub trait IMapDeployMoveImageMethods: IMapDeployMoveImage {
     #[doc = "`get_Display()` overload"]
-    fn get_display(
-        self,
-    ) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-        crate::app::mapdeploy::MapDeploy,
-    > {
+    fn get_display(self) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployMoveImage_unity2_raw::get_display(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Display(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)` overload"]
     fn set_display(
         self,
-        value: impl ::core::convert::Into<
-            crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
-                crate::app::mapdeploy::MapDeploy,
-            >,
-        >,
+        value: impl ::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>>,
     ) -> () {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MapDeployMoveImage_unity2_raw::set_display(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapDeployMoveImage_unity2_raw::set_display(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployMoveImage_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Get(i32, i32)` overload"]
     fn get(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> i8 {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployMoveImage_unity2_raw::get(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -429,15 +318,9 @@ pub trait IMapDeployMoveImageMethods: IMapDeployMoveImage {
         }
     }
     #[doc = "`GetPure(i32, i32)` overload"]
-    fn get_pure(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> i8 {
+    fn get_pure(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> i8 {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployMoveImage_unity2_raw::get_pure(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -447,15 +330,9 @@ pub trait IMapDeployMoveImageMethods: IMapDeployMoveImage {
         }
     }
     #[doc = "`GetBool(i32, i32)` overload"]
-    fn get_bool(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    fn get_bool(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployMoveImage_unity2_raw::get_bool(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -467,9 +344,7 @@ pub trait IMapDeployMoveImageMethods: IMapDeployMoveImage {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapDeployMoveImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapDeployMoveImage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -497,19 +372,17 @@ impl MapDeployMoveImage {
 #[cfg(feature = "app-mapdeploymoveimage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapDeployMoveImage;
-    pub use super::IMapDeployMoveImageMethods;
-    pub use super::MapDeployMoveImage;
-    pub use crate::app::mapimagecore_1::IMapImageCore_1;
+    pub use super::{IMapDeployMoveImage, IMapDeployMoveImageMethods, MapDeployMoveImage};
     #[cfg(feature = "app-mapimagecore_1")]
     pub use crate::app::mapimagecore_1::IMapImageCore_1Methods;
-    pub use crate::app::mapimagecoresbyte::IMapImageCoreSbyte;
     #[cfg(feature = "app-mapimagecoresbyte")]
     pub use crate::app::mapimagecoresbyte::IMapImageCoreSbyteMethods;
-    pub use crate::app::mapimageindex::IMapImageIndex;
     #[cfg(feature = "app-mapimageindex")]
     pub use crate::app::mapimageindex::IMapImageIndexMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapimagecore_1::IMapImageCore_1, mapimagecoresbyte::IMapImageCoreSbyte, mapimageindex::IMapImageIndex},
+        system::object::IObject,
+    };
 }

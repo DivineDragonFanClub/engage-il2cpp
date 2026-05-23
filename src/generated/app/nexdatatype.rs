@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-nexdatatype-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexdatatype/NexDataType.md"))]
     #[::unity2::class(namespace = "App", name = "NexDataType")]
@@ -77,8 +77,7 @@ pub use __types::*;
 #[cfg(feature = "app-nexdatatype")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INexDataType;
-    pub use super::NexDataType;
+    pub use super::{INexDataType, NexDataType};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

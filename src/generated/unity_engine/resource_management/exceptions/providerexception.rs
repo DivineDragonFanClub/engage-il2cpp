@@ -2,20 +2,17 @@
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-providerexception-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::exceptions::operationexception::{
-        IOperationException, OperationException,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::exceptions::operationexception::{IOperationException, OperationException},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/exceptions/providerexception/ProviderException.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Exceptions",
-        name = "ProviderException"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: exceptions :: operationexception :: OperationException)]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Exceptions", name = "ProviderException")]
+    #[parent(crate::unity_engine::resource_management::exceptions::operationexception::OperationException)]
     pub struct ProviderException {}
 }
 
@@ -31,9 +28,7 @@ mod __ProviderException_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_location {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProviderException as ::unity2::ClassIdentity>::class(),
@@ -46,32 +41,36 @@ mod __ProviderException_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProviderException as ::unity2::ClassIdentity>::NAME,
-                    "get_Location",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProviderException as ::unity2::ClassIdentity>::NAME,
+                        "get_Location",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_location (this : ProviderException , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation{
-        let inner : extern "C" fn (ProviderException , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_location :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_location(
+        this: ProviderException,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation {
+        let inner: extern "C" fn(
+            ProviderException,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation =
+            ::core::mem::transmute(__lookup_get_location::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
 pub trait IProviderExceptionMethods: IProviderException {
-    #[doc = "`get_Location()` overload"]    fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation{
+    #[doc = "`get_Location()` overload"]
+    fn get_location(self) -> crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation {
         unsafe {
-            let __receiver = <ProviderException as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ProviderException as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProviderException_unity2_raw::get_location(__receiver, ::core::option::Option::None)
         }
     }
@@ -83,13 +82,10 @@ impl<__T: IProviderException> IProviderExceptionMethods for __T {}
 #[cfg(feature = "unity_engine-resource_management-exceptions-providerexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProviderException;
-    pub use super::IProviderExceptionMethods;
-    pub use super::ProviderException;
-    pub use crate::system::object::IObject;
+    pub use super::{IProviderException, IProviderExceptionMethods, ProviderException};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::exceptions::operationexception::IOperationException;
     #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
     pub use crate::unity_engine::resource_management::exceptions::operationexception::IOperationExceptionMethods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::exceptions::operationexception::IOperationException};
 }

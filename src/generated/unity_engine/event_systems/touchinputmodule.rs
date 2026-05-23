@@ -2,19 +2,23 @@
 
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::baseinputmodule::{BaseInputModule, IBaseInputModule};
-    use crate::unity_engine::event_systems::pointerinputmodule::{
-        IPointerInputModule, PointerInputModule,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::{
+                baseinputmodule::{BaseInputModule, IBaseInputModule},
+                pointerinputmodule::{IPointerInputModule, PointerInputModule},
+                uibehaviour::{IUIBehaviour, UIBehaviour},
+            },
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/touchinputmodule/TouchInputModule.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "TouchInputModule")]
@@ -25,8 +29,7 @@ mod __types {
         #[rename(name = "m_MousePosition")]
         pub m_mouse_position: crate::unity_engine::vector2::Vector2,
         #[rename(name = "m_InputPointerEvent")]
-        pub m_input_pointer_event:
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        pub m_input_pointer_event: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
         #[rename(name = "m_ForceModuleActive")]
         pub m_force_module_active: bool,
     }
@@ -44,9 +47,7 @@ mod __TouchInputModule_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -59,39 +60,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_allow_activation_on_standalone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -104,41 +93,28 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_allowActivationOnStandalone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_allowActivationOnStandalone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_allow_activation_on_standalone(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_allow_activation_on_standalone(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_allow_activation_on_standalone::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_allow_activation_on_standalone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_allow_activation_on_standalone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
                 "set_allowActivationOnStandalone",
@@ -150,40 +126,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_allowActivationOnStandalone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_allowActivationOnStandalone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_allow_activation_on_standalone(
-        this: TouchInputModule,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_allow_activation_on_standalone(this: TouchInputModule, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_allow_activation_on_standalone::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_allow_activation_on_standalone::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_force_module_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -196,41 +159,28 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "get_forceModuleActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "get_forceModuleActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_force_module_active(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_force_module_active(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_force_module_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_force_module_active::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_force_module_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
                 "set_forceModuleActive",
@@ -242,40 +192,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "set_forceModuleActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "set_forceModuleActive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_force_module_active(
-        this: TouchInputModule,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_force_module_active(this: TouchInputModule, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_force_module_active::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_force_module_active::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -288,39 +225,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "UpdateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "UpdateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_module(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_module(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_module_supported {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -333,39 +258,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "IsModuleSupported",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "IsModuleSupported",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_module_supported(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_module_supported(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_module_supported::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_module_supported::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_should_activate_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -378,39 +291,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ShouldActivateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ShouldActivateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn should_activate_module(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn should_activate_module(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_should_activate_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_should_activate_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_use_fake_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -423,39 +324,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "UseFakeInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "UseFakeInput",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn use_fake_input(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn use_fake_input(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_use_fake_input::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_use_fake_input::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -468,39 +357,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "Process",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "Process",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fake_touches {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -513,39 +390,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "FakeTouches",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "FakeTouches",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fake_touches(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn fake_touches(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fake_touches::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_fake_touches::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_touch_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -558,40 +423,32 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessTouchEvents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessTouchEvents",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_touch_events(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process_touch_events(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process_touch_events::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process_touch_events::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_touch_press {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
                 "ProcessTouchPress",
@@ -603,18 +460,15 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ProcessTouchPress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ProcessTouchPress",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn process_touch_press(
@@ -630,20 +484,14 @@ mod __TouchInputModule_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_process_touch_press::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_process_touch_press::get_method_info().method_ptr);
         inner(this, pointer_event, pressed, released, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_deactivate_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -656,39 +504,27 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "DeactivateModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "DeactivateModule",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn deactivate_module(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn deactivate_module(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_deactivate_module::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_deactivate_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TouchInputModule as ::unity2::ClassIdentity>::class(),
@@ -701,32 +537,20 @@ mod __TouchInputModule_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TouchInputModule as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TouchInputModule as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: TouchInputModule,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TouchInputModule,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: TouchInputModule, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TouchInputModule, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -736,30 +560,21 @@ pub trait ITouchInputModuleMethods: ITouchInputModule {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_allowActivationOnStandalone()` overload"]
     fn get_allow_activation_on_standalone(self) -> bool {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::get_allow_activation_on_standalone(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::get_allow_activation_on_standalone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_allowActivationOnStandalone(bool)` overload"]
     fn set_allow_activation_on_standalone(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::set_allow_activation_on_standalone(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -770,113 +585,75 @@ pub trait ITouchInputModuleMethods: ITouchInputModule {
     #[doc = "`get_forceModuleActive()` overload"]
     fn get_force_module_active(self) -> bool {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::get_force_module_active(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::get_force_module_active(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_forceModuleActive(bool)` overload"]
     fn set_force_module_active(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::set_force_module_active(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::set_force_module_active(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateModule()` overload"]
     fn update_module(self) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::update_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsModuleSupported()` overload"]
     fn is_module_supported(self) -> bool {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::is_module_supported(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::is_module_supported(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShouldActivateModule()` overload"]
     fn should_activate_module(self) -> bool {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::should_activate_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::should_activate_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UseFakeInput()` overload"]
     fn use_fake_input(self) -> bool {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::use_fake_input(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Process()` overload"]
     fn process(self) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FakeTouches()` overload"]
     fn fake_touches(self) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::fake_touches(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessTouchEvents()` overload"]
     fn process_touch_events(self) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::process_touch_events(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::process_touch_events(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessTouchPress(crate::unity_engine::event_systems::pointereventdata::PointerEventData, bool, bool)` overload"]
     fn process_touch_press(
         self,
-        pointer_event: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        pointer_event: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
         pressed: impl ::core::convert::Into<bool>,
         released: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::process_touch_press(
                 __receiver,
                 ::core::convert::Into::into(pointer_event),
@@ -889,21 +666,14 @@ pub trait ITouchInputModuleMethods: ITouchInputModule {
     #[doc = "`DeactivateModule()` overload"]
     fn deactivate_module(self) -> () {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TouchInputModule_unity2_raw::deactivate_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TouchInputModule_unity2_raw::deactivate_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TouchInputModule as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TouchInputModule_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
@@ -931,31 +701,31 @@ impl TouchInputModule {
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITouchInputModule;
-    pub use super::ITouchInputModuleMethods;
-    pub use super::TouchInputModule;
-    pub use crate::system::object::IObject;
+    pub use super::{ITouchInputModule, ITouchInputModuleMethods, TouchInputModule};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::baseinputmodule::IBaseInputModule;
     #[cfg(feature = "unity_engine-event_systems-baseinputmodule")]
     pub use crate::unity_engine::event_systems::baseinputmodule::IBaseInputModuleMethods;
-    pub use crate::unity_engine::event_systems::pointerinputmodule::IPointerInputModule;
     #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
     pub use crate::unity_engine::event_systems::pointerinputmodule::IPointerInputModuleMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::{baseinputmodule::IBaseInputModule, pointerinputmodule::IPointerInputModule, uibehaviour::IUIBehaviour},
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

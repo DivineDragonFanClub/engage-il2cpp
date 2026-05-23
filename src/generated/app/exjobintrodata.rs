@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-exjobintrodata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exjobintrodata/ExJobIntroData.md"))]
     #[::unity2::class(namespace = "App", name = "ExJobIntroData")]
@@ -25,12 +25,9 @@ mod __ExJobIntroData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_revenge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ExJobIntroData as ::unity2::ClassIdentity>::class(),
                 "IsRevenge",
@@ -42,32 +39,20 @@ mod __ExJobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExJobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "IsRevenge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExJobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "IsRevenge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_revenge(
-        r#type: crate::app::jobintrodata::JobIntroData_BattleType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::jobintrodata::JobIntroData_BattleType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_revenge::get_offset() as isize),
-        );
+    pub unsafe fn is_revenge(r#type: crate::app::jobintrodata::JobIntroData_BattleType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::jobintrodata::JobIntroData_BattleType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_revenge::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
 }
@@ -75,23 +60,15 @@ mod __ExJobIntroData_unity2_raw {
 #[cfg(feature = "app-exjobintrodata")]
 impl ExJobIntroData {
     #[doc = "`IsRevenge(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]
-    pub fn is_revenge(
-        r#type: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>,
-    ) -> bool {
-        unsafe {
-            __ExJobIntroData_unity2_raw::is_revenge(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_revenge(r#type: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>) -> bool {
+        unsafe { __ExJobIntroData_unity2_raw::is_revenge(::core::convert::Into::into(r#type), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-exjobintrodata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExJobIntroData;
-    pub use super::IExJobIntroData;
+    pub use super::{ExJobIntroData, IExJobIntroData};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

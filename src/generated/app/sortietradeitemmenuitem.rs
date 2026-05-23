@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-sortietradeitemmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietradeitemmenuitem/SortieTradeItemMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "SortieTradeItemMenuItem")]
@@ -42,9 +46,7 @@ mod __SortieTradeItemMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -63,18 +65,15 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -94,28 +93,14 @@ mod __SortieTradeItemMenuItem_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            reciever_unit,
-            index,
-            default_select,
-            selectable_blank,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, reciever_unit, index, default_select, selectable_blank, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -128,41 +113,30 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_attribute(
         this: SortieTradeItemMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            SortieTradeItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_initial_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -175,39 +149,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetInitialColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetInitialColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_initial_color(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_initial_color(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_initial_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_initial_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -220,41 +182,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn a_call(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            SortieTradeItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn a_call(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -267,41 +215,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn b_call(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            SortieTradeItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+    pub unsafe fn b_call(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -314,39 +248,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deselect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -359,39 +281,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnDeselect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnDeselect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_deselect(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_deselect(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_deselect::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_cursor_move_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -404,39 +314,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnCursorMoveEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnCursorMoveEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_cursor_move_end(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_cursor_move_end(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_cursor_move_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_cursor_move_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -449,39 +347,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_select(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_select(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -494,39 +380,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ClearSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ClearSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_select(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_select(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -539,41 +413,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_item(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            SortieTradeItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_item::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_item(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reciever_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -586,41 +446,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetRecieverUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetRecieverUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reciever_unit(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            SortieTradeItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reciever_unit::get_offset() as isize),
-        );
+    pub unsafe fn get_reciever_unit(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_reciever_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_selectable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -633,39 +479,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsSelectable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsSelectable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_selectable(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_selectable(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_selectable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_selectable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_selectable_blank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -678,41 +512,28 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsSelectableBlank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsSelectableBlank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_selectable_blank(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_selectable_blank(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_selectable_blank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_selectable_blank::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_to_select_blank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
                 "EnableToSelectBlank",
@@ -724,42 +545,28 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "EnableToSelectBlank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "EnableToSelectBlank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_to_select_blank(
-        this: SortieTradeItemMenuItem,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_to_select_blank(this: SortieTradeItemMenuItem, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_to_select_blank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_to_select_blank::get_method_info().method_ptr);
         inner(this, enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_attribute_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetAttributeDisable",
@@ -771,40 +578,27 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetAttributeDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetAttributeDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_attribute_disable(
-        this: SortieTradeItemMenuItem,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_attribute_disable(this: SortieTradeItemMenuItem, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SortieTradeItemMenuItem, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_attribute_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_attribute_disable::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_null_or_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::class(),
@@ -817,30 +611,20 @@ mod __SortieTradeItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsNullOrEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieTradeItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsNullOrEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_null_or_empty(
-        this: SortieTradeItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_null_or_empty(this: SortieTradeItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SortieTradeItemMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_null_or_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_null_or_empty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -858,9 +642,7 @@ pub trait ISortieTradeItemMenuItemMethods: ISortieTradeItemMenuItem {
     ) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieTradeItemMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -876,35 +658,23 @@ pub trait ISortieTradeItemMenuItemMethods: ISortieTradeItemMenuItem {
     fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetInitialColor()` overload"]
     fn set_initial_color(self) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::set_initial_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::set_initial_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieTradeItemMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -912,9 +682,7 @@ pub trait ISortieTradeItemMenuItemMethods: ISortieTradeItemMenuItem {
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieTradeItemMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -922,126 +690,79 @@ pub trait ISortieTradeItemMenuItemMethods: ISortieTradeItemMenuItem {
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDeselect()` overload"]
     fn on_deselect(self) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::on_deselect(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnCursorMoveEnd()` overload"]
     fn on_cursor_move_end(self) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::on_cursor_move_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetSelect()` overload"]
     fn set_select(self) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::set_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::set_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClearSelect()` overload"]
     fn clear_select(self) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::clear_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::clear_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnitItem()` overload"]
     fn get_unit_item(self) -> crate::app::unititem::UnitItem {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::get_unit_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetRecieverUnit()` overload"]
     fn get_reciever_unit(self) -> crate::app::unit::Unit {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::get_reciever_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::get_reciever_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsSelectable()` overload"]
     fn is_selectable(self) -> bool {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::is_selectable(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::is_selectable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsSelectableBlank()` overload"]
     fn is_selectable_blank(self) -> bool {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::is_selectable_blank(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::is_selectable_blank(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`EnableToSelectBlank(bool)` overload"]
     fn enable_to_select_blank(self, enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SortieTradeItemMenuItem_unity2_raw::enable_to_select_blank(
                 __receiver,
                 ::core::convert::Into::into(enabled),
@@ -1053,27 +774,16 @@ pub trait ISortieTradeItemMenuItemMethods: ISortieTradeItemMenuItem {
     fn set_attribute_disable(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::set_attribute_disable(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::set_attribute_disable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`IsNullOrEmpty()` overload"]
     fn is_null_or_empty(self) -> bool {
         unsafe {
             let __receiver =
-                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SortieTradeItemMenuItem_unity2_raw::is_null_or_empty(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SortieTradeItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SortieTradeItemMenuItem_unity2_raw::is_null_or_empty(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1098,14 +808,7 @@ impl SortieTradeItemMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as ISortieTradeItemMenuItemMethods>::ctor(
-            this,
-            unit,
-            reciever_unit,
-            index,
-            default_select,
-            selectable_blank,
-        );
+        <Self as ISortieTradeItemMenuItemMethods>::ctor(this, unit, reciever_unit, index, default_select, selectable_blank);
         this
     }
 }
@@ -1113,16 +816,15 @@ impl SortieTradeItemMenuItem {
 #[cfg(feature = "app-sortietradeitemmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISortieTradeItemMenuItem;
-    pub use super::ISortieTradeItemMenuItemMethods;
-    pub use super::SortieTradeItemMenuItem;
-    pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+    pub use super::{ISortieTradeItemMenuItem, ISortieTradeItemMenuItemMethods, SortieTradeItemMenuItem};
     #[cfg(feature = "app-basicitemmenuitem")]
     pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicitemmenuitem::IBasicItemMenuItem, basicmenuitem::IBasicMenuItem},
+        system::object::IObject,
+    };
 }

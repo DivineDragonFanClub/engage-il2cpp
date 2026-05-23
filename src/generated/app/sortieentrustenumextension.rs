@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-sortieentrustenumextension-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustenumextension/SortieEntrustEnumExtension.md"))]
     #[::unity2::class(namespace = "App", name = "SortieEntrustEnumExtension")]
@@ -25,10 +25,9 @@ mod __SortieEntrustEnumExtension_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_basic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsBasic",
@@ -40,42 +39,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsBasic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsBasic",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_basic(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_basic::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_basic::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_enhance_person {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsEnhancePerson",
@@ -87,42 +76,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsEnhancePerson",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsEnhancePerson",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_enhance_person(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_enhance_person::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_enhance_person::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_rod_low {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsRodLow",
@@ -134,42 +113,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsRodLow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsRodLow",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_rod_low(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_rod_low::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_rod_low::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_rod_high {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsRodHigh",
@@ -181,42 +150,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsRodHigh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsRodHigh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_rod_high(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_rod_high::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_rod_high::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_range {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsRange",
@@ -228,42 +187,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsRange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsRange",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_range(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_range::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_range::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_special {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsSpecial",
@@ -275,42 +224,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsSpecial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsSpecial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_special(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_special::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_special::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_sub {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsSub",
@@ -322,42 +261,29 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsSub",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsSub",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_sub(
-        progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_sub::get_offset() as isize),
-        );
+    pub unsafe fn is_sub(progress: crate::app::sortieentrustprogress::SortieEntrustProgress, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_sub::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_vulnerary {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsVulnerary",
@@ -369,42 +295,32 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsVulnerary",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsVulnerary",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_vulnerary(
         progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_vulnerary::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_vulnerary::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: sortieentrustprogress :: SortieEntrustProgress as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::sortieentrustprogress::SortieEntrustProgress as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::class(),
                 "IsEnd",
@@ -416,32 +332,20 @@ mod __SortieEntrustEnumExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SortieEntrustEnumExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_end(
-        progress: crate::app::sortieentrustprogress::SortieEntrustProgress,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::sortieentrustprogress::SortieEntrustProgress,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_end::get_offset() as isize),
-        );
+    pub unsafe fn is_end(progress: crate::app::sortieentrustprogress::SortieEntrustProgress, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::sortieentrustprogress::SortieEntrustProgress, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_end::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
 }
@@ -449,111 +353,55 @@ mod __SortieEntrustEnumExtension_unity2_raw {
 #[cfg(feature = "app-sortieentrustenumextension")]
 impl SortieEntrustEnumExtension {
     #[doc = "`IsBasic(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_basic(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_basic(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_basic(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_basic(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsEnhancePerson(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_enhance_person(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_enhance_person(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_enhance_person(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_enhance_person(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRodLow(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_rod_low(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_rod_low(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_rod_low(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_rod_low(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRodHigh(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_rod_high(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_rod_high(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_rod_high(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_rod_high(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRange(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_range(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_range(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_range(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_range(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSpecial(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_special(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_special(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_special(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_special(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSub(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_sub(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_sub(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_sub(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_sub(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsVulnerary(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_vulnerary(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_vulnerary(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_vulnerary(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_vulnerary(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
+
     #[doc = "`IsEnd(crate::app::sortieentrustprogress::SortieEntrustProgress)` overload"]
-    pub fn is_end(
-        progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>,
-    ) -> bool {
-        unsafe {
-            __SortieEntrustEnumExtension_unity2_raw::is_end(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_end(progress: impl ::core::convert::Into<crate::app::sortieentrustprogress::SortieEntrustProgress>) -> bool {
+        unsafe { __SortieEntrustEnumExtension_unity2_raw::is_end(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-sortieentrustenumextension")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISortieEntrustEnumExtension;
-    pub use super::SortieEntrustEnumExtension;
+    pub use super::{ISortieEntrustEnumExtension, SortieEntrustEnumExtension};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

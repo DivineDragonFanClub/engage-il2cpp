@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/drawobjectcategoryinfo/DrawObjectCategoryInfo.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom",
-        name = "DrawObjectCategoryInfo"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom", name = "DrawObjectCategoryInfo")]
     #[parent(crate::system::object::Object)]
     pub struct DrawObjectCategoryInfo {
         #[static_field]
@@ -32,9 +29,7 @@ mod __DrawObjectCategoryInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_no_override_state_index_begin {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
@@ -47,37 +42,27 @@ mod __DrawObjectCategoryInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetNoOverrideStateIndexBegin",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetNoOverrideStateIndexBegin",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_no_override_state_index_begin(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_no_override_state_index_begin::get_offset() as isize),
-        );
+    pub unsafe fn get_no_override_state_index_begin(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_no_override_state_index_begin::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
@@ -90,36 +75,28 @@ mod __DrawObjectCategoryInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
                 "IsVisible",
@@ -131,35 +108,36 @@ mod __DrawObjectCategoryInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                    "IsVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
+                        "IsVisible",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_visible(
-        category : crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory,
+        category: crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_is_visible :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_is_visible::get_method_info().method_ptr);
         inner(category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_visibility {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
                 "SetVisibility",
@@ -171,35 +149,34 @@ mod __DrawObjectCategoryInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetVisibility",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetVisibility",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_visibility(
-        category : crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory,
+        category: crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
         visibility: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_visibility :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_visibility::get_method_info().method_ptr);
         inner(category, visibility, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::class(),
@@ -212,30 +189,20 @@ mod __DrawObjectCategoryInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawObjectCategoryInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DrawObjectCategoryInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DrawObjectCategoryInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DrawObjectCategoryInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -244,30 +211,24 @@ mod __DrawObjectCategoryInfo_unity2_raw {
 impl DrawObjectCategoryInfo {
     #[doc = "`GetNoOverrideStateIndexBegin()` overload"]
     pub fn get_no_override_state_index_begin() -> i32 {
-        unsafe {
-            __DrawObjectCategoryInfo_unity2_raw::get_no_override_state_index_begin(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DrawObjectCategoryInfo_unity2_raw::get_no_override_state_index_begin(::core::option::Option::None) }
     }
+
     #[doc = "`Initialize()` overload"]
     pub fn initialize() -> () {
         unsafe { __DrawObjectCategoryInfo_unity2_raw::initialize(::core::option::Option::None) }
     }
+
     #[doc = "`IsVisible(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory)` overload"]
     pub fn is_visible(
-        category : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory >,
+        category: impl ::core::convert::Into<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory>,
     ) -> bool {
-        unsafe {
-            __DrawObjectCategoryInfo_unity2_raw::is_visible(
-                ::core::convert::Into::into(category),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DrawObjectCategoryInfo_unity2_raw::is_visible(::core::convert::Into::into(category), ::core::option::Option::None) }
     }
+
     #[doc = "`SetVisibility(crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory, bool)` overload"]
     pub fn set_visibility(
-        category : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: drawobjectcategory :: DrawObjectCategory >,
+        category: impl ::core::convert::Into<crate::unity_engine::rendering::universal::custom::drawobjectcategory::DrawObjectCategory>,
         visibility: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
@@ -285,9 +246,8 @@ pub trait IDrawObjectCategoryInfoMethods: IDrawObjectCategoryInfo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DrawObjectCategoryInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DrawObjectCategoryInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DrawObjectCategoryInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -315,9 +275,7 @@ impl DrawObjectCategoryInfo {
 #[cfg(feature = "unity_engine-rendering-universal-custom-drawobjectcategoryinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DrawObjectCategoryInfo;
-    pub use super::IDrawObjectCategoryInfo;
-    pub use super::IDrawObjectCategoryInfoMethods;
+    pub use super::{DrawObjectCategoryInfo, IDrawObjectCategoryInfo, IDrawObjectCategoryInfoMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

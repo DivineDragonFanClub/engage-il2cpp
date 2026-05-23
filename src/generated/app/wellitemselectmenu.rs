@@ -2,17 +2,23 @@
 
 #[cfg(feature = "app-wellitemselectmenu-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem};
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::wellitemselectmenuitem::{IWellItemSelectMenuItem, WellItemSelectMenuItem};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem},
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+            wellitemselectmenuitem::{IWellItemSelectMenuItem, WellItemSelectMenuItem},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]
     #[::unity2::class(namespace = "App", name = "WellItemSelectMenu.SelectedItem")]
@@ -24,21 +30,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellitemselectmenu/WellItemSelectMenu_Kinds.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct WellItemSelectMenu_Kinds {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for WellItemSelectMenu_Kinds {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "WellItemSelectMenu.Kinds";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -49,10 +48,7 @@ mod __types {
 
     impl ::unity2::IlType for WellItemSelectMenu_Kinds {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -85,21 +81,15 @@ mod __types {
         #[rename(name = "ShowRowNum")]
         pub show_row_num: i32,
         #[rename(name = "m_SavedFullMenuItemList")]
-        pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         #[rename(name = "m_SortMenuItemList")]
-        pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         #[rename(name = "m_ItemKind")]
         pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
         #[rename(name = "m_Selects")]
         pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
         #[rename(name = "m_SelectedItemList")]
-        pub m_selected_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicitemmenuitem::BasicItemMenuItem,
-        >,
+        pub m_selected_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem>,
     }
 }
 
@@ -115,10 +105,12 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: wellitemselectmenuitem :: WellItemSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::wellitemselectmenuitem::WellItemSelectMenuItem as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -130,18 +122,15 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -157,26 +146,14 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
             i32,
             crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            owner_item_index,
-            menu_item,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, owner_item_index, menu_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_same {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -192,18 +169,15 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
-                    "IsSame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
+                        "IsSame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_same(
@@ -212,25 +186,15 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
         owner_item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            WellItemSelectMenu_SelectedItem,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_same::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu_SelectedItem, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_same::get_method_info().method_ptr);
         inner(this, unit, owner_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_original_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::class(),
@@ -243,18 +207,15 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
-                    "get_OriginalMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu_SelectedItem as ::unity2::ClassIdentity>::NAME,
+                        "get_OriginalMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_original_menu_item(
@@ -264,12 +225,8 @@ mod __WellItemSelectMenu_SelectedItem_unity2_raw {
         let inner: extern "C" fn(
             WellItemSelectMenu_SelectedItem,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_original_menu_item::get_offset() as isize),
-        );
+        ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem =
+            ::core::mem::transmute(__lookup_get_original_menu_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -281,15 +238,11 @@ pub trait IWellItemSelectMenu_SelectedItemMethods: IWellItemSelectMenu_SelectedI
         self,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         owner_item_index: impl ::core::convert::Into<i32>,
-        menu_item: impl ::core::convert::Into<
-            crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-        >,
+        menu_item: impl ::core::convert::Into<crate::app::wellitemselectmenuitem::WellItemSelectMenuItem>,
     ) -> () {
         unsafe {
             let __receiver =
-                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_SelectedItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -300,16 +253,10 @@ pub trait IWellItemSelectMenu_SelectedItemMethods: IWellItemSelectMenu_SelectedI
         }
     }
     #[doc = "`IsSame(crate::app::unit::Unit, i32)` overload"]
-    fn is_same(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        owner_item_index: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    fn is_same(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, owner_item_index: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             let __receiver =
-                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_SelectedItem_unity2_raw::is_same(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -322,13 +269,8 @@ pub trait IWellItemSelectMenu_SelectedItemMethods: IWellItemSelectMenu_SelectedI
     fn get_original_menu_item(self) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
         unsafe {
             let __receiver =
-                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __WellItemSelectMenu_SelectedItem_unity2_raw::get_original_menu_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <WellItemSelectMenu_SelectedItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_SelectedItem_unity2_raw::get_original_menu_item(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -339,11 +281,7 @@ impl<__T: IWellItemSelectMenu_SelectedItem> IWellItemSelectMenu_SelectedItemMeth
 #[cfg(feature = "app-wellitemselectmenu")]
 impl WellItemSelectMenu_SelectedItem {
     #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-    ) -> Self {
+    pub fn new(unit: crate::app::unit::Unit, owner_item_index: i32, menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -351,12 +289,7 @@ impl WellItemSelectMenu_SelectedItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellItemSelectMenu_SelectedItemMethods>::ctor(
-            this,
-            unit,
-            owner_item_index,
-            menu_item,
-        );
+        <Self as IWellItemSelectMenu_SelectedItemMethods>::ctor(this, unit, owner_item_index, menu_item);
         this
     }
 }
@@ -370,9 +303,7 @@ mod __WellItemSelectMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_selected_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -385,41 +316,30 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_SelectedKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_SelectedKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_selected_kind(
         this: WellItemSelectMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::itemdata::ItemData_Kinds {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_selected_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData_Kinds =
+            ::core::mem::transmute(__lookup_get_selected_kind::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_common_display_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -432,41 +352,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_m_CommonDisplayIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_m_CommonDisplayIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_m_common_display_index(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_m_common_display_index(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_m_common_display_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_m_common_display_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_common_display_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "set_m_CommonDisplayIndex",
@@ -478,42 +385,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "set_m_CommonDisplayIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "set_m_CommonDisplayIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_m_common_display_index(
-        this: WellItemSelectMenu,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_m_common_display_index(this: WellItemSelectMenu, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_m_common_display_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_m_common_display_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -525,42 +418,34 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         parent: crate::app::procinst::ProcInst,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::wellitemselectmenu::WellItemSelectMenu {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::wellitemselectmenu::WellItemSelectMenu = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::wellitemselectmenu::WellItemSelectMenu =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(parent, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: wellitemselectmenucontent :: WellItemSelectMenuContent as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::wellitemselectmenucontent::WellItemSelectMenuContent as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -572,49 +457,36 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: WellItemSelectMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::wellitemselectmenucontent::WellItemSelectMenuContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             WellItemSelectMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::wellitemselectmenucontent::WellItemSelectMenuContent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, menu_item_list, menu_content, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_select_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -627,41 +499,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_select_item(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select_item::get_offset() as isize),
-        );
+    pub unsafe fn get_select_item(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_select_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_save_select_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -674,39 +532,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SaveSelectItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SaveSelectItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn save_select_item(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn save_select_item(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_select_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_save_select_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_select_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -719,43 +565,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_select_unit(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select_unit::get_offset() as isize),
-        );
+    pub unsafe fn get_select_unit(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_select_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateUnit",
@@ -767,43 +598,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_unit(
-        this: WellItemSelectMenu,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_unit::get_offset() as isize),
-        );
+    pub unsafe fn update_unit(this: WellItemSelectMenu, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(WellItemSelectMenu, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_unit::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_unit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -819,18 +634,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_unit_2(
@@ -839,25 +651,15 @@ mod __WellItemSelectMenu_unity2_raw {
         is_chara_only_on: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            crate::app::unit::Unit,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_unit_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu, crate::app::unit::Unit, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_unit_2::get_method_info().method_ptr);
         inner(this, unit, is_chara_only_on, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_item_help {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
@@ -873,18 +675,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateItemHelp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateItemHelp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_item_help(
@@ -893,25 +692,15 @@ mod __WellItemSelectMenu_unity2_raw {
         item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_item_help::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu, crate::app::unit::Unit, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_item_help::get_method_info().method_ptr);
         inner(this, unit, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_marking_item_full {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -924,39 +713,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsMarkingItemFull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsMarkingItemFull",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_marking_item_full(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_marking_item_full(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_marking_item_full::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_marking_item_full::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_marking_item_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -969,40 +746,32 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "IsMarkingItemEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "IsMarkingItemEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_marking_item_empty(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_marking_item_empty(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_marking_item_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_marking_item_empty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_selected_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: wellitemselectmenuitem :: WellItemSelectMenuItem as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::wellitemselectmenuitem::WellItemSelectMenuItem as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "AddSelectedItem",
@@ -1014,18 +783,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "AddSelectedItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "AddSelectedItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_selected_item(
@@ -1041,26 +807,14 @@ mod __WellItemSelectMenu_unity2_raw {
             i32,
             crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_selected_item::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            owner_item_index,
-            menu_item,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_add_selected_item::get_method_info().method_ptr);
+        inner(this, unit, owner_item_index, menu_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_selected_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1076,18 +830,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "RemoveSelectedItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "RemoveSelectedItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_selected_item(
@@ -1096,25 +847,15 @@ mod __WellItemSelectMenu_unity2_raw {
         owner_item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_selected_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_selected_item::get_method_info().method_ptr);
         inner(this, unit, owner_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_selected_last_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1127,39 +868,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "RemoveSelectedLastItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "RemoveSelectedLastItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn remove_selected_last_item(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn remove_selected_last_item(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_remove_selected_last_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_remove_selected_last_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_last_selected_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1172,46 +901,32 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetLastSelectedItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetLastSelectedItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_last_selected_item(
         this: WellItemSelectMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_last_selected_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem =
+            ::core::mem::transmute(__lookup_get_last_selected_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_kind_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "SetItemKindIndex",
@@ -1223,18 +938,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetItemKindIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetItemKindIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item_kind_index(
@@ -1244,22 +956,15 @@ mod __WellItemSelectMenu_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item_kind_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item_kind_index::get_method_info().method_ptr);
         inner(this, kind_index, is_auto_select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_first_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "SetFirstKind",
@@ -1271,42 +976,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetFirstKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetFirstKind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_first_kind(
-        this: WellItemSelectMenu,
-        is_auto_select: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_first_kind(this: WellItemSelectMenu, is_auto_select: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_first_kind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_first_kind::get_method_info().method_ptr);
         inner(this, is_auto_select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_last_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "SetLastKind",
@@ -1318,40 +1009,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetLastKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetLastKind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_last_kind(
-        this: WellItemSelectMenu,
-        is_auto_select: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_last_kind(this: WellItemSelectMenu, is_auto_select: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_last_kind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_last_kind::get_method_info().method_ptr);
         inner(this, is_auto_select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_first_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1364,39 +1042,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetFirstSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetFirstSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_first_selection(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_first_selection(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_first_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_first_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_first_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1409,40 +1075,31 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "ResetFirstSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "ResetFirstSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_first_selection(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_first_selection(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_first_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_first_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_select_index_on_change_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: wellitemselectmenu :: WellItemSelectMenu_Kinds as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::wellitemselectmenu::WellItemSelectMenu_Kinds as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "SetSelectIndexOnChangeMenu",
@@ -1454,18 +1111,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "SetSelectIndexOnChangeMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "SetSelectIndexOnChangeMenu",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_select_index_on_change_menu(
@@ -1474,25 +1128,15 @@ mod __WellItemSelectMenu_unity2_raw {
         kind: crate::app::wellitemselectmenu::WellItemSelectMenu_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            i32,
-            crate::app::wellitemselectmenu::WellItemSelectMenu_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_select_index_on_change_menu::get_offset() as isize),
-        );
+        let inner: extern "C" fn(WellItemSelectMenu, i32, crate::app::wellitemselectmenu::WellItemSelectMenu_Kinds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_select_index_on_change_menu::get_method_info().method_ptr);
         inner(this, common_display_index, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hold_selection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1505,41 +1149,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "HoldSelection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "HoldSelection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hold_selection(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hold_selection(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hold_selection::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hold_selection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "UpdateMenu",
@@ -1551,40 +1182,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_menu(
-        this: WellItemSelectMenu,
-        is_auto_select: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_menu(this: WellItemSelectMenu, is_auto_select: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_menu::get_method_info().method_ptr);
         inner(this, is_auto_select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selectable_item_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1597,39 +1215,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectableItemCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectableItemCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_selectable_item_count(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_selectable_item_count(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_selectable_item_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_selectable_item_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1642,41 +1248,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            WellItemSelectMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_after_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1689,41 +1281,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "AfterBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn after_build(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn after_build(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_after_build::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clamp_menu_item_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "ClampMenuItemIndex",
@@ -1735,42 +1314,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "ClampMenuItemIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "ClampMenuItemIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clamp_menu_item_index(
-        this: WellItemSelectMenu,
-        item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn clamp_menu_item_index(this: WellItemSelectMenu, item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(WellItemSelectMenu, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clamp_menu_item_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clamp_menu_item_index::get_method_info().method_ptr);
         inner(this, item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "KeyUp",
@@ -1782,42 +1347,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_up(
-        this: WellItemSelectMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_up(this: WellItemSelectMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_up::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "KeyDown",
@@ -1829,42 +1380,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyDown",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_down(
-        this: WellItemSelectMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_down(this: WellItemSelectMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_down::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_down::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_left {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "KeyLeft",
@@ -1876,42 +1413,28 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyLeft",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyLeft",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_left(
-        this: WellItemSelectMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_left(this: WellItemSelectMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_left::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_left::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_key_right {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
                 "KeyRight",
@@ -1923,40 +1446,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "KeyRight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "KeyRight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn key_right(
-        this: WellItemSelectMenu,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn key_right(this: WellItemSelectMenu, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_key_right::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_key_right::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -1969,39 +1479,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "Sort",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "Sort",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn sort(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn sort(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_sort::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_sort::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare_pool_menu_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
                 <crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type(),
@@ -2017,18 +1515,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "ComparePoolMenuItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "ComparePoolMenuItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare_pool_menu_item(
@@ -2040,20 +1535,14 @@ mod __WellItemSelectMenu_unity2_raw {
             crate::app::basicmenuitem::BasicMenuItem,
             crate::app::basicmenuitem::BasicMenuItem,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_pool_menu_item::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_compare_pool_menu_item::get_method_info().method_ptr);
         inner(x, y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_marking_item_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -2066,18 +1555,15 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetMarkingItemList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetMarkingItemList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_marking_item_list(
@@ -2087,22 +1573,15 @@ mod __WellItemSelectMenu_unity2_raw {
         let inner: extern "C" fn(
             WellItemSelectMenu,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::unititem::UnitItem,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_marking_item_list::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem> =
+            ::core::mem::transmute(__lookup_get_marking_item_list::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_put_off_marking_items {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -2115,39 +1594,27 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    "PutOffMarkingItems",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        "PutOffMarkingItems",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn put_off_marking_items(
-        this: WellItemSelectMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn put_off_marking_items(this: WellItemSelectMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_put_off_marking_items::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_put_off_marking_items::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <WellItemSelectMenu as ::unity2::ClassIdentity>::class(),
@@ -2160,26 +1627,19 @@ mod __WellItemSelectMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <WellItemSelectMenu as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -2187,16 +1647,10 @@ mod __WellItemSelectMenu_unity2_raw {
 #[cfg(feature = "app-wellitemselectmenu")]
 impl WellItemSelectMenu {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(
-        parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> crate::app::wellitemselectmenu::WellItemSelectMenu {
-        unsafe {
-            __WellItemSelectMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(parent),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind(parent: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::wellitemselectmenu::WellItemSelectMenu {
+        unsafe { __WellItemSelectMenu_unity2_raw::create_bind(::core::convert::Into::into(parent), ::core::option::Option::None) }
     }
+
     #[doc = "`ComparePoolMenuItem(crate::app::basicmenuitem::BasicMenuItem, crate::app::basicmenuitem::BasicMenuItem)` overload"]
     pub fn compare_pool_menu_item(
         x: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
@@ -2210,6 +1664,7 @@ impl WellItemSelectMenu {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __WellItemSelectMenu_unity2_raw::cctor(::core::option::Option::None) }
@@ -2221,56 +1676,32 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
     #[doc = "`get_SelectedKind()` overload"]
     fn get_selected_kind(self) -> crate::app::itemdata::ItemData_Kinds {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_selected_kind(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_selected_kind(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_m_CommonDisplayIndex()` overload"]
     fn get_m_common_display_index(self) -> i32 {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_m_common_display_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_m_common_display_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_CommonDisplayIndex(i32)` overload"]
     fn set_m_common_display_index(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::set_m_common_display_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::set_m_common_display_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::wellitemselectmenucontent::WellItemSelectMenuContent)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<
-            crate::app::wellitemselectmenucontent::WellItemSelectMenuContent,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::wellitemselectmenucontent::WellItemSelectMenuContent>,
     ) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
@@ -2282,62 +1713,35 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
     #[doc = "`GetSelectItem()` overload"]
     fn get_select_item(self) -> crate::app::unititem::UnitItem {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_select_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_select_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SaveSelectItem()` overload"]
     fn save_select_item(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::save_select_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::save_select_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetSelectUnit()` overload"]
     fn get_select_unit(self) -> crate::app::unit::Unit {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_select_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_select_unit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateUnit(crate::app::unit::Unit)` overload"]
     fn update_unit(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::update_unit(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::update_unit(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateUnit(crate::app::unit::Unit, bool)` overload"]
-    fn update_unit_2(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        is_chara_only_on: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn update_unit_2(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, is_chara_only_on: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::update_unit_2(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -2353,9 +1757,7 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
         item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
     ) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::update_item_help(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -2367,25 +1769,15 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
     #[doc = "`IsMarkingItemFull()` overload"]
     fn is_marking_item_full(self) -> bool {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::is_marking_item_full(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::is_marking_item_full(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsMarkingItemEmpty()` overload"]
     fn is_marking_item_empty(self) -> bool {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::is_marking_item_empty(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::is_marking_item_empty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddSelectedItem(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` overload"]
@@ -2393,14 +1785,10 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
         self,
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         owner_item_index: impl ::core::convert::Into<i32>,
-        menu_item: impl ::core::convert::Into<
-            crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-        >,
+        menu_item: impl ::core::convert::Into<crate::app::wellitemselectmenuitem::WellItemSelectMenuItem>,
     ) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::add_selected_item(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -2411,15 +1799,9 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
         }
     }
     #[doc = "`RemoveSelectedItem(crate::app::unit::Unit, i32)` overload"]
-    fn remove_selected_item(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        owner_item_index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn remove_selected_item(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, owner_item_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::remove_selected_item(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -2431,37 +1813,21 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
     #[doc = "`RemoveSelectedLastItem()` overload"]
     fn remove_selected_last_item(self) -> bool {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::remove_selected_last_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::remove_selected_last_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetLastSelectedItem()` overload"]
     fn get_last_selected_item(self) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_last_selected_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_last_selected_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetItemKindIndex(i32, bool)` overload"]
-    fn set_item_kind_index(
-        self,
-        kind_index: impl ::core::convert::Into<i32>,
-        is_auto_select: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn set_item_kind_index(self, kind_index: impl ::core::convert::Into<i32>, is_auto_select: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::set_item_kind_index(
                 __receiver,
                 ::core::convert::Into::into(kind_index),
@@ -2473,51 +1839,29 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
     #[doc = "`SetFirstKind(bool)` overload"]
     fn set_first_kind(self, is_auto_select: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::set_first_kind(
-                __receiver,
-                ::core::convert::Into::into(is_auto_select),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::set_first_kind(__receiver, ::core::convert::Into::into(is_auto_select), ::core::option::Option::None)
         }
     }
     #[doc = "`SetLastKind(bool)` overload"]
     fn set_last_kind(self, is_auto_select: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::set_last_kind(
-                __receiver,
-                ::core::convert::Into::into(is_auto_select),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::set_last_kind(__receiver, ::core::convert::Into::into(is_auto_select), ::core::option::Option::None)
         }
     }
     #[doc = "`SetFirstSelection()` overload"]
     fn set_first_selection(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::set_first_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::set_first_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetFirstSelection()` overload"]
     fn reset_first_selection(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::reset_first_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::reset_first_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetSelectIndexOnChangeMenu(i32, crate::app::wellitemselectmenu::WellItemSelectMenu_Kinds)` overload"]
@@ -2527,9 +1871,7 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
         kind: impl ::core::convert::Into<crate::app::wellitemselectmenu::WellItemSelectMenu_Kinds>,
     ) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::set_select_index_on_change_menu(
                 __receiver,
                 ::core::convert::Into::into(common_display_index),
@@ -2541,156 +1883,92 @@ pub trait IWellItemSelectMenuMethods: IWellItemSelectMenu {
     #[doc = "`HoldSelection()` overload"]
     fn hold_selection(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::hold_selection(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::hold_selection(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMenu(bool)` overload"]
     fn update_menu(self, is_auto_select: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::update_menu(
-                __receiver,
-                ::core::convert::Into::into(is_auto_select),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::update_menu(__receiver, ::core::convert::Into::into(is_auto_select), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSelectableItemCount()` overload"]
     fn get_selectable_item_count(self) -> i32 {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_selectable_item_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_selectable_item_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AfterBuild()` overload"]
     fn after_build(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ClampMenuItemIndex(i32)` overload"]
     fn clamp_menu_item_index(self, item_index: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::clamp_menu_item_index(
-                __receiver,
-                ::core::convert::Into::into(item_index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::clamp_menu_item_index(__receiver, ::core::convert::Into::into(item_index), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyUp(bool)` overload"]
     fn key_up(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::key_up(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyDown(bool)` overload"]
     fn key_down(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::key_down(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyLeft(bool)` overload"]
     fn key_left(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::key_left(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`KeyRight(bool)` overload"]
     fn key_right(self, is_trigger: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::key_right(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`Sort()` overload"]
     fn sort(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __WellItemSelectMenu_unity2_raw::sort(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMarkingItemList()` overload"]
-    fn get_marking_item_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem> {
+    fn get_marking_item_list(self) -> crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem> {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::get_marking_item_list(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::get_marking_item_list(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PutOffMarkingItems()` overload"]
     fn put_off_marking_items(self) -> () {
         unsafe {
-            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __WellItemSelectMenu_unity2_raw::put_off_marking_items(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <WellItemSelectMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __WellItemSelectMenu_unity2_raw::put_off_marking_items(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2702,9 +1980,7 @@ impl<__T: IWellItemSelectMenu> IWellItemSelectMenuMethods for __T {}
 impl WellItemSelectMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::wellitemselectmenucontent::WellItemSelectMenuContent)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::wellitemselectmenucontent::WellItemSelectMenuContent,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
@@ -2722,35 +1998,31 @@ impl WellItemSelectMenu {
 #[cfg(feature = "app-wellitemselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IWellItemSelectMenu;
-    pub use super::IWellItemSelectMenuMethods;
-    pub use super::IWellItemSelectMenu_SelectedItem;
-    pub use super::IWellItemSelectMenu_SelectedItemMethods;
-    pub use super::WellItemSelectMenu;
-    pub use super::WellItemSelectMenu_Kinds;
-    pub use super::WellItemSelectMenu_SelectedItem;
-    pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+    pub use super::{
+        IWellItemSelectMenu, IWellItemSelectMenuMethods, IWellItemSelectMenu_SelectedItem, IWellItemSelectMenu_SelectedItemMethods,
+        WellItemSelectMenu, WellItemSelectMenu_Kinds, WellItemSelectMenu_SelectedItem,
+    };
     #[cfg(feature = "app-basicitemmenuitem")]
     pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::wellitemselectmenuitem::IWellItemSelectMenuItem;
     #[cfg(feature = "app-wellitemselectmenuitem")]
     pub use crate::app::wellitemselectmenuitem::IWellItemSelectMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{
+            basicitemmenuitem::IBasicItemMenuItem, basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst,
+            wellitemselectmenuitem::IWellItemSelectMenuItem,
+        },
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

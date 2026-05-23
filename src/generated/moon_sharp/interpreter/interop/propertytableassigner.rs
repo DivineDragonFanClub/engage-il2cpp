@@ -2,22 +2,28 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/propertytableassigner/PropertyTableAssigner.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "PropertyTableAssigner"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "PropertyTableAssigner")]
     #[parent(crate::system::object::Object)]
     pub struct PropertyTableAssigner {
-# [rename (name = "m_Type")] pub m_type : :: unity2 :: SystemType ,
-# [rename (name = "m_PropertyMap")] pub m_property_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: system :: reflection :: propertyinfo :: PropertyInfo > ,
-# [rename (name = "m_SubAssigners")] pub m_sub_assigners : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface > ,
-}
+        #[rename(name = "m_Type")]
+        pub m_type: ::unity2::SystemType,
+        #[rename(name = "m_PropertyMap")]
+        pub m_property_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::system::reflection::propertyinfo::PropertyInfo,
+        >,
+        #[rename(name = "m_SubAssigners")]
+        pub m_sub_assigners: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::SystemType,
+            crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface,
+        >,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner-types")]
@@ -32,9 +38,7 @@ mod __PropertyTableAssigner_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
@@ -50,18 +54,15 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -75,27 +76,15 @@ mod __PropertyTableAssigner_unity2_raw {
             ::unity2::SystemType,
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            r#type,
-            expected_missing_properties,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, r#type, expected_missing_properties, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_expected_missing_property {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PropertyTableAssigner as ::unity2::ClassIdentity>::class(),
                 "AddExpectedMissingProperty",
@@ -107,18 +96,15 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    "AddExpectedMissingProperty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        "AddExpectedMissingProperty",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_expected_missing_property(
@@ -126,24 +112,15 @@ mod __PropertyTableAssigner_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PropertyTableAssigner,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_expected_missing_property::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PropertyTableAssigner, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_expected_missing_property::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_assign_property {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -160,18 +137,15 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    "TryAssignProperty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        "TryAssignProperty",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_assign_property(
@@ -187,20 +161,14 @@ mod __PropertyTableAssigner_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_assign_property::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_try_assign_property::get_method_info().method_ptr);
         inner(this, obj, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_assign_property {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -217,18 +185,15 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    "AssignProperty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        "AssignProperty",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn assign_property(
@@ -244,20 +209,14 @@ mod __PropertyTableAssigner_unity2_raw {
             ::unity2::Il2CppString,
             crate::moon_sharp::interpreter::dynvalue::DynValue,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_assign_property::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_assign_property::get_method_info().method_ptr);
         inner(this, obj, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_assign_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
@@ -273,18 +232,15 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    "AssignObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        "AssignObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn assign_object(
@@ -298,20 +254,14 @@ mod __PropertyTableAssigner_unity2_raw {
             crate::system::object::Object,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_assign_object::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_assign_object::get_method_info().method_ptr);
         inner(this, obj, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_subassigner_for_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PropertyTableAssigner as ::unity2::ClassIdentity>::class(),
@@ -324,36 +274,36 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    "SetSubassignerForType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        "SetSubassignerForType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_subassigner_for_type(
         this: PropertyTableAssigner,
         property_type: ::unity2::SystemType,
-        assigner : crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface,
+        assigner: crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (PropertyTableAssigner , :: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_subassigner_for_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            PropertyTableAssigner,
+            ::unity2::SystemType,
+            crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_subassigner_for_type::get_method_info().method_ptr);
         inner(this, property_type, assigner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
@@ -369,18 +319,15 @@ mod __PropertyTableAssigner_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
-                    "MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyTableAssigner as ::unity2::ClassIdentity>::NAME,
+                        "MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(
@@ -389,7 +336,14 @@ mod __PropertyTableAssigner_unity2_raw {
         data: crate::moon_sharp::interpreter::table::Table,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (PropertyTableAssigner , crate :: system :: object :: Object , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            PropertyTableAssigner,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::table::Table,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(
+            __lookup_moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked::get_method_info().method_ptr,
+        );
         inner(this, obj, data, __unity2_method_info)
     }
 }
@@ -403,9 +357,8 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
         expected_missing_properties: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
     ) -> () {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PropertyTableAssigner_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -415,14 +368,10 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
         }
     }
     #[doc = "`AddExpectedMissingProperty(::unity2::Il2CppString)` overload"]
-    fn add_expected_missing_property(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn add_expected_missing_property(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PropertyTableAssigner_unity2_raw::add_expected_missing_property(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -438,9 +387,8 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
         value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     ) -> bool {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PropertyTableAssigner_unity2_raw::try_assign_property(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -458,9 +406,8 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
         value: impl ::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>,
     ) -> () {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PropertyTableAssigner_unity2_raw::assign_property(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -477,9 +424,8 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
         data: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
     ) -> () {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PropertyTableAssigner_unity2_raw::assign_object(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -492,12 +438,11 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
     fn set_subassigner_for_type(
         self,
         property_type: impl ::core::convert::Into<::unity2::SystemType>,
-        assigner : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface >,
+        assigner: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface>,
     ) -> () {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PropertyTableAssigner_unity2_raw::set_subassigner_for_type(
                 __receiver,
                 ::core::convert::Into::into(property_type),
@@ -513,10 +458,14 @@ pub trait IPropertyTableAssignerMethods: IPropertyTableAssigner {
         data: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
     ) -> () {
         unsafe {
-            let __receiver = <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PropertyTableAssigner_unity2_raw :: moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None)
+            let __receiver =
+                <PropertyTableAssigner as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PropertyTableAssigner_unity2_raw::moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(
+                __receiver,
+                ::core::convert::Into::into(obj),
+                ::core::convert::Into::into(data),
+                ::core::option::Option::None,
+            )
         }
     }
 }
@@ -527,10 +476,7 @@ impl<__T: IPropertyTableAssigner> IPropertyTableAssignerMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner")]
 impl PropertyTableAssigner {
     #[doc = "`.ctor(::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(
-        r#type: ::unity2::SystemType,
-        expected_missing_properties: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
+    pub fn new(r#type: ::unity2::SystemType, expected_missing_properties: ::unity2::Array<::unity2::Il2CppString>) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -546,9 +492,7 @@ impl PropertyTableAssigner {
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPropertyTableAssigner;
-    pub use super::IPropertyTableAssignerMethods;
-    pub use super::PropertyTableAssigner;
+    pub use super::{IPropertyTableAssigner, IPropertyTableAssignerMethods, PropertyTableAssigner};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

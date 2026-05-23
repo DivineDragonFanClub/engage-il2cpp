@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-unitringpool-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::singletonclass_1::{ISingletonClass_1, SingletonClass_1};
-    use crate::app::singletonpool_2::{ISingletonPool_2, SingletonPool_2};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+            singletonpool_2::{ISingletonPool_2, SingletonPool_2},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitringpool/UnitRingPool.md"))]
     #[::unity2::class(namespace = "App", name = "UnitRingPool")]
@@ -37,51 +41,33 @@ mod __UnitRingPool_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: UnitRingPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(UnitRingPool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(UnitRingPool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRingPool as ::unity2::ClassIdentity>::class(),
@@ -94,66 +80,45 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "get_Version",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "get_Version",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_version(
-        this: UnitRingPool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_version(this: UnitRingPool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(UnitRingPool, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "TryGet",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "TryGet", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "TryGet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "TryGet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get(
@@ -161,51 +126,33 @@ mod __UnitRingPool_unity2_raw {
         owner: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unitring::UnitRing {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing =
+            ::core::mem::transmute(__lookup_try_get::get_method_info().method_ptr);
         inner(rnid, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_get_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "TryGet",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "TryGet", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "TryGet",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "TryGet",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_get_2(
@@ -213,26 +160,16 @@ mod __UnitRingPool_unity2_raw {
         owner: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unitring::UnitRing {
-        let inner: extern "C" fn(
-            crate::app::ringdata::RingData,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::ringdata::RingData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing =
+            ::core::mem::transmute(__lookup_try_get_2::get_method_info().method_ptr);
         inner(data, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_all_stock_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRingPool as ::unity2::ClassIdentity>::class(),
                 "GetAllStockCount",
@@ -244,39 +181,27 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "GetAllStockCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "GetAllStockCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_all_stock_count(
-        data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_all_stock_count(data: crate::app::ringdata::RingData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_all_stock_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_all_stock_count::get_method_info().method_ptr);
         inner(data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stock_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -292,172 +217,106 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "GetStockCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "GetStockCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stock_count(
-        data: crate::app::ringdata::RingData,
-        is_equipped: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::ringdata::RingData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_stock_count::get_offset() as isize),
-        );
+    pub unsafe fn get_stock_count(data: crate::app::ringdata::RingData, is_equipped: bool, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(crate::app::ringdata::RingData, bool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_stock_count::get_method_info().method_ptr);
         inner(data, is_equipped, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "CanAdd",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "CanAdd", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "CanAdd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "CanAdd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_add(
-        rnid: ::unity2::Il2CppString,
-        stock_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn can_add(rnid: ::unity2::Il2CppString, stock_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, i32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_can_add::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_can_add::get_method_info().method_ptr);
         inner(rnid, stock_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_add_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "CanAdd",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "CanAdd", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "CanAdd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "CanAdd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn can_add_2(
-        ring: crate::app::unitring::UnitRing,
-        stock_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::unitring::UnitRing,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_add_2::get_offset() as isize),
-        );
+    pub unsafe fn can_add_2(ring: crate::app::unitring::UnitRing, stock_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_add_2::get_method_info().method_ptr);
         inner(ring, stock_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "Add",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "Add", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add(
@@ -466,105 +325,64 @@ mod __UnitRingPool_unity2_raw {
         stock_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unitring::UnitRing {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> crate::app::unitring::UnitRing =
+            ::core::mem::transmute(__lookup_add::get_method_info().method_ptr);
         inner(rnid, owner, stock_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "Add",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "Add", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Add",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Add",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn add_2(
-        ring: crate::app::unitring::UnitRing,
-        stock_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::unitring::UnitRing,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_2::get_offset() as isize),
-        );
+    pub unsafe fn add_2(ring: crate::app::unitring::UnitRing, stock_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_2::get_method_info().method_ptr);
         inner(ring, stock_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sub {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "Sub",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "Sub", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Sub",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Sub",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sub(
@@ -573,77 +391,45 @@ mod __UnitRingPool_unity2_raw {
         stock_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sub::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sub::get_method_info().method_ptr);
         inner(rnid, unit, stock_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sub_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "Sub",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "Sub", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Sub",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Sub",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn sub_2(
-        ring: crate::app::unitring::UnitRing,
-        stock_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::unitring::UnitRing,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sub_2::get_offset() as isize),
-        );
+    pub unsafe fn sub_2(ring: crate::app::unitring::UnitRing, stock_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sub_2::get_method_info().method_ptr);
         inner(ring, stock_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_owner {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -659,43 +445,27 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "SetOwner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "SetOwner",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_owner(
-        rnid: ::unity2::Il2CppString,
-        owner: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_owner::get_offset() as isize),
-        );
+    pub unsafe fn set_owner(rnid: ::unity2::Il2CppString, owner: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_owner::get_method_info().method_ptr);
         inner(rnid, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_owner_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -711,18 +481,15 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "SetOwner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "SetOwner",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_owner_2(
@@ -730,24 +497,15 @@ mod __UnitRingPool_unity2_raw {
         owner: crate::app::unit::Unit,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::app::unitring::UnitRing,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_owner_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::unitring::UnitRing, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_owner_2::get_method_info().method_ptr);
         inner(ring, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_owner {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -763,45 +521,28 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "ClearOwner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "ClearOwner",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_owner(
-        rnid: ::unity2::Il2CppString,
-        owner: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear_owner::get_offset() as isize),
-        );
+    pub unsafe fn clear_owner(rnid: ::unity2::Il2CppString, owner: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear_owner::get_method_info().method_ptr);
         inner(rnid, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_owner_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRingPool as ::unity2::ClassIdentity>::class(),
                 "ClearOwner",
@@ -813,39 +554,27 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "ClearOwner",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "ClearOwner",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_owner_2(
-        ring: crate::app::unitring::UnitRing,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_owner_2(ring: crate::app::unitring::UnitRing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_owner_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_owner_2::get_method_info().method_ptr);
         inner(ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_composite {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unitring::UnitRing as ::unity2::IlType>::il_type(),
                 <::unity2::Array<crate::app::unitring::UnitRing> as ::unity2::IlType>::il_type(),
@@ -861,18 +590,15 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Composite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Composite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn composite(
@@ -884,120 +610,72 @@ mod __UnitRingPool_unity2_raw {
             crate::app::unitring::UnitRing,
             ::unity2::Array<crate::app::unitring::UnitRing>,
             ::unity2::OptionalMethod,
-        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_composite::get_offset() as isize),
-        );
+        ) -> crate::app::unitring::UnitRing = ::core::mem::transmute(__lookup_composite::get_method_info().method_ptr);
         inner(base_ring, rings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "Delete", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete(
-        rnid: ::unity2::Il2CppString,
-        owner: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete::get_offset() as isize),
-        );
+    pub unsafe fn delete(rnid: ::unity2::Il2CppString, owner: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, crate::app::unit::Unit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete::get_method_info().method_ptr);
         inner(rnid, owner, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <UnitRingPool as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<UnitRingPool as ::unity2::ClassIdentity>::class(), "Delete", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_2(
-        ring: crate::app::unitring::UnitRing,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_2(ring: crate::app::unitring::UnitRing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_2::get_method_info().method_ptr);
         inner(ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_from_pool {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unitring::UnitRing as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRingPool as ::unity2::ClassIdentity>::class(),
                 "DeleteFromPool",
@@ -1009,41 +687,28 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "DeleteFromPool",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "DeleteFromPool",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_from_pool(
-        ring: crate::app::unitring::UnitRing,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_from_pool(ring: crate::app::unitring::UnitRing, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::unitring::UnitRing, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_from_pool::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_from_pool::get_method_info().method_ptr);
         inner(ring, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dbg_add_all_common_rings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRingPool as ::unity2::ClassIdentity>::class(),
                 "DbgAddAllCommonRings",
@@ -1055,29 +720,20 @@ mod __UnitRingPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRingPool as ::unity2::ClassIdentity>::NAME,
-                    "DbgAddAllCommonRings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRingPool as ::unity2::ClassIdentity>::NAME,
+                        "DbgAddAllCommonRings",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dbg_add_all_common_rings(
-        count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dbg_add_all_common_rings::get_offset() as isize),
-        );
+    pub unsafe fn dbg_add_all_common_rings(count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dbg_add_all_common_rings::get_method_info().method_ptr);
         inner(count, __unity2_method_info)
     }
 }
@@ -1097,6 +753,7 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`TryGet(crate::app::ringdata::RingData, crate::app::unit::Unit)` overload"]
     pub fn try_get_2(
         data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
@@ -1110,22 +767,14 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`GetAllStockCount(crate::app::ringdata::RingData)` overload"]
-    pub fn get_all_stock_count(
-        data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> i32 {
-        unsafe {
-            __UnitRingPool_unity2_raw::get_all_stock_count(
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_all_stock_count(data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> i32 {
+        unsafe { __UnitRingPool_unity2_raw::get_all_stock_count(::core::convert::Into::into(data), ::core::option::Option::None) }
     }
+
     #[doc = "`GetStockCount(crate::app::ringdata::RingData, bool)` overload"]
-    pub fn get_stock_count(
-        data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-        is_equipped: impl ::core::convert::Into<bool>,
-    ) -> i32 {
+    pub fn get_stock_count(data: impl ::core::convert::Into<crate::app::ringdata::RingData>, is_equipped: impl ::core::convert::Into<bool>) -> i32 {
         unsafe {
             __UnitRingPool_unity2_raw::get_stock_count(
                 ::core::convert::Into::into(data),
@@ -1134,11 +783,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`CanAdd(::unity2::Il2CppString, i32)` overload"]
-    pub fn can_add(
-        rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        stock_count: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    pub fn can_add(rnid: impl ::core::convert::Into<::unity2::Il2CppString>, stock_count: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             __UnitRingPool_unity2_raw::can_add(
                 ::core::convert::Into::into(rnid),
@@ -1147,11 +794,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`CanAdd(crate::app::unitring::UnitRing, i32)` overload"]
-    pub fn can_add_2(
-        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-        stock_count: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    pub fn can_add_2(ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>, stock_count: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             __UnitRingPool_unity2_raw::can_add_2(
                 ::core::convert::Into::into(ring),
@@ -1160,6 +805,7 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`Add(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"]
     pub fn add(
         rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1175,11 +821,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`Add(crate::app::unitring::UnitRing, i32)` overload"]
-    pub fn add_2(
-        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-        stock_count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn add_2(ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>, stock_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __UnitRingPool_unity2_raw::add_2(
                 ::core::convert::Into::into(ring),
@@ -1188,6 +832,7 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`Sub(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"]
     pub fn sub(
         rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -1203,11 +848,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`Sub(crate::app::unitring::UnitRing, i32)` overload"]
-    pub fn sub_2(
-        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-        stock_count: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn sub_2(ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>, stock_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __UnitRingPool_unity2_raw::sub_2(
                 ::core::convert::Into::into(ring),
@@ -1216,11 +859,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`SetOwner(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
-    pub fn set_owner(
-        rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        owner: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    pub fn set_owner(rnid: impl ::core::convert::Into<::unity2::Il2CppString>, owner: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             __UnitRingPool_unity2_raw::set_owner(
                 ::core::convert::Into::into(rnid),
@@ -1229,6 +870,7 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`SetOwner(crate::app::unitring::UnitRing, crate::app::unit::Unit)` overload"]
     pub fn set_owner_2(
         ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
@@ -1242,11 +884,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`ClearOwner(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
-    pub fn clear_owner(
-        rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        owner: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    pub fn clear_owner(rnid: impl ::core::convert::Into<::unity2::Il2CppString>, owner: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             __UnitRingPool_unity2_raw::clear_owner(
                 ::core::convert::Into::into(rnid),
@@ -1255,15 +895,12 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`ClearOwner(crate::app::unitring::UnitRing)` overload"]
     pub fn clear_owner_2(ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>) -> () {
-        unsafe {
-            __UnitRingPool_unity2_raw::clear_owner_2(
-                ::core::convert::Into::into(ring),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __UnitRingPool_unity2_raw::clear_owner_2(::core::convert::Into::into(ring), ::core::option::Option::None) }
     }
+
     #[doc = "`Composite(crate::app::unitring::UnitRing, ::unity2::Array<crate::app::unitring::UnitRing>)` overload"]
     pub fn composite(
         base_ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
@@ -1277,11 +914,9 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`Delete(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]
-    pub fn delete(
-        rnid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        owner: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
+    pub fn delete(rnid: impl ::core::convert::Into<::unity2::Il2CppString>, owner: impl ::core::convert::Into<crate::app::unit::Unit>) -> () {
         unsafe {
             __UnitRingPool_unity2_raw::delete(
                 ::core::convert::Into::into(rnid),
@@ -1290,34 +925,20 @@ impl UnitRingPool {
             )
         }
     }
+
     #[doc = "`Delete(crate::app::unitring::UnitRing)` overload"]
     pub fn delete_2(ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>) -> () {
-        unsafe {
-            __UnitRingPool_unity2_raw::delete_2(
-                ::core::convert::Into::into(ring),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __UnitRingPool_unity2_raw::delete_2(::core::convert::Into::into(ring), ::core::option::Option::None) }
     }
+
     #[doc = "`DeleteFromPool(crate::app::unitring::UnitRing)` overload"]
-    pub fn delete_from_pool(
-        ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>,
-    ) -> () {
-        unsafe {
-            __UnitRingPool_unity2_raw::delete_from_pool(
-                ::core::convert::Into::into(ring),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn delete_from_pool(ring: impl ::core::convert::Into<crate::app::unitring::UnitRing>) -> () {
+        unsafe { __UnitRingPool_unity2_raw::delete_from_pool(::core::convert::Into::into(ring), ::core::option::Option::None) }
     }
+
     #[doc = "`DbgAddAllCommonRings(i32)` overload"]
     pub fn dbg_add_all_common_rings(count: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __UnitRingPool_unity2_raw::dbg_add_all_common_rings(
-                ::core::convert::Into::into(count),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __UnitRingPool_unity2_raw::dbg_add_all_common_rings(::core::convert::Into::into(count), ::core::option::Option::None) }
     }
 }
 
@@ -1326,18 +947,14 @@ pub trait IUnitRingPoolMethods: IUnitRingPool {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <UnitRingPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitRingPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitRingPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Version()` overload"]
     fn get_version(self) -> i32 {
         unsafe {
-            let __receiver = <UnitRingPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <UnitRingPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitRingPool_unity2_raw::get_version(__receiver, ::core::option::Option::None)
         }
     }
@@ -1350,13 +967,8 @@ impl<__T: IUnitRingPool> IUnitRingPoolMethods for __T {}
 impl UnitRingPool {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitRingPool),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UnitRingPool), ::core::stringify!(new),));
         <Self as IUnitRingPoolMethods>::ctor(this);
         this
     }
@@ -1365,16 +977,15 @@ impl UnitRingPool {
 #[cfg(feature = "app-unitringpool")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitRingPool;
-    pub use super::IUnitRingPoolMethods;
-    pub use super::UnitRingPool;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
+    pub use super::{IUnitRingPool, IUnitRingPoolMethods, UnitRingPool};
     #[cfg(feature = "app-singletonclass_1")]
     pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    pub use crate::app::singletonpool_2::ISingletonPool_2;
     #[cfg(feature = "app-singletonpool_2")]
     pub use crate::app::singletonpool_2::ISingletonPool_2Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{singletonclass_1::ISingletonClass_1, singletonpool_2::ISingletonPool_2},
+        system::object::IObject,
+    };
 }

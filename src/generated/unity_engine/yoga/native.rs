@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-yoga-native-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/native/Native.md"))]
     #[::unity2::class(namespace = "UnityEngine.Yoga", name = "Native")]
@@ -25,10 +25,15 @@ mod __Native_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_yg_node_measure_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: yoga :: yoganode :: YogaNode as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::yoga::yoganode::YogaNode as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Native as ::unity2::ClassIdentity>::class(),
                 "YGNodeMeasureInvoke",
@@ -40,18 +45,15 @@ mod __Native_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Native as ::unity2::ClassIdentity>::NAME,
-                    "YGNodeMeasureInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Native as ::unity2::ClassIdentity>::NAME,
+                        "YGNodeMeasureInvoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn yg_node_measure_invoke(
@@ -71,28 +73,14 @@ mod __Native_unity2_raw {
             crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_yg_node_measure_invoke::get_offset() as isize),
-        );
-        inner(
-            node,
-            width,
-            width_mode,
-            height,
-            height_mode,
-            return_value_address,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_yg_node_measure_invoke::get_method_info().method_ptr);
+        inner(node, width, width_mode, height, height_mode, return_value_address, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_yg_node_baseline_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::yoga::yoganode::YogaNode as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -110,18 +98,15 @@ mod __Native_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Native as ::unity2::ClassIdentity>::NAME,
-                    "YGNodeBaselineInvoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Native as ::unity2::ClassIdentity>::NAME,
+                        "YGNodeBaselineInvoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn yg_node_baseline_invoke(
@@ -131,24 +116,9 @@ mod __Native_unity2_raw {
         return_value_address: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::yoga::yoganode::YogaNode,
-            f32,
-            f32,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_yg_node_baseline_invoke::get_offset() as isize),
-        );
-        inner(
-            node,
-            width,
-            height,
-            return_value_address,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_yg_node_baseline_invoke::get_method_info().method_ptr);
+        inner(node, width, height, return_value_address, __unity2_method_info)
     }
 }
 
@@ -158,13 +128,9 @@ impl Native {
     pub fn yg_node_measure_invoke(
         node: impl ::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode>,
         width: impl ::core::convert::Into<f32>,
-        width_mode: impl ::core::convert::Into<
-            crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
-        >,
+        width_mode: impl ::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode>,
         height: impl ::core::convert::Into<f32>,
-        height_mode: impl ::core::convert::Into<
-            crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
-        >,
+        height_mode: impl ::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode>,
         return_value_address: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> () {
         unsafe {
@@ -179,6 +145,7 @@ impl Native {
             )
         }
     }
+
     #[doc = "`YGNodeBaselineInvoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32, ::unity2::IntPtr)` overload"]
     pub fn yg_node_baseline_invoke(
         node: impl ::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode>,
@@ -201,8 +168,7 @@ impl Native {
 #[cfg(feature = "unity_engine-yoga-native")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INative;
-    pub use super::Native;
+    pub use super::{INative, Native};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

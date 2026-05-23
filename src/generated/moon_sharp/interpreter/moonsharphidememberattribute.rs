@@ -2,15 +2,12 @@
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharphidememberattribute/MoonSharpHideMemberAttribute.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter",
-        name = "MoonSharpHideMemberAttribute"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "MoonSharpHideMemberAttribute")]
     pub struct MoonSharpHideMemberAttribute {}
 }
 
@@ -26,9 +23,7 @@ mod __MoonSharpHideMemberAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_member_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::class(),
@@ -41,43 +36,28 @@ mod __MoonSharpHideMemberAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::NAME,
-                    "get_MemberName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::NAME,
+                        "get_MemberName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_member_name(
-        this: MoonSharpHideMemberAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MoonSharpHideMemberAttribute,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_member_name::get_offset() as isize),
-        );
+    pub unsafe fn get_member_name(this: MoonSharpHideMemberAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MoonSharpHideMemberAttribute, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_member_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_member_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::class(),
                 "set_MemberName",
@@ -89,18 +69,15 @@ mod __MoonSharpHideMemberAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::NAME,
-                    "set_MemberName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::NAME,
+                        "set_MemberName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_member_name(
@@ -108,26 +85,16 @@ mod __MoonSharpHideMemberAttribute_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MoonSharpHideMemberAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_member_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MoonSharpHideMemberAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_member_name::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -139,18 +106,15 @@ mod __MoonSharpHideMemberAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MoonSharpHideMemberAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -158,15 +122,8 @@ mod __MoonSharpHideMemberAttribute_unity2_raw {
         member_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MoonSharpHideMemberAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MoonSharpHideMemberAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, member_name, __unity2_method_info)
     }
 }
@@ -177,41 +134,24 @@ pub trait IMoonSharpHideMemberAttributeMethods: IMoonSharpHideMemberAttribute {
     fn get_member_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <MoonSharpHideMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpHideMemberAttribute_unity2_raw::get_member_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MoonSharpHideMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpHideMemberAttribute_unity2_raw::get_member_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_MemberName(::unity2::Il2CppString)` overload"]
     fn set_member_name(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <MoonSharpHideMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpHideMemberAttribute_unity2_raw::set_member_name(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <MoonSharpHideMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpHideMemberAttribute_unity2_raw::set_member_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
     fn ctor(self, member_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <MoonSharpHideMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MoonSharpHideMemberAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(member_name),
-                ::core::option::Option::None,
-            )
+                <MoonSharpHideMemberAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MoonSharpHideMemberAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(member_name), ::core::option::Option::None)
         }
     }
 }
@@ -238,7 +178,5 @@ impl MoonSharpHideMemberAttribute {
 #[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMoonSharpHideMemberAttribute;
-    pub use super::IMoonSharpHideMemberAttributeMethods;
-    pub use super::MoonSharpHideMemberAttribute;
+    pub use super::{IMoonSharpHideMemberAttribute, IMoonSharpHideMemberAttributeMethods, MoonSharpHideMemberAttribute};
 }

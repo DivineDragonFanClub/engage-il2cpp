@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-animations-animationplayableextensions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/animationplayableextensions/AnimationPlayableExtensions.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Animations",
-        name = "AnimationPlayableExtensions"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Animations", name = "AnimationPlayableExtensions")]
     #[parent(crate::system::object::Object)]
     pub struct AnimationPlayableExtensions {}
 }
@@ -28,10 +25,11 @@ mod __AnimationPlayableExtensions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_animated_properties_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablehandle :: PlayableHandle as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: animationclip :: AnimationClip as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablehandle::PlayableHandle as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationclip::AnimationClip as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AnimationPlayableExtensions as ::unity2::ClassIdentity>::class(),
                 "SetAnimatedPropertiesInternal",
@@ -43,18 +41,15 @@ mod __AnimationPlayableExtensions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimationPlayableExtensions as ::unity2::ClassIdentity>::NAME,
-                    "SetAnimatedPropertiesInternal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimationPlayableExtensions as ::unity2::ClassIdentity>::NAME,
+                        "SetAnimatedPropertiesInternal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_animated_properties_internal(
@@ -66,26 +61,18 @@ mod __AnimationPlayableExtensions_unity2_raw {
             *mut crate::unity_engine::playables::playablehandle::PlayableHandle,
             crate::unity_engine::animationclip::AnimationClip,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_animated_properties_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_animated_properties_internal::get_method_info().method_ptr);
         inner(playable, animated_properties, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-animations-animationplayableextensions")]
 impl AnimationPlayableExtensions {
-    pub fn set_animated_properties<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+    pub fn set_animated_properties<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         playable: impl ::core::convert::Into<M0>,
         clip: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             ::unity2::lookup::method_info_on_class(
                 <AnimationPlayableExtensions as ::unity2::ClassIdentity>::class(),
                 "SetAnimatedProperties",
@@ -93,39 +80,31 @@ impl AnimationPlayableExtensions {
             )
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <AnimationPlayableExtensions as ::unity2::ClassIdentity>::NAME,
-                "SetAnimatedProperties",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <AnimationPlayableExtensions as ::unity2::ClassIdentity>::NAME,
+                    "SetAnimatedProperties",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(
-                M0,
-                crate::unity_engine::animationclip::AnimationClip,
-                ::unity2::OptionalMethod,
-            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(M0, crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod) -> () =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 ::core::convert::Into::into(playable),
@@ -134,16 +113,13 @@ impl AnimationPlayableExtensions {
             )
         }
     }
+
     #[doc = "`SetAnimatedPropertiesInternal(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, crate::unity_engine::animationclip::AnimationClip)` overload"]
     pub fn set_animated_properties_internal(
-        animated_properties: impl ::core::convert::Into<
-            crate::unity_engine::animationclip::AnimationClip,
-        >,
+        animated_properties: impl ::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>,
     ) -> crate::unity_engine::playables::playablehandle::PlayableHandle {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::playables::playablehandle::PlayableHandle,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::playables::playablehandle::PlayableHandle>::uninit();
             __AnimationPlayableExtensions_unity2_raw::set_animated_properties_internal(
                 __out_0.as_mut_ptr(),
                 ::core::convert::Into::into(animated_properties),
@@ -157,8 +133,7 @@ impl AnimationPlayableExtensions {
 #[cfg(feature = "unity_engine-animations-animationplayableextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimationPlayableExtensions;
-    pub use super::IAnimationPlayableExtensions;
+    pub use super::{AnimationPlayableExtensions, IAnimationPlayableExtensions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

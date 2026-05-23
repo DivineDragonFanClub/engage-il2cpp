@@ -2,10 +2,10 @@
 
 #[cfg(feature = "nn-hid-sixaxissensor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/sixaxissensor/SixAxisSensor.md"))]
     #[::unity2::class(namespace = "nn.hid", name = "SixAxisSensor")]
@@ -32,10 +32,13 @@ mod __SixAxisSensor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_handles {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadid :: NpadId as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: npadstyle :: NpadStyle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadid::NpadId as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::npadstyle::NpadStyle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "GetHandles",
@@ -47,18 +50,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "GetHandles",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "GetHandles",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_handles(
@@ -74,168 +74,102 @@ mod __SixAxisSensor_unity2_raw {
             crate::nn::hid::npadid::NpadId,
             crate::nn::hid::npadstyle::NpadStyle,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_handles::get_offset() as isize),
-        );
-        inner(
-            p_out_values,
-            count,
-            npad_id,
-            npad_style,
-            __unity2_method_info,
-        )
+        ) -> i32 = ::core::mem::transmute(__lookup_get_handles::get_method_info().method_ptr);
+        inner(p_out_values, count, npad_id, npad_style, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SixAxisSensor as ::unity2::ClassIdentity>::class(),
-                "Start",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SixAxisSensor as ::unity2::ClassIdentity>::class(), "Start", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start::get_offset() as isize),
-        );
+    pub unsafe fn start(handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SixAxisSensor as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SixAxisSensor as ::unity2::ClassIdentity>::class(), "Stop", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop(
-        handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_stop::get_offset() as isize),
-        );
+    pub unsafe fn stop(handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_rest {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SixAxisSensor as ::unity2::ClassIdentity>::class(),
-                "IsRest",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<SixAxisSensor as ::unity2::ClassIdentity>::class(), "IsRest", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "IsRest",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "IsRest",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_rest(
-        handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_rest::get_offset() as isize),
-        );
+    pub unsafe fn is_rest(handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_rest::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_state {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::sixaxissensorstate::SixAxisSensorState as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "GetState",
@@ -247,18 +181,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "GetState",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "GetState",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_state(
@@ -270,21 +201,19 @@ mod __SixAxisSensor_unity2_raw {
             *mut crate::nn::hid::sixaxissensorstate::SixAxisSensorState,
             crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_state::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_state::get_method_info().method_ptr);
         inner(p_out_value, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_states {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "GetStates",
@@ -296,18 +225,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "GetStates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "GetStates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_states(
@@ -321,21 +247,16 @@ mod __SixAxisSensor_unity2_raw {
             i32,
             crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_states::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_get_states::get_method_info().method_ptr);
         inner(p_out_values, count, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_fusion_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "IsFusionEnabled",
@@ -347,42 +268,34 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "IsFusionEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "IsFusionEnabled",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_fusion_enabled(
         handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_fusion_enabled::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_fusion_enabled::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_fusion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "EnableFusion",
@@ -394,18 +307,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "EnableFusion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "EnableFusion",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_fusion(
@@ -413,25 +323,20 @@ mod __SixAxisSensor_unity2_raw {
         enable: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_fusion::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_fusion::get_method_info().method_ptr);
         inner(handle, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fusion_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "SetFusionParameters",
@@ -443,18 +348,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "SetFusionParameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "SetFusionParameters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fusion_parameters(
@@ -463,26 +365,20 @@ mod __SixAxisSensor_unity2_raw {
         revise_range: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fusion_parameters::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fusion_parameters::get_method_info().method_ptr);
         inner(handle, revise_power, revise_range, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fusion_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "GetFusionParameters",
@@ -494,18 +390,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "GetFusionParameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "GetFusionParameters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fusion_parameters(
@@ -514,31 +407,17 @@ mod __SixAxisSensor_unity2_raw {
         handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            *mut f32,
-            *mut f32,
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fusion_parameters::get_offset() as isize),
-        );
-        inner(
-            p_out_revise_power,
-            p_out_revise_range,
-            handle,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(*mut f32, *mut f32, crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_fusion_parameters::get_method_info().method_ptr);
+        inner(p_out_revise_power, p_out_revise_range, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_fusion_parameters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "ResetFusionParameters",
@@ -550,42 +429,34 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "ResetFusionParameters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "ResetFusionParameters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn reset_fusion_parameters(
         handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset_fusion_parameters::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset_fusion_parameters::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_gyroscope_zero_drift_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type () , < crate :: nn :: hid :: gyroscopezerodriftmode :: GyroscopeZeroDriftMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type(),
+                <crate::nn::hid::gyroscopezerodriftmode::GyroscopeZeroDriftMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "SetGyroscopeZeroDriftMode",
@@ -597,18 +468,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "SetGyroscopeZeroDriftMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "SetGyroscopeZeroDriftMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_gyroscope_zero_drift_mode(
@@ -620,21 +488,16 @@ mod __SixAxisSensor_unity2_raw {
             crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
             crate::nn::hid::gyroscopezerodriftmode::GyroscopeZeroDriftMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_gyroscope_zero_drift_mode::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_gyroscope_zero_drift_mode::get_method_info().method_ptr);
         inner(handle, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_gyroscope_zero_drift_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "GetGyroscopeZeroDriftMode",
@@ -646,18 +509,15 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "GetGyroscopeZeroDriftMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "GetGyroscopeZeroDriftMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_gyroscope_zero_drift_mode(
@@ -667,23 +527,17 @@ mod __SixAxisSensor_unity2_raw {
         let inner: extern "C" fn(
             crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
             ::unity2::OptionalMethod,
-        )
-            -> crate::nn::hid::gyroscopezerodriftmode::GyroscopeZeroDriftMode =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_gyroscope_zero_drift_mode::get_offset() as isize),
-            );
+        ) -> crate::nn::hid::gyroscopezerodriftmode::GyroscopeZeroDriftMode =
+            ::core::mem::transmute(__lookup_get_gyroscope_zero_drift_mode::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_firmware_update_available_for_six_axis_sensor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: nn :: hid :: sixaxissensorhandle :: SixAxisSensorHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SixAxisSensor as ::unity2::ClassIdentity>::class(),
                 "IsFirmwareUpdateAvailableForSixAxisSensor",
@@ -695,35 +549,23 @@ mod __SixAxisSensor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
-                    "IsFirmwareUpdateAvailableForSixAxisSensor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SixAxisSensor as ::unity2::ClassIdentity>::NAME,
+                        "IsFirmwareUpdateAvailableForSixAxisSensor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_firmware_update_available_for_six_axis_sensor(
         handle: crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_is_firmware_update_available_for_six_axis_sensor::get_offset()
-                        as isize,
-                ),
-        );
+        let inner: extern "C" fn(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_firmware_update_available_for_six_axis_sensor::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
 }
@@ -732,9 +574,7 @@ mod __SixAxisSensor_unity2_raw {
 impl SixAxisSensor {
     #[doc = "`GetHandles(::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
     pub fn get_handles(
-        p_out_values: impl ::core::convert::Into<
-            ::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-        >,
+        p_out_values: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>>,
         count: impl ::core::convert::Into<i32>,
         npad_id: impl ::core::convert::Into<crate::nn::hid::npadid::NpadId>,
         npad_style: impl ::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>,
@@ -749,60 +589,36 @@ impl SixAxisSensor {
             )
         }
     }
+
     #[doc = "`Start(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
-    pub fn start(
-        handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-    ) -> () {
-        unsafe {
-            __SixAxisSensor_unity2_raw::start(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn start(handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>) -> () {
+        unsafe { __SixAxisSensor_unity2_raw::start(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`Stop(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
-    pub fn stop(
-        handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-    ) -> () {
-        unsafe {
-            __SixAxisSensor_unity2_raw::stop(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn stop(handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>) -> () {
+        unsafe { __SixAxisSensor_unity2_raw::stop(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`IsRest(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
-    pub fn is_rest(
-        handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-    ) -> bool {
-        unsafe {
-            __SixAxisSensor_unity2_raw::is_rest(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_rest(handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>) -> bool {
+        unsafe { __SixAxisSensor_unity2_raw::is_rest(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetState(*mutcrate::nn::hid::sixaxissensorstate::SixAxisSensorState, crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
     pub fn get_state(
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
     ) -> crate::nn::hid::sixaxissensorstate::SixAxisSensorState {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::nn::hid::sixaxissensorstate::SixAxisSensorState,
-            >::uninit();
-            __SixAxisSensor_unity2_raw::get_state(
-                __out_0.as_mut_ptr(),
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>::uninit();
+            __SixAxisSensor_unity2_raw::get_state(__out_0.as_mut_ptr(), ::core::convert::Into::into(handle), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`GetStates(::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>, i32, crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
     pub fn get_states(
-        p_out_values: impl ::core::convert::Into<
-            ::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>,
-        >,
+        p_out_values: impl ::core::convert::Into<::unity2::Array<crate::nn::hid::sixaxissensorstate::SixAxisSensorState>>,
         count: impl ::core::convert::Into<i32>,
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
     ) -> i32 {
@@ -815,17 +631,12 @@ impl SixAxisSensor {
             )
         }
     }
+
     #[doc = "`IsFusionEnabled(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
-    pub fn is_fusion_enabled(
-        handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-    ) -> bool {
-        unsafe {
-            __SixAxisSensor_unity2_raw::is_fusion_enabled(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_fusion_enabled(handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>) -> bool {
+        unsafe { __SixAxisSensor_unity2_raw::is_fusion_enabled(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`EnableFusion(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, bool)` overload"]
     pub fn enable_fusion(
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
@@ -839,6 +650,7 @@ impl SixAxisSensor {
             )
         }
     }
+
     #[doc = "`SetFusionParameters(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, f32, f32)` overload"]
     pub fn set_fusion_parameters(
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
@@ -854,10 +666,9 @@ impl SixAxisSensor {
             )
         }
     }
+
     #[doc = "`GetFusionParameters(*mutf32, *mutf32, crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
-    pub fn get_fusion_parameters(
-        handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-    ) -> (f32, f32) {
+    pub fn get_fusion_parameters(handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>) -> (f32, f32) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<f32>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<f32>::uninit();
@@ -870,17 +681,12 @@ impl SixAxisSensor {
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`ResetFusionParameters(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
-    pub fn reset_fusion_parameters(
-        handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
-    ) -> () {
-        unsafe {
-            __SixAxisSensor_unity2_raw::reset_fusion_parameters(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn reset_fusion_parameters(handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>) -> () {
+        unsafe { __SixAxisSensor_unity2_raw::reset_fusion_parameters(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`SetGyroscopeZeroDriftMode(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle, crate::nn::hid::gyroscopezerodriftmode::GyroscopeZeroDriftMode)` overload"]
     pub fn set_gyroscope_zero_drift_mode(
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
@@ -894,17 +700,14 @@ impl SixAxisSensor {
             )
         }
     }
+
     #[doc = "`GetGyroscopeZeroDriftMode(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
     pub fn get_gyroscope_zero_drift_mode(
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
     ) -> crate::nn::hid::gyroscopezerodriftmode::GyroscopeZeroDriftMode {
-        unsafe {
-            __SixAxisSensor_unity2_raw::get_gyroscope_zero_drift_mode(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __SixAxisSensor_unity2_raw::get_gyroscope_zero_drift_mode(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`IsFirmwareUpdateAvailableForSixAxisSensor(crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle)` overload"]
     pub fn is_firmware_update_available_for_six_axis_sensor(
         handle: impl ::core::convert::Into<crate::nn::hid::sixaxissensorhandle::SixAxisSensorHandle>,
@@ -921,8 +724,7 @@ impl SixAxisSensor {
 #[cfg(feature = "nn-hid-sixaxissensor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISixAxisSensor;
-    pub use super::SixAxisSensor;
+    pub use super::{ISixAxisSensor, SixAxisSensor};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

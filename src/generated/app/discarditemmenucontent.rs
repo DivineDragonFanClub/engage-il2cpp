@@ -2,23 +2,26 @@
 
 #[cfg(feature = "app-discarditemmenucontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenucontent::{BasicMenuContent, IBasicMenuContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent")]
     #[parent(crate::app::basicmenucontent::BasicMenuContent)]
     pub struct DiscardItemMenuContent {
         #[rename(name = "m_KindIcon")]
-        pub m_kind_icon:
-            ::unity2::Array<crate::app::discarditemmenucontent::DiscardItemMenuContent_KindIcon>,
+        pub m_kind_icon: ::unity2::Array<crate::app::discarditemmenucontent::DiscardItemMenuContent_KindIcon>,
         #[rename(name = "m_MenuTitleText")]
         pub m_menu_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_TransporterText")]
@@ -52,9 +55,7 @@ mod __DiscardItemMenuContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_build_menu_item_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
@@ -67,39 +68,27 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildMenuItemContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildMenuItemContent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_menu_item_content(
-        this: DiscardItemMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_menu_item_content(this: DiscardItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DiscardItemMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_menu_item_content::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_menu_item_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
@@ -112,41 +101,28 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: DiscardItemMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: DiscardItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DiscardItemMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_cursor_moved_pos_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
                 "CalcCursorMovedPosY",
@@ -158,42 +134,28 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcCursorMovedPosY",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: DiscardItemMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_cursor_moved_pos_y(this: DiscardItemMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(DiscardItemMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_cursor_moved_pos_y::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
         inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetKind",
@@ -205,18 +167,15 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_kind(
@@ -224,26 +183,16 @@ mod __DiscardItemMenuContent_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DiscardItemMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DiscardItemMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_prev_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetToPrevKind",
@@ -255,18 +204,15 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetToPrevKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetToPrevKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_to_prev_kind(
@@ -278,22 +224,15 @@ mod __DiscardItemMenuContent_unity2_raw {
             DiscardItemMenuContent,
             crate::app::itemdata::ItemData_Kinds,
             ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_to_prev_kind::get_offset() as isize),
-        );
+        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(__lookup_set_to_prev_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_to_next_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
                 "SetToNextKind",
@@ -305,18 +244,15 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetToNextKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetToNextKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_to_next_kind(
@@ -328,22 +264,15 @@ mod __DiscardItemMenuContent_unity2_raw {
             DiscardItemMenuContent,
             crate::app::itemdata::ItemData_Kinds,
             ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_to_next_kind::get_offset() as isize),
-        );
+        ) -> crate::app::itemdata::ItemData_Kinds = ::core::mem::transmute(__lookup_set_to_next_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_first_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
                 "IsFirstKind",
@@ -355,18 +284,15 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsFirstKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsFirstKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_first_kind(
@@ -374,26 +300,16 @@ mod __DiscardItemMenuContent_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            DiscardItemMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_first_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DiscardItemMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_first_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_last_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
                 "IsLastKind",
@@ -405,18 +321,15 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsLastKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsLastKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_last_kind(
@@ -424,24 +337,15 @@ mod __DiscardItemMenuContent_unity2_raw {
         kind: crate::app::itemdata::ItemData_Kinds,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            DiscardItemMenuContent,
-            crate::app::itemdata::ItemData_Kinds,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_last_kind::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DiscardItemMenuContent, crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_last_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_kind_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
@@ -454,39 +358,27 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetKindCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetKindCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_kind_count(
-        this: DiscardItemMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_kind_count(this: DiscardItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(DiscardItemMenuContent, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_kind_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_kind_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent as ::unity2::ClassIdentity>::class(),
@@ -499,30 +391,20 @@ mod __DiscardItemMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DiscardItemMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DiscardItemMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DiscardItemMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -532,30 +414,24 @@ pub trait IDiscardItemMenuContentMethods: IDiscardItemMenuContent {
     #[doc = "`BuildMenuItemContent()` overload"]
     fn build_menu_item_content(self) -> () {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::build_menu_item_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DiscardItemMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcCursorMovedPosY(i32)` overload"]
     fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DiscardItemMenuContent_unity2_raw::calc_cursor_moved_pos_y(
                 __receiver,
                 ::core::convert::Into::into(menu_item_index),
@@ -564,103 +440,58 @@ pub trait IDiscardItemMenuContentMethods: IDiscardItemMenuContent {
         }
     }
     #[doc = "`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> () {
+    fn set_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> () {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::set_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`SetToPrevKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_to_prev_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> crate::app::itemdata::ItemData_Kinds {
+    fn set_to_prev_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> crate::app::itemdata::ItemData_Kinds {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::set_to_prev_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::set_to_prev_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`SetToNextKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn set_to_next_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> crate::app::itemdata::ItemData_Kinds {
+    fn set_to_next_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> crate::app::itemdata::ItemData_Kinds {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::set_to_next_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::set_to_next_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`IsFirstKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn is_first_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> bool {
+    fn is_first_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> bool {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::is_first_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::is_first_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`IsLastKind(crate::app::itemdata::ItemData_Kinds)` overload"]
-    fn is_last_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>,
-    ) -> bool {
+    fn is_last_kind(self, kind: impl ::core::convert::Into<crate::app::itemdata::ItemData_Kinds>) -> bool {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::is_last_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::is_last_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`GetKindCount()` overload"]
     fn get_kind_count(self) -> i32 {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DiscardItemMenuContent_unity2_raw::get_kind_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_unity2_raw::get_kind_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DiscardItemMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DiscardItemMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -694,9 +525,7 @@ mod __DiscardItemMenuContent_KindIcon_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DiscardItemMenuContent_KindIcon as ::unity2::ClassIdentity>::class(),
@@ -709,30 +538,20 @@ mod __DiscardItemMenuContent_KindIcon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DiscardItemMenuContent_KindIcon as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DiscardItemMenuContent_KindIcon as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DiscardItemMenuContent_KindIcon,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DiscardItemMenuContent_KindIcon, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DiscardItemMenuContent_KindIcon, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -743,13 +562,8 @@ pub trait IDiscardItemMenuContent_KindIconMethods: IDiscardItemMenuContent_KindI
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DiscardItemMenuContent_KindIcon as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DiscardItemMenuContent_KindIcon_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DiscardItemMenuContent_KindIcon as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DiscardItemMenuContent_KindIcon_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -776,28 +590,25 @@ impl DiscardItemMenuContent_KindIcon {
 #[cfg(feature = "app-discarditemmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DiscardItemMenuContent;
-    pub use super::DiscardItemMenuContent_KindIcon;
-    pub use super::IDiscardItemMenuContent;
-    pub use super::IDiscardItemMenuContentMethods;
-    pub use super::IDiscardItemMenuContent_KindIcon;
-    pub use super::IDiscardItemMenuContent_KindIconMethods;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use super::{
+        DiscardItemMenuContent, DiscardItemMenuContent_KindIcon, IDiscardItemMenuContent, IDiscardItemMenuContentMethods,
+        IDiscardItemMenuContent_KindIcon, IDiscardItemMenuContent_KindIconMethods,
+    };
     #[cfg(feature = "app-basicmenucontent")]
     pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

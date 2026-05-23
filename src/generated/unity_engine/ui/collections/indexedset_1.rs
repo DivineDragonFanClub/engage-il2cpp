@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-ui-collections-indexedset_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/collections/indexedset_1/IndexedSet_1.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI.Collections", name = "IndexedSet`1")]
@@ -38,15 +38,11 @@ impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
@@ -105,13 +101,8 @@ impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
 impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(IndexedSet_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(IndexedSet_1), ::core::stringify!(new),));
         <Self as IIndexedSet_1Methods<T0>>::ctor(this);
         this
     }
@@ -120,9 +111,7 @@ impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
 #[cfg(feature = "unity_engine-ui-collections-indexedset_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIndexedSet_1;
-    pub use super::IIndexedSet_1Methods;
-    pub use super::IndexedSet_1;
+    pub use super::{IIndexedSet_1, IIndexedSet_1Methods, IndexedSet_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-rendering-packingattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/packingattribute/PackingAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "PackingAttribute")]
@@ -40,10 +40,18 @@ mod __PackingAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::fieldpacking::FieldPacking as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PackingAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -55,18 +63,15 @@ mod __PackingAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PackingAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PackingAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -94,11 +99,7 @@ mod __PackingAttribute_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             display_names,
@@ -117,10 +118,18 @@ mod __PackingAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: fieldpacking :: FieldPacking as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::fieldpacking::FieldPacking as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PackingAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -132,18 +141,15 @@ mod __PackingAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PackingAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PackingAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -171,11 +177,7 @@ mod __PackingAttribute_unity2_raw {
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(
             this,
             display_name,
@@ -198,9 +200,7 @@ pub trait IPackingAttributeMethods: IPackingAttribute {
     fn ctor(
         self,
         display_names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        packing_scheme: impl ::core::convert::Into<
-            crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        >,
+        packing_scheme: impl ::core::convert::Into<crate::unity_engine::rendering::fieldpacking::FieldPacking>,
         bit_size: impl ::core::convert::Into<i32>,
         offset_in_source: impl ::core::convert::Into<i32>,
         min_value: impl ::core::convert::Into<f32>,
@@ -210,9 +210,7 @@ pub trait IPackingAttributeMethods: IPackingAttribute {
         check_is_normalized: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <PackingAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PackingAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PackingAttribute_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(display_names),
@@ -232,9 +230,7 @@ pub trait IPackingAttributeMethods: IPackingAttribute {
     fn ctor_2(
         self,
         display_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        packing_scheme: impl ::core::convert::Into<
-            crate::unity_engine::rendering::fieldpacking::FieldPacking,
-        >,
+        packing_scheme: impl ::core::convert::Into<crate::unity_engine::rendering::fieldpacking::FieldPacking>,
         bit_size: impl ::core::convert::Into<i32>,
         offset_in_source: impl ::core::convert::Into<i32>,
         min_value: impl ::core::convert::Into<f32>,
@@ -244,9 +240,7 @@ pub trait IPackingAttributeMethods: IPackingAttribute {
         check_is_normalized: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <PackingAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <PackingAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PackingAttribute_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(display_name),
@@ -341,7 +335,5 @@ impl PackingAttribute {
 #[cfg(feature = "unity_engine-rendering-packingattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPackingAttribute;
-    pub use super::IPackingAttributeMethods;
-    pub use super::PackingAttribute;
+    pub use super::{IPackingAttribute, IPackingAttributeMethods, PackingAttribute};
 }

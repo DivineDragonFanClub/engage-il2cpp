@@ -2,14 +2,25 @@
 
 #[cfg(feature = "app-relaysequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
+    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
+    pub struct RelaySequence_RelaySequenceNet {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]
     #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceBase`1")]
@@ -18,9 +29,7 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct RelaySequence_RelaySequenceBase_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "m_SearchResults")]
-        pub m_search_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
+        pub m_search_results: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         #[rename(name = "m_DownloadMetaResult")]
         pub m_download_meta_result: crate::app::relayservermetadata::RelayServerMetaData,
         #[rename(name = "m_DataCode")]
@@ -41,45 +50,16 @@ mod __types {
         pub m_bg: crate::app::menubg::MenuBg,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceNet")]
-    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceNet >)]
-    pub struct RelaySequence_RelaySequenceNet {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceLocal")]
-    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceLocal >)]
-    pub struct RelaySequence_RelaySequenceLocal {
-        #[rename(name = "m_RootPath")]
-        pub m_root_path: ::unity2::Il2CppString,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
-    pub struct RelaySequence_IRelaySequenceBase {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
-    #[::unity2::class(namespace = "App", name = "RelaySequence")]
-    #[parent(crate::system::object::Object)]
-    pub struct RelaySequence {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysequence/RelaySequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct RelaySequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for RelaySequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RelaySequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -90,10 +70,7 @@ mod __types {
 
     impl ::unity2::IlType for RelaySequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -274,10 +251,904 @@ mod __types {
             Self { value: 43 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.RelaySequenceLocal")]
+    # [parent (crate :: app :: relaysequence :: RelaySequence_RelaySequenceBase_1 < crate :: app :: relaysequence :: RelaySequence_RelaySequenceLocal >)]
+    pub struct RelaySequence_RelaySequenceLocal {
+        #[rename(name = "m_RootPath")]
+        pub m_root_path: ::unity2::Il2CppString,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence.IRelaySequenceBase")]
+    pub struct RelaySequence_IRelaySequenceBase {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaysequence/RelaySequence.md"))]
+    #[::unity2::class(namespace = "App", name = "RelaySequence")]
+    #[parent(crate::system::object::Object)]
+    pub struct RelaySequence {}
 }
 
 #[cfg(feature = "app-relaysequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relaysequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelaySequence_RelaySequenceNet_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_create(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_take_over_search_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "TakeOverSearchImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverSearchImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn take_over_search_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_take_over_search_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_take_over_postsearch_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "TakeOverPostsearchImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverPostsearchImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn take_over_postsearch_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_take_over_postsearch_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_take_over_download_meta_with_data_code_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "TakeOverDownloadMetaWithDataCodeImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverDownloadMetaWithDataCodeImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn take_over_download_meta_with_data_code_impl(
+        this: RelaySequence_RelaySequenceNet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_take_over_download_meta_with_data_code_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_take_over_postdownload_meta_with_data_code_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "TakeOverPostdownloadMetaWithDataCodeImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverPostdownloadMetaWithDataCodeImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn take_over_postdownload_meta_with_data_code_impl(
+        this: RelaySequence_RelaySequenceNet,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_take_over_postdownload_meta_with_data_code_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_take_over_set_playing_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "TakeOverSetPlayingImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverSetPlayingImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn take_over_set_playing_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_take_over_set_playing_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_take_over_postset_playing_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "TakeOverPostsetPlayingImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverPostsetPlayingImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn take_over_postset_playing_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_take_over_postset_playing_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replay_search_entered_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "ReplaySearchEnteredImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "ReplaySearchEnteredImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn replay_search_entered_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_replay_search_entered_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replay_search_any_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "ReplaySearchAnyImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "ReplaySearchAnyImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn replay_search_any_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_replay_search_any_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_replay_postsearch_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "ReplayPostsearchImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "ReplayPostsearchImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn replay_postsearch_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_replay_postsearch_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_download_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "DownloadImpl",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "DownloadImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn download_impl(this: RelaySequence_RelaySequenceNet, with_meta_data: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_download_impl::get_method_info().method_ptr);
+        inner(this, with_meta_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postdownload_take_over_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "PostdownloadTakeOverImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "PostdownloadTakeOverImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn postdownload_take_over_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_postdownload_take_over_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postdownload_replay_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "PostdownloadReplayImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "PostdownloadReplayImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn postdownload_replay_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_postdownload_replay_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_upload_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "UploadImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "UploadImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn upload_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_upload_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_postupload_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "PostuploadImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "PostuploadImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn postupload_impl(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_postupload_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_wait_message_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "CloseWaitMessageImpl",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "CloseWaitMessageImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_wait_message_impl(
+        this: RelaySequence_RelaySequenceNet,
+        super_: crate::app::procinst::ProcInst,
+        is_success: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_wait_message_impl::get_method_info().method_ptr);
+        inner(this, super_, is_success, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_selected_from_search_results {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "DeleteSelectedFromSearchResults",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "DeleteSelectedFromSearchResults",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_selected_from_search_results(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_selected_from_search_results::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RelaySequence_RelaySequenceNet, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl RelaySequence_RelaySequenceNet {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RelaySequence_RelaySequenceNet_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+pub trait IRelaySequence_RelaySequenceNetMethods: IRelaySequence_RelaySequenceNet {
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TakeOverSearchImpl()` overload"]
+    fn take_over_search_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_search_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TakeOverPostsearchImpl()` overload"]
+    fn take_over_postsearch_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_postsearch_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
+    fn take_over_download_meta_with_data_code_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_download_meta_with_data_code_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
+    fn take_over_postdownload_meta_with_data_code_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_postdownload_meta_with_data_code_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TakeOverSetPlayingImpl()` overload"]
+    fn take_over_set_playing_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_set_playing_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
+    fn take_over_postset_playing_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_postset_playing_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReplaySearchEnteredImpl()` overload"]
+    fn replay_search_entered_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::replay_search_entered_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReplaySearchAnyImpl()` overload"]
+    fn replay_search_any_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::replay_search_any_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReplayPostsearchImpl()` overload"]
+    fn replay_postsearch_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::replay_postsearch_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DownloadImpl(bool)` overload"]
+    fn download_impl(self, with_meta_data: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::download_impl(
+                __receiver,
+                ::core::convert::Into::into(with_meta_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`PostdownloadTakeOverImpl()` overload"]
+    fn postdownload_take_over_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::postdownload_take_over_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PostdownloadReplayImpl()` overload"]
+    fn postdownload_replay_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::postdownload_replay_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UploadImpl()` overload"]
+    fn upload_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::upload_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PostuploadImpl()` overload"]
+    fn postupload_impl(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::postupload_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
+    fn close_wait_message_impl(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_success: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::close_wait_message_impl(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(is_success),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DeleteSelectedFromSearchResults()` overload"]
+    fn delete_selected_from_search_results(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::delete_selected_from_search_results(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceNet_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relaysequence")]
+impl<__T: IRelaySequence_RelaySequenceNet> IRelaySequence_RelaySequenceNetMethods for __T {}
+
+#[cfg(feature = "app-relaysequence")]
+impl RelaySequence_RelaySequenceNet {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySequence_RelaySequenceNet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySequence_RelaySequenceNetMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-relaysequence")]
 #[::unity2::methods]
@@ -531,11 +1402,7 @@ impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
 
     #[doc = "`PostdownloadSucceededImpl(crate::app::relaysequence::RelaySequence_Label, bool)` overload"]
     #[method(name = "PostdownloadSucceededImpl", args = 2)]
-    pub fn postdownload_succeeded_impl(
-        self,
-        label_failed: crate::app::relaysequence::RelaySequence_Label,
-        with_meta_data: bool,
-    ) -> ();
+    pub fn postdownload_succeeded_impl(self, label_failed: crate::app::relaysequence::RelaySequence_Label, with_meta_data: bool) -> ();
 
     #[doc = "`MapSequence()` overload"]
     #[method(name = "MapSequence", args = 0)]
@@ -599,11 +1466,7 @@ impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
 
     #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
     #[method(name = "CloseWaitMessageImpl", args = 2)]
-    pub fn close_wait_message_impl(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        is_success: bool,
-    ) -> ();
+    pub fn close_wait_message_impl(self, super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
 
     #[doc = "`NoTicket()` overload"]
     #[method(name = "NoTicket", args = 0)]
@@ -693,1229 +1556,13 @@ impl<T0: ::unity2::ClassIdentity> RelaySequence_RelaySequenceBase_1<T0> {
 #[cfg(feature = "app-relaysequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelaySequence_RelaySequenceNet_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_take_over_search_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "TakeOverSearchImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverSearchImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn take_over_search_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_search_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_take_over_postsearch_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "TakeOverPostsearchImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverPostsearchImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn take_over_postsearch_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_postsearch_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_take_over_download_meta_with_data_code_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "TakeOverDownloadMetaWithDataCodeImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverDownloadMetaWithDataCodeImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn take_over_download_meta_with_data_code_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_take_over_download_meta_with_data_code_impl::get_offset() as isize,
-                    ),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_take_over_postdownload_meta_with_data_code_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "TakeOverPostdownloadMetaWithDataCodeImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverPostdownloadMetaWithDataCodeImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn take_over_postdownload_meta_with_data_code_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_take_over_postdownload_meta_with_data_code_impl::get_offset()
-                            as isize,
-                    ),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_take_over_set_playing_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "TakeOverSetPlayingImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverSetPlayingImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn take_over_set_playing_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_set_playing_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_take_over_postset_playing_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "TakeOverPostsetPlayingImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverPostsetPlayingImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn take_over_postset_playing_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_postset_playing_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_replay_search_entered_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "ReplaySearchEnteredImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "ReplaySearchEnteredImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn replay_search_entered_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replay_search_entered_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_replay_search_any_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "ReplaySearchAnyImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "ReplaySearchAnyImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn replay_search_any_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replay_search_any_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_replay_postsearch_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "ReplayPostsearchImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "ReplayPostsearchImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn replay_postsearch_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replay_postsearch_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_download_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "DownloadImpl",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "DownloadImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn download_impl(
-        this: RelaySequence_RelaySequenceNet,
-        with_meta_data: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_RelaySequenceNet,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_download_impl::get_offset() as isize),
-        );
-        inner(this, with_meta_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postdownload_take_over_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "PostdownloadTakeOverImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "PostdownloadTakeOverImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postdownload_take_over_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postdownload_take_over_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postdownload_replay_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "PostdownloadReplayImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "PostdownloadReplayImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postdownload_replay_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postdownload_replay_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_upload_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "UploadImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "UploadImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn upload_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upload_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_postupload_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "PostuploadImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "PostuploadImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn postupload_impl(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postupload_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_wait_message_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "CloseWaitMessageImpl",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "CloseWaitMessageImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_wait_message_impl(
-        this: RelaySequence_RelaySequenceNet,
-        super_: crate::app::procinst::ProcInst,
-        is_success: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_RelaySequenceNet,
-            crate::app::procinst::ProcInst,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_close_wait_message_impl::get_offset() as isize),
-        );
-        inner(this, super_, is_success, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_selected_from_search_results {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "DeleteSelectedFromSearchResults",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "DeleteSelectedFromSearchResults",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_selected_from_search_results(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_selected_from_search_results::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceNet as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelaySequence_RelaySequenceNet,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl RelaySequence_RelaySequenceNet {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RelaySequence_RelaySequenceNet_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-pub trait IRelaySequence_RelaySequenceNetMethods: IRelaySequence_RelaySequenceNet {
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::on_create(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TakeOverSearchImpl()` overload"]
-    fn take_over_search_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_search_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TakeOverPostsearchImpl()` overload"]
-    fn take_over_postsearch_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_postsearch_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
-    fn take_over_download_meta_with_data_code_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_download_meta_with_data_code_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
-    fn take_over_postdownload_meta_with_data_code_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw :: take_over_postdownload_meta_with_data_code_impl (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`TakeOverSetPlayingImpl()` overload"]
-    fn take_over_set_playing_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_set_playing_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
-    fn take_over_postset_playing_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::take_over_postset_playing_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReplaySearchEnteredImpl()` overload"]
-    fn replay_search_entered_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::replay_search_entered_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReplaySearchAnyImpl()` overload"]
-    fn replay_search_any_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::replay_search_any_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReplayPostsearchImpl()` overload"]
-    fn replay_postsearch_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::replay_postsearch_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DownloadImpl(bool)` overload"]
-    fn download_impl(self, with_meta_data: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::download_impl(
-                __receiver,
-                ::core::convert::Into::into(with_meta_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostdownloadTakeOverImpl()` overload"]
-    fn postdownload_take_over_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::postdownload_take_over_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostdownloadReplayImpl()` overload"]
-    fn postdownload_replay_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::postdownload_replay_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UploadImpl()` overload"]
-    fn upload_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::upload_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PostuploadImpl()` overload"]
-    fn postupload_impl(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::postupload_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]
-    fn close_wait_message_impl(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        is_success: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::close_wait_message_impl(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(is_success),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DeleteSelectedFromSearchResults()` overload"]
-    fn delete_selected_from_search_results(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::delete_selected_from_search_results(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelaySequence_RelaySequenceNet as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceNet_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-impl<__T: IRelaySequence_RelaySequenceNet> IRelaySequence_RelaySequenceNetMethods for __T {}
-
-#[cfg(feature = "app-relaysequence")]
-impl RelaySequence_RelaySequenceNet {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelaySequence_RelaySequenceNet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelaySequence_RelaySequenceNetMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-relaysequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RelaySequence_RelaySequenceLocal_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -1928,39 +1575,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_lan_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -1973,39 +1608,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "InitializeLanRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "InitializeLanRootPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize_lan_root_path(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize_lan_root_path(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize_lan_root_path::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize_lan_root_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_take_over_search_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2018,39 +1641,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverSearchImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverSearchImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn take_over_search_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn take_over_search_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_search_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_take_over_search_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_take_over_postsearch_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2063,39 +1674,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverPostsearchImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverPostsearchImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn take_over_postsearch_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn take_over_postsearch_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_postsearch_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_take_over_postsearch_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_take_over_download_meta_with_data_code_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2108,18 +1707,15 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverDownloadMetaWithDataCodeImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverDownloadMetaWithDataCodeImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn take_over_download_meta_with_data_code_impl(
@@ -2127,22 +1723,14 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_take_over_download_meta_with_data_code_impl::get_offset() as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_take_over_download_meta_with_data_code_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_take_over_postdownload_meta_with_data_code_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2155,18 +1743,15 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverPostdownloadMetaWithDataCodeImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverPostdownloadMetaWithDataCodeImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn take_over_postdownload_meta_with_data_code_impl(
@@ -2174,23 +1759,14 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(
-                        __lookup_take_over_postdownload_meta_with_data_code_impl::get_offset()
-                            as isize,
-                    ),
-            );
+            ::core::mem::transmute(__lookup_take_over_postdownload_meta_with_data_code_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_take_over_set_playing_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2203,39 +1779,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverSetPlayingImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverSetPlayingImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn take_over_set_playing_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn take_over_set_playing_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_set_playing_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_take_over_set_playing_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_take_over_postset_playing_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2248,39 +1812,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "TakeOverPostsetPlayingImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "TakeOverPostsetPlayingImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn take_over_postset_playing_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn take_over_postset_playing_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_take_over_postset_playing_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_take_over_postset_playing_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replay_search_entered_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2293,39 +1845,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "ReplaySearchEnteredImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "ReplaySearchEnteredImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn replay_search_entered_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn replay_search_entered_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replay_search_entered_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_replay_search_entered_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replay_search_any_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2338,39 +1878,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "ReplaySearchAnyImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "ReplaySearchAnyImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn replay_search_any_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn replay_search_any_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replay_search_any_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_replay_search_any_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_replay_postsearch_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2383,41 +1911,28 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "ReplayPostsearchImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "ReplayPostsearchImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn replay_postsearch_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn replay_postsearch_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_replay_postsearch_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_replay_postsearch_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_download_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
                 "DownloadImpl",
@@ -2429,43 +1944,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "DownloadImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "DownloadImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn download_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        with_meta_data: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_RelaySequenceLocal,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_download_impl::get_offset() as isize),
-        );
+    pub unsafe fn download_impl(this: RelaySequence_RelaySequenceLocal, with_meta_data: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_download_impl::get_method_info().method_ptr);
         inner(this, with_meta_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_postdownload_take_over_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2478,39 +1977,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "PostdownloadTakeOverImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "PostdownloadTakeOverImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn postdownload_take_over_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn postdownload_take_over_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postdownload_take_over_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_postdownload_take_over_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_postdownload_replay_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2523,39 +2010,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "PostdownloadReplayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "PostdownloadReplayImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn postdownload_replay_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn postdownload_replay_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postdownload_replay_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_postdownload_replay_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_upload_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2568,39 +2043,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "UploadImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "UploadImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn upload_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn upload_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_upload_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_upload_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_postupload_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2613,43 +2076,29 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "PostuploadImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "PostuploadImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn postupload_impl(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn postupload_impl(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_postupload_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_postupload_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data_file_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
                 "GetDataFileName",
@@ -2661,45 +2110,32 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "GetDataFileName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "GetDataFileName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_data_file_name(
         meta_data: crate::app::relayservermetadata::RelayServerMetaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_file_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::relayservermetadata::RelayServerMetaData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_data_file_name::get_method_info().method_ptr);
         inner(meta_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_meta_data_file_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
                 "GetMetaDataFileName",
@@ -2711,43 +2147,31 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "GetMetaDataFileName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "GetMetaDataFileName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_meta_data_file_name(
         meta_data: crate::app::relayservermetadata::RelayServerMetaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::relayservermetadata::RelayServerMetaData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_meta_data_file_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::relayservermetadata::RelayServerMetaData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_meta_data_file_name::get_method_info().method_ptr);
         inner(meta_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pseudo_principal_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
                 "GetPseudoPrincipalId",
@@ -2759,41 +2183,28 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "GetPseudoPrincipalId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "GetPseudoPrincipalId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pseudo_principal_id(
-        player_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
+    pub unsafe fn get_pseudo_principal_id(player_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pseudo_principal_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_pseudo_principal_id::get_method_info().method_ptr);
         inner(player_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pseudo_data_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
                 "GetPseudoDataId",
@@ -2805,41 +2216,28 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "GetPseudoDataId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "GetPseudoDataId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pseudo_data_id(
-        meta_path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
+    pub unsafe fn get_pseudo_data_id(meta_path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pseudo_data_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_pseudo_data_id::get_method_info().method_ptr);
         inner(meta_path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -2851,39 +2249,27 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::class(),
@@ -2896,30 +2282,20 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_RelaySequenceLocal as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RelaySequence_RelaySequenceLocal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RelaySequence_RelaySequenceLocal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2927,16 +2303,12 @@ mod __RelaySequence_RelaySequenceLocal_unity2_raw {
 #[cfg(feature = "app-relaysequence")]
 impl RelaySequence_RelaySequenceLocal {
     #[doc = "`GetDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    pub fn get_data_file_name(
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> ::unity2::Il2CppString {
+    pub fn get_data_file_name(meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>) -> ::unity2::Il2CppString {
         unsafe {
-            __RelaySequence_RelaySequenceLocal_unity2_raw::get_data_file_name(
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
+            __RelaySequence_RelaySequenceLocal_unity2_raw::get_data_file_name(::core::convert::Into::into(meta_data), ::core::option::Option::None)
         }
     }
+
     #[doc = "`GetMetaDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
     pub fn get_meta_data_file_name(
         meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
@@ -2948,10 +2320,9 @@ impl RelaySequence_RelaySequenceLocal {
             )
         }
     }
+
     #[doc = "`GetPseudoPrincipalId(::unity2::Il2CppString)` overload"]
-    pub fn get_pseudo_principal_id(
-        player_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> u64 {
+    pub fn get_pseudo_principal_id(player_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> u64 {
         unsafe {
             __RelaySequence_RelaySequenceLocal_unity2_raw::get_pseudo_principal_id(
                 ::core::convert::Into::into(player_name),
@@ -2959,25 +2330,17 @@ impl RelaySequence_RelaySequenceLocal {
             )
         }
     }
+
     #[doc = "`GetPseudoDataId(::unity2::Il2CppString)` overload"]
-    pub fn get_pseudo_data_id(
-        meta_path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> u64 {
+    pub fn get_pseudo_data_id(meta_path: impl ::core::convert::Into<::unity2::Il2CppString>) -> u64 {
         unsafe {
-            __RelaySequence_RelaySequenceLocal_unity2_raw::get_pseudo_data_id(
-                ::core::convert::Into::into(meta_path),
-                ::core::option::Option::None,
-            )
+            __RelaySequence_RelaySequenceLocal_unity2_raw::get_pseudo_data_id(::core::convert::Into::into(meta_path), ::core::option::Option::None)
         }
     }
+
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RelaySequence_RelaySequenceLocal_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RelaySequence_RelaySequenceLocal_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -2987,146 +2350,95 @@ pub trait IRelaySequence_RelaySequenceLocalMethods: IRelaySequence_RelaySequence
     fn on_create(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::on_create(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitializeLanRootPath()` overload"]
     fn initialize_lan_root_path(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::initialize_lan_root_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::initialize_lan_root_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TakeOverSearchImpl()` overload"]
     fn take_over_search_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_search_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_search_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TakeOverPostsearchImpl()` overload"]
     fn take_over_postsearch_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postsearch_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postsearch_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TakeOverDownloadMetaWithDataCodeImpl()` overload"]
     fn take_over_download_meta_with_data_code_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw :: take_over_download_meta_with_data_code_impl (__receiver , :: core :: option :: Option :: None)
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_download_meta_with_data_code_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]
     fn take_over_postdownload_meta_with_data_code_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw :: take_over_postdownload_meta_with_data_code_impl (__receiver , :: core :: option :: Option :: None)
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postdownload_meta_with_data_code_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TakeOverSetPlayingImpl()` overload"]
     fn take_over_set_playing_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_set_playing_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_set_playing_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TakeOverPostsetPlayingImpl()` overload"]
     fn take_over_postset_playing_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postset_playing_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postset_playing_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReplaySearchEnteredImpl()` overload"]
     fn replay_search_entered_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::replay_search_entered_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::replay_search_entered_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReplaySearchAnyImpl()` overload"]
     fn replay_search_any_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::replay_search_any_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::replay_search_any_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReplayPostsearchImpl()` overload"]
     fn replay_postsearch_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::replay_postsearch_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::replay_postsearch_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DownloadImpl(bool)` overload"]
     fn download_impl(self, with_meta_data: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelaySequence_RelaySequenceLocal_unity2_raw::download_impl(
                 __receiver,
                 ::core::convert::Into::into(with_meta_data),
@@ -3138,65 +2450,40 @@ pub trait IRelaySequence_RelaySequenceLocalMethods: IRelaySequence_RelaySequence
     fn postdownload_take_over_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::postdownload_take_over_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::postdownload_take_over_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PostdownloadReplayImpl()` overload"]
     fn postdownload_replay_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::postdownload_replay_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::postdownload_replay_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UploadImpl()` overload"]
     fn upload_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::upload_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::upload_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PostuploadImpl()` overload"]
     fn postupload_impl(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::postupload_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::postupload_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_RelaySequenceLocal_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RelaySequence_RelaySequenceLocal as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_RelaySequenceLocal_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -3229,9 +2516,7 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_jump_to {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::relaysequence::RelaySequence_Label as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3245,18 +2530,15 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "JumpTo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                        "JumpTo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_to(
@@ -3264,26 +2546,16 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         label: crate::app::relaysequence::RelaySequence_Label,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            crate::app::relaysequence::RelaySequence_Label,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelaySequence_IRelaySequenceBase, crate::app::relaysequence::RelaySequence_Label, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to::get_method_info().method_ptr);
         inner(this, label, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
                 "SelectMode",
@@ -3295,18 +2567,15 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SelectMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                        "SelectMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn select_mode(
@@ -3314,26 +2583,16 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         mode: crate::app::relay::Relay_Modes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            crate::app::relay::Relay_Modes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelaySequence_IRelaySequenceBase, crate::app::relay::Relay_Modes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_mode::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_map {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
                 "SelectMap",
@@ -3345,18 +2604,15 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SelectMap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                        "SelectMap",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn select_map(
@@ -3364,26 +2620,16 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         cid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_map::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelaySequence_IRelaySequenceBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_map::get_method_info().method_ptr);
         inner(this, cid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_take_over_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
                 "SelectTakeOverMode",
@@ -3395,18 +2641,15 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SelectTakeOverMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                        "SelectTakeOverMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn select_take_over_mode(
@@ -3414,26 +2657,16 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         mode: crate::app::relay::Relay_TakeOverModes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            crate::app::relay::Relay_TakeOverModes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_take_over_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RelaySequence_IRelaySequenceBase, crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_take_over_mode::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_public {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::class(),
                 "SetPublic",
@@ -3445,34 +2678,20 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
-                    "SetPublic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence_IRelaySequenceBase as ::unity2::ClassIdentity>::NAME,
+                        "SetPublic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_public(
-        this: RelaySequence_IRelaySequenceBase,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelaySequence_IRelaySequenceBase,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_public::get_offset() as isize),
-        );
+    pub unsafe fn set_public(this: RelaySequence_IRelaySequenceBase, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelaySequence_IRelaySequenceBase, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_public::get_method_info().method_ptr);
         inner(this, enable, __unity2_method_info)
     }
 }
@@ -3480,60 +2699,34 @@ mod __RelaySequence_IRelaySequenceBase_unity2_raw {
 #[cfg(feature = "app-relaysequence")]
 pub trait IRelaySequence_IRelaySequenceBaseMethods: IRelaySequence_IRelaySequenceBase {
     #[doc = "`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]
-    fn jump_to(
-        self,
-        label: impl ::core::convert::Into<crate::app::relaysequence::RelaySequence_Label>,
-    ) -> () {
+    fn jump_to(self, label: impl ::core::convert::Into<crate::app::relaysequence::RelaySequence_Label>) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::jump_to(
-                __receiver,
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_IRelaySequenceBase_unity2_raw::jump_to(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)
         }
     }
     #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
     fn select_mode(self, mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::select_mode(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_IRelaySequenceBase_unity2_raw::select_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
         }
     }
     #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
     fn select_map(self, cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::select_map(
-                __receiver,
-                ::core::convert::Into::into(cid),
-                ::core::option::Option::None,
-            )
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_IRelaySequenceBase_unity2_raw::select_map(__receiver, ::core::convert::Into::into(cid), ::core::option::Option::None)
         }
     }
     #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    fn select_take_over_mode(
-        self,
-        mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>,
-    ) -> () {
+    fn select_take_over_mode(self, mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelaySequence_IRelaySequenceBase_unity2_raw::select_take_over_mode(
                 __receiver,
                 ::core::convert::Into::into(mode),
@@ -3545,14 +2738,8 @@ pub trait IRelaySequence_IRelaySequenceBaseMethods: IRelaySequence_IRelaySequenc
     fn set_public(self, enable: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelaySequence_IRelaySequenceBase_unity2_raw::set_public(
-                __receiver,
-                ::core::convert::Into::into(enable),
-                ::core::option::Option::None,
-            )
+                <RelaySequence_IRelaySequenceBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelaySequence_IRelaySequenceBase_unity2_raw::set_public(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)
         }
     }
 }
@@ -3569,11 +2756,8 @@ mod __RelaySequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -3585,41 +2769,28 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_Modes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
                 "SelectMode",
@@ -3631,41 +2802,28 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn select_mode(
-        mode: crate::app::relay::Relay_Modes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn select_mode(mode: crate::app::relay::Relay_Modes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::relay::Relay_Modes, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_select_mode::get_method_info().method_ptr);
         inner(mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_take_over_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::relay::Relay_TakeOverModes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
                 "SelectTakeOverMode",
@@ -3677,43 +2835,28 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectTakeOverMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectTakeOverMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn select_take_over_mode(
-        mode: crate::app::relay::Relay_TakeOverModes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::relay::Relay_TakeOverModes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_select_take_over_mode::get_offset() as isize),
-        );
+    pub unsafe fn select_take_over_mode(mode: crate::app::relay::Relay_TakeOverModes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_select_take_over_mode::get_method_info().method_ptr);
         inner(mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_map {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
                 "SelectMap",
@@ -3725,39 +2868,27 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectMap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectMap",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn select_map(
-        cid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn select_map(cid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_map::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_select_map::get_method_info().method_ptr);
         inner(cid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_no_selectable_map {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
@@ -3770,35 +2901,26 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "NoSelectableMap",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "NoSelectableMap",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn no_selectable_map(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_no_selectable_map::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_no_selectable_map::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_to_take_over_mode_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
@@ -3811,37 +2933,27 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToTakeOverModeSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToTakeOverModeSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn jump_to_take_over_mode_select(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to_take_over_mode_select::get_offset() as isize),
-        );
+    pub unsafe fn jump_to_take_over_mode_select(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to_take_over_mode_select::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_to_take_over_predownload_meta_with_data_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
@@ -3854,40 +2966,27 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToTakeOverPredownloadMetaWithDataCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToTakeOverPredownloadMetaWithDataCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn jump_to_take_over_predownload_meta_with_data_code(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_jump_to_take_over_predownload_meta_with_data_code::get_offset()
-                        as isize,
-                ),
-        );
+    pub unsafe fn jump_to_take_over_predownload_meta_with_data_code(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to_take_over_predownload_meta_with_data_code::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_to_replay_download {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
@@ -3900,35 +2999,27 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToReplayDownload",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToReplayDownload",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_to_replay_download(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to_replay_download::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_jump_to_replay_download::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_jump_to_award {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
@@ -3941,37 +3032,27 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "JumpToAward",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "JumpToAward",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn jump_to_award(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_jump_to_award::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_jump_to_award::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_public {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
                 "SetPublic",
@@ -3983,38 +3064,26 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "SetPublic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "SetPublic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_public(
-        is_public: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_public::get_offset() as isize),
-        );
+    pub unsafe fn set_public(is_public: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(bool, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_set_public::get_method_info().method_ptr);
         inner(is_public, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sequence {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelaySequence as ::unity2::ClassIdentity>::class(),
@@ -4027,31 +3096,20 @@ mod __RelaySequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelaySequence as ::unity2::ClassIdentity>::NAME,
-                    "GetSequence",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelaySequence as ::unity2::ClassIdentity>::NAME,
+                        "GetSequence",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sequence(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sequence::get_offset() as isize),
-        );
+    pub unsafe fn get_sequence(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase =
+            ::core::mem::transmute(__lookup_get_sequence::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -4060,77 +3118,54 @@ mod __RelaySequence_unity2_raw {
 impl RelaySequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RelaySequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`SelectMode(crate::app::relay::Relay_Modes)` overload"]
     pub fn select_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_Modes>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::select_mode(
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RelaySequence_unity2_raw::select_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
     }
+
     #[doc = "`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]
-    pub fn select_take_over_mode(
-        mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>,
-    ) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::select_take_over_mode(
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn select_take_over_mode(mode: impl ::core::convert::Into<crate::app::relay::Relay_TakeOverModes>) -> () {
+        unsafe { __RelaySequence_unity2_raw::select_take_over_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
     }
+
     #[doc = "`SelectMap(::unity2::Il2CppString)` overload"]
     pub fn select_map(cid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::select_map(
-                ::core::convert::Into::into(cid),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RelaySequence_unity2_raw::select_map(::core::convert::Into::into(cid), ::core::option::Option::None) }
     }
+
     #[doc = "`NoSelectableMap()` overload"]
     pub fn no_selectable_map() -> () {
         unsafe { __RelaySequence_unity2_raw::no_selectable_map(::core::option::Option::None) }
     }
+
     #[doc = "`JumpToTakeOverModeSelect()` overload"]
     pub fn jump_to_take_over_mode_select() -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::jump_to_take_over_mode_select(::core::option::Option::None)
-        }
+        unsafe { __RelaySequence_unity2_raw::jump_to_take_over_mode_select(::core::option::Option::None) }
     }
+
     #[doc = "`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]
     pub fn jump_to_take_over_predownload_meta_with_data_code() -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::jump_to_take_over_predownload_meta_with_data_code(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RelaySequence_unity2_raw::jump_to_take_over_predownload_meta_with_data_code(::core::option::Option::None) }
     }
+
     #[doc = "`JumpToReplayDownload()` overload"]
     pub fn jump_to_replay_download() -> () {
         unsafe { __RelaySequence_unity2_raw::jump_to_replay_download(::core::option::Option::None) }
     }
+
     #[doc = "`JumpToAward()` overload"]
     pub fn jump_to_award() -> () {
         unsafe { __RelaySequence_unity2_raw::jump_to_award(::core::option::Option::None) }
     }
+
     #[doc = "`SetPublic(bool)` overload"]
     pub fn set_public(is_public: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __RelaySequence_unity2_raw::set_public(
-                ::core::convert::Into::into(is_public),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RelaySequence_unity2_raw::set_public(::core::convert::Into::into(is_public), ::core::option::Option::None) }
     }
+
     #[doc = "`GetSequence()` overload"]
     pub fn get_sequence() -> crate::app::relaysequence::RelaySequence_IRelaySequenceBase {
         unsafe { __RelaySequence_unity2_raw::get_sequence(::core::option::Option::None) }
@@ -4140,34 +3175,24 @@ impl RelaySequence {
 #[cfg(feature = "app-relaysequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRelaySequence;
-    pub use super::IRelaySequence_IRelaySequenceBase;
-    pub use super::IRelaySequence_IRelaySequenceBaseMethods;
-    pub use super::IRelaySequence_RelaySequenceBase_1;
-    pub use super::IRelaySequence_RelaySequenceBase_1Methods;
-    pub use super::IRelaySequence_RelaySequenceLocal;
-    pub use super::IRelaySequence_RelaySequenceLocalMethods;
-    pub use super::IRelaySequence_RelaySequenceNet;
-    pub use super::IRelaySequence_RelaySequenceNetMethods;
-    pub use super::RelaySequence;
-    pub use super::RelaySequence_IRelaySequenceBase;
-    pub use super::RelaySequence_Label;
-    pub use super::RelaySequence_RelaySequenceBase_1;
-    pub use super::RelaySequence_RelaySequenceLocal;
-    pub use super::RelaySequence_RelaySequenceNet;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IRelaySequence, IRelaySequence_IRelaySequenceBase, IRelaySequence_IRelaySequenceBaseMethods, IRelaySequence_RelaySequenceBase_1,
+        IRelaySequence_RelaySequenceBase_1Methods, IRelaySequence_RelaySequenceLocal, IRelaySequence_RelaySequenceLocalMethods,
+        IRelaySequence_RelaySequenceNet, IRelaySequence_RelaySequenceNetMethods, RelaySequence, RelaySequence_IRelaySequenceBase,
+        RelaySequence_Label, RelaySequence_RelaySequenceBase_1, RelaySequence_RelaySequenceLocal, RelaySequence_RelaySequenceNet,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

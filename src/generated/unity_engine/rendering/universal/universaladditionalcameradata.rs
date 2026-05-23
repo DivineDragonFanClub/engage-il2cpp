@@ -2,44 +2,67 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universaladditionalcameradata/UniversalAdditionalCameraData.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "UniversalAdditionalCameraData"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "UniversalAdditionalCameraData")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct UniversalAdditionalCameraData {
-# [rename (name = "m_RenderShadows")] pub m_render_shadows : bool ,
-# [rename (name = "m_RequiresDepthTextureOption")] pub m_requires_depth_texture_option : crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption ,
-# [rename (name = "m_RequiresOpaqueTextureOption")] pub m_requires_opaque_texture_option : crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption ,
-# [rename (name = "m_CameraType")] pub m_camera_type : crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType ,
-# [rename (name = "m_Cameras")] pub m_cameras : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: camera :: Camera > ,
-# [rename (name = "m_RendererIndex")] pub m_renderer_index : i32 ,
-# [rename (name = "m_VolumeLayerMask")] pub m_volume_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [rename (name = "m_VolumeTrigger")] pub m_volume_trigger : crate :: unity_engine :: transform :: Transform ,
-# [rename (name = "m_RenderPostProcessing")] pub m_render_post_processing : bool ,
-# [rename (name = "m_Antialiasing")] pub m_antialiasing : crate :: unity_engine :: rendering :: universal :: antialiasingmode :: AntialiasingMode ,
-# [rename (name = "m_AntialiasingQuality")] pub m_antialiasing_quality : crate :: unity_engine :: rendering :: universal :: antialiasingquality :: AntialiasingQuality ,
-# [rename (name = "m_StopNaN")] pub m_stop_na_n : bool ,
-# [rename (name = "m_Dithering")] pub m_dithering : bool ,
-# [rename (name = "m_ClearDepth")] pub m_clear_depth : bool ,
-# [rename (name = "m_AllowXRRendering")] pub m_allow_xr_rendering : bool ,
-# [rename (name = "m_IsAutoReduction")] pub m_is_auto_reduction : bool ,
-# [rename (name = "m_RequiresDepthTexture")] pub m_requires_depth_texture : bool ,
-# [rename (name = "m_RequiresColorTexture")] pub m_requires_color_texture : bool ,
-# [rename (name = "m_Version")] pub m_version : f32 ,
-# [static_field] # [rename (name = "s_DefaultAdditionalCameraData")] pub s_default_additional_camera_data : crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData ,
-# [rename (name = "m_CustomRenderingFlag")] pub m_custom_rendering_flag : crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag ,
-}
+        #[rename(name = "m_RenderShadows")]
+        pub m_render_shadows: bool,
+        #[rename(name = "m_RequiresDepthTextureOption")]
+        pub m_requires_depth_texture_option: crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
+        #[rename(name = "m_RequiresOpaqueTextureOption")]
+        pub m_requires_opaque_texture_option: crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
+        #[rename(name = "m_CameraType")]
+        pub m_camera_type: crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
+        #[rename(name = "m_Cameras")]
+        pub m_cameras: crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>,
+        #[rename(name = "m_RendererIndex")]
+        pub m_renderer_index: i32,
+        #[rename(name = "m_VolumeLayerMask")]
+        pub m_volume_layer_mask: crate::unity_engine::layermask::LayerMask,
+        #[rename(name = "m_VolumeTrigger")]
+        pub m_volume_trigger: crate::unity_engine::transform::Transform,
+        #[rename(name = "m_RenderPostProcessing")]
+        pub m_render_post_processing: bool,
+        #[rename(name = "m_Antialiasing")]
+        pub m_antialiasing: crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode,
+        #[rename(name = "m_AntialiasingQuality")]
+        pub m_antialiasing_quality: crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality,
+        #[rename(name = "m_StopNaN")]
+        pub m_stop_na_n: bool,
+        #[rename(name = "m_Dithering")]
+        pub m_dithering: bool,
+        #[rename(name = "m_ClearDepth")]
+        pub m_clear_depth: bool,
+        #[rename(name = "m_AllowXRRendering")]
+        pub m_allow_xr_rendering: bool,
+        #[rename(name = "m_IsAutoReduction")]
+        pub m_is_auto_reduction: bool,
+        #[rename(name = "m_RequiresDepthTexture")]
+        pub m_requires_depth_texture: bool,
+        #[rename(name = "m_RequiresColorTexture")]
+        pub m_requires_color_texture: bool,
+        #[rename(name = "m_Version")]
+        pub m_version: f32,
+        #[static_field]
+        #[rename(name = "s_DefaultAdditionalCameraData")]
+        pub s_default_additional_camera_data: crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData,
+        #[rename(name = "m_CustomRenderingFlag")]
+        pub m_custom_rendering_flag: crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata-types")]
@@ -54,9 +77,7 @@ mod __UniversalAdditionalCameraData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_version {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -69,39 +90,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_version",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_version",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_version(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_version(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_default_additional_camera_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -114,30 +123,31 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_defaultAdditionalCameraData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_defaultAdditionalCameraData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_default_additional_camera_data (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default_additional_camera_data :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_default_additional_camera_data(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData =
+            ::core::mem::transmute(__lookup_get_default_additional_camera_data::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_shadows {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -150,41 +160,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_renderShadows",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_renderShadows",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_render_shadows(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_render_shadows(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_render_shadows::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_render_shadows::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_shadows {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_renderShadows",
@@ -196,43 +193,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_renderShadows",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_renderShadows",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_render_shadows(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_shadows::get_offset() as isize),
-        );
+    pub unsafe fn set_render_shadows(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_render_shadows::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_requires_depth_option {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -245,35 +226,35 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_requiresDepthOption",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_requiresDepthOption",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_requires_depth_option(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_requires_depth_option :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption =
+            ::core::mem::transmute(__lookup_get_requires_depth_option::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_requires_depth_option {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_requiresDepthOption",
@@ -285,43 +266,34 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_requiresDepthOption",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_requiresDepthOption",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_requires_depth_option(
         this: UniversalAdditionalCameraData,
-        value : crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption,
+        value: crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             UniversalAdditionalCameraData,
             crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_requires_depth_option::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_requires_depth_option::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_requires_color_option {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -334,35 +306,35 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_requiresColorOption",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_requiresColorOption",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_requires_color_option(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_requires_color_option :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption =
+            ::core::mem::transmute(__lookup_get_requires_color_option::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_requires_color_option {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_requiresColorOption",
@@ -374,43 +346,34 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_requiresColorOption",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_requiresColorOption",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_requires_color_option(
         this: UniversalAdditionalCameraData,
-        value : crate :: unity_engine :: rendering :: universal :: cameraoverrideoption :: CameraOverrideOption,
+        value: crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             UniversalAdditionalCameraData,
             crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_requires_color_option::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_requires_color_option::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -423,35 +386,35 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_renderType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_renderType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_render_type(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_render_type :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType =
+            ::core::mem::transmute(__lookup_get_render_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_renderType",
@@ -463,18 +426,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_renderType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_renderType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_render_type(
@@ -486,20 +446,14 @@ mod __UniversalAdditionalCameraData_unity2_raw {
             UniversalAdditionalCameraData,
             crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_type::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_render_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_stack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -512,44 +466,33 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_cameraStack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_cameraStack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_stack(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera> {
         let inner: extern "C" fn(
             UniversalAdditionalCameraData,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::camera::Camera,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_stack::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera> =
+            ::core::mem::transmute(__lookup_get_camera_stack::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_camera_stack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -562,39 +505,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCameraStack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCameraStack",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_camera_stack(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_camera_stack(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_camera_stack::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_camera_stack::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clear_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -607,39 +538,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_clearDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_clearDepth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clear_depth(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_clear_depth(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_clear_depth::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_clear_depth::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_requires_depth_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -652,41 +571,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_requiresDepthTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_requiresDepthTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_requires_depth_texture(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_requires_depth_texture(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_requires_depth_texture::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_requires_depth_texture::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_requires_depth_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_requiresDepthTexture",
@@ -698,43 +604,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_requiresDepthTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_requiresDepthTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_requires_depth_texture(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_requires_depth_texture::get_offset() as isize),
-        );
+    pub unsafe fn set_requires_depth_texture(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_requires_depth_texture::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_requires_color_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -747,41 +637,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_requiresColorTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_requiresColorTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_requires_color_texture(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_requires_color_texture(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_requires_color_texture::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_requires_color_texture::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_requires_color_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_requiresColorTexture",
@@ -793,43 +670,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_requiresColorTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_requiresColorTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_requires_color_texture(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_requires_color_texture::get_offset() as isize),
-        );
+    pub unsafe fn set_requires_color_texture(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_requires_color_texture::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_scriptable_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -842,36 +703,34 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_scriptableRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_scriptableRenderer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_scriptable_renderer(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_scriptable_renderer :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer =
+            ::core::mem::transmute(__lookup_get_scriptable_renderer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "SetRenderer",
@@ -883,43 +742,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "SetRenderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "SetRenderer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_renderer(
-        this: UniversalAdditionalCameraData,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_renderer::get_offset() as isize),
-        );
+    pub unsafe fn set_renderer(this: UniversalAdditionalCameraData, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_renderer::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_volume_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -932,43 +775,31 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_volumeLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_volumeLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_volume_layer_mask(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::layermask::LayerMask {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::layermask::LayerMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_volume_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> crate::unity_engine::layermask::LayerMask =
+            ::core::mem::transmute(__lookup_get_volume_layer_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_volume_layer_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_volumeLayerMask",
@@ -980,18 +811,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_volumeLayerMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_volumeLayerMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_volume_layer_mask(
@@ -999,24 +827,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         value: crate::unity_engine::layermask::LayerMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            crate::unity_engine::layermask::LayerMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_volume_layer_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UniversalAdditionalCameraData, crate::unity_engine::layermask::LayerMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_volume_layer_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_volume_trigger {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1029,43 +848,31 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_volumeTrigger",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_volumeTrigger",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_volume_trigger(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_volume_trigger::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_volume_trigger::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_volume_trigger {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_volumeTrigger",
@@ -1077,18 +884,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_volumeTrigger",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_volumeTrigger",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_volume_trigger(
@@ -1096,24 +900,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         value: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_volume_trigger::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UniversalAdditionalCameraData, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_volume_trigger::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_post_processing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1126,41 +921,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_renderPostProcessing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_renderPostProcessing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_render_post_processing(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_render_post_processing(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_render_post_processing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_render_post_processing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_render_post_processing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_renderPostProcessing",
@@ -1172,43 +954,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_renderPostProcessing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_renderPostProcessing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_render_post_processing(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_post_processing::get_offset() as isize),
-        );
+    pub unsafe fn set_render_post_processing(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_render_post_processing::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_antialiasing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1221,35 +987,35 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_antialiasing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_antialiasing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_antialiasing(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: antialiasingmode :: AntialiasingMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_antialiasing :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode =
+            ::core::mem::transmute(__lookup_get_antialiasing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_antialiasing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: antialiasingmode :: AntialiasingMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_antialiasing",
@@ -1261,18 +1027,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_antialiasing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_antialiasing",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_antialiasing(
@@ -1284,20 +1047,14 @@ mod __UniversalAdditionalCameraData_unity2_raw {
             UniversalAdditionalCameraData,
             crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_antialiasing::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_antialiasing::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_antialiasing_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1310,35 +1067,35 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_antialiasingQuality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_antialiasingQuality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_antialiasing_quality(
         this: UniversalAdditionalCameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: antialiasingquality :: AntialiasingQuality = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_antialiasing_quality :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality =
+            ::core::mem::transmute(__lookup_get_antialiasing_quality::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_antialiasing_quality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: antialiasingquality :: AntialiasingQuality as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_antialiasingQuality",
@@ -1350,18 +1107,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_antialiasingQuality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_antialiasingQuality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_antialiasing_quality(
@@ -1373,20 +1127,14 @@ mod __UniversalAdditionalCameraData_unity2_raw {
             UniversalAdditionalCameraData,
             crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_antialiasing_quality::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_antialiasing_quality::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_stop_na_n {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1399,41 +1147,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_stopNaN",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_stopNaN",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_stop_na_n(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_stop_na_n(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_stop_na_n::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_stop_na_n::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_stop_na_n {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_stopNaN",
@@ -1445,43 +1180,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_stopNaN",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_stopNaN",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_stop_na_n(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_stop_na_n::get_offset() as isize),
-        );
+    pub unsafe fn set_stop_na_n(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_stop_na_n::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dithering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1494,41 +1213,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_dithering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_dithering",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_dithering(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_dithering(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_dithering::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_dithering::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dithering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_dithering",
@@ -1540,43 +1246,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_dithering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_dithering",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_dithering(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_dithering::get_offset() as isize),
-        );
+    pub unsafe fn set_dithering(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_dithering::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_allow_xr_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1589,41 +1279,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_allowXRRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_allowXRRendering",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_allow_xr_rendering(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_allow_xr_rendering(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_allow_xr_rendering::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_allow_xr_rendering::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_allow_xr_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_allowXRRendering",
@@ -1635,43 +1312,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_allowXRRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_allowXRRendering",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_allow_xr_rendering(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_allow_xr_rendering::get_offset() as isize),
-        );
+    pub unsafe fn set_allow_xr_rendering(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_allow_xr_rendering::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_auto_reduction {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1684,41 +1345,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_isAutoReduction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_isAutoReduction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_auto_reduction(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_auto_reduction(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_auto_reduction::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_auto_reduction::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_auto_reduction {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_isAutoReduction",
@@ -1730,43 +1378,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_isAutoReduction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_isAutoReduction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_auto_reduction(
-        this: UniversalAdditionalCameraData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_auto_reduction::get_offset() as isize),
-        );
+    pub unsafe fn set_is_auto_reduction(this: UniversalAdditionalCameraData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_auto_reduction::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_flag_rendering_master {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1779,41 +1411,28 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_customFlagRenderingMaster",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_customFlagRenderingMaster",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_custom_flag_rendering_master(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_custom_flag_rendering_master(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_custom_flag_rendering_master::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_custom_flag_rendering_master::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_custom_flag_rendering_master {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_customFlagRenderingMaster",
@@ -1825,18 +1444,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_customFlagRenderingMaster",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_customFlagRenderingMaster",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_custom_flag_rendering_master(
@@ -1844,24 +1460,15 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UniversalAdditionalCameraData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_custom_flag_rendering_master::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UniversalAdditionalCameraData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_custom_flag_rendering_master::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_rendering_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1874,31 +1481,35 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "get_customRenderingFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "get_customRenderingFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_custom_rendering_flag (this : UniversalAdditionalCameraData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag{
-        let inner : extern "C" fn (UniversalAdditionalCameraData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_custom_rendering_flag :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_custom_rendering_flag(
+        this: UniversalAdditionalCameraData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag {
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag =
+            ::core::mem::transmute(__lookup_get_custom_rendering_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_custom_rendering_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
                 "set_customRenderingFlag",
@@ -1910,35 +1521,34 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "set_customRenderingFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "set_customRenderingFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_custom_rendering_flag(
         this: UniversalAdditionalCameraData,
-        value : crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag,
+        value: crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (UniversalAdditionalCameraData , crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_custom_rendering_flag :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UniversalAdditionalCameraData,
+            crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_custom_rendering_flag::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_before_serialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1951,39 +1561,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "OnBeforeSerialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "OnBeforeSerialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_before_serialize(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_before_serialize(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_before_serialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_before_serialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_after_deserialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -1996,39 +1594,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "OnAfterDeserialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "OnAfterDeserialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_after_deserialize(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_after_deserialize(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_after_deserialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_after_deserialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_draw_gizmos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -2041,39 +1627,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    "OnDrawGizmos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        "OnDrawGizmos",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_draw_gizmos(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_draw_gizmos(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_draw_gizmos::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_draw_gizmos::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -2086,39 +1660,27 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: UniversalAdditionalCameraData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: UniversalAdditionalCameraData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::class(),
@@ -2131,39 +1693,31 @@ mod __UniversalAdditionalCameraData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UniversalAdditionalCameraData as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata")]
 impl UniversalAdditionalCameraData {
-    #[doc = "`get_defaultAdditionalCameraData()` overload"]    pub fn get_default_additional_camera_data () -> crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData{
-        unsafe {
-            __UniversalAdditionalCameraData_unity2_raw::get_default_additional_camera_data(
-                ::core::option::Option::None,
-            )
-        }
+    #[doc = "`get_defaultAdditionalCameraData()` overload"]
+    pub fn get_default_additional_camera_data(
+    ) -> crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData {
+        unsafe { __UniversalAdditionalCameraData_unity2_raw::get_default_additional_camera_data(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __UniversalAdditionalCameraData_unity2_raw::cctor(::core::option::Option::None) }
@@ -2176,35 +1730,23 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_version(self) -> f32 {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_version(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_version(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_renderShadows()` overload"]
     fn get_render_shadows(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_render_shadows(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_render_shadows(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_renderShadows(bool)` overload"]
     fn set_render_shadows(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_render_shadows(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2213,32 +1755,21 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
         }
     }
     #[doc = "`get_requiresDepthOption()` overload"]
-    fn get_requires_depth_option(
-        self,
-    ) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption {
+    fn get_requires_depth_option(self) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_requires_depth_option(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_requires_depth_option(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_requiresDepthOption(crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption)` overload"]
     fn set_requires_depth_option(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_requires_depth_option(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2247,32 +1778,21 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
         }
     }
     #[doc = "`get_requiresColorOption()` overload"]
-    fn get_requires_color_option(
-        self,
-    ) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption {
+    fn get_requires_color_option(self) -> crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_requires_color_option(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_requires_color_option(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_requiresColorOption(crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption)` overload"]
     fn set_requires_color_option(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::cameraoverrideoption::CameraOverrideOption>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_requires_color_option(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2281,101 +1801,58 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
         }
     }
     #[doc = "`get_renderType()` overload"]
-    fn get_render_type(
-        self,
-    ) -> crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType {
+    fn get_render_type(self) -> crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_render_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_render_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_renderType(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)` overload"]
-    fn set_render_type(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
-        >,
-    ) -> () {
+    fn set_render_type(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::set_render_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::set_render_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_cameraStack()` overload"]
-    fn get_camera_stack(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>
-    {
+    fn get_camera_stack(self) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera> {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_camera_stack(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_camera_stack(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateCameraStack()` overload"]
     fn update_camera_stack(self) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::update_camera_stack(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::update_camera_stack(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_clearDepth()` overload"]
     fn get_clear_depth(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_clear_depth(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_clear_depth(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_requiresDepthTexture()` overload"]
     fn get_requires_depth_texture(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_requires_depth_texture(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_requires_depth_texture(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_requiresDepthTexture(bool)` overload"]
     fn set_requires_depth_texture(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_requires_depth_texture(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2387,22 +1864,15 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_requires_color_texture(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_requires_color_texture(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_requires_color_texture(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_requiresColorTexture(bool)` overload"]
     fn set_requires_color_texture(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_requires_color_texture(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2411,57 +1881,34 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
         }
     }
     #[doc = "`get_scriptableRenderer()` overload"]
-    fn get_scriptable_renderer(
-        self,
-    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
+    fn get_scriptable_renderer(self) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_scriptable_renderer(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_scriptable_renderer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetRenderer(i32)` overload"]
     fn set_renderer(self, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::set_renderer(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::set_renderer(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`get_volumeLayerMask()` overload"]
     fn get_volume_layer_mask(self) -> crate::unity_engine::layermask::LayerMask {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_volume_layer_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_volume_layer_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_volumeLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]
-    fn set_volume_layer_mask(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
-    ) -> () {
+    fn set_volume_layer_mask(self, value: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_volume_layer_mask(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2473,25 +1920,15 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_volume_trigger(self) -> crate::unity_engine::transform::Transform {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_volume_trigger(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_volume_trigger(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_volumeTrigger(crate::unity_engine::transform::Transform)` overload"]
-    fn set_volume_trigger(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> () {
+    fn set_volume_trigger(self, value: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_volume_trigger(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2503,22 +1940,15 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_render_post_processing(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_render_post_processing(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_render_post_processing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_renderPostProcessing(bool)` overload"]
     fn set_render_post_processing(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_render_post_processing(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2527,66 +1957,40 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
         }
     }
     #[doc = "`get_antialiasing()` overload"]
-    fn get_antialiasing(
-        self,
-    ) -> crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode {
+    fn get_antialiasing(self) -> crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_antialiasing(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_antialiasing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_antialiasing(crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode)` overload"]
     fn set_antialiasing(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::antialiasingmode::AntialiasingMode>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::set_antialiasing(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::set_antialiasing(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_antialiasingQuality()` overload"]
-    fn get_antialiasing_quality(
-        self,
-    ) -> crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality {
+    fn get_antialiasing_quality(self) -> crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_antialiasing_quality(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_antialiasing_quality(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_antialiasingQuality(crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality)` overload"]
     fn set_antialiasing_quality(
         self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality,
-        >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::antialiasingquality::AntialiasingQuality>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_antialiasing_quality(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2598,76 +2002,47 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_stop_na_n(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_stop_na_n(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_stop_na_n(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_stopNaN(bool)` overload"]
     fn set_stop_na_n(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::set_stop_na_n(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::set_stop_na_n(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_dithering()` overload"]
     fn get_dithering(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_dithering(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_dithering(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_dithering(bool)` overload"]
     fn set_dithering(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::set_dithering(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::set_dithering(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_allowXRRendering()` overload"]
     fn get_allow_xr_rendering(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_allow_xr_rendering(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_allow_xr_rendering(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_allowXRRendering(bool)` overload"]
     fn set_allow_xr_rendering(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_allow_xr_rendering(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2679,22 +2054,15 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_is_auto_reduction(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_is_auto_reduction(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_is_auto_reduction(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_isAutoReduction(bool)` overload"]
     fn set_is_auto_reduction(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_is_auto_reduction(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2706,22 +2074,15 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn get_custom_flag_rendering_master(self) -> bool {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_custom_flag_rendering_master(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_custom_flag_rendering_master(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_customFlagRenderingMaster(bool)` overload"]
     fn set_custom_flag_rendering_master(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_custom_flag_rendering_master(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2729,28 +2090,22 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
             )
         }
     }
-    #[doc = "`get_customRenderingFlag()` overload"]    fn get_custom_rendering_flag (self ,) -> crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag{
+    #[doc = "`get_customRenderingFlag()` overload"]
+    fn get_custom_rendering_flag(self) -> crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::get_custom_rendering_flag(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::get_custom_rendering_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_customRenderingFlag(crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag)` overload"]
     fn set_custom_rendering_flag(
         self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag >,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag>,
     ) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UniversalAdditionalCameraData_unity2_raw::set_custom_rendering_flag(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2762,52 +2117,32 @@ pub trait IUniversalAdditionalCameraDataMethods: IUniversalAdditionalCameraData 
     fn on_before_serialize(self) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::on_before_serialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnAfterDeserialize()` overload"]
     fn on_after_deserialize(self) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::on_after_deserialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDrawGizmos()` overload"]
     fn on_draw_gizmos(self) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::on_draw_gizmos(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::on_draw_gizmos(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __UniversalAdditionalCameraData_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <UniversalAdditionalCameraData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UniversalAdditionalCameraData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2834,22 +2169,19 @@ impl UniversalAdditionalCameraData {
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUniversalAdditionalCameraData;
-    pub use super::IUniversalAdditionalCameraDataMethods;
-    pub use super::UniversalAdditionalCameraData;
-    pub use crate::system::object::IObject;
+    pub use super::{IUniversalAdditionalCameraData, IUniversalAdditionalCameraDataMethods, UniversalAdditionalCameraData};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

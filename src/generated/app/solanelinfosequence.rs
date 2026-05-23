@@ -2,20 +2,19 @@
 
 #[cfg(feature = "app-solanelinfosequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoSequence.DecideEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SolanelInfoSequence_DecideEventHandler {}
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence.md"))]
     #[::unity2::class(namespace = "App", name = "SolanelInfoSequence")]
@@ -25,23 +24,21 @@ mod __types {
         pub m_info_menu_result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoSequence.DecideEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SolanelInfoSequence_DecideEventHandler {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfosequence/SolanelInfoSequence_Label2.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct SolanelInfoSequence_Label2 {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for SolanelInfoSequence_Label2 {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "SolanelInfoSequence.Label2";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -52,10 +49,7 @@ mod __types {
 
     impl ::unity2::IlType for SolanelInfoSequence_Label2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -76,15 +70,491 @@ pub use __types::*;
 #[cfg(feature = "app-solanelinfosequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SolanelInfoSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_m_decide_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "get_m_DecideEventHandler",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_m_DecideEventHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_m_decide_event_handler(
+        this: SolanelInfoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler {
+        let inner: extern "C" fn(
+            SolanelInfoSequence,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler =
+            ::core::mem::transmute(__lookup_get_m_decide_event_handler::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_m_decide_event_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "set_m_DecideEventHandler",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_m_DecideEventHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_m_decide_event_handler(
+        this: SolanelInfoSequence,
+        value: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SolanelInfoSequence,
+            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_m_decide_event_handler::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        event_handler: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SolanelInfoSequence,
+        event_handler: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SolanelInfoSequence,
+            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "CreateDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_desc(
+        this: SolanelInfoSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_res {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "LoadRes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadRes",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_res(this: SolanelInfoSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_res::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_loading_res {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "IsLoadingRes",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingRes",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_loading_res(this: SolanelInfoSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_loading_res::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "Open",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "Open",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open(this: SolanelInfoSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "SetResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_result(this: SolanelInfoSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_result::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close(this: SolanelInfoSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-solanelinfosequence")]
+impl SolanelInfoSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        event_handler: impl ::core::convert::Into<crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            __SolanelInfoSequence_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-solanelinfosequence")]
+pub trait ISolanelInfoSequenceMethods: ISolanelInfoSequence {
+    #[doc = "`get_m_DecideEventHandler()` overload"]
+    fn get_m_decide_event_handler(self) -> crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::get_m_decide_event_handler(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_m_DecideEventHandler(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]
+    fn set_m_decide_event_handler(
+        self,
+        value: impl ::core::convert::Into<crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::set_m_decide_event_handler(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]
+    fn ctor(self, event_handler: impl ::core::convert::Into<crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler>) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(event_handler), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadRes()` overload"]
+    fn load_res(self) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::load_res(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsLoadingRes()` overload"]
+    fn is_loading_res(self) -> bool {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::is_loading_res(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Open()` overload"]
+    fn open(self) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::open(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetResult()` overload"]
+    fn set_result(self) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::set_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoSequence_unity2_raw::close(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-solanelinfosequence")]
+impl<__T: ISolanelInfoSequence> ISolanelInfoSequenceMethods for __T {}
+
+#[cfg(feature = "app-solanelinfosequence")]
+impl SolanelInfoSequence {
+    #[doc = "`.ctor(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoSequenceMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[cfg(feature = "app-solanelinfosequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __SolanelInfoSequence_DecideEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -100,18 +570,15 @@ mod __SolanelInfoSequence_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -125,21 +592,16 @@ mod __SolanelInfoSequence_DecideEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: solanelinfomenu :: SolanelInfoMenu_InfoResult as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SolanelInfoSequence_DecideEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -151,18 +613,15 @@ mod __SolanelInfoSequence_DecideEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoSequence_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -174,27 +633,19 @@ mod __SolanelInfoSequence_DecideEventHandler_unity2_raw {
             SolanelInfoSequence_DecideEventHandler,
             crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, result, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-solanelinfosequence")]
-pub trait ISolanelInfoSequence_DecideEventHandlerMethods:
-    ISolanelInfoSequence_DecideEventHandler
-{
+pub trait ISolanelInfoSequence_DecideEventHandlerMethods: ISolanelInfoSequence_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < SolanelInfoSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <SolanelInfoSequence_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __SolanelInfoSequence_DecideEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -204,26 +655,18 @@ pub trait ISolanelInfoSequence_DecideEventHandlerMethods:
         }
     }
     #[doc = "`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult>,
-    ) -> () {
+    fn invoke(self, result: impl ::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult>) -> () {
         unsafe {
-            let __receiver = < SolanelInfoSequence_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoSequence_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SolanelInfoSequence_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoSequence_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-solanelinfosequence")]
-impl<__T: ISolanelInfoSequence_DecideEventHandler> ISolanelInfoSequence_DecideEventHandlerMethods
-    for __T
-{
-}
+impl<__T: ISolanelInfoSequence_DecideEventHandler> ISolanelInfoSequence_DecideEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-solanelinfosequence")]
 impl SolanelInfoSequence_DecideEventHandler {
@@ -243,647 +686,25 @@ impl SolanelInfoSequence_DecideEventHandler {
 
 #[cfg(feature = "app-solanelinfosequence")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SolanelInfoSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_m_decide_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "get_m_DecideEventHandler",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_m_DecideEventHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_m_decide_event_handler(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler {
-        let inner : extern "C" fn (SolanelInfoSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: solanelinfosequence :: SolanelInfoSequence_DecideEventHandler = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_m_decide_event_handler :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_m_decide_event_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: solanelinfosequence :: SolanelInfoSequence_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "set_m_DecideEventHandler",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_m_DecideEventHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_m_decide_event_handler(
-        this: SolanelInfoSequence,
-        value: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoSequence,
-            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_decide_event_handler::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: solanelinfosequence :: SolanelInfoSequence_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        event_handler: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: solanelinfosequence :: SolanelInfoSequence_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SolanelInfoSequence,
-        event_handler: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoSequence,
-            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, event_handler, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_desc(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            SolanelInfoSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_res {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "LoadRes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadRes",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_res(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_res::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_res {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "IsLoadingRes",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingRes",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_loading_res(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_res::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "Open",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "SetResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_result(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_result::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoSequence as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoSequence as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close(
-        this: SolanelInfoSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-solanelinfosequence")]
-impl SolanelInfoSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        event_handler: impl ::core::convert::Into<
-            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            __SolanelInfoSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-solanelinfosequence")]
-pub trait ISolanelInfoSequenceMethods: ISolanelInfoSequence {
-    #[doc = "`get_m_DecideEventHandler()` overload"]
-    fn get_m_decide_event_handler(
-        self,
-    ) -> crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::get_m_decide_event_handler(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_m_DecideEventHandler(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]
-    fn set_m_decide_event_handler(
-        self,
-        value: impl ::core::convert::Into<
-            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::set_m_decide_event_handler(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        event_handler: impl ::core::convert::Into<
-            crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDesc()` overload"]
-    fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadRes()` overload"]
-    fn load_res(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::load_res(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingRes()` overload"]
-    fn is_loading_res(self) -> bool {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::is_loading_res(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetResult()` overload"]
-    fn set_result(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::set_result(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoSequence_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-solanelinfosequence")]
-impl<__T: ISolanelInfoSequence> ISolanelInfoSequenceMethods for __T {}
-
-#[cfg(feature = "app-solanelinfosequence")]
-impl SolanelInfoSequence {
-    #[doc = "`.ctor(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoSequenceMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-#[cfg(feature = "app-solanelinfosequence")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::ISolanelInfoSequence;
-    pub use super::ISolanelInfoSequenceMethods;
-    pub use super::ISolanelInfoSequence_DecideEventHandler;
-    pub use super::ISolanelInfoSequence_DecideEventHandlerMethods;
-    pub use super::SolanelInfoSequence;
-    pub use super::SolanelInfoSequence_DecideEventHandler;
-    pub use super::SolanelInfoSequence_Label2;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        ISolanelInfoSequence, ISolanelInfoSequenceMethods, ISolanelInfoSequence_DecideEventHandler, ISolanelInfoSequence_DecideEventHandlerMethods,
+        SolanelInfoSequence, SolanelInfoSequence_DecideEventHandler, SolanelInfoSequence_Label2,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

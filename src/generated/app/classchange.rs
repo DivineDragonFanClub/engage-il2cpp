@@ -2,17 +2,14 @@
 
 #[cfg(feature = "app-classchange-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
-    #[::unity2::class(namespace = "App", name = "ClassChange")]
-    #[parent(crate::system::object::Object)]
-    pub struct ClassChange {}
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange_ChangeJobData.md"))]
     #[::unity2::class(namespace = "App", name = "ClassChange.ChangeJobData")]
@@ -21,21 +18,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ClassChange_ChangeJobData_ProofTypes {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for ClassChange_ChangeJobData_ProofTypes {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "ClassChange.ChangeJobData.ProofTypes";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -46,10 +36,7 @@ mod __types {
 
     impl ::unity2::IlType for ClassChange_ChangeJobData_ProofTypes {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -70,778 +57,15 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
+    #[::unity2::class(namespace = "App", name = "ClassChange")]
+    #[parent(crate::system::object::Object)]
+    pub struct ClassChange {}
 }
 
 #[cfg(feature = "app-classchange-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-classchange")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ClassChange_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_job_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "GetSelectJobList",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "GetSelectJobList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_select_job_list(
-        job_data: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::classchange::ClassChange_ChangeJobData,
-    > {
-        let inner: extern "C" fn(
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::classchange::ClassChange_ChangeJobData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_select_job_list::get_offset() as isize),
-        );
-        inner(job_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_job_list_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "GetJobListAll",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "GetJobListAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_job_list_all(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::classchange::ClassChange_ChangeJobData,
-    > {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::classchange::ClassChange_ChangeJobData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_list_all::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_job_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "GetJobList",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "GetJobList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_job_list(
-        unit: crate::app::unit::Unit,
-        item: crate::app::itemdata::ItemData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::jobdata::JobData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_list::get_offset() as isize),
-        );
-        inner(unit, item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_job_list_by_master {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "GetJobListByMaster",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "GetJobListByMaster",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_job_list_by_master(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::jobdata::JobData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_list_by_master::get_offset() as isize),
-        );
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_job_list_by_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "GetJobListByChange",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "GetJobListByChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_job_list_by_change(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::jobdata::JobData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_list_by_change::get_offset() as isize),
-        );
-        inner(unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_list_for_master {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::jobdata::JobData,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::jobdata::JobData,
-                    > as ::unity2::IlType>::il_type(),
-                ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "AddToListForMaster",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "AddToListForMaster",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_to_list_for_master(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        unit: crate::app::unit::Unit,
-        high_jobs: crate::system::collections::generic::list_1::List_1<
-            crate::app::jobdata::JobData,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-            crate::app::unit::Unit,
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_to_list_for_master::get_offset() as isize),
-        );
-        inner(job_list, unit, high_jobs, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_list_for_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::jobdata::JobData,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "AddToListForChange",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "AddToListForChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_to_list_for_change(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_to_list_for_change::get_offset() as isize),
-        );
-        inner(job_list, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_to_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::jobdata::JobData,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                    <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-                    <bool as ::unity2::IlType>::il_type(),
-                    <bool as ::unity2::IlType>::il_type(),
-                ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "AddToList",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "AddToList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_to_list(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        unit: crate::app::unit::Unit,
-        job: crate::app::jobdata::JobData,
-        include_current_job: bool,
-        ignore_aptitude_check: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-            crate::app::unit::Unit,
-            crate::app::jobdata::JobData,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_to_list::get_offset() as isize),
-        );
-        inner(
-            job_list,
-            unit,
-            job,
-            include_current_job,
-            ignore_aptitude_check,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_relational_jobs {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "GetRelationalJobs",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "GetRelationalJobs",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_relational_jobs(
-        job: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        let inner: extern "C" fn(
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::jobdata::JobData,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_relational_jobs::get_offset() as isize),
-        );
-        inner(job, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exists {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::jobdata::JobData,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
-                ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                "IsExists",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    "IsExists",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exists(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        target_job: crate::app::jobdata::JobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exists::get_offset() as isize),
-        );
-        inner(job_list, target_job, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ClassChange as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: ClassChange, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ClassChange, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-classchange")]
-impl ClassChange {
-    #[doc = "`GetSelectJobList(crate::app::jobdata::JobData)` overload"]
-    pub fn get_select_job_list(
-        job_data: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::classchange::ClassChange_ChangeJobData,
-    > {
-        unsafe {
-            __ClassChange_unity2_raw::get_select_job_list(
-                ::core::convert::Into::into(job_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetJobListAll()` overload"]
-    pub fn get_job_list_all() -> crate::system::collections::generic::list_1::List_1<
-        crate::app::classchange::ClassChange_ChangeJobData,
-    > {
-        unsafe { __ClassChange_unity2_raw::get_job_list_all(::core::option::Option::None) }
-    }
-    #[doc = "`GetJobList(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    pub fn get_job_list(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        unsafe {
-            __ClassChange_unity2_raw::get_job_list(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetJobListByMaster(crate::app::unit::Unit)` overload"]
-    pub fn get_job_list_by_master(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        unsafe {
-            __ClassChange_unity2_raw::get_job_list_by_master(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetJobListByChange(crate::app::unit::Unit)` overload"]
-    pub fn get_job_list_by_change(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        unsafe {
-            __ClassChange_unity2_raw::get_job_list_by_change(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddToListForMaster(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)` overload"]
-    pub fn add_to_list_for_master(
-        job_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        >,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        high_jobs: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        >,
-    ) -> () {
-        unsafe {
-            __ClassChange_unity2_raw::add_to_list_for_master(
-                ::core::convert::Into::into(job_list),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(high_jobs),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddToListForChange(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit)` overload"]
-    pub fn add_to_list_for_change(
-        job_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        >,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> () {
-        unsafe {
-            __ClassChange_unity2_raw::add_to_list_for_change(
-                ::core::convert::Into::into(job_list),
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AddToList(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::app::jobdata::JobData, bool, bool)` overload"]
-    pub fn add_to_list(
-        job_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        >,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-        include_current_job: impl ::core::convert::Into<bool>,
-        ignore_aptitude_check: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            __ClassChange_unity2_raw::add_to_list(
-                ::core::convert::Into::into(job_list),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(job),
-                ::core::convert::Into::into(include_current_job),
-                ::core::convert::Into::into(ignore_aptitude_check),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRelationalJobs(crate::app::jobdata::JobData)` overload"]
-    pub fn get_relational_jobs(
-        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
-        unsafe {
-            __ClassChange_unity2_raw::get_relational_jobs(
-                ::core::convert::Into::into(job),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsExists(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::jobdata::JobData)` overload"]
-    pub fn is_exists(
-        job_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        >,
-        target_job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
-    ) -> bool {
-        unsafe {
-            __ClassChange_unity2_raw::is_exists(
-                ::core::convert::Into::into(job_list),
-                ::core::convert::Into::into(target_job),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-classchange")]
-pub trait IClassChangeMethods: IClassChange {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <ClassChange as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ClassChange_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-classchange")]
-impl<__T: IClassChange> IClassChangeMethods for __T {}
-
-#[cfg(feature = "app-classchange")]
-impl ClassChange {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChange),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-classchange")]
 #[doc(hidden)]
@@ -852,9 +76,7 @@ mod __ClassChange_ChangeJobData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
                 <crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type(),
@@ -870,18 +92,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -895,20 +114,14 @@ mod __ClassChange_ChangeJobData_unity2_raw {
             crate::app::jobdata::JobData,
             crate::app::weaponmask::WeaponMask,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, job, weapon_mask, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -921,43 +134,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_Job",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_Job",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_job(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::jobdata::JobData {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::jobdata::JobData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job::get_offset() as isize),
-        );
+    pub unsafe fn get_job(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::jobdata::JobData {
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::jobdata::JobData =
+            ::core::mem::transmute(__lookup_get_job::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_Job",
@@ -969,18 +167,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_Job",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_Job",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_job(
@@ -988,24 +183,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::jobdata::JobData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::jobdata::JobData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_job::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::jobdata::JobData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_job::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1018,43 +204,31 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_JobWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_JobWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_job_weapon_mask(
         this: ClassChange_ChangeJobData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::weaponmask::WeaponMask {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::weaponmask::WeaponMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask =
+            ::core::mem::transmute(__lookup_get_job_weapon_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_job_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_JobWeaponMask",
@@ -1066,18 +240,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_JobWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_JobWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_job_weapon_mask(
@@ -1085,24 +256,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::weaponmask::WeaponMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::weaponmask::WeaponMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_job_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::weaponmask::WeaponMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_job_weapon_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_original_job_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1115,43 +277,31 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_OriginalJobWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_OriginalJobWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_original_job_weapon_mask(
         this: ClassChange_ChangeJobData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::weaponmask::WeaponMask {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::weaponmask::WeaponMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_original_job_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask =
+            ::core::mem::transmute(__lookup_get_original_job_weapon_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_original_job_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_OriginalJobWeaponMask",
@@ -1163,18 +313,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_OriginalJobWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_OriginalJobWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_original_job_weapon_mask(
@@ -1182,24 +329,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::weaponmask::WeaponMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::weaponmask::WeaponMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_original_job_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::weaponmask::WeaponMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_original_job_weapon_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_proof_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1212,18 +350,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_ProofType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_ProofType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_proof_type(
@@ -1233,23 +368,17 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         let inner: extern "C" fn(
             ClassChange_ChangeJobData,
             ::unity2::OptionalMethod,
-        )
-            -> crate::app::classchange::ClassChange_ChangeJobData_ProofTypes =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_proof_type::get_offset() as isize),
-            );
+        ) -> crate::app::classchange::ClassChange_ChangeJobData_ProofTypes =
+            ::core::mem::transmute(__lookup_get_proof_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_proof_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: classchange :: ClassChange_ChangeJobData_ProofTypes as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::classchange::ClassChange_ChangeJobData_ProofTypes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_ProofType",
@@ -1261,18 +390,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_ProofType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_ProofType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_proof_type(
@@ -1284,20 +410,14 @@ mod __ClassChange_ChangeJobData_unity2_raw {
             ClassChange_ChangeJobData,
             crate::app::classchange::ClassChange_ChangeJobData_ProofTypes,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_proof_type::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_proof_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cost_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1310,43 +430,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_CostLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_CostLevel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_cost_level(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cost_level::get_offset() as isize),
-        );
+    pub unsafe fn get_cost_level(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_cost_level::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cost_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_CostLevel",
@@ -1358,18 +463,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_CostLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_CostLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cost_level(
@@ -1377,24 +479,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cost_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cost_level::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_enough_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1407,41 +500,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEnoughLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEnoughLevel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_enough_level(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_enough_level(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_enough_level::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_enough_level::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_enough_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_IsEnoughLevel",
@@ -1453,40 +533,27 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_IsEnoughLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsEnoughLevel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_enough_level(
-        this: ClassChange_ChangeJobData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_enough_level(this: ClassChange_ChangeJobData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ClassChange_ChangeJobData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_enough_level::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_enough_level::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cost_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1499,43 +566,31 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_CostWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_CostWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cost_weapon_mask(
         this: ClassChange_ChangeJobData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::weaponmask::WeaponMask {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::weaponmask::WeaponMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cost_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask =
+            ::core::mem::transmute(__lookup_get_cost_weapon_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_cost_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_CostWeaponMask",
@@ -1547,18 +602,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_CostWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_CostWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_cost_weapon_mask(
@@ -1566,24 +618,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::weaponmask::WeaponMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::weaponmask::WeaponMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_cost_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::weaponmask::WeaponMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_cost_weapon_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_equippable_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1596,43 +639,31 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_EquippableWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_EquippableWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_equippable_weapon_mask(
         this: ClassChange_ChangeJobData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::weaponmask::WeaponMask {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::weaponmask::WeaponMask = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_equippable_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::weaponmask::WeaponMask =
+            ::core::mem::transmute(__lookup_get_equippable_weapon_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_equippable_weapon_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::weaponmask::WeaponMask as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_EquippableWeaponMask",
@@ -1644,18 +675,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_EquippableWeaponMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_EquippableWeaponMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_equippable_weapon_mask(
@@ -1663,24 +691,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::weaponmask::WeaponMask,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::weaponmask::WeaponMask,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_equippable_weapon_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::weaponmask::WeaponMask, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_equippable_weapon_mask::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_enough_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1693,41 +712,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEnoughItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEnoughItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_enough_item(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_enough_item(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_enough_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_enough_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_enough_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_IsEnoughItem",
@@ -1739,40 +745,27 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_IsEnoughItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsEnoughItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_enough_item(
-        this: ClassChange_ChangeJobData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_enough_item(this: ClassChange_ChangeJobData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ClassChange_ChangeJobData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_enough_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_enough_item::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_gender {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1785,41 +778,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_IsGender",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsGender",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_gender(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_gender(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_gender::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_gender::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_gender {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_IsGender",
@@ -1831,40 +811,27 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_IsGender",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsGender",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_gender(
-        this: ClassChange_ChangeJobData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_gender(this: ClassChange_ChangeJobData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ClassChange_ChangeJobData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_gender::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_gender::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_default_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1877,41 +844,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_IsDefaultJob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_IsDefaultJob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_default_job(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_default_job(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_default_job::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_default_job::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_default_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_IsDefaultJob",
@@ -1923,40 +877,27 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_IsDefaultJob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_IsDefaultJob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_default_job(
-        this: ClassChange_ChangeJobData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_default_job(this: ClassChange_ChangeJobData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ClassChange_ChangeJobData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_default_job::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_default_job::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ex_item1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -1969,43 +910,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_ExItem1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_ExItem1",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ex_item1(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_ex_item1::get_offset() as isize),
-        );
+    pub unsafe fn get_ex_item1(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
+            ::core::mem::transmute(__lookup_get_ex_item1::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ex_item1 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_ExItem1",
@@ -2017,18 +943,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_ExItem1",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_ExItem1",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_ex_item1(
@@ -2036,24 +959,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_ex_item1::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_ex_item1::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ex_item2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -2066,43 +980,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "get_ExItem2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "get_ExItem2",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_ex_item2(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_ex_item2::get_offset() as isize),
-        );
+    pub unsafe fn get_ex_item2(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
+            ::core::mem::transmute(__lookup_get_ex_item2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ex_item2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "set_ExItem2",
@@ -2114,18 +1013,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "set_ExItem2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "set_ExItem2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_ex_item2(
@@ -2133,24 +1029,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         value: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_ex_item2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_ex_item2::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_disp_weapon_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::itemdata::ItemData_Kinds as ::unity2::IlType>::il_type(),
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
@@ -2167,18 +1054,15 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "GetDispWeaponLevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "GetDispWeaponLevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_disp_weapon_level(
@@ -2194,20 +1078,14 @@ mod __ClassChange_ChangeJobData_unity2_raw {
             crate::app::unit::Unit,
             *mut bool,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_disp_weapon_level::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_disp_weapon_level::get_method_info().method_ptr);
         inner(this, kind, unit, is_up, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_proof {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
@@ -2220,43 +1098,28 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "GetProof",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "GetProof",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_proof(
-        this: ClassChange_ChangeJobData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_proof::get_offset() as isize),
-        );
+    pub unsafe fn get_proof(this: ClassChange_ChangeJobData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(ClassChange_ChangeJobData, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
+            ::core::mem::transmute(__lookup_get_proof::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cc_check {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::class(),
                 "CCCheck",
@@ -2268,34 +1131,20 @@ mod __ClassChange_ChangeJobData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
-                    "CCCheck",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange_ChangeJobData as ::unity2::ClassIdentity>::NAME,
+                        "CCCheck",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cc_check(
-        this: ClassChange_ChangeJobData,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ClassChange_ChangeJobData,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cc_check::get_offset() as isize),
-        );
+    pub unsafe fn cc_check(this: ClassChange_ChangeJobData, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ClassChange_ChangeJobData, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_cc_check::get_method_info().method_ptr);
         inner(this, unit, __unity2_method_info)
     }
 }
@@ -2310,9 +1159,7 @@ pub trait IClassChange_ChangeJobDataMethods: IClassChange_ChangeJobData {
     ) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ClassChange_ChangeJobData_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(job),
@@ -2325,82 +1172,47 @@ pub trait IClassChange_ChangeJobDataMethods: IClassChange_ChangeJobData {
     fn get_job(self) -> crate::app::jobdata::JobData {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_job(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_job(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Job(crate::app::jobdata::JobData)` overload"]
     fn set_job(self, value: impl ::core::convert::Into<crate::app::jobdata::JobData>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_job(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_job(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_JobWeaponMask()` overload"]
     fn get_job_weapon_mask(self) -> crate::app::weaponmask::WeaponMask {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_job_weapon_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_job_weapon_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_JobWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]
-    fn set_job_weapon_mask(
-        self,
-        value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>,
-    ) -> () {
+    fn set_job_weapon_mask(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_job_weapon_mask(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_job_weapon_mask(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_OriginalJobWeaponMask()` overload"]
     fn get_original_job_weapon_mask(self) -> crate::app::weaponmask::WeaponMask {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_original_job_weapon_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_original_job_weapon_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_OriginalJobWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]
-    fn set_original_job_weapon_mask(
-        self,
-        value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>,
-    ) -> () {
+    fn set_original_job_weapon_mask(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ClassChange_ChangeJobData_unity2_raw::set_original_job_weapon_mask(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2412,139 +1224,79 @@ pub trait IClassChange_ChangeJobDataMethods: IClassChange_ChangeJobData {
     fn get_proof_type(self) -> crate::app::classchange::ClassChange_ChangeJobData_ProofTypes {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_proof_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_proof_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ProofType(crate::app::classchange::ClassChange_ChangeJobData_ProofTypes)` overload"]
-    fn set_proof_type(
-        self,
-        value: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData_ProofTypes>,
-    ) -> () {
+    fn set_proof_type(self, value: impl ::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData_ProofTypes>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_proof_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_proof_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CostLevel()` overload"]
     fn get_cost_level(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_cost_level(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_cost_level(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CostLevel(::unity2::Il2CppString)` overload"]
     fn set_cost_level(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_cost_level(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_cost_level(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsEnoughLevel()` overload"]
     fn get_is_enough_level(self) -> bool {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_is_enough_level(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_is_enough_level(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsEnoughLevel(bool)` overload"]
     fn set_is_enough_level(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_is_enough_level(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_is_enough_level(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_CostWeaponMask()` overload"]
     fn get_cost_weapon_mask(self) -> crate::app::weaponmask::WeaponMask {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_cost_weapon_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_cost_weapon_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_CostWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]
-    fn set_cost_weapon_mask(
-        self,
-        value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>,
-    ) -> () {
+    fn set_cost_weapon_mask(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_cost_weapon_mask(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_cost_weapon_mask(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EquippableWeaponMask()` overload"]
     fn get_equippable_weapon_mask(self) -> crate::app::weaponmask::WeaponMask {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_equippable_weapon_mask(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_equippable_weapon_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EquippableWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]
-    fn set_equippable_weapon_mask(
-        self,
-        value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>,
-    ) -> () {
+    fn set_equippable_weapon_mask(self, value: impl ::core::convert::Into<crate::app::weaponmask::WeaponMask>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ClassChange_ChangeJobData_unity2_raw::set_equippable_weapon_mask(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -2556,135 +1308,80 @@ pub trait IClassChange_ChangeJobDataMethods: IClassChange_ChangeJobData {
     fn get_is_enough_item(self) -> bool {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_is_enough_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_is_enough_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsEnoughItem(bool)` overload"]
     fn set_is_enough_item(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_is_enough_item(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_is_enough_item(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsGender()` overload"]
     fn get_is_gender(self) -> bool {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_is_gender(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_is_gender(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsGender(bool)` overload"]
     fn set_is_gender(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_is_gender(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_is_gender(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsDefaultJob()` overload"]
     fn get_is_default_job(self) -> bool {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_is_default_job(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_is_default_job(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsDefaultJob(bool)` overload"]
     fn set_is_default_job(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_is_default_job(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_is_default_job(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ExItem1()` overload"]
     fn get_ex_item1(self) -> crate::app::itemdata::ItemData {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_ex_item1(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_ex_item1(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ExItem1(crate::app::itemdata::ItemData)` overload"]
     fn set_ex_item1(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_ex_item1(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_ex_item1(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_ExItem2()` overload"]
     fn get_ex_item2(self) -> crate::app::itemdata::ItemData {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_ex_item2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_ex_item2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_ExItem2(crate::app::itemdata::ItemData)` overload"]
     fn set_ex_item2(self, value: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> () {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::set_ex_item2(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::set_ex_item2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDispWeaponLevel(crate::app::itemdata::ItemData_Kinds, crate::app::unit::Unit, *mutbool)` overload"]
@@ -2695,9 +1392,7 @@ pub trait IClassChange_ChangeJobDataMethods: IClassChange_ChangeJobData {
     ) -> (::unity2::Il2CppString, bool) {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<bool>::uninit();
             let __ret = {
                 __ClassChange_ChangeJobData_unity2_raw::get_disp_weapon_level(
@@ -2715,27 +1410,16 @@ pub trait IClassChange_ChangeJobDataMethods: IClassChange_ChangeJobData {
     fn get_proof(self) -> crate::app::itemdata::ItemData {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::get_proof(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::get_proof(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CCCheck(crate::app::unit::Unit)` overload"]
     fn cc_check(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
         unsafe {
             let __receiver =
-                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ClassChange_ChangeJobData_unity2_raw::cc_check(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
+                <ClassChange_ChangeJobData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_ChangeJobData_unity2_raw::cc_check(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
         }
     }
 }
@@ -2746,10 +1430,7 @@ impl<__T: IClassChange_ChangeJobData> IClassChange_ChangeJobDataMethods for __T 
 #[cfg(feature = "app-classchange")]
 impl ClassChange_ChangeJobData {
     #[doc = "`.ctor(crate::app::jobdata::JobData, crate::app::weaponmask::WeaponMask)` — overload selector"]
-    pub fn new(
-        job: crate::app::jobdata::JobData,
-        weapon_mask: crate::app::weaponmask::WeaponMask,
-    ) -> Self {
+    pub fn new(job: crate::app::jobdata::JobData, weapon_mask: crate::app::weaponmask::WeaponMask) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -2764,21 +1445,603 @@ impl ClassChange_ChangeJobData {
 
 #[cfg(feature = "app-classchange")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ClassChange_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_select_job_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "GetSelectJobList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "GetSelectJobList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_select_job_list(
+        job_data: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> {
+        let inner: extern "C" fn(
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> =
+            ::core::mem::transmute(__lookup_get_select_job_list::get_method_info().method_ptr);
+        inner(job_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_job_list_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "GetJobListAll",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "GetJobListAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_job_list_all(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> =
+            ::core::mem::transmute(__lookup_get_job_list_all::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_job_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::itemdata::ItemData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "GetJobList",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "GetJobList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_job_list(
+        unit: crate::app::unit::Unit,
+        item: crate::app::itemdata::ItemData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            crate::app::itemdata::ItemData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> =
+            ::core::mem::transmute(__lookup_get_job_list::get_method_info().method_ptr);
+        inner(unit, item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_job_list_by_master {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "GetJobListByMaster",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "GetJobListByMaster",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_job_list_by_master(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> =
+            ::core::mem::transmute(__lookup_get_job_list_by_master::get_method_info().method_ptr);
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_job_list_by_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "GetJobListByChange",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "GetJobListByChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_job_list_by_change(
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        let inner: extern "C" fn(
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> =
+            ::core::mem::transmute(__lookup_get_job_list_by_change::get_method_info().method_ptr);
+        inner(unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_to_list_for_master {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "AddToListForMaster",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "AddToListForMaster",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_to_list_for_master(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        unit: crate::app::unit::Unit,
+        high_jobs: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+            crate::app::unit::Unit,
+            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_to_list_for_master::get_method_info().method_ptr);
+        inner(job_list, unit, high_jobs, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_to_list_for_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "AddToListForChange",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "AddToListForChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_to_list_for_change(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        unit: crate::app::unit::Unit,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+            crate::app::unit::Unit,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_to_list_for_change::get_method_info().method_ptr);
+        inner(job_list, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_to_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "AddToList",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "AddToList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_to_list(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        unit: crate::app::unit::Unit,
+        job: crate::app::jobdata::JobData,
+        include_current_job: bool,
+        ignore_aptitude_check: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+            crate::app::unit::Unit,
+            crate::app::jobdata::JobData,
+            bool,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_to_list::get_method_info().method_ptr);
+        inner(job_list, unit, job, include_current_job, ignore_aptitude_check, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_relational_jobs {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::jobdata::JobData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ClassChange as ::unity2::ClassIdentity>::class(),
+                "GetRelationalJobs",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "GetRelationalJobs",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_relational_jobs(
+        job: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        let inner: extern "C" fn(
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> =
+            ::core::mem::transmute(__lookup_get_relational_jobs::get_method_info().method_ptr);
+        inner(job, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exists {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> as ::unity2::IlType>::il_type(),
+                <crate::app::jobdata::JobData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<ClassChange as ::unity2::ClassIdentity>::class(), "IsExists", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        "IsExists",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exists(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        target_job: crate::app::jobdata::JobData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+            crate::app::jobdata::JobData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_is_exists::get_method_info().method_ptr);
+        inner(job_list, target_job, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ClassChange as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ClassChange as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: ClassChange, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ClassChange, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-classchange")]
+impl ClassChange {
+    #[doc = "`GetSelectJobList(crate::app::jobdata::JobData)` overload"]
+    pub fn get_select_job_list(
+        job_data: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> {
+        unsafe { __ClassChange_unity2_raw::get_select_job_list(::core::convert::Into::into(job_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetJobListAll()` overload"]
+    pub fn get_job_list_all() -> crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> {
+        unsafe { __ClassChange_unity2_raw::get_job_list_all(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetJobList(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    pub fn get_job_list(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        unsafe {
+            __ClassChange_unity2_raw::get_job_list(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetJobListByMaster(crate::app::unit::Unit)` overload"]
+    pub fn get_job_list_by_master(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        unsafe { __ClassChange_unity2_raw::get_job_list_by_master(::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetJobListByChange(crate::app::unit::Unit)` overload"]
+    pub fn get_job_list_by_change(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        unsafe { __ClassChange_unity2_raw::get_job_list_by_change(::core::convert::Into::into(unit), ::core::option::Option::None) }
+    }
+
+    #[doc = "`AddToListForMaster(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)` overload"]
+    pub fn add_to_list_for_master(
+        job_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        high_jobs: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>>,
+    ) -> () {
+        unsafe {
+            __ClassChange_unity2_raw::add_to_list_for_master(
+                ::core::convert::Into::into(job_list),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(high_jobs),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`AddToListForChange(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit)` overload"]
+    pub fn add_to_list_for_change(
+        job_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+    ) -> () {
+        unsafe {
+            __ClassChange_unity2_raw::add_to_list_for_change(
+                ::core::convert::Into::into(job_list),
+                ::core::convert::Into::into(unit),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`AddToList(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::app::jobdata::JobData, bool, bool)` overload"]
+    pub fn add_to_list(
+        job_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+        include_current_job: impl ::core::convert::Into<bool>,
+        ignore_aptitude_check: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            __ClassChange_unity2_raw::add_to_list(
+                ::core::convert::Into::into(job_list),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(job),
+                ::core::convert::Into::into(include_current_job),
+                ::core::convert::Into::into(ignore_aptitude_check),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetRelationalJobs(crate::app::jobdata::JobData)` overload"]
+    pub fn get_relational_jobs(
+        job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> {
+        unsafe { __ClassChange_unity2_raw::get_relational_jobs(::core::convert::Into::into(job), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsExists(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::jobdata::JobData)` overload"]
+    pub fn is_exists(
+        job_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>>,
+        target_job: impl ::core::convert::Into<crate::app::jobdata::JobData>,
+    ) -> bool {
+        unsafe {
+            __ClassChange_unity2_raw::is_exists(
+                ::core::convert::Into::into(job_list),
+                ::core::convert::Into::into(target_job),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-classchange")]
+pub trait IClassChangeMethods: IClassChange {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ClassChange as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ClassChange_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-classchange")]
+impl<__T: IClassChange> IClassChangeMethods for __T {}
+
+#[cfg(feature = "app-classchange")]
+impl ClassChange {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ClassChange), ::core::stringify!(new),));
+        <Self as IClassChangeMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-classchange")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::ClassChange;
-    pub use super::ClassChange_ChangeJobData;
-    pub use super::ClassChange_ChangeJobData_ProofTypes;
-    pub use super::IClassChange;
-    pub use super::IClassChangeMethods;
-    pub use super::IClassChange_ChangeJobData;
-    pub use super::IClassChange_ChangeJobDataMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ClassChange, ClassChange_ChangeJobData, ClassChange_ChangeJobData_ProofTypes, IClassChange, IClassChangeMethods, IClassChange_ChangeJobData,
+        IClassChange_ChangeJobDataMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

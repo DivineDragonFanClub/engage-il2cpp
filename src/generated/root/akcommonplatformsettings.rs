@@ -2,13 +2,17 @@
 
 #[cfg(feature = "root-akcommonplatformsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::root::akbaseplatformsettings::{AkBasePlatformSettings, IAkBasePlatformSettings};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        root::akbaseplatformsettings::{AkBasePlatformSettings, IAkBasePlatformSettings},
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonplatformsettings/AkCommonPlatformSettings.md"))]
     #[::unity2::class(namespace = "", name = "AkCommonPlatformSettings")]
@@ -28,9 +32,7 @@ mod __AkCommonPlatformSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_user_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -43,42 +45,30 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetUserSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetUserSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_user_settings(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommonusersettings::AkCommonUserSettings {
-        let inner: extern "C" fn(
-            AkCommonPlatformSettings,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommonusersettings::AkCommonUserSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_user_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> crate::root::akcommonusersettings::AkCommonUserSettings =
+            ::core::mem::transmute(__lookup_get_user_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_advanced_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -91,34 +81,33 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetAdvancedSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetAdvancedSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_advanced_settings(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
-        let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_advanced_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AkCommonPlatformSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings =
+            ::core::mem::transmute(__lookup_get_advanced_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_comms_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -131,42 +120,30 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetCommsSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetCommsSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_comms_settings(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcommoncommsettings::AkCommonCommSettings {
-        let inner: extern "C" fn(
-            AkCommonPlatformSettings,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommoncommsettings::AkCommonCommSettings = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_comms_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> crate::root::akcommoncommsettings::AkCommonCommSettings =
+            ::core::mem::transmute(__lookup_get_comms_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ak_initialization_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -179,34 +156,33 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_AkInitializationSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_AkInitializationSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ak_initialization_settings(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akinitializationsettings::AkInitializationSettings {
-        let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akinitializationsettings :: AkInitializationSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_ak_initialization_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AkCommonPlatformSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akinitializationsettings::AkInitializationSettings =
+            ::core::mem::transmute(__lookup_get_ak_initialization_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ak_spatial_audio_init_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -219,34 +195,33 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_AkSpatialAudioInitSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_AkSpatialAudioInitSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ak_spatial_audio_init_settings(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings {
-        let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_ak_spatial_audio_init_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AkCommonPlatformSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings =
+            ::core::mem::transmute(__lookup_get_ak_spatial_audio_init_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_callback_manager_initialization_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -259,34 +234,33 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_CallbackManagerInitializationSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_CallbackManagerInitializationSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_callback_manager_initialization_settings(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings {
-        let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcallbackmanager :: AkCallbackManager_InitializationSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_callback_manager_initialization_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            AkCommonPlatformSettings,
+            ::unity2::OptionalMethod,
+        ) -> crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings =
+            ::core::mem::transmute(__lookup_get_callback_manager_initialization_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_initial_language {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -299,41 +273,27 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_InitialLanguage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_InitialLanguage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_initial_language(
-        this: AkCommonPlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AkCommonPlatformSettings,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_initial_language::get_offset() as isize),
-        );
+    pub unsafe fn get_initial_language(this: AkCommonPlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_initial_language::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sound_bank_persistent_data_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -346,41 +306,30 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_SoundBankPersistentDataPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_SoundBankPersistentDataPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sound_bank_persistent_data_path(
         this: AkCommonPlatformSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AkCommonPlatformSettings,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sound_bank_persistent_data_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_sound_bank_persistent_data_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_during_focus_loss {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -393,39 +342,27 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_RenderDuringFocusLoss",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_RenderDuringFocusLoss",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_render_during_focus_loss(
-        this: AkCommonPlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_render_during_focus_loss(this: AkCommonPlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_render_during_focus_loss::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_render_during_focus_loss::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_soundbank_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -438,41 +375,27 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_SoundbankPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_SoundbankPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_soundbank_path(
-        this: AkCommonPlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            AkCommonPlatformSettings,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_soundbank_path::get_offset() as isize),
-        );
+    pub unsafe fn get_soundbank_path(this: AkCommonPlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_soundbank_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_use_async_open {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -485,39 +408,27 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_UseAsyncOpen",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_UseAsyncOpen",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_use_async_open(
-        this: AkCommonPlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_use_async_open(this: AkCommonPlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_use_async_open::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_use_async_open::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_ak_communication_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -530,18 +441,15 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_AkCommunicationSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_AkCommunicationSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_ak_communication_settings(
@@ -551,22 +459,15 @@ mod __AkCommonPlatformSettings_unity2_raw {
         let inner: extern "C" fn(
             AkCommonPlatformSettings,
             ::unity2::OptionalMethod,
-        )
-            -> crate::root::akcommunicationsettings::AkCommunicationSettings =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_ak_communication_settings::get_offset() as isize),
-            );
+        ) -> crate::root::akcommunicationsettings::AkCommunicationSettings =
+            ::core::mem::transmute(__lookup_get_ak_communication_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkCommonPlatformSettings as ::unity2::ClassIdentity>::class(),
@@ -579,30 +480,20 @@ mod __AkCommonPlatformSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkCommonPlatformSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkCommonPlatformSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkCommonPlatformSettings, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -613,175 +504,103 @@ pub trait IAkCommonPlatformSettingsMethods: IAkCommonPlatformSettings {
     fn get_user_settings(self) -> crate::root::akcommonusersettings::AkCommonUserSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_user_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_user_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAdvancedSettings()` overload"]
-    fn get_advanced_settings(
-        self,
-    ) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
+    fn get_advanced_settings(self) -> crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_advanced_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_advanced_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCommsSettings()` overload"]
     fn get_comms_settings(self) -> crate::root::akcommoncommsettings::AkCommonCommSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_comms_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_comms_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AkInitializationSettings()` overload"]
-    fn get_ak_initialization_settings(
-        self,
-    ) -> crate::root::akinitializationsettings::AkInitializationSettings {
+    fn get_ak_initialization_settings(self) -> crate::root::akinitializationsettings::AkInitializationSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_ak_initialization_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_ak_initialization_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AkSpatialAudioInitSettings()` overload"]
-    fn get_ak_spatial_audio_init_settings(
-        self,
-    ) -> crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings {
+    fn get_ak_spatial_audio_init_settings(self) -> crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_ak_spatial_audio_init_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_ak_spatial_audio_init_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CallbackManagerInitializationSettings()` overload"]
-    fn get_callback_manager_initialization_settings(
-        self,
-    ) -> crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings {
+    fn get_callback_manager_initialization_settings(self) -> crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_callback_manager_initialization_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_callback_manager_initialization_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_InitialLanguage()` overload"]
     fn get_initial_language(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_initial_language(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_initial_language(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SoundBankPersistentDataPath()` overload"]
     fn get_sound_bank_persistent_data_path(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_sound_bank_persistent_data_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_sound_bank_persistent_data_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_RenderDuringFocusLoss()` overload"]
     fn get_render_during_focus_loss(self) -> bool {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_render_during_focus_loss(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_render_during_focus_loss(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SoundbankPath()` overload"]
     fn get_soundbank_path(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_soundbank_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_soundbank_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_UseAsyncOpen()` overload"]
     fn get_use_async_open(self) -> bool {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_use_async_open(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_use_async_open(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AkCommunicationSettings()` overload"]
-    fn get_ak_communication_settings(
-        self,
-    ) -> crate::root::akcommunicationsettings::AkCommunicationSettings {
+    fn get_ak_communication_settings(self) -> crate::root::akcommunicationsettings::AkCommunicationSettings {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkCommonPlatformSettings_unity2_raw::get_ak_communication_settings(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkCommonPlatformSettings_unity2_raw::get_ak_communication_settings(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkCommonPlatformSettings as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkCommonPlatformSettings_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -809,19 +628,18 @@ impl AkCommonPlatformSettings {
 #[cfg(feature = "root-akcommonplatformsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkCommonPlatformSettings;
-    pub use super::IAkCommonPlatformSettings;
-    pub use super::IAkCommonPlatformSettingsMethods;
-    pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettings;
+    pub use super::{AkCommonPlatformSettings, IAkCommonPlatformSettings, IAkCommonPlatformSettingsMethods};
     #[cfg(feature = "root-akbaseplatformsettings")]
     pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettingsMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        root::akbaseplatformsettings::IAkBasePlatformSettings,
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

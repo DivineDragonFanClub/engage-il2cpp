@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-rendering-idebugdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/idebugdata/IDebugData.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "IDebugData")]
@@ -23,47 +23,27 @@ mod __IDebugData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <IDebugData as ::unity2::ClassIdentity>::class(),
-                "GetReset",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<IDebugData as ::unity2::ClassIdentity>::class(), "GetReset", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDebugData as ::unity2::ClassIdentity>::NAME,
-                    "GetReset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDebugData as ::unity2::ClassIdentity>::NAME,
+                        "GetReset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reset(
-        this: IDebugData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::action::Action {
-        let inner: extern "C" fn(
-            IDebugData,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::action::Action = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reset::get_offset() as isize),
-        );
+    pub unsafe fn get_reset(this: IDebugData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::action::Action {
+        let inner: extern "C" fn(IDebugData, ::unity2::OptionalMethod) -> crate::system::action::Action =
+            ::core::mem::transmute(__lookup_get_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -73,9 +53,7 @@ pub trait IIDebugDataMethods: IIDebugData {
     #[doc = "`GetReset()` overload"]
     fn get_reset(self) -> crate::system::action::Action {
         unsafe {
-            let __receiver = <IDebugData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IDebugData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDebugData_unity2_raw::get_reset(__receiver, ::core::option::Option::None)
         }
     }
@@ -87,7 +65,5 @@ impl<__T: IIDebugData> IIDebugDataMethods for __T {}
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IDebugData;
-    pub use super::IIDebugData;
-    pub use super::IIDebugDataMethods;
+    pub use super::{IDebugData, IIDebugData, IIDebugDataMethods};
 }

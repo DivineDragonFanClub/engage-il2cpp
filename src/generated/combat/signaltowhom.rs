@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-signaltowhom-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/signaltowhom/SignalToWhom.md"))]
     #[::unity2::class(namespace = "Combat", name = "SignalToWhom")]
@@ -35,52 +35,30 @@ mod __SignalToWhom_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_for_me {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SignalToWhom as ::unity2::ClassIdentity>::class(),
-                "IsForMe",
-                2,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<SignalToWhom as ::unity2::ClassIdentity>::class(), "IsForMe", 2, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SignalToWhom as ::unity2::ClassIdentity>::NAME,
-                    "IsForMe",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SignalToWhom as ::unity2::ClassIdentity>::NAME,
+                        "IsForMe",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_for_me(
-        cp: crate::combat::character::Character,
-        target_side: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_for_me::get_offset() as isize),
-        );
+    pub unsafe fn is_for_me(cp: crate::combat::character::Character, target_side: i32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::character::Character, i32, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_for_me::get_method_info().method_ptr);
         inner(cp, target_side, __unity2_method_info)
     }
 }
@@ -88,10 +66,7 @@ mod __SignalToWhom_unity2_raw {
 #[cfg(feature = "combat-signaltowhom")]
 impl SignalToWhom {
     #[doc = "`IsForMe(crate::combat::character::Character, i32)` overload"]
-    pub fn is_for_me(
-        cp: impl ::core::convert::Into<crate::combat::character::Character>,
-        target_side: impl ::core::convert::Into<i32>,
-    ) -> bool {
+    pub fn is_for_me(cp: impl ::core::convert::Into<crate::combat::character::Character>, target_side: impl ::core::convert::Into<i32>) -> bool {
         unsafe {
             __SignalToWhom_unity2_raw::is_for_me(
                 ::core::convert::Into::into(cp),
@@ -105,8 +80,7 @@ impl SignalToWhom {
 #[cfg(feature = "combat-signaltowhom")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISignalToWhom;
-    pub use super::SignalToWhom;
+    pub use super::{ISignalToWhom, SignalToWhom};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

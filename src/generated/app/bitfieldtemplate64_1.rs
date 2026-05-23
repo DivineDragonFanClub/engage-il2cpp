@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-bitfieldtemplate64_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::bitfield64::{BitField64, IBitField64};
-    use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            bitfield64::{BitField64, IBitField64},
+            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldtemplate64_1/BitFieldTemplate64_1.md"))]
     #[::unity2::class(namespace = "App", name = "BitFieldTemplate64`1")]
@@ -99,16 +103,15 @@ impl<T0: ::unity2::ClassIdentity> BitFieldTemplate64_1<T0> {
 #[cfg(feature = "app-bitfieldtemplate64_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BitFieldTemplate64_1;
-    pub use super::IBitFieldTemplate64_1;
-    pub use super::IBitFieldTemplate64_1Methods;
-    pub use crate::app::bitfield64::IBitField64;
+    pub use super::{BitFieldTemplate64_1, IBitFieldTemplate64_1, IBitFieldTemplate64_1Methods};
     #[cfg(feature = "app-bitfield64")]
     pub use crate::app::bitfield64::IBitField64Methods;
-    pub use crate::app::bitfieldcommon::IBitFieldCommon;
     #[cfg(feature = "app-bitfieldcommon")]
     pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{bitfield64::IBitField64, bitfieldcommon::IBitFieldCommon},
+        system::object::IObject,
+    };
 }

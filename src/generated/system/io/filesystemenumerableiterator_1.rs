@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-io-filesystemenumerableiterator_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::io::iterator_1::{IIterator_1, Iterator_1};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        io::iterator_1::{IIterator_1, Iterator_1},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesystemenumerableiterator_1/FileSystemEnumerableIterator_1.md"))]
     #[::unity2::class(namespace = "System.IO", name = "FileSystemEnumerableIterator`1")]
@@ -16,9 +18,7 @@ mod __types {
         #[rename(name = "_resultHandler")]
         pub result_handler: crate::system::io::searchresulthandler_1::SearchResultHandler_1<T0>,
         #[rename(name = "searchStack")]
-        pub search_stack: crate::system::collections::generic::list_1::List_1<
-            crate::system::io::directory::Directory_SearchData,
-        >,
+        pub search_stack: crate::system::collections::generic::list_1::List_1<crate::system::io::directory::Directory_SearchData>,
         #[rename(name = "searchData")]
         pub search_data: crate::system::io::directory::Directory_SearchData,
         #[rename(name = "searchCriteria")]
@@ -93,10 +93,7 @@ impl<T0: ::unity2::ClassIdentity> FileSystemEnumerableIterator_1<T0> {
 
     #[doc = "`AddSearchableDirsToStack(crate::system::io::directory::Directory_SearchData)` overload"]
     #[method(name = "AddSearchableDirsToStack", args = 1)]
-    pub fn add_searchable_dirs_to_stack(
-        self,
-        local_search_data: crate::system::io::directory::Directory_SearchData,
-    ) -> ();
+    pub fn add_searchable_dirs_to_stack(self, local_search_data: crate::system::io::directory::Directory_SearchData) -> ();
 
     #[doc = "`DoDemand(::unity2::Il2CppString)` overload"]
     #[method(name = "DoDemand", args = 1)]
@@ -104,9 +101,7 @@ impl<T0: ::unity2::ClassIdentity> FileSystemEnumerableIterator_1<T0> {
 
     #[doc = "`NormalizeSearchPattern(::unity2::Il2CppString)` overload"]
     #[method(name = "NormalizeSearchPattern", args = 1)]
-    pub fn normalize_search_pattern(
-        search_pattern: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
+    pub fn normalize_search_pattern(search_pattern: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
 
     #[doc = "`GetNormalizedSearchCriteria(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     #[method(name = "GetNormalizedSearchCriteria", args = 2)]
@@ -117,10 +112,7 @@ impl<T0: ::unity2::ClassIdentity> FileSystemEnumerableIterator_1<T0> {
 
     #[doc = "`GetFullSearchString(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     #[method(name = "GetFullSearchString", args = 2)]
-    pub fn get_full_search_string(
-        full_path: ::unity2::Il2CppString,
-        search_pattern: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
+    pub fn get_full_search_string(full_path: ::unity2::Il2CppString, search_pattern: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
 }
 
 #[cfg(feature = "system-io-filesystemenumerableiterator_1")]
@@ -187,14 +179,13 @@ impl<T0: ::unity2::ClassIdentity> FileSystemEnumerableIterator_1<T0> {
 #[cfg(feature = "system-io-filesystemenumerableiterator_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileSystemEnumerableIterator_1;
-    pub use super::IFileSystemEnumerableIterator_1;
-    pub use super::IFileSystemEnumerableIterator_1Methods;
-    pub use crate::system::io::iterator_1::IIterator_1;
+    pub use super::{FileSystemEnumerableIterator_1, IFileSystemEnumerableIterator_1, IFileSystemEnumerableIterator_1Methods};
     #[cfg(feature = "system-io-iterator_1")]
     pub use crate::system::io::iterator_1::IIterator_1Methods;
-    pub use crate::system::io::iterator_1::Iterator_1;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{
+        io::iterator_1::{IIterator_1, Iterator_1},
+        object::IObject,
+    };
 }

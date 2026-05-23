@@ -2,15 +2,19 @@
 
 #[cfg(feature = "app-photographselectscarfcolormenuitemcontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectscarfcolormenuitemcontent/PhotographSelectScarfColorMenuItemContent.md"))]
     #[::unity2::class(namespace = "App", name = "PhotographSelectScarfColorMenuItemContent")]
@@ -35,9 +39,7 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_build_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -50,43 +52,28 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_object(
-        this: PhotographSelectScarfColorMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectScarfColorMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_object::get_offset() as isize),
-        );
+    pub unsafe fn build_object(this: PhotographSelectScarfColorMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectScarfColorMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "Build",
@@ -98,18 +85,15 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build(
@@ -121,20 +105,14 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
             PhotographSelectScarfColorMenuItemContent,
             crate::app::basicmenuitem::BasicMenuItem,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
         inner(this, menu_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -147,41 +125,27 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text(
-        this: PhotographSelectScarfColorMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectScarfColorMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_text::get_offset() as isize),
-        );
+    pub unsafe fn build_text(this: PhotographSelectScarfColorMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectScarfColorMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -194,41 +158,27 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text_color(
-        this: PhotographSelectScarfColorMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectScarfColorMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_text_color::get_offset() as isize),
-        );
+    pub unsafe fn build_text_color(this: PhotographSelectScarfColorMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectScarfColorMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -241,41 +191,27 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_text_color(
-        this: PhotographSelectScarfColorMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectScarfColorMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_text_color::get_offset() as isize),
-        );
+    pub unsafe fn update_text_color(this: PhotographSelectScarfColorMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectScarfColorMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -288,57 +224,41 @@ mod __PhotographSelectScarfColorMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PhotographSelectScarfColorMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PhotographSelectScarfColorMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PhotographSelectScarfColorMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: PhotographSelectScarfColorMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PhotographSelectScarfColorMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenuitemcontent")]
-pub trait IPhotographSelectScarfColorMenuItemContentMethods:
-    IPhotographSelectScarfColorMenuItemContent
-{
+pub trait IPhotographSelectScarfColorMenuItemContentMethods: IPhotographSelectScarfColorMenuItemContent {
     #[doc = "`BuildObject()` overload"]
     fn build_object(self) -> () {
         unsafe {
-            let __receiver = < PhotographSelectScarfColorMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectScarfColorMenuItemContent_unity2_raw::build_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PhotographSelectScarfColorMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhotographSelectScarfColorMenuItemContent_unity2_raw::build_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(
-        self,
-        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
+    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
         unsafe {
-            let __receiver = < PhotographSelectScarfColorMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <PhotographSelectScarfColorMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __PhotographSelectScarfColorMenuItemContent_unity2_raw::build(
                 __receiver,
                 ::core::convert::Into::into(menu_item),
@@ -349,50 +269,43 @@ pub trait IPhotographSelectScarfColorMenuItemContentMethods:
     #[doc = "`BuildText()` overload"]
     fn build_text(self) -> () {
         unsafe {
-            let __receiver = < PhotographSelectScarfColorMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectScarfColorMenuItemContent_unity2_raw::build_text(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PhotographSelectScarfColorMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhotographSelectScarfColorMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildTextColor()` overload"]
     fn build_text_color(self) -> () {
         unsafe {
-            let __receiver = < PhotographSelectScarfColorMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectScarfColorMenuItemContent_unity2_raw::build_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PhotographSelectScarfColorMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhotographSelectScarfColorMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateTextColor()` overload"]
     fn update_text_color(self) -> () {
         unsafe {
-            let __receiver = < PhotographSelectScarfColorMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectScarfColorMenuItemContent_unity2_raw::update_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PhotographSelectScarfColorMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhotographSelectScarfColorMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < PhotographSelectScarfColorMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __PhotographSelectScarfColorMenuItemContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <PhotographSelectScarfColorMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __PhotographSelectScarfColorMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-photographselectscarfcolormenuitemcontent")]
-impl<__T: IPhotographSelectScarfColorMenuItemContent>
-    IPhotographSelectScarfColorMenuItemContentMethods for __T
-{
-}
+impl<__T: IPhotographSelectScarfColorMenuItemContent> IPhotographSelectScarfColorMenuItemContentMethods for __T {}
 
 #[cfg(feature = "app-photographselectscarfcolormenuitemcontent")]
 impl PhotographSelectScarfColorMenuItemContent {
@@ -413,25 +326,24 @@ impl PhotographSelectScarfColorMenuItemContent {
 #[cfg(feature = "app-photographselectscarfcolormenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPhotographSelectScarfColorMenuItemContent;
-    pub use super::IPhotographSelectScarfColorMenuItemContentMethods;
-    pub use super::PhotographSelectScarfColorMenuItemContent;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use super::{
+        IPhotographSelectScarfColorMenuItemContent, IPhotographSelectScarfColorMenuItemContentMethods, PhotographSelectScarfColorMenuItemContent,
+    };
     #[cfg(feature = "app-basicmenuitemcontent")]
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenuitemcontent::IBasicMenuItemContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

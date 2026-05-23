@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-bitarrayutilities-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/bitarrayutilities/BitArrayUtilities.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "BitArrayUtilities")]
@@ -25,13 +25,8 @@ mod __BitArrayUtilities_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <u8 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u8 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitArrayUtilities as ::unity2::ClassIdentity>::class(),
                 "Get8",
@@ -43,44 +38,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Get8",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Get8",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get8(
-        index: u32,
-        data: u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u32, u8, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get8::get_offset() as isize),
-            );
+    pub unsafe fn get8(index: u32, data: u8, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u32, u8, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get8::get_method_info().method_ptr);
         inner(index, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get16 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <u16 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u16 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitArrayUtilities as ::unity2::ClassIdentity>::class(),
                 "Get16",
@@ -92,44 +70,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Get16",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Get16",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get16(
-        index: u32,
-        data: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u32, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get16::get_offset() as isize),
-            );
+    pub unsafe fn get16(index: u32, data: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u32, u16, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get16::get_method_info().method_ptr);
         inner(index, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <u32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitArrayUtilities as ::unity2::ClassIdentity>::class(),
                 "Get32",
@@ -141,44 +102,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Get32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Get32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get32(
-        index: u32,
-        data: u32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u32, u32, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get32::get_offset() as isize),
-            );
+    pub unsafe fn get32(index: u32, data: u32, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u32, u32, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get32::get_method_info().method_ptr);
         inner(index, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get64 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u32 as ::unity2::IlType>::il_type(),
-                <u64 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u32 as ::unity2::IlType>::il_type(), <u64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BitArrayUtilities as ::unity2::ClassIdentity>::class(),
                 "Get64",
@@ -190,40 +134,26 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Get64",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Get64",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get64(
-        index: u32,
-        data: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(u32, u64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get64::get_offset() as isize),
-            );
+    pub unsafe fn get64(index: u32, data: u64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(u32, u64, ::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get64::get_method_info().method_ptr);
         inner(index, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get128 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
@@ -240,41 +170,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Get128",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Get128",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get128(
-        index: u32,
-        data1: u64,
-        data2: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get128(index: u32, data1: u64, data2: u64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(u32, u64, u64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get128::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get128::get_method_info().method_ptr);
         inner(index, data1, data2, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get256 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
@@ -293,43 +209,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Get256",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Get256",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get256(
-        index: u32,
-        data1: u64,
-        data2: u64,
-        data3: u64,
-        data4: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get256(index: u32, data1: u64, data2: u64, data3: u64, data4: u64, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(u32, u64, u64, u64, u64, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get256::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get256::get_method_info().method_ptr);
         inner(index, data1, data2, data3, data4, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set8 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u8 as ::unity2::IlType>::il_type(),
@@ -346,41 +246,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Set8",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Set8",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set8(
-        index: u32,
-        data: *mut u8,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set8(index: u32, data: *mut u8, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u32, *mut u8, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set8::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set8::get_method_info().method_ptr);
         inner(index, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set16 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u16 as ::unity2::IlType>::il_type(),
@@ -397,41 +283,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Set16",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Set16",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set16(
-        index: u32,
-        data: *mut u16,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set16(index: u32, data: *mut u16, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u32, *mut u16, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set16::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set16::get_method_info().method_ptr);
         inner(index, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set32 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u32 as ::unity2::IlType>::il_type(),
@@ -448,41 +320,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Set32",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Set32",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set32(
-        index: u32,
-        data: *mut u32,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set32(index: u32, data: *mut u32, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u32, *mut u32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set32::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set32::get_method_info().method_ptr);
         inner(index, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set64 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
@@ -499,41 +357,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Set64",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Set64",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set64(
-        index: u32,
-        data: *mut u64,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set64(index: u32, data: *mut u64, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u32, *mut u64, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set64::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set64::get_method_info().method_ptr);
         inner(index, data, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set128 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
@@ -551,42 +395,27 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Set128",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Set128",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set128(
-        index: u32,
-        data1: *mut u64,
-        data2: *mut u64,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set128(index: u32, data1: *mut u64, data2: *mut u64, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(u32, *mut u64, *mut u64, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set128::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set128::get_method_info().method_ptr);
         inner(index, data1, data2, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set256 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <u64 as ::unity2::IlType>::il_type(),
@@ -606,18 +435,15 @@ mod __BitArrayUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
-                    "Set256",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BitArrayUtilities as ::unity2::ClassIdentity>::NAME,
+                        "Set256",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set256(
@@ -629,38 +455,16 @@ mod __BitArrayUtilities_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            u32,
-            *mut u64,
-            *mut u64,
-            *mut u64,
-            *mut u64,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set256::get_offset() as isize),
-        );
-        inner(
-            index,
-            data1,
-            data2,
-            data3,
-            data4,
-            value,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(u32, *mut u64, *mut u64, *mut u64, *mut u64, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set256::get_method_info().method_ptr);
+        inner(index, data1, data2, data3, data4, value, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarrayutilities")]
 impl BitArrayUtilities {
     #[doc = "`Get8(u32, u8)` overload"]
-    pub fn get8(
-        index: impl ::core::convert::Into<u32>,
-        data: impl ::core::convert::Into<u8>,
-    ) -> bool {
+    pub fn get8(index: impl ::core::convert::Into<u32>, data: impl ::core::convert::Into<u8>) -> bool {
         unsafe {
             __BitArrayUtilities_unity2_raw::get8(
                 ::core::convert::Into::into(index),
@@ -669,11 +473,9 @@ impl BitArrayUtilities {
             )
         }
     }
+
     #[doc = "`Get16(u32, u16)` overload"]
-    pub fn get16(
-        index: impl ::core::convert::Into<u32>,
-        data: impl ::core::convert::Into<u16>,
-    ) -> bool {
+    pub fn get16(index: impl ::core::convert::Into<u32>, data: impl ::core::convert::Into<u16>) -> bool {
         unsafe {
             __BitArrayUtilities_unity2_raw::get16(
                 ::core::convert::Into::into(index),
@@ -682,11 +484,9 @@ impl BitArrayUtilities {
             )
         }
     }
+
     #[doc = "`Get32(u32, u32)` overload"]
-    pub fn get32(
-        index: impl ::core::convert::Into<u32>,
-        data: impl ::core::convert::Into<u32>,
-    ) -> bool {
+    pub fn get32(index: impl ::core::convert::Into<u32>, data: impl ::core::convert::Into<u32>) -> bool {
         unsafe {
             __BitArrayUtilities_unity2_raw::get32(
                 ::core::convert::Into::into(index),
@@ -695,11 +495,9 @@ impl BitArrayUtilities {
             )
         }
     }
+
     #[doc = "`Get64(u32, u64)` overload"]
-    pub fn get64(
-        index: impl ::core::convert::Into<u32>,
-        data: impl ::core::convert::Into<u64>,
-    ) -> bool {
+    pub fn get64(index: impl ::core::convert::Into<u32>, data: impl ::core::convert::Into<u64>) -> bool {
         unsafe {
             __BitArrayUtilities_unity2_raw::get64(
                 ::core::convert::Into::into(index),
@@ -708,12 +506,9 @@ impl BitArrayUtilities {
             )
         }
     }
+
     #[doc = "`Get128(u32, u64, u64)` overload"]
-    pub fn get128(
-        index: impl ::core::convert::Into<u32>,
-        data1: impl ::core::convert::Into<u64>,
-        data2: impl ::core::convert::Into<u64>,
-    ) -> bool {
+    pub fn get128(index: impl ::core::convert::Into<u32>, data1: impl ::core::convert::Into<u64>, data2: impl ::core::convert::Into<u64>) -> bool {
         unsafe {
             __BitArrayUtilities_unity2_raw::get128(
                 ::core::convert::Into::into(index),
@@ -723,6 +518,7 @@ impl BitArrayUtilities {
             )
         }
     }
+
     #[doc = "`Get256(u32, u64, u64, u64, u64)` overload"]
     pub fn get256(
         index: impl ::core::convert::Into<u32>,
@@ -742,11 +538,9 @@ impl BitArrayUtilities {
             )
         }
     }
+
     #[doc = "`Set8(u32, *mutu8, bool)` overload"]
-    pub fn set8(
-        index: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> u8 {
+    pub fn set8(index: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<bool>) -> u8 {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u8>::uninit();
             __BitArrayUtilities_unity2_raw::set8(
@@ -758,11 +552,9 @@ impl BitArrayUtilities {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Set16(u32, *mutu16, bool)` overload"]
-    pub fn set16(
-        index: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> u16 {
+    pub fn set16(index: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<bool>) -> u16 {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u16>::uninit();
             __BitArrayUtilities_unity2_raw::set16(
@@ -774,11 +566,9 @@ impl BitArrayUtilities {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Set32(u32, *mutu32, bool)` overload"]
-    pub fn set32(
-        index: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> u32 {
+    pub fn set32(index: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<bool>) -> u32 {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u32>::uninit();
             __BitArrayUtilities_unity2_raw::set32(
@@ -790,11 +580,9 @@ impl BitArrayUtilities {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Set64(u32, *mutu64, bool)` overload"]
-    pub fn set64(
-        index: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> u64 {
+    pub fn set64(index: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<bool>) -> u64 {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
             __BitArrayUtilities_unity2_raw::set64(
@@ -806,11 +594,9 @@ impl BitArrayUtilities {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Set128(u32, *mutu64, *mutu64, bool)` overload"]
-    pub fn set128(
-        index: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> (u64, u64) {
+    pub fn set128(index: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<bool>) -> (u64, u64) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
@@ -824,11 +610,9 @@ impl BitArrayUtilities {
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Set256(u32, *mutu64, *mutu64, *mutu64, *mutu64, bool)` overload"]
-    pub fn set256(
-        index: impl ::core::convert::Into<u32>,
-        value: impl ::core::convert::Into<bool>,
-    ) -> (u64, u64, u64, u64) {
+    pub fn set256(index: impl ::core::convert::Into<u32>, value: impl ::core::convert::Into<bool>) -> (u64, u64, u64, u64) {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<u64>::uninit();
             let mut __out_1 = ::core::mem::MaybeUninit::<u64>::uninit();
@@ -843,12 +627,7 @@ impl BitArrayUtilities {
                 ::core::convert::Into::into(value),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init(), __out_3.assume_init())
         }
     }
 }
@@ -856,8 +635,7 @@ impl BitArrayUtilities {
 #[cfg(feature = "unity_engine-rendering-bitarrayutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BitArrayUtilities;
-    pub use super::IBitArrayUtilities;
+    pub use super::{BitArrayUtilities, IBitArrayUtilities};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

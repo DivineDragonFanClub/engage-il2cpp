@@ -2,12 +2,14 @@
 
 #[cfg(feature = "system-action_9-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/action_9/Action_9.md"))]
     #[::unity2::class(namespace = "System", name = "Action`9")]
@@ -50,18 +52,7 @@ impl<
 
     #[doc = "`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8)` overload"]
     #[method(name = "Invoke", args = 9)]
-    pub fn invoke(
-        self,
-        arg1: T0,
-        arg2: T1,
-        arg3: T2,
-        arg4: T3,
-        arg5: T4,
-        arg6: T5,
-        arg7: T6,
-        arg8: T7,
-        arg9: T8,
-    ) -> ();
+    pub fn invoke(self, arg1: T0, arg2: T1, arg3: T2, arg4: T3, arg5: T4, arg6: T5, arg7: T6, arg8: T7, arg9: T8) -> ();
 }
 
 #[cfg(feature = "system-action_9")]
@@ -79,13 +70,8 @@ impl<
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Action_9),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Action_9), ::core::stringify!(new),));
         <Self as IAction_9Methods<T0, T1, T2, T3, T4, T5, T6, T7, T8>>::ctor(this, object, method);
         this
     }
@@ -94,16 +80,12 @@ impl<
 #[cfg(feature = "system-action_9")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Action_9;
-    pub use super::IAction_9;
-    pub use super::IAction_9Methods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{Action_9, IAction_9, IAction_9Methods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

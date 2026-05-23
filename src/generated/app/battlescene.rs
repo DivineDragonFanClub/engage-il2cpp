@@ -2,71 +2,33 @@
 
 #[cfg(feature = "app-battlescene-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::bitfield32::{BitField32, IBitField32};
-    use crate::app::bitfieldcommon::{BitFieldCommon, IBitFieldCommon};
-    use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1};
-    use crate::app::pool::{IPool_Node, Pool_Node};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleScene")]
-    #[parent(crate::app::pool::Pool_Node)]
-    pub struct BattleScene {
-        #[rename(name = "m_List")]
-        pub m_list: crate::app::battlescenelist::BattleSceneList,
-        #[rename(name = "m_Side")]
-        pub m_side: crate::app::battleside::BattleSide_Type,
-        #[rename(name = "m_Target")]
-        pub m_target: crate::app::battleside::BattleSide_Type,
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::battlescene::BattleScene_Kind,
-        #[rename(name = "m_Skill")]
-        pub m_skill: i32,
-        #[rename(name = "m_Item")]
-        pub m_item: i32,
-        #[rename(name = "m_God")]
-        pub m_god: i32,
-        #[rename(name = "m_Index")]
-        pub m_index: i32,
-        #[rename(name = "m_Result")]
-        pub m_result: crate::app::battlescene::BattleScene_FieldResult,
-        #[rename(name = "m_Guardian")]
-        pub m_guardian: crate::app::battleside::BattleSide_Type,
-        #[rename(name = "m_Hps")]
-        pub m_hps: crate::app::battleside::BattleSide_ShortArray,
-        #[rename(name = "m_Engages")]
-        pub m_engages: crate::app::battleside::BattleSide_SbyteArray,
-        #[rename(name = "m_Damages")]
-        pub m_damages: crate::app::battleside::BattleSide_ShortArray,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))]
-    #[::unity2::class(namespace = "App", name = "BattleScene.FieldResult")]
-    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)]
-    pub struct BattleScene_FieldResult {}
+    use crate::{
+        app::{
+            bitfield32::{BitField32, IBitField32},
+            bitfieldcommon::{BitFieldCommon, IBitFieldCommon},
+            bitfieldtemplate32_1::{BitFieldTemplate32_1, IBitFieldTemplate32_1},
+            pool::{IPool_Node, Pool_Node},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct BattleScene_Kind {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for BattleScene_Kind {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "BattleScene.Kind";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -77,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for BattleScene_Kind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -180,21 +139,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct BattleScene_Result {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for BattleScene_Result {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "BattleScene.Result";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -205,10 +157,7 @@ mod __types {
 
     impl ::unity2::IlType for BattleScene_Result {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -277,6 +226,43 @@ mod __types {
             Self { value: 16384 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleScene")]
+    #[parent(crate::app::pool::Pool_Node)]
+    pub struct BattleScene {
+        #[rename(name = "m_List")]
+        pub m_list: crate::app::battlescenelist::BattleSceneList,
+        #[rename(name = "m_Side")]
+        pub m_side: crate::app::battleside::BattleSide_Type,
+        #[rename(name = "m_Target")]
+        pub m_target: crate::app::battleside::BattleSide_Type,
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::battlescene::BattleScene_Kind,
+        #[rename(name = "m_Skill")]
+        pub m_skill: i32,
+        #[rename(name = "m_Item")]
+        pub m_item: i32,
+        #[rename(name = "m_God")]
+        pub m_god: i32,
+        #[rename(name = "m_Index")]
+        pub m_index: i32,
+        #[rename(name = "m_Result")]
+        pub m_result: crate::app::battlescene::BattleScene_FieldResult,
+        #[rename(name = "m_Guardian")]
+        pub m_guardian: crate::app::battleside::BattleSide_Type,
+        #[rename(name = "m_Hps")]
+        pub m_hps: crate::app::battleside::BattleSide_ShortArray,
+        #[rename(name = "m_Engages")]
+        pub m_engages: crate::app::battleside::BattleSide_SbyteArray,
+        #[rename(name = "m_Damages")]
+        pub m_damages: crate::app::battleside::BattleSide_ShortArray,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))]
+    #[::unity2::class(namespace = "App", name = "BattleScene.FieldResult")]
+    # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)]
+    pub struct BattleScene_FieldResult {}
 }
 
 #[cfg(feature = "app-battlescene-types")]
@@ -291,9 +277,7 @@ mod __BattleScene_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_debugger_display {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -306,210 +290,133 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "get_DebuggerDisplay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "get_DebuggerDisplay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debugger_display(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_debugger_display(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_debugger_display::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_debugger_display::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "OnEnter",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "OnEnter", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "OnEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "OnEnter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enter(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enter(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "OnExit",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "OnExit", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "OnExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "OnExit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_exit(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_exit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_exit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battlescenelist::BattleSceneList as ::unity2::IlType>::il_type(),
                 <crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type(),
@@ -518,29 +425,20 @@ mod __BattleScene_unity2_raw {
                 <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "Setup",
-                6,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "Setup", 6, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
@@ -562,76 +460,41 @@ mod __BattleScene_unity2_raw {
             crate::app::battleinfo::BattleInfo,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
-        inner(
-            this,
-            list,
-            kind,
-            current,
-            target,
-            info,
-            index,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
+        inner(this, list, kind, current, target, info, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "GetKind",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "GetKind", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetKind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_kind(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_Kind {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Kind = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_kind::get_offset() as isize),
-        );
+    pub unsafe fn get_kind(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene_Kind {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene_Kind =
+            ::core::mem::transmute(__lookup_get_kind::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -644,39 +507,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_index(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_index(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -689,41 +540,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetResult",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_result(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene_FieldResult {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_FieldResult = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_result::get_offset() as isize),
-        );
+    pub unsafe fn get_result(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene_FieldResult {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene_FieldResult =
+            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -737,18 +574,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "IsResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "IsResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_result(
@@ -756,24 +590,15 @@ mod __BattleScene_unity2_raw {
         result: crate::app::battlescene::BattleScene_Result,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battlescene::BattleScene_Result,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_result::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_result::get_method_info().method_ptr);
         inner(this, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -787,18 +612,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_result(
@@ -810,45 +632,29 @@ mod __BattleScene_unity2_raw {
             BattleScene,
             crate::app::battlescene::BattleScene_Result,
             ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_result::get_offset() as isize),
-        );
+        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(__lookup_set_result::get_method_info().method_ptr);
         inner(this, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_kind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "SetKind",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battlescene::BattleScene_Kind as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "SetKind", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetKind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetKind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_kind(
@@ -860,22 +666,15 @@ mod __BattleScene_unity2_raw {
             BattleScene,
             crate::app::battlescene::BattleScene_Kind,
             ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_kind::get_offset() as isize),
-        );
+        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(__lookup_set_kind::get_method_info().method_ptr);
         inner(this, kind, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "GetDamage",
@@ -887,18 +686,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetDamage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetDamage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_damage(
@@ -906,74 +702,42 @@ mod __BattleScene_unity2_raw {
         side: crate::app::battleside::BattleSide_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_damage::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_damage::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_heal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "GetHeal",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "GetHeal", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetHeal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetHeal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_heal(
-        this: BattleScene,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_heal::get_offset() as isize),
-        );
+    pub unsafe fn get_heal(this: BattleScene, side: crate::app::battleside::BattleSide_Type, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_heal::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -989,18 +753,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetDamage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetDamage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_damage(
@@ -1014,97 +775,59 @@ mod __BattleScene_unity2_raw {
             crate::app::battleside::BattleSide_Type,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_damage::get_offset() as isize),
-        );
+        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(__lookup_set_damage::get_method_info().method_ptr);
         inner(this, side, damage, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "GetHp",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "GetHp", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetHp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetHp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hp(
-        this: BattleScene,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_hp::get_offset() as isize),
-        );
+    pub unsafe fn get_hp(this: BattleScene, side: crate::app::battleside::BattleSide_Type, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_hp::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_hp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "AddHp",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "AddHp", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "AddHp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "AddHp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_hp(
@@ -1113,77 +836,43 @@ mod __BattleScene_unity2_raw {
         value: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_hp::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_hp::get_method_info().method_ptr);
         inner(this, side, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_commit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "Commit",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "Commit", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "Commit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "Commit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn commit(
-        this: BattleScene,
-        info: crate::app::battleinfo::BattleInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleinfo::BattleInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_commit::get_offset() as isize),
-        );
+    pub unsafe fn commit(this: BattleScene, info: crate::app::battleinfo::BattleInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BattleScene, crate::app::battleinfo::BattleInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_commit::get_method_info().method_ptr);
         inner(this, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_engage_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "GetEngageCount",
@@ -1195,18 +884,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetEngageCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetEngageCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_engage_count(
@@ -1214,26 +900,16 @@ mod __BattleScene_unity2_raw {
         side: crate::app::battleside::BattleSide_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_engage_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_engage_count::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clamp_damage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "GetClampDamage",
@@ -1245,18 +921,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetClampDamage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetClampDamage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_clamp_damage(
@@ -1264,26 +937,16 @@ mod __BattleScene_unity2_raw {
         side: crate::app::battleside::BattleSide_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clamp_damage::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_clamp_damage::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "SetSkill",
@@ -1295,45 +958,28 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_skill(
-        this: BattleScene,
-        skill: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_skill::get_offset() as isize),
-        );
+    pub unsafe fn set_skill(this: BattleScene, skill: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene {
+        let inner: extern "C" fn(BattleScene, i32, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_skill::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skill_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "SetSkill",
@@ -1345,18 +991,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_skill_2(
@@ -1364,26 +1007,16 @@ mod __BattleScene_unity2_raw {
         skill: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_skill_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_skill_2::get_method_info().method_ptr);
         inner(this, skill, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_skill_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "SetSkill",
@@ -1395,18 +1028,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_skill_3(
@@ -1414,24 +1044,15 @@ mod __BattleScene_unity2_raw {
         sid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_skill_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_skill_3::get_method_info().method_ptr);
         inner(this, sid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -1444,116 +1065,69 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_skill(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_skill::get_offset() as isize),
-        );
+    pub unsafe fn get_skill(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_skill::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "SetItem",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "SetItem", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item(
-        this: BattleScene,
-        item: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item::get_offset() as isize),
-        );
+    pub unsafe fn set_item(this: BattleScene, item: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene {
+        let inner: extern "C" fn(BattleScene, i32, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "SetItem",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::itemdata::ItemData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "SetItem", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item_2(
@@ -1561,49 +1135,30 @@ mod __BattleScene_unity2_raw {
         item: crate::app::itemdata::ItemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::itemdata::ItemData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::itemdata::ItemData, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_item_2::get_method_info().method_ptr);
         inner(this, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "SetItem",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "SetItem", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item_3(
@@ -1611,96 +1166,57 @@ mod __BattleScene_unity2_raw {
         iid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item_3::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_item_3::get_method_info().method_ptr);
         inner(this, iid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "GetItem",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "GetItem", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::itemdata::ItemData {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::itemdata::ItemData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+    pub unsafe fn get_item(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::itemdata::ItemData =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "SetGod",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "SetGod", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "SetGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "SetGod",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_god(
@@ -1708,71 +1224,42 @@ mod __BattleScene_unity2_raw {
         god: crate::app::goddata::GodData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::battlescene::BattleScene {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_god::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> crate::app::battlescene::BattleScene =
+            ::core::mem::transmute(__lookup_set_god::get_method_info().method_ptr);
         inner(this, god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "GetGod",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "GetGod", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetGod",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_god(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::goddata::GodData {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::goddata::GodData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god::get_offset() as isize),
-        );
+    pub unsafe fn get_god(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::goddata::GodData {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::goddata::GodData =
+            ::core::mem::transmute(__lookup_get_god::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_show_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -1785,41 +1272,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetShowSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetShowSkill",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_show_skill(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_show_skill::get_offset() as isize),
-        );
+    pub unsafe fn get_show_skill(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_show_skill::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_skill_name_for_debugger_display {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -1832,39 +1305,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "GetSkillNameForDebuggerDisplay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "GetSkillNameForDebuggerDisplay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_skill_name_for_debugger_display(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_skill_name_for_debugger_display(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_skill_name_for_debugger_display::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_skill_name_for_debugger_display::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_side {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -1877,41 +1338,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "get_Side",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "get_Side",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_side(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_side::get_offset() as isize),
-        );
+    pub unsafe fn get_side(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type =
+            ::core::mem::transmute(__lookup_get_side::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -1924,41 +1371,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "get_Target",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "get_Target",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_target(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target::get_offset() as isize),
-        );
+    pub unsafe fn get_target(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type =
+            ::core::mem::transmute(__lookup_get_target::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_guardian {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -1971,43 +1404,28 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "get_Guardian",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "get_Guardian",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_guardian(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_guardian::get_offset() as isize),
-        );
+    pub unsafe fn get_guardian(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type =
+            ::core::mem::transmute(__lookup_get_guardian::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_guardian {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
                 "set_Guardian",
@@ -2019,18 +1437,15 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "set_Guardian",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "set_Guardian",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_guardian(
@@ -2038,24 +1453,15 @@ mod __BattleScene_unity2_raw {
         value: crate::app::battleside::BattleSide_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_guardian::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_guardian::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -2068,41 +1474,27 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "get_Current",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "get_Current",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_current(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current::get_offset() as isize),
-        );
+    pub unsafe fn get_current(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type =
+            ::core::mem::transmute(__lookup_get_current::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_reverse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene as ::unity2::ClassIdentity>::class(),
@@ -2115,82 +1507,47 @@ mod __BattleScene_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "get_Reverse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "get_Reverse",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_reverse(
-        this: BattleScene,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::battleside::BattleSide_Type {
-        let inner: extern "C" fn(
-            BattleScene,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::battleside::BattleSide_Type = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reverse::get_offset() as isize),
-        );
+    pub unsafe fn get_reverse(this: BattleScene, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type {
+        let inner: extern "C" fn(BattleScene, ::unity2::OptionalMethod) -> crate::app::battleside::BattleSide_Type =
+            ::core::mem::transmute(__lookup_get_reverse::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_entry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BattleScene as ::unity2::ClassIdentity>::class(),
-                "IsEntry",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BattleScene as ::unity2::ClassIdentity>::class(), "IsEntry", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene as ::unity2::ClassIdentity>::NAME,
-                    "IsEntry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene as ::unity2::ClassIdentity>::NAME,
+                        "IsEntry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_entry(
-        this: BattleScene,
-        side: crate::app::battleside::BattleSide_Type,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            BattleScene,
-            crate::app::battleside::BattleSide_Type,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_entry::get_offset() as isize),
-        );
+    pub unsafe fn is_entry(this: BattleScene, side: crate::app::battleside::BattleSide_Type, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(BattleScene, crate::app::battleside::BattleSide_Type, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_entry::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
 }
@@ -2200,45 +1557,35 @@ pub trait IBattleSceneMethods: IBattleScene {
     #[doc = "`get_DebuggerDisplay()` overload"]
     fn get_debugger_display(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_debugger_display(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnter()` overload"]
     fn on_enter(self) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::on_enter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnExit()` overload"]
     fn on_exit(self) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::on_exit(__receiver, ::core::option::Option::None)
         }
     }
@@ -2253,9 +1600,7 @@ pub trait IBattleSceneMethods: IBattleScene {
         index: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(list),
@@ -2271,108 +1616,57 @@ pub trait IBattleSceneMethods: IBattleScene {
     #[doc = "`GetKind()` overload"]
     fn get_kind(self) -> crate::app::battlescene::BattleScene_Kind {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_kind(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetIndex()` overload"]
     fn get_index(self) -> i32 {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetResult()` overload"]
     fn get_result(self) -> crate::app::battlescene::BattleScene_FieldResult {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_result(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsResult(crate::app::battlescene::BattleScene_Result)` overload"]
-    fn is_result(
-        self,
-        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> bool {
+    fn is_result(self, result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>) -> bool {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::is_result(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::is_result(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
         }
     }
     #[doc = "`SetResult(crate::app::battlescene::BattleScene_Result)` overload"]
-    fn set_result(
-        self,
-        result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_result(self, result: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_result(
-                __receiver,
-                ::core::convert::Into::into(result),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_result(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)
         }
     }
     #[doc = "`SetKind(crate::app::battlescene::BattleScene_Kind)` overload"]
-    fn set_kind(
-        self,
-        kind: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_kind(self, kind: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Kind>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_kind(
-                __receiver,
-                ::core::convert::Into::into(kind),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_kind(__receiver, ::core::convert::Into::into(kind), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDamage(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_damage(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> i32 {
+    fn get_damage(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> i32 {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::get_damage(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::get_damage(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
     #[doc = "`GetHeal(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_heal(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> i32 {
+    fn get_heal(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> i32 {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::get_heal(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::get_heal(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
     #[doc = "`SetDamage(crate::app::battleside::BattleSide_Type, i32)` overload"]
@@ -2382,9 +1676,7 @@ pub trait IBattleSceneMethods: IBattleScene {
         damage: impl ::core::convert::Into<i32>,
     ) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::set_damage(
                 __receiver,
                 ::core::convert::Into::into(side),
@@ -2394,31 +1686,16 @@ pub trait IBattleSceneMethods: IBattleScene {
         }
     }
     #[doc = "`GetHp(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_hp(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> i32 {
+    fn get_hp(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> i32 {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::get_hp(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::get_hp(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
     #[doc = "`AddHp(crate::app::battleside::BattleSide_Type, i32)` overload"]
-    fn add_hp(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-        value: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn add_hp(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::add_hp(
                 __receiver,
                 ::core::convert::Into::into(side),
@@ -2430,283 +1707,155 @@ pub trait IBattleSceneMethods: IBattleScene {
     #[doc = "`Commit(crate::app::battleinfo::BattleInfo)` overload"]
     fn commit(self, info: impl ::core::convert::Into<crate::app::battleinfo::BattleInfo>) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::commit(
-                __receiver,
-                ::core::convert::Into::into(info),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::commit(__receiver, ::core::convert::Into::into(info), ::core::option::Option::None)
         }
     }
     #[doc = "`GetEngageCount(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_engage_count(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> i32 {
+    fn get_engage_count(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> i32 {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::get_engage_count(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::get_engage_count(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
     #[doc = "`GetClampDamage(crate::app::battleside::BattleSide_Type)` overload"]
-    fn get_clamp_damage(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> i32 {
+    fn get_clamp_damage(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> i32 {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::get_clamp_damage(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::get_clamp_damage(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSkill(i32)` overload"]
-    fn set_skill(
-        self,
-        skill: impl ::core::convert::Into<i32>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_skill(self, skill: impl ::core::convert::Into<i32>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_skill(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_skill(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSkill(crate::app::skilldata::SkillData)` overload"]
-    fn set_skill_2(
-        self,
-        skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_skill_2(self, skill: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_skill_2(
-                __receiver,
-                ::core::convert::Into::into(skill),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_skill_2(__receiver, ::core::convert::Into::into(skill), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSkill(::unity2::Il2CppString)` overload"]
-    fn set_skill_3(
-        self,
-        sid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_skill_3(self, sid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_skill_3(
-                __receiver,
-                ::core::convert::Into::into(sid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_skill_3(__receiver, ::core::convert::Into::into(sid), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSkill()` overload"]
     fn get_skill(self) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_skill(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetItem(i32)` overload"]
-    fn set_item(
-        self,
-        item: impl ::core::convert::Into<i32>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_item(self, item: impl ::core::convert::Into<i32>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_item(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_item(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
         }
     }
     #[doc = "`SetItem(crate::app::itemdata::ItemData)` overload"]
-    fn set_item_2(
-        self,
-        item: impl ::core::convert::Into<crate::app::itemdata::ItemData>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_item_2(self, item: impl ::core::convert::Into<crate::app::itemdata::ItemData>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_item_2(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_item_2(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
         }
     }
     #[doc = "`SetItem(::unity2::Il2CppString)` overload"]
-    fn set_item_3(
-        self,
-        iid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_item_3(self, iid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_item_3(
-                __receiver,
-                ::core::convert::Into::into(iid),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_item_3(__receiver, ::core::convert::Into::into(iid), ::core::option::Option::None)
         }
     }
     #[doc = "`GetItem()` overload"]
     fn get_item(self) -> crate::app::itemdata::ItemData {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetGod(crate::app::goddata::GodData)` overload"]
-    fn set_god(
-        self,
-        god: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> crate::app::battlescene::BattleScene {
+    fn set_god(self, god: impl ::core::convert::Into<crate::app::goddata::GodData>) -> crate::app::battlescene::BattleScene {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_god(
-                __receiver,
-                ::core::convert::Into::into(god),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_god(__receiver, ::core::convert::Into::into(god), ::core::option::Option::None)
         }
     }
     #[doc = "`GetGod()` overload"]
     fn get_god(self) -> crate::app::goddata::GodData {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_god(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetShowSkill()` overload"]
     fn get_show_skill(self) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_show_skill(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetSkillNameForDebuggerDisplay()` overload"]
     fn get_skill_name_for_debugger_display(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::get_skill_name_for_debugger_display(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::get_skill_name_for_debugger_display(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Side()` overload"]
     fn get_side(self) -> crate::app::battleside::BattleSide_Type {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_side(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Target()` overload"]
     fn get_target(self) -> crate::app::battleside::BattleSide_Type {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_target(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Guardian()` overload"]
     fn get_guardian(self) -> crate::app::battleside::BattleSide_Type {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_guardian(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Guardian(crate::app::battleside::BattleSide_Type)` overload"]
-    fn set_guardian(
-        self,
-        value: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> () {
+    fn set_guardian(self, value: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> () {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::set_guardian(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::set_guardian(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Current()` overload"]
     fn get_current(self) -> crate::app::battleside::BattleSide_Type {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_current(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Reverse()` overload"]
     fn get_reverse(self) -> crate::app::battleside::BattleSide_Type {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_unity2_raw::get_reverse(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsEntry(crate::app::battleside::BattleSide_Type)` overload"]
-    fn is_entry(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>,
-    ) -> bool {
+    fn is_entry(self, side: impl ::core::convert::Into<crate::app::battleside::BattleSide_Type>) -> bool {
         unsafe {
-            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BattleScene_unity2_raw::is_entry(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BattleScene as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_unity2_raw::is_entry(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
 }
@@ -2718,13 +1867,8 @@ impl<__T: IBattleScene> IBattleSceneMethods for __T {}
 impl BattleScene {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleScene),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BattleScene), ::core::stringify!(new),));
         <Self as IBattleSceneMethods>::ctor(this);
         this
     }
@@ -2739,9 +1883,7 @@ mod __BattleScene_FieldResult_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_to_int {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battlescene::BattleScene_Result as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2755,18 +1897,15 @@ mod __BattleScene_FieldResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene_FieldResult as ::unity2::ClassIdentity>::NAME,
-                    "ToInt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene_FieldResult as ::unity2::ClassIdentity>::NAME,
+                        "ToInt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn to_int(
@@ -2774,27 +1913,17 @@ mod __BattleScene_FieldResult_unity2_raw {
         value: crate::app::battlescene::BattleScene_Result,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BattleScene_FieldResult,
-            crate::app::battlescene::BattleScene_Result,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_int::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BattleScene_FieldResult, crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_to_int::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::battlescene::BattleScene_FieldResult as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::battlescene::BattleScene_FieldResult as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene_FieldResult as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -2806,18 +1935,15 @@ mod __BattleScene_FieldResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene_FieldResult as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene_FieldResult as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
@@ -2827,20 +1953,14 @@ mod __BattleScene_FieldResult_unity2_raw {
         let inner: extern "C" fn(
             crate::app::battlescene::BattleScene_FieldResult,
             ::unity2::OptionalMethod,
-        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
+        ) -> crate::app::battlescene::BattleScene_Result = ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(self_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleScene_FieldResult as ::unity2::ClassIdentity>::class(),
@@ -2853,30 +1973,20 @@ mod __BattleScene_FieldResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleScene_FieldResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleScene_FieldResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BattleScene_FieldResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BattleScene_FieldResult, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BattleScene_FieldResult, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2887,41 +1997,25 @@ impl BattleScene_FieldResult {
     pub fn op_implicit(
         self_: impl ::core::convert::Into<crate::app::battlescene::BattleScene_FieldResult>,
     ) -> crate::app::battlescene::BattleScene_Result {
-        unsafe {
-            __BattleScene_FieldResult_unity2_raw::op_implicit(
-                ::core::convert::Into::into(self_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __BattleScene_FieldResult_unity2_raw::op_implicit(::core::convert::Into::into(self_), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-battlescene")]
 pub trait IBattleScene_FieldResultMethods: IBattleScene_FieldResult {
     #[doc = "`ToInt(crate::app::battlescene::BattleScene_Result)` overload"]
-    fn to_int(
-        self,
-        value: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>,
-    ) -> i32 {
+    fn to_int(self, value: impl ::core::convert::Into<crate::app::battlescene::BattleScene_Result>) -> i32 {
         unsafe {
             let __receiver =
-                <BattleScene_FieldResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BattleScene_FieldResult_unity2_raw::to_int(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <BattleScene_FieldResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BattleScene_FieldResult_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <BattleScene_FieldResult as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <BattleScene_FieldResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleScene_FieldResult_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2949,33 +2043,26 @@ impl BattleScene_FieldResult {
 #[cfg(feature = "app-battlescene")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleScene;
-    pub use super::BattleScene_FieldResult;
-    pub use super::BattleScene_Kind;
-    pub use super::BattleScene_Result;
-    pub use super::IBattleScene;
-    pub use super::IBattleSceneMethods;
-    pub use super::IBattleScene_FieldResult;
-    pub use super::IBattleScene_FieldResultMethods;
-    pub use crate::app::bitfield32::IBitField32;
+    pub use super::{
+        BattleScene, BattleScene_FieldResult, BattleScene_Kind, BattleScene_Result, IBattleScene, IBattleSceneMethods, IBattleScene_FieldResult,
+        IBattleScene_FieldResultMethods,
+    };
     #[cfg(feature = "app-bitfield32")]
     pub use crate::app::bitfield32::IBitField32Methods;
-    pub use crate::app::bitfieldcommon::IBitFieldCommon;
     #[cfg(feature = "app-bitfieldcommon")]
     pub use crate::app::bitfieldcommon::IBitFieldCommonMethods;
-    pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
     #[cfg(feature = "app-bitfieldtemplate32_1")]
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1Methods;
-    pub use crate::app::pool::IPool_Node;
     #[cfg(feature = "app-pool")]
     pub use crate::app::pool::IPool_NodeMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{bitfield32::IBitField32, bitfieldcommon::IBitFieldCommon, bitfieldtemplate32_1::IBitFieldTemplate32_1, pool::IPool_Node},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

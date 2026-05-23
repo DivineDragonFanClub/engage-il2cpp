@@ -23,10 +23,7 @@ pub mod customforwardrenderer;
 #[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
 pub use customforwardrenderer::ICustomForwardRendererMethods;
 #[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer-types")]
-pub use customforwardrenderer::{
-    CustomForwardRenderer, CustomForwardRenderer_Profiling, ICustomForwardRenderer,
-    ICustomForwardRenderer_Profiling,
-};
+pub use customforwardrenderer::{CustomForwardRenderer, CustomForwardRenderer_Profiling, ICustomForwardRenderer, ICustomForwardRenderer_Profiling};
 #[cfg(any(feature = "unity_engine-rendering-universal-custom-customgradationfilter-types"))]
 pub mod customgradationfilter;
 #[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]
@@ -105,13 +102,11 @@ pub use reflectionrenderer::{IReflectionRenderer, ReflectionRenderer};
 pub mod reflectionrendererdata;
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")]
 pub use reflectionrendererdata::{
-    IReflectionRendererData, IReflectionRendererData_ShaderResources, ReflectionRendererData,
-    ReflectionRendererData_ReflectionTarget, ReflectionRendererData_ShaderResources,
+    IReflectionRendererData, IReflectionRendererData_ShaderResources, ReflectionRendererData, ReflectionRendererData_ReflectionTarget,
+    ReflectionRendererData_ShaderResources,
 };
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-pub use reflectionrendererdata::{
-    IReflectionRendererDataMethods, IReflectionRendererData_ShaderResourcesMethods,
-};
+pub use reflectionrendererdata::{IReflectionRendererDataMethods, IReflectionRendererData_ShaderResourcesMethods};
 #[cfg(any(feature = "unity_engine-rendering-universal-custom-statusmodelrenderer-types"))]
 pub mod statusmodelrenderer;
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrenderer")]
@@ -122,10 +117,7 @@ pub use statusmodelrenderer::{IStatusModelRenderer, StatusModelRenderer};
 pub mod statusmodelrendererdata;
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")]
 pub use statusmodelrendererdata::{
-    IStatusModelRendererData, IStatusModelRendererData_ShaderResources, StatusModelRendererData,
-    StatusModelRendererData_ShaderResources,
+    IStatusModelRendererData, IStatusModelRendererData_ShaderResources, StatusModelRendererData, StatusModelRendererData_ShaderResources,
 };
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-pub use statusmodelrendererdata::{
-    IStatusModelRendererDataMethods, IStatusModelRendererData_ShaderResourcesMethods,
-};
+pub use statusmodelrendererdata::{IStatusModelRendererDataMethods, IStatusModelRendererData_ShaderResourcesMethods};

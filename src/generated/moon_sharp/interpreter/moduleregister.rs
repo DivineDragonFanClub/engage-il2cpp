@@ -2,10 +2,10 @@
 
 #[cfg(feature = "moon_sharp-interpreter-moduleregister-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moduleregister/ModuleRegister.md"))]
     #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "ModuleRegister")]
@@ -25,10 +25,11 @@ mod __ModuleRegister_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_register_core_modules {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: coremodules :: CoreModules as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::coremodules::CoreModules as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ModuleRegister as ::unity2::ClassIdentity>::class(),
                 "RegisterCoreModules",
@@ -40,18 +41,15 @@ mod __ModuleRegister_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                    "RegisterCoreModules",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                        "RegisterCoreModules",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_core_modules(
@@ -63,20 +61,14 @@ mod __ModuleRegister_unity2_raw {
             crate::moon_sharp::interpreter::table::Table,
             crate::moon_sharp::interpreter::coremodules::CoreModules,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_core_modules::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_register_core_modules::get_method_info().method_ptr);
         inner(table, modules, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_constants {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -90,18 +82,15 @@ mod __ModuleRegister_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                    "RegisterConstants",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                        "RegisterConstants",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_constants(
@@ -111,20 +100,14 @@ mod __ModuleRegister_unity2_raw {
         let inner: extern "C" fn(
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_constants::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_register_constants::get_method_info().method_ptr);
         inner(table, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_module_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -140,18 +123,15 @@ mod __ModuleRegister_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                    "RegisterModuleType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                        "RegisterModuleType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_module_type(
@@ -163,20 +143,14 @@ mod __ModuleRegister_unity2_raw {
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_module_type::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_register_module_type::get_method_info().method_ptr);
         inner(gtable, t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_script_field_as_const {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::reflection::fieldinfo::FieldInfo as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -195,18 +169,15 @@ mod __ModuleRegister_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                    "RegisterScriptFieldAsConst",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                        "RegisterScriptFieldAsConst",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_script_field_as_const(
@@ -224,20 +195,14 @@ mod __ModuleRegister_unity2_raw {
             ::unity2::SystemType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_script_field_as_const::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_register_script_field_as_const::get_method_info().method_ptr);
         inner(fi, o, table, t, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_register_script_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::reflection::fieldinfo::FieldInfo as ::unity2::IlType>::il_type(),
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
@@ -256,18 +221,15 @@ mod __ModuleRegister_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                    "RegisterScriptField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                        "RegisterScriptField",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn register_script_field(
@@ -285,20 +247,14 @@ mod __ModuleRegister_unity2_raw {
             ::unity2::SystemType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_register_script_field::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_register_script_field::get_method_info().method_ptr);
         inner(fi, o, table, t, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_module_namespace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -314,18 +270,15 @@ mod __ModuleRegister_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                    "CreateModuleNamespace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                        "CreateModuleNamespace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_module_namespace(
@@ -337,11 +290,7 @@ mod __ModuleRegister_unity2_raw {
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_module_namespace::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_create_module_namespace::get_method_info().method_ptr);
         inner(gtable, t, __unity2_method_info)
     }
 }
@@ -361,17 +310,14 @@ impl ModuleRegister {
             )
         }
     }
+
     #[doc = "`RegisterConstants(crate::moon_sharp::interpreter::table::Table)` overload"]
     pub fn register_constants(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
     ) -> crate::moon_sharp::interpreter::table::Table {
-        unsafe {
-            __ModuleRegister_unity2_raw::register_constants(
-                ::core::convert::Into::into(table),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ModuleRegister_unity2_raw::register_constants(::core::convert::Into::into(table), ::core::option::Option::None) }
     }
+
     #[doc = "`RegisterModuleType(crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType)` overload"]
     pub fn register_module_type(
         gtable: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
@@ -385,6 +331,7 @@ impl ModuleRegister {
             )
         }
     }
+
     #[doc = "`RegisterScriptFieldAsConst(crate::system::reflection::fieldinfo::FieldInfo, crate::system::object::Object, crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType, ::unity2::Il2CppString)` overload"]
     pub fn register_script_field_as_const(
         fi: impl ::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>,
@@ -404,6 +351,7 @@ impl ModuleRegister {
             )
         }
     }
+
     #[doc = "`RegisterScriptField(crate::system::reflection::fieldinfo::FieldInfo, crate::system::object::Object, crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType, ::unity2::Il2CppString)` overload"]
     pub fn register_script_field(
         fi: impl ::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>,
@@ -423,6 +371,7 @@ impl ModuleRegister {
             )
         }
     }
+
     #[doc = "`CreateModuleNamespace(crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType)` overload"]
     pub fn create_module_namespace(
         gtable: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
@@ -436,59 +385,43 @@ impl ModuleRegister {
             )
         }
     }
-    pub fn register_module_type_2<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+
+    pub fn register_module_type_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
     ) -> crate::moon_sharp::interpreter::table::Table {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ModuleRegister as ::unity2::ClassIdentity>::class(),
-                "RegisterModuleType",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ModuleRegister as ::unity2::ClassIdentity>::class(), "RegisterModuleType", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ModuleRegister as ::unity2::ClassIdentity>::NAME,
-                "RegisterModuleType",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ModuleRegister as ::unity2::ClassIdentity>::NAME,
+                    "RegisterModuleType",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
             let __f: extern "C" fn(
                 crate::moon_sharp::interpreter::table::Table,
                 ::unity2::OptionalMethod,
-            ) -> crate::moon_sharp::interpreter::table::Table =
-                ::core::mem::transmute(__inflated.method_ptr);
+            ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(table),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(table), ::core::option::Option::Some(__mi_opaque))
         }
     }
 }
@@ -496,8 +429,7 @@ impl ModuleRegister {
 #[cfg(feature = "moon_sharp-interpreter-moduleregister")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IModuleRegister;
-    pub use super::ModuleRegister;
+    pub use super::{IModuleRegister, ModuleRegister};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

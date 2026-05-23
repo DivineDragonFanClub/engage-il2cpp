@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-unitreliancemapresult-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitreliancemapresult/UnitRelianceMapResult.md"))]
     #[::unity2::class(namespace = "App", name = "UnitRelianceMapResult")]
@@ -25,9 +25,7 @@ mod __UnitRelianceMapResult_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -44,18 +42,15 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -71,20 +66,14 @@ mod __UnitRelianceMapResult_unity2_raw {
             ::unity2::Il2CppString,
             crate::app::unitreliancedata::UnitRelianceData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, pid_a, pid_b, unit_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pid_a {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
@@ -97,43 +86,28 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "get_PidA",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "get_PidA",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pid_a(
-        this: UnitRelianceMapResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnitRelianceMapResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pid_a::get_offset() as isize),
-        );
+    pub unsafe fn get_pid_a(this: UnitRelianceMapResult, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_pid_a::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pid_a {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
                 "set_PidA",
@@ -145,43 +119,27 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "set_PidA",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "set_PidA",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_pid_a(
-        this: UnitRelianceMapResult,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitRelianceMapResult,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pid_a::get_offset() as isize),
-        );
+    pub unsafe fn set_pid_a(this: UnitRelianceMapResult, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pid_a::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_person_index_a {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
@@ -194,41 +152,28 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "get_PersonIndexA",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "get_PersonIndexA",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_person_index_a(
-        this: UnitRelianceMapResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_person_index_a(this: UnitRelianceMapResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_person_index_a::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_person_index_a::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_person_index_a {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
                 "set_PersonIndexA",
@@ -240,40 +185,27 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "set_PersonIndexA",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "set_PersonIndexA",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_person_index_a(
-        this: UnitRelianceMapResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_person_index_a(this: UnitRelianceMapResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitRelianceMapResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_person_index_a::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_person_index_a::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pid_b {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
@@ -286,43 +218,28 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "get_PidB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "get_PidB",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_pid_b(
-        this: UnitRelianceMapResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnitRelianceMapResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pid_b::get_offset() as isize),
-        );
+    pub unsafe fn get_pid_b(this: UnitRelianceMapResult, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_pid_b::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pid_b {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
                 "set_PidB",
@@ -334,43 +251,27 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "set_PidB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "set_PidB",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_pid_b(
-        this: UnitRelianceMapResult,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            UnitRelianceMapResult,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pid_b::get_offset() as isize),
-        );
+    pub unsafe fn set_pid_b(this: UnitRelianceMapResult, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pid_b::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_person_index_b {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
@@ -383,41 +284,28 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "get_PersonIndexB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "get_PersonIndexB",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_person_index_b(
-        this: UnitRelianceMapResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_person_index_b(this: UnitRelianceMapResult, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_person_index_b::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_person_index_b::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_person_index_b {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
                 "set_PersonIndexB",
@@ -429,40 +317,27 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "set_PersonIndexB",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "set_PersonIndexB",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_person_index_b(
-        this: UnitRelianceMapResult,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_person_index_b(this: UnitRelianceMapResult, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(UnitRelianceMapResult, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_person_index_b::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_person_index_b::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
@@ -475,41 +350,30 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "get_UnitData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "get_UnitData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_unit_data(
         this: UnitRelianceMapResult,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unitreliancedata::UnitRelianceData {
-        let inner: extern "C" fn(
-            UnitRelianceMapResult,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unitreliancedata::UnitRelianceData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitRelianceMapResult, ::unity2::OptionalMethod) -> crate::app::unitreliancedata::UnitRelianceData =
+            ::core::mem::transmute(__lookup_get_unit_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::unitreliancedata::UnitRelianceData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -523,18 +387,15 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "set_UnitData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "set_UnitData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit_data(
@@ -542,25 +403,19 @@ mod __UnitRelianceMapResult_unity2_raw {
         value: crate::app::unitreliancedata::UnitRelianceData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            UnitRelianceMapResult,
-            crate::app::unitreliancedata::UnitRelianceData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(UnitRelianceMapResult, crate::app::unitreliancedata::UnitRelianceData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compare {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unitreliancemapresult :: UnitRelianceMapResult as :: unity2 :: IlType > :: il_type () , < crate :: app :: unitreliancemapresult :: UnitRelianceMapResult as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unitreliancemapresult::UnitRelianceMapResult as ::unity2::IlType>::il_type(),
+                <crate::app::unitreliancemapresult::UnitRelianceMapResult as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitRelianceMapResult as ::unity2::ClassIdentity>::class(),
                 "Compare",
@@ -572,18 +427,15 @@ mod __UnitRelianceMapResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitRelianceMapResult as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compare(
@@ -595,11 +447,7 @@ mod __UnitRelianceMapResult_unity2_raw {
             crate::app::unitreliancemapresult::UnitRelianceMapResult,
             crate::app::unitreliancemapresult::UnitRelianceMapResult,
             ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
+        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
 }
@@ -631,9 +479,8 @@ pub trait IUnitRelianceMapResultMethods: IUnitRelianceMapResult {
         unit_data: impl ::core::convert::Into<crate::app::unitreliancedata::UnitRelianceData>,
     ) -> () {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitRelianceMapResult_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(pid_a),
@@ -646,123 +493,81 @@ pub trait IUnitRelianceMapResultMethods: IUnitRelianceMapResult {
     #[doc = "`get_PidA()` overload"]
     fn get_pid_a(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitRelianceMapResult_unity2_raw::get_pid_a(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PidA(::unity2::Il2CppString)` overload"]
     fn set_pid_a(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::set_pid_a(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::set_pid_a(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PersonIndexA()` overload"]
     fn get_person_index_a(self) -> i32 {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::get_person_index_a(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::get_person_index_a(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PersonIndexA(i32)` overload"]
     fn set_person_index_a(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::set_person_index_a(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::set_person_index_a(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PidB()` overload"]
     fn get_pid_b(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnitRelianceMapResult_unity2_raw::get_pid_b(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PidB(::unity2::Il2CppString)` overload"]
     fn set_pid_b(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::set_pid_b(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::set_pid_b(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_PersonIndexB()` overload"]
     fn get_person_index_b(self) -> i32 {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::get_person_index_b(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::get_person_index_b(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PersonIndexB(i32)` overload"]
     fn set_person_index_b(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::set_person_index_b(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::set_person_index_b(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_UnitData()` overload"]
     fn get_unit_data(self) -> crate::app::unitreliancedata::UnitRelianceData {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::get_unit_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::get_unit_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_UnitData(crate::app::unitreliancedata::UnitRelianceData)` overload"]
-    fn set_unit_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::unitreliancedata::UnitRelianceData>,
-    ) -> () {
+    fn set_unit_data(self, value: impl ::core::convert::Into<crate::app::unitreliancedata::UnitRelianceData>) -> () {
         unsafe {
-            let __receiver = <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnitRelianceMapResult_unity2_raw::set_unit_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnitRelianceMapResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnitRelianceMapResult_unity2_raw::set_unit_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -773,11 +578,7 @@ impl<__T: IUnitRelianceMapResult> IUnitRelianceMapResultMethods for __T {}
 #[cfg(feature = "app-unitreliancemapresult")]
 impl UnitRelianceMapResult {
     #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitreliancedata::UnitRelianceData)` — overload selector"]
-    pub fn new(
-        pid_a: ::unity2::Il2CppString,
-        pid_b: ::unity2::Il2CppString,
-        unit_data: crate::app::unitreliancedata::UnitRelianceData,
-    ) -> Self {
+    pub fn new(pid_a: ::unity2::Il2CppString, pid_b: ::unity2::Il2CppString, unit_data: crate::app::unitreliancedata::UnitRelianceData) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -793,9 +594,7 @@ impl UnitRelianceMapResult {
 #[cfg(feature = "app-unitreliancemapresult")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitRelianceMapResult;
-    pub use super::IUnitRelianceMapResultMethods;
-    pub use super::UnitRelianceMapResult;
+    pub use super::{IUnitRelianceMapResult, IUnitRelianceMapResultMethods, UnitRelianceMapResult};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,31 +2,43 @@
 
 #[cfg(feature = "app-talk3_d-talkcharactermanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeInCharacter.md"))]
-    #[::unity2::class(
-        namespace = "App.Talk3D",
-        name = "TalkCharacterManager.ProcFadeInCharacter"
-    )]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterManager.ProcFadeInCharacter")]
     #[parent(crate::app::procinst::ProcInst)]
     pub struct TalkCharacterManager_ProcFadeInCharacter {
         #[rename(name = "m_talkCharacterController")]
-        pub m_talk_character_controller:
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        pub m_talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        #[rename(name = "m_fadeTime")]
+        pub m_fade_time: f32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeOutCharacter.md"))]
+    #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterManager.ProcFadeOutCharacter")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct TalkCharacterManager_ProcFadeOutCharacter {
+        #[rename(name = "m_talkCharacterController")]
+        pub m_talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
         #[rename(name = "m_fadeTime")]
         pub m_fade_time: f32,
     }
@@ -71,28 +83,13 @@ mod __types {
         #[rename(name = "m_BottomFaceCameraObject")]
         pub m_bottom_face_camera_object: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_LoadPidList")]
-        pub m_load_pid_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub m_load_pid_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_onLoad.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterManager.onLoad")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct TalkCharacterManager_onLoad {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeOutCharacter.md"))]
-    #[::unity2::class(
-        namespace = "App.Talk3D",
-        name = "TalkCharacterManager.ProcFadeOutCharacter"
-    )]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct TalkCharacterManager_ProcFadeOutCharacter {
-        #[rename(name = "m_talkCharacterController")]
-        pub m_talk_character_controller:
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-        #[rename(name = "m_fadeTime")]
-        pub m_fade_time: f32,
-    }
 }
 
 #[cfg(feature = "app-talk3_d-talkcharactermanager-types")]
@@ -107,10 +104,11 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::talk3_d::talkcharactercontroller::TalkCharacterController as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -122,23 +120,20 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: TalkCharacterManager_ProcFadeInCharacter,
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
+        talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
         fade_time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -147,25 +142,14 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
             crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            talk_character_controller,
-            fade_time,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, talk_character_controller, fade_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::class(),
@@ -178,41 +162,27 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: TalkCharacterManager_ProcFadeInCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeInCharacter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_dispose::get_offset() as isize),
-        );
+    pub unsafe fn on_dispose(this: TalkCharacterManager_ProcFadeInCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeInCharacter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_fade_in_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::class(),
@@ -225,41 +195,27 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
-                    "StartFadeInCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
+                        "StartFadeInCharacter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_fade_in_character(
-        this: TalkCharacterManager_ProcFadeInCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeInCharacter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_fade_in_character::get_offset() as isize),
-        );
+    pub unsafe fn start_fade_in_character(this: TalkCharacterManager_ProcFadeInCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeInCharacter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_fade_in_character::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_fading_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::class(),
@@ -272,42 +228,32 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
-                    "IsFadingCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
+                        "IsFadingCharacter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_fading_character(
-        this: TalkCharacterManager_ProcFadeInCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeInCharacter,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_fading_character::get_offset() as isize),
-        );
+    pub unsafe fn is_fading_character(this: TalkCharacterManager_ProcFadeInCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeInCharacter, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_fading_character::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::talkcharactercontroller::TalkCharacterController as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -319,23 +265,20 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeInCharacter as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         super_: crate::app::procinst::ProcInst,
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
+        talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
         fade_time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -344,17 +287,8 @@ mod __TalkCharacterManager_ProcFadeInCharacter_unity2_raw {
             crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
-        inner(
-            super_,
-            talk_character_controller,
-            fade_time,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(super_, talk_character_controller, fade_time, __unity2_method_info)
     }
 }
 
@@ -363,9 +297,7 @@ impl TalkCharacterManager_ProcFadeInCharacter {
     #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
     pub fn create(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        talk_character_controller: impl ::core::convert::Into<
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-        >,
+        talk_character_controller: impl ::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController>,
         fade_time: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
@@ -380,19 +312,17 @@ impl TalkCharacterManager_ProcFadeInCharacter {
 }
 
 #[cfg(feature = "app-talk3_d-talkcharactermanager")]
-pub trait ITalkCharacterManager_ProcFadeInCharacterMethods:
-    ITalkCharacterManager_ProcFadeInCharacter
-{
+pub trait ITalkCharacterManager_ProcFadeInCharacterMethods: ITalkCharacterManager_ProcFadeInCharacter {
     #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
     fn ctor(
         self,
-        talk_character_controller: impl ::core::convert::Into<
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-        >,
+        talk_character_controller: impl ::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController>,
         fade_time: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeInCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <TalkCharacterManager_ProcFadeInCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(talk_character_controller),
@@ -404,48 +334,39 @@ pub trait ITalkCharacterManager_ProcFadeInCharacterMethods:
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeInCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkCharacterManager_ProcFadeInCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartFadeInCharacter()` overload"]
     fn start_fade_in_character(self) -> () {
         unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeInCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::start_fade_in_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkCharacterManager_ProcFadeInCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::start_fade_in_character(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsFadingCharacter()` overload"]
     fn is_fading_character(self) -> bool {
         unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeInCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::is_fading_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TalkCharacterManager_ProcFadeInCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeInCharacter_unity2_raw::is_fading_character(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-talk3_d-talkcharactermanager")]
-impl<__T: ITalkCharacterManager_ProcFadeInCharacter>
-    ITalkCharacterManager_ProcFadeInCharacterMethods for __T
-{
-}
+impl<__T: ITalkCharacterManager_ProcFadeInCharacter> ITalkCharacterManager_ProcFadeInCharacterMethods for __T {}
 
 #[cfg(feature = "app-talk3_d-talkcharactermanager")]
 impl TalkCharacterManager_ProcFadeInCharacter {
     #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]
-    pub fn new(
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-    ) -> Self {
+    pub fn new(talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, fade_time: f32) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -453,11 +374,333 @@ impl TalkCharacterManager_ProcFadeInCharacter {
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkCharacterManager_ProcFadeInCharacterMethods>::ctor(
-            this,
-            talk_character_controller,
-            fade_time,
-        );
+        <Self as ITalkCharacterManager_ProcFadeInCharacterMethods>::ctor(this, talk_character_controller, fade_time);
+        this
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::talk3_d::talkcharactercontroller::TalkCharacterController as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: TalkCharacterManager_ProcFadeOutCharacter,
+        talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        fade_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            TalkCharacterManager_ProcFadeOutCharacter,
+            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, talk_character_controller, fade_time, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: TalkCharacterManager_ProcFadeOutCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeOutCharacter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_fade_out_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
+                "StartFadeOutCharacter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
+                        "StartFadeOutCharacter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_fade_out_character(this: TalkCharacterManager_ProcFadeOutCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeOutCharacter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_fade_out_character::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_fading_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
+                "IsFadingCharacter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
+                        "IsFadingCharacter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_fading_character(this: TalkCharacterManager_ProcFadeOutCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeOutCharacter, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_fading_character::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_delete_character {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
+                "DeleteCharacter",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
+                        "DeleteCharacter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn delete_character(this: TalkCharacterManager_ProcFadeOutCharacter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager_ProcFadeOutCharacter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_character::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::talkcharactercontroller::TalkCharacterController as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
+                "Create",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(
+        super_: crate::app::procinst::ProcInst,
+        talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+        fade_time: f32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+            f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(super_, talk_character_controller, fade_time, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+impl TalkCharacterManager_ProcFadeOutCharacter {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
+    pub fn create(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        talk_character_controller: impl ::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController>,
+        fade_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::create(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(talk_character_controller),
+                ::core::convert::Into::into(fade_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+pub trait ITalkCharacterManager_ProcFadeOutCharacterMethods: ITalkCharacterManager_ProcFadeOutCharacter {
+    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
+    fn ctor(
+        self,
+        talk_character_controller: impl ::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController>,
+        fade_time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(talk_character_controller),
+                ::core::convert::Into::into(fade_time),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartFadeOutCharacter()` overload"]
+    fn start_fade_out_character(self) -> () {
+        unsafe {
+            let __receiver = <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::start_fade_out_character(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsFadingCharacter()` overload"]
+    fn is_fading_character(self) -> bool {
+        unsafe {
+            let __receiver = <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::is_fading_character(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DeleteCharacter()` overload"]
+    fn delete_character(self) -> () {
+        unsafe {
+            let __receiver = <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::delete_character(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+impl<__T: ITalkCharacterManager_ProcFadeOutCharacter> ITalkCharacterManager_ProcFadeOutCharacterMethods for __T {}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+impl TalkCharacterManager_ProcFadeOutCharacter {
+    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]
+    pub fn new(talk_character_controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, fade_time: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkCharacterManager_ProcFadeOutCharacter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkCharacterManager_ProcFadeOutCharacterMethods>::ctor(this, talk_character_controller, fade_time);
         this
     }
 }
@@ -471,9 +714,7 @@ mod __TalkCharacterManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_talk_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -486,41 +727,30 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "get_TalkType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "get_TalkType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_talk_type(
         this: TalkCharacterManager,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::talk3_d::talk_2::Talk_TalkType {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::talk3_d::talk_2::Talk_TalkType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_talk_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::OptionalMethod) -> crate::app::talk3_d::talk_2::Talk_TalkType =
+            ::core::mem::transmute(__lookup_get_talk_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_active_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -533,41 +763,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "get_ActivePid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "get_ActivePid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_active_pid(
-        this: TalkCharacterManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_active_pid::get_offset() as isize),
-        );
+    pub unsafe fn get_active_pid(this: TalkCharacterManager, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_active_pid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_play_first_transition {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -580,39 +796,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "get_IsPlayFirstTransition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "get_IsPlayFirstTransition",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_play_first_transition(
-        this: TalkCharacterManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_play_first_transition(this: TalkCharacterManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TalkCharacterManager, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_play_first_transition::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_play_first_transition::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -625,39 +829,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: TalkCharacterManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: TalkCharacterManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkCharacterManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active_to_children {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -673,18 +865,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "SetActiveToChildren",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "SetActiveToChildren",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_active_to_children(
@@ -693,25 +882,15 @@ mod __TalkCharacterManager_unity2_raw {
         is_active: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            crate::unity_engine::gameobject::GameObject,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_active_to_children::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, crate::unity_engine::gameobject::GameObject, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_active_to_children::get_method_info().method_ptr);
         inner(this, root, is_active, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_talk_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::talk3_d::talk_2::Talk_TalkType as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -727,18 +906,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "SetTalkType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "SetTalkType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_talk_type(
@@ -752,20 +928,14 @@ mod __TalkCharacterManager_unity2_raw {
             crate::app::talk3_d::talk_2::Talk_TalkType,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_talk_type::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_talk_type::get_method_info().method_ptr);
         inner(this, talk_type, positions_root_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pre_load_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -781,18 +951,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "PreLoadCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "PreLoadCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pre_load_character(
@@ -801,26 +968,20 @@ mod __TalkCharacterManager_unity2_raw {
         pid_for_create: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pre_load_character::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_pre_load_character::get_method_info().method_ptr);
         inner(this, pid, pid_for_create, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: talkcharactermanager :: TalkCharacterManager_onLoad as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "CreateCharacter",
@@ -832,18 +993,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_character(
@@ -859,21 +1017,19 @@ mod __TalkCharacterManager_unity2_raw {
             ::unity2::Il2CppString,
             crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_character::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_character::get_method_info().method_ptr);
         inner(this, pid, location_name, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_character_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: talkcharactermanager :: TalkCharacterManager_onLoad as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "CreateCharacterImpl",
@@ -885,18 +1041,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "CreateCharacterImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "CreateCharacterImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_character_impl(
@@ -912,20 +1065,14 @@ mod __TalkCharacterManager_unity2_raw {
             ::unity2::Il2CppString,
             crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_character_impl::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_character_impl::get_method_info().method_ptr);
         inner(this, pid, location_name, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_charactor_for_display {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -943,18 +1090,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "SetupCharactorForDisplay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "SetupCharactorForDisplay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_charactor_for_display(
@@ -972,29 +1116,15 @@ mod __TalkCharacterManager_unity2_raw {
             crate::combat::character::Character,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_charactor_for_display::get_offset() as isize),
-        );
-        inner(
-            this,
-            pid,
-            location_name,
-            chara,
-            locator,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_setup_charactor_for_display::get_method_info().method_ptr);
+        inner(this, pid, location_name, chara, locator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_face_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "EnableFaceCamera",
@@ -1006,18 +1136,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "EnableFaceCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "EnableFaceCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_face_camera(
@@ -1025,26 +1152,16 @@ mod __TalkCharacterManager_unity2_raw {
         location_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_face_camera::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_face_camera::get_method_info().method_ptr);
         inner(this, location_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_search_from_pool {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "SearchFromPool",
@@ -1056,18 +1173,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "SearchFromPool",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "SearchFromPool",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn search_from_pool(
@@ -1075,26 +1189,16 @@ mod __TalkCharacterManager_unity2_raw {
         pid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_search_from_pool::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::combat::character::Character =
+            ::core::mem::transmute(__lookup_search_from_pool::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fade_in_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "FadeInCharacter",
@@ -1106,45 +1210,28 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "FadeInCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "FadeInCharacter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fade_in_character(
-        this: TalkCharacterManager,
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fade_in_character::get_offset() as isize),
-        );
+    pub unsafe fn fade_in_character(this: TalkCharacterManager, pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_in_character::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fade_out_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "FadeOutCharacter",
@@ -1156,45 +1243,28 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "FadeOutCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "FadeOutCharacter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fade_out_character(
-        this: TalkCharacterManager,
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fade_out_character::get_offset() as isize),
-        );
+    pub unsafe fn fade_out_character(this: TalkCharacterManager, pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_out_character::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "DeleteCharacter",
@@ -1206,43 +1276,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "DeleteCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "DeleteCharacter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_character(
-        this: TalkCharacterManager,
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_character::get_offset() as isize),
-        );
+    pub unsafe fn delete_character(this: TalkCharacterManager, pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete_character::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delete_all_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -1255,39 +1309,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "DeleteAllCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "DeleteAllCharacter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn delete_all_character(
-        this: TalkCharacterManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn delete_all_character(this: TalkCharacterManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkCharacterManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_delete_all_character::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_delete_all_character::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_move_model_to_pool {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -1301,18 +1343,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "MoveModelToPool",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "MoveModelToPool",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn move_model_to_pool(
@@ -1320,26 +1359,16 @@ mod __TalkCharacterManager_unity2_raw {
         chara_obj: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move_model_to_pool::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_move_model_to_pool::get_method_info().method_ptr);
         inner(this, chara_obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "Show",
@@ -1351,45 +1380,28 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: TalkCharacterManager,
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
+    pub unsafe fn show(this: TalkCharacterManager, pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "Hide",
@@ -1401,43 +1413,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: TalkCharacterManager,
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hide::get_offset() as isize),
-        );
+    pub unsafe fn hide(this: TalkCharacterManager, pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_anime_body {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1453,18 +1449,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "ChangeAnimeBody",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "ChangeAnimeBody",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_anime_body(
@@ -1473,25 +1466,15 @@ mod __TalkCharacterManager_unity2_raw {
         anime_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_anime_body::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_anime_body::get_method_info().method_ptr);
         inner(this, pid, anime_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_anime_face {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -1507,18 +1490,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "ChangeAnimeFace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "ChangeAnimeFace",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_anime_face(
@@ -1527,27 +1507,16 @@ mod __TalkCharacterManager_unity2_raw {
         anime_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_anime_face::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_change_anime_face::get_method_info().method_ptr);
         inner(this, pid, anime_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "FindCharacter",
@@ -1559,18 +1528,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "FindCharacter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "FindCharacter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_character(
@@ -1578,26 +1544,16 @@ mod __TalkCharacterManager_unity2_raw {
         pid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_character::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::combat::character::Character =
+            ::core::mem::transmute(__lookup_find_character::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_chara_location_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "GetCharaLocationName",
@@ -1609,18 +1565,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "GetCharaLocationName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "GetCharaLocationName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_chara_location_name(
@@ -1628,26 +1581,16 @@ mod __TalkCharacterManager_unity2_raw {
         pid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            TalkCharacterManager,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_chara_location_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_chara_location_name::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_locator_by_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "FindLocatorByPID",
@@ -1659,18 +1602,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "FindLocatorByPID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "FindLocatorByPID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_locator_by_pid(
@@ -1682,22 +1622,15 @@ mod __TalkCharacterManager_unity2_raw {
             TalkCharacterManager,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_locator_by_pid::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_find_locator_by_pid::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_locator_by_location_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "FindLocatorByLocationName",
@@ -1709,18 +1642,15 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "FindLocatorByLocationName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "FindLocatorByLocationName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_locator_by_location_name(
@@ -1732,20 +1662,15 @@ mod __TalkCharacterManager_unity2_raw {
             TalkCharacterManager,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_locator_by_location_name::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_find_locator_by_location_name::get_method_info().method_ptr);
         inner(this, location_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_fading {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -1758,37 +1683,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "IsFading",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "IsFading",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_fading(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_fading::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_fading::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pid_to_pid_for_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
                 "PidToPidForCreate",
@@ -1800,41 +1715,27 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    "PidToPidForCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        "PidToPidForCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pid_to_pid_for_create(
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pid_to_pid_for_create::get_offset() as isize),
-        );
+    pub unsafe fn pid_to_pid_for_create(pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_pid_to_pid_for_create::get_method_info().method_ptr);
         inner(pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TalkCharacterManager as ::unity2::ClassIdentity>::class(),
@@ -1847,30 +1748,20 @@ mod __TalkCharacterManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TalkCharacterManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: TalkCharacterManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TalkCharacterManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1881,16 +1772,10 @@ impl TalkCharacterManager {
     pub fn is_fading() -> bool {
         unsafe { __TalkCharacterManager_unity2_raw::is_fading(::core::option::Option::None) }
     }
+
     #[doc = "`PidToPidForCreate(::unity2::Il2CppString)` overload"]
-    pub fn pid_to_pid_for_create(
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __TalkCharacterManager_unity2_raw::pid_to_pid_for_create(
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn pid_to_pid_for_create(pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __TalkCharacterManager_unity2_raw::pid_to_pid_for_create(::core::convert::Into::into(pid), ::core::option::Option::None) }
     }
 }
 
@@ -1899,45 +1784,32 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
     #[doc = "`get_TalkType()` overload"]
     fn get_talk_type(self) -> crate::app::talk3_d::talk_2::Talk_TalkType {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::get_talk_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::get_talk_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ActivePid()` overload"]
     fn get_active_pid(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::get_active_pid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::get_active_pid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsPlayFirstTransition()` overload"]
     fn get_is_play_first_transition(self) -> bool {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::get_is_play_first_transition(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::get_is_play_first_transition(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
@@ -1948,9 +1820,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         is_active: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::set_active_to_children(
                 __receiver,
                 ::core::convert::Into::into(root),
@@ -1966,9 +1837,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         positions_root_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::set_talk_type(
                 __receiver,
                 ::core::convert::Into::into(talk_type),
@@ -1984,9 +1854,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         pid_for_create: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::pre_load_character(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2000,14 +1869,11 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         self,
         pid: impl ::core::convert::Into<::unity2::Il2CppString>,
         location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        callback: impl ::core::convert::Into<
-            crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad,
-        >,
+        callback: impl ::core::convert::Into<crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::create_character(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2022,14 +1888,11 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         self,
         pid: impl ::core::convert::Into<::unity2::Il2CppString>,
         location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        callback: impl ::core::convert::Into<
-            crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad,
-        >,
+        callback: impl ::core::convert::Into<crate::app::talk3_d::talkcharactermanager::TalkCharacterManager_onLoad>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::create_character_impl(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2048,9 +1911,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         locator: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::setup_charactor_for_display(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2062,14 +1924,10 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         }
     }
     #[doc = "`EnableFaceCamera(::unity2::Il2CppString)` overload"]
-    fn enable_face_camera(
-        self,
-        location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn enable_face_camera(self, location_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::enable_face_camera(
                 __receiver,
                 ::core::convert::Into::into(location_name),
@@ -2078,112 +1936,67 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         }
     }
     #[doc = "`SearchFromPool(::unity2::Il2CppString)` overload"]
-    fn search_from_pool(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::character::Character {
+    fn search_from_pool(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::combat::character::Character {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::search_from_pool(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::search_from_pool(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`FadeInCharacter(::unity2::Il2CppString)` overload"]
     fn fade_in_character(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::fade_in_character(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::fade_in_character(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`FadeOutCharacter(::unity2::Il2CppString)` overload"]
     fn fade_out_character(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::fade_out_character(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::fade_out_character(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteCharacter(::unity2::Il2CppString)` overload"]
     fn delete_character(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::delete_character(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::delete_character(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`DeleteAllCharacter()` overload"]
     fn delete_all_character(self) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::delete_all_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::delete_all_character(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MoveModelToPool(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn move_model_to_pool(
-        self,
-        chara_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn move_model_to_pool(self, chara_obj: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::move_model_to_pool(
-                __receiver,
-                ::core::convert::Into::into(chara_obj),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::move_model_to_pool(__receiver, ::core::convert::Into::into(chara_obj), ::core::option::Option::None)
         }
     }
     #[doc = "`Show(::unity2::Il2CppString)` overload"]
     fn show(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::show(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`Hide(::unity2::Il2CppString)` overload"]
     fn hide(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::hide(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::hide(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeAnimeBody(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
@@ -2193,9 +2006,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         anime_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::change_anime_body(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2211,9 +2023,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         anime_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::change_anime_face(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2223,51 +2034,27 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         }
     }
     #[doc = "`FindCharacter(::unity2::Il2CppString)` overload"]
-    fn find_character(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::combat::character::Character {
+    fn find_character(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::combat::character::Character {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::find_character(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::find_character(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCharaLocationName(::unity2::Il2CppString)` overload"]
-    fn get_chara_location_name(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
+    fn get_chara_location_name(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::get_chara_location_name(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::get_chara_location_name(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`FindLocatorByPID(::unity2::Il2CppString)` overload"]
-    fn find_locator_by_pid(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::gameobject::GameObject {
+    fn find_locator_by_pid(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TalkCharacterManager_unity2_raw::find_locator_by_pid(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TalkCharacterManager_unity2_raw::find_locator_by_pid(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`FindLocatorByLocationName(::unity2::Il2CppString)` overload"]
@@ -2276,9 +2063,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
         location_name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::find_locator_by_location_name(
                 __receiver,
                 ::core::convert::Into::into(location_name),
@@ -2289,9 +2075,8 @@ pub trait ITalkCharacterManagerMethods: ITalkCharacterManager {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <TalkCharacterManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2325,9 +2110,7 @@ mod __TalkCharacterManager_onLoad_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -2343,18 +2126,15 @@ mod __TalkCharacterManager_onLoad_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_onLoad as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_onLoad as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -2363,25 +2143,15 @@ mod __TalkCharacterManager_onLoad_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_onLoad,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager_onLoad, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -2397,18 +2167,15 @@ mod __TalkCharacterManager_onLoad_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_onLoad as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TalkCharacterManager_onLoad as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -2417,16 +2184,8 @@ mod __TalkCharacterManager_onLoad_unity2_raw {
         location_name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_onLoad,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TalkCharacterManager_onLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, pid, location_name, __unity2_method_info)
     }
 }
@@ -2434,16 +2193,10 @@ mod __TalkCharacterManager_onLoad_unity2_raw {
 #[cfg(feature = "app-talk3_d-talkcharactermanager")]
 pub trait ITalkCharacterManager_onLoadMethods: ITalkCharacterManager_onLoad {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <TalkCharacterManager_onLoad as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TalkCharacterManager_onLoad as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_onLoad_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -2460,9 +2213,7 @@ pub trait ITalkCharacterManager_onLoadMethods: ITalkCharacterManager_onLoad {
     ) -> () {
         unsafe {
             let __receiver =
-                <TalkCharacterManager_onLoad as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <TalkCharacterManager_onLoad as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TalkCharacterManager_onLoad_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -2494,465 +2245,34 @@ impl TalkCharacterManager_onLoad {
 
 #[cfg(feature = "app-talk3_d-talkcharactermanager")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: TalkCharacterManager_ProcFadeOutCharacter,
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeOutCharacter,
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            talk_character_controller,
-            fade_time,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: TalkCharacterManager_ProcFadeOutCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeOutCharacter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_dispose::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_fade_out_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
-                "StartFadeOutCharacter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
-                    "StartFadeOutCharacter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_fade_out_character(
-        this: TalkCharacterManager_ProcFadeOutCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeOutCharacter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_fade_out_character::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_fading_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
-                "IsFadingCharacter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
-                    "IsFadingCharacter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_fading_character(
-        this: TalkCharacterManager_ProcFadeOutCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeOutCharacter,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_fading_character::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_delete_character {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
-                "DeleteCharacter",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
-                    "DeleteCharacter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete_character(
-        this: TalkCharacterManager_ProcFadeOutCharacter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TalkCharacterManager_ProcFadeOutCharacter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete_character::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::class(),
-                "Create",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TalkCharacterManager_ProcFadeOutCharacter as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        super_: crate::app::procinst::ProcInst,
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
-        inner(
-            super_,
-            talk_character_controller,
-            fade_time,
-            __unity2_method_info,
-        )
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-impl TalkCharacterManager_ProcFadeOutCharacter {
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
-    pub fn create(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        talk_character_controller: impl ::core::convert::Into<
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-        >,
-        fade_time: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::create(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(talk_character_controller),
-                ::core::convert::Into::into(fade_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-pub trait ITalkCharacterManager_ProcFadeOutCharacterMethods:
-    ITalkCharacterManager_ProcFadeOutCharacter
-{
-    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
-    fn ctor(
-        self,
-        talk_character_controller: impl ::core::convert::Into<
-            crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-        >,
-        fade_time: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeOutCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(talk_character_controller),
-                ::core::convert::Into::into(fade_time),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeOutCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartFadeOutCharacter()` overload"]
-    fn start_fade_out_character(self) -> () {
-        unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeOutCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::start_fade_out_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsFadingCharacter()` overload"]
-    fn is_fading_character(self) -> bool {
-        unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeOutCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::is_fading_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DeleteCharacter()` overload"]
-    fn delete_character(self) -> () {
-        unsafe {
-            let __receiver = < TalkCharacterManager_ProcFadeOutCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __TalkCharacterManager_ProcFadeOutCharacter_unity2_raw::delete_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-impl<__T: ITalkCharacterManager_ProcFadeOutCharacter>
-    ITalkCharacterManager_ProcFadeOutCharacterMethods for __T
-{
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-impl TalkCharacterManager_ProcFadeOutCharacter {
-    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]
-    pub fn new(
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkCharacterManager_ProcFadeOutCharacter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkCharacterManager_ProcFadeOutCharacterMethods>::ctor(
-            this,
-            talk_character_controller,
-            fade_time,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::ITalkCharacterManager;
-    pub use super::ITalkCharacterManagerMethods;
-    pub use super::ITalkCharacterManager_ProcFadeInCharacter;
-    pub use super::ITalkCharacterManager_ProcFadeInCharacterMethods;
-    pub use super::ITalkCharacterManager_ProcFadeOutCharacter;
-    pub use super::ITalkCharacterManager_ProcFadeOutCharacterMethods;
-    pub use super::ITalkCharacterManager_onLoad;
-    pub use super::ITalkCharacterManager_onLoadMethods;
-    pub use super::TalkCharacterManager;
-    pub use super::TalkCharacterManager_ProcFadeInCharacter;
-    pub use super::TalkCharacterManager_ProcFadeOutCharacter;
-    pub use super::TalkCharacterManager_onLoad;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        ITalkCharacterManager, ITalkCharacterManagerMethods, ITalkCharacterManager_ProcFadeInCharacter,
+        ITalkCharacterManager_ProcFadeInCharacterMethods, ITalkCharacterManager_ProcFadeOutCharacter,
+        ITalkCharacterManager_ProcFadeOutCharacterMethods, ITalkCharacterManager_onLoad, ITalkCharacterManager_onLoadMethods, TalkCharacterManager,
+        TalkCharacterManager_ProcFadeInCharacter, TalkCharacterManager_ProcFadeOutCharacter, TalkCharacterManager_onLoad,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonmonobehaviour_1::ISingletonMonoBehaviour_1},
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

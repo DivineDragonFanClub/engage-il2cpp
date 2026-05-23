@@ -2,30 +2,25 @@
 
 #[cfg(feature = "unity_engine-rendering-reloadattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/reloadattribute/ReloadAttribute_Package.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct ReloadAttribute_Package {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for ReloadAttribute_Package {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "ReloadAttribute.Package";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -36,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for ReloadAttribute_Package {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -70,10 +62,11 @@ mod __ReloadAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: reloadattribute :: ReloadAttribute_Package as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReloadAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -85,18 +78,15 @@ mod __ReloadAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReloadAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReloadAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -110,21 +100,18 @@ mod __ReloadAttribute_unity2_raw {
             ::unity2::Array<::unity2::Il2CppString>,
             crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, paths, package, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: reloadattribute :: ReloadAttribute_Package as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReloadAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -136,18 +123,15 @@ mod __ReloadAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReloadAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReloadAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -161,21 +145,20 @@ mod __ReloadAttribute_unity2_raw {
             ::unity2::Il2CppString,
             crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, path, package, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: reloadattribute :: ReloadAttribute_Package as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ReloadAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -187,18 +170,15 @@ mod __ReloadAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ReloadAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ReloadAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -216,19 +196,8 @@ mod __ReloadAttribute_unity2_raw {
             i32,
             crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            path_format,
-            range_min,
-            range_max,
-            package,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
+        inner(this, path_format, range_min, range_max, package, __unity2_method_info)
     }
 }
 
@@ -238,14 +207,10 @@ pub trait IReloadAttributeMethods: IReloadAttribute {
     fn ctor(
         self,
         paths: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-        package: impl ::core::convert::Into<
-            crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
-        >,
+        package: impl ::core::convert::Into<crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package>,
     ) -> () {
         unsafe {
-            let __receiver = <ReloadAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ReloadAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReloadAttribute_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(paths),
@@ -258,14 +223,10 @@ pub trait IReloadAttributeMethods: IReloadAttribute {
     fn ctor_2(
         self,
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
-        package: impl ::core::convert::Into<
-            crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
-        >,
+        package: impl ::core::convert::Into<crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package>,
     ) -> () {
         unsafe {
-            let __receiver = <ReloadAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ReloadAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReloadAttribute_unity2_raw::ctor_2(
                 __receiver,
                 ::core::convert::Into::into(path),
@@ -280,14 +241,10 @@ pub trait IReloadAttributeMethods: IReloadAttribute {
         path_format: impl ::core::convert::Into<::unity2::Il2CppString>,
         range_min: impl ::core::convert::Into<i32>,
         range_max: impl ::core::convert::Into<i32>,
-        package: impl ::core::convert::Into<
-            crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
-        >,
+        package: impl ::core::convert::Into<crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package>,
     ) -> () {
         unsafe {
-            let __receiver = <ReloadAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ReloadAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ReloadAttribute_unity2_raw::ctor_3(
                 __receiver,
                 ::core::convert::Into::into(path_format),
@@ -322,10 +279,7 @@ impl ReloadAttribute {
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package)` — overload selector"]
-    pub fn new_2(
-        path: ::unity2::Il2CppString,
-        package: crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package,
-    ) -> Self {
+    pub fn new_2(path: ::unity2::Il2CppString, package: crate::unity_engine::rendering::reloadattribute::ReloadAttribute_Package) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -359,17 +313,12 @@ impl ReloadAttribute {
 #[cfg(feature = "unity_engine-rendering-reloadattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IReloadAttribute;
-    pub use super::IReloadAttributeMethods;
-    pub use super::ReloadAttribute;
-    pub use super::ReloadAttribute_Package;
-    pub use crate::system::object::IObject;
+    pub use super::{IReloadAttribute, IReloadAttributeMethods, ReloadAttribute, ReloadAttribute_Package};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

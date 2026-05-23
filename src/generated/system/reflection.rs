@@ -10,14 +10,11 @@ pub use ambiguousmatchexception::{AmbiguousMatchException, IAmbiguousMatchExcept
 pub mod assembly;
 #[cfg(feature = "system-reflection-assembly-types")]
 pub use assembly::{
-    Assembly, Assembly_ResolveEventHolder, Assembly_UnmanagedMemoryStreamForModule, IAssembly,
-    IAssembly_ResolveEventHolder, IAssembly_UnmanagedMemoryStreamForModule,
+    Assembly, Assembly_ResolveEventHolder, Assembly_UnmanagedMemoryStreamForModule, IAssembly, IAssembly_ResolveEventHolder,
+    IAssembly_UnmanagedMemoryStreamForModule,
 };
 #[cfg(feature = "system-reflection-assembly")]
-pub use assembly::{
-    IAssemblyMethods, IAssembly_ResolveEventHolderMethods,
-    IAssembly_UnmanagedMemoryStreamForModuleMethods,
-};
+pub use assembly::{IAssemblyMethods, IAssembly_ResolveEventHolderMethods, IAssembly_UnmanagedMemoryStreamForModuleMethods};
 #[cfg(any(feature = "system-reflection-assemblycompanyattribute-types"))]
 pub mod assemblycompanyattribute;
 #[cfg(feature = "system-reflection-assemblycompanyattribute")]
@@ -29,9 +26,7 @@ pub mod assemblyconfigurationattribute;
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
 pub use assemblyconfigurationattribute::IAssemblyConfigurationAttributeMethods;
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute-types")]
-pub use assemblyconfigurationattribute::{
-    AssemblyConfigurationAttribute, IAssemblyConfigurationAttribute,
-};
+pub use assemblyconfigurationattribute::{AssemblyConfigurationAttribute, IAssemblyConfigurationAttribute};
 #[cfg(any(feature = "system-reflection-assemblycontenttype-types"))]
 pub mod assemblycontenttype;
 #[cfg(feature = "system-reflection-assemblycontenttype-types")]
@@ -47,9 +42,7 @@ pub mod assemblydefaultaliasattribute;
 #[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
 pub use assemblydefaultaliasattribute::IAssemblyDefaultAliasAttributeMethods;
 #[cfg(feature = "system-reflection-assemblydefaultaliasattribute-types")]
-pub use assemblydefaultaliasattribute::{
-    AssemblyDefaultAliasAttribute, IAssemblyDefaultAliasAttribute,
-};
+pub use assemblydefaultaliasattribute::{AssemblyDefaultAliasAttribute, IAssemblyDefaultAliasAttribute};
 #[cfg(any(feature = "system-reflection-assemblydelaysignattribute-types"))]
 pub mod assemblydelaysignattribute;
 #[cfg(feature = "system-reflection-assemblydelaysignattribute")]
@@ -61,25 +54,19 @@ pub mod assemblydescriptionattribute;
 #[cfg(feature = "system-reflection-assemblydescriptionattribute")]
 pub use assemblydescriptionattribute::IAssemblyDescriptionAttributeMethods;
 #[cfg(feature = "system-reflection-assemblydescriptionattribute-types")]
-pub use assemblydescriptionattribute::{
-    AssemblyDescriptionAttribute, IAssemblyDescriptionAttribute,
-};
+pub use assemblydescriptionattribute::{AssemblyDescriptionAttribute, IAssemblyDescriptionAttribute};
 #[cfg(any(feature = "system-reflection-assemblyfileversionattribute-types"))]
 pub mod assemblyfileversionattribute;
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
 pub use assemblyfileversionattribute::IAssemblyFileVersionAttributeMethods;
 #[cfg(feature = "system-reflection-assemblyfileversionattribute-types")]
-pub use assemblyfileversionattribute::{
-    AssemblyFileVersionAttribute, IAssemblyFileVersionAttribute,
-};
+pub use assemblyfileversionattribute::{AssemblyFileVersionAttribute, IAssemblyFileVersionAttribute};
 #[cfg(any(feature = "system-reflection-assemblyinformationalversionattribute-types"))]
 pub mod assemblyinformationalversionattribute;
 #[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
 pub use assemblyinformationalversionattribute::IAssemblyInformationalVersionAttributeMethods;
 #[cfg(feature = "system-reflection-assemblyinformationalversionattribute-types")]
-pub use assemblyinformationalversionattribute::{
-    AssemblyInformationalVersionAttribute, IAssemblyInformationalVersionAttribute,
-};
+pub use assemblyinformationalversionattribute::{AssemblyInformationalVersionAttribute, IAssemblyInformationalVersionAttribute};
 #[cfg(any(feature = "system-reflection-assemblykeyfileattribute-types"))]
 pub mod assemblykeyfileattribute;
 #[cfg(feature = "system-reflection-assemblykeyfileattribute")]
@@ -137,14 +124,9 @@ pub use constructorinfo::{ConstructorInfo, IConstructorInfo};
 #[cfg(any(feature = "system-reflection-customattributedata-types"))]
 pub mod customattributedata;
 #[cfg(feature = "system-reflection-customattributedata-types")]
-pub use customattributedata::{
-    CustomAttributeData, CustomAttributeData_LazyCAttrData, ICustomAttributeData,
-    ICustomAttributeData_LazyCAttrData,
-};
+pub use customattributedata::{CustomAttributeData, CustomAttributeData_LazyCAttrData, ICustomAttributeData, ICustomAttributeData_LazyCAttrData};
 #[cfg(feature = "system-reflection-customattributedata")]
-pub use customattributedata::{
-    ICustomAttributeDataMethods, ICustomAttributeData_LazyCAttrDataMethods,
-};
+pub use customattributedata::{ICustomAttributeDataMethods, ICustomAttributeData_LazyCAttrDataMethods};
 #[cfg(any(feature = "system-reflection-customattributeextensions-types"))]
 pub mod customattributeextensions;
 #[cfg(feature = "system-reflection-customattributeextensions-types")]
@@ -154,9 +136,7 @@ pub mod customattributeformatexception;
 #[cfg(feature = "system-reflection-customattributeformatexception")]
 pub use customattributeformatexception::ICustomAttributeFormatExceptionMethods;
 #[cfg(feature = "system-reflection-customattributeformatexception-types")]
-pub use customattributeformatexception::{
-    CustomAttributeFormatException, ICustomAttributeFormatException,
-};
+pub use customattributeformatexception::{CustomAttributeFormatException, ICustomAttributeFormatException};
 #[cfg(any(feature = "system-reflection-customattributenamedargument-types"))]
 pub mod customattributenamedargument;
 #[cfg(feature = "system-reflection-customattributenamedargument-types")]
@@ -241,9 +221,7 @@ pub mod invalidfiltercriteriaexception;
 #[cfg(feature = "system-reflection-invalidfiltercriteriaexception")]
 pub use invalidfiltercriteriaexception::IInvalidFilterCriteriaExceptionMethods;
 #[cfg(feature = "system-reflection-invalidfiltercriteriaexception-types")]
-pub use invalidfiltercriteriaexception::{
-    IInvalidFilterCriteriaException, InvalidFilterCriteriaException,
-};
+pub use invalidfiltercriteriaexception::{IInvalidFilterCriteriaException, InvalidFilterCriteriaException};
 #[cfg(any(feature = "system-reflection-ireflectabletype-types"))]
 pub mod ireflectabletype;
 #[cfg(feature = "system-reflection-ireflectabletype")]
@@ -277,9 +255,7 @@ pub use memberinfo::{IMemberInfo, MemberInfo};
 #[cfg(any(feature = "system-reflection-memberinfoserializationholder-types"))]
 pub mod memberinfoserializationholder;
 #[cfg(feature = "system-reflection-memberinfoserializationholder-types")]
-pub use memberinfoserializationholder::{
-    IMemberInfoSerializationHolder, MemberInfoSerializationHolder,
-};
+pub use memberinfoserializationholder::{IMemberInfoSerializationHolder, MemberInfoSerializationHolder};
 #[cfg(any(feature = "system-reflection-membertypes-types"))]
 pub mod membertypes;
 #[cfg(feature = "system-reflection-membertypes-types")]
@@ -376,14 +352,12 @@ pub use monoparameterinfo::{IMonoParameterInfo, MonoParameterInfo};
 pub mod monoproperty;
 #[cfg(feature = "system-reflection-monoproperty-types")]
 pub use monoproperty::{
-    IMonoProperty, IMonoProperty_GetterAdapter, IMonoProperty_Getter_2,
-    IMonoProperty_StaticGetter_1, MonoProperty, MonoProperty_GetterAdapter, MonoProperty_Getter_2,
-    MonoProperty_StaticGetter_1,
+    IMonoProperty, IMonoProperty_GetterAdapter, IMonoProperty_Getter_2, IMonoProperty_StaticGetter_1, MonoProperty, MonoProperty_GetterAdapter,
+    MonoProperty_Getter_2, MonoProperty_StaticGetter_1,
 };
 #[cfg(feature = "system-reflection-monoproperty")]
 pub use monoproperty::{
-    IMonoPropertyMethods, IMonoProperty_GetterAdapterMethods, IMonoProperty_Getter_2Methods,
-    IMonoProperty_StaticGetter_1Methods,
+    IMonoPropertyMethods, IMonoProperty_GetterAdapterMethods, IMonoProperty_Getter_2Methods, IMonoProperty_StaticGetter_1Methods,
 };
 #[cfg(any(feature = "system-reflection-monopropertyinfo-types"))]
 pub mod monopropertyinfo;
@@ -518,9 +492,7 @@ pub mod targetparametercountexception;
 #[cfg(feature = "system-reflection-targetparametercountexception")]
 pub use targetparametercountexception::ITargetParameterCountExceptionMethods;
 #[cfg(feature = "system-reflection-targetparametercountexception-types")]
-pub use targetparametercountexception::{
-    ITargetParameterCountException, TargetParameterCountException,
-};
+pub use targetparametercountexception::{ITargetParameterCountException, TargetParameterCountException};
 #[cfg(any(feature = "system-reflection-typeattributes-types"))]
 pub mod typeattributes;
 #[cfg(feature = "system-reflection-typeattributes-types")]

@@ -2,12 +2,19 @@
 
 #[cfg(feature = "unity_engine-display-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/display/Display_DisplaysUpdatedDelegate.md"))]
+    #[::unity2::class(namespace = "UnityEngine", name = "Display.DisplaysUpdatedDelegate")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Display_DisplaysUpdatedDelegate {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/display/Display.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Display")]
@@ -25,970 +32,10 @@ mod __types {
         #[rename(name = "onDisplaysUpdated")]
         pub on_displays_updated: crate::unity_engine::display::Display_DisplaysUpdatedDelegate,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/display/Display_DisplaysUpdatedDelegate.md"))]
-    #[::unity2::class(namespace = "UnityEngine", name = "Display.DisplaysUpdatedDelegate")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct Display_DisplaysUpdatedDelegate {}
 }
 
 #[cfg(feature = "unity_engine-display-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-display")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __Display_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor_2(
-        this: Display,
-        native_display: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(Display, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor_2::get_offset() as isize),
-            );
-        inner(this, native_display, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rendering_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "get_renderingWidth",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "get_renderingWidth",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rendering_width(
-        this: Display,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rendering_width::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rendering_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "get_renderingHeight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "get_renderingHeight",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rendering_height(
-        this: Display,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rendering_height::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_system_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "get_systemWidth",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "get_systemWidth",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_system_width(
-        this: Display,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_system_width::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_system_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "get_systemHeight",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "get_systemHeight",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_system_height(
-        this: Display,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_system_height::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_requires_srgb_blit_to_backbuffer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "get_requiresSrgbBlitToBackbuffer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "get_requiresSrgbBlitToBackbuffer",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_requires_srgb_blit_to_backbuffer(
-        this: Display,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_requires_srgb_blit_to_backbuffer::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_relative_mouse_at {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "RelativeMouseAt",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "RelativeMouseAt",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn relative_mouse_at(
-        input_mouse_coordinates: crate::unity_engine::vector3::Vector3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_relative_mouse_at::get_offset() as isize),
-        );
-        inner(input_mouse_coordinates, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_main {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "get_main",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "get_main",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_main(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::display::Display {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::display::Display = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_main::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_recreate_display_list {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::IntPtr> as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "RecreateDisplayList",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "RecreateDisplayList",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn recreate_display_list(
-        native_display: ::unity2::Array<::unity2::IntPtr>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<::unity2::IntPtr>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_recreate_display_list::get_offset() as isize),
-        );
-        inner(native_display, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_fire_displays_updated {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "FireDisplaysUpdated",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "FireDisplaysUpdated",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn fire_displays_updated(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fire_displays_updated::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_system_ext_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "GetSystemExtImpl",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "GetSystemExtImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_system_ext_impl(
-        native_display: ::unity2::IntPtr,
-        w: *mut i32,
-        h: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_system_ext_impl::get_offset() as isize),
-        );
-        inner(native_display, w, h, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rendering_ext_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "GetRenderingExtImpl",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "GetRenderingExtImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_rendering_ext_impl(
-        native_display: ::unity2::IntPtr,
-        w: *mut i32,
-        h: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            *mut i32,
-            *mut i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rendering_ext_impl::get_offset() as isize),
-        );
-        inner(native_display, w, h, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_relative_mouse_at_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "RelativeMouseAtImpl",
-                4,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "RelativeMouseAtImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn relative_mouse_at_impl(
-        x: i32,
-        y: i32,
-        rx: *mut i32,
-        ry: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(i32, i32, *mut i32, *mut i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_relative_mouse_at_impl::get_offset() as isize),
-            );
-        inner(x, y, rx, ry, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_requires_srgb_blit_to_backbuffer_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                "RequiresSrgbBlitToBackbufferImpl",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    "RequiresSrgbBlitToBackbufferImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn requires_srgb_blit_to_backbuffer_impl(
-        native_display: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_requires_srgb_blit_to_backbuffer_impl::get_offset() as isize),
-            );
-        inner(native_display, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Display as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-display")]
-impl Display {
-    #[doc = "`RelativeMouseAt(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn relative_mouse_at(
-        input_mouse_coordinates: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __Display_unity2_raw::relative_mouse_at(
-                ::core::convert::Into::into(input_mouse_coordinates),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_main()` overload"]
-    pub fn get_main() -> crate::unity_engine::display::Display {
-        unsafe { __Display_unity2_raw::get_main(::core::option::Option::None) }
-    }
-    #[doc = "`RecreateDisplayList(::unity2::Array<::unity2::IntPtr>)` overload"]
-    pub fn recreate_display_list(
-        native_display: impl ::core::convert::Into<::unity2::Array<::unity2::IntPtr>>,
-    ) -> () {
-        unsafe {
-            __Display_unity2_raw::recreate_display_list(
-                ::core::convert::Into::into(native_display),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FireDisplaysUpdated()` overload"]
-    pub fn fire_displays_updated() -> () {
-        unsafe { __Display_unity2_raw::fire_displays_updated(::core::option::Option::None) }
-    }
-    #[doc = "`GetSystemExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"]
-    pub fn get_system_ext_impl(
-        native_display: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> (i32, i32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            __Display_unity2_raw::get_system_ext_impl(
-                ::core::convert::Into::into(native_display),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`GetRenderingExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"]
-    pub fn get_rendering_ext_impl(
-        native_display: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> (i32, i32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            __Display_unity2_raw::get_rendering_ext_impl(
-                ::core::convert::Into::into(native_display),
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            (__out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`RelativeMouseAtImpl(i32, i32, *muti32, *muti32)` overload"]
-    pub fn relative_mouse_at_impl(
-        x: impl ::core::convert::Into<i32>,
-        y: impl ::core::convert::Into<i32>,
-    ) -> (i32, i32, i32) {
-        unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
-            let __ret = {
-                __Display_unity2_raw::relative_mouse_at_impl(
-                    ::core::convert::Into::into(x),
-                    ::core::convert::Into::into(y),
-                    __out_0.as_mut_ptr(),
-                    __out_1.as_mut_ptr(),
-                    ::core::option::Option::None,
-                )
-            };
-            (__ret, __out_0.assume_init(), __out_1.assume_init())
-        }
-    }
-    #[doc = "`RequiresSrgbBlitToBackbufferImpl(::unity2::IntPtr)` overload"]
-    pub fn requires_srgb_blit_to_backbuffer_impl(
-        native_display: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> bool {
-        unsafe {
-            __Display_unity2_raw::requires_srgb_blit_to_backbuffer_impl(
-                ::core::convert::Into::into(native_display),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __Display_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "unity_engine-display")]
-pub trait IDisplayMethods: IDisplay {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor(::unity2::IntPtr)` overload"]
-    fn ctor_2(self, native_display: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(native_display),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_renderingWidth()` overload"]
-    fn get_rendering_width(self) -> i32 {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::get_rendering_width(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_renderingHeight()` overload"]
-    fn get_rendering_height(self) -> i32 {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::get_rendering_height(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_systemWidth()` overload"]
-    fn get_system_width(self) -> i32 {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::get_system_width(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_systemHeight()` overload"]
-    fn get_system_height(self) -> i32 {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::get_system_height(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_requiresSrgbBlitToBackbuffer()` overload"]
-    fn get_requires_srgb_blit_to_backbuffer(self) -> bool {
-        unsafe {
-            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __Display_unity2_raw::get_requires_srgb_blit_to_backbuffer(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-display")]
-impl<__T: IDisplay> IDisplayMethods for __T {}
-
-#[cfg(feature = "unity_engine-display")]
-impl Display {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Display),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDisplayMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::IntPtr)` — overload selector"]
-    pub fn new_2(native_display: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Display),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDisplayMethods>::ctor_2(this, native_display);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-display")]
 #[doc(hidden)]
@@ -999,9 +46,7 @@ mod __Display_DisplaysUpdatedDelegate_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1017,18 +62,15 @@ mod __Display_DisplaysUpdatedDelegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display_DisplaysUpdatedDelegate as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display_DisplaysUpdatedDelegate as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1037,25 +79,15 @@ mod __Display_DisplaysUpdatedDelegate_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Display_DisplaysUpdatedDelegate,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Display_DisplaysUpdatedDelegate, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Display_DisplaysUpdatedDelegate as ::unity2::ClassIdentity>::class(),
@@ -1068,30 +100,20 @@ mod __Display_DisplaysUpdatedDelegate_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Display_DisplaysUpdatedDelegate as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display_DisplaysUpdatedDelegate as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: Display_DisplaysUpdatedDelegate,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn invoke(this: Display_DisplaysUpdatedDelegate, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Display_DisplaysUpdatedDelegate, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1099,16 +121,10 @@ mod __Display_DisplaysUpdatedDelegate_unity2_raw {
 #[cfg(feature = "unity_engine-display")]
 pub trait IDisplay_DisplaysUpdatedDelegateMethods: IDisplay_DisplaysUpdatedDelegate {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <Display_DisplaysUpdatedDelegate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <Display_DisplaysUpdatedDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Display_DisplaysUpdatedDelegate_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1121,13 +137,8 @@ pub trait IDisplay_DisplaysUpdatedDelegateMethods: IDisplay_DisplaysUpdatedDeleg
     fn invoke(self) -> () {
         unsafe {
             let __receiver =
-                <Display_DisplaysUpdatedDelegate as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __Display_DisplaysUpdatedDelegate_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <Display_DisplaysUpdatedDelegate as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_DisplaysUpdatedDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1153,20 +164,697 @@ impl Display_DisplaysUpdatedDelegate {
 
 #[cfg(feature = "unity_engine-display")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __Display_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Display as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Display as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Display as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Display as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor_2(this: Display, native_display: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(Display, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
+        inner(this, native_display, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendering_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "get_renderingWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "get_renderingWidth",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rendering_width(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_rendering_width::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendering_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "get_renderingHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "get_renderingHeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rendering_height(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_rendering_height::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_system_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "get_systemWidth",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "get_systemWidth",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_system_width(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_system_width::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_system_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "get_systemHeight",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "get_systemHeight",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_system_height(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_system_height::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_requires_srgb_blit_to_backbuffer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "get_requiresSrgbBlitToBackbuffer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "get_requiresSrgbBlitToBackbuffer",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_requires_srgb_blit_to_backbuffer(this: Display, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Display, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_requires_srgb_blit_to_backbuffer::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_relative_mouse_at {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "RelativeMouseAt",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "RelativeMouseAt",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn relative_mouse_at(
+        input_mouse_coordinates: crate::unity_engine::vector3::Vector3,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_relative_mouse_at::get_method_info().method_ptr);
+        inner(input_mouse_coordinates, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_main {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Display as ::unity2::ClassIdentity>::class(), "get_main", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "get_main",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_main(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::display::Display {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::display::Display =
+            ::core::mem::transmute(__lookup_get_main::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_recreate_display_list {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::IntPtr> as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "RecreateDisplayList",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "RecreateDisplayList",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn recreate_display_list(native_display: ::unity2::Array<::unity2::IntPtr>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Array<::unity2::IntPtr>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_recreate_display_list::get_method_info().method_ptr);
+        inner(native_display, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_fire_displays_updated {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "FireDisplaysUpdated",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "FireDisplaysUpdated",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn fire_displays_updated(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fire_displays_updated::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_system_ext_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "GetSystemExtImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "GetSystemExtImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_system_ext_impl(
+        native_display: ::unity2::IntPtr,
+        w: *mut i32,
+        h: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::IntPtr, *mut i32, *mut i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_system_ext_impl::get_method_info().method_ptr);
+        inner(native_display, w, h, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rendering_ext_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "GetRenderingExtImpl",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "GetRenderingExtImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rendering_ext_impl(
+        native_display: ::unity2::IntPtr,
+        w: *mut i32,
+        h: *mut i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::IntPtr, *mut i32, *mut i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_rendering_ext_impl::get_method_info().method_ptr);
+        inner(native_display, w, h, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_relative_mouse_at_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "RelativeMouseAtImpl",
+                4,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "RelativeMouseAtImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn relative_mouse_at_impl(x: i32, y: i32, rx: *mut i32, ry: *mut i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(i32, i32, *mut i32, *mut i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_relative_mouse_at_impl::get_method_info().method_ptr);
+        inner(x, y, rx, ry, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_requires_srgb_blit_to_backbuffer_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <Display as ::unity2::ClassIdentity>::class(),
+                "RequiresSrgbBlitToBackbufferImpl",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        "RequiresSrgbBlitToBackbufferImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn requires_srgb_blit_to_backbuffer_impl(native_display: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_requires_srgb_blit_to_backbuffer_impl::get_method_info().method_ptr);
+        inner(native_display, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<Display as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Display as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-display")]
+impl Display {
+    #[doc = "`RelativeMouseAt(crate::unity_engine::vector3::Vector3)` overload"]
+    pub fn relative_mouse_at(
+        input_mouse_coordinates: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+    ) -> crate::unity_engine::vector3::Vector3 {
+        unsafe { __Display_unity2_raw::relative_mouse_at(::core::convert::Into::into(input_mouse_coordinates), ::core::option::Option::None) }
+    }
+
+    #[doc = "`get_main()` overload"]
+    pub fn get_main() -> crate::unity_engine::display::Display {
+        unsafe { __Display_unity2_raw::get_main(::core::option::Option::None) }
+    }
+
+    #[doc = "`RecreateDisplayList(::unity2::Array<::unity2::IntPtr>)` overload"]
+    pub fn recreate_display_list(native_display: impl ::core::convert::Into<::unity2::Array<::unity2::IntPtr>>) -> () {
+        unsafe { __Display_unity2_raw::recreate_display_list(::core::convert::Into::into(native_display), ::core::option::Option::None) }
+    }
+
+    #[doc = "`FireDisplaysUpdated()` overload"]
+    pub fn fire_displays_updated() -> () {
+        unsafe { __Display_unity2_raw::fire_displays_updated(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetSystemExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"]
+    pub fn get_system_ext_impl(native_display: impl ::core::convert::Into<::unity2::IntPtr>) -> (i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __Display_unity2_raw::get_system_ext_impl(
+                ::core::convert::Into::into(native_display),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+
+    #[doc = "`GetRenderingExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"]
+    pub fn get_rendering_ext_impl(native_display: impl ::core::convert::Into<::unity2::IntPtr>) -> (i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            __Display_unity2_raw::get_rendering_ext_impl(
+                ::core::convert::Into::into(native_display),
+                __out_0.as_mut_ptr(),
+                __out_1.as_mut_ptr(),
+                ::core::option::Option::None,
+            );
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+
+    #[doc = "`RelativeMouseAtImpl(i32, i32, *muti32, *muti32)` overload"]
+    pub fn relative_mouse_at_impl(x: impl ::core::convert::Into<i32>, y: impl ::core::convert::Into<i32>) -> (i32, i32, i32) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<i32>::uninit();
+            let __ret = {
+                __Display_unity2_raw::relative_mouse_at_impl(
+                    ::core::convert::Into::into(x),
+                    ::core::convert::Into::into(y),
+                    __out_0.as_mut_ptr(),
+                    __out_1.as_mut_ptr(),
+                    ::core::option::Option::None,
+                )
+            };
+            (__ret, __out_0.assume_init(), __out_1.assume_init())
+        }
+    }
+
+    #[doc = "`RequiresSrgbBlitToBackbufferImpl(::unity2::IntPtr)` overload"]
+    pub fn requires_srgb_blit_to_backbuffer_impl(native_display: impl ::core::convert::Into<::unity2::IntPtr>) -> bool {
+        unsafe {
+            __Display_unity2_raw::requires_srgb_blit_to_backbuffer_impl(::core::convert::Into::into(native_display), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __Display_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-display")]
+pub trait IDisplayMethods: IDisplay {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor(::unity2::IntPtr)` overload"]
+    fn ctor_2(self, native_display: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(native_display), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_renderingWidth()` overload"]
+    fn get_rendering_width(self) -> i32 {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::get_rendering_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_renderingHeight()` overload"]
+    fn get_rendering_height(self) -> i32 {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::get_rendering_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_systemWidth()` overload"]
+    fn get_system_width(self) -> i32 {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::get_system_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_systemHeight()` overload"]
+    fn get_system_height(self) -> i32 {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::get_system_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_requiresSrgbBlitToBackbuffer()` overload"]
+    fn get_requires_srgb_blit_to_backbuffer(self) -> bool {
+        unsafe {
+            let __receiver = <Display as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __Display_unity2_raw::get_requires_srgb_blit_to_backbuffer(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-display")]
+impl<__T: IDisplay> IDisplayMethods for __T {}
+
+#[cfg(feature = "unity_engine-display")]
+impl Display {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Display), ::core::stringify!(new),));
+        <Self as IDisplayMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::IntPtr)` — overload selector"]
+    pub fn new_2(native_display: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(Display), ::core::stringify!(new_2),));
+        <Self as IDisplayMethods>::ctor_2(this, native_display);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-display")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::Display;
-    pub use super::Display_DisplaysUpdatedDelegate;
-    pub use super::IDisplay;
-    pub use super::IDisplayMethods;
-    pub use super::IDisplay_DisplaysUpdatedDelegate;
-    pub use super::IDisplay_DisplaysUpdatedDelegateMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        Display, Display_DisplaysUpdatedDelegate, IDisplay, IDisplayMethods, IDisplay_DisplaysUpdatedDelegate,
+        IDisplay_DisplaysUpdatedDelegateMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

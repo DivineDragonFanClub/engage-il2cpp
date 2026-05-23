@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/globaldynamicresolutionsettings/GlobalDynamicResolutionSettings.md"))]
     #[repr(C)]
@@ -15,18 +17,15 @@ mod __types {
         pub enabled: bool,
         pub max_percentage: f32,
         pub min_percentage: f32,
-        pub dyn_res_type:
-            crate::unity_engine::rendering::dynamicresolutiontype::DynamicResolutionType,
-        pub upsample_filter:
-            crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
+        pub dyn_res_type: crate::unity_engine::rendering::dynamicresolutiontype::DynamicResolutionType,
+        pub upsample_filter: crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
         pub force_resolution: bool,
         pub forced_percentage: f32,
     }
 
     impl ::unity2::ClassIdentity for GlobalDynamicResolutionSettings {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "GlobalDynamicResolutionSettings";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,10 +36,7 @@ mod __types {
 
     impl ::unity2::IlType for GlobalDynamicResolutionSettings {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -57,9 +53,7 @@ mod __GlobalDynamicResolutionSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_new_default {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GlobalDynamicResolutionSettings as ::unity2::ClassIdentity>::class(),
@@ -72,31 +66,33 @@ mod __GlobalDynamicResolutionSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GlobalDynamicResolutionSettings as ::unity2::ClassIdentity>::NAME,
-                    "NewDefault",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GlobalDynamicResolutionSettings as ::unity2::ClassIdentity>::NAME,
+                        "NewDefault",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn new_default (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_new_default :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn new_default(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings =
+            ::core::mem::transmute(__lookup_new_default::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
 impl GlobalDynamicResolutionSettings {
-    #[doc = "`NewDefault()` overload"]    pub fn new_default () -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings{
-        unsafe {
-            __GlobalDynamicResolutionSettings_unity2_raw::new_default(::core::option::Option::None)
-        }
+    #[doc = "`NewDefault()` overload"]
+    pub fn new_default() -> crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings {
+        unsafe { __GlobalDynamicResolutionSettings_unity2_raw::new_default(::core::option::Option::None) }
     }
 }
 
@@ -104,10 +100,9 @@ impl GlobalDynamicResolutionSettings {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlobalDynamicResolutionSettings;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

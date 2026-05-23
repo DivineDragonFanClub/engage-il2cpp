@@ -2,67 +2,37 @@
 
 #[cfg(feature = "app-hubsequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes};
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::procscenesequence_1::{IProcSceneSequence_1, ProcSceneSequence_1};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterRankingMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterRankingMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct HubSequence_LastChapterRankingMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubSequence.LastChapterMenu.RankingMenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct HubSequence_LastChapterMenu_RankingMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.YesMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
-        #[rename(name = "m_ResultFunc")]
-        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemYes.md"))]
-    #[::unity2::class(namespace = "App", name = "HubSequence.ConfirmEndRollDialogItemYes")]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct HubSequence_ConfirmEndRollDialogItemYes {}
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+            procscenesequence_1::{IProcSceneSequence_1, ProcSceneSequence_1},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubsequence/HubSequence_LastChapterSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct HubSequence_LastChapterSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for HubSequence_LastChapterSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "HubSequence.LastChapterSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -73,10 +43,7 @@ mod __types {
 
     impl ::unity2::IlType for HubSequence_LastChapterSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -98,19 +65,6 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct HubSequence_LastChapterMenu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmDialogItemNo.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubSequence.LastChapterSequence.ConfirmDialogItemNo"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct HubSequence_LastChapterSequence_ConfirmDialogItemNo {}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_AreaString.md"))]
     #[::unity2::class(namespace = "App", name = "HubSequence.AreaString")]
     #[parent(crate::system::object::Object)]
@@ -121,44 +75,34 @@ mod __types {
         pub m_last_value: ::unity2::Il2CppString,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.YesMenuItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
+        #[rename(name = "m_ResultFunc")]
+        pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.ConfirmEndRollDialogItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct HubSequence_ConfirmEndRollDialogItemYes {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog"
-    )]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog")]
     #[parent(crate::system::object::Object)]
     pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubSequence.LastChapterSequence.ConfirmGotoLastDialogItemYes"
-    )]
-    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-    pub struct HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterGoToMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterGoToMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct HubSequence_LastChapterGoToMenuItem {}
-
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubsequence/HubSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct HubSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for HubSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "HubSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -169,10 +113,7 @@ mod __types {
 
     impl ::unity2::IlType for HubSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -322,32 +263,20 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence.md"))]
-    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterSequence")]
-    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubsequence :: HubSequence_LastChapterSequence >)]
-    pub struct HubSequence_LastChapterSequence {
-        #[static_field]
-        #[rename(name = "isGotoLastConfirm")]
-        pub is_goto_last_confirm: bool,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmDialogItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterSequence.ConfirmDialogItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct HubSequence_LastChapterSequence_ConfirmDialogItemNo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.RankingMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct HubSequence_LastChapterMenu_RankingMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_GoToMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.GoToMenuItem")]
     #[parent(crate::app::basicmenuitem::BasicMenuItem)]
     pub struct HubSequence_LastChapterMenu_GoToMenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemNo.md"))]
-    #[::unity2::class(namespace = "App", name = "HubSequence.ConfirmEndRollDialogItemNo")]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct HubSequence_ConfirmEndRollDialogItemNo {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.NoMenuItem"
-    )]
-    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-    pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence.md"))]
     #[::unity2::class(namespace = "App", name = "HubSequence")]
@@ -402,9 +331,7 @@ mod __types {
         #[rename(name = "m_numPieceOfBond")]
         pub m_num_piece_of_bond: i32,
         #[rename(name = "EndRollDisableList")]
-        pub end_roll_disable_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub end_roll_disable_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "ArgConfirmMid")]
         pub arg_confirm_mid: ::unity2::Il2CppString,
         #[rename(name = "ArgScriptName")]
@@ -412,1254 +339,49 @@ mod __types {
         #[rename(name = "SolanelBgmList")]
         pub solanel_bgm_list: ::unity2::Array<::unity2::Il2CppString>,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterRankingMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterRankingMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct HubSequence_LastChapterRankingMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.NoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemNo.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.ConfirmEndRollDialogItemNo")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct HubSequence_ConfirmEndRollDialogItemNo {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterGoToMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterGoToMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct HubSequence_LastChapterGoToMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct HubSequence_LastChapterMenu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterSequence")]
+    # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubsequence :: HubSequence_LastChapterSequence >)]
+    pub struct HubSequence_LastChapterSequence {
+        #[static_field]
+        #[rename(name = "isGotoLastConfirm")]
+        pub is_goto_last_confirm: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes.md"))]
+    #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterSequence.ConfirmGotoLastDialogItemYes")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {}
 }
 
 #[cfg(feature = "app-hubsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterRankingMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterRankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterRankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: HubSequence_LastChapterRankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterRankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterRankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterRankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterRankingMenuItemMethods:
-    IHubSequence_LastChapterRankingMenuItem
-{
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterRankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterRankingMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterRankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterRankingMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterRankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterRankingMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterRankingMenuItem> IHubSequence_LastChapterRankingMenuItemMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterRankingMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterRankingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterRankingMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterMenu_RankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: HubSequence_LastChapterMenu_RankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterMenu_RankingMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterMenu_RankingMenuItemMethods:
-    IHubSequence_LastChapterMenu_RankingMenuItem
-{
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterMenu_RankingMenuItem>
-    IHubSequence_LastChapterMenu_RankingMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_RankingMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterMenu_RankingMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
-            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, result_func, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods:
-    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem
-{
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    fn ctor(
-        self,
-        result_func: impl ::core::convert::Into<
-            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(result_func),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw :: a_call (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem>
-    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
-    pub fn new(
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods > :: ctor (this , result_func) ;
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_ConfirmEndRollDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_ConfirmEndRollDialogItemYes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: HubSequence_ConfirmEndRollDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_ConfirmEndRollDialogItemYes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: HubSequence_ConfirmEndRollDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_ConfirmEndRollDialogItemYes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_ConfirmEndRollDialogItemYesMethods:
-    IHubSequence_ConfirmEndRollDialogItemYes
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_ConfirmEndRollDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_ConfirmEndRollDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_ConfirmEndRollDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_ConfirmEndRollDialogItemYes> IHubSequence_ConfirmEndRollDialogItemYesMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_ConfirmEndRollDialogItemYes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_ConfirmEndRollDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_ConfirmEndRollDialogItemYesMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterMenu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_menu_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
-                "get_CurrentMenuSelect",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
-                    "get_CurrentMenuSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current_menu_select(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuselect::BasicMenuSelect {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuselect::BasicMenuSelect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_menu_select::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type(),
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, menu_item_list, super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu {
-    #[doc = "`get_CurrentMenuSelect()` overload"]
-    pub fn get_current_menu_select() -> crate::app::basicmenuselect::BasicMenuSelect {
-        unsafe {
-            __HubSequence_LastChapterMenu_unity2_raw::get_current_menu_select(
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __HubSequence_LastChapterMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __HubSequence_LastChapterMenu_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterMenuMethods: IHubSequence_LastChapterMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <HubSequence_LastChapterMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <HubSequence_LastChapterMenu as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterMenu_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterMenu> IHubSequence_LastChapterMenuMethods for __T {}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        super_: crate::app::procinst::ProcInst,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterMenuMethods>::ctor(this, menu_item_list, super_);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterSequence_ConfirmDialogItemNo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterSequence_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterSequence_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterSequence_ConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterSequence_ConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterSequence_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterSequence_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: HubSequence_LastChapterSequence_ConfirmDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterSequence_ConfirmDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods:
-    IHubSequence_LastChapterSequence_ConfirmDialogItemNo
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterSequence_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterSequence_ConfirmDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterSequence_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterSequence_ConfirmDialogItemNo_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterSequence_ConfirmDialogItemNo>
-    IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterSequence_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
@@ -1670,11 +392,8 @@ mod __HubSequence_AreaString_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_push {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_AreaString as ::unity2::ClassIdentity>::class(),
                 "Push",
@@ -1686,45 +405,28 @@ mod __HubSequence_AreaString_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
-                    "Push",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
+                        "Push",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn push(
-        this: HubSequence_AreaString,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_AreaString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push::get_offset() as isize),
-        );
+    pub unsafe fn push(this: HubSequence_AreaString, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_AreaString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_AreaString as ::unity2::ClassIdentity>::class(),
                 "Pop",
@@ -1736,43 +438,27 @@ mod __HubSequence_AreaString_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
-                    "Pop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
+                        "Pop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pop(
-        this: HubSequence_AreaString,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_AreaString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pop::get_offset() as isize),
-        );
+    pub unsafe fn pop(this: HubSequence_AreaString, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_AreaString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_pop::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_AreaString as ::unity2::ClassIdentity>::class(),
@@ -1785,39 +471,27 @@ mod __HubSequence_AreaString_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: HubSequence_AreaString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: HubSequence_AreaString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_AreaString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_AreaString as ::unity2::ClassIdentity>::class(),
@@ -1830,41 +504,27 @@ mod __HubSequence_AreaString_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: HubSequence_AreaString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_AreaString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: HubSequence_AreaString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence_AreaString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_AreaString as ::unity2::ClassIdentity>::class(),
@@ -1877,30 +537,20 @@ mod __HubSequence_AreaString_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_AreaString as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubSequence_AreaString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubSequence_AreaString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_AreaString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1910,53 +560,40 @@ pub trait IHubSequence_AreaStringMethods: IHubSequence_AreaString {
     #[doc = "`Push(::unity2::Il2CppString)` overload"]
     fn push(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_AreaString_unity2_raw::push(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_AreaString_unity2_raw::push(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Pop(::unity2::Il2CppString)` overload"]
     fn pop(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_AreaString_unity2_raw::pop(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_AreaString_unity2_raw::pop(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
-            let __receiver = <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubSequence_AreaString_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubSequence_AreaString_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <HubSequence_AreaString as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __HubSequence_AreaString_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1984,25 +621,382 @@ impl HubSequence_AreaString {
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::netenablesequence::NetEnableSequence_ResultFunction as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, result_func, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(
+        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods:
+    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem
+{
+    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    fn ctor(self, result_func: impl ::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>) -> () {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(result_func),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem>
+    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
+    pub fn new(result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods>::ctor(this, result_func);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubSequence_ConfirmEndRollDialogItemYes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_ConfirmEndRollDialogItemYes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubSequence_ConfirmEndRollDialogItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_ConfirmEndRollDialogItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: HubSequence_ConfirmEndRollDialogItemYes,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_ConfirmEndRollDialogItemYes, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_ConfirmEndRollDialogItemYesMethods: IHubSequence_ConfirmEndRollDialogItemYes {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_ConfirmEndRollDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_ConfirmEndRollDialogItemYes_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_ConfirmEndRollDialogItemYes> IHubSequence_ConfirmEndRollDialogItemYesMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_ConfirmEndRollDialogItemYes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_ConfirmEndRollDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_ConfirmEndRollDialogItemYesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: netenablesequence :: NetEnableSequence_ResultFunction as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 2 , param_types , true ,)
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::netenablesequence::NetEnableSequence_ResultFunction as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                2,
+                param_types,
+                true,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn create_bind(
@@ -2014,11 +1008,7 @@ mod __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_unity2_raw {
             crate::app::procinst::ProcInst,
             crate::app::netenablesequence::NetEnableSequence_ResultFunction,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, result_func, __unity2_method_info)
     }
 }
@@ -2028,9 +1018,7 @@ impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        result_func: impl ::core::convert::Into<
-            crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-        >,
+        result_func: impl ::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>,
     ) -> () {
         unsafe {
             __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_unity2_raw::create_bind(
@@ -2045,163 +1033,7970 @@ impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw {
+mod __HubSequence_LastChapterSequence_ConfirmDialogItemNo_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterSequence_ConfirmDialogItemNo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence_ConfirmDialogItemNo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn a_call(
-        this: HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HubSequence_LastChapterSequence_ConfirmDialogItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterSequence_ConfirmDialogItemNo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: ClassIdentity > :: class () , "BCall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterSequence_ConfirmDialogItemNo as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence_ConfirmDialogItemNo as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn b_call(
-        this: HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
+        this: HubSequence_LastChapterSequence_ConfirmDialogItemNo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
+            HubSequence_LastChapterSequence_ConfirmDialogItemNo,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods:
-    IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes
-{
+pub trait IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods: IHubSequence_LastChapterSequence_ConfirmDialogItemNo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterSequence_ConfirmDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterSequence_ConfirmDialogItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterSequence_ConfirmDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterSequence_ConfirmDialogItemNo_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes>
-    IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods for __T
-{
-}
+impl<__T: IHubSequence_LastChapterSequence_ConfirmDialogItemNo> IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods for __T {}
 
 #[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {
+impl HubSequence_LastChapterSequence_ConfirmDialogItemNo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes),
+                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmDialogItemNo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods>::ctor(this);
+        <Self as IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(
+        this: HubSequence_LastChapterMenu_RankingMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_RankingMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubSequence_LastChapterMenu_RankingMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_RankingMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubSequence_LastChapterMenu_RankingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_RankingMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_LastChapterMenu_RankingMenuItemMethods: IHubSequence_LastChapterMenu_RankingMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_LastChapterMenu_RankingMenuItem> IHubSequence_LastChapterMenu_RankingMenuItemMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_RankingMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenu_RankingMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: HubSequence_LastChapterMenu_GoToMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_GoToMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubSequence_LastChapterMenu_GoToMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_GoToMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubSequence_LastChapterMenu_GoToMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_GoToMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_LastChapterMenu_GoToMenuItemMethods: IHubSequence_LastChapterMenu_GoToMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_LastChapterMenu_GoToMenuItem> IHubSequence_LastChapterMenu_GoToMenuItemMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_GoToMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu_GoToMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenu_GoToMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_loading_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_LoadingMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_LoadingMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_loading_mode(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::loadingmanager::LoadingManager_Modes {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::loadingmanager::LoadingManager_Modes =
+            ::core::mem::transmute(__lookup_get_loading_mode::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_Camera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Camera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_camera(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubcamera::HubCamera {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubcamera::HubCamera =
+            ::core::mem::transmute(__lookup_get_camera::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_Player",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Player",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_player(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubplayercontroller::HubPlayerController {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
+            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_Root",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Root",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_root(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_locator_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_LocatorGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_LocatorGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_locator_group(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hublocatorgroup::HubLocatorGroup {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hublocatorgroup::HubLocatorGroup =
+            ::core::mem::transmute(__lookup_get_locator_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_main_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_MainCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_MainCamera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_main_camera(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_main_camera::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_main_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_MainCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_MainCamera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_main_camera(
+        this: HubSequence,
+        value: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_main_camera::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_mini_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_MiniMap",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_MiniMap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_mini_map(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubminimap::HubMiniMap {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubminimap::HubMiniMap =
+            ::core::mem::transmute(__lookup_get_mini_map::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_mini_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubminimap::HubMiniMap as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_MiniMap",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_MiniMap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_mini_map(this: HubSequence, value: crate::app::hubminimap::HubMiniMap, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::hubminimap::HubMiniMap, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mini_map::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_env_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_EnvRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_EnvRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_env_root(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_env_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_now_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_NowArea",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_NowArea",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_now_area(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubsequence::HubSequence_AreaString {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubsequence::HubSequence_AreaString =
+            ::core::mem::transmute(__lookup_get_now_area::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_now_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::hubsequence::HubSequence_AreaString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_NowArea",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_NowArea",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_now_area(
+        this: HubSequence,
+        value: crate::app::hubsequence::HubSequence_AreaString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::hubsequence::HubSequence_AreaString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_now_area::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_FastTravel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_FastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_fast_travel(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubfasttravel::HubFastTravel {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubfasttravel::HubFastTravel =
+            ::core::mem::transmute(__lookup_get_fast_travel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubfasttravel::HubFastTravel as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_FastTravel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_FastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_fast_travel(
+        this: HubSequence,
+        value: crate::app::hubfasttravel::HubFastTravel,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::hubfasttravel::HubFastTravel, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fast_travel::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_force_nonstop_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_ForceNonstopBGM",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_ForceNonstopBGM",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_force_nonstop_bgm(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_force_nonstop_bgm::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_force_nonstop_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_ForceNonstopBGM",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_ForceNonstopBGM",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_force_nonstop_bgm(this: HubSequence, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_force_nonstop_bgm::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_access_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_AccessData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_AccessData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_access_data(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager> {
+        let inner: extern "C" fn(
+            HubSequence,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager> =
+            ::core::mem::transmute(__lookup_get_access_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_access_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::hubaccessmanager::HubAccessManager,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_AccessData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_AccessData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_access_data(
+        this: HubSequence,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubSequence,
+            crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_access_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_access_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_CurrentAccessData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CurrentAccessData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current_access_data(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccessmanager::HubAccessManager {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubaccessmanager::HubAccessManager =
+            ::core::mem::transmute(__lookup_get_current_access_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_solanel_access_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_SolanelAccessData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_SolanelAccessData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_solanel_access_data(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::hubaccessmanager::HubAccessManager {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::hubaccessmanager::HubAccessManager =
+            ::core::mem::transmute(__lookup_get_solanel_access_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_enter_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_IsEnterEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEnterEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_enter_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_enter_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_enter_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "set_IsEnterEvent",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_IsEnterEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_enter_event(this: HubSequence, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_enter_event::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_main {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_IsMain",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_IsMain",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_main(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_main::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_create(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Init", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_resource_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "IsResourceLoading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsResourceLoading",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_resource_loading(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_resource_loading::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_after_load_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "InitAfterLoadScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "InitAfterLoadScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init_after_load_scene(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init_after_load_scene::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Unload", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Unload",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn unload(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_terminate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "Terminate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Terminate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn terminate(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_terminate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_hub_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "LoadHubScene",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadHubScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_hub_scene(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_hub_scene::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::hubutil::HubUtil_TimezoneType as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SetupDispos",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetupDispos",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_dispos(
+        this: HubSequence,
+        scene_name: ::unity2::Il2CppString,
+        timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_dispos::get_method_info().method_ptr);
+        inner(this, scene_name, timezone_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset_dispos {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ResetDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ResetDispos",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset_dispos(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset_dispos::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_dispos_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SetupDispos",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetupDispos",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_dispos_2(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_setup_dispos_2::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_env {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SetupEnv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetupEnv",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_env(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_setup_env::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_player {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SetupPlayer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetupPlayer",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_player(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_setup_player::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_opening_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OpeningEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpeningEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn opening_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_opening_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_map_opening_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "MapOpeningEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "MapOpeningEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn map_opening_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_opening_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PrepareEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PrepareEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn prepare_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_kizuna_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "KizunaExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "KizunaExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn kizuna_exit(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_kizuna_exit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_kizuna_exit_tutorial {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "KizunaExitTutorial",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "KizunaExitTutorial",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn kizuna_exit_tutorial(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_kizuna_exit_tutorial::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_map_ending_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "MapEndingEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "MapEndingEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn map_ending_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_map_ending_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ending_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EndingEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndingEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ending_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ending_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SetupAccess",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetupAccess",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_access(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_setup_access::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_a_plus_gift {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "LoadAPlusGift",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadAPlusGift",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_a_plus_gift(this: HubSequence, aplus_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_a_plus_gift::get_method_info().method_ptr);
+        inner(this, aplus_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_after_load_chara {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "InitAfterLoadChara",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "InitAfterLoadChara",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init_after_load_chara(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init_after_load_chara::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_arrange_player_start_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ArrangePlayerStartPosition",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ArrangePlayerStartPosition",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn arrange_player_start_position(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_arrange_player_start_position::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_minimap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "LoadMinimap",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadMinimap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_minimap(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_load_minimap::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cleanup_unit_impl {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CleanupUnitImpl",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CleanupUnitImpl",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cleanup_unit_impl(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cleanup_unit_impl::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_shop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CallShop",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CallShop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn call_shop(
+        this: HubSequence,
+        shop_type: ::unity2::Il2CppString,
+        access: crate::app::hubaccess::HubAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_shop::get_method_info().method_ptr);
+        inner(this, shop_type, access, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cleanup_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CleanupUnit",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CleanupUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cleanup_unit(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cleanup_unit::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_dragon_ride_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateDragonRideSequence",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDragonRideSequence",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_dragon_ride_sequence(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_dragon_ride_sequence::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_fishing_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateFishingSequence",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateFishingSequence",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_fishing_sequence(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_fishing_sequence::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_muscle_exercise_sequence {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateMuscleExerciseSequence",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateMuscleExerciseSequence",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_muscle_exercise_sequence(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_muscle_exercise_sequence::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_fortune_telling {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateFortuneTelling",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateFortuneTelling",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_fortune_telling(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_fortune_telling::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry_signboard {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EntrySignboard",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EntrySignboard",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entry_signboard(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_signboard::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_signboard {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateSignboard",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSignboard",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_signboard(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_signboard::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_signboard {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitSignboard",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitSignboard",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_signboard(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_signboard::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_rest_place {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateRestPlace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateRestPlace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_rest_place(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_rest_place::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_chest {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateChest",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateChest",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_chest(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_chest::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_confirm_end_roll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ConfirmEndRoll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ConfirmEndRoll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn confirm_end_roll(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_confirm_end_roll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enter_end_roll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EnterEndRoll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EnterEndRoll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enter_end_roll(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enter_end_roll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_end_roll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateEndRoll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateEndRoll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_end_roll(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_end_roll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_end_roll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitEndRoll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitEndRoll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_end_roll(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_end_roll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_flea_market_unmanned {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CallFleaMarketUnmanned",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CallFleaMarketUnmanned",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn call_flea_market_unmanned(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_flea_market_unmanned::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_flea_market {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateFleaMarket",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateFleaMarket",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_flea_market(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_flea_market::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_jukebox {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateJukebox",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateJukebox",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_jukebox(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_jukebox::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_check_animal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OpenCheckAnimal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenCheckAnimal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open_check_animal(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_check_animal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_animal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateAnimal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateAnimal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_animal(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_animal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_photo_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreatePhotoMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreatePhotoMenu",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_photo_menu(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_photo_menu::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_well_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateWellMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateWellMenu",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_well_menu(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_well_menu::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_pool {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreatePool",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreatePool",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_pool(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_pool::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_fruit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateFruit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateFruit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_fruit(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_fruit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_horse {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateHorse",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateHorse",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_horse(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_horse::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry_amiibo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EntryAmiibo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EntryAmiibo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entry_amiibo(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_amiibo::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_amiibo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateAmiibo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateAmiibo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_amiibo(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_amiibo::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_amiibo {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitAmiibo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitAmiibo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_amiibo(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_amiibo::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_check_cape_tower {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OpenCheckCapeTower",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenCheckCapeTower",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open_check_cape_tower(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_check_cape_tower::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open_cape_door {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OpenCapeDoor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenCapeDoor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open_cape_door(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open_cape_door::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_cape_tower {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateCapeTower",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateCapeTower",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_cape_tower(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_cape_tower::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close_cape_tower {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CloseCapeTower",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CloseCapeTower",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close_cape_tower(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close_cape_tower::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_final_cape_tower {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "FinalCapeTower",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "FinalCapeTower",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn final_cape_tower(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_final_cape_tower::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CallScript",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CallScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn call_script(
+        this: HubSequence,
+        confirm_mid: ::unity2::Il2CppString,
+        script_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_script::get_method_info().method_ptr);
+        inner(this, confirm_mid, script_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry_call_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EntryCallScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EntryCallScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entry_call_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_call_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_main_call_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "MainCallScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "MainCallScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn main_call_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_main_call_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_call_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitCallScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitCallScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_call_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_call_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry_kizuna_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EntryKizunaExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EntryKizunaExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entry_kizuna_exit(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_kizuna_exit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_main_kizuna_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "MainKizunaExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "MainKizunaExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn main_kizuna_exit(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_main_kizuna_exit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_kizuna_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitKizunaExit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitKizunaExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_kizuna_exit(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_kizuna_exit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sun_position {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "GetSunPosition",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetSunPosition",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sun_position(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_sun_position::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_dragon_ride_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EnableDragonRideGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EnableDragonRideGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_dragon_ride_group(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_dragon_ride_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_dragon_ride_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "DisableDragonRideGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "DisableDragonRideGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_dragon_ride_group(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_dragon_ride_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_fishing_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EnableFishingGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EnableFishingGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_fishing_group(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_fishing_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_fishing_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "DisableFishingGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "DisableFishingGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_fishing_group(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_fishing_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "DisableGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "DisableGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_group(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_group {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EnableGroup",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EnableGroup",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_group(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_group::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_disable_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "DisableRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "DisableRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn disable_root(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_disable_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EnableRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EnableRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_root(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "LoadScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "UnloadScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "UnloadScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn unload_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EntryScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EntryScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entry_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_script {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitScript",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitScript",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_script(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_script::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartBind",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_bind(
+        this: HubSequence,
+        target_0: crate::app::procinst::ProcInst,
+        event_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_bind::get_method_info().method_ptr);
+        inner(this, target_0, event_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartEvent",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_event(
+        this: HubSequence,
+        script_name: ::unity2::Il2CppString,
+        access: crate::app::hubaccess::HubAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_event::get_method_info().method_ptr);
+        inner(this, script_name, access, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_access_mascot {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "AccessMascot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "AccessMascot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn access_mascot(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_access_mascot::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entry_arena {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EntryArena",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EntryArena",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entry_arena(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entry_arena::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_arena {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartArena",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartArena",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_arena(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_arena::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_arena {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ExitArena",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitArena",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_arena(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_arena::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_pedestal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartPedestal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartPedestal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_pedestal(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_start_pedestal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_access_pedestal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "AccessPedestal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "AccessPedestal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn access_pedestal(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_access_pedestal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_pedestal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EndPedestal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndPedestal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_pedestal(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_end_pedestal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next_map {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "NextMap", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "NextMap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn next_map(
+        scene_name: ::unity2::Il2CppString,
+        start_name: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_next_map::get_method_info().method_ptr);
+        inner(scene_name, start_name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next_chapter {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "NextChapter",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "NextChapter",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn next_chapter(overwrite_chapter: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_next_chapter::get_method_info().method_ptr);
+        inner(overwrite_chapter, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next_gmap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "NextGmap", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "NextGmap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn next_gmap(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_next_gmap::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "IsExit", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsExit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exit(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_exit::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Exit", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Exit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_exit_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::mainsequence::MainSequence_Label as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Exit", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Exit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn exit_2(label: crate::app::mainsequence::MainSequence_Label, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::mainsequence::MainSequence_Label, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_exit_2::get_method_info().method_ptr);
+        inner(label, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_can_move_gmap {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CanMoveGmap",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CanMoveGmap",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn can_move_gmap(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_can_move_gmap::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_player_controller {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "GetPlayerController",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetPlayerController",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_player_controller(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
+            ::core::mem::transmute(__lookup_get_player_controller::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_data_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SaveDataLoad",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SaveDataLoad",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save_data_load(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save_data_load::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_data_load_result {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SaveDataLoadResult",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SaveDataLoadResult",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save_data_load_result(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save_data_load_result::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_data_release {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SaveDataRelease",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SaveDataRelease",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save_data_release(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save_data_release::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_save_data_normalize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SaveDataNormalize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SaveDataNormalize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn save_data_normalize(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_save_data_normalize::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_version {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "get_Version",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Version",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_version(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_version::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_serialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OnSerialize",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnSerialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_serialize(this: HubSequence, stream: crate::app::stream_2::Stream_2, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::stream_2::Stream_2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_serialize::get_method_info().method_ptr);
+        inner(this, stream, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_deserialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OnDeserialize",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnDeserialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_deserialize(
+        this: HubSequence,
+        stream: crate::app::stream_2::Stream_2,
+        version: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::stream_2::Stream_2, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_deserialize::get_method_info().method_ptr);
+        inner(this, stream, version, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_shutdown {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "OnShutdown",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnShutdown",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_shutdown(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_shutdown::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Tick", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_key_help_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "GetCurrentKeyHelpName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetCurrentKeyHelpName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current_key_help_name(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_current_key_help_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_persistent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "Persistent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Persistent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn persistent(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_persistent::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_player_anim {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SetPlayerAnim",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetPlayerAnim",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_player_anim(this: HubSequence, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_player_anim::get_method_info().method_ptr);
+        inner(this, name, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartFastTravel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartFastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_fast_travel(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_fast_travel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_call_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CallFastTravel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CallFastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn call_fast_travel(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_call_fast_travel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EndFastTravel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndFastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_fast_travel(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_fast_travel::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_run_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "RunFastTravel",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "RunFastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn run_fast_travel(this: HubSequence, id: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_run_fast_travel::get_method_info().method_ptr);
+        inner(this, id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_access_animal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartAccessAnimal",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartAccessAnimal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_access_animal(
+        this: HubSequence,
+        access: crate::app::hubaccess::HubAccess,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_access_animal::get_method_info().method_ptr);
+        inner(this, access, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StartTalk",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartTalk",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start_talk(this: HubSequence, access: crate::app::hubaccess::HubAccess, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::hubaccess::HubAccess, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_talk::get_method_info().method_ptr);
+        inner(this, access, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_talk {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Talk", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Talk",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn talk(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_talk::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_begin_silent_env {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "BeginSilentEnv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "BeginSilentEnv",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn begin_silent_env(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_begin_silent_env::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_end_silent_env {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EndSilentEnv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EndSilentEnv",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn end_silent_env(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_end_silent_env::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_game_cleaer_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "GameCleaerEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GameCleaerEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn game_cleaer_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_game_cleaer_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_gift_get {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "GiftGet", 2, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GiftGet",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn gift_get(
+        this: HubSequence,
+        reward_id: ::unity2::Il2CppString,
+        message_id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_gift_get::get_method_info().method_ptr);
+        inner(this, reward_id, message_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_gift_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "TryGiftEvent",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "TryGiftEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_gift_event(
+        this: HubSequence,
+        flag_name: ::unity2::Il2CppString,
+        reward_id: ::unity2::Il2CppString,
+        message_id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubSequence,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_try_gift_event::get_method_info().method_ptr);
+        inner(this, flag_name, reward_id, message_id, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dlc_gift0_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "DlcGift0Event",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "DlcGift0Event",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dlc_gift0_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dlc_gift0_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_patch0_gift_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "Patch0GiftEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Patch0GiftEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn patch0_gift_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_patch0_gift_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dlc_gift1_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "DlcGift1Event",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "DlcGift1Event",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dlc_gift1_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dlc_gift1_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_patch3_gift_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "Patch3GiftEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Patch3GiftEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn patch3_gift_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_patch3_gift_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_evil_cleaer_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EvilCleaerEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EvilCleaerEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn evil_cleaer_event(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_evil_cleaer_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_contents_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "ContentsEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "ContentsEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn contents_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_contents_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_relay_ticket_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "RelayTicketEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "RelayTicketEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn relay_ticket_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_relay_ticket_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_skill_open_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "SkillOpenEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "SkillOpenEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn skill_open_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_skill_open_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enter_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "EnterEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "EnterEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enter_event(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_enter_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_post_enter_event {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PostEnterEvent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PostEnterEvent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn post_enter_event(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_post_enter_event::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "PlayBgm", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PlayBgm",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_bgm(
+        this: HubSequence,
+        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::gamesound::GameSound_FadeSpeedType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_bgm::get_method_info().method_ptr);
+        inner(this, fade_speed_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pause_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PauseBgm",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PauseBgm",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn pause_bgm(
+        this: HubSequence,
+        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::gamesound::GameSound_FadeSpeedType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_pause_bgm::get_method_info().method_ptr);
+        inner(this, fade_speed_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_bgm_event_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "GetBgmEventName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetBgmEventName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_bgm_event_name(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_bgm_event_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_get_current_bgm_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "TryGetCurrentBgmHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "TryGetCurrentBgmHandle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_get_current_bgm_handle(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::gamesound::GameSound_Handle {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::app::gamesound::GameSound_Handle =
+            ::core::mem::transmute(__lookup_try_get_current_bgm_handle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_bgm_kizuna {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PlayBgm_Kizuna",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PlayBgm_Kizuna",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_bgm_kizuna(
+        this: HubSequence,
+        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::gamesound::GameSound_FadeSpeedType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_bgm_kizuna::get_method_info().method_ptr);
+        inner(this, fade_speed_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play_bgm_hub {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PlayBgm_Hub",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PlayBgm_Hub",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play_bgm_hub(
+        this: HubSequence,
+        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence, crate::app::gamesound::GameSound_FadeSpeedType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_bgm_hub::get_method_info().method_ptr);
+        inner(this, fade_speed_type, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_bgm {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "StopBgm", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StopBgm",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop_bgm(this: HubSequence, play_movie: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_bgm::get_method_info().method_ptr);
+        inner(this, play_movie, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_bgm_kizuna {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StopBgm_Kizuna",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StopBgm_Kizuna",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop_bgm_kizuna(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_bgm_kizuna::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop_bgm_hub {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "StopBgm_Hub",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "StopBgm_Hub",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop_bgm_hub(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_stop_bgm_hub::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_player_begin_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PlayerBeginAccess",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PlayerBeginAccess",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn player_begin_access(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_player_begin_access::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_player_end_access {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "PlayerEndAccess",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "PlayerEndAccess",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn player_end_access(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_player_end_access::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_exist_instance {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "IsExistInstance",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsExistInstance",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_exist_instance(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_exist_instance::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_chara_locators_root {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "GetCharaLocatorsRoot",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetCharaLocatorsRoot",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_chara_locators_root(
+        this: HubSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_chara_locators_root::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_init_scene_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "InitSceneInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "InitSceneInfo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn init_scene_info(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init_scene_info::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_report {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), "Report", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "Report",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn report(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_report::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_solanel_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateSolanelBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSolanelBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_solanel_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_solanel_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_kizuna_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence as ::unity2::ClassIdentity>::class(),
+                "CreateKizunaBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateKizunaBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_kizuna_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_kizuna_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<HubSequence as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence {
+    #[doc = "`CleanupUnit()` overload"]
+    pub fn cleanup_unit() -> () {
+        unsafe { __HubSequence_unity2_raw::cleanup_unit(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetSunPosition()` overload"]
+    pub fn get_sun_position() -> crate::unity_engine::vector3::Vector3 {
+        unsafe { __HubSequence_unity2_raw::get_sun_position(::core::option::Option::None) }
+    }
+
+    #[doc = "`NextMap(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    pub fn next_map(
+        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        start_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __HubSequence_unity2_raw::next_map(
+                ::core::convert::Into::into(scene_name),
+                ::core::convert::Into::into(start_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`NextChapter(::unity2::Il2CppString)` overload"]
+    pub fn next_chapter(overwrite_chapter: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe { __HubSequence_unity2_raw::next_chapter(::core::convert::Into::into(overwrite_chapter), ::core::option::Option::None) }
+    }
+
+    #[doc = "`NextGmap()` overload"]
+    pub fn next_gmap() -> () {
+        unsafe { __HubSequence_unity2_raw::next_gmap(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsExit()` overload"]
+    pub fn is_exit() -> bool {
+        unsafe { __HubSequence_unity2_raw::is_exit(::core::option::Option::None) }
+    }
+
+    #[doc = "`Exit()` overload"]
+    pub fn exit() -> () {
+        unsafe { __HubSequence_unity2_raw::exit(::core::option::Option::None) }
+    }
+
+    #[doc = "`Exit(crate::app::mainsequence::MainSequence_Label)` overload"]
+    pub fn exit_2(label: impl ::core::convert::Into<crate::app::mainsequence::MainSequence_Label>) -> () {
+        unsafe { __HubSequence_unity2_raw::exit_2(::core::convert::Into::into(label), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CanMoveGmap()` overload"]
+    pub fn can_move_gmap() -> bool {
+        unsafe { __HubSequence_unity2_raw::can_move_gmap(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetPlayerController()` overload"]
+    pub fn get_player_controller() -> crate::app::hubplayercontroller::HubPlayerController {
+        unsafe { __HubSequence_unity2_raw::get_player_controller(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsExistInstance()` overload"]
+    pub fn is_exist_instance() -> bool {
+        unsafe { __HubSequence_unity2_raw::is_exist_instance(::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateSolanelBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_solanel_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __HubSequence_unity2_raw::create_solanel_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateKizunaBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_kizuna_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __HubSequence_unity2_raw::create_kizuna_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    pub fn create_bind<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<HubSequence as ::unity2::ClassIdentity>::class(), "CreateBind", 1));
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <HubSequence as ::unity2::ClassIdentity>::NAME,
+                    "CreateBind",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequenceMethods: IHubSequence {
+    #[doc = "`get_LoadingMode()` overload"]
+    fn get_loading_mode(self) -> crate::app::loadingmanager::LoadingManager_Modes {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_loading_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Camera()` overload"]
+    fn get_camera(self) -> crate::app::hubcamera::HubCamera {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Player()` overload"]
+    fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_player(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Root()` overload"]
+    fn get_root(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_LocatorGroup()` overload"]
+    fn get_locator_group(self) -> crate::app::hublocatorgroup::HubLocatorGroup {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_locator_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MainCamera()` overload"]
+    fn get_main_camera(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_main_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MainCamera(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn set_main_camera(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_main_camera(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MiniMap()` overload"]
+    fn get_mini_map(self) -> crate::app::hubminimap::HubMiniMap {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_mini_map(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MiniMap(crate::app::hubminimap::HubMiniMap)` overload"]
+    fn set_mini_map(self, value: impl ::core::convert::Into<crate::app::hubminimap::HubMiniMap>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_mini_map(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_EnvRoot()` overload"]
+    fn get_env_root(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_env_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_NowArea()` overload"]
+    fn get_now_area(self) -> crate::app::hubsequence::HubSequence_AreaString {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_now_area(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_NowArea(crate::app::hubsequence::HubSequence_AreaString)` overload"]
+    fn set_now_area(self, value: impl ::core::convert::Into<crate::app::hubsequence::HubSequence_AreaString>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_now_area(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_FastTravel()` overload"]
+    fn get_fast_travel(self) -> crate::app::hubfasttravel::HubFastTravel {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_fast_travel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_FastTravel(crate::app::hubfasttravel::HubFastTravel)` overload"]
+    fn set_fast_travel(self, value: impl ::core::convert::Into<crate::app::hubfasttravel::HubFastTravel>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_fast_travel(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_ForceNonstopBGM()` overload"]
+    fn get_force_nonstop_bgm(self) -> bool {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_force_nonstop_bgm(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_ForceNonstopBGM(bool)` overload"]
+    fn set_force_nonstop_bgm(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_force_nonstop_bgm(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_AccessData()` overload"]
+    fn get_access_data(self) -> crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager> {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_access_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_AccessData(crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager>)` overload"]
+    fn set_access_data(
+        self,
+        value: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_access_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_CurrentAccessData()` overload"]
+    fn get_current_access_data(self) -> crate::app::hubaccessmanager::HubAccessManager {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_current_access_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_SolanelAccessData()` overload"]
+    fn get_solanel_access_data(self) -> crate::app::hubaccessmanager::HubAccessManager {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_solanel_access_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsEnterEvent()` overload"]
+    fn get_is_enter_event(self) -> bool {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_is_enter_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_IsEnterEvent(bool)` overload"]
+    fn set_is_enter_event(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_is_enter_event(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_IsMain()` overload"]
+    fn get_is_main(self) -> bool {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_is_main(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Init()` overload"]
+    fn init(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsResourceLoading()` overload"]
+    fn is_resource_loading(self) -> bool {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::is_resource_loading(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitAfterLoadScene()` overload"]
+    fn init_after_load_scene(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::init_after_load_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Unload()` overload"]
+    fn unload(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::unload(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Terminate()` overload"]
+    fn terminate(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::terminate(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadHubScene()` overload"]
+    fn load_hub_scene(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::load_hub_scene(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupDispos(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"]
+    fn setup_dispos(
+        self,
+        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        timezone_type: impl ::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::setup_dispos(
+                __receiver,
+                ::core::convert::Into::into(scene_name),
+                ::core::convert::Into::into(timezone_type),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ResetDispos()` overload"]
+    fn reset_dispos(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::reset_dispos(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupDispos()` overload"]
+    fn setup_dispos_2(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::setup_dispos_2(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupEnv()` overload"]
+    fn setup_env(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::setup_env(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupPlayer()` overload"]
+    fn setup_player(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::setup_player(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpeningEvent()` overload"]
+    fn opening_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::opening_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MapOpeningEvent()` overload"]
+    fn map_opening_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::map_opening_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PrepareEvent()` overload"]
+    fn prepare_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::prepare_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KizunaExit()` overload"]
+    fn kizuna_exit(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::kizuna_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`KizunaExitTutorial()` overload"]
+    fn kizuna_exit_tutorial(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::kizuna_exit_tutorial(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MapEndingEvent()` overload"]
+    fn map_ending_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::map_ending_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EndingEvent()` overload"]
+    fn ending_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::ending_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupAccess()` overload"]
+    fn setup_access(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::setup_access(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadAPlusGift(::unity2::Il2CppString)` overload"]
+    fn load_a_plus_gift(self, aplus_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::load_a_plus_gift(__receiver, ::core::convert::Into::into(aplus_name), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitAfterLoadChara()` overload"]
+    fn init_after_load_chara(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::init_after_load_chara(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ArrangePlayerStartPosition()` overload"]
+    fn arrange_player_start_position(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::arrange_player_start_position(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadMinimap()` overload"]
+    fn load_minimap(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::load_minimap(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CleanupUnitImpl()` overload"]
+    fn cleanup_unit_impl(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::cleanup_unit_impl(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CallShop(::unity2::Il2CppString, crate::app::hubaccess::HubAccess)` overload"]
+    fn call_shop(
+        self,
+        shop_type: impl ::core::convert::Into<::unity2::Il2CppString>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::call_shop(
+                __receiver,
+                ::core::convert::Into::into(shop_type),
+                ::core::convert::Into::into(access),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`CreateDragonRideSequence()` overload"]
+    fn create_dragon_ride_sequence(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_dragon_ride_sequence(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateFishingSequence()` overload"]
+    fn create_fishing_sequence(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_fishing_sequence(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateMuscleExerciseSequence()` overload"]
+    fn create_muscle_exercise_sequence(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_muscle_exercise_sequence(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateFortuneTelling()` overload"]
+    fn create_fortune_telling(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_fortune_telling(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrySignboard()` overload"]
+    fn entry_signboard(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::entry_signboard(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateSignboard()` overload"]
+    fn create_signboard(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_signboard(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitSignboard()` overload"]
+    fn exit_signboard(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_signboard(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateRestPlace()` overload"]
+    fn create_rest_place(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_rest_place(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateChest()` overload"]
+    fn create_chest(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_chest(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ConfirmEndRoll()` overload"]
+    fn confirm_end_roll(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::confirm_end_roll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnterEndRoll()` overload"]
+    fn enter_end_roll(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::enter_end_roll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateEndRoll()` overload"]
+    fn create_end_roll(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_end_roll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitEndRoll()` overload"]
+    fn exit_end_roll(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_end_roll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CallFleaMarketUnmanned()` overload"]
+    fn call_flea_market_unmanned(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::call_flea_market_unmanned(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateFleaMarket()` overload"]
+    fn create_flea_market(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_flea_market(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateJukebox()` overload"]
+    fn create_jukebox(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_jukebox(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenCheckAnimal()` overload"]
+    fn open_check_animal(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::open_check_animal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateAnimal()` overload"]
+    fn create_animal(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_animal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreatePhotoMenu()` overload"]
+    fn create_photo_menu(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_photo_menu(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateWellMenu()` overload"]
+    fn create_well_menu(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_well_menu(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreatePool()` overload"]
+    fn create_pool(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_pool(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateFruit()` overload"]
+    fn create_fruit(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_fruit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateHorse()` overload"]
+    fn create_horse(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_horse(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntryAmiibo()` overload"]
+    fn entry_amiibo(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::entry_amiibo(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateAmiibo()` overload"]
+    fn create_amiibo(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_amiibo(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitAmiibo()` overload"]
+    fn exit_amiibo(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_amiibo(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenCheckCapeTower()` overload"]
+    fn open_check_cape_tower(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::open_check_cape_tower(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OpenCapeDoor()` overload"]
+    fn open_cape_door(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::open_cape_door(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateCapeTower()` overload"]
+    fn create_cape_tower(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::create_cape_tower(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CloseCapeTower()` overload"]
+    fn close_cape_tower(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::close_cape_tower(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`FinalCapeTower()` overload"]
+    fn final_cape_tower(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::final_cape_tower(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CallScript(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn call_script(
+        self,
+        confirm_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
+        script_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::call_script(
+                __receiver,
+                ::core::convert::Into::into(confirm_mid),
+                ::core::convert::Into::into(script_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`EntryCallScript()` overload"]
+    fn entry_call_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::entry_call_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MainCallScript()` overload"]
+    fn main_call_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::main_call_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitCallScript()` overload"]
+    fn exit_call_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_call_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntryKizunaExit()` overload"]
+    fn entry_kizuna_exit(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::entry_kizuna_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MainKizunaExit()` overload"]
+    fn main_kizuna_exit(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::main_kizuna_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitKizunaExit()` overload"]
+    fn exit_kizuna_exit(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_kizuna_exit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnableDragonRideGroup()` overload"]
+    fn enable_dragon_ride_group(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::enable_dragon_ride_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DisableDragonRideGroup()` overload"]
+    fn disable_dragon_ride_group(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::disable_dragon_ride_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnableFishingGroup()` overload"]
+    fn enable_fishing_group(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::enable_fishing_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DisableFishingGroup()` overload"]
+    fn disable_fishing_group(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::disable_fishing_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DisableGroup()` overload"]
+    fn disable_group(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::disable_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnableGroup()` overload"]
+    fn enable_group(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::enable_group(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DisableRoot()` overload"]
+    fn disable_root(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::disable_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnableRoot()` overload"]
+    fn enable_root(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::enable_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`LoadScript()` overload"]
+    fn load_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::load_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UnloadScript()` overload"]
+    fn unload_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::unload_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntryScript()` overload"]
+    fn entry_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::entry_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartScript()` overload"]
+    fn start_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitScript()` overload"]
+    fn exit_script(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_script(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    fn start_bind(
+        self,
+        target_0: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_bind(
+                __receiver,
+                ::core::convert::Into::into(target_0),
+                ::core::convert::Into::into(event_name),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`StartEvent(::unity2::Il2CppString, crate::app::hubaccess::HubAccess)` overload"]
+    fn start_event(
+        self,
+        script_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_event(
+                __receiver,
+                ::core::convert::Into::into(script_name),
+                ::core::convert::Into::into(access),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AccessMascot()` overload"]
+    fn access_mascot(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::access_mascot(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntryArena()` overload"]
+    fn entry_arena(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::entry_arena(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartArena()` overload"]
+    fn start_arena(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_arena(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ExitArena()` overload"]
+    fn exit_arena(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::exit_arena(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartPedestal()` overload"]
+    fn start_pedestal(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_pedestal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AccessPedestal()` overload"]
+    fn access_pedestal(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::access_pedestal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EndPedestal()` overload"]
+    fn end_pedestal(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::end_pedestal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SaveDataLoad()` overload"]
+    fn save_data_load(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::save_data_load(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SaveDataLoadResult()` overload"]
+    fn save_data_load_result(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::save_data_load_result(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SaveDataRelease()` overload"]
+    fn save_data_release(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::save_data_release(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SaveDataNormalize()` overload"]
+    fn save_data_normalize(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::save_data_normalize(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_Version()` overload"]
+    fn get_version(self) -> i32 {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_version(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    fn on_serialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    fn on_deserialize(self, stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>, version: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::on_deserialize(
+                __receiver,
+                ::core::convert::Into::into(stream),
+                ::core::convert::Into::into(version),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`OnShutdown()` overload"]
+    fn on_shutdown(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCurrentKeyHelpName()` overload"]
+    fn get_current_key_help_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_current_key_help_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Persistent()` overload"]
+    fn persistent(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::persistent(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetPlayerAnim(::unity2::Il2CppString)` overload"]
+    fn set_player_anim(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::set_player_anim(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartFastTravel()` overload"]
+    fn start_fast_travel(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_fast_travel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CallFastTravel()` overload"]
+    fn call_fast_travel(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::call_fast_travel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EndFastTravel()` overload"]
+    fn end_fast_travel(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::end_fast_travel(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RunFastTravel(::unity2::Il2CppString)` overload"]
+    fn run_fast_travel(self, id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::run_fast_travel(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartAccessAnimal(crate::app::hubaccess::HubAccess)` overload"]
+    fn start_access_animal(self, access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_access_animal(__receiver, ::core::convert::Into::into(access), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StartTalk(crate::app::hubaccess::HubAccess)` overload"]
+    fn start_talk(self, access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::start_talk(__receiver, ::core::convert::Into::into(access), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Talk()` overload"]
+    fn talk(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::talk(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BeginSilentEnv()` overload"]
+    fn begin_silent_env(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::begin_silent_env(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EndSilentEnv()` overload"]
+    fn end_silent_env(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::end_silent_env(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GameCleaerEvent()` overload"]
+    fn game_cleaer_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::game_cleaer_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GiftGet(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn gift_get(
+        self,
+        reward_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        message_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::gift_get(
+                __receiver,
+                ::core::convert::Into::into(reward_id),
+                ::core::convert::Into::into(message_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`TryGiftEvent(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn try_gift_event(
+        self,
+        flag_name: impl ::core::convert::Into<::unity2::Il2CppString>,
+        reward_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        message_id: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::try_gift_event(
+                __receiver,
+                ::core::convert::Into::into(flag_name),
+                ::core::convert::Into::into(reward_id),
+                ::core::convert::Into::into(message_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`DlcGift0Event()` overload"]
+    fn dlc_gift0_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::dlc_gift0_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Patch0GiftEvent()` overload"]
+    fn patch0_gift_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::patch0_gift_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`DlcGift1Event()` overload"]
+    fn dlc_gift1_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::dlc_gift1_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Patch3GiftEvent()` overload"]
+    fn patch3_gift_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::patch3_gift_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EvilCleaerEvent()` overload"]
+    fn evil_cleaer_event(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::evil_cleaer_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ContentsEvent()` overload"]
+    fn contents_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::contents_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`RelayTicketEvent()` overload"]
+    fn relay_ticket_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::relay_ticket_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SkillOpenEvent()` overload"]
+    fn skill_open_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::skill_open_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnterEvent()` overload"]
+    fn enter_event(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::enter_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PostEnterEvent()` overload"]
+    fn post_enter_event(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::post_enter_event(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PlayBgm(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
+    fn play_bgm(self, fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::play_bgm(__receiver, ::core::convert::Into::into(fade_speed_type), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PauseBgm(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
+    fn pause_bgm(self, fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::pause_bgm(__receiver, ::core::convert::Into::into(fade_speed_type), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetBgmEventName()` overload"]
+    fn get_bgm_event_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_bgm_event_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TryGetCurrentBgmHandle()` overload"]
+    fn try_get_current_bgm_handle(self) -> crate::app::gamesound::GameSound_Handle {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::try_get_current_bgm_handle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PlayBgm_Kizuna(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
+    fn play_bgm_kizuna(self, fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::play_bgm_kizuna(__receiver, ::core::convert::Into::into(fade_speed_type), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PlayBgm_Hub(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
+    fn play_bgm_hub(self, fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::play_bgm_hub(__receiver, ::core::convert::Into::into(fade_speed_type), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StopBgm(bool)` overload"]
+    fn stop_bgm(self, play_movie: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::stop_bgm(__receiver, ::core::convert::Into::into(play_movie), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StopBgm_Kizuna()` overload"]
+    fn stop_bgm_kizuna(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::stop_bgm_kizuna(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StopBgm_Hub()` overload"]
+    fn stop_bgm_hub(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::stop_bgm_hub(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PlayerBeginAccess()` overload"]
+    fn player_begin_access(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::player_begin_access(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`PlayerEndAccess()` overload"]
+    fn player_end_access(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::player_end_access(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetCharaLocatorsRoot()` overload"]
+    fn get_chara_locators_root(self) -> crate::unity_engine::gameobject::GameObject {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::get_chara_locators_root(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`InitSceneInfo()` overload"]
+    fn init_scene_info(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::init_scene_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Report()` overload"]
+    fn report(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::report(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence> IHubSequenceMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(HubSequence), ::core::stringify!(new),));
+        <Self as IHubSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_LastChapterRankingMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: HubSequence_LastChapterRankingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence_LastChapterRankingMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubSequence_LastChapterRankingMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_LastChapterRankingMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterRankingMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubSequence_LastChapterRankingMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterRankingMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_LastChapterRankingMenuItemMethods: IHubSequence_LastChapterRankingMenuItem {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterRankingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterRankingMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterRankingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterRankingMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterRankingMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterRankingMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_LastChapterRankingMenuItem> IHubSequence_LastChapterRankingMenuItemMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterRankingMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterRankingMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterRankingMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(
+        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(
+            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods:
+    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem
+{
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem>
+    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods for __T
+{
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: HubSequence_ConfirmEndRollDialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_ConfirmEndRollDialogItemNo, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: HubSequence_ConfirmEndRollDialogItemNo,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(HubSequence_ConfirmEndRollDialogItemNo, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: HubSequence_ConfirmEndRollDialogItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_ConfirmEndRollDialogItemNo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_ConfirmEndRollDialogItemNoMethods: IHubSequence_ConfirmEndRollDialogItemNo {
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_ConfirmEndRollDialogItemNo> IHubSequence_ConfirmEndRollDialogItemNoMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_ConfirmEndRollDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_ConfirmEndRollDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_ConfirmEndRollDialogItemNoMethods>::ctor(this);
         this
     }
 }
@@ -2215,9 +9010,7 @@ mod __HubSequence_LastChapterGoToMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::class(),
@@ -2230,41 +9023,27 @@ mod __HubSequence_LastChapterGoToMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterGoToMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterGoToMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: HubSequence_LastChapterGoToMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence_LastChapterGoToMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::class(),
@@ -2277,41 +9056,30 @@ mod __HubSequence_LastChapterGoToMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: HubSequence_LastChapterGoToMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterGoToMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(HubSequence_LastChapterGoToMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::class(),
@@ -2324,86 +9092,57 @@ mod __HubSequence_LastChapterGoToMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterGoToMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterGoToMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterGoToMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HubSequence_LastChapterGoToMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterGoToMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterGoToMenuItemMethods:
-    IHubSequence_LastChapterGoToMenuItem
-{
+pub trait IHubSequence_LastChapterGoToMenuItemMethods: IHubSequence_LastChapterGoToMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <HubSequence_LastChapterGoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterGoToMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterGoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterGoToMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver =
-                <HubSequence_LastChapterGoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterGoToMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterGoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterGoToMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <HubSequence_LastChapterGoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterGoToMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterGoToMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterGoToMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterGoToMenuItem> IHubSequence_LastChapterGoToMenuItemMethods
-    for __T
-{
-}
+impl<__T: IHubSequence_LastChapterGoToMenuItem> IHubSequence_LastChapterGoToMenuItemMethods for __T {}
 
 #[cfg(feature = "app-hubsequence")]
 impl HubSequence_LastChapterGoToMenuItem {
@@ -2424,15 +9163,265 @@ impl HubSequence_LastChapterGoToMenuItem {
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HubSequence_LastChapterMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_current_menu_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
+                "get_CurrentMenuSelect",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
+                        "get_CurrentMenuSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_current_menu_select(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenuselect::BasicMenuSelect {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::basicmenuselect::BasicMenuSelect =
+            ::core::mem::transmute(__lookup_get_current_menu_select::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: HubSequence_LastChapterMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            HubSequence_LastChapterMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::procinst::ProcInst,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: HubSequence_LastChapterMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(HubSequence_LastChapterMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterMenu as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu {
+    #[doc = "`get_CurrentMenuSelect()` overload"]
+    pub fn get_current_menu_select() -> crate::app::basicmenuselect::BasicMenuSelect {
+        unsafe { __HubSequence_LastChapterMenu_unity2_raw::get_current_menu_select(::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __HubSequence_LastChapterMenu_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __HubSequence_LastChapterMenu_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+pub trait IHubSequence_LastChapterMenuMethods: IHubSequence_LastChapterMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <HubSequence_LastChapterMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(super_),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <HubSequence_LastChapterMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl<__T: IHubSequence_LastChapterMenu> IHubSequence_LastChapterMenuMethods for __T {}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        super_: crate::app::procinst::ProcInst,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenuMethods>::ctor(this, menu_item_list, super_);
+        this
+    }
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __HubSequence_LastChapterSequence_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2445,39 +9434,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2490,39 +9467,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "Exit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "Exit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exit(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn exit(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2535,39 +9500,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_menu(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_menu(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_call_last_chapter_demo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2580,39 +9533,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "CallLastChapterDemo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "CallLastChapterDemo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn call_last_chapter_demo(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn call_last_chapter_demo(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_call_last_chapter_demo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_call_last_chapter_demo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_confirm_dialog {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2625,39 +9566,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateConfirmDialog",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateConfirmDialog",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_confirm_dialog(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_confirm_dialog(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_confirm_dialog::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_confirm_dialog::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_call_last_chapter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2670,41 +9599,28 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "CallLastChapter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "CallLastChapter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn call_last_chapter(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn call_last_chapter(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_call_last_chapter::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_call_last_chapter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -2716,39 +9632,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2761,39 +9665,27 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: HubSequence_LastChapterSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(HubSequence_LastChapterSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::class(),
@@ -2806,26 +9698,19 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -2834,13 +9719,9 @@ mod __HubSequence_LastChapterSequence_unity2_raw {
 impl HubSequence_LastChapterSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __HubSequence_LastChapterSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __HubSequence_LastChapterSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __HubSequence_LastChapterSequence_unity2_raw::cctor(::core::option::Option::None) }
@@ -2853,91 +9734,56 @@ pub trait IHubSequence_LastChapterSequenceMethods: IHubSequence_LastChapterSeque
     fn init(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::init(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Exit()` overload"]
     fn exit(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::exit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::exit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateMenu()` overload"]
     fn create_menu(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::create_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::create_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CallLastChapterDemo()` overload"]
     fn call_last_chapter_demo(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::call_last_chapter_demo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::call_last_chapter_demo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateConfirmDialog()` overload"]
     fn create_confirm_dialog(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::create_confirm_dialog(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::create_confirm_dialog(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CallLastChapter()` overload"]
     fn call_last_chapter(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::call_last_chapter(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::call_last_chapter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __HubSequence_LastChapterSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <HubSequence_LastChapterSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __HubSequence_LastChapterSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -2964,112 +9810,16 @@ impl HubSequence_LastChapterSequence {
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw {
+mod __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterMenu_GoToMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_GoToMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: HubSequence_LastChapterMenu_GoToMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_GoToMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::class(),
+                <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -3079,109 +9829,30 @@ mod __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_LastChapterMenu_GoToMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterMenu_GoToMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_GoToMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterMenu_GoToMenuItemMethods:
-    IHubSequence_LastChapterMenu_GoToMenuItem
-{
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_GoToMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_GoToMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_GoToMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_GoToMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterMenu_GoToMenuItem>
-    IHubSequence_LastChapterMenu_GoToMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_GoToMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterMenu_GoToMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterMenu_GoToMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw {
-    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::class(),
+                <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -3191,44 +9862,35 @@ mod __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
-        this: HubSequence_ConfirmEndRollDialogItemNo,
+        this: HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            HubSequence_ConfirmEndRollDialogItemNo,
+            HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::class(),
+                <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::ClassIdentity>::class(),
                 "BCall",
                 0,
                 param_types,
@@ -3238,10037 +9900,80 @@ mod __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn b_call(
-        this: HubSequence_ConfirmEndRollDialogItemNo,
+        this: HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            HubSequence_ConfirmEndRollDialogItemNo,
+            HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence_ConfirmEndRollDialogItemNo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_ConfirmEndRollDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_ConfirmEndRollDialogItemNo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_ConfirmEndRollDialogItemNoMethods:
-    IHubSequence_ConfirmEndRollDialogItemNo
+pub trait IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods:
+    IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes
 {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < HubSequence_ConfirmEndRollDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < HubSequence_ConfirmEndRollDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_ConfirmEndRollDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_ConfirmEndRollDialogItemNo_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_ConfirmEndRollDialogItemNo> IHubSequence_ConfirmEndRollDialogItemNoMethods
+impl<__T: IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes> IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods
     for __T
 {
 }
 
 #[cfg(feature = "app-hubsequence")]
-impl HubSequence_ConfirmEndRollDialogItemNo {
+impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_ConfirmEndRollDialogItemNo),
+                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubSequence_ConfirmEndRollDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , "GetName" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods:
-    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem
-{
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem>
-    IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods > :: ctor (this ,) ;
-        this
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __HubSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_loading_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_LoadingMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_LoadingMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_loading_mode(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::loadingmanager::LoadingManager_Modes {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::loadingmanager::LoadingManager_Modes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_loading_mode::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_Camera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Camera",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_camera(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubcamera::HubCamera {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubcamera::HubCamera = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_Player",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Player",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_player(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubplayercontroller::HubPlayerController = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_player::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_Root",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Root",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_root(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_root::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_locator_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_LocatorGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_LocatorGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_locator_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hublocatorgroup::HubLocatorGroup {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hublocatorgroup::HubLocatorGroup = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_locator_group::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_main_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_MainCamera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_MainCamera",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_main_camera(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_main_camera::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_main_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_MainCamera",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_MainCamera",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_main_camera(
-        this: HubSequence,
-        value: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_main_camera::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_mini_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_MiniMap",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_MiniMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_mini_map(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubminimap::HubMiniMap {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubminimap::HubMiniMap = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mini_map::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_mini_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubminimap::HubMiniMap as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_MiniMap",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_MiniMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_mini_map(
-        this: HubSequence,
-        value: crate::app::hubminimap::HubMiniMap,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::hubminimap::HubMiniMap,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mini_map::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_env_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_EnvRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_EnvRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_env_root(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_env_root::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_now_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_NowArea",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_NowArea",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_now_area(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubsequence::HubSequence_AreaString {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubsequence::HubSequence_AreaString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_now_area::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_now_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubsequence::HubSequence_AreaString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_NowArea",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_NowArea",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_now_area(
-        this: HubSequence,
-        value: crate::app::hubsequence::HubSequence_AreaString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::hubsequence::HubSequence_AreaString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_now_area::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_fast_travel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_FastTravel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_FastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_fast_travel(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubfasttravel::HubFastTravel {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubfasttravel::HubFastTravel = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fast_travel::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_fast_travel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubfasttravel::HubFastTravel as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_FastTravel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_FastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_fast_travel(
-        this: HubSequence,
-        value: crate::app::hubfasttravel::HubFastTravel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::hubfasttravel::HubFastTravel,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fast_travel::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_force_nonstop_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_ForceNonstopBGM",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_ForceNonstopBGM",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_force_nonstop_bgm(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_force_nonstop_bgm::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_force_nonstop_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_ForceNonstopBGM",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_ForceNonstopBGM",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_force_nonstop_bgm(
-        this: HubSequence,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_force_nonstop_bgm::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_access_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_AccessData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_AccessData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_access_data(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::hubaccessmanager::HubAccessManager,
-    > {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::app::hubaccessmanager::HubAccessManager,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_access_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_access_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::hubaccessmanager::HubAccessManager,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_AccessData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_AccessData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_access_data(
-        this: HubSequence,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::app::hubaccessmanager::HubAccessManager,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubaccessmanager::HubAccessManager,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_access_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_access_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_CurrentAccessData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CurrentAccessData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current_access_data(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubaccessmanager::HubAccessManager {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubaccessmanager::HubAccessManager = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_current_access_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_solanel_access_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_SolanelAccessData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_SolanelAccessData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_solanel_access_data(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubaccessmanager::HubAccessManager {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubaccessmanager::HubAccessManager = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_solanel_access_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_enter_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_IsEnterEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEnterEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_enter_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_enter_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_enter_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "set_IsEnterEvent",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_IsEnterEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_is_enter_event(
-        this: HubSequence,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_enter_event::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_main {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_IsMain",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_IsMain",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_main(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_main::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Init",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_resource_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "IsResourceLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsResourceLoading",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_resource_loading(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_resource_loading::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_after_load_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "InitAfterLoadScene",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "InitAfterLoadScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init_after_load_scene(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_after_load_scene::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Unload",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_terminate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Terminate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Terminate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn terminate(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_terminate::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_hub_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "LoadHubScene",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadHubScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_hub_scene(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_hub_scene::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_dispos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::hubutil::HubUtil_TimezoneType as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SetupDispos",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetupDispos",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup_dispos(
-        this: HubSequence,
-        scene_name: ::unity2::Il2CppString,
-        timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            crate::app::hubutil::HubUtil_TimezoneType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_dispos::get_offset() as isize),
-        );
-        inner(this, scene_name, timezone_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset_dispos {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ResetDispos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ResetDispos",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset_dispos(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_dispos::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_dispos_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SetupDispos",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetupDispos",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup_dispos_2(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_dispos_2::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_env {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SetupEnv",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetupEnv",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup_env(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_env::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_player {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SetupPlayer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetupPlayer",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup_player(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_player::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_opening_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OpeningEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpeningEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn opening_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_opening_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_opening_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "MapOpeningEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "MapOpeningEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn map_opening_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_map_opening_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PrepareEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PrepareEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn prepare_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_kizuna_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "KizunaExit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "KizunaExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn kizuna_exit(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_kizuna_exit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_kizuna_exit_tutorial {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "KizunaExitTutorial",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "KizunaExitTutorial",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn kizuna_exit_tutorial(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_kizuna_exit_tutorial::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_map_ending_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "MapEndingEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "MapEndingEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn map_ending_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_map_ending_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ending_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EndingEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndingEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ending_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ending_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_access {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SetupAccess",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetupAccess",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup_access(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_access::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_a_plus_gift {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "LoadAPlusGift",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadAPlusGift",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_a_plus_gift(
-        this: HubSequence,
-        aplus_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_a_plus_gift::get_offset() as isize),
-        );
-        inner(this, aplus_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_after_load_chara {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "InitAfterLoadChara",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "InitAfterLoadChara",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init_after_load_chara(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_after_load_chara::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_arrange_player_start_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ArrangePlayerStartPosition",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ArrangePlayerStartPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn arrange_player_start_position(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_arrange_player_start_position::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_minimap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "LoadMinimap",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadMinimap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_minimap(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_minimap::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cleanup_unit_impl {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CleanupUnitImpl",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CleanupUnitImpl",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cleanup_unit_impl(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_cleanup_unit_impl::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_shop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CallShop",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CallShop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn call_shop(
-        this: HubSequence,
-        shop_type: ::unity2::Il2CppString,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            crate::app::hubaccess::HubAccess,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_call_shop::get_offset() as isize),
-        );
-        inner(this, shop_type, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cleanup_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CleanupUnit",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CleanupUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cleanup_unit(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cleanup_unit::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_dragon_ride_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateDragonRideSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDragonRideSequence",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_dragon_ride_sequence(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_dragon_ride_sequence::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_fishing_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateFishingSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateFishingSequence",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_fishing_sequence(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_fishing_sequence::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_muscle_exercise_sequence {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateMuscleExerciseSequence",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateMuscleExerciseSequence",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_muscle_exercise_sequence(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_muscle_exercise_sequence::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_fortune_telling {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateFortuneTelling",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateFortuneTelling",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_fortune_telling(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_fortune_telling::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entry_signboard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EntrySignboard",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EntrySignboard",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entry_signboard(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_signboard::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_signboard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateSignboard",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSignboard",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_signboard(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_signboard::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_signboard {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitSignboard",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitSignboard",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_signboard(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_signboard::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_rest_place {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateRestPlace",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateRestPlace",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_rest_place(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_rest_place::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_chest {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateChest",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateChest",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_chest(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_chest::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_confirm_end_roll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ConfirmEndRoll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ConfirmEndRoll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn confirm_end_roll(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_confirm_end_roll::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enter_end_roll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EnterEndRoll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EnterEndRoll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enter_end_roll(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enter_end_roll::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_end_roll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateEndRoll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateEndRoll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_end_roll(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_end_roll::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_end_roll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitEndRoll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitEndRoll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_end_roll(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_end_roll::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_flea_market_unmanned {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CallFleaMarketUnmanned",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CallFleaMarketUnmanned",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn call_flea_market_unmanned(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_call_flea_market_unmanned::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_flea_market {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateFleaMarket",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateFleaMarket",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_flea_market(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_flea_market::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_jukebox {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateJukebox",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateJukebox",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_jukebox(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_jukebox::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_check_animal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OpenCheckAnimal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenCheckAnimal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_check_animal(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_check_animal::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_animal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateAnimal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateAnimal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_animal(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_animal::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_photo_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreatePhotoMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreatePhotoMenu",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_photo_menu(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_photo_menu::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_well_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateWellMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateWellMenu",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_well_menu(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_well_menu::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_pool {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreatePool",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreatePool",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_pool(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_pool::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_fruit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateFruit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateFruit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_fruit(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_fruit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_horse {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateHorse",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateHorse",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_horse(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_horse::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entry_amiibo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EntryAmiibo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EntryAmiibo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entry_amiibo(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_amiibo::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_amiibo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateAmiibo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateAmiibo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_amiibo(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_amiibo::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_amiibo {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitAmiibo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitAmiibo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_amiibo(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_amiibo::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_check_cape_tower {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OpenCheckCapeTower",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenCheckCapeTower",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_check_cape_tower(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_check_cape_tower::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open_cape_door {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OpenCapeDoor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenCapeDoor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open_cape_door(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_cape_door::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_cape_tower {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateCapeTower",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateCapeTower",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_cape_tower(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_cape_tower::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close_cape_tower {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CloseCapeTower",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CloseCapeTower",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close_cape_tower(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_cape_tower::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_final_cape_tower {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "FinalCapeTower",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "FinalCapeTower",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn final_cape_tower(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_final_cape_tower::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CallScript",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CallScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn call_script(
-        this: HubSequence,
-        confirm_mid: ::unity2::Il2CppString,
-        script_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_call_script::get_offset() as isize),
-        );
-        inner(this, confirm_mid, script_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entry_call_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EntryCallScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EntryCallScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entry_call_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_call_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_main_call_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "MainCallScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "MainCallScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn main_call_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_main_call_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_call_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitCallScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitCallScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_call_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_call_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entry_kizuna_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EntryKizunaExit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EntryKizunaExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entry_kizuna_exit(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_kizuna_exit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_main_kizuna_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "MainKizunaExit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "MainKizunaExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn main_kizuna_exit(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_main_kizuna_exit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_kizuna_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitKizunaExit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitKizunaExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_kizuna_exit(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_kizuna_exit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sun_position {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GetSunPosition",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetSunPosition",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sun_position(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sun_position::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_dragon_ride_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EnableDragonRideGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EnableDragonRideGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enable_dragon_ride_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_dragon_ride_group::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_dragon_ride_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "DisableDragonRideGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "DisableDragonRideGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn disable_dragon_ride_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_dragon_ride_group::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_fishing_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EnableFishingGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EnableFishingGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enable_fishing_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_fishing_group::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_fishing_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "DisableFishingGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "DisableFishingGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn disable_fishing_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_fishing_group::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "DisableGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "DisableGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn disable_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_group::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_group {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EnableGroup",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EnableGroup",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enable_group(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_group::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_disable_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "DisableRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "DisableRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn disable_root(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_root::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EnableRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EnableRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enable_root(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_root::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "LoadScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "UnloadScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "UnloadScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entry_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EntryScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EntryScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entry_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_script {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitScript",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitScript",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_script(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_script::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartBind",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_bind(
-        this: HubSequence,
-        target_0: crate::app::procinst::ProcInst,
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::procinst::ProcInst,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_bind::get_offset() as isize),
-        );
-        inner(this, target_0, event_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartEvent",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_event(
-        this: HubSequence,
-        script_name: ::unity2::Il2CppString,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            crate::app::hubaccess::HubAccess,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_event::get_offset() as isize),
-        );
-        inner(this, script_name, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_access_mascot {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "AccessMascot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "AccessMascot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn access_mascot(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_access_mascot::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entry_arena {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EntryArena",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EntryArena",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entry_arena(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_entry_arena::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_arena {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartArena",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartArena",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_arena(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_arena::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_arena {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ExitArena",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitArena",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_arena(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_arena::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_pedestal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartPedestal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartPedestal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_pedestal(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_pedestal::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_access_pedestal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "AccessPedestal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "AccessPedestal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn access_pedestal(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_access_pedestal::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_pedestal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EndPedestal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndPedestal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_pedestal(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_pedestal::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_map {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "NextMap",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "NextMap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn next_map(
-        scene_name: ::unity2::Il2CppString,
-        start_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_next_map::get_offset() as isize),
-        );
-        inner(scene_name, start_name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_chapter {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "NextChapter",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "NextChapter",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn next_chapter(
-        overwrite_chapter: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_next_chapter::get_offset() as isize),
-            );
-        inner(overwrite_chapter, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next_gmap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "NextGmap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "NextGmap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn next_gmap(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_next_gmap::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "IsExit",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsExit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exit(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exit::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Exit",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Exit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exit::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_exit_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::mainsequence::MainSequence_Label as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Exit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Exit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn exit_2(
-        label: crate::app::mainsequence::MainSequence_Label,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::mainsequence::MainSequence_Label,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exit_2::get_offset() as isize),
-        );
-        inner(label, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_can_move_gmap {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CanMoveGmap",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CanMoveGmap",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn can_move_gmap(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_move_gmap::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_player_controller {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GetPlayerController",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetPlayerController",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_player_controller(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubplayercontroller::HubPlayerController = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_player_controller::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_data_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SaveDataLoad",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SaveDataLoad",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn save_data_load(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_data_load::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_data_load_result {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SaveDataLoadResult",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SaveDataLoadResult",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn save_data_load_result(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_data_load_result::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_data_release {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SaveDataRelease",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SaveDataRelease",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn save_data_release(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_data_release::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_save_data_normalize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SaveDataNormalize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SaveDataNormalize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn save_data_normalize(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_save_data_normalize::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_version {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "get_Version",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Version",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_version(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_version::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_serialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OnSerialize",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnSerialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_serialize(
-        this: HubSequence,
-        stream: crate::app::stream_2::Stream_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::stream_2::Stream_2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_serialize::get_offset() as isize),
-        );
-        inner(this, stream, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_deserialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::stream_2::Stream_2 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OnDeserialize",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnDeserialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_deserialize(
-        this: HubSequence,
-        stream: crate::app::stream_2::Stream_2,
-        version: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::stream_2::Stream_2,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deserialize::get_offset() as isize),
-        );
-        inner(this, stream, version, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_shutdown {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "OnShutdown",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnShutdown",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_shutdown(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_shutdown::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn tick(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_current_key_help_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GetCurrentKeyHelpName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetCurrentKeyHelpName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_current_key_help_name(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_current_key_help_name::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_persistent {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Persistent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Persistent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn persistent(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_persistent::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_player_anim {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SetPlayerAnim",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetPlayerAnim",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_player_anim(
-        this: HubSequence,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_player_anim::get_offset() as isize),
-        );
-        inner(this, name, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_fast_travel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartFastTravel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartFastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_fast_travel(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_fast_travel::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_call_fast_travel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CallFastTravel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CallFastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn call_fast_travel(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_call_fast_travel::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_fast_travel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EndFastTravel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndFastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_fast_travel(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_fast_travel::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_run_fast_travel {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "RunFastTravel",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "RunFastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn run_fast_travel(
-        this: HubSequence,
-        id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_run_fast_travel::get_offset() as isize),
-        );
-        inner(this, id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_access_animal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartAccessAnimal",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartAccessAnimal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_access_animal(
-        this: HubSequence,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::hubaccess::HubAccess,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_access_animal::get_offset() as isize),
-        );
-        inner(this, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubaccess::HubAccess as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StartTalk",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartTalk",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start_talk(
-        this: HubSequence,
-        access: crate::app::hubaccess::HubAccess,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::hubaccess::HubAccess,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_talk::get_offset() as isize),
-        );
-        inner(this, access, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_talk {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Talk",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Talk",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn talk(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_talk::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_begin_silent_env {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "BeginSilentEnv",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "BeginSilentEnv",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn begin_silent_env(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_begin_silent_env::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_end_silent_env {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EndSilentEnv",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EndSilentEnv",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn end_silent_env(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_end_silent_env::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_game_cleaer_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GameCleaerEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GameCleaerEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn game_cleaer_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_game_cleaer_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_gift_get {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GiftGet",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GiftGet",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn gift_get(
-        this: HubSequence,
-        reward_id: ::unity2::Il2CppString,
-        message_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_gift_get::get_offset() as isize),
-        );
-        inner(this, reward_id, message_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_gift_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "TryGiftEvent",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "TryGiftEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_gift_event(
-        this: HubSequence,
-        flag_name: ::unity2::Il2CppString,
-        reward_id: ::unity2::Il2CppString,
-        message_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_gift_event::get_offset() as isize),
-        );
-        inner(this, flag_name, reward_id, message_id, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dlc_gift0_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "DlcGift0Event",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "DlcGift0Event",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dlc_gift0_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dlc_gift0_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_patch0_gift_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Patch0GiftEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Patch0GiftEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn patch0_gift_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_patch0_gift_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dlc_gift1_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "DlcGift1Event",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "DlcGift1Event",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dlc_gift1_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dlc_gift1_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_patch3_gift_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Patch3GiftEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Patch3GiftEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn patch3_gift_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_patch3_gift_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_evil_cleaer_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EvilCleaerEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EvilCleaerEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn evil_cleaer_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_evil_cleaer_event::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_contents_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "ContentsEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "ContentsEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn contents_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_contents_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_relay_ticket_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "RelayTicketEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "RelayTicketEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn relay_ticket_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_relay_ticket_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_skill_open_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "SkillOpenEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "SkillOpenEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn skill_open_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_skill_open_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enter_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "EnterEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "EnterEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enter_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enter_event::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_post_enter_event {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PostEnterEvent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PostEnterEvent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn post_enter_event(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post_enter_event::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PlayBgm",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PlayBgm",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_bgm(
-        this: HubSequence,
-        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::gamesound::GameSound_FadeSpeedType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_bgm::get_offset() as isize),
-        );
-        inner(this, fade_speed_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pause_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PauseBgm",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PauseBgm",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn pause_bgm(
-        this: HubSequence,
-        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::gamesound::GameSound_FadeSpeedType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pause_bgm::get_offset() as isize),
-        );
-        inner(this, fade_speed_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_bgm_event_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GetBgmEventName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetBgmEventName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_bgm_event_name(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_bgm_event_name::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_try_get_current_bgm_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "TryGetCurrentBgmHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "TryGetCurrentBgmHandle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_get_current_bgm_handle(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::gamesound::GameSound_Handle {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gamesound::GameSound_Handle = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_get_current_bgm_handle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_bgm_kizuna {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PlayBgm_Kizuna",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PlayBgm_Kizuna",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_bgm_kizuna(
-        this: HubSequence,
-        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::gamesound::GameSound_FadeSpeedType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_bgm_kizuna::get_offset() as isize),
-        );
-        inner(this, fade_speed_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play_bgm_hub {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamesound::GameSound_FadeSpeedType as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PlayBgm_Hub",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PlayBgm_Hub",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play_bgm_hub(
-        this: HubSequence,
-        fade_speed_type: crate::app::gamesound::GameSound_FadeSpeedType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            HubSequence,
-            crate::app::gamesound::GameSound_FadeSpeedType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_bgm_hub::get_offset() as isize),
-        );
-        inner(this, fade_speed_type, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_bgm {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StopBgm",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StopBgm",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn stop_bgm(
-        this: HubSequence,
-        play_movie: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_bgm::get_offset() as isize),
-            );
-        inner(this, play_movie, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_bgm_kizuna {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StopBgm_Kizuna",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StopBgm_Kizuna",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn stop_bgm_kizuna(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_bgm_kizuna::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop_bgm_hub {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "StopBgm_Hub",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "StopBgm_Hub",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn stop_bgm_hub(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop_bgm_hub::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_player_begin_access {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PlayerBeginAccess",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PlayerBeginAccess",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn player_begin_access(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_player_begin_access::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_player_end_access {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "PlayerEndAccess",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "PlayerEndAccess",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn player_end_access(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_player_end_access::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_exist_instance {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "IsExistInstance",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsExistInstance",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_exist_instance(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_exist_instance::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_chara_locators_root {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "GetCharaLocatorsRoot",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetCharaLocatorsRoot",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_chara_locators_root(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            HubSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_chara_locators_root::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_init_scene_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "InitSceneInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "InitSceneInfo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn init_scene_info(
-        this: HubSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_scene_info::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_report {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "Report",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "Report",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn report(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_report::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_solanel_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateSolanelBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSolanelBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_solanel_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_solanel_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_kizuna_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateKizunaBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateKizunaBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_kizuna_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_kizuna_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HubSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: HubSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(HubSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence {
-    #[doc = "`CleanupUnit()` overload"]
-    pub fn cleanup_unit() -> () {
-        unsafe { __HubSequence_unity2_raw::cleanup_unit(::core::option::Option::None) }
-    }
-    #[doc = "`GetSunPosition()` overload"]
-    pub fn get_sun_position() -> crate::unity_engine::vector3::Vector3 {
-        unsafe { __HubSequence_unity2_raw::get_sun_position(::core::option::Option::None) }
-    }
-    #[doc = "`NextMap(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    pub fn next_map(
-        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        start_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __HubSequence_unity2_raw::next_map(
-                ::core::convert::Into::into(scene_name),
-                ::core::convert::Into::into(start_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`NextChapter(::unity2::Il2CppString)` overload"]
-    pub fn next_chapter(
-        overwrite_chapter: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __HubSequence_unity2_raw::next_chapter(
-                ::core::convert::Into::into(overwrite_chapter),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`NextGmap()` overload"]
-    pub fn next_gmap() -> () {
-        unsafe { __HubSequence_unity2_raw::next_gmap(::core::option::Option::None) }
-    }
-    #[doc = "`IsExit()` overload"]
-    pub fn is_exit() -> bool {
-        unsafe { __HubSequence_unity2_raw::is_exit(::core::option::Option::None) }
-    }
-    #[doc = "`Exit()` overload"]
-    pub fn exit() -> () {
-        unsafe { __HubSequence_unity2_raw::exit(::core::option::Option::None) }
-    }
-    #[doc = "`Exit(crate::app::mainsequence::MainSequence_Label)` overload"]
-    pub fn exit_2(
-        label: impl ::core::convert::Into<crate::app::mainsequence::MainSequence_Label>,
-    ) -> () {
-        unsafe {
-            __HubSequence_unity2_raw::exit_2(
-                ::core::convert::Into::into(label),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CanMoveGmap()` overload"]
-    pub fn can_move_gmap() -> bool {
-        unsafe { __HubSequence_unity2_raw::can_move_gmap(::core::option::Option::None) }
-    }
-    #[doc = "`GetPlayerController()` overload"]
-    pub fn get_player_controller() -> crate::app::hubplayercontroller::HubPlayerController {
-        unsafe { __HubSequence_unity2_raw::get_player_controller(::core::option::Option::None) }
-    }
-    #[doc = "`IsExistInstance()` overload"]
-    pub fn is_exist_instance() -> bool {
-        unsafe { __HubSequence_unity2_raw::is_exist_instance(::core::option::Option::None) }
-    }
-    #[doc = "`CreateSolanelBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_solanel_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __HubSequence_unity2_raw::create_solanel_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateKizunaBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_kizuna_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __HubSequence_unity2_raw::create_kizuna_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    pub fn create_bind<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <HubSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <HubSequence as ::unity2::ClassIdentity>::NAME,
-                "CreateBind",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-pub trait IHubSequenceMethods: IHubSequence {
-    #[doc = "`get_LoadingMode()` overload"]
-    fn get_loading_mode(self) -> crate::app::loadingmanager::LoadingManager_Modes {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_loading_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Camera()` overload"]
-    fn get_camera(self) -> crate::app::hubcamera::HubCamera {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Player()` overload"]
-    fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_player(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Root()` overload"]
-    fn get_root(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_LocatorGroup()` overload"]
-    fn get_locator_group(self) -> crate::app::hublocatorgroup::HubLocatorGroup {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_locator_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_MainCamera()` overload"]
-    fn get_main_camera(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_main_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MainCamera(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_main_camera(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_main_camera(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_MiniMap()` overload"]
-    fn get_mini_map(self) -> crate::app::hubminimap::HubMiniMap {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_mini_map(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_MiniMap(crate::app::hubminimap::HubMiniMap)` overload"]
-    fn set_mini_map(
-        self,
-        value: impl ::core::convert::Into<crate::app::hubminimap::HubMiniMap>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_mini_map(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_EnvRoot()` overload"]
-    fn get_env_root(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_env_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_NowArea()` overload"]
-    fn get_now_area(self) -> crate::app::hubsequence::HubSequence_AreaString {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_now_area(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_NowArea(crate::app::hubsequence::HubSequence_AreaString)` overload"]
-    fn set_now_area(
-        self,
-        value: impl ::core::convert::Into<crate::app::hubsequence::HubSequence_AreaString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_now_area(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_FastTravel()` overload"]
-    fn get_fast_travel(self) -> crate::app::hubfasttravel::HubFastTravel {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_fast_travel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_FastTravel(crate::app::hubfasttravel::HubFastTravel)` overload"]
-    fn set_fast_travel(
-        self,
-        value: impl ::core::convert::Into<crate::app::hubfasttravel::HubFastTravel>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_fast_travel(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_ForceNonstopBGM()` overload"]
-    fn get_force_nonstop_bgm(self) -> bool {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_force_nonstop_bgm(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_ForceNonstopBGM(bool)` overload"]
-    fn set_force_nonstop_bgm(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_force_nonstop_bgm(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_AccessData()` overload"]
-    fn get_access_data(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::hubaccessmanager::HubAccessManager,
-    > {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_access_data(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_AccessData(crate::system::collections::generic::list_1::List_1<crate::app::hubaccessmanager::HubAccessManager>)` overload"]
-    fn set_access_data(
-        self,
-        value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::hubaccessmanager::HubAccessManager,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_access_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_CurrentAccessData()` overload"]
-    fn get_current_access_data(self) -> crate::app::hubaccessmanager::HubAccessManager {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_current_access_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_SolanelAccessData()` overload"]
-    fn get_solanel_access_data(self) -> crate::app::hubaccessmanager::HubAccessManager {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_solanel_access_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsEnterEvent()` overload"]
-    fn get_is_enter_event(self) -> bool {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_is_enter_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_IsEnterEvent(bool)` overload"]
-    fn set_is_enter_event(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_is_enter_event(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsMain()` overload"]
-    fn get_is_main(self) -> bool {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_is_main(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Init()` overload"]
-    fn init(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsResourceLoading()` overload"]
-    fn is_resource_loading(self) -> bool {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::is_resource_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`InitAfterLoadScene()` overload"]
-    fn init_after_load_scene(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::init_after_load_scene(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Terminate()` overload"]
-    fn terminate(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::terminate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadHubScene()` overload"]
-    fn load_hub_scene(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::load_hub_scene(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupDispos(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"]
-    fn setup_dispos(
-        self,
-        scene_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        timezone_type: impl ::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::setup_dispos(
-                __receiver,
-                ::core::convert::Into::into(scene_name),
-                ::core::convert::Into::into(timezone_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ResetDispos()` overload"]
-    fn reset_dispos(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::reset_dispos(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupDispos()` overload"]
-    fn setup_dispos_2(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::setup_dispos_2(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupEnv()` overload"]
-    fn setup_env(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::setup_env(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupPlayer()` overload"]
-    fn setup_player(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::setup_player(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpeningEvent()` overload"]
-    fn opening_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::opening_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapOpeningEvent()` overload"]
-    fn map_opening_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::map_opening_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PrepareEvent()` overload"]
-    fn prepare_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::prepare_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KizunaExit()` overload"]
-    fn kizuna_exit(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::kizuna_exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`KizunaExitTutorial()` overload"]
-    fn kizuna_exit_tutorial(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::kizuna_exit_tutorial(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MapEndingEvent()` overload"]
-    fn map_ending_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::map_ending_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndingEvent()` overload"]
-    fn ending_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::ending_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetupAccess()` overload"]
-    fn setup_access(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::setup_access(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadAPlusGift(::unity2::Il2CppString)` overload"]
-    fn load_a_plus_gift(
-        self,
-        aplus_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::load_a_plus_gift(
-                __receiver,
-                ::core::convert::Into::into(aplus_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InitAfterLoadChara()` overload"]
-    fn init_after_load_chara(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::init_after_load_chara(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ArrangePlayerStartPosition()` overload"]
-    fn arrange_player_start_position(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::arrange_player_start_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`LoadMinimap()` overload"]
-    fn load_minimap(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::load_minimap(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CleanupUnitImpl()` overload"]
-    fn cleanup_unit_impl(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::cleanup_unit_impl(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CallShop(::unity2::Il2CppString, crate::app::hubaccess::HubAccess)` overload"]
-    fn call_shop(
-        self,
-        shop_type: impl ::core::convert::Into<::unity2::Il2CppString>,
-        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::call_shop(
-                __receiver,
-                ::core::convert::Into::into(shop_type),
-                ::core::convert::Into::into(access),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateDragonRideSequence()` overload"]
-    fn create_dragon_ride_sequence(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_dragon_ride_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateFishingSequence()` overload"]
-    fn create_fishing_sequence(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_fishing_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateMuscleExerciseSequence()` overload"]
-    fn create_muscle_exercise_sequence(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_muscle_exercise_sequence(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateFortuneTelling()` overload"]
-    fn create_fortune_telling(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_fortune_telling(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EntrySignboard()` overload"]
-    fn entry_signboard(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::entry_signboard(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateSignboard()` overload"]
-    fn create_signboard(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_signboard(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitSignboard()` overload"]
-    fn exit_signboard(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_signboard(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateRestPlace()` overload"]
-    fn create_rest_place(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_rest_place(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateChest()` overload"]
-    fn create_chest(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_chest(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ConfirmEndRoll()` overload"]
-    fn confirm_end_roll(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::confirm_end_roll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnterEndRoll()` overload"]
-    fn enter_end_roll(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::enter_end_roll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateEndRoll()` overload"]
-    fn create_end_roll(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_end_roll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitEndRoll()` overload"]
-    fn exit_end_roll(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_end_roll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CallFleaMarketUnmanned()` overload"]
-    fn call_flea_market_unmanned(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::call_flea_market_unmanned(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateFleaMarket()` overload"]
-    fn create_flea_market(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_flea_market(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateJukebox()` overload"]
-    fn create_jukebox(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_jukebox(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenCheckAnimal()` overload"]
-    fn open_check_animal(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::open_check_animal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateAnimal()` overload"]
-    fn create_animal(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_animal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreatePhotoMenu()` overload"]
-    fn create_photo_menu(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_photo_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateWellMenu()` overload"]
-    fn create_well_menu(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_well_menu(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreatePool()` overload"]
-    fn create_pool(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_pool(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateFruit()` overload"]
-    fn create_fruit(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_fruit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateHorse()` overload"]
-    fn create_horse(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_horse(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntryAmiibo()` overload"]
-    fn entry_amiibo(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::entry_amiibo(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateAmiibo()` overload"]
-    fn create_amiibo(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_amiibo(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitAmiibo()` overload"]
-    fn exit_amiibo(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_amiibo(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OpenCheckCapeTower()` overload"]
-    fn open_check_cape_tower(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::open_check_cape_tower(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OpenCapeDoor()` overload"]
-    fn open_cape_door(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::open_cape_door(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CreateCapeTower()` overload"]
-    fn create_cape_tower(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::create_cape_tower(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CloseCapeTower()` overload"]
-    fn close_cape_tower(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::close_cape_tower(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`FinalCapeTower()` overload"]
-    fn final_cape_tower(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::final_cape_tower(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CallScript(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn call_script(
-        self,
-        confirm_mid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        script_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::call_script(
-                __receiver,
-                ::core::convert::Into::into(confirm_mid),
-                ::core::convert::Into::into(script_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EntryCallScript()` overload"]
-    fn entry_call_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::entry_call_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MainCallScript()` overload"]
-    fn main_call_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::main_call_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitCallScript()` overload"]
-    fn exit_call_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_call_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntryKizunaExit()` overload"]
-    fn entry_kizuna_exit(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::entry_kizuna_exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`MainKizunaExit()` overload"]
-    fn main_kizuna_exit(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::main_kizuna_exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitKizunaExit()` overload"]
-    fn exit_kizuna_exit(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_kizuna_exit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnableDragonRideGroup()` overload"]
-    fn enable_dragon_ride_group(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::enable_dragon_ride_group(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DisableDragonRideGroup()` overload"]
-    fn disable_dragon_ride_group(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::disable_dragon_ride_group(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableFishingGroup()` overload"]
-    fn enable_fishing_group(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::enable_fishing_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisableFishingGroup()` overload"]
-    fn disable_fishing_group(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::disable_fishing_group(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DisableGroup()` overload"]
-    fn disable_group(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::disable_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnableGroup()` overload"]
-    fn enable_group(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::enable_group(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DisableRoot()` overload"]
-    fn disable_root(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::disable_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnableRoot()` overload"]
-    fn enable_root(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::enable_root(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`LoadScript()` overload"]
-    fn load_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::load_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadScript()` overload"]
-    fn unload_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::unload_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntryScript()` overload"]
-    fn entry_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::entry_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartScript()` overload"]
-    fn start_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitScript()` overload"]
-    fn exit_script(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_script(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    fn start_bind(
-        self,
-        target_0: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        event_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_bind(
-                __receiver,
-                ::core::convert::Into::into(target_0),
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartEvent(::unity2::Il2CppString, crate::app::hubaccess::HubAccess)` overload"]
-    fn start_event(
-        self,
-        script_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_event(
-                __receiver,
-                ::core::convert::Into::into(script_name),
-                ::core::convert::Into::into(access),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AccessMascot()` overload"]
-    fn access_mascot(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::access_mascot(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntryArena()` overload"]
-    fn entry_arena(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::entry_arena(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartArena()` overload"]
-    fn start_arena(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_arena(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ExitArena()` overload"]
-    fn exit_arena(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::exit_arena(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StartPedestal()` overload"]
-    fn start_pedestal(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_pedestal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AccessPedestal()` overload"]
-    fn access_pedestal(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::access_pedestal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndPedestal()` overload"]
-    fn end_pedestal(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::end_pedestal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SaveDataLoad()` overload"]
-    fn save_data_load(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::save_data_load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SaveDataLoadResult()` overload"]
-    fn save_data_load_result(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::save_data_load_result(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SaveDataRelease()` overload"]
-    fn save_data_release(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::save_data_release(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SaveDataNormalize()` overload"]
-    fn save_data_normalize(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::save_data_normalize(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_Version()` overload"]
-    fn get_version(self) -> i32 {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_version(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    fn on_serialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::on_serialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    fn on_deserialize(
-        self,
-        stream: impl ::core::convert::Into<crate::app::stream_2::Stream_2>,
-        version: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::on_deserialize(
-                __receiver,
-                ::core::convert::Into::into(stream),
-                ::core::convert::Into::into(version),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnShutdown()` overload"]
-    fn on_shutdown(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCurrentKeyHelpName()` overload"]
-    fn get_current_key_help_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_current_key_help_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Persistent()` overload"]
-    fn persistent(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::persistent(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPlayerAnim(::unity2::Il2CppString)` overload"]
-    fn set_player_anim(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::set_player_anim(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartFastTravel()` overload"]
-    fn start_fast_travel(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_fast_travel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CallFastTravel()` overload"]
-    fn call_fast_travel(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::call_fast_travel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndFastTravel()` overload"]
-    fn end_fast_travel(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::end_fast_travel(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RunFastTravel(::unity2::Il2CppString)` overload"]
-    fn run_fast_travel(self, id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::run_fast_travel(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartAccessAnimal(crate::app::hubaccess::HubAccess)` overload"]
-    fn start_access_animal(
-        self,
-        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_access_animal(
-                __receiver,
-                ::core::convert::Into::into(access),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StartTalk(crate::app::hubaccess::HubAccess)` overload"]
-    fn start_talk(
-        self,
-        access: impl ::core::convert::Into<crate::app::hubaccess::HubAccess>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::start_talk(
-                __receiver,
-                ::core::convert::Into::into(access),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Talk()` overload"]
-    fn talk(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::talk(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`BeginSilentEnv()` overload"]
-    fn begin_silent_env(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::begin_silent_env(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EndSilentEnv()` overload"]
-    fn end_silent_env(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::end_silent_env(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GameCleaerEvent()` overload"]
-    fn game_cleaer_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::game_cleaer_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GiftGet(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn gift_get(
-        self,
-        reward_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        message_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::gift_get(
-                __receiver,
-                ::core::convert::Into::into(reward_id),
-                ::core::convert::Into::into(message_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`TryGiftEvent(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn try_gift_event(
-        self,
-        flag_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        reward_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-        message_id: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::try_gift_event(
-                __receiver,
-                ::core::convert::Into::into(flag_name),
-                ::core::convert::Into::into(reward_id),
-                ::core::convert::Into::into(message_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`DlcGift0Event()` overload"]
-    fn dlc_gift0_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::dlc_gift0_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Patch0GiftEvent()` overload"]
-    fn patch0_gift_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::patch0_gift_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`DlcGift1Event()` overload"]
-    fn dlc_gift1_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::dlc_gift1_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Patch3GiftEvent()` overload"]
-    fn patch3_gift_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::patch3_gift_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EvilCleaerEvent()` overload"]
-    fn evil_cleaer_event(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::evil_cleaer_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`ContentsEvent()` overload"]
-    fn contents_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::contents_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`RelayTicketEvent()` overload"]
-    fn relay_ticket_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::relay_ticket_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SkillOpenEvent()` overload"]
-    fn skill_open_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::skill_open_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnterEvent()` overload"]
-    fn enter_event(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::enter_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PostEnterEvent()` overload"]
-    fn post_enter_event(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::post_enter_event(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayBgm(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
-    fn play_bgm(
-        self,
-        fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::play_bgm(
-                __receiver,
-                ::core::convert::Into::into(fade_speed_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PauseBgm(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
-    fn pause_bgm(
-        self,
-        fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::pause_bgm(
-                __receiver,
-                ::core::convert::Into::into(fade_speed_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetBgmEventName()` overload"]
-    fn get_bgm_event_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_bgm_event_name(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TryGetCurrentBgmHandle()` overload"]
-    fn try_get_current_bgm_handle(self) -> crate::app::gamesound::GameSound_Handle {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::try_get_current_bgm_handle(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayBgm_Kizuna(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
-    fn play_bgm_kizuna(
-        self,
-        fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::play_bgm_kizuna(
-                __receiver,
-                ::core::convert::Into::into(fade_speed_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`PlayBgm_Hub(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]
-    fn play_bgm_hub(
-        self,
-        fade_speed_type: impl ::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>,
-    ) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::play_bgm_hub(
-                __receiver,
-                ::core::convert::Into::into(fade_speed_type),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StopBgm(bool)` overload"]
-    fn stop_bgm(self, play_movie: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::stop_bgm(
-                __receiver,
-                ::core::convert::Into::into(play_movie),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StopBgm_Kizuna()` overload"]
-    fn stop_bgm_kizuna(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::stop_bgm_kizuna(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StopBgm_Hub()` overload"]
-    fn stop_bgm_hub(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::stop_bgm_hub(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayerBeginAccess()` overload"]
-    fn player_begin_access(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::player_begin_access(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`PlayerEndAccess()` overload"]
-    fn player_end_access(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::player_end_access(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetCharaLocatorsRoot()` overload"]
-    fn get_chara_locators_root(self) -> crate::unity_engine::gameobject::GameObject {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::get_chara_locators_root(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InitSceneInfo()` overload"]
-    fn init_scene_info(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::init_scene_info(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Report()` overload"]
-    fn report(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::report(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <HubSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __HubSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl<__T: IHubSequence> IHubSequenceMethods for __T {}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequenceMethods>::ctor(this);
+        <Self as IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods>::ctor(this);
         this
     }
 }
@@ -13276,83 +9981,53 @@ impl HubSequence {
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubSequence;
-    pub use super::HubSequence_AreaString;
-    pub use super::HubSequence_ConfirmEndRollDialogItemNo;
-    pub use super::HubSequence_ConfirmEndRollDialogItemYes;
-    pub use super::HubSequence_Label;
-    pub use super::HubSequence_LastChapterGoToMenuItem;
-    pub use super::HubSequence_LastChapterMenu;
-    pub use super::HubSequence_LastChapterMenu_GoToMenuItem;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem;
-    pub use super::HubSequence_LastChapterRankingMenuItem;
-    pub use super::HubSequence_LastChapterSequence;
-    pub use super::HubSequence_LastChapterSequence_ConfirmDialogItemNo;
-    pub use super::HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes;
-    pub use super::HubSequence_LastChapterSequence_Label;
-    pub use super::IHubSequence;
-    pub use super::IHubSequenceMethods;
-    pub use super::IHubSequence_AreaString;
-    pub use super::IHubSequence_AreaStringMethods;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemNo;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemNoMethods;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemYes;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemYesMethods;
-    pub use super::IHubSequence_LastChapterGoToMenuItem;
-    pub use super::IHubSequence_LastChapterGoToMenuItemMethods;
-    pub use super::IHubSequence_LastChapterMenu;
-    pub use super::IHubSequence_LastChapterMenuMethods;
-    pub use super::IHubSequence_LastChapterMenu_GoToMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_GoToMenuItemMethods;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItemMethods;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods;
-    pub use super::IHubSequence_LastChapterRankingMenuItem;
-    pub use super::IHubSequence_LastChapterRankingMenuItemMethods;
-    pub use super::IHubSequence_LastChapterSequence;
-    pub use super::IHubSequence_LastChapterSequenceMethods;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmDialogItemNo;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use super::{
+        HubSequence, HubSequence_AreaString, HubSequence_ConfirmEndRollDialogItemNo, HubSequence_ConfirmEndRollDialogItemYes, HubSequence_Label,
+        HubSequence_LastChapterGoToMenuItem, HubSequence_LastChapterMenu, HubSequence_LastChapterMenu_GoToMenuItem,
+        HubSequence_LastChapterMenu_RankingMenuItem, HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog,
+        HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem, HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+        HubSequence_LastChapterRankingMenuItem, HubSequence_LastChapterSequence, HubSequence_LastChapterSequence_ConfirmDialogItemNo,
+        HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes, HubSequence_LastChapterSequence_Label, IHubSequence, IHubSequenceMethods,
+        IHubSequence_AreaString, IHubSequence_AreaStringMethods, IHubSequence_ConfirmEndRollDialogItemNo,
+        IHubSequence_ConfirmEndRollDialogItemNoMethods, IHubSequence_ConfirmEndRollDialogItemYes, IHubSequence_ConfirmEndRollDialogItemYesMethods,
+        IHubSequence_LastChapterGoToMenuItem, IHubSequence_LastChapterGoToMenuItemMethods, IHubSequence_LastChapterMenu,
+        IHubSequence_LastChapterMenuMethods, IHubSequence_LastChapterMenu_GoToMenuItem, IHubSequence_LastChapterMenu_GoToMenuItemMethods,
+        IHubSequence_LastChapterMenu_RankingMenuItem, IHubSequence_LastChapterMenu_RankingMenuItemMethods,
+        IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog, IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem,
+        IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods,
+        IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem,
+        IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods, IHubSequence_LastChapterRankingMenuItem,
+        IHubSequence_LastChapterRankingMenuItemMethods, IHubSequence_LastChapterSequence, IHubSequence_LastChapterSequenceMethods,
+        IHubSequence_LastChapterSequence_ConfirmDialogItemNo, IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods,
+        IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes, IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods,
+    };
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     #[cfg(feature = "app-basicdialogitemno")]
     pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     #[cfg(feature = "app-basicdialogitemyes")]
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     #[cfg(feature = "app-procscenesequence_1")]
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{
+            basicdialogitem::IBasicDialogItem, basicdialogitemno::IBasicDialogItemNo, basicdialogitemyes::IBasicDialogItemYes, basicmenu::IBasicMenu,
+            basicmenuitem::IBasicMenuItem, procinst::IProcInst, procscenesequence_1::IProcSceneSequence_1, singletonprocinst_1::ISingletonProcInst_1,
+        },
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

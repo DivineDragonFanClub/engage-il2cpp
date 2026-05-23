@@ -2,31 +2,33 @@
 
 #[cfg(feature = "app-commonrewardsequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]
+    #[::unity2::class(namespace = "App", name = "CommonRewardSequence.ProcDiscardMessage")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct CommonRewardSequence_ProcDiscardMessage {}
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewardsequence/CommonRewardSequence_Label2.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct CommonRewardSequence_Label2 {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for CommonRewardSequence_Label2 {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "CommonRewardSequence.Label2";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for CommonRewardSequence_Label2 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -69,13 +68,9 @@ mod __types {
         #[rename(name = "m_Bg")]
         pub m_bg: crate::app::menubg::MenuBg,
         #[rename(name = "m_RewardExpList")]
-        pub m_reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unit::Unit,
-            i32,
-        >,
+        pub m_reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
         #[rename(name = "m_RewardItemList")]
-        pub m_reward_item_list:
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+        pub m_reward_item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         #[rename(name = "m_RewardMoney")]
         pub m_reward_money: i32,
         #[rename(name = "m_IsDiscard")]
@@ -87,20 +82,172 @@ mod __types {
         #[rename(name = "TitleMID")]
         pub title_mid: ::unity2::Il2CppString,
         #[rename(name = "m_LevelUpUnitList")]
-        pub m_level_up_unit_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unit::Unit,
-            i32,
-        >,
+        pub m_level_up_unit_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]
-    #[::unity2::class(namespace = "App", name = "CommonRewardSequence.ProcDiscardMessage")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct CommonRewardSequence_ProcDiscardMessage {}
 }
 
 #[cfg(feature = "app-commonrewardsequence-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-commonrewardsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __CommonRewardSequence_ProcDiscardMessage_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(this: CommonRewardSequence_ProcDiscardMessage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommonRewardSequence_ProcDiscardMessage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::procinst::ProcInst {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> crate::app::procinst::ProcInst =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: CommonRewardSequence_ProcDiscardMessage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CommonRewardSequence_ProcDiscardMessage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-commonrewardsequence")]
+impl CommonRewardSequence_ProcDiscardMessage {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> crate::app::procinst::ProcInst {
+        unsafe {
+            __CommonRewardSequence_ProcDiscardMessage_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-commonrewardsequence")]
+pub trait ICommonRewardSequence_ProcDiscardMessageMethods: ICommonRewardSequence_ProcDiscardMessage {
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver = <CommonRewardSequence_ProcDiscardMessage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CommonRewardSequence_ProcDiscardMessage_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <CommonRewardSequence_ProcDiscardMessage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __CommonRewardSequence_ProcDiscardMessage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-commonrewardsequence")]
+impl<__T: ICommonRewardSequence_ProcDiscardMessage> ICommonRewardSequence_ProcDiscardMessageMethods for __T {}
+
+#[cfg(feature = "app-commonrewardsequence")]
+impl CommonRewardSequence_ProcDiscardMessage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonRewardSequence_ProcDiscardMessage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonRewardSequence_ProcDiscardMessageMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-commonrewardsequence")]
 #[doc(hidden)]
@@ -111,22 +258,14 @@ mod __CommonRewardSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                    <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                        crate::app::unit::Unit,
-                        i32,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::itemdata::ItemData,
-                    > as ::unity2::IlType>::il_type(),
-                    <i32 as ::unity2::IlType>::il_type(),
-                    <bool as ::unity2::IlType>::il_type(),
-                ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -138,71 +277,44 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unit::Unit,
-            i32,
-        >,
-        reward_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        >,
+        reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
+        reward_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         reward_money: i32,
         is_create_bg: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::app::unit::Unit,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
             crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
             i32,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            reward_exp_list,
-            reward_list,
-            reward_money,
-            is_create_bg,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, reward_exp_list, reward_list, reward_money, is_create_bg, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::itemdata::ItemData,
-                    > as ::unity2::IlType>::il_type(),
-                ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBindClear",
@@ -214,53 +326,39 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindClear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindClear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_clear(
         super_: crate::app::procinst::ProcInst,
-        reward_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        >,
+        reward_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
             crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_clear::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_clear::get_method_info().method_ptr);
         inner(super_, reward_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_for_well {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::itemdata::ItemData,
-                    > as ::unity2::IlType>::il_type(),
-                    <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBindForWell",
@@ -272,25 +370,20 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindForWell",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindForWell",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_for_well(
         super_: crate::app::procinst::ProcInst,
-        reward_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        >,
+        reward_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         title: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -299,33 +392,21 @@ mod __CommonRewardSequence_unity2_raw {
             crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_for_well::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_for_well::get_method_info().method_ptr);
         inner(super_, reward_list, title, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::collections::generic::dictionary_2::Dictionary_2<
-                        crate::app::unit::Unit,
-                        i32,
-                    > as ::unity2::IlType>::il_type(),
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::itemdata::ItemData,
-                    > as ::unity2::IlType>::il_type(),
-                    <i32 as ::unity2::IlType>::il_type(),
-                    <bool as ::unity2::IlType>::il_type(),
-                    <bool as ::unity2::IlType>::il_type(),
-                ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -337,29 +418,21 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: CommonRewardSequence,
-        reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unit::Unit,
-            i32,
-        >,
-        reward_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        >,
+        reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
+        reward_item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         reward_money: i32,
         is_create_bg: bool,
         is_clear: bool,
@@ -367,20 +440,13 @@ mod __CommonRewardSequence_unity2_raw {
     ) -> () {
         let inner: extern "C" fn(
             CommonRewardSequence,
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::app::unit::Unit,
-                i32,
-            >,
+            crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
             crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
             i32,
             bool,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             reward_exp_list,
@@ -395,9 +461,7 @@ mod __CommonRewardSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -410,41 +474,30 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: CommonRewardSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            CommonRewardSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc_for_well {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -457,41 +510,30 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDescForWell",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDescForWell",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc_for_well(
         this: CommonRewardSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            CommonRewardSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc_for_well::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc_for_well::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_res {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -504,39 +546,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadRes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadRes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_res(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_res(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_res::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_res::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_res {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -549,39 +579,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingRes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingRes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_res(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_res(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_res::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_res::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_reward_exp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -594,39 +612,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenRewardExp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenRewardExp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_reward_exp(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open_reward_exp(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_reward_exp::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open_reward_exp::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_level_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -639,39 +645,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CheckLevelUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CheckLevelUp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_level_up(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn check_level_up(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_level_up::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_level_up::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_create_bind_discard_message {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -687,18 +681,15 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "TryCreateBindDiscardMessage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "TryCreateBindDiscardMessage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_create_bind_discard_message(
@@ -706,32 +697,20 @@ mod __CommonRewardSequence_unity2_raw {
         discard: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_create_bind_discard_message::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, bool, ::unity2::OptionalMethod) -> crate::app::procinst::ProcInst =
+            ::core::mem::transmute(__lookup_try_create_bind_discard_message::get_method_info().method_ptr);
         inner(super_, discard, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_reward_item_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[
-                    <crate::system::collections::generic::list_1::List_1<
-                        crate::app::itemdata::ItemData,
-                    > as ::unity2::IlType>::il_type(),
-                    <i32 as ::unity2::IlType>::il_type(),
-                    <bool as ::unity2::IlType>::il_type(),
-                ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
                 "CalcRewardItemList",
@@ -743,41 +722,37 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CalcRewardItemList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CalcRewardItemList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_reward_item_list(
-        item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        >,
+        item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         money: *mut i32,
         discard: *mut bool,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::app::itemdata::ItemData,
-        i32,
-    > {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , * mut i32 , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_calc_reward_item_list :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData, i32> {
+        let inner: extern "C" fn(
+            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+            *mut i32,
+            *mut bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData, i32> =
+            ::core::mem::transmute(__lookup_calc_reward_item_list::get_method_info().method_ptr);
         inner(item_list, money, discard, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_reward_item_list_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -790,37 +765,33 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CalcRewardItemList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CalcRewardItemList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_reward_item_list_2(
         this: CommonRewardSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::app::itemdata::ItemData,
-        i32,
-    > {
-        let inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_calc_reward_item_list_2 :: get_offset () as isize) ,) ;
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData, i32> {
+        let inner: extern "C" fn(
+            CommonRewardSequence,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData, i32> =
+            ::core::mem::transmute(__lookup_calc_reward_item_list_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_reward_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -833,39 +804,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenRewardItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenRewardItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_reward_item(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open_reward_item(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_reward_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open_reward_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open_reward_item_for_well {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -878,39 +837,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "OpenRewardItemForWell",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "OpenRewardItemForWell",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open_reward_item_for_well(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open_reward_item_for_well(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open_reward_item_for_well::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open_reward_item_for_well::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -923,39 +870,27 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_item_overflow {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CommonRewardSequence as ::unity2::ClassIdentity>::class(),
@@ -968,30 +903,20 @@ mod __CommonRewardSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
-                    "CheckItemOverflow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CommonRewardSequence as ::unity2::ClassIdentity>::NAME,
+                        "CheckItemOverflow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_item_overflow(
-        this: CommonRewardSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn check_item_overflow(this: CommonRewardSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CommonRewardSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_item_overflow::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_item_overflow::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1001,15 +926,8 @@ impl CommonRewardSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool)` overload"]
     pub fn create_bind(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        reward_exp_list: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::app::unit::Unit,
-                i32,
-            >,
-        >,
-        reward_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        >,
+        reward_exp_list: impl ::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>>,
+        reward_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
         reward_money: impl ::core::convert::Into<i32>,
         is_create_bg: impl ::core::convert::Into<bool>,
     ) -> () {
@@ -1024,12 +942,11 @@ impl CommonRewardSequence {
             )
         }
     }
+
     #[doc = "`CreateBindClear(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
     pub fn create_bind_clear(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        reward_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        >,
+        reward_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
     ) -> () {
         unsafe {
             __CommonRewardSequence_unity2_raw::create_bind_clear(
@@ -1039,12 +956,11 @@ impl CommonRewardSequence {
             )
         }
     }
+
     #[doc = "`CreateBindForWell(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, ::unity2::Il2CppString)` overload"]
     pub fn create_bind_for_well(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        reward_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        >,
+        reward_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
         title: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
@@ -1056,6 +972,7 @@ impl CommonRewardSequence {
             )
         }
     }
+
     #[doc = "`TryCreateBindDiscardMessage(crate::app::procinst::ProcInst, bool)` overload"]
     pub fn try_create_bind_discard_message(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -1069,16 +986,12 @@ impl CommonRewardSequence {
             )
         }
     }
+
     #[doc = "`CalcRewardItemList(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, *muti32, *mutbool)` overload"]
     pub fn calc_reward_item_list(
-        item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        >,
+        item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
     ) -> (
-        crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::itemdata::ItemData,
-            i32,
-        >,
+        crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData, i32>,
         i32,
         bool,
     ) {
@@ -1103,23 +1016,15 @@ pub trait ICommonRewardSequenceMethods: ICommonRewardSequence {
     #[doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, bool)` overload"]
     fn ctor(
         self,
-        reward_exp_list: impl ::core::convert::Into<
-            crate::system::collections::generic::dictionary_2::Dictionary_2<
-                crate::app::unit::Unit,
-                i32,
-            >,
-        >,
-        reward_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-        >,
+        reward_exp_list: impl ::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>>,
+        reward_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
         reward_money: impl ::core::convert::Into<i32>,
         is_create_bg: impl ::core::convert::Into<bool>,
         is_clear: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommonRewardSequence_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(reward_exp_list),
@@ -1134,129 +1039,89 @@ pub trait ICommonRewardSequenceMethods: ICommonRewardSequence {
     #[doc = "`CreateDesc()` overload"]
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommonRewardSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDescForWell()` overload"]
     fn create_desc_for_well(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::create_desc_for_well(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::create_desc_for_well(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadRes()` overload"]
     fn load_res(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommonRewardSequence_unity2_raw::load_res(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingRes()` overload"]
     fn is_loading_res(self) -> bool {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::is_loading_res(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::is_loading_res(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenRewardExp()` overload"]
     fn open_reward_exp(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::open_reward_exp(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::open_reward_exp(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckLevelUp()` overload"]
     fn check_level_up(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::check_level_up(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::check_level_up(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalcRewardItemList()` overload"]
-    fn calc_reward_item_list_2(
-        self,
-    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::app::itemdata::ItemData,
-        i32,
-    > {
+    fn calc_reward_item_list_2(self) -> crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData, i32> {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::calc_reward_item_list_2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::calc_reward_item_list_2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenRewardItem()` overload"]
     fn open_reward_item(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::open_reward_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::open_reward_item(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OpenRewardItemForWell()` overload"]
     fn open_reward_item_for_well(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::open_reward_item_for_well(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::open_reward_item_for_well(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Close()` overload"]
     fn close(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CommonRewardSequence_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckItemOverflow()` overload"]
     fn check_item_overflow(self) -> () {
         unsafe {
-            let __receiver = <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CommonRewardSequence_unity2_raw::check_item_overflow(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CommonRewardSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CommonRewardSequence_unity2_raw::check_item_overflow(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1268,13 +1133,8 @@ impl<__T: ICommonRewardSequence> ICommonRewardSequenceMethods for __T {}
 impl CommonRewardSequence {
     #[doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, bool)` — overload selector"]
     pub fn new(
-        reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            crate::app::unit::Unit,
-            i32,
-        >,
-        reward_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::itemdata::ItemData,
-        >,
+        reward_exp_list: crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, i32>,
+        reward_item_list: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
         reward_money: i32,
         is_create_bg: bool,
         is_clear: bool,
@@ -1286,226 +1146,7 @@ impl CommonRewardSequence {
                 ::core::stringify!(new),
             )
         });
-        <Self as ICommonRewardSequenceMethods>::ctor(
-            this,
-            reward_exp_list,
-            reward_item_list,
-            reward_money,
-            is_create_bg,
-            is_clear,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-commonrewardsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __CommonRewardSequence_ProcDiscardMessage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::class(),
-                "Show",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: CommonRewardSequence_ProcDiscardMessage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommonRewardSequence_ProcDiscardMessage,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CommonRewardSequence_ProcDiscardMessage as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: CommonRewardSequence_ProcDiscardMessage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CommonRewardSequence_ProcDiscardMessage,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence_ProcDiscardMessage {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> crate::app::procinst::ProcInst {
-        unsafe {
-            __CommonRewardSequence_ProcDiscardMessage_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-commonrewardsequence")]
-pub trait ICommonRewardSequence_ProcDiscardMessageMethods:
-    ICommonRewardSequence_ProcDiscardMessage
-{
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
-        unsafe {
-            let __receiver = < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CommonRewardSequence_ProcDiscardMessage_unity2_raw::show(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __CommonRewardSequence_ProcDiscardMessage_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-commonrewardsequence")]
-impl<__T: ICommonRewardSequence_ProcDiscardMessage> ICommonRewardSequence_ProcDiscardMessageMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence_ProcDiscardMessage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CommonRewardSequence_ProcDiscardMessage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICommonRewardSequence_ProcDiscardMessageMethods>::ctor(this);
+        <Self as ICommonRewardSequenceMethods>::ctor(this, reward_exp_list, reward_item_list, reward_money, is_create_bg, is_clear);
         this
     }
 }
@@ -1513,23 +1154,20 @@ impl CommonRewardSequence_ProcDiscardMessage {
 #[cfg(feature = "app-commonrewardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CommonRewardSequence;
-    pub use super::CommonRewardSequence_Label2;
-    pub use super::CommonRewardSequence_ProcDiscardMessage;
-    pub use super::ICommonRewardSequence;
-    pub use super::ICommonRewardSequenceMethods;
-    pub use super::ICommonRewardSequence_ProcDiscardMessage;
-    pub use super::ICommonRewardSequence_ProcDiscardMessageMethods;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        CommonRewardSequence, CommonRewardSequence_Label2, CommonRewardSequence_ProcDiscardMessage, ICommonRewardSequence,
+        ICommonRewardSequenceMethods, ICommonRewardSequence_ProcDiscardMessage, ICommonRewardSequence_ProcDiscardMessageMethods,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

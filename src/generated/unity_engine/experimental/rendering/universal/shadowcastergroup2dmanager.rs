@@ -2,25 +2,24 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowcastergroup2dmanager/ShadowCasterGroup2DManager.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal",
-        name = "ShadowCasterGroup2DManager"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal", name = "ShadowCasterGroup2DManager")]
     #[parent(crate::system::object::Object)]
     pub struct ShadowCasterGroup2DManager {
-# [static_field] # [rename (name = "s_ShadowCasterGroups")] pub s_shadow_caster_groups : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > ,
-}
+        #[static_field]
+        #[rename(name = "s_ShadowCasterGroups")]
+        pub s_shadow_caster_groups: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        >,
+    }
 }
 
-#[cfg(
-    feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager-types"
-)]
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager")]
@@ -32,9 +31,7 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_shadow_caster_groups {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
@@ -47,31 +44,40 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "get_shadowCasterGroups",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "get_shadowCasterGroups",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_shadow_caster_groups (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_shadow_caster_groups :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_shadow_caster_groups(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        > = ::core::mem::transmute(__lookup_get_shadow_caster_groups::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_shadow_caster_group_to_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "AddShadowCasterGroupToList",
@@ -83,36 +89,44 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "AddShadowCasterGroupToList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "AddShadowCasterGroupToList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_shadow_caster_group_to_list(
-        shadow_caster : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D,
-        list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
+        shadow_caster: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_shadow_caster_group_to_list :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_shadow_caster_group_to_list::get_method_info().method_ptr);
         inner(shadow_caster, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_shadow_caster_group_from_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<
+                    crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "RemoveShadowCasterGroupFromList",
@@ -124,36 +138,40 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "RemoveShadowCasterGroupFromList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "RemoveShadowCasterGroupFromList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_shadow_caster_group_from_list(
-        shadow_caster : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D,
-        list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
+        shadow_caster: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_remove_shadow_caster_group_from_list :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_remove_shadow_caster_group_from_list::get_method_info().method_ptr);
         inner(shadow_caster, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_top_most_composite_shadow_caster {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "FindTopMostCompositeShadowCaster",
@@ -165,31 +183,38 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "FindTopMostCompositeShadowCaster",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "FindTopMostCompositeShadowCaster",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn find_top_most_composite_shadow_caster (shadow_caster : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: compositeshadowcaster2d :: CompositeShadowCaster2D{
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: compositeshadowcaster2d :: CompositeShadowCaster2D = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_find_top_most_composite_shadow_caster :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn find_top_most_composite_shadow_caster(
+        shadow_caster: crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::compositeshadowcaster2d::CompositeShadowCaster2D {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::experimental::rendering::universal::compositeshadowcaster2d::CompositeShadowCaster2D =
+            ::core::mem::transmute(__lookup_find_top_most_composite_shadow_caster::get_method_info().method_ptr);
         inner(shadow_caster, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_to_shadow_caster_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "AddToShadowCasterGroup",
@@ -201,36 +226,38 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "AddToShadowCasterGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "AddToShadowCasterGroup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_to_shadow_caster_group(
-        shadow_caster : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D,
-        shadow_caster_group : * mut crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D,
+        shadow_caster: crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
+        shadow_caster_group: *mut crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D , * mut crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_to_shadow_caster_group :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
+            *mut crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_add_to_shadow_caster_group::get_method_info().method_ptr);
         inner(shadow_caster, shadow_caster_group, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_from_shadow_caster_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "RemoveFromShadowCasterGroup",
@@ -242,36 +269,37 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "RemoveFromShadowCasterGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "RemoveFromShadowCasterGroup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_from_shadow_caster_group(
-        shadow_caster : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D,
-        shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D,
+        shadow_caster: crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
+        shadow_caster_group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D , crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_remove_from_shadow_caster_group :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_remove_from_shadow_caster_group::get_method_info().method_ptr);
         inner(shadow_caster, shadow_caster_group, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "AddGroup",
@@ -283,35 +311,35 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "AddGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "AddGroup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_group(
-        group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D,
+        group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_add_group :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_group::get_method_info().method_ptr);
         inner(group, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
                 "RemoveGroup",
@@ -323,34 +351,32 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    "RemoveGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        "RemoveGroup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_group(
-        group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D,
+        group: crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_remove_group :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_remove_group::get_method_info().method_ptr);
         inner(group, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
@@ -363,39 +389,27 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ShadowCasterGroup2DManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ShadowCasterGroup2DManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ShadowCasterGroup2DManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::class(),
@@ -408,43 +422,40 @@ mod __ShadowCasterGroup2DManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShadowCasterGroup2DManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager")]
 impl ShadowCasterGroup2DManager {
-    #[doc = "`get_shadowCasterGroups()` overload"]    pub fn get_shadow_caster_groups () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >{
-        unsafe {
-            __ShadowCasterGroup2DManager_unity2_raw::get_shadow_caster_groups(
-                ::core::option::Option::None,
-            )
-        }
+    #[doc = "`get_shadowCasterGroups()` overload"]
+    pub fn get_shadow_caster_groups() -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+    > {
+        unsafe { __ShadowCasterGroup2DManager_unity2_raw::get_shadow_caster_groups(::core::option::Option::None) }
     }
+
     #[doc = "`AddShadowCasterGroupToList(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>)` overload"]
     pub fn add_shadow_caster_group_to_list(
-        shadow_caster : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
-        list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > >,
+        shadow_caster: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>,
+        list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            >,
+        >,
     ) -> () {
         unsafe {
             __ShadowCasterGroup2DManager_unity2_raw::add_shadow_caster_group_to_list(
@@ -454,10 +465,15 @@ impl ShadowCasterGroup2DManager {
             )
         }
     }
+
     #[doc = "`RemoveShadowCasterGroupFromList(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>)` overload"]
     pub fn remove_shadow_caster_group_from_list(
-        shadow_caster : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
-        list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > >,
+        shadow_caster: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>,
+        list: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            >,
+        >,
     ) -> () {
         unsafe {
             __ShadowCasterGroup2DManager_unity2_raw::remove_shadow_caster_group_from_list(
@@ -467,7 +483,11 @@ impl ShadowCasterGroup2DManager {
             )
         }
     }
-    #[doc = "`FindTopMostCompositeShadowCaster(crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D)` overload"]    pub fn find_top_most_composite_shadow_caster (shadow_caster : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D >) -> crate :: unity_engine :: experimental :: rendering :: universal :: compositeshadowcaster2d :: CompositeShadowCaster2D{
+
+    #[doc = "`FindTopMostCompositeShadowCaster(crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D)` overload"]
+    pub fn find_top_most_composite_shadow_caster(
+        shadow_caster: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D>,
+    ) -> crate::unity_engine::experimental::rendering::universal::compositeshadowcaster2d::CompositeShadowCaster2D {
         unsafe {
             __ShadowCasterGroup2DManager_unity2_raw::find_top_most_composite_shadow_caster(
                 ::core::convert::Into::into(shadow_caster),
@@ -475,9 +495,18 @@ impl ShadowCasterGroup2DManager {
             )
         }
     }
-    #[doc = "`AddToShadowCasterGroup(crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D, *mutcrate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)` overload"]    pub fn add_to_shadow_caster_group (shadow_caster : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcaster2d :: ShadowCaster2D >) -> (bool , crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D){
+
+    #[doc = "`AddToShadowCasterGroup(crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D, *mutcrate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)` overload"]
+    pub fn add_to_shadow_caster_group(
+        shadow_caster: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D>,
+    ) -> (
+        bool,
+        crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+    ) {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D > :: uninit () ;
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D,
+            >::uninit();
             let __ret = {
                 __ShadowCasterGroup2DManager_unity2_raw::add_to_shadow_caster_group(
                     ::core::convert::Into::into(shadow_caster),
@@ -488,12 +517,11 @@ impl ShadowCasterGroup2DManager {
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`RemoveFromShadowCasterGroup(crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D, crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)` overload"]
     pub fn remove_from_shadow_caster_group(
-        shadow_caster: impl ::core::convert::Into<
-            crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D,
-        >,
-        shadow_caster_group : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
+        shadow_caster: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcaster2d::ShadowCaster2D>,
+        shadow_caster_group: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>,
     ) -> () {
         unsafe {
             __ShadowCasterGroup2DManager_unity2_raw::remove_from_shadow_caster_group(
@@ -503,28 +531,21 @@ impl ShadowCasterGroup2DManager {
             )
         }
     }
+
     #[doc = "`AddGroup(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)` overload"]
     pub fn add_group(
-        group : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
+        group: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>,
     ) -> () {
-        unsafe {
-            __ShadowCasterGroup2DManager_unity2_raw::add_group(
-                ::core::convert::Into::into(group),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ShadowCasterGroup2DManager_unity2_raw::add_group(::core::convert::Into::into(group), ::core::option::Option::None) }
     }
+
     #[doc = "`RemoveGroup(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)` overload"]
     pub fn remove_group(
-        group : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D >,
+        group: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D>,
     ) -> () {
-        unsafe {
-            __ShadowCasterGroup2DManager_unity2_raw::remove_group(
-                ::core::convert::Into::into(group),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ShadowCasterGroup2DManager_unity2_raw::remove_group(::core::convert::Into::into(group), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __ShadowCasterGroup2DManager_unity2_raw::cctor(::core::option::Option::None) }
@@ -537,9 +558,7 @@ pub trait IShadowCasterGroup2DManagerMethods: IShadowCasterGroup2DManager {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <ShadowCasterGroup2DManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ShadowCasterGroup2DManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ShadowCasterGroup2DManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -567,9 +586,7 @@ impl ShadowCasterGroup2DManager {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcastergroup2dmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShadowCasterGroup2DManager;
-    pub use super::IShadowCasterGroup2DManagerMethods;
-    pub use super::ShadowCasterGroup2DManager;
+    pub use super::{IShadowCasterGroup2DManager, IShadowCasterGroup2DManagerMethods, ShadowCasterGroup2DManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

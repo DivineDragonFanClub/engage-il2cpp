@@ -2,87 +2,32 @@
 
 #[cfg(feature = "app-ringlistsequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenucontent::{BasicMenuContent, IBasicMenuContent};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent};
-    use crate::app::godunitselectmenucontent::{
-        GodUnitSelectMenuContent, IGodUnitSelectMenuContent,
+    use crate::{
+        app::{
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+            godunitselectmenucontent::{GodUnitSelectMenuContent, IGodUnitSelectMenuContent},
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            collections::generic::list_1::{IList_1, List_1},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::collections::generic::list_1::{IList_1, List_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingPageData.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.RingPageData")]
-    #[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
-    pub struct RingListSequence_RingPageData {
-        #[static_field]
-        #[rename(name = "SpecialGroupPageDataNum")]
-        pub special_group_page_data_num: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_Menu.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.Menu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RingListSequence_GodAndRingListWindow_Menu {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaArrowGroup.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.CharaArrowGroup")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_CharaArrowGroup {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_LeftArrowImage")]
-        pub m_left_arrow_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_RightArrowImage")]
-        pub m_right_arrow_image: crate::unity_engine::ui::image::Image,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.RingInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_RingListWindow_RingInfo {
-        #[static_field]
-        #[rename(name = "GainMax")]
-        pub gain_max: i32,
-        #[rename(name = "m_Rank")]
-        pub m_rank: crate::app::ringdata::RingData_Ranks,
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_RingImage")]
-        pub m_ring_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Gain")]
-        pub m_gain: ::unity2::Array<
-            crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo_Gain,
-        >,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImageController.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.CharaImageController")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_CharaImageController {
-        #[static_field]
-        #[rename(name = "CharaImageMax")]
-        pub chara_image_max: i32,
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_CharaImage")]
-        pub m_chara_image:
-            ::unity2::Array<crate::app::ringlistsequence::RingListSequence_CharaImage>,
-        #[rename(name = "m_CurrentCharaImageIndex")]
-        pub m_current_chara_image_index: i32,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaNavigation.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSequence.CharaNavigation")]
@@ -101,23 +46,16 @@ mod __types {
         pub m_current_point_index: i32,
     }
 
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfoRank.md"))]
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct RingListSequence_RingListWindow_RingInfoRank {
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct RingListSequence_Label {
         pub value: i32,
     }
 
-    impl ::unity2::ClassIdentity for RingListSequence_RingListWindow_RingInfoRank {
+    impl ::unity2::ClassIdentity for RingListSequence_Label {
+        const NAME: &'static str = "RingListSequence.Label";
         const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RingListSequence.RingListWindow.RingInfoRank";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -126,65 +64,50 @@ mod __types {
         }
     }
 
-    impl ::unity2::IlType for RingListSequence_RingListWindow_RingInfoRank {
+    impl ::unity2::IlType for RingListSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
-    impl RingListSequence_RingListWindow_RingInfoRank {
-        pub fn c() -> Self {
+    impl RingListSequence_Label {
+        pub fn start() -> Self {
             Self { value: 0 }
         }
 
-        pub fn b() -> Self {
+        pub fn end() -> Self {
             Self { value: 1 }
-        }
-
-        pub fn a() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn s() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn max() -> Self {
-            Self { value: 4 }
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageData.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.PageData")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_PageData {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItemContent.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RingListSequence.GodAndRingListWindow.MenuItemContent"
-    )]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.MenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct RingListSequence_GodAndRingListWindow_MenuItemContent {
         #[rename(name = "m_Setter")]
         pub m_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList_GodComparer.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList.GodComparer")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_PageDataList_GodComparer {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow_CharaDescriptionText.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct RingListSequence_CharaInfoWindow_CharaDescriptionText {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for RingListSequence_CharaInfoWindow_CharaDescriptionText {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "RingListSequence.CharaInfoWindow.CharaDescriptionText";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -195,10 +118,7 @@ mod __types {
 
     impl ::unity2::IlType for RingListSequence_CharaInfoWindow_CharaDescriptionText {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -228,80 +148,67 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingPageData.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.RingPageData")]
+    #[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
+    pub struct RingListSequence_RingPageData {
+        #[static_field]
+        #[rename(name = "SpecialGroupPageDataNum")]
+        pub special_group_page_data_num: i32,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuContent.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RingListSequence.GodAndRingListWindow.MenuContent"
-    )]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.MenuContent")]
     #[parent(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)]
     pub struct RingListSequence_GodAndRingListWindow_MenuContent {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList")]
-    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: ringlistsequence :: RingListSequence_PageData >)]
-    pub struct RingListSequence_PageDataList {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_SkillInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.SkillInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_RingListWindow_SkillInfo {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_IconImage")]
+        pub m_icon_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_NameText")]
+        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_DescriptionText")]
+        pub m_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.RingInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_RingListWindow_RingInfo {
+        #[static_field]
+        #[rename(name = "GainMax")]
+        pub gain_max: i32,
+        #[rename(name = "m_Rank")]
+        pub m_rank: crate::app::ringdata::RingData_Ranks,
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_RingImage")]
+        pub m_ring_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Gain")]
+        pub m_gain: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo_Gain>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaArrowGroup.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.CharaArrowGroup")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_CharaArrowGroup {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_LeftArrowImage")]
+        pub m_left_arrow_image: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_RightArrowImage")]
+        pub m_right_arrow_image: crate::unity_engine::ui::image::Image,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodPageData.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSequence.GodPageData")]
     #[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
     pub struct RingListSequence_GodPageData {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_Label.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct RingListSequence_Label {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for RingListSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "RingListSequence.Label";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for RingListSequence_Label {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl RingListSequence_Label {
-        pub fn start() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 1 }
-        }
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RingListSequence.GodAndRingListWindow.MenuItem"
-    )]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct RingListSequence_GodAndRingListWindow_MenuItem {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageData.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.PageData")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_PageData {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImage.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSequence.CharaImage")]
@@ -335,46 +242,6 @@ mod __types {
         pub m_current_world_mid: ::unity2::Il2CppString,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_RingListWindow {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_RingInfo")]
-        pub m_ring_info:
-            ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo>,
-        #[rename(name = "m_SkillInfo")]
-        pub m_skill_info: crate::app::ringlistsequence::RingListSequence_RingListWindow_SkillInfo,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.CharaInfoWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_CharaInfoWindow {
-        #[rename(name = "m_CharaNameText")]
-        pub m_chara_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_RingNameText")]
-        pub m_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CharaDescriptionText")]
-        pub m_chara_description_text:
-            ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        #[rename(name = "m_RingImage")]
-        pub m_ring_image: crate::unity_engine::ui::image::Image,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow")]
-    #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_GodAndRingListWindow {
-        #[rename(name = "m_RootObject")]
-        pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Menu")]
-        pub m_menu: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu,
-    }
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence.md"))]
     #[::unity2::class(namespace = "App", name = "RingListSequence")]
     # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringlistsequence :: RingListSequence >)]
@@ -394,13 +261,11 @@ mod __types {
         #[rename(name = "m_LayoutPrefab")]
         pub m_layout_prefab: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_RelatedGroupWindow")]
-        pub m_related_group_window:
-            crate::app::ringlistsequence::RingListSequence_RelatedGroupWindow,
+        pub m_related_group_window: crate::app::ringlistsequence::RingListSequence_RelatedGroupWindow,
         #[rename(name = "m_CharaArrowGroup")]
         pub m_chara_arrow_group: crate::app::ringlistsequence::RingListSequence_CharaArrowGroup,
         #[rename(name = "m_CharaImageController")]
-        pub m_chara_image_controller:
-            crate::app::ringlistsequence::RingListSequence_CharaImageController,
+        pub m_chara_image_controller: crate::app::ringlistsequence::RingListSequence_CharaImageController,
         #[rename(name = "m_CharaNavigation")]
         pub m_chara_navigation: crate::app::ringlistsequence::RingListSequence_CharaNavigation,
         #[rename(name = "m_CharaInfoWindow")]
@@ -410,22 +275,101 @@ mod __types {
         #[rename(name = "m_RingListWindow")]
         pub m_ring_list_window: crate::app::ringlistsequence::RingListSequence_RingListWindow,
         #[rename(name = "m_GodAndRingListWindow")]
-        pub m_god_and_ring_list_window:
-            crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow,
+        pub m_god_and_ring_list_window: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow,
         #[rename(name = "m_ReservedJumpPageData")]
         pub m_reserved_jump_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
         #[rename(name = "m_CharaFrameSpriteAtlasManager")]
-        pub m_chara_frame_sprite_atlas_manager:
-            crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+        pub m_chara_frame_sprite_atlas_manager: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
         #[rename(name = "m_RootAnim")]
         pub m_root_anim: crate::unity_engine::animator::Animator,
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.MenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct RingListSequence_GodAndRingListWindow_MenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.CharaInfoWindow")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_CharaInfoWindow {
+        #[rename(name = "m_CharaNameText")]
+        pub m_chara_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_RingNameText")]
+        pub m_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CharaDescriptionText")]
+        pub m_chara_description_text: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+        #[rename(name = "m_RingImage")]
+        pub m_ring_image: crate::unity_engine::ui::image::Image,
+    }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfoRank.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct RingListSequence_RingListWindow_RingInfoRank {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for RingListSequence_RingListWindow_RingInfoRank {
+        const NAME: &'static str = "RingListSequence.RingListWindow.RingInfoRank";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for RingListSequence_RingListWindow_RingInfoRank {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl RingListSequence_RingListWindow_RingInfoRank {
+        pub fn c() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn b() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn a() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn s() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn max() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_Menu.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.Menu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RingListSequence_GodAndRingListWindow_Menu {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow")]
+    #[parent(crate::system::object::Object)]
+    pub struct RingListSequence_RingListWindow {
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_RingInfo")]
+        pub m_ring_info: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo>,
+        #[rename(name = "m_SkillInfo")]
+        pub m_skill_info: crate::app::ringlistsequence::RingListSequence_RingListWindow_SkillInfo,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo_Gain.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RingListSequence.RingListWindow.RingInfo.Gain"
-    )]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.RingInfo.Gain")]
     #[parent(crate::system::object::Object)]
     pub struct RingListSequence_RingListWindow_RingInfo_Gain {
         #[rename(name = "m_NameText")]
@@ -434,2611 +378,39 @@ mod __types {
         pub m_param_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_SkillInfo.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.SkillInfo")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow")]
     #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_RingListWindow_SkillInfo {
+    pub struct RingListSequence_GodAndRingListWindow {
         #[rename(name = "m_RootObject")]
         pub m_root_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_IconImage")]
-        pub m_icon_image: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_NameText")]
-        pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_DescriptionText")]
-        pub m_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Menu")]
+        pub m_menu: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList_GodComparer.md"))]
-    #[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList.GodComparer")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList")]
+    # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: ringlistsequence :: RingListSequence_PageData >)]
+    pub struct RingListSequence_PageDataList {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImageController.md"))]
+    #[::unity2::class(namespace = "App", name = "RingListSequence.CharaImageController")]
     #[parent(crate::system::object::Object)]
-    pub struct RingListSequence_PageDataList_GodComparer {}
+    pub struct RingListSequence_CharaImageController {
+        #[static_field]
+        #[rename(name = "CharaImageMax")]
+        pub chara_image_max: i32,
+        #[rename(name = "m_RootObject")]
+        pub m_root_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_CharaImage")]
+        pub m_chara_image: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_CharaImage>,
+        #[rename(name = "m_CurrentCharaImageIndex")]
+        pub m_current_chara_image_index: i32,
+    }
 }
 
 #[cfg(feature = "app-ringlistsequence-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_RingPageData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringdata::RingData {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringdata::RingData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_Data",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RingListSequence_RingPageData,
-        value: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_rank_c {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_DataRankC",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataRankC",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_rank_c(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringdata::RingData {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringdata::RingData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_rank_c::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data_rank_c {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_DataRankC",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_DataRankC",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data_rank_c(
-        this: RingListSequence_RingPageData,
-        value: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_rank_c::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_rank_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_DataRankB",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataRankB",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_rank_b(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringdata::RingData {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringdata::RingData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_rank_b::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data_rank_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_DataRankB",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_DataRankB",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data_rank_b(
-        this: RingListSequence_RingPageData,
-        value: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_rank_b::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_rank_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_DataRankA",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataRankA",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_rank_a(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringdata::RingData {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringdata::RingData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_rank_a::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data_rank_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_DataRankA",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_DataRankA",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data_rank_a(
-        this: RingListSequence_RingPageData,
-        value: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_rank_a::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data_rank_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_DataRankS",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_DataRankS",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data_rank_s(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringdata::RingData {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringdata::RingData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data_rank_s::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data_rank_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_DataRankS",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_DataRankS",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data_rank_s(
-        this: RingListSequence_RingPageData,
-        value: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data_rank_s::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_related_god_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_RelatedGodPageData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_RelatedGodPageData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_related_god_page_data(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodPageData {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringlistsequence::RingListSequence_GodPageData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_related_god_page_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_related_god_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_GodPageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_RelatedGodPageData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_RelatedGodPageData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_related_god_page_data(
-        this: RingListSequence_RingPageData,
-        value: crate::app::ringlistsequence::RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_related_god_page_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_related_group_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_RelatedGroupIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_RelatedGroupIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_related_group_index(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_related_group_index::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_related_group_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "set_RelatedGroupIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_RelatedGroupIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_related_group_index(
-        this: RingListSequence_RingPageData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_related_group_index::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_related_group_page_data_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "get_RelatedGroupPageDataNum",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_RelatedGroupPageDataNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_related_group_page_data_num(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_related_group_page_data_num::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build(
-        this: RingListSequence_RingPageData,
-        ring_data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build::get_offset() as isize),
-        );
-        inner(this, ring_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_got_rank_c {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "IsGotRankC",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "IsGotRankC",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_got_rank_c(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_got_rank_c::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_got_rank_b {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "IsGotRankB",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "IsGotRankB",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_got_rank_b(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_got_rank_b::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_got_rank_a {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "IsGotRankA",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "IsGotRankA",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_got_rank_a(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_got_rank_a::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_got_rank_s {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "IsGotRankS",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "IsGotRankS",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_got_rank_s(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_got_rank_s::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_got_rank_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "GetGotRankNum",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "GetGotRankNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_got_rank_num(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_got_rank_num::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_got_max_rank {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                "GetGotMaxRank",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    "GetGotMaxRank",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_got_max_rank(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringdata::RingData_Ranks {
-        let inner: extern "C" fn(
-            RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::ringdata::RingData_Ranks = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_got_max_rank::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingPageData {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __RingListSequence_RingPageData_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_RingPageDataMethods: IRingListSequence_RingPageData {
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::ringdata::RingData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Data(crate::app::ringdata::RingData)` overload"]
-    fn set_data(self, value: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataRankC()` overload"]
-    fn get_data_rank_c(self) -> crate::app::ringdata::RingData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_data_rank_c(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_DataRankC(crate::app::ringdata::RingData)` overload"]
-    fn set_data_rank_c(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_data_rank_c(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataRankB()` overload"]
-    fn get_data_rank_b(self) -> crate::app::ringdata::RingData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_data_rank_b(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_DataRankB(crate::app::ringdata::RingData)` overload"]
-    fn set_data_rank_b(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_data_rank_b(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataRankA()` overload"]
-    fn get_data_rank_a(self) -> crate::app::ringdata::RingData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_data_rank_a(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_DataRankA(crate::app::ringdata::RingData)` overload"]
-    fn set_data_rank_a(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_data_rank_a(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_DataRankS()` overload"]
-    fn get_data_rank_s(self) -> crate::app::ringdata::RingData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_data_rank_s(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_DataRankS(crate::app::ringdata::RingData)` overload"]
-    fn set_data_rank_s(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_data_rank_s(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_RelatedGodPageData()` overload"]
-    fn get_related_god_page_data(
-        self,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodPageData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_related_god_page_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_RelatedGodPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    fn set_related_god_page_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_related_god_page_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_RelatedGroupIndex()` overload"]
-    fn get_related_group_index(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_related_group_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
-    fn set_related_group_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::set_related_group_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
-    fn get_related_group_page_data_num(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_related_group_page_data_num(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Build(crate::app::ringdata::RingData)` overload"]
-    fn build(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::build(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGotRankC()` overload"]
-    fn is_got_rank_c(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::is_got_rank_c(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGotRankB()` overload"]
-    fn is_got_rank_b(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::is_got_rank_b(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGotRankA()` overload"]
-    fn is_got_rank_a(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::is_got_rank_a(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGotRankS()` overload"]
-    fn is_got_rank_s(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::is_got_rank_s(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetGotRankNum()` overload"]
-    fn get_got_rank_num(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_got_rank_num(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetGotMaxRank()` overload"]
-    fn get_got_max_rank(self) -> crate::app::ringdata::RingData_Ranks {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::get_got_max_rank(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingPageData_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_RingPageData> IRingListSequence_RingPageDataMethods for __T {}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingPageData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingPageData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RingPageDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_GodAndRingListWindow_Menu_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_selected_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
-                "get_SelectedPageData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
-                    "get_SelectedPageData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_selected_page_data(
-        this: RingListSequence_GodAndRingListWindow_Menu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistsequence::RingListSequence_PageData {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_Menu,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringlistsequence::RingListSequence_PageData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_selected_page_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_selected_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
-                "set_SelectedPageData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
-                    "set_SelectedPageData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_selected_page_data(
-        this: RingListSequence_GodAndRingListWindow_Menu,
-        value: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_Menu,
-            crate::app::ringlistsequence::RingListSequence_PageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_selected_page_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type(),
-                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_GodAndRingListWindow_Menu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_Menu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::basicmenucontent::BasicMenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_menu_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type () , < crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
-                "CreateMenuBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
-                    "CreateMenuBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_menu_bind(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        current_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu {
-        let inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: ringlistsequence :: RingListSequence_PageData , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringlistsequence :: RingListSequence_GodAndRingListWindow_Menu = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_menu_bind :: get_offset () as isize) ,) ;
-        inner(
-            menu_item_list,
-            current_page_data,
-            super_,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
-                "OnCreate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_create(
-        this: RingListSequence_GodAndRingListWindow_Menu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_Menu,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_create::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_dispose(
-        this: RingListSequence_GodAndRingListWindow_Menu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_Menu,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_dispose::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_Menu {
-    #[doc = "`CreateMenuBind(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringlistsequence::RingListSequence_PageData, crate::app::procinst::ProcInst)` overload"]
-    pub fn create_menu_bind(
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        current_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_PageData,
-        >,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu {
-        unsafe {
-            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::create_menu_bind(
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(current_page_data),
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_GodAndRingListWindow_MenuMethods:
-    IRingListSequence_GodAndRingListWindow_Menu
-{
-    #[doc = "`get_SelectedPageData()` overload"]
-    fn get_selected_page_data(self) -> crate::app::ringlistsequence::RingListSequence_PageData {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_Menu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::get_selected_page_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_SelectedPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn set_selected_page_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_Menu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::set_selected_page_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_Menu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnCreate()` overload"]
-    fn on_create(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_Menu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::on_create(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_Menu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_GodAndRingListWindow_Menu>
-    IRingListSequence_GodAndRingListWindow_MenuMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_Menu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_Menu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_CharaArrowGroup_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_CharaArrowGroup,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaArrowGroup,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::class(),
-                "ShowAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::NAME,
-                    "ShowAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show_all(
-        this: RingListSequence_CharaArrowGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_CharaArrowGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_all::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::class(),
-                "HideAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::NAME,
-                    "HideAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide_all(
-        this: RingListSequence_CharaArrowGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_CharaArrowGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_all::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_CharaArrowGroupMethods: IRingListSequence_CharaArrowGroup {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_CharaArrowGroup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaArrowGroup_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShowAll()` overload"]
-    fn show_all(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_CharaArrowGroup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaArrowGroup_unity2_raw::show_all(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HideAll()` overload"]
-    fn hide_all(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_CharaArrowGroup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaArrowGroup_unity2_raw::hide_all(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_CharaArrowGroup> IRingListSequence_CharaArrowGroupMethods for __T {}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaArrowGroup {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaArrowGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaArrowGroupMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_RingListWindow_RingInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::app::ringdata::RingData_Ranks as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_RingListWindow_RingInfo,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        rank: crate::app::ringdata::RingData_Ranks,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_RingInfo,
-            crate::unity_engine::gameobject::GameObject,
-            crate::app::ringdata::RingData_Ranks,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, rank, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_clear {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn clear(
-        this: RingListSequence_RingListWindow_RingInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_RingInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RingListSequence_RingListWindow_RingInfo,
-        ring_data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_RingInfo,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, ring_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_RingListWindow_RingInfoMethods:
-    IRingListSequence_RingListWindow_RingInfo
-{
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        rank: impl ::core::convert::Into<crate::app::ringdata::RingData_Ranks>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_RingListWindow_RingInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_RingListWindow_RingInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::convert::Into::into(rank),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_RingListWindow_RingInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_RingListWindow_RingInfo_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetData(crate::app::ringdata::RingData)` overload"]
-    fn set_data(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_RingListWindow_RingInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_RingListWindow_RingInfo_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_RingListWindow_RingInfo>
-    IRingListSequence_RingListWindow_RingInfoMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingListWindow_RingInfo {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` — overload selector"]
-    pub fn new(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        rank: crate::app::ringdata::RingData_Ranks,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingListWindow_RingInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RingListWindow_RingInfoMethods>::ctor(this, root_object, rank);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_CharaImageController_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_CharaImageController,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaImageController,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_dispose {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn dispose(
-        this: RingListSequence_CharaImageController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaImageController,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_change_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::class(),
-                "ChangeImage",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::NAME,
-                    "ChangeImage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn change_image(
-        this: RingListSequence_CharaImageController,
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaImageController,
-            crate::app::ringlistsequence::RingListSequence_PageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_image::get_offset() as isize),
-        );
-        inner(this, page_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_CharaImageControllerMethods:
-    IRingListSequence_CharaImageController
-{
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_CharaImageController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_CharaImageController_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Dispose()` overload"]
-    fn dispose(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_CharaImageController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_CharaImageController_unity2_raw::dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn change_image(
-        self,
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_CharaImageController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_CharaImageController_unity2_raw::change_image(
-                __receiver,
-                ::core::convert::Into::into(page_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_CharaImageController> IRingListSequence_CharaImageControllerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaImageController {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaImageController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaImageControllerMethods>::ctor(this, root_object);
-        this
-    }
-}
 
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
@@ -3049,9 +421,7 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -3065,18 +435,15 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -3084,28 +451,16 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaNavigation,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaNavigation, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::class(),
                 "Setup",
@@ -3117,18 +472,15 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
@@ -3137,27 +489,16 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
         point_num: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaNavigation,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaNavigation, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, current_point_index, point_num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_current_point_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::class(),
                 "SetCurrentPointIndex",
@@ -3169,18 +510,15 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::NAME,
-                    "SetCurrentPointIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaNavigation as ::unity2::ClassIdentity>::NAME,
+                        "SetCurrentPointIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_current_point_index(
@@ -3188,15 +526,8 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
         current_point_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaNavigation,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_current_point_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaNavigation, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_current_point_index::get_method_info().method_ptr);
         inner(this, current_point_index, __unity2_method_info)
     }
 }
@@ -3204,33 +535,18 @@ mod __RingListSequence_CharaNavigation_unity2_raw {
 #[cfg(feature = "app-ringlistsequence")]
 pub trait IRingListSequence_CharaNavigationMethods: IRingListSequence_CharaNavigation {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaNavigation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaNavigation_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaNavigation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaNavigation_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(i32, i32)` overload"]
-    fn setup(
-        self,
-        current_point_index: impl ::core::convert::Into<i32>,
-        point_num: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn setup(self, current_point_index: impl ::core::convert::Into<i32>, point_num: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaNavigation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaNavigation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaNavigation_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(current_point_index),
@@ -3243,9 +559,7 @@ pub trait IRingListSequence_CharaNavigationMethods: IRingListSequence_CharaNavig
     fn set_current_point_index(self, current_point_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaNavigation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaNavigation as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaNavigation_unity2_raw::set_current_point_index(
                 __receiver,
                 ::core::convert::Into::into(current_point_index),
@@ -3277,1840 +591,13 @@ impl RingListSequence_CharaNavigation {
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_text_mesh_pro_component {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: class () , "GetTextMeshProComponent" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "GetTextMeshProComponent" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_text_mesh_pro_component(
-        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_mesh_pro_component::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: class () , "Build" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "Build" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build(
-        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
-        menu_item: crate::app::basicmenuitem::BasicMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItemContent,
-            crate::app::basicmenuitem::BasicMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build::get_offset() as isize),
-        );
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_text_color {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: class () , "UpdateTextColor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "UpdateTextColor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_text_color(
-        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_text_color::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_setup_by_menu_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: class () , "SetupByMenuItem" , 1 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: NAME , "SetupByMenuItem" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn setup_by_menu_item(
-        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
-        menu_item: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItemContent,
-            crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_by_menu_item::get_offset() as isize),
-        );
-        inner(this, menu_item, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_GodAndRingListWindow_MenuItemContentMethods:
-    IRingListSequence_GodAndRingListWindow_MenuItemContent
-{
-    #[doc = "`GetTextMeshProComponent()` overload"]
-    fn get_text_mesh_pro_component(self) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw :: get_text_mesh_pro_component (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(
-        self,
-        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::build(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateTextColor()` overload"]
-    fn update_text_color(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::update_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetupByMenuItem(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)` overload"]
-    fn setup_by_menu_item(
-        self,
-        menu_item: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::setup_by_menu_item(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_GodAndRingListWindow_MenuItemContent>
-    IRingListSequence_GodAndRingListWindow_MenuItemContentMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_MenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuItemContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_item_content_max {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: ClassIdentity > :: class () , "GetMenuItemContentMax" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: ClassIdentity > :: NAME , "GetMenuItemContentMax" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_menu_item_content_max(
-        this: RingListSequence_GodAndRingListWindow_MenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuContent,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_menu_item_content_max::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: ClassIdentity > :: class () , "CreateContent" , 0 , param_types , true ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: ClassIdentity > :: NAME , "CreateContent" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_content(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringlistsequence :: RingListSequence_GodAndRingListWindow_MenuContent = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_content :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_GodAndRingListWindow_MenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_MenuContent {
-    #[doc = "`CreateContent()` overload"]
-    pub fn create_content(
-    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent {
-        unsafe {
-            __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw::create_content(
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_GodAndRingListWindow_MenuContentMethods:
-    IRingListSequence_GodAndRingListWindow_MenuContent
-{
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    fn get_menu_item_content_max(self) -> i32 {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw :: get_menu_item_content_max (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_GodAndRingListWindow_MenuContent>
-    IRingListSequence_GodAndRingListWindow_MenuContentMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_MenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_PageDataList_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_PageDataList as ::unity2::ClassIdentity>::class(),
-                "Build",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageDataList as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build(
-        this: RingListSequence_PageDataList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_PageDataList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_PageDataList as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageDataList as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_PageDataList,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_PageDataList, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_PageDataListMethods: IRingListSequence_PageDataList {
-    #[doc = "`Build()` overload"]
-    fn build(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_PageDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_PageDataList_unity2_raw::build(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_PageDataList as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_PageDataList_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_PageDataList> IRingListSequence_PageDataListMethods for __T {}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_PageDataList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_PageDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_PageDataListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_GodPageData_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "get_Data",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_data(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::goddata::GodData {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::goddata::GodData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "set_Data",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_Data",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RingListSequence_GodPageData,
-        value: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_related_group_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "get_RelatedGroupIndex",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_RelatedGroupIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_related_group_index(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_related_group_index::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_related_group_index {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "set_RelatedGroupIndex",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_RelatedGroupIndex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_related_group_index(
-        this: RingListSequence_GodPageData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_related_group_index::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_related_group_page_data_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "set_RelatedGroupPageDataNum",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_RelatedGroupPageDataNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_related_group_page_data_num(
-        this: RingListSequence_GodPageData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_related_group_page_data_num::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_related_group_page_data_num {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "get_RelatedGroupPageDataNum",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_RelatedGroupPageDataNum",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_related_group_page_data_num(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_related_group_page_data_num::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_menu_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "set_MenuSelect",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "set_MenuSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_menu_select(
-        this: RingListSequence_GodPageData,
-        value: crate::app::basicmenuselect::BasicMenuSelect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            crate::app::basicmenuselect::BasicMenuSelect,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_menu_select::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_menu_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "get_MenuSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "get_MenuSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_menu_select(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuselect::BasicMenuSelect {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuselect::BasicMenuSelect = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_menu_select::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "Build",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build(
-        this: RingListSequence_GodPageData,
-        god_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodPageData,
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build::get_offset() as isize),
-        );
-        inner(this, god_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_max_bond_level {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "GetMaxBondLevel",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxBondLevel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_max_bond_level(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_bond_level::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_to_lv {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                "GetToLv",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    "GetToLv",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_to_lv(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_to_lv::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_GodPageDataMethods: IRingListSequence_GodPageData {
-    #[doc = "`get_Data()` overload"]
-    fn get_data(self) -> crate::app::goddata::GodData {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_Data(crate::app::goddata::GodData)` overload"]
-    fn set_data(self, value: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_RelatedGroupIndex()` overload"]
-    fn get_related_group_index(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::get_related_group_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
-    fn set_related_group_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::set_related_group_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_RelatedGroupPageDataNum(i32)` overload"]
-    fn set_related_group_page_data_num(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::set_related_group_page_data_num(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
-    fn get_related_group_page_data_num(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::get_related_group_page_data_num(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_MenuSelect(crate::app::basicmenuselect::BasicMenuSelect)` overload"]
-    fn set_menu_select(
-        self,
-        value: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::set_menu_select(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_MenuSelect()` overload"]
-    fn get_menu_select(self) -> crate::app::basicmenuselect::BasicMenuSelect {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::get_menu_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Build(crate::app::goddata::GodData)` overload"]
-    fn build(self, god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::build(
-                __receiver,
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetMaxBondLevel()` overload"]
-    fn get_max_bond_level(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::get_max_bond_level(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetToLv()` overload"]
-    fn get_to_lv(self) -> i32 {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::get_to_lv(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_GodPageData_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_GodPageData> IRingListSequence_GodPageDataMethods for __T {}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodPageData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodPageData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodPageDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "get_PageData",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "get_PageData" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_page_data(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::ringlistsequence::RingListSequence_PageData {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::ringlistsequence::RingListSequence_PageData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_page_data::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "set_PageData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "set_PageData" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_page_data(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        value: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            crate::app::ringlistsequence::RingListSequence_PageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_page_data::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            crate::app::ringlistsequence::RingListSequence_PageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, page_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "GetName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "GetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_name(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "BuildAttribute" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "IsGod",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsGod" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_god(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_god::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_ring {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "IsRing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "IsRing" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_ring(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_ring::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(
-                ),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: ClassIdentity > :: NAME , "BCall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: RingListSequence_GodAndRingListWindow_MenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow_MenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_GodAndRingListWindow_MenuItemMethods:
-    IRingListSequence_GodAndRingListWindow_MenuItem
-{
-    #[doc = "`get_PageData()` overload"]
-    fn get_page_data(self) -> crate::app::ringlistsequence::RingListSequence_PageData {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::get_page_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_PageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn set_page_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::set_page_data(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn ctor(
-        self,
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(page_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGod()` overload"]
-    fn is_god(self) -> bool {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::is_god(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRing()` overload"]
-    fn is_ring(self) -> bool {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::is_ring(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_GodAndRingListWindow_MenuItem>
-    IRingListSequence_GodAndRingListWindow_MenuItemMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_MenuItem {
-    #[doc = "`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` — overload selector"]
-    pub fn new(page_data: crate::app::ringlistsequence::RingListSequence_PageData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuItemMethods>::ctor(this, page_data);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RingListSequence_PageData_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_page_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_PageData as ::unity2::ClassIdentity>::class(),
@@ -5123,41 +610,28 @@ mod __RingListSequence_PageData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageData as ::unity2::ClassIdentity>::NAME,
-                    "get_PageIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageData as ::unity2::ClassIdentity>::NAME,
+                        "get_PageIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_page_index(
-        this: RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_page_index(this: RingListSequence_PageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(RingListSequence_PageData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_page_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_page_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_page_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_PageData as ::unity2::ClassIdentity>::class(),
                 "set_PageIndex",
@@ -5169,40 +643,27 @@ mod __RingListSequence_PageData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageData as ::unity2::ClassIdentity>::NAME,
-                    "set_PageIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageData as ::unity2::ClassIdentity>::NAME,
+                        "set_PageIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_page_index(
-        this: RingListSequence_PageData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_page_index(this: RingListSequence_PageData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingListSequence_PageData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_page_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_page_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_PageData as ::unity2::ClassIdentity>::class(),
@@ -5215,30 +676,20 @@ mod __RingListSequence_PageData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: RingListSequence_PageData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingListSequence_PageData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -5249,36 +700,23 @@ pub trait IRingListSequence_PageDataMethods: IRingListSequence_PageData {
     fn get_page_index(self) -> i32 {
         unsafe {
             let __receiver =
-                <RingListSequence_PageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_PageData_unity2_raw::get_page_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingListSequence_PageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_PageData_unity2_raw::get_page_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PageIndex(i32)` overload"]
     fn set_page_index(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_PageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_PageData_unity2_raw::set_page_index(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <RingListSequence_PageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_PageData_unity2_raw::set_page_index(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_PageData as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_PageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_PageData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -5306,15 +744,2726 @@ impl RingListSequence_PageData {
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_text_mesh_pro_component {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "GetTextMeshProComponent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "GetTextMeshProComponent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_text_mesh_pro_component(
+        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItemContent,
+            ::unity2::OptionalMethod,
+        ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI =
+            ::core::mem::transmute(__lookup_get_text_mesh_pro_component::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "Build",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build(
+        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
+        menu_item: crate::app::basicmenuitem::BasicMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItemContent,
+            crate::app::basicmenuitem::BasicMenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
+        inner(this, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_text_color {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "UpdateTextColor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTextColor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_text_color(
+        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_setup_by_menu_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                "SetupByMenuItem",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SetupByMenuItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn setup_by_menu_item(
+        this: RingListSequence_GodAndRingListWindow_MenuItemContent,
+        menu_item: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItemContent,
+            crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_setup_by_menu_item::get_method_info().method_ptr);
+        inner(this, menu_item, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSequence_GodAndRingListWindow_MenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_GodAndRingListWindow_MenuItemContentMethods: IRingListSequence_GodAndRingListWindow_MenuItemContent {
+    #[doc = "`GetTextMeshProComponent()` overload"]
+    fn get_text_mesh_pro_component(self) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::get_text_mesh_pro_component(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::build(
+                __receiver,
+                ::core::convert::Into::into(menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`UpdateTextColor()` overload"]
+    fn update_text_color(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetupByMenuItem(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)` overload"]
+    fn setup_by_menu_item(
+        self,
+        menu_item: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::setup_by_menu_item(
+                __receiver,
+                ::core::convert::Into::into(menu_item),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_GodAndRingListWindow_MenuItemContent> IRingListSequence_GodAndRingListWindow_MenuItemContentMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow_MenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodAndRingListWindow_MenuItemContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_PageDataList_GodComparer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringlistsequence::RingListSequence_GodPageData as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistsequence::RingListSequence_GodPageData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::class(),
+                "Compare",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::NAME,
+                        "Compare",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare(
+        this: RingListSequence_PageDataList_GodComparer,
+        a: crate::app::ringlistsequence::RingListSequence_GodPageData,
+        b: crate::app::ringlistsequence::RingListSequence_GodPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(
+            RingListSequence_PageDataList_GodComparer,
+            crate::app::ringlistsequence::RingListSequence_GodPageData,
+            crate::app::ringlistsequence::RingListSequence_GodPageData,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_compare::get_method_info().method_ptr);
+        inner(this, a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSequence_PageDataList_GodComparer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_PageDataList_GodComparer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_PageDataList_GodComparerMethods: IRingListSequence_PageDataList_GodComparer {
+    #[doc = "`Compare(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
+    fn compare(
+        self,
+        a: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>,
+        b: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>,
+    ) -> i32 {
+        unsafe {
+            let __receiver = <RingListSequence_PageDataList_GodComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_PageDataList_GodComparer_unity2_raw::compare(
+                __receiver,
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_PageDataList_GodComparer as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_PageDataList_GodComparer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_PageDataList_GodComparer> IRingListSequence_PageDataList_GodComparerMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_PageDataList_GodComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_PageDataList_GodComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_PageDataList_GodComparerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_RingPageData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_Data",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_data(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::ringdata::RingData {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> crate::app::ringdata::RingData =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_Data",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_Data",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RingListSequence_RingPageData,
+        value: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_rank_c {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_DataRankC",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_DataRankC",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_data_rank_c(
+        this: RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringdata::RingData {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> crate::app::ringdata::RingData =
+            ::core::mem::transmute(__lookup_get_data_rank_c::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_rank_c {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_DataRankC",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_DataRankC",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data_rank_c(
+        this: RingListSequence_RingPageData,
+        value: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data_rank_c::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_rank_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_DataRankB",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_DataRankB",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_data_rank_b(
+        this: RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringdata::RingData {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> crate::app::ringdata::RingData =
+            ::core::mem::transmute(__lookup_get_data_rank_b::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_rank_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_DataRankB",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_DataRankB",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data_rank_b(
+        this: RingListSequence_RingPageData,
+        value: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data_rank_b::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_rank_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_DataRankA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_DataRankA",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_data_rank_a(
+        this: RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringdata::RingData {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> crate::app::ringdata::RingData =
+            ::core::mem::transmute(__lookup_get_data_rank_a::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_rank_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_DataRankA",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_DataRankA",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data_rank_a(
+        this: RingListSequence_RingPageData,
+        value: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data_rank_a::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data_rank_s {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_DataRankS",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_DataRankS",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_data_rank_s(
+        this: RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringdata::RingData {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> crate::app::ringdata::RingData =
+            ::core::mem::transmute(__lookup_get_data_rank_s::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data_rank_s {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_DataRankS",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_DataRankS",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data_rank_s(
+        this: RingListSequence_RingPageData,
+        value: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data_rank_s::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_related_god_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_RelatedGodPageData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_RelatedGodPageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_related_god_page_data(
+        this: RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringlistsequence::RingListSequence_GodPageData {
+        let inner: extern "C" fn(
+            RingListSequence_RingPageData,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::ringlistsequence::RingListSequence_GodPageData =
+            ::core::mem::transmute(__lookup_get_related_god_page_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_related_god_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_GodPageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_RelatedGodPageData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_RelatedGodPageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_related_god_page_data(
+        this: RingListSequence_RingPageData,
+        value: crate::app::ringlistsequence::RingListSequence_GodPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_RingPageData,
+            crate::app::ringlistsequence::RingListSequence_GodPageData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_related_god_page_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_related_group_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_RelatedGroupIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_RelatedGroupIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_related_group_index(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_related_group_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_related_group_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "set_RelatedGroupIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_RelatedGroupIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_related_group_index(this: RingListSequence_RingPageData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_related_group_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_related_group_page_data_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "get_RelatedGroupPageDataNum",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_RelatedGroupPageDataNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_related_group_page_data_num(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_related_group_page_data_num::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "Build",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build(
+        this: RingListSequence_RingPageData,
+        ring_data: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RingListSequence_RingPageData, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
+        inner(this, ring_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_got_rank_c {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "IsGotRankC",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "IsGotRankC",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_got_rank_c(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_got_rank_c::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_got_rank_b {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "IsGotRankB",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "IsGotRankB",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_got_rank_b(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_got_rank_b::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_got_rank_a {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "IsGotRankA",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "IsGotRankA",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_got_rank_a(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_got_rank_a::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_got_rank_s {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "IsGotRankS",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "IsGotRankS",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_got_rank_s(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_got_rank_s::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_got_rank_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "GetGotRankNum",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "GetGotRankNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_got_rank_num(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_got_rank_num::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_got_max_rank {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                "GetGotMaxRank",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        "GetGotMaxRank",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_got_max_rank(
+        this: RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringdata::RingData_Ranks {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> crate::app::ringdata::RingData_Ranks =
+            ::core::mem::transmute(__lookup_get_got_max_rank::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSequence_RingPageData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingPageData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingPageData as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingPageData as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingPageData {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __RingListSequence_RingPageData_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_RingPageDataMethods: IRingListSequence_RingPageData {
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::app::ringdata::RingData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Data(crate::app::ringdata::RingData)` overload"]
+    fn set_data(self, value: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DataRankC()` overload"]
+    fn get_data_rank_c(self) -> crate::app::ringdata::RingData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_data_rank_c(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_DataRankC(crate::app::ringdata::RingData)` overload"]
+    fn set_data_rank_c(self, value: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_data_rank_c(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DataRankB()` overload"]
+    fn get_data_rank_b(self) -> crate::app::ringdata::RingData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_data_rank_b(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_DataRankB(crate::app::ringdata::RingData)` overload"]
+    fn set_data_rank_b(self, value: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_data_rank_b(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DataRankA()` overload"]
+    fn get_data_rank_a(self) -> crate::app::ringdata::RingData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_data_rank_a(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_DataRankA(crate::app::ringdata::RingData)` overload"]
+    fn set_data_rank_a(self, value: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_data_rank_a(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_DataRankS()` overload"]
+    fn get_data_rank_s(self) -> crate::app::ringdata::RingData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_data_rank_s(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_DataRankS(crate::app::ringdata::RingData)` overload"]
+    fn set_data_rank_s(self, value: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_data_rank_s(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_RelatedGodPageData()` overload"]
+    fn get_related_god_page_data(self) -> crate::app::ringlistsequence::RingListSequence_GodPageData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_related_god_page_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RelatedGodPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
+    fn set_related_god_page_data(self, value: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_related_god_page_data(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RelatedGroupIndex()` overload"]
+    fn get_related_group_index(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_related_group_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
+    fn set_related_group_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::set_related_group_index(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
+    fn get_related_group_page_data_num(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_related_group_page_data_num(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Build(crate::app::ringdata::RingData)` overload"]
+    fn build(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::build(__receiver, ::core::convert::Into::into(ring_data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsGotRankC()` overload"]
+    fn is_got_rank_c(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::is_got_rank_c(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsGotRankB()` overload"]
+    fn is_got_rank_b(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::is_got_rank_b(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsGotRankA()` overload"]
+    fn is_got_rank_a(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::is_got_rank_a(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsGotRankS()` overload"]
+    fn is_got_rank_s(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::is_got_rank_s(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetGotRankNum()` overload"]
+    fn get_got_rank_num(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_got_rank_num(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetGotMaxRank()` overload"]
+    fn get_got_max_rank(self) -> crate::app::ringdata::RingData_Ranks {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::get_got_max_rank(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingPageData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_RingPageData> IRingListSequence_RingPageDataMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingPageData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RingPageData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RingPageDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_menu_item_content_max {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::ClassIdentity>::class(),
+                "GetMenuItemContentMax",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetMenuItemContentMax",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_menu_item_content_max(
+        this: RingListSequence_GodAndRingListWindow_MenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuContent, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_menu_item_content_max::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::ClassIdentity>::class(),
+                "CreateContent",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CreateContent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_content(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent =
+            ::core::mem::transmute(__lookup_create_content::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSequence_GodAndRingListWindow_MenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow_MenuContent {
+    #[doc = "`CreateContent()` overload"]
+    pub fn create_content() -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent {
+        unsafe { __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw::create_content(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_GodAndRingListWindow_MenuContentMethods: IRingListSequence_GodAndRingListWindow_MenuContent {
+    #[doc = "`GetMenuItemContentMax()` overload"]
+    fn get_menu_item_content_max(self) -> i32 {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_GodAndRingListWindow_MenuContent> IRingListSequence_GodAndRingListWindow_MenuContentMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow_MenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodAndRingListWindow_MenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_RingListWindow_SkillInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSequence_RingListWindow_SkillInfo,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_RingListWindow_SkillInfo,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: RingListSequence_RingListWindow_SkillInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow_SkillInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RingListSequence_RingListWindow_SkillInfo,
+        ring_data: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow_SkillInfo, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
+        inner(this, ring_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_RingListWindow_SkillInfoMethods: IRingListSequence_RingListWindow_SkillInfo {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_RingListWindow_SkillInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RingListWindow_SkillInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_RingListWindow_SkillInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RingListWindow_SkillInfo_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetData(crate::app::ringdata::RingData)` overload"]
+    fn set_data(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_RingListWindow_SkillInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RingListWindow_SkillInfo_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(ring_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_RingListWindow_SkillInfo> IRingListSequence_RingListWindow_SkillInfoMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingListWindow_SkillInfo {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RingListWindow_SkillInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RingListWindow_SkillInfoMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_RingListWindow_RingInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <crate::app::ringdata::RingData_Ranks as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSequence_RingListWindow_RingInfo,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        rank: crate::app::ringdata::RingData_Ranks,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_RingListWindow_RingInfo,
+            crate::unity_engine::gameobject::GameObject,
+            crate::app::ringdata::RingData_Ranks,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, rank, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: RingListSequence_RingListWindow_RingInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow_RingInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_RingInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RingListSequence_RingListWindow_RingInfo,
+        ring_data: crate::app::ringdata::RingData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow_RingInfo, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
+        inner(this, ring_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_RingListWindow_RingInfoMethods: IRingListSequence_RingListWindow_RingInfo {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` overload"]
+    fn ctor(
+        self,
+        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        rank: impl ::core::convert::Into<crate::app::ringdata::RingData_Ranks>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_RingListWindow_RingInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RingListWindow_RingInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(rank),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_RingListWindow_RingInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RingListWindow_RingInfo_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetData(crate::app::ringdata::RingData)` overload"]
+    fn set_data(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_RingListWindow_RingInfo as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RingListWindow_RingInfo_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(ring_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_RingListWindow_RingInfo> IRingListSequence_RingListWindow_RingInfoMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingListWindow_RingInfo {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject, rank: crate::app::ringdata::RingData_Ranks) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RingListWindow_RingInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RingListWindow_RingInfoMethods>::ctor(this, root_object, rank);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_CharaArrowGroup_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSequence_CharaArrowGroup,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_CharaArrowGroup, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::class(),
+                "ShowAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::NAME,
+                        "ShowAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show_all(this: RingListSequence_CharaArrowGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_CharaArrowGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show_all::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::class(),
+                "HideAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaArrowGroup as ::unity2::ClassIdentity>::NAME,
+                        "HideAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide_all(this: RingListSequence_CharaArrowGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_CharaArrowGroup, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide_all::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_CharaArrowGroupMethods: IRingListSequence_CharaArrowGroup {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_CharaArrowGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaArrowGroup_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowAll()` overload"]
+    fn show_all(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_CharaArrowGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaArrowGroup_unity2_raw::show_all(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HideAll()` overload"]
+    fn hide_all(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_CharaArrowGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaArrowGroup_unity2_raw::hide_all(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_CharaArrowGroup> IRingListSequence_CharaArrowGroupMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_CharaArrowGroup {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_CharaArrowGroup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_CharaArrowGroupMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_GodPageData_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "get_Data",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_Data",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_data(this: RingListSequence_GodPageData, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::goddata::GodData {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> crate::app::goddata::GodData =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "set_Data",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_Data",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RingListSequence_GodPageData,
+        value: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_GodPageData, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_related_group_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "get_RelatedGroupIndex",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_RelatedGroupIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_related_group_index(this: RingListSequence_GodPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_related_group_index::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_related_group_index {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "set_RelatedGroupIndex",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_RelatedGroupIndex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_related_group_index(this: RingListSequence_GodPageData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodPageData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_related_group_index::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_related_group_page_data_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "set_RelatedGroupPageDataNum",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_RelatedGroupPageDataNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_related_group_page_data_num(
+        this: RingListSequence_GodPageData,
+        value: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_GodPageData, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_related_group_page_data_num::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_related_group_page_data_num {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "get_RelatedGroupPageDataNum",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_RelatedGroupPageDataNum",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_related_group_page_data_num(this: RingListSequence_GodPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_related_group_page_data_num::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_menu_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::basicmenuselect::BasicMenuSelect as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "set_MenuSelect",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "set_MenuSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_menu_select(
+        this: RingListSequence_GodPageData,
+        value: crate::app::basicmenuselect::BasicMenuSelect,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_GodPageData, crate::app::basicmenuselect::BasicMenuSelect, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_menu_select::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_menu_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "get_MenuSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "get_MenuSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_menu_select(
+        this: RingListSequence_GodPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuselect::BasicMenuSelect {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> crate::app::basicmenuselect::BasicMenuSelect =
+            ::core::mem::transmute(__lookup_get_menu_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "Build",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build(
+        this: RingListSequence_GodPageData,
+        god_data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_GodPageData, crate::app::goddata::GodData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
+        inner(this, god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_max_bond_level {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "GetMaxBondLevel",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxBondLevel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_max_bond_level(this: RingListSequence_GodPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_max_bond_level::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_to_lv {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                "GetToLv",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        "GetToLv",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_to_lv(this: RingListSequence_GodPageData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_to_lv::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodPageData as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodPageData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSequence_GodPageData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodPageData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_GodPageDataMethods: IRingListSequence_GodPageData {
+    #[doc = "`get_Data()` overload"]
+    fn get_data(self) -> crate::app::goddata::GodData {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::get_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_Data(crate::app::goddata::GodData)` overload"]
+    fn set_data(self, value: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::set_data(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_RelatedGroupIndex()` overload"]
+    fn get_related_group_index(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::get_related_group_index(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
+    fn set_related_group_index(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::set_related_group_index(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`set_RelatedGroupPageDataNum(i32)` overload"]
+    fn set_related_group_page_data_num(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::set_related_group_page_data_num(
+                __receiver,
+                ::core::convert::Into::into(value),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
+    fn get_related_group_page_data_num(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::get_related_group_page_data_num(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_MenuSelect(crate::app::basicmenuselect::BasicMenuSelect)` overload"]
+    fn set_menu_select(self, value: impl ::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::set_menu_select(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_MenuSelect()` overload"]
+    fn get_menu_select(self) -> crate::app::basicmenuselect::BasicMenuSelect {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::get_menu_select(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Build(crate::app::goddata::GodData)` overload"]
+    fn build(self, god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::build(__receiver, ::core::convert::Into::into(god_data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetMaxBondLevel()` overload"]
+    fn get_max_bond_level(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::get_max_bond_level(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetToLv()` overload"]
+    fn get_to_lv(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::get_to_lv(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_GodPageData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_GodPageData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_GodPageData> IRingListSequence_GodPageDataMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodPageData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodPageData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodPageDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RingListSequence_CharaImage_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -5328,18 +3477,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -5347,24 +3493,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaImage,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaImage, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
@@ -5377,39 +3514,27 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: RingListSequence_CharaImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: RingListSequence_CharaImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingListSequence_CharaImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fade_in {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
@@ -5422,39 +3547,27 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "FadeIn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "FadeIn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fade_in(
-        this: RingListSequence_CharaImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn fade_in(this: RingListSequence_CharaImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingListSequence_CharaImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_in::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_fade_in::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fade_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
@@ -5467,40 +3580,29 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "FadeOut",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "FadeOut",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fade_out(
-        this: RingListSequence_CharaImage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn fade_out(this: RingListSequence_CharaImage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingListSequence_CharaImage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_fade_out::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_fade_out::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
                 "ChangeImage",
@@ -5512,18 +3614,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "ChangeImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "ChangeImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_image(
@@ -5535,21 +3634,16 @@ mod __RingListSequence_CharaImage_unity2_raw {
             RingListSequence_CharaImage,
             crate::app::ringlistsequence::RingListSequence_PageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_image::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_change_image::get_method_info().method_ptr);
         inner(this, page_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_god_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_GodPageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_GodPageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
                 "ChangeGodChara",
@@ -5561,18 +3655,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "ChangeGodChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "ChangeGodChara",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_god_chara(
@@ -5584,21 +3675,16 @@ mod __RingListSequence_CharaImage_unity2_raw {
             RingListSequence_CharaImage,
             crate::app::ringlistsequence::RingListSequence_GodPageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_god_chara::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_change_god_chara::get_method_info().method_ptr);
         inner(this, god_page_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_ring_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_RingPageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_RingPageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
                 "ChangeRingChara",
@@ -5610,18 +3696,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "ChangeRingChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "ChangeRingChara",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_ring_chara(
@@ -5633,22 +3716,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
             RingListSequence_CharaImage,
             crate::app::ringlistsequence::RingListSequence_RingPageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_ring_chara::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_change_ring_chara::get_method_info().method_ptr);
         inner(this, ring_page_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_chara_image_sprite {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
                 "SetCharaImageSprite",
@@ -5660,18 +3736,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "SetCharaImageSprite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "SetCharaImageSprite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_chara_image_sprite(
@@ -5679,26 +3752,16 @@ mod __RingListSequence_CharaImage_unity2_raw {
         sprite: crate::unity_engine::sprite::Sprite,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaImage,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_chara_image_sprite::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaImage, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_chara_image_sprite::get_method_info().method_ptr);
         inner(this, sprite, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_frame_image_sprite {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaImage as ::unity2::ClassIdentity>::class(),
                 "SetFrameImageSprite",
@@ -5710,18 +3773,15 @@ mod __RingListSequence_CharaImage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
-                    "SetFrameImageSprite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImage as ::unity2::ClassIdentity>::NAME,
+                        "SetFrameImageSprite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_frame_image_sprite(
@@ -5729,15 +3789,8 @@ mod __RingListSequence_CharaImage_unity2_raw {
         sprite: crate::unity_engine::sprite::Sprite,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaImage,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_frame_image_sprite::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaImage, crate::unity_engine::sprite::Sprite, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_frame_image_sprite::get_method_info().method_ptr);
         inner(this, sprite, __unity2_method_info)
     }
 }
@@ -5745,90 +3798,50 @@ mod __RingListSequence_CharaImage_unity2_raw {
 #[cfg(feature = "app-ringlistsequence")]
 pub trait IRingListSequence_CharaImageMethods: IRingListSequence_CharaImage {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaImage_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaImage_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaImage_unity2_raw::dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaImage_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FadeIn()` overload"]
     fn fade_in(self) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaImage_unity2_raw::fade_in(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaImage_unity2_raw::fade_in(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FadeOut()` overload"]
     fn fade_out(self) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaImage_unity2_raw::fade_out(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaImage_unity2_raw::fade_out(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn change_image(
-        self,
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
+    fn change_image(self, page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaImage_unity2_raw::change_image(
-                __receiver,
-                ::core::convert::Into::into(page_data),
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaImage_unity2_raw::change_image(__receiver, ::core::convert::Into::into(page_data), ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeGodChara(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    fn change_god_chara(
-        self,
-        god_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-        >,
-    ) -> () {
+    fn change_god_chara(self, god_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaImage_unity2_raw::change_god_chara(
                 __receiver,
                 ::core::convert::Into::into(god_page_data),
@@ -5837,17 +3850,10 @@ pub trait IRingListSequence_CharaImageMethods: IRingListSequence_CharaImage {
         }
     }
     #[doc = "`ChangeRingChara(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    fn change_ring_chara(
-        self,
-        ring_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_RingPageData,
-        >,
-    ) -> () {
+    fn change_ring_chara(self, ring_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaImage_unity2_raw::change_ring_chara(
                 __receiver,
                 ::core::convert::Into::into(ring_page_data),
@@ -5856,15 +3862,10 @@ pub trait IRingListSequence_CharaImageMethods: IRingListSequence_CharaImage {
         }
     }
     #[doc = "`SetCharaImageSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_chara_image_sprite(
-        self,
-        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
+    fn set_chara_image_sprite(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaImage_unity2_raw::set_chara_image_sprite(
                 __receiver,
                 ::core::convert::Into::into(sprite),
@@ -5873,15 +3874,10 @@ pub trait IRingListSequence_CharaImageMethods: IRingListSequence_CharaImage {
         }
     }
     #[doc = "`SetFrameImageSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    fn set_frame_image_sprite(
-        self,
-        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> () {
+    fn set_frame_image_sprite(self, sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaImage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaImage_unity2_raw::set_frame_image_sprite(
                 __receiver,
                 ::core::convert::Into::into(sprite),
@@ -5919,9 +3915,7 @@ mod __RingListSequence_RelatedGroupWindow_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -5935,18 +3929,15 @@ mod __RingListSequence_RelatedGroupWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RelatedGroupWindow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RelatedGroupWindow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -5954,25 +3945,17 @@ mod __RingListSequence_RelatedGroupWindow_unity2_raw {
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RelatedGroupWindow,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_RelatedGroupWindow, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_RelatedGroupWindow as ::unity2::ClassIdentity>::class(),
                 "SetText",
@@ -5984,18 +3967,15 @@ mod __RingListSequence_RelatedGroupWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RelatedGroupWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RelatedGroupWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_text(
@@ -6007,46 +3987,28 @@ mod __RingListSequence_RelatedGroupWindow_unity2_raw {
             RingListSequence_RelatedGroupWindow,
             crate::app::ringlistsequence::RingListSequence_PageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_text::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_text::get_method_info().method_ptr);
         inner(this, page_data, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_RelatedGroupWindowMethods:
-    IRingListSequence_RelatedGroupWindow
-{
+pub trait IRingListSequence_RelatedGroupWindowMethods: IRingListSequence_RelatedGroupWindow {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver =
-                <RingListSequence_RelatedGroupWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RelatedGroupWindow_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingListSequence_RelatedGroupWindow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_RelatedGroupWindow_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
         }
     }
     #[doc = "`SetText(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn set_text(
-        self,
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
+    fn set_text(self, page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
         unsafe {
-            let __receiver =
-                <RingListSequence_RelatedGroupWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <RingListSequence_RelatedGroupWindow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RingListSequence_RelatedGroupWindow_unity2_raw::set_text(
                 __receiver,
                 ::core::convert::Into::into(page_data),
@@ -6057,10 +4019,7 @@ pub trait IRingListSequence_RelatedGroupWindowMethods:
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_RelatedGroupWindow> IRingListSequence_RelatedGroupWindowMethods
-    for __T
-{
-}
+impl<__T: IRingListSequence_RelatedGroupWindow> IRingListSequence_RelatedGroupWindowMethods for __T {}
 
 #[cfg(feature = "app-ringlistsequence")]
 impl RingListSequence_RelatedGroupWindow {
@@ -6081,19 +4040,1124 @@ impl RingListSequence_RelatedGroupWindow {
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_RingListWindow_unity2_raw {
+mod __RingListSequence_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "GetGodUnit",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetGodUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god_unit(
+        god_data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::godunit::GodUnit {
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> crate::app::godunit::GodUnit =
+            ::core::mem::transmute(__lookup_get_god_unit::get_method_info().method_ptr);
+        inner(god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_got_god {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "IsGotGod",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsGotGod",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_got_god(god_data: crate::app::goddata::GodData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_got_god::get_method_info().method_ptr);
+        inner(god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_got_ring {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "IsGotRing",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsGotRing",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_got_ring(ring_data: crate::app::ringdata::RingData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_got_ring::get_method_info().method_ptr);
+        inner(ring_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_god_and_ring_related {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::ringlistsequence::RingListSequence_GodPageData as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistsequence::RingListSequence_RingPageData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "IsGodAndRingRelated",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsGodAndRingRelated",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_god_and_ring_related(
+        god_page_data: crate::app::ringlistsequence::RingListSequence_GodPageData,
+        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            crate::app::ringlistsequence::RingListSequence_GodPageData,
+            crate::app::ringlistsequence::RingListSequence_RingPageData,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_is_god_and_ring_related::get_method_info().method_ptr);
+        inner(god_page_data, ring_page_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "GetGodName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetGodName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god_name(god_data: crate::app::goddata::GodData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_god_name::get_method_info().method_ptr);
+        inner(god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_god_name_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "GetGodName",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetGodName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_god_name_2(
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::ringlistsequence::RingListSequence_PageData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_god_name_2::get_method_info().method_ptr);
+        inner(page_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_compare_god_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "CompareGodName",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "CompareGodName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn compare_god_name(
+        this: RingListSequence,
+        god_name1: ::unity2::Il2CppString,
+        god_name2: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(RingListSequence, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_compare_god_name::get_method_info().method_ptr);
+        inner(this, god_name1, god_name2, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_world_text_mid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "GetWorldTextMid",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetWorldTextMid",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_world_text_mid(
+        god_data: crate::app::goddata::GodData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_world_text_mid::get_method_info().method_ptr);
+        inner(god_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_load {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "Load",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn load(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_unload {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "Unload",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "Unload",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn unload(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_loading {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "WaitLoading",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitLoading",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn wait_loading(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_wait_loading::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_start {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "Start",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn start(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "SetPageData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetPageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_page_data(
+        this: RingListSequence,
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence, crate::app::ringlistsequence::RingListSequence_PageData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_page_data::get_method_info().method_ptr);
+        inner(this, page_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_open {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "Open",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "Open",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn open(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_opening {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "WaitOpening",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitOpening",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn wait_opening(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_wait_opening::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_tick {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "Tick",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn tick(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "Close",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn close(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_wait_closing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "WaitClosing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitClosing",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn wait_closing(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_wait_closing::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "OnCreate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_create(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_desc {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "GetDesc",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetDesc",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_desc(
+        this: RingListSequence,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_get_desc::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_open_enable {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                "IsOpenEnable",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsOpenEnable",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_open_enable(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_open_enable::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
+                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: RingListSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence {
+    #[doc = "`GetGodUnit(crate::app::goddata::GodData)` overload"]
+    pub fn get_god_unit(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> crate::app::godunit::GodUnit {
+        unsafe { __RingListSequence_unity2_raw::get_god_unit(::core::convert::Into::into(god_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsGotGod(crate::app::goddata::GodData)` overload"]
+    pub fn is_got_god(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> bool {
+        unsafe { __RingListSequence_unity2_raw::is_got_god(::core::convert::Into::into(god_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsGotRing(crate::app::ringdata::RingData)` overload"]
+    pub fn is_got_ring(ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> bool {
+        unsafe { __RingListSequence_unity2_raw::is_got_ring(::core::convert::Into::into(ring_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsGodAndRingRelated(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
+    pub fn is_god_and_ring_related(
+        god_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>,
+        ring_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>,
+    ) -> bool {
+        unsafe {
+            __RingListSequence_unity2_raw::is_god_and_ring_related(
+                ::core::convert::Into::into(god_page_data),
+                ::core::convert::Into::into(ring_page_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`GetGodName(crate::app::goddata::GodData)` overload"]
+    pub fn get_god_name(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> ::unity2::Il2CppString {
+        unsafe { __RingListSequence_unity2_raw::get_god_name(::core::convert::Into::into(god_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetGodName(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    pub fn get_god_name_2(page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> ::unity2::Il2CppString {
+        unsafe { __RingListSequence_unity2_raw::get_god_name_2(::core::convert::Into::into(page_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`GetWorldTextMid(crate::app::goddata::GodData)` overload"]
+    pub fn get_world_text_mid(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> ::unity2::Il2CppString {
+        unsafe { __RingListSequence_unity2_raw::get_world_text_mid(::core::convert::Into::into(god_data), ::core::option::Option::None) }
+    }
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __RingListSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
+    }
+
+    #[doc = "`IsOpenEnable()` overload"]
+    pub fn is_open_enable() -> bool {
+        unsafe { __RingListSequence_unity2_raw::is_open_enable(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequenceMethods: IRingListSequence {
+    #[doc = "`CompareGodName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn compare_god_name(
+        self,
+        god_name1: impl ::core::convert::Into<::unity2::Il2CppString>,
+        god_name2: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::compare_god_name(
+                __receiver,
+                ::core::convert::Into::into(god_name1),
+                ::core::convert::Into::into(god_name2),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Load()` overload"]
+    fn load(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::load(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Unload()` overload"]
+    fn unload(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::unload(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitLoading()` overload"]
+    fn wait_loading(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::wait_loading(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::start(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    fn set_page_data(self, page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::set_page_data(__receiver, ::core::convert::Into::into(page_data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Open()` overload"]
+    fn open(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::open(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitOpening()` overload"]
+    fn wait_opening(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::wait_opening(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`WaitClosing()` overload"]
+    fn wait_closing(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::wait_closing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnCreate()` overload"]
+    fn on_create(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDesc()` overload"]
+    fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::get_desc(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence> IRingListSequenceMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "get_PageData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_PageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_page_data(
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringlistsequence::RingListSequence_PageData {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::ringlistsequence::RingListSequence_PageData = ::core::mem::transmute(__lookup_get_page_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "set_PageData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_PageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_page_data(
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
+        value: crate::app::ringlistsequence::RingListSequence_PageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItem,
+            crate::app::ringlistsequence::RingListSequence_PageData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_page_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -6103,47 +5167,38 @@ mod __RingListSequence_RingListWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: RingListSequence_RingListWindow,
-        root_object: crate::unity_engine::gameobject::GameObject,
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RingListSequence_RingListWindow,
-            crate::unity_engine::gameobject::GameObject,
+            RingListSequence_GodAndRingListWindow_MenuItem,
+            crate::app::ringlistsequence::RingListSequence_PageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, page_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_clear {
+    pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
-                "Clear",
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "GetName",
                 0,
                 param_types,
                 false,
@@ -6152,92 +5207,34 @@ mod __RingListSequence_RingListWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: RingListSequence_RingListWindow,
+    pub unsafe fn get_name(
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_RingListWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
+    pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_RingPageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RingListSequence_RingListWindow,
-        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow,
-            crate::app::ringlistsequence::RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, ring_page_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
-                "Show",
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
                 0,
                 param_types,
                 false,
@@ -6246,43 +5243,36 @@ mod __RingListSequence_RingListWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: RingListSequence_RingListWindow,
+    pub unsafe fn build_attribute(
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_RingListWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_hide {
+    pub mod __lookup_is_god {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
-                "Hide",
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "IsGod",
                 0,
                 param_types,
                 false,
@@ -6291,128 +5281,241 @@ mod __RingListSequence_RingListWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsGod",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn is_god(this: RingListSequence_GodAndRingListWindow_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_god::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_ring {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "IsRing",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsRing",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn hide(
-        this: RingListSequence_RingListWindow,
+    pub unsafe fn is_ring(this: RingListSequence_GodAndRingListWindow_MenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_MenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_ring::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence_RingListWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: RingListSequence_GodAndRingListWindow_MenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_MenuItem,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_RingListWindowMethods: IRingListSequence_RingListWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+pub trait IRingListSequence_GodAndRingListWindow_MenuItemMethods: IRingListSequence_GodAndRingListWindow_MenuItem {
+    #[doc = "`get_PageData()` overload"]
+    fn get_page_data(self) -> crate::app::ringlistsequence::RingListSequence_PageData {
         unsafe {
-            let __receiver =
-                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingListWindow_unity2_raw::ctor(
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::get_page_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_PageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    fn set_page_data(self, value: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::set_page_data(
                 __receiver,
-                ::core::convert::Into::into(root_object),
+                ::core::convert::Into::into(value),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
+    #[doc = "`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    fn ctor(self, page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
         unsafe {
-            let __receiver =
-                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingListWindow_unity2_raw::clear(
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(page_data),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`SetData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    fn set_data(
-        self,
-        ring_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_RingPageData,
-        >,
-    ) -> () {
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingListWindow_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(ring_page_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Show()` overload"]
-    fn show(self) -> () {
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
-            let __receiver =
-                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingListWindow_unity2_raw::show(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
+    #[doc = "`IsGod()` overload"]
+    fn is_god(self) -> bool {
         unsafe {
-            let __receiver =
-                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_RingListWindow_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::is_god(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsRing()` overload"]
+    fn is_ring(self) -> bool {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::is_ring(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_MenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_RingListWindow> IRingListSequence_RingListWindowMethods for __T {}
+impl<__T: IRingListSequence_GodAndRingListWindow_MenuItem> IRingListSequence_GodAndRingListWindow_MenuItemMethods for __T {}
 
 #[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingListWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+impl RingListSequence_GodAndRingListWindow_MenuItem {
+    #[doc = "`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` — overload selector"]
+    pub fn new(page_data: crate::app::ringlistsequence::RingListSequence_PageData) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingListWindow),
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSequence_RingListWindowMethods>::ctor(this, root_object);
+        <Self as IRingListSequence_GodAndRingListWindow_MenuItemMethods>::ctor(this, page_data);
         this
     }
 }
@@ -6426,9 +5529,7 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -6442,18 +5543,15 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -6461,24 +5559,15 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_CharaInfoWindow,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_CharaInfoWindow, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::class(),
@@ -6491,40 +5580,29 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: RingListSequence_CharaInfoWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear(this: RingListSequence_CharaInfoWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RingListSequence_CharaInfoWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_page_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::class(),
                 "SetPageData",
@@ -6536,18 +5614,15 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetPageData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetPageData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_page_data(
@@ -6559,21 +5634,16 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
             RingListSequence_CharaInfoWindow,
             crate::app::ringlistsequence::RingListSequence_PageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_page_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_page_data::get_method_info().method_ptr);
         inner(this, page_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_page_data_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_GodPageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_GodPageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::class(),
                 "SetPageData",
@@ -6585,18 +5655,15 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetPageData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetPageData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_page_data_2(
@@ -6608,21 +5675,16 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
             RingListSequence_CharaInfoWindow,
             crate::app::ringlistsequence::RingListSequence_GodPageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_page_data_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_page_data_2::get_method_info().method_ptr);
         inner(this, god_page_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_page_data_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_RingPageData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_RingPageData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::class(),
                 "SetPageData",
@@ -6634,18 +5696,15 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetPageData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetPageData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_page_data_3(
@@ -6657,11 +5716,7 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
             RingListSequence_CharaInfoWindow,
             crate::app::ringlistsequence::RingListSequence_RingPageData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_page_data_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_page_data_3::get_method_info().method_ptr);
         inner(this, ring_page_data, __unity2_method_info)
     }
 }
@@ -6669,45 +5724,26 @@ mod __RingListSequence_CharaInfoWindow_unity2_raw {
 #[cfg(feature = "app-ringlistsequence")]
 pub trait IRingListSequence_CharaInfoWindowMethods: IRingListSequence_CharaInfoWindow {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaInfoWindow_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaInfoWindow_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
         }
     }
     #[doc = "`Clear()` overload"]
     fn clear(self) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RingListSequence_CharaInfoWindow_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_CharaInfoWindow_unity2_raw::clear(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn set_page_data(
-        self,
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> () {
+    fn set_page_data(self, page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaInfoWindow_unity2_raw::set_page_data(
                 __receiver,
                 ::core::convert::Into::into(page_data),
@@ -6716,17 +5752,10 @@ pub trait IRingListSequence_CharaInfoWindowMethods: IRingListSequence_CharaInfoW
         }
     }
     #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    fn set_page_data_2(
-        self,
-        god_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-        >,
-    ) -> () {
+    fn set_page_data_2(self, god_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaInfoWindow_unity2_raw::set_page_data_2(
                 __receiver,
                 ::core::convert::Into::into(god_page_data),
@@ -6735,17 +5764,10 @@ pub trait IRingListSequence_CharaInfoWindowMethods: IRingListSequence_CharaInfoW
         }
     }
     #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    fn set_page_data_3(
-        self,
-        ring_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_RingPageData,
-        >,
-    ) -> () {
+    fn set_page_data_3(self, ring_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>) -> () {
         unsafe {
             let __receiver =
-                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RingListSequence_CharaInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RingListSequence_CharaInfoWindow_unity2_raw::set_page_data_3(
                 __receiver,
                 ::core::convert::Into::into(ring_page_data),
@@ -6777,21 +5799,101 @@ impl RingListSequence_CharaInfoWindow {
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_GodAndRingListWindow_unity2_raw {
+mod __RingListSequence_GodAndRingListWindow_Menu_unity2_raw {
     use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_selected_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
+                "get_SelectedPageData",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
+                        "get_SelectedPageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_selected_page_data(
+        this: RingListSequence_GodAndRingListWindow_Menu,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::ringlistsequence::RingListSequence_PageData {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_Menu,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::ringlistsequence::RingListSequence_PageData =
+            ::core::mem::transmute(__lookup_get_selected_page_data::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_selected_page_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
+                "set_SelectedPageData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
+                        "set_SelectedPageData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_selected_page_data(
+        this: RingListSequence_GodAndRingListWindow_Menu,
+        value: crate::app::ringlistsequence::RingListSequence_PageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow_Menu,
+            crate::app::ringlistsequence::RingListSequence_PageData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_selected_page_data::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::class(),
+                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
-                1,
+                2,
                 param_types,
                 false,
             )
@@ -6799,562 +5901,45 @@ mod __RingListSequence_GodAndRingListWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: RingListSequence_GodAndRingListWindow,
-        root_object: crate::unity_engine::gameobject::GameObject,
+        this: RingListSequence_GodAndRingListWindow_Menu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow,
-            crate::unity_engine::gameobject::GameObject,
+            RingListSequence_GodAndRingListWindow_Menu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root_object, __unity2_method_info)
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_delete {
+    pub mod __lookup_create_menu_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::class(),
-                "Delete",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::NAME,
-                    "Delete",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn delete(
-        this: RingListSequence_GodAndRingListWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delete::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        this: RingListSequence_GodAndRingListWindow,
-        super_: crate::app::procinst::ProcInst,
-        current_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_GodAndRingListWindow,
-            crate::app::procinst::ProcInst,
-            crate::app::ringlistsequence::RingListSequence_PageData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(this, super_, current_page_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_GodAndRingListWindowMethods:
-    IRingListSequence_GodAndRingListWindow
-{
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Delete()` overload"]
-    fn delete(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_unity2_raw::delete(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn create_bind(
-        self,
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        current_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_PageData,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_GodAndRingListWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_GodAndRingListWindow_unity2_raw::create_bind(
-                __receiver,
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(current_page_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_GodAndRingListWindow> IRingListSequence_GodAndRingListWindowMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "GetGodUnit",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetGodUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_god_unit(
-        god_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::godunit::GodUnit {
-        let inner: extern "C" fn(
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::godunit::GodUnit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god_unit::get_offset() as isize),
-        );
-        inner(god_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_got_god {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "IsGotGod",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsGotGod",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_got_god(
-        god_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::goddata::GodData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_got_god::get_offset() as isize),
-            );
-        inner(god_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_got_ring {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "IsGotRing",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsGotRing",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_got_ring(
-        ring_data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_got_ring::get_offset() as isize),
-            );
-        inner(ring_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_god_and_ring_related {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_GodPageData as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringlistsequence :: RingListSequence_RingPageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "IsGodAndRingRelated",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsGodAndRingRelated",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_god_and_ring_related(
-        god_page_data: crate::app::ringlistsequence::RingListSequence_GodPageData,
-        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-            crate::app::ringlistsequence::RingListSequence_RingPageData,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_god_and_ring_related::get_offset() as isize),
-        );
-        inner(god_page_data, ring_page_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "GetGodName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetGodName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_god_name(
-        god_data: crate::app::goddata::GodData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god_name::get_offset() as isize),
-        );
-        inner(god_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_god_name_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "GetGodName",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetGodName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_god_name_2(
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::ringlistsequence::RingListSequence_PageData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_god_name_2::get_offset() as isize),
-        );
-        inner(page_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare_god_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type(),
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "CompareGodName",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "CompareGodName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn compare_god_name(
-        this: RingListSequence,
-        god_name1: ::unity2::Il2CppString,
-        god_name2: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            RingListSequence,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare_god_name::get_offset() as isize),
-        );
-        inner(this, god_name1, god_name2, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_world_text_mid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::goddata::GodData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "GetWorldTextMid",
-                1,
+                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
+                "CreateMenuBind",
+                3,
                 param_types,
                 true,
             )
@@ -7362,498 +5947,40 @@ mod __RingListSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetWorldTextMid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
+                        "CreateMenuBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_world_text_mid(
-        god_data: crate::app::goddata::GodData,
+    pub unsafe fn create_menu_bind(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        current_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+        super_: crate::app::procinst::ProcInst,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu {
         let inner: extern "C" fn(
-            crate::app::goddata::GodData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_world_text_mid::get_offset() as isize),
-        );
-        inner(god_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "Load",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "Unload",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "Unload",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_unload::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_loading {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "WaitLoading",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitLoading",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn wait_loading(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_loading::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_start {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "Start",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn start(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_page_data {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_PageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "SetPageData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetPageData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_page_data(
-        this: RingListSequence,
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::ringlistsequence::RingListSequence_PageData,
+            crate::app::procinst::ProcInst,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_page_data::get_offset() as isize),
-        );
-        inner(this, page_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_open {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "Open",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "Open",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn open(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_opening {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "WaitOpening",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitOpening",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn wait_opening(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_opening::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_tick {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "Tick",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn tick(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_close {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "Close",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn close(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_wait_closing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "WaitClosing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitClosing",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn wait_closing(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_wait_closing::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu =
+            ::core::mem::transmute(__lookup_create_menu_bind::get_method_info().method_ptr);
+        inner(menu_item_list, current_page_data, super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
                 "OnCreate",
                 0,
                 param_types,
@@ -7863,42 +5990,30 @@ mod __RingListSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+    pub unsafe fn on_create(this: RingListSequence_GodAndRingListWindow_Menu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_Menu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
+                <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::class(),
                 "OnDispose",
                 0,
                 param_types,
@@ -7908,481 +6023,375 @@ mod __RingListSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow_Menu as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_desc {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "GetDesc",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetDesc",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_desc(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            RingListSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_desc::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
-        inner(super_, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_open_enable {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                "IsOpenEnable",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsOpenEnable",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_open_enable(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_open_enable::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RingListSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RingListSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn on_dispose(this: RingListSequence_GodAndRingListWindow_Menu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow_Menu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence {
-    #[doc = "`GetGodUnit(crate::app::goddata::GodData)` overload"]
-    pub fn get_god_unit(
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> crate::app::godunit::GodUnit {
+impl RingListSequence_GodAndRingListWindow_Menu {
+    #[doc = "`CreateMenuBind(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringlistsequence::RingListSequence_PageData, crate::app::procinst::ProcInst)` overload"]
+    pub fn create_menu_bind(
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        current_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu {
         unsafe {
-            __RingListSequence_unity2_raw::get_god_unit(
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGotGod(crate::app::goddata::GodData)` overload"]
-    pub fn is_got_god(god_data: impl ::core::convert::Into<crate::app::goddata::GodData>) -> bool {
-        unsafe {
-            __RingListSequence_unity2_raw::is_got_god(
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGotRing(crate::app::ringdata::RingData)` overload"]
-    pub fn is_got_ring(
-        ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> bool {
-        unsafe {
-            __RingListSequence_unity2_raw::is_got_ring(
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGodAndRingRelated(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    pub fn is_god_and_ring_related(
-        god_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-        >,
-        ring_page_data: impl ::core::convert::Into<
-            crate::app::ringlistsequence::RingListSequence_RingPageData,
-        >,
-    ) -> bool {
-        unsafe {
-            __RingListSequence_unity2_raw::is_god_and_ring_related(
-                ::core::convert::Into::into(god_page_data),
-                ::core::convert::Into::into(ring_page_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetGodName(crate::app::goddata::GodData)` overload"]
-    pub fn get_god_name(
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingListSequence_unity2_raw::get_god_name(
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetGodName(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    pub fn get_god_name_2(
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingListSequence_unity2_raw::get_god_name_2(
-                ::core::convert::Into::into(page_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetWorldTextMid(crate::app::goddata::GodData)` overload"]
-    pub fn get_world_text_mid(
-        god_data: impl ::core::convert::Into<crate::app::goddata::GodData>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __RingListSequence_unity2_raw::get_world_text_mid(
-                ::core::convert::Into::into(god_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __RingListSequence_unity2_raw::create_bind(
+            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::create_menu_bind(
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(current_page_data),
                 ::core::convert::Into::into(super_),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`IsOpenEnable()` overload"]
-    pub fn is_open_enable() -> bool {
-        unsafe { __RingListSequence_unity2_raw::is_open_enable(::core::option::Option::None) }
-    }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequenceMethods: IRingListSequence {
-    #[doc = "`CompareGodName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn compare_god_name(
-        self,
-        god_name1: impl ::core::convert::Into<::unity2::Il2CppString>,
-        god_name2: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+pub trait IRingListSequence_GodAndRingListWindow_MenuMethods: IRingListSequence_GodAndRingListWindow_Menu {
+    #[doc = "`get_SelectedPageData()` overload"]
+    fn get_selected_page_data(self) -> crate::app::ringlistsequence::RingListSequence_PageData {
         unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingListSequence_GodAndRingListWindow_Menu as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingListSequence_unity2_raw::compare_god_name(
+            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::get_selected_page_data(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_SelectedPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    fn set_selected_page_data(self, value: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow_Menu as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::set_selected_page_data(
                 __receiver,
-                ::core::convert::Into::into(god_name1),
-                ::core::convert::Into::into(god_name2),
+                ::core::convert::Into::into(value),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`Load()` overload"]
-    fn load(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::load(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Unload()` overload"]
-    fn unload(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::unload(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitLoading()` overload"]
-    fn wait_loading(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::wait_loading(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Start()` overload"]
-    fn start(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::start(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    fn set_page_data(
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    fn ctor(
         self,
-        page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
     ) -> () {
         unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingListSequence_GodAndRingListWindow_Menu as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingListSequence_unity2_raw::set_page_data(
+            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::ctor(
                 __receiver,
-                ::core::convert::Into::into(page_data),
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
                 ::core::option::Option::None,
             )
-        }
-    }
-    #[doc = "`Open()` overload"]
-    fn open(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::open(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitOpening()` overload"]
-    fn wait_opening(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::wait_opening(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Tick()` overload"]
-    fn tick(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::tick(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Close()` overload"]
-    fn close(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`WaitClosing()` overload"]
-    fn wait_closing(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::wait_closing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnCreate()` overload"]
     fn on_create(self) -> () {
         unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingListSequence_GodAndRingListWindow_Menu as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingListSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)
+            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <RingListSequence_GodAndRingListWindow_Menu as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __RingListSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDesc()` overload"]
-    fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::get_desc(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <RingListSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __RingListSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __RingListSequence_GodAndRingListWindow_Menu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence> IRingListSequenceMethods for __T {}
+impl<__T: IRingListSequence_GodAndRingListWindow_Menu> IRingListSequence_GodAndRingListWindow_MenuMethods for __T {}
 
 #[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl RingListSequence_GodAndRingListWindow_Menu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence),
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_Menu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSequenceMethods>::ctor(this);
+        <Self as IRingListSequence_GodAndRingListWindow_MenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_RingListWindow_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSequence_RingListWindow,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_clear {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
+                "Clear",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn clear(this: RingListSequence_RingListWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_data {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_RingPageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
+                "SetData",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_data(
+        this: RingListSequence_RingListWindow,
+        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_RingListWindow,
+            crate::app::ringlistsequence::RingListSequence_RingPageData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
+        inner(this, ring_page_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
+                "Show",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(this: RingListSequence_RingListWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide(this: RingListSequence_RingListWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_RingListWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_RingListWindowMethods: IRingListSequence_RingListWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingListWindow_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root_object), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Clear()` overload"]
+    fn clear(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingListWindow_unity2_raw::clear(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
+    fn set_data(self, ring_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingListWindow_unity2_raw::set_data(
+                __receiver,
+                ::core::convert::Into::into(ring_page_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Show()` overload"]
+    fn show(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingListWindow_unity2_raw::show(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver =
+                <RingListSequence_RingListWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_RingListWindow_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_RingListWindow> IRingListSequence_RingListWindowMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingListWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RingListWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RingListWindowMethods>::ctor(this, root_object);
         this
     }
 }
@@ -8396,9 +6405,7 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -8410,12 +6417,17 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_RingListWindow_RingInfo_Gain as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
@@ -8427,21 +6439,18 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
             RingListSequence_RingListWindow_RingInfo_Gain,
             crate::unity_engine::gameobject::GameObject,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: capabilitydefinition :: CapabilityDefinition_Type as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::capabilitydefinition::CapabilityDefinition_Type as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::ClassIdentity>::class(),
                 "SetName",
@@ -8451,12 +6460,17 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_RingListWindow_RingInfo_Gain as :: unity2 :: ClassIdentity > :: NAME , "SetName" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::ClassIdentity>::NAME,
+                        "SetName",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn set_name(
@@ -8470,22 +6484,15 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
             crate::app::capabilitydefinition::CapabilityDefinition_Type,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_name::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_name::get_method_info().method_ptr);
         inner(this, capability_type, is_opend, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::ClassIdentity>::class(),
                 "SetParam",
@@ -8495,12 +6502,17 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RingListSequence_RingListWindow_RingInfo_Gain as :: unity2 :: ClassIdentity > :: NAME , "SetParam" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::ClassIdentity>::NAME,
+                        "SetParam",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn set_param(
@@ -8508,30 +6520,20 @@ mod __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw {
         capability_enhance: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_RingInfo_Gain,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_RingListWindow_RingInfo_Gain, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_param::get_method_info().method_ptr);
         inner(this, capability_enhance, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods:
-    IRingListSequence_RingListWindow_RingInfo_Gain
-{
+pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods: IRingListSequence_RingListWindow_RingInfo_Gain {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = < RingListSequence_RingListWindow_RingInfo_Gain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(root_object),
@@ -8542,13 +6544,13 @@ pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods:
     #[doc = "`SetName(crate::app::capabilitydefinition::CapabilityDefinition_Type, bool)` overload"]
     fn set_name(
         self,
-        capability_type: impl ::core::convert::Into<
-            crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        >,
+        capability_type: impl ::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
         is_opend: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = < RingListSequence_RingListWindow_RingInfo_Gain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw::set_name(
                 __receiver,
                 ::core::convert::Into::into(capability_type),
@@ -8560,7 +6562,9 @@ pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods:
     #[doc = "`SetParam(i32)` overload"]
     fn set_param(self, capability_enhance: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < RingListSequence_RingListWindow_RingInfo_Gain as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RingListSequence_RingListWindow_RingInfo_Gain as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RingListSequence_RingListWindow_RingInfo_Gain_unity2_raw::set_param(
                 __receiver,
                 ::core::convert::Into::into(capability_enhance),
@@ -8571,10 +6575,7 @@ pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods:
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_RingListWindow_RingInfo_Gain>
-    IRingListSequence_RingListWindow_RingInfo_GainMethods for __T
-{
-}
+impl<__T: IRingListSequence_RingListWindow_RingInfo_Gain> IRingListSequence_RingListWindow_RingInfo_GainMethods for __T {}
 
 #[cfg(feature = "app-ringlistsequence")]
 impl RingListSequence_RingListWindow_RingInfo_Gain {
@@ -8595,19 +6596,17 @@ impl RingListSequence_RingListWindow_RingInfo_Gain {
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_RingListWindow_SkillInfo_unity2_raw {
+mod __RingListSequence_GodAndRingListWindow_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::class(),
+                <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 1,
                 param_types,
@@ -8617,47 +6616,35 @@ mod __RingListSequence_RingListWindow_SkillInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
-        this: RingListSequence_RingListWindow_SkillInfo,
+        this: RingListSequence_GodAndRingListWindow,
         root_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_SkillInfo,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_clear {
+    pub mod __lookup_delete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::class(),
-                "Clear",
+                <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::class(),
+                "Delete",
                 0,
                 param_types,
                 false,
@@ -8666,165 +6653,34 @@ mod __RingListSequence_RingListWindow_SkillInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::NAME,
+                        "Delete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear(
-        this: RingListSequence_RingListWindow_SkillInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_SkillInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_clear::get_offset() as isize),
-        );
+    pub unsafe fn delete(this: RingListSequence_GodAndRingListWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_GodAndRingListWindow, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_delete::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_data {
+    pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::class(),
-                "SetData",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_RingListWindow_SkillInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_data(
-        this: RingListSequence_RingListWindow_SkillInfo,
-        ring_data: crate::app::ringdata::RingData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_RingListWindow_SkillInfo,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(this, ring_data, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_RingListWindow_SkillInfoMethods:
-    IRingListSequence_RingListWindow_SkillInfo
-{
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_RingListWindow_SkillInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_RingListWindow_SkillInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root_object),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Clear()` overload"]
-    fn clear(self) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_RingListWindow_SkillInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_RingListWindow_SkillInfo_unity2_raw::clear(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetData(crate::app::ringdata::RingData)` overload"]
-    fn set_data(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
-        unsafe {
-            let __receiver = < RingListSequence_RingListWindow_SkillInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_RingListWindow_SkillInfo_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_RingListWindow_SkillInfo>
-    IRingListSequence_RingListWindow_SkillInfoMethods for __T
-{
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingListWindow_SkillInfo {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingListWindow_SkillInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RingListWindow_SkillInfoMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RingListSequence_PageDataList_GodComparer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_compare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: ringlistsequence :: RingListSequence_GodPageData as :: unity2 :: IlType > :: il_type () , < crate :: app :: ringlistsequence :: RingListSequence_GodPageData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::class(),
-                "Compare",
+                <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
                 2,
                 param_types,
                 false,
@@ -8833,48 +6689,142 @@ mod __RingListSequence_PageDataList_GodComparer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::NAME,
-                    "Compare",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_GodAndRingListWindow as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn create_bind(
+        this: RingListSequence_GodAndRingListWindow,
+        super_: crate::app::procinst::ProcInst,
+        current_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_GodAndRingListWindow,
+            crate::app::procinst::ProcInst,
+            crate::app::ringlistsequence::RingListSequence_PageData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(this, super_, current_page_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_GodAndRingListWindowMethods: IRingListSequence_GodAndRingListWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(root_object),
+                ::core::option::Option::None,
+            )
         }
     }
-    pub unsafe fn compare(
-        this: RingListSequence_PageDataList_GodComparer,
-        a: crate::app::ringlistsequence::RingListSequence_GodPageData,
-        b: crate::app::ringlistsequence::RingListSequence_GodPageData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            RingListSequence_PageDataList_GodComparer,
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-            crate::app::ringlistsequence::RingListSequence_GodPageData,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compare::get_offset() as isize),
-        );
-        inner(this, a, b, __unity2_method_info)
+    #[doc = "`Delete()` overload"]
+    fn delete(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_unity2_raw::delete(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    fn create_bind(
+        self,
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        current_page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_GodAndRingListWindow as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_GodAndRingListWindow_unity2_raw::create_bind(
+                __receiver,
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(current_page_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_GodAndRingListWindow> IRingListSequence_GodAndRingListWindowMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodAndRingListWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodAndRingListWindowMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_PageDataList_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_PageDataList as ::unity2::ClassIdentity>::class(),
+                "Build",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageDataList as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build(this: RingListSequence_PageDataList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_PageDataList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::class(),
+                <RingListSequence_PageDataList as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -8884,62 +6834,215 @@ mod __RingListSequence_PageDataList_GodComparer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RingListSequence_PageDataList_GodComparer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_PageDataList as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RingListSequence_PageDataList_GodComparer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RingListSequence_PageDataList_GodComparer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: RingListSequence_PageDataList, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_PageDataList, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-pub trait IRingListSequence_PageDataList_GodComparerMethods:
-    IRingListSequence_PageDataList_GodComparer
-{
-    #[doc = "`Compare(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    fn compare(
-        self,
-        a: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>,
-        b: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>,
-    ) -> i32 {
+pub trait IRingListSequence_PageDataListMethods: IRingListSequence_PageDataList {
+    #[doc = "`Build()` overload"]
+    fn build(self) -> () {
         unsafe {
-            let __receiver = < RingListSequence_PageDataList_GodComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_PageDataList_GodComparer_unity2_raw::compare(
-                __receiver,
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <RingListSequence_PageDataList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_PageDataList_unity2_raw::build(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < RingListSequence_PageDataList_GodComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RingListSequence_PageDataList_GodComparer_unity2_raw::ctor(
+            let __receiver =
+                <RingListSequence_PageDataList as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RingListSequence_PageDataList_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl<__T: IRingListSequence_PageDataList> IRingListSequence_PageDataListMethods for __T {}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_PageDataList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_PageDataList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_PageDataListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RingListSequence_CharaImageController_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RingListSequence_CharaImageController,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(RingListSequence_CharaImageController, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root_object, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::class(),
+                "Dispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn dispose(this: RingListSequence_CharaImageController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RingListSequence_CharaImageController, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_change_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::ringlistsequence::RingListSequence_PageData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::class(),
+                "ChangeImage",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RingListSequence_CharaImageController as ::unity2::ClassIdentity>::NAME,
+                        "ChangeImage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn change_image(
+        this: RingListSequence_CharaImageController,
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RingListSequence_CharaImageController,
+            crate::app::ringlistsequence::RingListSequence_PageData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_change_image::get_method_info().method_ptr);
+        inner(this, page_data, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+pub trait IRingListSequence_CharaImageControllerMethods: IRingListSequence_CharaImageController {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_CharaImageController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_CharaImageController_unity2_raw::ctor(
                 __receiver,
+                ::core::convert::Into::into(root_object),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_CharaImageController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_CharaImageController_unity2_raw::dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    fn change_image(self, page_data: impl ::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>) -> () {
+        unsafe {
+            let __receiver = <RingListSequence_CharaImageController as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RingListSequence_CharaImageController_unity2_raw::change_image(
+                __receiver,
+                ::core::convert::Into::into(page_data),
                 ::core::option::Option::None,
             )
         }
@@ -8947,23 +7050,20 @@ pub trait IRingListSequence_PageDataList_GodComparerMethods:
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl<__T: IRingListSequence_PageDataList_GodComparer>
-    IRingListSequence_PageDataList_GodComparerMethods for __T
-{
-}
+impl<__T: IRingListSequence_CharaImageController> IRingListSequence_CharaImageControllerMethods for __T {}
 
 #[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_PageDataList_GodComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl RingListSequence_CharaImageController {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_PageDataList_GodComparer),
+                ::core::stringify!(RingListSequence_CharaImageController),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSequence_PageDataList_GodComparerMethods>::ctor(this);
+        <Self as IRingListSequence_CharaImageControllerMethods>::ctor(this, root_object);
         this
     }
 }
@@ -8971,115 +7071,67 @@ impl RingListSequence_PageDataList_GodComparer {
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRingListSequence;
-    pub use super::IRingListSequenceMethods;
-    pub use super::IRingListSequence_CharaArrowGroup;
-    pub use super::IRingListSequence_CharaArrowGroupMethods;
-    pub use super::IRingListSequence_CharaImage;
-    pub use super::IRingListSequence_CharaImageController;
-    pub use super::IRingListSequence_CharaImageControllerMethods;
-    pub use super::IRingListSequence_CharaImageMethods;
-    pub use super::IRingListSequence_CharaInfoWindow;
-    pub use super::IRingListSequence_CharaInfoWindowMethods;
-    pub use super::IRingListSequence_CharaNavigation;
-    pub use super::IRingListSequence_CharaNavigationMethods;
-    pub use super::IRingListSequence_GodAndRingListWindow;
-    pub use super::IRingListSequence_GodAndRingListWindowMethods;
-    pub use super::IRingListSequence_GodAndRingListWindow_Menu;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuContent;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuContentMethods;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItem;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemContent;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemContentMethods;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemMethods;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuMethods;
-    pub use super::IRingListSequence_GodPageData;
-    pub use super::IRingListSequence_GodPageDataMethods;
-    pub use super::IRingListSequence_PageData;
-    pub use super::IRingListSequence_PageDataList;
-    pub use super::IRingListSequence_PageDataListMethods;
-    pub use super::IRingListSequence_PageDataList_GodComparer;
-    pub use super::IRingListSequence_PageDataList_GodComparerMethods;
-    pub use super::IRingListSequence_PageDataMethods;
-    pub use super::IRingListSequence_RelatedGroupWindow;
-    pub use super::IRingListSequence_RelatedGroupWindowMethods;
-    pub use super::IRingListSequence_RingListWindow;
-    pub use super::IRingListSequence_RingListWindowMethods;
-    pub use super::IRingListSequence_RingListWindow_RingInfo;
-    pub use super::IRingListSequence_RingListWindow_RingInfoMethods;
-    pub use super::IRingListSequence_RingListWindow_RingInfo_Gain;
-    pub use super::IRingListSequence_RingListWindow_RingInfo_GainMethods;
-    pub use super::IRingListSequence_RingListWindow_SkillInfo;
-    pub use super::IRingListSequence_RingListWindow_SkillInfoMethods;
-    pub use super::IRingListSequence_RingPageData;
-    pub use super::IRingListSequence_RingPageDataMethods;
-    pub use super::RingListSequence;
-    pub use super::RingListSequence_CharaArrowGroup;
-    pub use super::RingListSequence_CharaImage;
-    pub use super::RingListSequence_CharaImageController;
-    pub use super::RingListSequence_CharaInfoWindow;
-    pub use super::RingListSequence_CharaInfoWindow_CharaDescriptionText;
-    pub use super::RingListSequence_CharaNavigation;
-    pub use super::RingListSequence_GodAndRingListWindow;
-    pub use super::RingListSequence_GodAndRingListWindow_Menu;
-    pub use super::RingListSequence_GodAndRingListWindow_MenuContent;
-    pub use super::RingListSequence_GodAndRingListWindow_MenuItem;
-    pub use super::RingListSequence_GodAndRingListWindow_MenuItemContent;
-    pub use super::RingListSequence_GodPageData;
-    pub use super::RingListSequence_Label;
-    pub use super::RingListSequence_PageData;
-    pub use super::RingListSequence_PageDataList;
-    pub use super::RingListSequence_PageDataList_GodComparer;
-    pub use super::RingListSequence_RelatedGroupWindow;
-    pub use super::RingListSequence_RingListWindow;
-    pub use super::RingListSequence_RingListWindow_RingInfo;
-    pub use super::RingListSequence_RingListWindow_RingInfoRank;
-    pub use super::RingListSequence_RingListWindow_RingInfo_Gain;
-    pub use super::RingListSequence_RingListWindow_SkillInfo;
-    pub use super::RingListSequence_RingPageData;
-    pub use crate::app::basicmenu::IBasicMenu;
+    pub use super::{
+        IRingListSequence, IRingListSequenceMethods, IRingListSequence_CharaArrowGroup, IRingListSequence_CharaArrowGroupMethods,
+        IRingListSequence_CharaImage, IRingListSequence_CharaImageController, IRingListSequence_CharaImageControllerMethods,
+        IRingListSequence_CharaImageMethods, IRingListSequence_CharaInfoWindow, IRingListSequence_CharaInfoWindowMethods,
+        IRingListSequence_CharaNavigation, IRingListSequence_CharaNavigationMethods, IRingListSequence_GodAndRingListWindow,
+        IRingListSequence_GodAndRingListWindowMethods, IRingListSequence_GodAndRingListWindow_Menu,
+        IRingListSequence_GodAndRingListWindow_MenuContent, IRingListSequence_GodAndRingListWindow_MenuContentMethods,
+        IRingListSequence_GodAndRingListWindow_MenuItem, IRingListSequence_GodAndRingListWindow_MenuItemContent,
+        IRingListSequence_GodAndRingListWindow_MenuItemContentMethods, IRingListSequence_GodAndRingListWindow_MenuItemMethods,
+        IRingListSequence_GodAndRingListWindow_MenuMethods, IRingListSequence_GodPageData, IRingListSequence_GodPageDataMethods,
+        IRingListSequence_PageData, IRingListSequence_PageDataList, IRingListSequence_PageDataListMethods,
+        IRingListSequence_PageDataList_GodComparer, IRingListSequence_PageDataList_GodComparerMethods, IRingListSequence_PageDataMethods,
+        IRingListSequence_RelatedGroupWindow, IRingListSequence_RelatedGroupWindowMethods, IRingListSequence_RingListWindow,
+        IRingListSequence_RingListWindowMethods, IRingListSequence_RingListWindow_RingInfo, IRingListSequence_RingListWindow_RingInfoMethods,
+        IRingListSequence_RingListWindow_RingInfo_Gain, IRingListSequence_RingListWindow_RingInfo_GainMethods,
+        IRingListSequence_RingListWindow_SkillInfo, IRingListSequence_RingListWindow_SkillInfoMethods, IRingListSequence_RingPageData,
+        IRingListSequence_RingPageDataMethods, RingListSequence, RingListSequence_CharaArrowGroup, RingListSequence_CharaImage,
+        RingListSequence_CharaImageController, RingListSequence_CharaInfoWindow, RingListSequence_CharaInfoWindow_CharaDescriptionText,
+        RingListSequence_CharaNavigation, RingListSequence_GodAndRingListWindow, RingListSequence_GodAndRingListWindow_Menu,
+        RingListSequence_GodAndRingListWindow_MenuContent, RingListSequence_GodAndRingListWindow_MenuItem,
+        RingListSequence_GodAndRingListWindow_MenuItemContent, RingListSequence_GodPageData, RingListSequence_Label, RingListSequence_PageData,
+        RingListSequence_PageDataList, RingListSequence_PageDataList_GodComparer, RingListSequence_RelatedGroupWindow,
+        RingListSequence_RingListWindow, RingListSequence_RingListWindow_RingInfo, RingListSequence_RingListWindow_RingInfoRank,
+        RingListSequence_RingListWindow_RingInfo_Gain, RingListSequence_RingListWindow_SkillInfo, RingListSequence_RingPageData,
+    };
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
     #[cfg(feature = "app-basicmenucontent")]
     pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
     #[cfg(feature = "app-basicmenuitemcontent")]
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    pub use crate::app::godunitselectmenucontent::IGodUnitSelectMenuContent;
     #[cfg(feature = "app-godunitselectmenucontent")]
     pub use crate::app::godunitselectmenucontent::IGodUnitSelectMenuContentMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::collections::generic::list_1::IList_1;
     #[cfg(feature = "system-collections-generic-list_1")]
     pub use crate::system::collections::generic::list_1::IList_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::{
+            basicmenu::IBasicMenu, basicmenucontent::IBasicMenuContent, basicmenuitem::IBasicMenuItem, basicmenuitemcontent::IBasicMenuItemContent,
+            godunitselectmenucontent::IGodUnitSelectMenuContent, procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1,
+        },
+        system::{collections::generic::list_1::IList_1, object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

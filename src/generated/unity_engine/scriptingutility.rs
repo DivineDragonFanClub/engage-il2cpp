@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-scriptingutility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "ScriptingUtility")]
@@ -21,9 +23,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ScriptingUtility_TestClass {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "ScriptingUtility.TestClass";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -34,10 +35,7 @@ mod __types {
 
     impl ::unity2::IlType for ScriptingUtility_TestClass {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -54,9 +52,7 @@ mod __ScriptingUtility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_managed_code_working {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptingUtility as ::unity2::ClassIdentity>::class(),
@@ -69,26 +65,20 @@ mod __ScriptingUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptingUtility as ::unity2::ClassIdentity>::NAME,
-                    "IsManagedCodeWorking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptingUtility as ::unity2::ClassIdentity>::NAME,
+                        "IsManagedCodeWorking",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_managed_code_working(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_managed_code_working::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_managed_code_working::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -97,22 +87,17 @@ mod __ScriptingUtility_unity2_raw {
 impl ScriptingUtility {
     #[doc = "`IsManagedCodeWorking()` overload"]
     pub fn is_managed_code_working() -> bool {
-        unsafe {
-            __ScriptingUtility_unity2_raw::is_managed_code_working(::core::option::Option::None)
-        }
+        unsafe { __ScriptingUtility_unity2_raw::is_managed_code_working(::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-scriptingutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptingUtility;
-    pub use super::ScriptingUtility;
-    pub use super::ScriptingUtility_TestClass;
-    pub use crate::system::object::IObject;
+    pub use super::{IScriptingUtility, ScriptingUtility, ScriptingUtility_TestClass};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

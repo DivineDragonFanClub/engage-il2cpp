@@ -2,14 +2,78 @@
 
 #[cfg(feature = "app-savedatamenusequence-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct SaveDataMenuSequence_Mode {
+        pub value: i32,
+    }
+
+    impl ::unity2::ClassIdentity for SaveDataMenuSequence_Mode {
+        const NAME: &'static str = "SaveDataMenuSequence.Mode";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for SaveDataMenuSequence_Mode {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+
+    impl SaveDataMenuSequence_Mode {
+        pub fn load() -> Self {
+            Self { value: 0 }
+        }
+
+        pub fn save_from_menu() -> Self {
+            Self { value: 1 }
+        }
+
+        pub fn save_from_period() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn save_from_ending() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn suspend() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn copy() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn delete() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 7 }
+        }
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))]
     #[::unity2::class(namespace = "App", name = "SaveDataMenuSequence")]
@@ -18,27 +82,19 @@ mod __types {
         #[rename(name = "m_Mode")]
         pub m_mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
         #[rename(name = "m_saveDataHeaderReader")]
-        pub m_save_data_header_reader:
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+        pub m_save_data_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
     }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct SaveDataMenuSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for SaveDataMenuSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "SaveDataMenuSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -49,10 +105,7 @@ mod __types {
 
     impl ::unity2::IlType for SaveDataMenuSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -93,74 +146,6 @@ mod __types {
             Self { value: 8 }
         }
     }
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]
-    #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
-    pub struct SaveDataMenuSequence_Mode {
-        pub value: i32,
-    }
-
-    impl ::unity2::ClassIdentity for SaveDataMenuSequence_Mode {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "SaveDataMenuSequence.Mode";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for SaveDataMenuSequence_Mode {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
-
-    impl SaveDataMenuSequence_Mode {
-        pub fn load() -> Self {
-            Self { value: 0 }
-        }
-
-        pub fn save_from_menu() -> Self {
-            Self { value: 1 }
-        }
-
-        pub fn save_from_period() -> Self {
-            Self { value: 2 }
-        }
-
-        pub fn save_from_ending() -> Self {
-            Self { value: 3 }
-        }
-
-        pub fn suspend() -> Self {
-            Self { value: 4 }
-        }
-
-        pub fn copy() -> Self {
-            Self { value: 5 }
-        }
-
-        pub fn delete() -> Self {
-            Self { value: 6 }
-        }
-
-        pub fn end() -> Self {
-            Self { value: 7 }
-        }
-    }
 }
 
 #[cfg(feature = "app-savedatamenusequence-types")]
@@ -175,10 +160,9 @@ mod __SaveDataMenuSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::savedatamenusequence::SaveDataMenuSequence_Mode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -190,18 +174,15 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -209,24 +190,15 @@ mod __SaveDataMenuSequence_unity2_raw {
         mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SaveDataMenuSequence,
-            crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SaveDataMenuSequence, crate::app::savedatamenusequence::SaveDataMenuSequence_Mode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -239,42 +211,30 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mode(
         this: SaveDataMenuSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::savedatamenusequence::SaveDataMenuSequence_Mode {
-        let inner: extern "C" fn(
-            SaveDataMenuSequence,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::savedatamenusequence::SaveDataMenuSequence_Mode = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> crate::app::savedatamenusequence::SaveDataMenuSequence_Mode =
+            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_header {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -287,39 +247,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadHeader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadHeader",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_header(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_header(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_header::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_header::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_header {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -332,39 +280,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingHeader",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingHeader",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_header(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_header(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_header::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_header::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_branch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -377,39 +313,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "Branch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "Branch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn branch(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn branch(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_branch::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_branch::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_load_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -422,39 +346,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateLoadMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateLoadMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_load_menu(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_load_menu(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_load_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_load_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_save_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -467,39 +379,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSaveMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSaveMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_save_menu(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_save_menu(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_save_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_save_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_suspend_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -512,39 +412,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateSuspendMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateSuspendMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_suspend_menu(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_suspend_menu(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_suspend_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_suspend_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_copy_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -557,39 +445,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateCopyMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateCopyMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_copy_menu(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_copy_menu(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_copy_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_copy_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_delete_menu {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -602,39 +478,27 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDeleteMenu",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDeleteMenu",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_delete_menu(
-        this: SaveDataMenuSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_delete_menu(this: SaveDataMenuSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_delete_menu::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_delete_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_proc_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
@@ -647,42 +511,34 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetProcDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetProcDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_proc_desc(
         this: SaveDataMenuSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            SaveDataMenuSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_proc_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SaveDataMenuSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_get_proc_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::savedatamenusequence::SaveDataMenuSequence_Mode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SaveDataMenuSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -694,18 +550,15 @@ mod __SaveDataMenuSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SaveDataMenuSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -717,11 +570,7 @@ mod __SaveDataMenuSequence_unity2_raw {
             crate::app::procinst::ProcInst,
             crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, mode, __unity2_method_info)
     }
 }
@@ -746,130 +595,91 @@ impl SaveDataMenuSequence {
 #[cfg(feature = "app-savedatamenusequence")]
 pub trait ISaveDataMenuSequenceMethods: ISaveDataMenuSequence {
     #[doc = "`.ctor(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` overload"]
-    fn ctor(
-        self,
-        mode: impl ::core::convert::Into<crate::app::savedatamenusequence::SaveDataMenuSequence_Mode>,
-    ) -> () {
+    fn ctor(self, mode: impl ::core::convert::Into<crate::app::savedatamenusequence::SaveDataMenuSequence_Mode>) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::ctor(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMode()` overload"]
     fn get_mode(self) -> crate::app::savedatamenusequence::SaveDataMenuSequence_Mode {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SaveDataMenuSequence_unity2_raw::get_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadHeader()` overload"]
     fn load_header(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SaveDataMenuSequence_unity2_raw::load_header(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingHeader()` overload"]
     fn is_loading_header(self) -> bool {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::is_loading_header(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::is_loading_header(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Branch()` overload"]
     fn branch(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SaveDataMenuSequence_unity2_raw::branch(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateLoadMenu()` overload"]
     fn create_load_menu(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::create_load_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::create_load_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSaveMenu()` overload"]
     fn create_save_menu(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::create_save_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::create_save_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateSuspendMenu()` overload"]
     fn create_suspend_menu(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::create_suspend_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::create_suspend_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateCopyMenu()` overload"]
     fn create_copy_menu(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::create_copy_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::create_copy_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDeleteMenu()` overload"]
     fn create_delete_menu(self) -> () {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::create_delete_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::create_delete_menu(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetProcDesc()` overload"]
     fn get_proc_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SaveDataMenuSequence_unity2_raw::get_proc_desc(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SaveDataMenuSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SaveDataMenuSequence_unity2_raw::get_proc_desc(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -896,24 +706,21 @@ impl SaveDataMenuSequence {
 #[cfg(feature = "app-savedatamenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISaveDataMenuSequence;
-    pub use super::ISaveDataMenuSequenceMethods;
-    pub use super::SaveDataMenuSequence;
-    pub use super::SaveDataMenuSequence_Label;
-    pub use super::SaveDataMenuSequence_Mode;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        ISaveDataMenuSequence, ISaveDataMenuSequenceMethods, SaveDataMenuSequence, SaveDataMenuSequence_Label, SaveDataMenuSequence_Mode,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

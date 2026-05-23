@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-akmidipostarray-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidipostarray/AkMIDIPostArray.md"))]
     #[::unity2::class(namespace = "", name = "AkMIDIPostArray")]
@@ -32,11 +32,8 @@ mod __AkMIDIPostArray_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIPostArray as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -48,42 +45,28 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkMIDIPostArray,
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkMIDIPostArray, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMIDIPostArray, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIPostArray as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -95,43 +78,27 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item(
-        this: AkMIDIPostArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::akmidipost::AkMIDIPost {
-        let inner: extern "C" fn(
-            AkMIDIPostArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::root::akmidipost::AkMIDIPost = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+    pub unsafe fn get_item(this: AkMIDIPostArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::root::akmidipost::AkMIDIPost {
+        let inner: extern "C" fn(AkMIDIPostArray, i32, ::unity2::OptionalMethod) -> crate::root::akmidipost::AkMIDIPost =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::root::akmidipost::AkMIDIPost as ::unity2::IlType>::il_type(),
@@ -147,18 +114,15 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_item(
@@ -167,25 +131,15 @@ mod __AkMIDIPostArray_unity2_raw {
         value: crate::root::akmidipost::AkMIDIPost,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkMIDIPostArray,
-            i32,
-            crate::root::akmidipost::AkMIDIPost,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMIDIPostArray, i32, crate::root::akmidipost::AkMIDIPost, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIPostArray as ::unity2::ClassIdentity>::class(),
@@ -198,39 +152,27 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkMIDIPostArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkMIDIPostArray, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMIDIPostArray, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_on_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -246,18 +188,15 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "PostOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "PostOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn post_on_event(
@@ -266,25 +205,15 @@ mod __AkMIDIPostArray_unity2_raw {
         game_object: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkMIDIPostArray,
-            u32,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_post_on_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMIDIPostArray, u32, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_post_on_event::get_method_info().method_ptr);
         inner(this, in_event_id, game_object, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_on_event_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
@@ -301,18 +230,15 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "PostOnEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "PostOnEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn post_on_event_2(
@@ -322,26 +248,15 @@ mod __AkMIDIPostArray_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkMIDIPostArray,
-            u32,
-            crate::unity_engine::gameobject::GameObject,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_post_on_event_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkMIDIPostArray, u32, crate::unity_engine::gameobject::GameObject, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_post_on_event_2::get_method_info().method_ptr);
         inner(this, in_event_id, game_object, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIPostArray as ::unity2::ClassIdentity>::class(),
@@ -354,39 +269,27 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "GetBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "GetBuffer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_buffer(
-        this: AkMIDIPostArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
+    pub unsafe fn get_buffer(this: AkMIDIPostArray, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
         let inner: extern "C" fn(AkMIDIPostArray, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_buffer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_buffer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIPostArray as ::unity2::ClassIdentity>::class(),
@@ -399,41 +302,28 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "Count",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "Count",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn count(
-        this: AkMIDIPostArray,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn count(this: AkMIDIPostArray, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(AkMIDIPostArray, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_object_ptr {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMIDIPostArray as ::unity2::ClassIdentity>::class(),
                 "GetObjectPtr",
@@ -445,34 +335,20 @@ mod __AkMIDIPostArray_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
-                    "GetObjectPtr",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMIDIPostArray as ::unity2::ClassIdentity>::NAME,
+                        "GetObjectPtr",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_object_ptr(
-        this: AkMIDIPostArray,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            AkMIDIPostArray,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_object_ptr::get_offset() as isize),
-        );
+    pub unsafe fn get_object_ptr(this: AkMIDIPostArray, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::IntPtr {
+        let inner: extern "C" fn(AkMIDIPostArray, i32, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_object_ptr::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
 }
@@ -482,42 +358,21 @@ pub trait IAkMIDIPostArrayMethods: IAkMIDIPostArray {
     #[doc = "`.ctor(i32)` overload"]
     fn ctor(self, size: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkMIDIPostArray_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIPostArray_unity2_raw::ctor(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(i32)` overload"]
-    fn get_item(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::root::akmidipost::AkMIDIPost {
+    fn get_item(self, index: impl ::core::convert::Into<i32>) -> crate::root::akmidipost::AkMIDIPost {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkMIDIPostArray_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIPostArray_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`set_Item(i32, crate::root::akmidipost::AkMIDIPost)` overload"]
-    fn set_item(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<crate::root::akmidipost::AkMIDIPost>,
-    ) -> () {
+    fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<crate::root::akmidipost::AkMIDIPost>) -> () {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIPostArray_unity2_raw::set_item(
                 __receiver,
                 ::core::convert::Into::into(index),
@@ -529,9 +384,7 @@ pub trait IAkMIDIPostArrayMethods: IAkMIDIPostArray {
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIPostArray_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
@@ -542,9 +395,7 @@ pub trait IAkMIDIPostArrayMethods: IAkMIDIPostArray {
         game_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> () {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIPostArray_unity2_raw::post_on_event(
                 __receiver,
                 ::core::convert::Into::into(in_event_id),
@@ -561,9 +412,7 @@ pub trait IAkMIDIPostArrayMethods: IAkMIDIPostArray {
         count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIPostArray_unity2_raw::post_on_event_2(
                 __receiver,
                 ::core::convert::Into::into(in_event_id),
@@ -576,32 +425,22 @@ pub trait IAkMIDIPostArrayMethods: IAkMIDIPostArray {
     #[doc = "`GetBuffer()` overload"]
     fn get_buffer(self) -> ::unity2::IntPtr {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIPostArray_unity2_raw::get_buffer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Count()` overload"]
     fn count(self) -> i32 {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMIDIPostArray_unity2_raw::count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetObjectPtr(i32)` overload"]
     fn get_object_ptr(self, index: impl ::core::convert::Into<i32>) -> ::unity2::IntPtr {
         unsafe {
-            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AkMIDIPostArray_unity2_raw::get_object_ptr(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AkMIDIPostArray as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkMIDIPostArray_unity2_raw::get_object_ptr(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
 }
@@ -628,9 +467,7 @@ impl AkMIDIPostArray {
 #[cfg(feature = "root-akmidipostarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkMIDIPostArray;
-    pub use super::IAkMIDIPostArray;
-    pub use super::IAkMIDIPostArrayMethods;
+    pub use super::{AkMIDIPostArray, IAkMIDIPostArray, IAkMIDIPostArrayMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

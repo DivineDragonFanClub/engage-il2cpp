@@ -2,15 +2,21 @@
 
 #[cfg(feature = "app-dragonridetargetgroup-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainParam.md"))]
     #[repr(C)]
@@ -22,9 +28,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for DragonRideTargetGroup_ChainParam {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "DragonRideTargetGroup.ChainParam";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -35,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for DragonRideTargetGroup_ChainParam {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -97,13 +99,10 @@ mod __types {
         #[rename(name = "m_TargetSpace")]
         pub m_target_space: crate::unity_engine::vector2::Vector2,
         #[rename(name = "m_ChainPlayer")]
-        pub m_chain_player: crate::system::collections::generic::list_1::List_1<
-            crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainSEManager,
-        >,
+        pub m_chain_player:
+            crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainSEManager>,
         #[rename(name = "m_ChainChecker")]
-        pub m_chain_checker: crate::system::collections::generic::list_1::List_1<
-            crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainParam,
-        >,
+        pub m_chain_checker: crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainParam>,
     }
 }
 
@@ -119,9 +118,7 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_alive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
@@ -134,43 +131,28 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAlive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAlive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_alive(
-        this: DragonRideTargetGroup_ChainSEManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_alive::get_offset() as isize),
-        );
+    pub unsafe fn get_is_alive(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_alive::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_alive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
                 "set_IsAlive",
@@ -182,43 +164,27 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    "set_IsAlive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "set_IsAlive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_alive(
-        this: DragonRideTargetGroup_ChainSEManager,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_alive::get_offset() as isize),
-        );
+    pub unsafe fn set_is_alive(this: DragonRideTargetGroup_ChainSEManager, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_alive::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
@@ -231,41 +197,27 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DragonRideTargetGroup_ChainSEManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
@@ -278,41 +230,27 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    "ResetChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "ResetChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_chain(
-        this: DragonRideTargetGroup_ChainSEManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_reset_chain::get_offset() as isize),
-        );
+    pub unsafe fn reset_chain(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset_chain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -330,18 +268,15 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    "StartChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "StartChain",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn start_chain(
@@ -352,34 +287,15 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         is_double_ex: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            ::unity2::Il2CppString,
-            bool,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_start_chain::get_offset() as isize),
-        );
-        inner(
-            this,
-            root_id,
-            is_link,
-            is_special,
-            is_double_ex,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::Il2CppString, bool, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_start_chain::get_method_info().method_ptr);
+        inner(this, root_id, is_link, is_special, is_double_ex, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_play_chain_se {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::dragonridetarget::DragonRideTarget as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -393,18 +309,15 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    "TryPlayChainSE",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "TryPlayChainSE",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_play_chain_se(
@@ -416,20 +329,14 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
             DragonRideTargetGroup_ChainSEManager,
             *mut crate::app::dragonridetarget::DragonRideTarget,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_play_chain_se::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_try_play_chain_se::get_method_info().method_ptr);
         inner(this, target_script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick_limit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::class(),
@@ -442,54 +349,41 @@ mod __DragonRideTargetGroup_ChainSEManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
-                    "TickLimit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup_ChainSEManager as ::unity2::ClassIdentity>::NAME,
+                        "TickLimit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_limit(
-        this: DragonRideTargetGroup_ChainSEManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup_ChainSEManager,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tick_limit::get_offset() as isize),
-        );
+    pub unsafe fn tick_limit(this: DragonRideTargetGroup_ChainSEManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DragonRideTargetGroup_ChainSEManager, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_tick_limit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-dragonridetargetgroup")]
-pub trait IDragonRideTargetGroup_ChainSEManagerMethods:
-    IDragonRideTargetGroup_ChainSEManager
-{
+pub trait IDragonRideTargetGroup_ChainSEManagerMethods: IDragonRideTargetGroup_ChainSEManager {
     #[doc = "`get_IsAlive()` overload"]
     fn get_is_alive(self) -> bool {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::get_is_alive(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::get_is_alive(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsAlive(bool)` overload"]
     fn set_is_alive(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __DragonRideTargetGroup_ChainSEManager_unity2_raw::set_is_alive(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -500,21 +394,19 @@ pub trait IDragonRideTargetGroup_ChainSEManagerMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetChain()` overload"]
     fn reset_chain(self) -> () {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::reset_chain(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::reset_chain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartChain(::unity2::Il2CppString, bool, bool, bool)` overload"]
@@ -526,7 +418,9 @@ pub trait IDragonRideTargetGroup_ChainSEManagerMethods:
         is_double_ex: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __DragonRideTargetGroup_ChainSEManager_unity2_raw::start_chain(
                 __receiver,
                 ::core::convert::Into::into(root_id),
@@ -540,35 +434,27 @@ pub trait IDragonRideTargetGroup_ChainSEManagerMethods:
     #[doc = "`TryPlayChainSE(*mutcrate::app::dragonridetarget::DragonRideTarget)` overload"]
     fn try_play_chain_se(self) -> crate::app::dragonridetarget::DragonRideTarget {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::app::dragonridetarget::DragonRideTarget,
-            >::uninit();
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::try_play_chain_se(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
             );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::app::dragonridetarget::DragonRideTarget>::uninit();
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::try_play_chain_se(__receiver, __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
     #[doc = "`TickLimit()` overload"]
     fn tick_limit(self) -> () {
         unsafe {
-            let __receiver = < DragonRideTargetGroup_ChainSEManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DragonRideTargetGroup_ChainSEManager_unity2_raw::tick_limit(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DragonRideTargetGroup_ChainSEManager as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DragonRideTargetGroup_ChainSEManager_unity2_raw::tick_limit(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-dragonridetargetgroup")]
-impl<__T: IDragonRideTargetGroup_ChainSEManager> IDragonRideTargetGroup_ChainSEManagerMethods
-    for __T
-{
-}
+impl<__T: IDragonRideTargetGroup_ChainSEManager> IDragonRideTargetGroup_ChainSEManagerMethods for __T {}
 
 #[cfg(feature = "app-dragonridetargetgroup")]
 impl DragonRideTargetGroup_ChainSEManager {
@@ -595,9 +481,7 @@ mod __DragonRideTargetGroup_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_search_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -610,41 +494,28 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_IsSearchGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_IsSearchGroup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_search_group(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_search_group(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_search_group::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_search_group::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_search_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "set_IsSearchGroup",
@@ -656,40 +527,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_IsSearchGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_IsSearchGroup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_search_group(
-        this: DragonRideTargetGroup,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_search_group(this: DragonRideTargetGroup, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_search_group::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_search_group::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_execute_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -702,41 +560,28 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_IsExecuteChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_IsExecuteChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_execute_chain(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_execute_chain(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_execute_chain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_execute_chain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_execute_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "set_IsExecuteChain",
@@ -748,40 +593,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_IsExecuteChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_IsExecuteChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_execute_chain(
-        this: DragonRideTargetGroup,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_execute_chain(this: DragonRideTargetGroup, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_execute_chain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_execute_chain::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_event_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -794,41 +626,28 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEventMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEventMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_event_mode(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_event_mode(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_event_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_event_mode::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_event_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "set_IsEventMode",
@@ -840,40 +659,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_IsEventMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_IsEventMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_event_mode(
-        this: DragonRideTargetGroup,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_event_mode(this: DragonRideTargetGroup, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_event_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_event_mode::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -886,41 +692,28 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_IsVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_IsVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_visible(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_visible(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_visible::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_visible {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "set_IsVisible",
@@ -932,40 +725,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_IsVisible",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_IsVisible",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_visible(
-        this: DragonRideTargetGroup,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_visible(this: DragonRideTargetGroup, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_visible::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_visible::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -978,39 +758,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1023,39 +791,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1068,41 +824,28 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "PostUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "PostUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn post_update(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn post_update(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_post_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_event_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "SetEventMode",
@@ -1114,40 +857,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetEventMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetEventMode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_event_mode(
-        this: DragonRideTargetGroup,
-        flag: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_event_mode(this: DragonRideTargetGroup, flag: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_event_mode::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_event_mode::get_method_info().method_ptr);
         inner(this, flag, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1160,39 +890,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn show(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn show(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1205,39 +923,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1250,43 +956,28 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_child_script {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "GetChildScript",
@@ -1298,18 +989,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetChildScript",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetChildScript",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_child_script(
@@ -1318,25 +1006,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         w: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::dragonridetarget::DragonRideTarget {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::dragonridetarget::DragonRideTarget = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_child_script::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DragonRideTargetGroup, i32, i32, ::unity2::OptionalMethod) -> crate::app::dragonridetarget::DragonRideTarget =
+            ::core::mem::transmute(__lookup_get_child_script::get_method_info().method_ptr);
         inner(this, h, w, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_child {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1354,18 +1032,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteChild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteChild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute_child(
@@ -1376,27 +1051,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         root_id: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DragonRideTargetGroup,
-            i32,
-            i32,
-            i32,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_child::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DragonRideTargetGroup, i32, i32, i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_execute_child::get_method_info().method_ptr);
         inner(this, h, w, flag, root_id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_start_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1409,39 +1072,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "CheckStartChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "CheckStartChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_start_chain(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn check_start_chain(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_start_chain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_start_chain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_chain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1454,39 +1105,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "UpdateChain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "UpdateChain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_chain(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_chain(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_chain::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_chain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_chain_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -1499,39 +1138,27 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetChainExecute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetChainExecute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_chain_execute(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_chain_execute(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_chain_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_chain_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_nearest_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1549,18 +1176,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetNearestTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetNearestTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_nearest_target(
@@ -1578,27 +1202,14 @@ mod __DragonRideTargetGroup_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_nearest_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            return_pos,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            __unity2_method_info,
-        )
+        ) -> f32 = ::core::mem::transmute(__lookup_get_nearest_target::get_method_info().method_ptr);
+        inner(this, return_pos, camera_pos, camera_forward, enable_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_bomb_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1615,18 +1226,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "DestroyBombTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "DestroyBombTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_bomb_target(
@@ -1642,26 +1250,14 @@ mod __DragonRideTargetGroup_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_bomb_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_destroy_bomb_target::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_special_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1678,18 +1274,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "DestroySpecialTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "DestroySpecialTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn destroy_special_target(
@@ -1705,27 +1298,20 @@ mod __DragonRideTargetGroup_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_destroy_special_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_destroy_special_target::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute_select_type_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: dragonridetarget :: DragonRideTarget_TargetType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::app::dragonridetarget::DragonRideTarget_TargetType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "ExecuteSelectTypeTarget",
@@ -1737,18 +1323,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "ExecuteSelectTypeTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "ExecuteSelectTypeTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute_select_type_target(
@@ -1766,27 +1349,14 @@ mod __DragonRideTargetGroup_unity2_raw {
             f32,
             crate::app::dragonridetarget::DragonRideTarget_TargetType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_select_type_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            select,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_execute_select_type_target::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_enable_bomb_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1803,18 +1373,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "CheckEnableBombTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "CheckEnableBombTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_enable_bomb_target(
@@ -1830,26 +1397,14 @@ mod __DragonRideTargetGroup_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_enable_bomb_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_check_enable_bomb_target::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_enable_special_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1866,18 +1421,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "CheckEnableSpecialTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "CheckEnableSpecialTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_enable_special_target(
@@ -1893,27 +1445,20 @@ mod __DragonRideTargetGroup_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_enable_special_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_check_enable_special_target::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_enable_select_type_target {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: dragonridetarget :: DragonRideTarget_TargetType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::app::dragonridetarget::DragonRideTarget_TargetType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "CheckEnableSelectTypeTarget",
@@ -1925,18 +1470,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "CheckEnableSelectTypeTarget",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "CheckEnableSelectTypeTarget",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_enable_select_type_target(
@@ -1954,28 +1496,21 @@ mod __DragonRideTargetGroup_unity2_raw {
             f32,
             crate::app::dragonridetarget::DragonRideTarget_TargetType,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_check_enable_select_type_target::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            select,
-            __unity2_method_info,
-        )
+        ) -> bool = ::core::mem::transmute(__lookup_check_enable_select_type_target::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enable_select_type_target_list {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: dragonridetarget :: DragonRideTarget_TargetType as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+                <crate::app::dragonridetarget::DragonRideTarget_TargetType as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
                 "SetEnableSelectTypeTargetList",
@@ -1987,18 +1522,15 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetEnableSelectTypeTargetList",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetEnableSelectTypeTargetList",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enable_select_type_target_list(
@@ -2007,9 +1539,7 @@ mod __DragonRideTargetGroup_unity2_raw {
         camera_forward: crate::unity_engine::vector3::Vector3,
         enable_rate: f32,
         select: crate::app::dragonridetarget::DragonRideTarget_TargetType,
-        ref_list: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        ref_list: *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -2018,32 +1548,16 @@ mod __DragonRideTargetGroup_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             f32,
             crate::app::dragonridetarget::DragonRideTarget_TargetType,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector3::Vector3,
-            >,
+            *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enable_select_type_target_list::get_offset() as isize),
-        );
-        inner(
-            this,
-            camera_pos,
-            camera_forward,
-            enable_rate,
-            select,
-            ref_list,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_enable_select_type_target_list::get_method_info().method_ptr);
+        inner(this, camera_pos, camera_forward, enable_rate, select, ref_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DragonRideTargetGroup as ::unity2::ClassIdentity>::class(),
@@ -2056,30 +1570,20 @@ mod __DragonRideTargetGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DragonRideTargetGroup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DragonRideTargetGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DragonRideTargetGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DragonRideTargetGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2089,170 +1593,120 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
     #[doc = "`get_IsSearchGroup()` overload"]
     fn get_is_search_group(self) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::get_is_search_group(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::get_is_search_group(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsSearchGroup(bool)` overload"]
     fn set_is_search_group(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::set_is_search_group(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::set_is_search_group(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsExecuteChain()` overload"]
     fn get_is_execute_chain(self) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::get_is_execute_chain(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::get_is_execute_chain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsExecuteChain(bool)` overload"]
     fn set_is_execute_chain(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::set_is_execute_chain(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::set_is_execute_chain(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsEventMode()` overload"]
     fn get_is_event_mode(self) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::get_is_event_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::get_is_event_mode(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsEventMode(bool)` overload"]
     fn set_is_event_mode(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::set_is_event_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::set_is_event_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsVisible()` overload"]
     fn get_is_visible(self) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::get_is_visible(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::get_is_visible(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsVisible(bool)` overload"]
     fn set_is_visible(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::set_is_visible(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::set_is_visible(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PostUpdate()` overload"]
     fn post_update(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::post_update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::post_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetEventMode(bool)` overload"]
     fn set_event_mode(self, flag: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::set_event_mode(
-                __receiver,
-                ::core::convert::Into::into(flag),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::set_event_mode(__receiver, ::core::convert::Into::into(flag), ::core::option::Option::None)
         }
     }
     #[doc = "`Show()` overload"]
     fn show(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::show(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Destroy()` overload"]
     fn destroy(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
@@ -2263,9 +1717,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         w: impl ::core::convert::Into<i32>,
     ) -> crate::app::dragonridetarget::DragonRideTarget {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::get_child_script(
                 __receiver,
                 ::core::convert::Into::into(h),
@@ -2283,9 +1736,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         root_id: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::execute_child(
                 __receiver,
                 ::core::convert::Into::into(h),
@@ -2299,37 +1751,25 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
     #[doc = "`CheckStartChain()` overload"]
     fn check_start_chain(self) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::check_start_chain(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::check_start_chain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateChain()` overload"]
     fn update_chain(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::update_chain(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::update_chain(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetChainExecute()` overload"]
     fn set_chain_execute(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DragonRideTargetGroup_unity2_raw::set_chain_execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DragonRideTargetGroup_unity2_raw::set_chain_execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetNearestTarget(*mutcrate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]
@@ -2340,11 +1780,9 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         enable_rate: impl ::core::convert::Into<f32>,
     ) -> (f32, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
             let __ret = {
                 __DragonRideTargetGroup_unity2_raw::get_nearest_target(
                     __receiver,
@@ -2366,9 +1804,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         enable_rate: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::destroy_bomb_target(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2386,9 +1823,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         enable_rate: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::destroy_special_target(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2407,9 +1843,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         select: impl ::core::convert::Into<crate::app::dragonridetarget::DragonRideTarget_TargetType>,
     ) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::execute_select_type_target(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2428,9 +1863,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         enable_rate: impl ::core::convert::Into<f32>,
     ) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::check_enable_bomb_target(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2448,9 +1882,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         enable_rate: impl ::core::convert::Into<f32>,
     ) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::check_enable_special_target(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2469,9 +1902,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         select: impl ::core::convert::Into<crate::app::dragonridetarget::DragonRideTarget_TargetType>,
     ) -> bool {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::check_enable_select_type_target(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2489,17 +1921,12 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
         camera_forward: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
         enable_rate: impl ::core::convert::Into<f32>,
         select: impl ::core::convert::Into<crate::app::dragonridetarget::DragonRideTarget_TargetType>,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>
-    {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector3::Vector3,
-                >,
-            >::uninit();
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>>::uninit();
             __DragonRideTargetGroup_unity2_raw::set_enable_select_type_target_list(
                 __receiver,
                 ::core::convert::Into::into(camera_pos),
@@ -2515,9 +1942,8 @@ pub trait IDragonRideTargetGroupMethods: IDragonRideTargetGroup {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DragonRideTargetGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DragonRideTargetGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2545,29 +1971,24 @@ impl DragonRideTargetGroup {
 #[cfg(feature = "app-dragonridetargetgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideTargetGroup;
-    pub use super::DragonRideTargetGroup_ChainParam;
-    pub use super::DragonRideTargetGroup_ChainSEManager;
-    pub use super::IDragonRideTargetGroup;
-    pub use super::IDragonRideTargetGroupMethods;
-    pub use super::IDragonRideTargetGroup_ChainSEManager;
-    pub use super::IDragonRideTargetGroup_ChainSEManagerMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        DragonRideTargetGroup, DragonRideTargetGroup_ChainParam, DragonRideTargetGroup_ChainSEManager, IDragonRideTargetGroup,
+        IDragonRideTargetGroupMethods, IDragonRideTargetGroup_ChainSEManager, IDragonRideTargetGroup_ChainSEManagerMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

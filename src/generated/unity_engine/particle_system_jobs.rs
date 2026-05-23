@@ -3,6 +3,4 @@
 #[cfg(any(feature = "unity_engine-particle_system_jobs-nativeparticledata-types"))]
 pub mod nativeparticledata;
 #[cfg(feature = "unity_engine-particle_system_jobs-nativeparticledata-types")]
-pub use nativeparticledata::{
-    NativeParticleData, NativeParticleData_Array3, NativeParticleData_Array4,
-};
+pub use nativeparticledata::{NativeParticleData, NativeParticleData_Array3, NativeParticleData_Array4};

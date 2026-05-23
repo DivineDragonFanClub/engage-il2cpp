@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-refreshfacilityselectmenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenuitem/RefreshFacilitySelectMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RefreshFacilitySelectMenuItem")]
@@ -15,11 +17,9 @@ mod __types {
         #[rename(name = "m_FacilityData")]
         pub m_facility_data: crate::app::hubfacilitydata::HubFacilityData,
         #[rename(name = "m_SelectEventHandler")]
-        pub m_select_event_handler:
-            crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
+        pub m_select_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
         #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
+        pub m_decide_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
     }
 }
 
@@ -35,10 +35,12 @@ mod __RefreshFacilitySelectMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -50,25 +52,22 @@ mod __RefreshFacilitySelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RefreshFacilitySelectMenuItem,
         facility_aid: ::unity2::Il2CppString,
-        select_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler,
+        select_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -77,26 +76,14 @@ mod __RefreshFacilitySelectMenuItem_unity2_raw {
             crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
             crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            facility_aid,
-            select_event_handler,
-            decide_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, facility_aid, select_event_handler, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -109,41 +96,27 @@ mod __RefreshFacilitySelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: RefreshFacilitySelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RefreshFacilitySelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: RefreshFacilitySelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RefreshFacilitySelectMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -156,39 +129,27 @@ mod __RefreshFacilitySelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: RefreshFacilitySelectMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: RefreshFacilitySelectMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(RefreshFacilitySelectMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::class(),
@@ -201,32 +162,23 @@ mod __RefreshFacilitySelectMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefreshFacilitySelectMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
         this: RefreshFacilitySelectMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RefreshFacilitySelectMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefreshFacilitySelectMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -237,18 +189,12 @@ pub trait IRefreshFacilitySelectMenuItemMethods: IRefreshFacilitySelectMenuItem 
     fn ctor(
         self,
         facility_aid: impl ::core::convert::Into<::unity2::Il2CppString>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
-        >,
+        select_event_handler: impl ::core::convert::Into<crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RefreshFacilitySelectMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(facility_aid),
@@ -262,39 +208,24 @@ pub trait IRefreshFacilitySelectMenuItemMethods: IRefreshFacilitySelectMenuItem 
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefreshFacilitySelectMenuItem_unity2_raw::get_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefreshFacilitySelectMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
             let __receiver =
-                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefreshFacilitySelectMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefreshFacilitySelectMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
             let __receiver =
-                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RefreshFacilitySelectMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <RefreshFacilitySelectMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RefreshFacilitySelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -307,8 +238,8 @@ impl RefreshFacilitySelectMenuItem {
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
         facility_aid: ::unity2::Il2CppString,
-        select_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler,
-        decide_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler,
+        select_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -317,12 +248,7 @@ impl RefreshFacilitySelectMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshFacilitySelectMenuItemMethods>::ctor(
-            this,
-            facility_aid,
-            select_event_handler,
-            decide_event_handler,
-        );
+        <Self as IRefreshFacilitySelectMenuItemMethods>::ctor(this, facility_aid, select_event_handler, decide_event_handler);
         this
     }
 }
@@ -330,13 +256,10 @@ impl RefreshFacilitySelectMenuItem {
 #[cfg(feature = "app-refreshfacilityselectmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefreshFacilitySelectMenuItem;
-    pub use super::IRefreshFacilitySelectMenuItemMethods;
-    pub use super::RefreshFacilitySelectMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{IRefreshFacilitySelectMenuItem, IRefreshFacilitySelectMenuItemMethods, RefreshFacilitySelectMenuItem};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
 }

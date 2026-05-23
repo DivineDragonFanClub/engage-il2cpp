@@ -2,59 +2,111 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Edge.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "MeshUtils.Edge"
-    )]
-    # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >)]
-    pub struct MeshUtils_Edge {
-# [rename (name = "_pair")] pub pair : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_EdgePair ,
-# [rename (name = "_next")] pub next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_Sym")] pub sym : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_Onext")] pub onext : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_Lnext")] pub lnext : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_Org")] pub org : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
-# [rename (name = "_Lface")] pub lface : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face ,
-# [rename (name = "_activeRegion")] pub active_region : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: tess :: Tess_ActiveRegion ,
-# [rename (name = "_winding")] pub winding : i32 ,
-}
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Face.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "MeshUtils.Face"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet", name = "MeshUtils.Face")]
     # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face >)]
     pub struct MeshUtils_Face {
-# [rename (name = "_prev")] pub prev : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face ,
-# [rename (name = "_next")] pub next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face ,
-# [rename (name = "_anEdge")] pub an_edge : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_trail")] pub trail : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face ,
-# [rename (name = "_n")] pub n : i32 ,
-# [rename (name = "_marked")] pub marked : bool ,
-# [rename (name = "_inside")] pub inside : bool ,
-}
+        #[rename(name = "_prev")]
+        pub prev: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        #[rename(name = "_next")]
+        pub next: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        #[rename(name = "_anEdge")]
+        pub an_edge: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[rename(name = "_trail")]
+        pub trail: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        #[rename(name = "_n")]
+        pub n: i32,
+        #[rename(name = "_marked")]
+        pub marked: bool,
+        #[rename(name = "_inside")]
+        pub inside: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Vertex.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet", name = "MeshUtils.Vertex")]
+    # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >)]
+    pub struct MeshUtils_Vertex {
+        #[rename(name = "_prev")]
+        pub prev: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        #[rename(name = "_next")]
+        pub next: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        #[rename(name = "_anEdge")]
+        pub an_edge: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[rename(name = "_coords")]
+        pub coords: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+        #[rename(name = "_s")]
+        pub s: f32,
+        #[rename(name = "_t")]
+        pub t: f32,
+        #[rename(name = "_pqHandle")]
+        pub pq_handle: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle,
+        #[rename(name = "_n")]
+        pub n: i32,
+        #[rename(name = "_data")]
+        pub data: ::unity2::IlInstance,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Pooled_1.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet", name = "MeshUtils.Pooled`1")]
+    #[parent(crate::system::object::Object)]
+    pub struct MeshUtils_Pooled_1<T0: ::unity2::ClassIdentity> {
+        #[static_field]
+        #[rename(name = "_stack")]
+        pub stack: crate::system::collections::generic::stack_1::Stack_1<T0>,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Edge.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet", name = "MeshUtils.Edge")]
+    # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >)]
+    pub struct MeshUtils_Edge {
+        #[rename(name = "_pair")]
+        pub pair: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_EdgePair,
+        #[rename(name = "_next")]
+        pub next: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[rename(name = "_Sym")]
+        pub sym: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[rename(name = "_Onext")]
+        pub onext: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[rename(name = "_Lnext")]
+        pub lnext: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        #[rename(name = "_Org")]
+        pub org: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        #[rename(name = "_Lface")]
+        pub lface: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        #[rename(name = "_activeRegion")]
+        pub active_region: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::tess::Tess_ActiveRegion,
+        #[rename(name = "_winding")]
+        pub winding: i32,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet", name = "MeshUtils")]
+    #[parent(crate::system::object::Object)]
+    pub struct MeshUtils {
+        #[static_field]
+        #[rename(name = "Undef")]
+        pub undef: i32,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_EdgePair.md"))]
     #[repr(C)]
     #[derive(::core::clone::Clone, ::core::marker::Copy)]
     pub struct MeshUtils_EdgePair {
-    pub e: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-    pub e_sym: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-}
+        pub e: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        pub e_sym: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+    }
 
     impl ::unity2::ClassIdentity for MeshUtils_EdgePair {
-        const NAMESPACE: &'static str =
-            "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
-
         const NAME: &'static str = "MeshUtils.EdgePair";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -65,1057 +117,13 @@ mod __types {
 
     impl ::unity2::IlType for MeshUtils_EdgePair {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Pooled_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "MeshUtils.Pooled`1"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct MeshUtils_Pooled_1<T0: ::unity2::ClassIdentity> {
-        #[static_field]
-        #[rename(name = "_stack")]
-        pub stack: crate::system::collections::generic::stack_1::Stack_1<T0>,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "MeshUtils"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct MeshUtils {
-        #[static_field]
-        #[rename(name = "Undef")]
-        pub undef: i32,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Vertex.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-        name = "MeshUtils.Vertex"
-    )]
-    # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >)]
-    pub struct MeshUtils_Vertex {
-# [rename (name = "_prev")] pub prev : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
-# [rename (name = "_next")] pub next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
-# [rename (name = "_anEdge")] pub an_edge : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_coords")] pub coords : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 ,
-# [rename (name = "_s")] pub s : f32 ,
-# [rename (name = "_t")] pub t : f32 ,
-# [rename (name = "_pqHandle")] pub pq_handle : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: pqhandle :: PQHandle ,
-# [rename (name = "_n")] pub n : i32 ,
-# [rename (name = "_data")] pub data : :: unity2 :: IlInstance ,
-}
 }
 
-#[cfg(
-    feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types"
-)]
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MeshUtils_Edge_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rface {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Rface",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Rface",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_rface (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rface :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rface {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Rface",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Rface",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_rface(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_rface :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dst {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Dst",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Dst",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_dst (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dst :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dst {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Dst",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Dst",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_dst(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_dst :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_oprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Oprev",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Oprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_oprev (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_oprev :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_oprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Oprev",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Oprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_oprev(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_oprev :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_lprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Lprev",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Lprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_lprev (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_lprev :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_lprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Lprev",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Lprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_lprev(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_lprev :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Dprev",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Dprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_dprev (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dprev :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Dprev",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Dprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_dprev(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_dprev :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Rprev",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Rprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_rprev (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rprev :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rprev {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Rprev",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Rprev",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_rprev(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_rprev :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_dnext {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Dnext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Dnext",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_dnext (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dnext :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_dnext {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Dnext",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Dnext",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_dnext(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_dnext :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_rnext {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "get__Rnext",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "get__Rnext",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_rnext (this : MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_rnext :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rnext {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "set__Rnext",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "set__Rnext",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_rnext(
-        this: MeshUtils_Edge,
-        value : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_set_rnext :: get_offset () as isize) ,) ;
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ensure_first {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "EnsureFirst",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "EnsureFirst",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ensure_first(
-        e : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ensure_first :: get_offset () as isize) ,) ;
-        inner(e, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_reset {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                "Reset",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn reset(
-        this: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MeshUtils_Edge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: MeshUtils_Edge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(MeshUtils_Edge, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils_Edge {
-    #[doc = "`EnsureFirst(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]    pub fn ensure_first () -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge > :: uninit () ;
-            __MeshUtils_Edge_unity2_raw::ensure_first(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
-            __out_0.assume_init()
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-pub trait IMeshUtils_EdgeMethods: IMeshUtils_Edge {
-    #[doc = "`get__Rface()` overload"]    fn get_rface (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_rface(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Rface(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    fn set_rface(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_rface(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Dst()` overload"]    fn get_dst (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_dst(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Dst(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
-    fn set_dst(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_dst(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Oprev()` overload"]    fn get_oprev (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_oprev(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Oprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    fn set_oprev(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_oprev(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Lprev()` overload"]    fn get_lprev (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_lprev(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Lprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    fn set_lprev(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_lprev(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Dprev()` overload"]    fn get_dprev (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_dprev(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Dprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    fn set_dprev(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_dprev(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Rprev()` overload"]    fn get_rprev (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_rprev(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Rprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    fn set_rprev(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_rprev(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Dnext()` overload"]    fn get_dnext (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_dnext(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Dnext(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    fn set_dnext(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_dnext(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get__Rnext()` overload"]    fn get_rnext (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::get_rnext(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set__Rnext(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    fn set_rnext(
-        self,
-        value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::set_rnext(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Edge_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl<__T: IMeshUtils_Edge> IMeshUtils_EdgeMethods for __T {}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils_Edge {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MeshUtils_Edge),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMeshUtils_EdgeMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
 #[doc(hidden)]
@@ -1126,9 +134,7 @@ mod __MeshUtils_Face_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_verts_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshUtils_Face as ::unity2::ClassIdentity>::class(),
@@ -1141,39 +147,27 @@ mod __MeshUtils_Face_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Face as ::unity2::ClassIdentity>::NAME,
-                    "get_VertsCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Face as ::unity2::ClassIdentity>::NAME,
+                        "get_VertsCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_verts_count(
-        this: MeshUtils_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_verts_count(this: MeshUtils_Face, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MeshUtils_Face, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_verts_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_verts_count::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshUtils_Face as ::unity2::ClassIdentity>::class(),
@@ -1186,39 +180,27 @@ mod __MeshUtils_Face_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Face as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Face as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: MeshUtils_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset(this: MeshUtils_Face, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MeshUtils_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MeshUtils_Face as ::unity2::ClassIdentity>::class(),
@@ -1231,27 +213,20 @@ mod __MeshUtils_Face_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Face as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Face as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MeshUtils_Face, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MeshUtils_Face, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1261,27 +236,21 @@ pub trait IMeshUtils_FaceMethods: IMeshUtils_Face {
     #[doc = "`get_VertsCount()` overload"]
     fn get_verts_count(self) -> i32 {
         unsafe {
-            let __receiver = <MeshUtils_Face as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MeshUtils_Face as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MeshUtils_Face_unity2_raw::get_verts_count(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Reset()` overload"]
     fn reset(self) -> () {
         unsafe {
-            let __receiver = <MeshUtils_Face as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MeshUtils_Face as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MeshUtils_Face_unity2_raw::reset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MeshUtils_Face as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MeshUtils_Face as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MeshUtils_Face_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1309,54 +278,16 @@ impl MeshUtils_Face {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MeshUtils_EdgePair_unity2_raw {
+mod __MeshUtils_Vertex_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_EdgePair as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_EdgePair as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn create (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_EdgePair{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_EdgePair = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_EdgePair as ::unity2::ClassIdentity>::class(),
+                <MeshUtils_Vertex as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -1366,46 +297,91 @@ mod __MeshUtils_EdgePair_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_EdgePair as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Vertex as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn reset(this: MeshUtils_Vertex, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MeshUtils_Vertex, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Vertex as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Vertex as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn reset(
-        this: MeshUtils_EdgePair,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MeshUtils_EdgePair, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: MeshUtils_Vertex, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MeshUtils_Vertex, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils_EdgePair {
-    #[doc = "`Create()` overload"]    pub fn create () -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_EdgePair{
-        unsafe { __MeshUtils_EdgePair_unity2_raw::create(::core::option::Option::None) }
+pub trait IMeshUtils_VertexMethods: IMeshUtils_Vertex {
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Vertex as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Vertex_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Vertex as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Vertex_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils_EdgePair {
-    #[doc = "`Reset()` overload"]
-    pub fn reset(self) -> () {
-        unsafe { __MeshUtils_EdgePair_unity2_raw::reset(self, ::core::option::Option::None) }
+impl<__T: IMeshUtils_Vertex> IMeshUtils_VertexMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+impl MeshUtils_Vertex {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MeshUtils_Vertex),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMeshUtils_VertexMethods>::ctor(this);
+        this
     }
 }
 
@@ -1452,19 +428,668 @@ impl<T0: ::unity2::ClassIdentity> MeshUtils_Pooled_1<T0> {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MeshUtils_unity2_raw {
+mod __MeshUtils_Edge_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_make_edge {
+    pub mod __lookup_get_rface {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "MakeEdge",
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Rface",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Rface",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rface(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face =
+            ::core::mem::transmute(__lookup_get_rface::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rface {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Rface",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Rface",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_rface(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_rface::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dst {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Dst",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Dst",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dst(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex =
+            ::core::mem::transmute(__lookup_get_dst::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dst {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Dst",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Dst",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_dst(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_dst::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_oprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Oprev",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Oprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_oprev(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_get_oprev::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_oprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Oprev",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Oprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_oprev(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_oprev::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_lprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Lprev",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Lprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_lprev(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_get_lprev::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_lprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Lprev",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Lprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_lprev(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_lprev::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Dprev",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Dprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dprev(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_get_dprev::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Dprev",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Dprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_dprev(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_dprev::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Rprev",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Rprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rprev(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_get_rprev::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rprev {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Rprev",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Rprev",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_rprev(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_rprev::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_dnext {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Dnext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Dnext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_dnext(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_get_dnext::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_dnext {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Dnext",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Dnext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_dnext(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_dnext::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_rnext {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "get__Rnext",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "get__Rnext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_rnext(
+        this: MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_get_rnext::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rnext {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "set__Rnext",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "set__Rnext",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_rnext(
+        this: MeshUtils_Edge,
+        value: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_rnext::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ensure_first {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
+                "EnsureFirst",
                 1,
                 param_types,
                 true,
@@ -1473,424 +1098,35 @@ mod __MeshUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "MakeEdge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "EnsureFirst",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn make_edge (e_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_make_edge :: get_offset () as isize) ,) ;
-        inner(e_next, __unity2_method_info)
     }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_splice {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "Splice",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "Splice",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn splice(
-        a : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        b : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+    pub unsafe fn ensure_first(
+        e: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_splice :: get_offset () as isize) ,) ;
-        inner(a, b, __unity2_method_info)
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ensure_first::get_method_info().method_ptr);
+        inner(e, __unity2_method_info)
     }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_vertex {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "MakeVertex",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "MakeVertex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn make_vertex(
-        e_orig : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        v_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_make_vertex :: get_offset () as isize) ,) ;
-        inner(e_orig, v_next, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_make_face {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "MakeFace",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "MakeFace",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn make_face(
-        e_orig : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        f_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_make_face :: get_offset () as isize) ,) ;
-        inner(e_orig, f_next, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_kill_edge {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "KillEdge",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "KillEdge",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn kill_edge(
-        e_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_kill_edge :: get_offset () as isize) ,) ;
-        inner(e_del, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_kill_vertex {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "KillVertex",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "KillVertex",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn kill_vertex(
-        v_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-        new_org : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_kill_vertex :: get_offset () as isize) ,) ;
-        inner(v_del, new_org, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_kill_face {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "KillFace",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "KillFace",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn kill_face(
-        f_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-        new_l_face : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_kill_face :: get_offset () as isize) ,) ;
-        inner(f_del, new_l_face, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_face_area {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils as ::unity2::ClassIdentity>::class(),
-                "FaceArea",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils as ::unity2::ClassIdentity>::NAME,
-                    "FaceArea",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn face_area(
-        f : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_face_area :: get_offset () as isize) ,) ;
-        inner(f, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils {
-    #[doc = "`MakeEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]    pub fn make_edge (e_next : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge{
-        unsafe {
-            __MeshUtils_unity2_raw::make_edge(
-                ::core::convert::Into::into(e_next),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Splice(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    pub fn splice(
-        a : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-        b : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            __MeshUtils_unity2_raw::splice(
-                ::core::convert::Into::into(a),
-                ::core::convert::Into::into(b),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MakeVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
-    pub fn make_vertex(
-        e_orig : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-        v_next : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >,
-    ) -> () {
-        unsafe {
-            __MeshUtils_unity2_raw::make_vertex(
-                ::core::convert::Into::into(e_orig),
-                ::core::convert::Into::into(v_next),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MakeFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    pub fn make_face(
-        e_orig : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-        f_next : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face >,
-    ) -> () {
-        unsafe {
-            __MeshUtils_unity2_raw::make_face(
-                ::core::convert::Into::into(e_orig),
-                ::core::convert::Into::into(f_next),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`KillEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    pub fn kill_edge(
-        e_del : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge >,
-    ) -> () {
-        unsafe {
-            __MeshUtils_unity2_raw::kill_edge(
-                ::core::convert::Into::into(e_del),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`KillVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
-    pub fn kill_vertex(
-        v_del : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >,
-        new_org : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >,
-    ) -> () {
-        unsafe {
-            __MeshUtils_unity2_raw::kill_vertex(
-                ::core::convert::Into::into(v_del),
-                ::core::convert::Into::into(new_org),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`KillFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    pub fn kill_face(
-        f_del : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face >,
-        new_l_face : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face >,
-    ) -> () {
-        unsafe {
-            __MeshUtils_unity2_raw::kill_face(
-                ::core::convert::Into::into(f_del),
-                ::core::convert::Into::into(new_l_face),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`FaceArea(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    pub fn face_area(
-        f : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face >,
-    ) -> f32 {
-        unsafe {
-            __MeshUtils_unity2_raw::face_area(
-                ::core::convert::Into::into(f),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MeshUtils_Vertex_unity2_raw {
-    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Vertex as ::unity2::ClassIdentity>::class(),
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
                 "Reset",
                 0,
                 param_types,
@@ -1900,42 +1136,30 @@ mod __MeshUtils_Vertex_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Vertex as ::unity2::ClassIdentity>::NAME,
-                    "Reset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset(
-        this: MeshUtils_Vertex,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MeshUtils_Vertex, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset::get_offset() as isize),
-            );
+    pub unsafe fn reset(this: MeshUtils_Edge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MeshUtils_Edge, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MeshUtils_Vertex as ::unity2::ClassIdentity>::class(),
+                <MeshUtils_Edge as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1945,97 +1169,708 @@ mod __MeshUtils_Vertex_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MeshUtils_Vertex as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_Edge as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MeshUtils_Vertex,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MeshUtils_Vertex, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: MeshUtils_Edge, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MeshUtils_Edge, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-pub trait IMeshUtils_VertexMethods: IMeshUtils_Vertex {
-    #[doc = "`Reset()` overload"]
-    fn reset(self) -> () {
+impl MeshUtils_Edge {
+    #[doc = "`EnsureFirst(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    pub fn ensure_first() -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
         unsafe {
-            let __receiver = <MeshUtils_Vertex as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Vertex_unity2_raw::reset(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <MeshUtils_Vertex as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MeshUtils_Vertex_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            let mut __out_0 = ::core::mem::MaybeUninit::<
+                crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            >::uninit();
+            __MeshUtils_Edge_unity2_raw::ensure_first(__out_0.as_mut_ptr(), ::core::option::Option::None);
+            __out_0.assume_init()
         }
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl<__T: IMeshUtils_Vertex> IMeshUtils_VertexMethods for __T {}
+pub trait IMeshUtils_EdgeMethods: IMeshUtils_Edge {
+    #[doc = "`get__Rface()` overload"]
+    fn get_rface(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_rface(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Rface(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    fn set_rface(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_rface(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Dst()` overload"]
+    fn get_dst(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_dst(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Dst(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
+    fn set_dst(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_dst(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Oprev()` overload"]
+    fn get_oprev(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_oprev(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Oprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    fn set_oprev(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_oprev(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Lprev()` overload"]
+    fn get_lprev(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_lprev(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Lprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    fn set_lprev(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_lprev(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Dprev()` overload"]
+    fn get_dprev(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_dprev(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Dprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    fn set_dprev(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_dprev(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Rprev()` overload"]
+    fn get_rprev(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_rprev(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Rprev(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    fn set_rprev(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_rprev(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Dnext()` overload"]
+    fn get_dnext(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_dnext(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Dnext(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    fn set_dnext(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_dnext(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get__Rnext()` overload"]
+    fn get_rnext(self) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::get_rnext(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set__Rnext(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    fn set_rnext(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::set_rnext(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::reset(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MeshUtils_Edge as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MeshUtils_Edge_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils_Vertex {
+impl<__T: IMeshUtils_Edge> IMeshUtils_EdgeMethods for __T {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+impl MeshUtils_Edge {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MeshUtils_Vertex),
+                ::core::stringify!(MeshUtils_Edge),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMeshUtils_VertexMethods>::ctor(this);
+        <Self as IMeshUtils_EdgeMethods>::ctor(this);
         this
     }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MeshUtils_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_edge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "MakeEdge", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "MakeEdge",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn make_edge(
+        e_next: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge =
+            ::core::mem::transmute(__lookup_make_edge::get_method_info().method_ptr);
+        inner(e_next, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_splice {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "Splice", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "Splice",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn splice(
+        a: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        b: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_splice::get_method_info().method_ptr);
+        inner(a, b, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_vertex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "MakeVertex", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "MakeVertex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn make_vertex(
+        e_orig: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        v_next: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_make_vertex::get_method_info().method_ptr);
+        inner(e_orig, v_next, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_make_face {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "MakeFace", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "MakeFace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn make_face(
+        e_orig: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        f_next: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_make_face::get_method_info().method_ptr);
+        inner(e_orig, f_next, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_kill_edge {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "KillEdge", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "KillEdge",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn kill_edge(
+        e_del: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_kill_edge::get_method_info().method_ptr);
+        inner(e_del, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_kill_vertex {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex as ::unity2::IlType>::il_type(
+                ),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex as ::unity2::IlType>::il_type(
+                ),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "KillVertex", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "KillVertex",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn kill_vertex(
+        v_del: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        new_org: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_kill_vertex::get_method_info().method_ptr);
+        inner(v_del, new_org, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_kill_face {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "KillFace", 2, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "KillFace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn kill_face(
+        f_del: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        new_l_face: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_kill_face::get_method_info().method_ptr);
+        inner(f_del, new_l_face, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_face_area {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<MeshUtils as ::unity2::ClassIdentity>::class(), "FaceArea", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils as ::unity2::ClassIdentity>::NAME,
+                        "FaceArea",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn face_area(
+        f: crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> f32 {
+        let inner: extern "C" fn(
+            crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face,
+            ::unity2::OptionalMethod,
+        ) -> f32 = ::core::mem::transmute(__lookup_face_area::get_method_info().method_ptr);
+        inner(f, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+impl MeshUtils {
+    #[doc = "`MakeEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    pub fn make_edge(
+        e_next: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge {
+        unsafe { __MeshUtils_unity2_raw::make_edge(::core::convert::Into::into(e_next), ::core::option::Option::None) }
+    }
+
+    #[doc = "`Splice(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    pub fn splice(
+        a: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+        b: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe {
+            __MeshUtils_unity2_raw::splice(
+                ::core::convert::Into::into(a),
+                ::core::convert::Into::into(b),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`MakeVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
+    pub fn make_vertex(
+        e_orig: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+        v_next: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>,
+    ) -> () {
+        unsafe {
+            __MeshUtils_unity2_raw::make_vertex(
+                ::core::convert::Into::into(e_orig),
+                ::core::convert::Into::into(v_next),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`MakeFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    pub fn make_face(
+        e_orig: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+        f_next: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>,
+    ) -> () {
+        unsafe {
+            __MeshUtils_unity2_raw::make_face(
+                ::core::convert::Into::into(e_orig),
+                ::core::convert::Into::into(f_next),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`KillEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    pub fn kill_edge(
+        e_del: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>,
+    ) -> () {
+        unsafe { __MeshUtils_unity2_raw::kill_edge(::core::convert::Into::into(e_del), ::core::option::Option::None) }
+    }
+
+    #[doc = "`KillVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
+    pub fn kill_vertex(
+        v_del: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>,
+        new_org: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>,
+    ) -> () {
+        unsafe {
+            __MeshUtils_unity2_raw::kill_vertex(
+                ::core::convert::Into::into(v_del),
+                ::core::convert::Into::into(new_org),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`KillFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    pub fn kill_face(
+        f_del: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>,
+        new_l_face: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>,
+    ) -> () {
+        unsafe {
+            __MeshUtils_unity2_raw::kill_face(
+                ::core::convert::Into::into(f_del),
+                ::core::convert::Into::into(new_l_face),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`FaceArea(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    pub fn face_area(
+        f: impl ::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>,
+    ) -> f32 {
+        unsafe { __MeshUtils_unity2_raw::face_area(::core::convert::Into::into(f), ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MeshUtils_EdgePair_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_EdgePair as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_EdgePair as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_EdgePair {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_EdgePair =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_reset {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MeshUtils_EdgePair as ::unity2::ClassIdentity>::class(),
+                "Reset",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MeshUtils_EdgePair as ::unity2::ClassIdentity>::NAME,
+                        "Reset",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn reset(this: MeshUtils_EdgePair, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MeshUtils_EdgePair, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_reset::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+impl MeshUtils_EdgePair {
+    #[doc = "`Create()` overload"]
+    pub fn create() -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_EdgePair {
+        unsafe { __MeshUtils_EdgePair_unity2_raw::create(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+impl MeshUtils_EdgePair {
+    #[doc = "`Reset()` overload"]
+    pub fn reset(self) -> () {
+        unsafe { __MeshUtils_EdgePair_unity2_raw::reset(self, ::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IMeshUtils;
-    pub use super::IMeshUtils_Edge;
-    pub use super::IMeshUtils_EdgeMethods;
-    pub use super::IMeshUtils_Face;
-    pub use super::IMeshUtils_FaceMethods;
-    pub use super::IMeshUtils_Pooled_1;
-    pub use super::IMeshUtils_Pooled_1Methods;
-    pub use super::IMeshUtils_Vertex;
-    pub use super::IMeshUtils_VertexMethods;
-    pub use super::MeshUtils;
-    pub use super::MeshUtils_Edge;
-    pub use super::MeshUtils_EdgePair;
-    pub use super::MeshUtils_Face;
-    pub use super::MeshUtils_Pooled_1;
-    pub use super::MeshUtils_Vertex;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMeshUtils, IMeshUtils_Edge, IMeshUtils_EdgeMethods, IMeshUtils_Face, IMeshUtils_FaceMethods, IMeshUtils_Pooled_1,
+        IMeshUtils_Pooled_1Methods, IMeshUtils_Vertex, IMeshUtils_VertexMethods, MeshUtils, MeshUtils_Edge, MeshUtils_EdgePair, MeshUtils_Face,
+        MeshUtils_Pooled_1, MeshUtils_Vertex,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

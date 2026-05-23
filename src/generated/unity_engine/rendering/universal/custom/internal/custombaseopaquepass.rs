@@ -2,33 +2,26 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombaseopaquepass-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::universal::scriptablerenderpass::{
-        IScriptableRenderPass, ScriptableRenderPass,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass, ScriptableRenderPass},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/custombaseopaquepass/CustomBaseOpaquePass.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-        name = "CustomBaseOpaquePass"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal.Custom.Internal", name = "CustomBaseOpaquePass")]
     #[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
     pub struct CustomBaseOpaquePass {
         #[rename(name = "m_FilteringSettings")]
-        pub m_filtering_settings:
-            crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
         #[rename(name = "m_RenderStateBlock")]
-        pub m_render_state_block:
-            crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+        pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
         #[rename(name = "m_DefaultShaderTagId")]
         pub m_default_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
         #[rename(name = "m_ShaderTagIdList")]
-        pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        >,
+        pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
         #[rename(name = "m_ProfilerTag")]
         pub m_profiler_tag: ::unity2::Il2CppString,
         #[rename(name = "m_ProfilingSampler")]
@@ -37,13 +30,10 @@ mod __types {
         #[rename(name = "s_DrawObjectPassDataPropID")]
         pub s_draw_object_pass_data_prop_id: i32,
         #[rename(name = "m_NoOverrideStateShaderTagId")]
-        pub m_no_override_state_shader_tag_id:
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
+        pub m_no_override_state_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
         #[rename(name = "m_NoOverrideStateShaderTagIdList")]
         pub m_no_override_state_shader_tag_id_list:
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::rendering::shadertagid::ShaderTagId,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
         #[rename(name = "m_DepthState")]
         pub m_depth_state: crate::unity_engine::rendering::depthstate::DepthState,
         #[rename(name = "m_ZPrepassEnabled")]
@@ -75,9 +65,7 @@ mod __CustomBaseOpaquePass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_silhouette_colors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
@@ -90,46 +78,32 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "get_silhouetteColors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "get_silhouetteColors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_silhouette_colors(
         this: CustomBaseOpaquePass,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
-        let inner: extern "C" fn(
-            CustomBaseOpaquePass,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::vector4::Vector4> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_silhouette_colors::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CustomBaseOpaquePass, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> =
+            ::core::mem::transmute(__lookup_get_silhouette_colors::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_silhouette_colors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::vector4::Vector4,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "set_silhouetteColors",
@@ -141,18 +115,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "set_silhouetteColors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "set_silhouetteColors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_silhouette_colors(
@@ -160,24 +131,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         value: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CustomBaseOpaquePass,
-            ::unity2::Array<crate::unity_engine::vector4::Vector4>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_silhouette_colors::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CustomBaseOpaquePass, ::unity2::Array<crate::unity_engine::vector4::Vector4>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_silhouette_colors::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_status_rendering_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
@@ -190,41 +152,28 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "get_statusRenderingFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "get_statusRenderingFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_status_rendering_flag(
-        this: CustomBaseOpaquePass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_status_rendering_flag(this: CustomBaseOpaquePass, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CustomBaseOpaquePass, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_status_rendering_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_status_rendering_flag::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_status_rendering_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "set_statusRenderingFlag",
@@ -236,40 +185,27 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "set_statusRenderingFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "set_statusRenderingFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_status_rendering_flag(
-        this: CustomBaseOpaquePass,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_status_rendering_flag(this: CustomBaseOpaquePass, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomBaseOpaquePass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_status_rendering_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_status_rendering_flag::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_silhouette_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
@@ -282,41 +218,28 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "get_silhouetteEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "get_silhouetteEnabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_silhouette_enabled(
-        this: CustomBaseOpaquePass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_silhouette_enabled(this: CustomBaseOpaquePass, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CustomBaseOpaquePass, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_silhouette_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_silhouette_enabled::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_silhouette_enabled {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "set_silhouetteEnabled",
@@ -328,41 +251,34 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "set_silhouetteEnabled",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "set_silhouetteEnabled",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_silhouette_enabled(
-        this: CustomBaseOpaquePass,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_silhouette_enabled(this: CustomBaseOpaquePass, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomBaseOpaquePass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_silhouette_enabled::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_silhouette_enabled::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: layermask :: LayerMask as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: material :: Material as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::renderqueuerange::RenderQueueRange as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::layermask::LayerMask as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -374,18 +290,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -405,11 +318,7 @@ mod __CustomBaseOpaquePass_unity2_raw {
             crate::unity_engine::layermask::LayerMask,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             profiler_tag,
@@ -424,11 +333,8 @@ mod __CustomBaseOpaquePass_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_prepass_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "SetZPrepassFlag",
@@ -440,44 +346,29 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "SetZPrepassFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "SetZPrepassFlag",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_z_prepass_flag(
-        this: CustomBaseOpaquePass,
-        zprepass_enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_z_prepass_flag(this: CustomBaseOpaquePass, zprepass_enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomBaseOpaquePass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_z_prepass_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_z_prepass_flag::get_method_info().method_ptr);
         inner(this, zprepass_enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z_prepass_flag_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "SetZPrepassFlag",
@@ -489,18 +380,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "SetZPrepassFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "SetZPrepassFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_z_prepass_flag_2(
@@ -510,27 +398,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(CustomBaseOpaquePass, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_z_prepass_flag_2::get_offset() as isize),
-            );
-        inner(
-            this,
-            zprepass_enabled,
-            zprepass_optimized_sort,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_set_z_prepass_flag_2::get_method_info().method_ptr);
+        inner(this, zprepass_enabled, zprepass_optimized_sort, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_set_z_prepass_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "InternalSetZPrepassFlag",
@@ -542,18 +418,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "InternalSetZPrepassFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "InternalSetZPrepassFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_set_z_prepass_flag(
@@ -562,20 +435,14 @@ mod __CustomBaseOpaquePass_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(CustomBaseOpaquePass, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_set_z_prepass_flag::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_set_z_prepass_flag::get_method_info().method_ptr);
         inner(this, zprepass_enabled, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_custom_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -593,18 +460,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "EnableCustomViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "EnableCustomViewport",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn enable_custom_viewport(
@@ -615,34 +479,15 @@ mod __CustomBaseOpaquePass_unity2_raw {
         custom_h: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CustomBaseOpaquePass,
-            f32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enable_custom_viewport::get_offset() as isize),
-        );
-        inner(
-            this,
-            original_w,
-            original_h,
-            custom_w,
-            custom_h,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(CustomBaseOpaquePass, f32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_custom_viewport::get_method_info().method_ptr);
+        inner(this, original_w, original_h, custom_w, custom_h, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_custom_viewport {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
@@ -655,40 +500,31 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "DisableCustomViewport",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "DisableCustomViewport",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_custom_viewport(
-        this: CustomBaseOpaquePass,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_custom_viewport(this: CustomBaseOpaquePass, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CustomBaseOpaquePass, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_custom_viewport::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_custom_viewport::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::renderingdata::RenderingData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -700,24 +536,21 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
         this: CustomBaseOpaquePass,
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data : * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData,
+        rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -725,20 +558,14 @@ mod __CustomBaseOpaquePass_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, context, rendering_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CustomBaseOpaquePass as ::unity2::ClassIdentity>::class(),
@@ -751,26 +578,19 @@ mod __CustomBaseOpaquePass_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CustomBaseOpaquePass as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -788,98 +608,63 @@ pub trait ICustomBaseOpaquePassMethods: ICustomBaseOpaquePass {
     #[doc = "`get_silhouetteColors()` overload"]
     fn get_silhouette_colors(self) -> ::unity2::Array<crate::unity_engine::vector4::Vector4> {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::get_silhouette_colors(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::get_silhouette_colors(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_silhouetteColors(::unity2::Array<crate::unity_engine::vector4::Vector4>)` overload"]
-    fn set_silhouette_colors(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>,
-    ) -> () {
+    fn set_silhouette_colors(self, value: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::vector4::Vector4>>) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::set_silhouette_colors(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::set_silhouette_colors(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_statusRenderingFlag()` overload"]
     fn get_status_rendering_flag(self) -> bool {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::get_status_rendering_flag(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::get_status_rendering_flag(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_statusRenderingFlag(bool)` overload"]
     fn set_status_rendering_flag(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::set_status_rendering_flag(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::set_status_rendering_flag(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_silhouetteEnabled()` overload"]
     fn get_silhouette_enabled(self) -> bool {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::get_silhouette_enabled(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::get_silhouette_enabled(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_silhouetteEnabled(bool)` overload"]
     fn set_silhouette_enabled(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::set_silhouette_enabled(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::set_silhouette_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::renderqueuerange::RenderQueueRange, crate::unity_engine::layermask::LayerMask, crate::unity_engine::material::Material)` overload"]
     fn ctor(
         self,
         profiler_tag: impl ::core::convert::Into<::unity2::Il2CppString>,
-        evt: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        >,
-        render_queue_range: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
-        >,
+        evt: impl ::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>,
+        render_queue_range: impl ::core::convert::Into<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange>,
         layer_mask: impl ::core::convert::Into<crate::unity_engine::layermask::LayerMask>,
         blit_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomBaseOpaquePass_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(profiler_tag),
@@ -894,9 +679,8 @@ pub trait ICustomBaseOpaquePassMethods: ICustomBaseOpaquePass {
     #[doc = "`SetZPrepassFlag(bool)` overload"]
     fn set_z_prepass_flag(self, zprepass_enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomBaseOpaquePass_unity2_raw::set_z_prepass_flag(
                 __receiver,
                 ::core::convert::Into::into(zprepass_enabled),
@@ -911,9 +695,8 @@ pub trait ICustomBaseOpaquePassMethods: ICustomBaseOpaquePass {
         zprepass_optimized_sort: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomBaseOpaquePass_unity2_raw::set_z_prepass_flag_2(
                 __receiver,
                 ::core::convert::Into::into(zprepass_enabled),
@@ -925,9 +708,8 @@ pub trait ICustomBaseOpaquePassMethods: ICustomBaseOpaquePass {
     #[doc = "`InternalSetZPrepassFlag(bool)` overload"]
     fn internal_set_z_prepass_flag(self, zprepass_enabled: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomBaseOpaquePass_unity2_raw::internal_set_z_prepass_flag(
                 __receiver,
                 ::core::convert::Into::into(zprepass_enabled),
@@ -944,9 +726,8 @@ pub trait ICustomBaseOpaquePassMethods: ICustomBaseOpaquePass {
         custom_h: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CustomBaseOpaquePass_unity2_raw::enable_custom_viewport(
                 __receiver,
                 ::core::convert::Into::into(original_w),
@@ -960,29 +741,20 @@ pub trait ICustomBaseOpaquePassMethods: ICustomBaseOpaquePass {
     #[doc = "`DisableCustomViewport()` overload"]
     fn disable_custom_viewport(self) -> () {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CustomBaseOpaquePass_unity2_raw::disable_custom_viewport(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CustomBaseOpaquePass_unity2_raw::disable_custom_viewport(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
     fn execute(
         self,
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
     ) -> crate::unity_engine::rendering::universal::renderingdata::RenderingData {
         unsafe {
-            let __receiver = <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-            >::uninit();
+            let __receiver =
+                <CustomBaseOpaquePass as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::renderingdata::RenderingData>::uninit();
             __CustomBaseOpaquePass_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(context),
@@ -1014,14 +786,7 @@ impl CustomBaseOpaquePass {
                 ::core::stringify!(new),
             )
         });
-        <Self as ICustomBaseOpaquePassMethods>::ctor(
-            this,
-            profiler_tag,
-            evt,
-            render_queue_range,
-            layer_mask,
-            blit_material,
-        );
+        <Self as ICustomBaseOpaquePassMethods>::ctor(this, profiler_tag, evt, render_queue_range, layer_mask, blit_material);
         this
     }
 }
@@ -1029,13 +794,10 @@ impl CustomBaseOpaquePass {
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombaseopaquepass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomBaseOpaquePass;
-    pub use super::ICustomBaseOpaquePass;
-    pub use super::ICustomBaseOpaquePassMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{CustomBaseOpaquePass, ICustomBaseOpaquePass, ICustomBaseOpaquePassMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass")]
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPassMethods;
+    pub use crate::{system::object::IObject, unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass};
 }

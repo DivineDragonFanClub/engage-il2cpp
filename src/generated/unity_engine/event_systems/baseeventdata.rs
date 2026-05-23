@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-event_systems-baseeventdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::event_systems::abstracteventdata::{
-        AbstractEventData, IAbstractEventData,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::event_systems::abstracteventdata::{AbstractEventData, IAbstractEventData},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/baseeventdata/BaseEventData.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseEventData")]
@@ -31,33 +31,23 @@ mod __BaseEventData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: eventsystem :: EventSystem as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <BaseEventData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::eventsystem::EventSystem as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<BaseEventData as ::unity2::ClassIdentity>::class(), ".ctor", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseEventData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseEventData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -65,24 +55,15 @@ mod __BaseEventData_unity2_raw {
         event_system: crate::unity_engine::event_systems::eventsystem::EventSystem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BaseEventData,
-            crate::unity_engine::event_systems::eventsystem::EventSystem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BaseEventData, crate::unity_engine::event_systems::eventsystem::EventSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, event_system, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_input_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BaseEventData as ::unity2::ClassIdentity>::class(),
@@ -95,34 +76,30 @@ mod __BaseEventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseEventData as ::unity2::ClassIdentity>::NAME,
-                    "get_currentInputModule",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseEventData as ::unity2::ClassIdentity>::NAME,
+                        "get_currentInputModule",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current_input_module(
         this: BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::event_systems::baseinputmodule::BaseInputModule {
-        let inner : extern "C" fn (BaseEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseinputmodule :: BaseInputModule = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_current_input_module :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(BaseEventData, ::unity2::OptionalMethod) -> crate::unity_engine::event_systems::baseinputmodule::BaseInputModule =
+            ::core::mem::transmute(__lookup_get_current_input_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_selected_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BaseEventData as ::unity2::ClassIdentity>::class(),
@@ -135,41 +112,30 @@ mod __BaseEventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseEventData as ::unity2::ClassIdentity>::NAME,
-                    "get_selectedObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseEventData as ::unity2::ClassIdentity>::NAME,
+                        "get_selectedObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_selected_object(
         this: BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_selected_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BaseEventData, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_selected_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_selected_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -183,18 +149,15 @@ mod __BaseEventData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BaseEventData as ::unity2::ClassIdentity>::NAME,
-                    "set_selectedObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BaseEventData as ::unity2::ClassIdentity>::NAME,
+                        "set_selectedObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_selected_object(
@@ -202,15 +165,8 @@ mod __BaseEventData_unity2_raw {
         value: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BaseEventData,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_selected_object::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BaseEventData, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_selected_object::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
 }
@@ -218,63 +174,31 @@ mod __BaseEventData_unity2_raw {
 #[cfg(feature = "unity_engine-event_systems-baseeventdata")]
 pub trait IBaseEventDataMethods: IBaseEventData {
     #[doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"]
-    fn ctor(
-        self,
-        event_system: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::eventsystem::EventSystem,
-        >,
-    ) -> () {
+    fn ctor(self, event_system: impl ::core::convert::Into<crate::unity_engine::event_systems::eventsystem::EventSystem>) -> () {
         unsafe {
-            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BaseEventData_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(event_system),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BaseEventData_unity2_raw::ctor(__receiver, ::core::convert::Into::into(event_system), ::core::option::Option::None)
         }
     }
     #[doc = "`get_currentInputModule()` overload"]
-    fn get_current_input_module(
-        self,
-    ) -> crate::unity_engine::event_systems::baseinputmodule::BaseInputModule {
+    fn get_current_input_module(self) -> crate::unity_engine::event_systems::baseinputmodule::BaseInputModule {
         unsafe {
-            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BaseEventData_unity2_raw::get_current_input_module(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BaseEventData_unity2_raw::get_current_input_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_selectedObject()` overload"]
     fn get_selected_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BaseEventData_unity2_raw::get_selected_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BaseEventData_unity2_raw::get_selected_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_selectedObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn set_selected_object(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn set_selected_object(self, value: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BaseEventData_unity2_raw::set_selected_object(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BaseEventData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BaseEventData_unity2_raw::set_selected_object(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -286,13 +210,8 @@ impl<__T: IBaseEventData> IBaseEventDataMethods for __T {}
 impl BaseEventData {
     #[doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"]
     pub fn new(event_system: crate::unity_engine::event_systems::eventsystem::EventSystem) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BaseEventData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BaseEventData), ::core::stringify!(new),));
         <Self as IBaseEventDataMethods>::ctor(this, event_system);
         this
     }
@@ -301,13 +220,10 @@ impl BaseEventData {
 #[cfg(feature = "unity_engine-event_systems-baseeventdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BaseEventData;
-    pub use super::IBaseEventData;
-    pub use super::IBaseEventDataMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{BaseEventData, IBaseEventData, IBaseEventDataMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::event_systems::abstracteventdata::IAbstractEventData;
     #[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
     pub use crate::unity_engine::event_systems::abstracteventdata::IAbstractEventDataMethods;
+    pub use crate::{system::object::IObject, unity_engine::event_systems::abstracteventdata::IAbstractEventData};
 }

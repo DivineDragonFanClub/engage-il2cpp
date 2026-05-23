@@ -2,34 +2,54 @@
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct DishSelectMenuCategoryContent {
+        #[rename(name = "m_CategoryList")]
+        pub m_category_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject,
+        >,
+        #[static_field]
+        #[rename(name = "s_EnableCategoryList")]
+        pub s_enable_category_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject,
+        >,
+        #[static_field]
+        #[rename(name = "s_Index")]
+        pub s_index: i32,
+        #[static_field]
+        #[rename(name = "s_OldIndex")]
+        pub s_old_index: i32,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_Category.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct DishSelectMenuCategoryContent_Category {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for DishSelectMenuCategoryContent_Category {
-        const NAMESPACE: &'static str = "App.CookingMenu";
-
         const NAME: &'static str = "DishSelectMenuCategoryContent.Category";
+        const NAMESPACE: &'static str = "App.CookingMenu";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -40,10 +60,7 @@ mod __types {
 
     impl ::unity2::IlType for DishSelectMenuCategoryContent_Category {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -77,26 +94,15 @@ mod __types {
         }
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))]
-    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent")]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    pub struct DishSelectMenuCategoryContent {
-# [rename (name = "m_CategoryList")] pub m_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
-# [static_field] # [rename (name = "s_EnableCategoryList")] pub s_enable_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
-# [static_field] # [rename (name = "s_Index")] pub s_index : i32 ,
-# [static_field] # [rename (name = "s_OldIndex")] pub s_old_index : i32 ,
-}
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_CategoryObject.md"))]
-    #[::unity2::class(
-        namespace = "App.CookingMenu",
-        name = "DishSelectMenuCategoryContent.CategoryObject"
-    )]
+    #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent.CategoryObject")]
     #[parent(crate::system::object::Object)]
     pub struct DishSelectMenuCategoryContent_CategoryObject {
-# [rename (name = "m_Object")] pub m_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Category")] pub m_category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category ,
-}
+        #[rename(name = "m_Object")]
+        pub m_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Category")]
+        pub m_category: crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category,
+    }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent-types")]
@@ -111,9 +117,7 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -126,39 +130,27 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn awake(
-        this: DishSelectMenuCategoryContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn awake(this: DishSelectMenuCategoryContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishSelectMenuCategoryContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -171,37 +163,27 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
                 "Next",
@@ -213,45 +195,28 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "Next",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "Next",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn next(
-        this: DishSelectMenuCategoryContent,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DishSelectMenuCategoryContent,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_next::get_offset() as isize),
-        );
+    pub unsafe fn next(this: DishSelectMenuCategoryContent, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DishSelectMenuCategoryContent, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_next::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
                 "Prev",
@@ -263,43 +228,27 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "Prev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "Prev",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn prev(
-        this: DishSelectMenuCategoryContent,
-        is_trigger: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DishSelectMenuCategoryContent,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prev::get_offset() as isize),
-        );
+    pub unsafe fn prev(this: DishSelectMenuCategoryContent, is_trigger: bool, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DishSelectMenuCategoryContent, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_prev::get_method_info().method_ptr);
         inner(this, is_trigger, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -312,40 +261,31 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "InitObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "InitObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_object(
-        this: DishSelectMenuCategoryContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_object(this: DishSelectMenuCategoryContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishSelectMenuCategoryContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
                 "CheckEnable",
@@ -357,35 +297,34 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "CheckEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "CheckEnable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn check_enable(
         this: DishSelectMenuCategoryContent,
-        category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject,
+        category: crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner : extern "C" fn (DishSelectMenuCategoryContent , crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_check_enable :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            DishSelectMenuCategoryContent,
+            crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_check_enable::get_method_info().method_ptr);
         inner(this, category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -401,18 +340,15 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "SetActive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "SetActive",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_active(
@@ -421,26 +357,17 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         value: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DishSelectMenuCategoryContent,
-            crate::unity_engine::gameobject::GameObject,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_active::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DishSelectMenuCategoryContent, crate::unity_engine::gameobject::GameObject, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_active::get_method_info().method_ptr);
         inner(this, game_object, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_country {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
                 "GetCountry",
@@ -452,34 +379,32 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "GetCountry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "GetCountry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_country(
-        category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category,
+        category: crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::persondata::PersonData_Country {
-        let inner : extern "C" fn (crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Country = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_country :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::persondata::PersonData_Country = ::core::mem::transmute(__lookup_get_country::get_method_info().method_ptr);
         inner(category, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -492,39 +417,27 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_index(
-        this: DishSelectMenuCategoryContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_index(this: DishSelectMenuCategoryContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishSelectMenuCategoryContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_index::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -537,35 +450,26 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "IsSetup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "IsSetup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_setup(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_setup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_setup::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_recommended {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -578,35 +482,26 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "IsRecommended",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "IsRecommended",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_recommended(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_recommended::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_recommended::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_init_recommended {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -619,35 +514,27 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "IsInitRecommended",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "IsInitRecommended",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_init_recommended(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_init_recommended::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_init_recommended::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_country_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -660,39 +547,27 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "GetCountry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "GetCountry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_country_2(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::persondata::PersonData_Country {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::app::persondata::PersonData_Country = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_country_2::get_offset() as isize),
-        );
+    pub unsafe fn get_country_2(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::persondata::PersonData_Country {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::persondata::PersonData_Country =
+            ::core::mem::transmute(__lookup_get_country_2::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -705,35 +580,26 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "GetIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "GetIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_index(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_index::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_old_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -746,35 +612,26 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    "GetOldIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        "GetOldIndex",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_old_index(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_old_index::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_old_index::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::class(),
@@ -787,30 +644,20 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DishSelectMenuCategoryContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DishSelectMenuCategoryContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DishSelectMenuCategoryContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -819,58 +666,44 @@ mod __DishSelectMenuCategoryContent_unity2_raw {
 impl DishSelectMenuCategoryContent {
     #[doc = "`Initialize()` overload"]
     pub fn initialize() -> () {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::initialize(::core::option::Option::None)
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::initialize(::core::option::Option::None) }
     }
+
     #[doc = "`GetCountry(crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category)` overload"]
     pub fn get_country(
-        category : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category >,
+        category: impl ::core::convert::Into<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category>,
     ) -> crate::app::persondata::PersonData_Country {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::get_country(
-                ::core::convert::Into::into(category),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::get_country(::core::convert::Into::into(category), ::core::option::Option::None) }
     }
+
     #[doc = "`IsSetup()` overload"]
     pub fn is_setup() -> bool {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::is_setup(::core::option::Option::None)
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::is_setup(::core::option::Option::None) }
     }
+
     #[doc = "`IsRecommended()` overload"]
     pub fn is_recommended() -> bool {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::is_recommended(::core::option::Option::None)
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::is_recommended(::core::option::Option::None) }
     }
+
     #[doc = "`IsInitRecommended()` overload"]
     pub fn is_init_recommended() -> bool {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::is_init_recommended(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::is_init_recommended(::core::option::Option::None) }
     }
+
     #[doc = "`GetCountry()` overload"]
     pub fn get_country_2() -> crate::app::persondata::PersonData_Country {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::get_country_2(::core::option::Option::None)
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::get_country_2(::core::option::Option::None) }
     }
+
     #[doc = "`GetIndex()` overload"]
     pub fn get_index() -> i32 {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::get_index(::core::option::Option::None)
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::get_index(::core::option::Option::None) }
     }
+
     #[doc = "`GetOldIndex()` overload"]
     pub fn get_old_index() -> i32 {
-        unsafe {
-            __DishSelectMenuCategoryContent_unity2_raw::get_old_index(::core::option::Option::None)
-        }
+        unsafe { __DishSelectMenuCategoryContent_unity2_raw::get_old_index(::core::option::Option::None) }
     }
 }
 
@@ -880,71 +713,43 @@ pub trait IDishSelectMenuCategoryContentMethods: IDishSelectMenuCategoryContent 
     fn awake(self) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::awake(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Next(bool)` overload"]
     fn next(self, is_trigger: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::next(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::next(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`Prev(bool)` overload"]
     fn prev(self, is_trigger: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::prev(
-                __receiver,
-                ::core::convert::Into::into(is_trigger),
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::prev(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)
         }
     }
     #[doc = "`InitObject()` overload"]
     fn init_object(self) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::init_object(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::init_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CheckEnable(crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject)` overload"]
     fn check_enable(
         self,
-        category : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject >,
+        category: impl ::core::convert::Into<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject>,
     ) -> bool {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::check_enable(
-                __receiver,
-                ::core::convert::Into::into(category),
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::check_enable(__receiver, ::core::convert::Into::into(category), ::core::option::Option::None)
         }
     }
     #[doc = "`SetActive(crate::unity_engine::gameobject::GameObject, bool)` overload"]
@@ -955,9 +760,7 @@ pub trait IDishSelectMenuCategoryContentMethods: IDishSelectMenuCategoryContent 
     ) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DishSelectMenuCategoryContent_unity2_raw::set_active(
                 __receiver,
                 ::core::convert::Into::into(game_object),
@@ -970,26 +773,16 @@ pub trait IDishSelectMenuCategoryContentMethods: IDishSelectMenuCategoryContent 
     fn update_index(self) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::update_index(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::update_index(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DishSelectMenuCategoryContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DishSelectMenuCategoryContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DishSelectMenuCategoryContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1022,9 +815,7 @@ mod __DishSelectMenuCategoryContent_CategoryObject_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DishSelectMenuCategoryContent_CategoryObject as ::unity2::ClassIdentity>::class(),
@@ -1037,57 +828,39 @@ mod __DishSelectMenuCategoryContent_CategoryObject_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DishSelectMenuCategoryContent_CategoryObject as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DishSelectMenuCategoryContent_CategoryObject as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DishSelectMenuCategoryContent_CategoryObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DishSelectMenuCategoryContent_CategoryObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: DishSelectMenuCategoryContent_CategoryObject, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DishSelectMenuCategoryContent_CategoryObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
-pub trait IDishSelectMenuCategoryContent_CategoryObjectMethods:
-    IDishSelectMenuCategoryContent_CategoryObject
-{
+pub trait IDishSelectMenuCategoryContent_CategoryObjectMethods: IDishSelectMenuCategoryContent_CategoryObject {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < DishSelectMenuCategoryContent_CategoryObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DishSelectMenuCategoryContent_CategoryObject_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <DishSelectMenuCategoryContent_CategoryObject as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DishSelectMenuCategoryContent_CategoryObject_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
-impl<__T: IDishSelectMenuCategoryContent_CategoryObject>
-    IDishSelectMenuCategoryContent_CategoryObjectMethods for __T
-{
-}
+impl<__T: IDishSelectMenuCategoryContent_CategoryObject> IDishSelectMenuCategoryContent_CategoryObjectMethods for __T {}
 
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
 impl DishSelectMenuCategoryContent_CategoryObject {
@@ -1108,32 +881,27 @@ impl DishSelectMenuCategoryContent_CategoryObject {
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DishSelectMenuCategoryContent;
-    pub use super::DishSelectMenuCategoryContent_Category;
-    pub use super::DishSelectMenuCategoryContent_CategoryObject;
-    pub use super::IDishSelectMenuCategoryContent;
-    pub use super::IDishSelectMenuCategoryContentMethods;
-    pub use super::IDishSelectMenuCategoryContent_CategoryObject;
-    pub use super::IDishSelectMenuCategoryContent_CategoryObjectMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        DishSelectMenuCategoryContent, DishSelectMenuCategoryContent_Category, DishSelectMenuCategoryContent_CategoryObject,
+        IDishSelectMenuCategoryContent, IDishSelectMenuCategoryContentMethods, IDishSelectMenuCategoryContent_CategoryObject,
+        IDishSelectMenuCategoryContent_CategoryObjectMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

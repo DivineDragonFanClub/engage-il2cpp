@@ -2,15 +2,12 @@
 
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/iinitializepotentialdraghandler/IInitializePotentialDragHandler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "IInitializePotentialDragHandler"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IInitializePotentialDragHandler")]
     pub struct IInitializePotentialDragHandler {}
 }
 
@@ -26,10 +23,9 @@ mod __IInitializePotentialDragHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_initialize_potential_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IInitializePotentialDragHandler as ::unity2::ClassIdentity>::class(),
                 "OnInitializePotentialDrag",
@@ -41,18 +37,15 @@ mod __IInitializePotentialDragHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IInitializePotentialDragHandler as ::unity2::ClassIdentity>::NAME,
-                    "OnInitializePotentialDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IInitializePotentialDragHandler as ::unity2::ClassIdentity>::NAME,
+                        "OnInitializePotentialDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_initialize_potential_drag(
@@ -64,11 +57,7 @@ mod __IInitializePotentialDragHandler_unity2_raw {
             IInitializePotentialDragHandler,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_initialize_potential_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_initialize_potential_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
 }
@@ -78,15 +67,11 @@ pub trait IIInitializePotentialDragHandlerMethods: IIInitializePotentialDragHand
     #[doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
     fn on_initialize_potential_drag(
         self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
     ) -> () {
         unsafe {
             let __receiver =
-                <IInitializePotentialDragHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <IInitializePotentialDragHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IInitializePotentialDragHandler_unity2_raw::on_initialize_potential_drag(
                 __receiver,
                 ::core::convert::Into::into(event_data),
@@ -102,7 +87,5 @@ impl<__T: IIInitializePotentialDragHandler> IIInitializePotentialDragHandlerMeth
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIInitializePotentialDragHandler;
-    pub use super::IIInitializePotentialDragHandlerMethods;
-    pub use super::IInitializePotentialDragHandler;
+    pub use super::{IIInitializePotentialDragHandler, IIInitializePotentialDragHandlerMethods, IInitializePotentialDragHandler};
 }

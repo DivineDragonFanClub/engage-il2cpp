@@ -2,46 +2,28 @@
 
 #[cfg(feature = "app-mapsequencegod-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngage")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceGod_ProcEngage {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageStart.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageStart")]
-    #[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
-    pub struct MapSequenceGod_ProcEngageStart {
-        #[rename(name = "m_Kind")]
-        pub m_kind: crate::app::mapsequencegod::MapSequenceGod_Kind,
-        #[rename(name = "m_IsSimple")]
-        pub m_is_simple: bool,
-    }
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Kind.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapSequenceGod_Kind {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapSequenceGod_Kind {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapSequenceGod.Kind";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -52,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for MapSequenceGod_Kind {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -73,28 +52,41 @@ mod __types {
         }
     }
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageStart.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageStart")]
+    #[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
+    pub struct MapSequenceGod_ProcEngageStart {
+        #[rename(name = "m_Kind")]
+        pub m_kind: crate::app::mapsequencegod::MapSequenceGod_Kind,
+        #[rename(name = "m_IsSimple")]
+        pub m_is_simple: bool,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngage")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceGod_ProcEngage {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
     #[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
     pub struct MapSequenceGod_ProcEngageCancel {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceGod")]
+    #[parent(crate::system::object::Object)]
+    pub struct MapSequenceGod {}
+
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapSequenceGod_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MapSequenceGod_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MapSequenceGod.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -105,10 +97,7 @@ mod __types {
 
     impl ::unity2::IlType for MapSequenceGod_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -125,796 +114,10 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceGod")]
-    #[parent(crate::system::object::Object)]
-    pub struct MapSequenceGod {}
 }
 
 #[cfg(feature = "app-mapsequencegod-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-mapsequencegod")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceGod_ProcEngage_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_usable_info {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "IsUsableInfo",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "IsUsableInfo",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_usable_info(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_usable_info::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_need_to_deploy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "IsNeedToDeploy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "IsNeedToDeploy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_need_to_deploy(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_need_to_deploy::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move_wait {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "MoveWait",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "MoveWait",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn move_wait(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_move_wait::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_info_ui_for_detail {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "HideInfoUIForDetail",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "HideInfoUIForDetail",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide_info_ui_for_detail(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_info_ui_for_detail::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide_info_ui_for_simple {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "HideInfoUIForSimple",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "HideInfoUIForSimple",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn hide_info_ui_for_simple(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_info_ui_for_simple::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_image {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateImage",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "UpdateImage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_image(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_image::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_info_ui {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateInfoUI",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "UpdateInfoUI",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_info_ui(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_info_ui::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show_info_ui {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "ShowInfoUI",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "ShowInfoUI",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show_info_ui(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_show_info_ui::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_deploy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateDeploy",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "UpdateDeploy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_deploy(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_deploy::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_map_route {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateMapRoute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMapRoute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_map_route(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_map_route::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_map_cursor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "UpdateMapCursor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMapCursor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_map_cursor(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_map_cursor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_update_map_route {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                "IsUpdateMapRoute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    "IsUpdateMapRoute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_update_map_route(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_update_map_route::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceGod_ProcEngage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-pub trait IMapSequenceGod_ProcEngageMethods: IMapSequenceGod_ProcEngage {
-    #[doc = "`IsUsableInfo()` overload"]
-    fn is_usable_info(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::is_usable_info(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsNeedToDeploy()` overload"]
-    fn is_need_to_deploy(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::is_need_to_deploy(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`MoveWait()` overload"]
-    fn move_wait(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::move_wait(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HideInfoUIForDetail()` overload"]
-    fn hide_info_ui_for_detail(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::hide_info_ui_for_detail(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HideInfoUIForSimple()` overload"]
-    fn hide_info_ui_for_simple(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::hide_info_ui_for_simple(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateImage()` overload"]
-    fn update_image(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::update_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateInfoUI()` overload"]
-    fn update_info_ui(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::update_info_ui(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ShowInfoUI()` overload"]
-    fn show_info_ui(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::show_info_ui(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateDeploy()` overload"]
-    fn update_deploy(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::update_deploy(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateMapRoute()` overload"]
-    fn update_map_route(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::update_map_route(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`UpdateMapCursor()` overload"]
-    fn update_map_cursor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::update_map_cursor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsUpdateMapRoute()` overload"]
-    fn is_update_map_route(self) -> bool {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::is_update_map_route(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-impl<__T: IMapSequenceGod_ProcEngage> IMapSequenceGod_ProcEngageMethods for __T {}
-
-#[cfg(feature = "app-mapsequencegod")]
-impl MapSequenceGod_ProcEngage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceGod_ProcEngage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceGod_ProcEngageMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-mapsequencegod")]
 #[doc(hidden)]
@@ -925,9 +128,7 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapsequencegod::MapSequenceGod_Kind as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -943,18 +144,15 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -968,22 +166,15 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
             crate::app::mapsequencegod::MapSequenceGod_Kind,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, kind, is_simple, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_effect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
                 "PlayEffect",
@@ -995,43 +186,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "PlayEffect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "PlayEffect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_effect(
-        this: MapSequenceGod_ProcEngageStart,
-        wait: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceGod_ProcEngageStart,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_effect::get_offset() as isize),
-        );
+    pub unsafe fn play_effect(this: MapSequenceGod_ProcEngageStart, wait: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_effect::get_method_info().method_ptr);
         inner(this, wait, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_effect_simple {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1044,39 +219,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "PlayEffectSimple",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "PlayEffectSimple",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_effect_simple(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_effect_simple(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_effect_simple::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_effect_simple::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_effect_detail {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1089,39 +252,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "PlayEffectDetail",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "PlayEffectDetail",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play_effect_detail(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn play_effect_detail(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play_effect_detail::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_play_effect_detail::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_demo {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1134,39 +285,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "Demo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "Demo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn demo(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn demo(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_demo::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_demo::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1179,39 +318,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "Apply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "Apply",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn apply(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn apply(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_apply::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_apply::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_engage {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1224,39 +351,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "ApplyEngage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "ApplyEngage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn apply_engage(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn apply_engage(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_apply_engage::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_apply_engage::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_apply_god_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1269,39 +384,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "ApplyGodChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "ApplyGodChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn apply_god_change(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn apply_god_change(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_apply_god_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_apply_god_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_simple {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1314,39 +417,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "IsSimple",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "IsSimple",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_simple(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_simple(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_simple::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_simple::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_branch {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::class(),
@@ -1359,39 +450,27 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "Branch",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "Branch",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn branch(
-        this: MapSequenceGod_ProcEngageStart,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn branch(this: MapSequenceGod_ProcEngageStart, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageStart, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_branch::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_branch::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <crate::app::mapsequencegod::MapSequenceGod_Kind as ::unity2::IlType>::il_type(),
@@ -1408,18 +487,15 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageStart as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
@@ -1433,11 +509,7 @@ mod __MapSequenceGod_ProcEngageStart_unity2_raw {
             crate::app::mapsequencegod::MapSequenceGod_Kind,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, kind, is_simple, __unity2_method_info)
     }
 }
@@ -1471,9 +543,7 @@ pub trait IMapSequenceGod_ProcEngageStartMethods: IMapSequenceGod_ProcEngageStar
     ) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceGod_ProcEngageStart_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(kind),
@@ -1486,118 +556,72 @@ pub trait IMapSequenceGod_ProcEngageStartMethods: IMapSequenceGod_ProcEngageStar
     fn play_effect(self, wait: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::play_effect(
-                __receiver,
-                ::core::convert::Into::into(wait),
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::play_effect(__receiver, ::core::convert::Into::into(wait), ::core::option::Option::None)
         }
     }
     #[doc = "`PlayEffectSimple()` overload"]
     fn play_effect_simple(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::play_effect_simple(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::play_effect_simple(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PlayEffectDetail()` overload"]
     fn play_effect_detail(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::play_effect_detail(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::play_effect_detail(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Demo()` overload"]
     fn demo(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::demo(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::demo(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Apply()` overload"]
     fn apply(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::apply(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::apply(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ApplyEngage()` overload"]
     fn apply_engage(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::apply_engage(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::apply_engage(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ApplyGodChange()` overload"]
     fn apply_god_change(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::apply_god_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::apply_god_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsSimple()` overload"]
     fn is_simple(self) -> bool {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::is_simple(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::is_simple(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Branch()` overload"]
     fn branch(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageStart_unity2_raw::branch(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageStart as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageStart_unity2_raw::branch(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1624,15 +648,576 @@ impl MapSequenceGod_ProcEngageStart {
 #[cfg(feature = "app-mapsequencegod")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceGod_ProcEngage_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_usable_info {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "IsUsableInfo",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "IsUsableInfo",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_usable_info(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_usable_info::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_need_to_deploy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "IsNeedToDeploy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "IsNeedToDeploy",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_need_to_deploy(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_need_to_deploy::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move_wait {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "MoveWait",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "MoveWait",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn move_wait(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_move_wait::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide_info_ui_for_detail {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "HideInfoUIForDetail",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "HideInfoUIForDetail",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide_info_ui_for_detail(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide_info_ui_for_detail::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide_info_ui_for_simple {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "HideInfoUIForSimple",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "HideInfoUIForSimple",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide_info_ui_for_simple(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide_info_ui_for_simple::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_image {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "UpdateImage",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "UpdateImage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_image(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_image::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_info_ui {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "UpdateInfoUI",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "UpdateInfoUI",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_info_ui(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_info_ui::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show_info_ui {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "ShowInfoUI",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "ShowInfoUI",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show_info_ui(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_show_info_ui::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_deploy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "UpdateDeploy",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "UpdateDeploy",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_deploy(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_deploy::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_map_route {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "UpdateMapRoute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMapRoute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_map_route(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_map_route::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_map_cursor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "UpdateMapCursor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMapCursor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_map_cursor(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_map_cursor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_update_map_route {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                "IsUpdateMapRoute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        "IsUpdateMapRoute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_update_map_route(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_update_map_route::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapSequenceGod_ProcEngage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceGod_ProcEngage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+pub trait IMapSequenceGod_ProcEngageMethods: IMapSequenceGod_ProcEngage {
+    #[doc = "`IsUsableInfo()` overload"]
+    fn is_usable_info(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::is_usable_info(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsNeedToDeploy()` overload"]
+    fn is_need_to_deploy(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::is_need_to_deploy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`MoveWait()` overload"]
+    fn move_wait(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::move_wait(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HideInfoUIForDetail()` overload"]
+    fn hide_info_ui_for_detail(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::hide_info_ui_for_detail(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HideInfoUIForSimple()` overload"]
+    fn hide_info_ui_for_simple(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::hide_info_ui_for_simple(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateImage()` overload"]
+    fn update_image(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::update_image(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateInfoUI()` overload"]
+    fn update_info_ui(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::update_info_ui(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ShowInfoUI()` overload"]
+    fn show_info_ui(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::show_info_ui(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateDeploy()` overload"]
+    fn update_deploy(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::update_deploy(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateMapRoute()` overload"]
+    fn update_map_route(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::update_map_route(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateMapCursor()` overload"]
+    fn update_map_cursor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::update_map_cursor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsUpdateMapRoute()` overload"]
+    fn is_update_map_route(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::is_update_map_route(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapSequenceGod_ProcEngage as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+impl<__T: IMapSequenceGod_ProcEngage> IMapSequenceGod_ProcEngageMethods for __T {}
+
+#[cfg(feature = "app-mapsequencegod")]
+impl MapSequenceGod_ProcEngage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceGod_ProcEngage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceGod_ProcEngageMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapSequenceGod_ProcEngageCancel_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::class(),
@@ -1645,41 +1230,28 @@ mod __MapSequenceGod_ProcEngageCancel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::NAME,
-                    "Cancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::NAME,
+                        "Cancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn cancel(
-        this: MapSequenceGod_ProcEngageCancel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn cancel(this: MapSequenceGod_ProcEngageCancel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageCancel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_cancel::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -1691,39 +1263,27 @@ mod __MapSequenceGod_ProcEngageCancel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::class(),
@@ -1736,30 +1296,20 @@ mod __MapSequenceGod_ProcEngageCancel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod_ProcEngageCancel as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapSequenceGod_ProcEngageCancel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapSequenceGod_ProcEngageCancel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod_ProcEngageCancel, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1768,12 +1318,7 @@ mod __MapSequenceGod_ProcEngageCancel_unity2_raw {
 impl MapSequenceGod_ProcEngageCancel {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MapSequenceGod_ProcEngageCancel_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapSequenceGod_ProcEngageCancel_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -1783,26 +1328,16 @@ pub trait IMapSequenceGod_ProcEngageCancelMethods: IMapSequenceGod_ProcEngageCan
     fn cancel(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageCancel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageCancel_unity2_raw::cancel(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageCancel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageCancel_unity2_raw::cancel(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceGod_ProcEngageCancel as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceGod_ProcEngageCancel_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceGod_ProcEngageCancel as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceGod_ProcEngageCancel_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -1835,11 +1370,8 @@ mod __MapSequenceGod_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_engage_simple {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod as ::unity2::ClassIdentity>::class(),
                 "CreateBindEngageSimple",
@@ -1851,41 +1383,28 @@ mod __MapSequenceGod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindEngageSimple",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindEngageSimple",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_engage_simple(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_engage_simple(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_engage_simple::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_engage_simple::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_engage_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod as ::unity2::ClassIdentity>::class(),
                 "CreateBindEngageStart",
@@ -1897,41 +1416,28 @@ mod __MapSequenceGod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindEngageStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindEngageStart",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_engage_start(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_engage_start(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_engage_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_engage_start::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_engage_link {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod as ::unity2::ClassIdentity>::class(),
                 "CreateBindEngageLink",
@@ -1943,41 +1449,28 @@ mod __MapSequenceGod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindEngageLink",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindEngageLink",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_engage_link(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_engage_link(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_engage_link::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_engage_link::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_god_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod as ::unity2::ClassIdentity>::class(),
                 "CreateBindGodChange",
@@ -1989,41 +1482,28 @@ mod __MapSequenceGod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindGodChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindGodChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_god_change(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_god_change(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_god_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_god_change::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_engage_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod as ::unity2::ClassIdentity>::class(),
                 "CreateBindEngageCancel",
@@ -2035,39 +1515,27 @@ mod __MapSequenceGod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindEngageCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindEngageCancel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind_engage_cancel(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind_engage_cancel(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind_engage_cancel::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind_engage_cancel::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceGod as ::unity2::ClassIdentity>::class(),
@@ -2080,27 +1548,20 @@ mod __MapSequenceGod_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceGod as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: MapSequenceGod, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceGod, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2108,59 +1569,28 @@ mod __MapSequenceGod_unity2_raw {
 #[cfg(feature = "app-mapsequencegod")]
 impl MapSequenceGod {
     #[doc = "`CreateBindEngageSimple(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_engage_simple(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __MapSequenceGod_unity2_raw::create_bind_engage_simple(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_engage_simple(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __MapSequenceGod_unity2_raw::create_bind_engage_simple(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateBindEngageStart(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_engage_start(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __MapSequenceGod_unity2_raw::create_bind_engage_start(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_engage_start(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __MapSequenceGod_unity2_raw::create_bind_engage_start(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateBindEngageLink(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_engage_link(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __MapSequenceGod_unity2_raw::create_bind_engage_link(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_engage_link(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __MapSequenceGod_unity2_raw::create_bind_engage_link(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateBindGodChange(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_god_change(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __MapSequenceGod_unity2_raw::create_bind_god_change(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_god_change(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __MapSequenceGod_unity2_raw::create_bind_god_change(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateBindEngageCancel(crate::app::procinst::ProcInst)` overload"]
-    pub fn create_bind_engage_cancel(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-    ) -> () {
-        unsafe {
-            __MapSequenceGod_unity2_raw::create_bind_engage_cancel(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn create_bind_engage_cancel(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe { __MapSequenceGod_unity2_raw::create_bind_engage_cancel(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -2169,9 +1599,7 @@ pub trait IMapSequenceGodMethods: IMapSequenceGod {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MapSequenceGod as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MapSequenceGod as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceGod_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2199,30 +1627,22 @@ impl MapSequenceGod {
 #[cfg(feature = "app-mapsequencegod")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapSequenceGod;
-    pub use super::IMapSequenceGodMethods;
-    pub use super::IMapSequenceGod_ProcEngage;
-    pub use super::IMapSequenceGod_ProcEngageCancel;
-    pub use super::IMapSequenceGod_ProcEngageCancelMethods;
-    pub use super::IMapSequenceGod_ProcEngageMethods;
-    pub use super::IMapSequenceGod_ProcEngageStart;
-    pub use super::IMapSequenceGod_ProcEngageStartMethods;
-    pub use super::MapSequenceGod;
-    pub use super::MapSequenceGod_Kind;
-    pub use super::MapSequenceGod_Label;
-    pub use super::MapSequenceGod_ProcEngage;
-    pub use super::MapSequenceGod_ProcEngageCancel;
-    pub use super::MapSequenceGod_ProcEngageStart;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IMapSequenceGod, IMapSequenceGodMethods, IMapSequenceGod_ProcEngage, IMapSequenceGod_ProcEngageCancel,
+        IMapSequenceGod_ProcEngageCancelMethods, IMapSequenceGod_ProcEngageMethods, IMapSequenceGod_ProcEngageStart,
+        IMapSequenceGod_ProcEngageStartMethods, MapSequenceGod, MapSequenceGod_Kind, MapSequenceGod_Label, MapSequenceGod_ProcEngage,
+        MapSequenceGod_ProcEngageCancel, MapSequenceGod_ProcEngageStart,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

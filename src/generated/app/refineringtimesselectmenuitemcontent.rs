@@ -2,15 +2,19 @@
 
 #[cfg(feature = "app-refineringtimesselectmenuitemcontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringtimesselectmenuitemcontent/RefineRingTimesSelectMenuItemContent.md"))]
     #[::unity2::class(namespace = "App", name = "RefineRingTimesSelectMenuItemContent")]
@@ -37,9 +41,7 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_color_of_not_enough_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -52,43 +54,31 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "get_m_ColorOfNotEnoughValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "get_m_ColorOfNotEnoughValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_color_of_not_enough_value(
         this: RefineRingTimesSelectMenuItemContent,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            RefineRingTimesSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_color_of_not_enough_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineRingTimesSelectMenuItemContent, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_get_m_color_of_not_enough_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_color_of_not_enough_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "set_m_ColorOfNotEnoughValue",
@@ -100,18 +90,15 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "set_m_ColorOfNotEnoughValue",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "set_m_ColorOfNotEnoughValue",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_color_of_not_enough_value(
@@ -119,24 +106,15 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
         value: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            RefineRingTimesSelectMenuItemContent,
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_color_of_not_enough_value::get_offset() as isize),
-        );
+        let inner: extern "C" fn(RefineRingTimesSelectMenuItemContent, crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_color_of_not_enough_value::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -149,41 +127,27 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: RefineRingTimesSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineRingTimesSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: RefineRingTimesSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineRingTimesSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -196,41 +160,27 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text(
-        this: RefineRingTimesSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineRingTimesSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_text::get_offset() as isize),
-        );
+    pub unsafe fn build_text(this: RefineRingTimesSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineRingTimesSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -243,57 +193,41 @@ mod __RefineRingTimesSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RefineRingTimesSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_text_color(
-        this: RefineRingTimesSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RefineRingTimesSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_text_color::get_offset() as isize),
-        );
+    pub unsafe fn update_text_color(this: RefineRingTimesSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RefineRingTimesSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-refineringtimesselectmenuitemcontent")]
-pub trait IRefineRingTimesSelectMenuItemContentMethods:
-    IRefineRingTimesSelectMenuItemContent
-{
+pub trait IRefineRingTimesSelectMenuItemContentMethods: IRefineRingTimesSelectMenuItemContent {
     #[doc = "`get_m_ColorOfNotEnoughValue()` overload"]
     fn get_m_color_of_not_enough_value(self) -> crate::unity_engine::color::Color {
         unsafe {
-            let __receiver = < RefineRingTimesSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineRingTimesSelectMenuItemContent_unity2_raw::get_m_color_of_not_enough_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineRingTimesSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineRingTimesSelectMenuItemContent_unity2_raw::get_m_color_of_not_enough_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_ColorOfNotEnoughValue(crate::unity_engine::color::Color)` overload"]
-    fn set_m_color_of_not_enough_value(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> () {
+    fn set_m_color_of_not_enough_value(self, value: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
         unsafe {
-            let __receiver = < RefineRingTimesSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RefineRingTimesSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RefineRingTimesSelectMenuItemContent_unity2_raw::set_m_color_of_not_enough_value(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -304,40 +238,34 @@ pub trait IRefineRingTimesSelectMenuItemContentMethods:
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < RefineRingTimesSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineRingTimesSelectMenuItemContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineRingTimesSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineRingTimesSelectMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildText()` overload"]
     fn build_text(self) -> () {
         unsafe {
-            let __receiver = < RefineRingTimesSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineRingTimesSelectMenuItemContent_unity2_raw::build_text(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineRingTimesSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineRingTimesSelectMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateTextColor()` overload"]
     fn update_text_color(self) -> () {
         unsafe {
-            let __receiver = < RefineRingTimesSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RefineRingTimesSelectMenuItemContent_unity2_raw::update_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RefineRingTimesSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RefineRingTimesSelectMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-refineringtimesselectmenuitemcontent")]
-impl<__T: IRefineRingTimesSelectMenuItemContent> IRefineRingTimesSelectMenuItemContentMethods
-    for __T
-{
-}
+impl<__T: IRefineRingTimesSelectMenuItemContent> IRefineRingTimesSelectMenuItemContentMethods for __T {}
 
 #[cfg(feature = "app-refineringtimesselectmenuitemcontent")]
 impl RefineRingTimesSelectMenuItemContent {
@@ -358,25 +286,22 @@ impl RefineRingTimesSelectMenuItemContent {
 #[cfg(feature = "app-refineringtimesselectmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRefineRingTimesSelectMenuItemContent;
-    pub use super::IRefineRingTimesSelectMenuItemContentMethods;
-    pub use super::RefineRingTimesSelectMenuItemContent;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use super::{IRefineRingTimesSelectMenuItemContent, IRefineRingTimesSelectMenuItemContentMethods, RefineRingTimesSelectMenuItemContent};
     #[cfg(feature = "app-basicmenuitemcontent")]
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenuitemcontent::IBasicMenuItemContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

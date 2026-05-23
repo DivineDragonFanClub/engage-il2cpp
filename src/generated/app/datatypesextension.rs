@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-datatypesextension-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/datatypesextension/DataTypesExtension.md"))]
     #[::unity2::class(namespace = "App", name = "DataTypesExtension")]
@@ -41,11 +41,8 @@ mod __DataTypesExtension_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::difficulty::Difficulty as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::difficulty::Difficulty as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "GetName",
@@ -57,43 +54,28 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        difficulty: crate::app::difficulty::Difficulty,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::difficulty::Difficulty,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(difficulty: crate::app::difficulty::Difficulty, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::difficulty::Difficulty, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(difficulty, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamemode::GameMode as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gamemode::GameMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "GetName",
@@ -105,43 +87,28 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_2(
-        game_mode: crate::app::gamemode::GameMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::gamemode::GameMode,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_2::get_offset() as isize),
-        );
+    pub unsafe fn get_name_2(game_mode: crate::app::gamemode::GameMode, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::gamemode::GameMode, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name_2::get_method_info().method_ptr);
         inner(game_mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::growmode::GrowMode as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::growmode::GrowMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "GetName",
@@ -153,43 +120,28 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_3(
-        grow_mode: crate::app::growmode::GrowMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::growmode::GrowMode,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_3::get_offset() as isize),
-        );
+    pub unsafe fn get_name_3(grow_mode: crate::app::growmode::GrowMode, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::growmode::GrowMode, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name_3::get_method_info().method_ptr);
         inner(grow_mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name_4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gender::Gender as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gender::Gender as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "GetName",
@@ -201,43 +153,28 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name_4(
-        gender: crate::app::gender::Gender,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::gender::Gender,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name_4::get_offset() as isize),
-        );
+    pub unsafe fn get_name_4(gender: crate::app::gender::Gender, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::gender::Gender, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name_4::get_method_info().method_ptr);
         inner(gender, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_label {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::difficulty::Difficulty as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::difficulty::Difficulty as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "GetLabel",
@@ -249,43 +186,31 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "GetLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "GetLabel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_label(
         difficulty: crate::app::difficulty::Difficulty,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::difficulty::Difficulty,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::app::difficulty::Difficulty, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_label::get_method_info().method_ptr);
         inner(difficulty, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_label_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::gamemode::GameMode as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::gamemode::GameMode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "GetLabel",
@@ -297,43 +222,28 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "GetLabel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "GetLabel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_label_2(
-        game_mode: crate::app::gamemode::GameMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            crate::app::gamemode::GameMode,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_label_2::get_offset() as isize),
-        );
+    pub unsafe fn get_label_2(game_mode: crate::app::gamemode::GameMode, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(crate::app::gamemode::GameMode, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_label_2::get_method_info().method_ptr);
         inner(game_mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_null_or_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "IsNullOrEmpty",
@@ -345,41 +255,28 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsNullOrEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsNullOrEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_null_or_empty(
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_null_or_empty(unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_null_or_empty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_null_or_empty::get_method_info().method_ptr);
         inner(unit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_null_or_empty_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
                 "IsNullOrEmpty",
@@ -391,39 +288,27 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    "IsNullOrEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        "IsNullOrEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_null_or_empty_2(
-        str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_null_or_empty_2(str: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_null_or_empty_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_null_or_empty_2::get_method_info().method_ptr);
         inner(str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DataTypesExtension as ::unity2::ClassIdentity>::class(),
@@ -436,26 +321,19 @@ mod __DataTypesExtension_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -463,197 +341,119 @@ mod __DataTypesExtension_unity2_raw {
 #[cfg(feature = "app-datatypesextension")]
 impl DataTypesExtension {
     #[doc = "`GetName(crate::app::difficulty::Difficulty)` overload"]
-    pub fn get_name(
-        difficulty: impl ::core::convert::Into<crate::app::difficulty::Difficulty>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DataTypesExtension_unity2_raw::get_name(
-                ::core::convert::Into::into(difficulty),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_name(difficulty: impl ::core::convert::Into<crate::app::difficulty::Difficulty>) -> ::unity2::Il2CppString {
+        unsafe { __DataTypesExtension_unity2_raw::get_name(::core::convert::Into::into(difficulty), ::core::option::Option::None) }
     }
+
     #[doc = "`GetName(crate::app::gamemode::GameMode)` overload"]
-    pub fn get_name_2(
-        game_mode: impl ::core::convert::Into<crate::app::gamemode::GameMode>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DataTypesExtension_unity2_raw::get_name_2(
-                ::core::convert::Into::into(game_mode),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_name_2(game_mode: impl ::core::convert::Into<crate::app::gamemode::GameMode>) -> ::unity2::Il2CppString {
+        unsafe { __DataTypesExtension_unity2_raw::get_name_2(::core::convert::Into::into(game_mode), ::core::option::Option::None) }
     }
+
     #[doc = "`GetName(crate::app::growmode::GrowMode)` overload"]
-    pub fn get_name_3(
-        grow_mode: impl ::core::convert::Into<crate::app::growmode::GrowMode>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DataTypesExtension_unity2_raw::get_name_3(
-                ::core::convert::Into::into(grow_mode),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_name_3(grow_mode: impl ::core::convert::Into<crate::app::growmode::GrowMode>) -> ::unity2::Il2CppString {
+        unsafe { __DataTypesExtension_unity2_raw::get_name_3(::core::convert::Into::into(grow_mode), ::core::option::Option::None) }
     }
+
     #[doc = "`GetName(crate::app::gender::Gender)` overload"]
-    pub fn get_name_4(
-        gender: impl ::core::convert::Into<crate::app::gender::Gender>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DataTypesExtension_unity2_raw::get_name_4(
-                ::core::convert::Into::into(gender),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_name_4(gender: impl ::core::convert::Into<crate::app::gender::Gender>) -> ::unity2::Il2CppString {
+        unsafe { __DataTypesExtension_unity2_raw::get_name_4(::core::convert::Into::into(gender), ::core::option::Option::None) }
     }
+
     #[doc = "`GetLabel(crate::app::difficulty::Difficulty)` overload"]
-    pub fn get_label(
-        difficulty: impl ::core::convert::Into<crate::app::difficulty::Difficulty>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DataTypesExtension_unity2_raw::get_label(
-                ::core::convert::Into::into(difficulty),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_label(difficulty: impl ::core::convert::Into<crate::app::difficulty::Difficulty>) -> ::unity2::Il2CppString {
+        unsafe { __DataTypesExtension_unity2_raw::get_label(::core::convert::Into::into(difficulty), ::core::option::Option::None) }
     }
+
     #[doc = "`GetLabel(crate::app::gamemode::GameMode)` overload"]
-    pub fn get_label_2(
-        game_mode: impl ::core::convert::Into<crate::app::gamemode::GameMode>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __DataTypesExtension_unity2_raw::get_label_2(
-                ::core::convert::Into::into(game_mode),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_label_2(game_mode: impl ::core::convert::Into<crate::app::gamemode::GameMode>) -> ::unity2::Il2CppString {
+        unsafe { __DataTypesExtension_unity2_raw::get_label_2(::core::convert::Into::into(game_mode), ::core::option::Option::None) }
     }
+
     #[doc = "`IsNullOrEmpty(crate::app::unit::Unit)` overload"]
     pub fn is_null_or_empty(unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
-        unsafe {
-            __DataTypesExtension_unity2_raw::is_null_or_empty(
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DataTypesExtension_unity2_raw::is_null_or_empty(::core::convert::Into::into(unit), ::core::option::Option::None) }
     }
+
     #[doc = "`IsNullOrEmpty(::unity2::Il2CppString)` overload"]
     pub fn is_null_or_empty_2(str: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __DataTypesExtension_unity2_raw::is_null_or_empty_2(
-                ::core::convert::Into::into(str),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DataTypesExtension_unity2_raw::is_null_or_empty_2(::core::convert::Into::into(str), ::core::option::Option::None) }
     }
-    pub fn try_get_component<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+
+    pub fn try_get_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <DataTypesExtension as ::unity2::ClassIdentity>::class(),
-                "TryGetComponent",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<DataTypesExtension as ::unity2::ClassIdentity>::class(), "TryGetComponent", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                "TryGetComponent",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                    "TryGetComponent",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::gameobject::GameObject,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(go),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(go), ::core::option::Option::Some(__mi_opaque))
         }
     }
-    pub fn try_get_component_2<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
+
+    pub fn try_get_component_2<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         component: impl ::core::convert::Into<crate::unity_engine::component::Component>,
     ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <DataTypesExtension as ::unity2::ClassIdentity>::class(),
-                "TryGetComponent",
-                1,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<DataTypesExtension as ::unity2::ClassIdentity>::class(), "TryGetComponent", 1)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
-                "TryGetComponent",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <DataTypesExtension as ::unity2::ClassIdentity>::NAME,
+                    "TryGetComponent",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::component::Component,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
+            let __f: extern "C" fn(crate::unity_engine::component::Component, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(component),
-                ::core::option::Option::Some(__mi_opaque),
-            )
+            __f(::core::convert::Into::into(component), ::core::option::Option::Some(__mi_opaque))
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __DataTypesExtension_unity2_raw::cctor(::core::option::Option::None) }
@@ -663,8 +463,7 @@ impl DataTypesExtension {
 #[cfg(feature = "app-datatypesextension")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DataTypesExtension;
-    pub use super::IDataTypesExtension;
+    pub use super::{DataTypesExtension, IDataTypesExtension};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

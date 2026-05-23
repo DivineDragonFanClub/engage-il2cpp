@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-unitlistformapcombatviewer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitlistformapcombatviewer/UnitListForMapCombatViewer.md"))]
     #[::unity2::class(namespace = "App", name = "UnitListForMapCombatViewer")]
@@ -25,9 +25,7 @@ mod __UnitListForMapCombatViewer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_name_without_none {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
@@ -40,41 +38,28 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "get_UnitNameWithoutNone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "get_UnitNameWithoutNone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_name_without_none(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_name_without_none::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_name_without_none(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_unit_name_without_none::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_name_without_none {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
                 "set_UnitNameWithoutNone",
@@ -86,41 +71,27 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "set_UnitNameWithoutNone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "set_UnitNameWithoutNone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_unit_name_without_none(
-        value: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_name_without_none::get_offset() as isize),
-        );
+    pub unsafe fn set_unit_name_without_none(value: ::unity2::Array<::unity2::Il2CppString>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit_name_without_none::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
@@ -133,41 +104,28 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "get_UnitName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "get_UnitName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit_name(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_name::get_offset() as isize),
-        );
+    pub unsafe fn get_unit_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_unit_name::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
                 "set_UnitName",
@@ -179,41 +137,27 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "set_UnitName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "set_UnitName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_unit_name(
-        value: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit_name::get_offset() as isize),
-        );
+    pub unsafe fn set_unit_name(value: ::unity2::Array<::unity2::Il2CppString>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_unit_name::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_emblem_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
@@ -226,41 +170,28 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "get_EmblemName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "get_EmblemName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_emblem_name(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_emblem_name::get_offset() as isize),
-        );
+    pub unsafe fn get_emblem_name(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_emblem_name::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_emblem_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
                 "set_EmblemName",
@@ -272,41 +203,27 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "set_EmblemName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "set_EmblemName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_emblem_name(
-        value: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_emblem_name::get_offset() as isize),
-        );
+    pub unsafe fn set_emblem_name(value: ::unity2::Array<::unity2::Il2CppString>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_emblem_name::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
@@ -319,37 +236,27 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pid2_disp_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
                 "Pid2DispName",
@@ -361,43 +268,28 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "Pid2DispName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "Pid2DispName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pid2_disp_name(
-        pid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pid2_disp_name::get_offset() as isize),
-        );
+    pub unsafe fn pid2_disp_name(pid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_pid2_disp_name::get_method_info().method_ptr);
         inner(pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disp_name_to_pid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::class(),
                 "DispNameToPid",
@@ -409,32 +301,20 @@ mod __UnitListForMapCombatViewer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
-                    "DispNameToPid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnitListForMapCombatViewer as ::unity2::ClassIdentity>::NAME,
+                        "DispNameToPid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disp_name_to_pid(
-        disp_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_disp_name_to_pid::get_offset() as isize),
-        );
+    pub unsafe fn disp_name_to_pid(disp_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_disp_name_to_pid::get_method_info().method_ptr);
         inner(disp_name, __unity2_method_info)
     }
 }
@@ -443,90 +323,56 @@ mod __UnitListForMapCombatViewer_unity2_raw {
 impl UnitListForMapCombatViewer {
     #[doc = "`get_UnitNameWithoutNone()` overload"]
     pub fn get_unit_name_without_none() -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::get_unit_name_without_none(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::get_unit_name_without_none(::core::option::Option::None) }
     }
+
     #[doc = "`set_UnitNameWithoutNone(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    pub fn set_unit_name_without_none(
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    pub fn set_unit_name_without_none(value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::set_unit_name_without_none(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            __UnitListForMapCombatViewer_unity2_raw::set_unit_name_without_none(::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
+
     #[doc = "`get_UnitName()` overload"]
     pub fn get_unit_name() -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::get_unit_name(::core::option::Option::None)
-        }
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::get_unit_name(::core::option::Option::None) }
     }
+
     #[doc = "`set_UnitName(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    pub fn set_unit_name(
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::set_unit_name(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_unit_name(value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::set_unit_name(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`get_EmblemName()` overload"]
     pub fn get_emblem_name() -> ::unity2::Array<::unity2::Il2CppString> {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::get_emblem_name(::core::option::Option::None)
-        }
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::get_emblem_name(::core::option::Option::None) }
     }
+
     #[doc = "`set_EmblemName(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    pub fn set_emblem_name(
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::set_emblem_name(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_emblem_name(value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::set_emblem_name(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`Initialize()` overload"]
     pub fn initialize() -> () {
         unsafe { __UnitListForMapCombatViewer_unity2_raw::initialize(::core::option::Option::None) }
     }
+
     #[doc = "`Pid2DispName(::unity2::Il2CppString)` overload"]
-    pub fn pid2_disp_name(
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::pid2_disp_name(
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn pid2_disp_name(pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::pid2_disp_name(::core::convert::Into::into(pid), ::core::option::Option::None) }
     }
+
     #[doc = "`DispNameToPid(::unity2::Il2CppString)` overload"]
-    pub fn disp_name_to_pid(
-        disp_name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __UnitListForMapCombatViewer_unity2_raw::disp_name_to_pid(
-                ::core::convert::Into::into(disp_name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn disp_name_to_pid(disp_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
+        unsafe { __UnitListForMapCombatViewer_unity2_raw::disp_name_to_pid(::core::convert::Into::into(disp_name), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-unitlistformapcombatviewer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnitListForMapCombatViewer;
-    pub use super::UnitListForMapCombatViewer;
+    pub use super::{IUnitListForMapCombatViewer, UnitListForMapCombatViewer};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

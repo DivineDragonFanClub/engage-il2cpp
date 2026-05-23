@@ -2,12 +2,16 @@
 
 #[cfg(feature = "system-reflection-emit-enumbuilder-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::reflection::memberinfo::{IMemberInfo, MemberInfo};
-    use crate::system::reflection::typeinfo::{ITypeInfo, TypeInfo};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        reflection::{
+            memberinfo::{IMemberInfo, MemberInfo},
+            typeinfo::{ITypeInfo, TypeInfo},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/enumbuilder/EnumBuilder.md"))]
     #[::unity2::class(namespace = "System.Reflection.Emit", name = "EnumBuilder")]
@@ -27,9 +31,7 @@ mod __EnumBuilder_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_assembly {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -42,41 +44,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_Assembly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_Assembly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_assembly(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::assembly::Assembly {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::assembly::Assembly = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_assembly::get_offset() as isize),
-        );
+    pub unsafe fn get_assembly(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::reflection::assembly::Assembly {
+        let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> crate::system::reflection::assembly::Assembly =
+            ::core::mem::transmute(__lookup_get_assembly::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_assembly_qualified_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -89,39 +77,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_AssemblyQualifiedName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_AssemblyQualifiedName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_assembly_qualified_name(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_assembly_qualified_name(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_assembly_qualified_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_assembly_qualified_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_base_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -134,39 +110,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_BaseType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_BaseType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_base_type(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
+    pub unsafe fn get_base_type(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_base_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_base_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_full_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -179,39 +143,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_FullName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_FullName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_full_name(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_full_name(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_full_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_full_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_module {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -224,41 +176,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_Module",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_Module",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_module(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::reflection::module::Module {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::module::Module = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_module::get_offset() as isize),
-        );
+    pub unsafe fn get_module(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::reflection::module::Module {
+        let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> crate::system::reflection::module::Module =
+            ::core::mem::transmute(__lookup_get_module::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -271,39 +209,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_Name",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_Name",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_name(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_name::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_namespace {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -316,39 +242,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_Namespace",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_Namespace",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_namespace(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_namespace(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_namespace::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_namespace::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_element_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -361,39 +275,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetElementType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetElementType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_element_type(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
+    pub unsafe fn get_element_type(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_element_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_element_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_underlying_system_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -406,39 +308,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "get_UnderlyingSystemType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "get_UnderlyingSystemType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_underlying_system_type(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
+    pub unsafe fn get_underlying_system_type(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::SystemType =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_underlying_system_type::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_underlying_system_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attribute_flags_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -451,43 +341,37 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetAttributeFlagsImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetAttributeFlagsImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_attribute_flags_impl(
         this: EnumBuilder,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::typeattributes::TypeAttributes {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::reflection::typeattributes::TypeAttributes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attribute_flags_impl::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> crate::system::reflection::typeattributes::TypeAttributes =
+            ::core::mem::transmute(__lookup_get_attribute_flags_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_constructor_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: binder :: Binder as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: callingconventions :: CallingConventions as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::binder::Binder as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::callingconventions::CallingConventions as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetConstructorImpl",
@@ -499,18 +383,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetConstructorImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetConstructorImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_constructor_impl(
@@ -530,30 +411,17 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::Array<::unity2::SystemType>,
             ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
             ::unity2::OptionalMethod,
-        )
-            -> crate::system::reflection::constructorinfo::ConstructorInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_constructor_impl::get_offset() as isize),
-        );
-        inner(
-            this,
-            binding_attr,
-            binder,
-            call_convention,
-            types,
-            modifiers,
-            __unity2_method_info,
-        )
+        ) -> crate::system::reflection::constructorinfo::ConstructorInfo =
+            ::core::mem::transmute(__lookup_get_constructor_impl::get_method_info().method_ptr);
+        inner(this, binding_attr, binder, call_convention, types, modifiers, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_constructors {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetConstructors",
@@ -565,18 +433,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetConstructors",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetConstructors",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_constructors(
@@ -588,24 +453,16 @@ mod __EnumBuilder_unity2_raw {
             EnumBuilder,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::constructorinfo::ConstructorInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_constructors::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> =
+            ::core::mem::transmute(__lookup_get_constructors::get_method_info().method_ptr);
         inner(this, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetCustomAttributes",
@@ -617,18 +474,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes(
@@ -636,24 +490,15 @@ mod __EnumBuilder_unity2_raw {
         inherit: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::system::object::Object> {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_custom_attributes::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EnumBuilder, bool, ::unity2::OptionalMethod) -> ::unity2::Array<crate::system::object::Object> =
+            ::core::mem::transmute(__lookup_get_custom_attributes::get_method_info().method_ptr);
         inner(this, inherit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_custom_attributes_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -669,18 +514,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetCustomAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_custom_attributes_2(
@@ -694,21 +536,18 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::SystemType,
             bool,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_custom_attributes_2::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__lookup_get_custom_attributes_2::get_method_info().method_ptr);
         inner(this, attribute_type, inherit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetEvent",
@@ -720,18 +559,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_event(
@@ -745,21 +581,16 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::eventinfo::EventInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event::get_offset() as isize),
-        );
+        ) -> crate::system::reflection::eventinfo::EventInfo = ::core::mem::transmute(__lookup_get_event::get_method_info().method_ptr);
         inner(this, name, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_events {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetEvents",
@@ -771,18 +602,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetEvents",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetEvents",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_events(
@@ -794,23 +622,19 @@ mod __EnumBuilder_unity2_raw {
             EnumBuilder,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::eventinfo::EventInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_events::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> =
+            ::core::mem::transmute(__lookup_get_events::get_method_info().method_ptr);
         inner(this, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetField",
@@ -822,18 +646,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetField",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_field(
@@ -847,21 +668,16 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::fieldinfo::FieldInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_field::get_offset() as isize),
-        );
+        ) -> crate::system::reflection::fieldinfo::FieldInfo = ::core::mem::transmute(__lookup_get_field::get_method_info().method_ptr);
         inner(this, name, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fields {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetFields",
@@ -873,18 +689,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetFields",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetFields",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fields(
@@ -896,22 +709,15 @@ mod __EnumBuilder_unity2_raw {
             EnumBuilder,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::fieldinfo::FieldInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fields::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> =
+            ::core::mem::transmute(__lookup_get_fields::get_method_info().method_ptr);
         inner(this, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interface {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -927,18 +733,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetInterface",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetInterface",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_interface(
@@ -947,25 +750,15 @@ mod __EnumBuilder_unity2_raw {
         ignore_case: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            ::unity2::Il2CppString,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_interface::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EnumBuilder, ::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_interface::get_method_info().method_ptr);
         inner(this, name, ignore_case, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_interfaces {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -978,42 +771,35 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetInterfaces",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetInterfaces",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_interfaces(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::SystemType> {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_interfaces::get_offset() as isize),
-        );
+    pub unsafe fn get_interfaces(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::SystemType> {
+        let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::SystemType> =
+            ::core::mem::transmute(__lookup_get_interfaces::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: binder :: Binder as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: callingconventions :: CallingConventions as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::binder::Binder as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::callingconventions::CallingConventions as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetMethodImpl",
@@ -1025,18 +811,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetMethodImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetMethodImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_impl(
@@ -1058,30 +841,16 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::Array<::unity2::SystemType>,
             ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
             ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_impl::get_offset() as isize),
-        );
-        inner(
-            this,
-            name,
-            binding_attr,
-            binder,
-            call_convention,
-            types,
-            modifiers,
-            __unity2_method_info,
-        )
+        ) -> crate::system::reflection::methodinfo::MethodInfo = ::core::mem::transmute(__lookup_get_method_impl::get_method_info().method_ptr);
+        inner(this, name, binding_attr, binder, call_convention, types, modifiers, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_methods {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetMethods",
@@ -1093,18 +862,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetMethods",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetMethods",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_methods(
@@ -1116,23 +882,19 @@ mod __EnumBuilder_unity2_raw {
             EnumBuilder,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::methodinfo::MethodInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_methods::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> =
+            ::core::mem::transmute(__lookup_get_methods::get_method_info().method_ptr);
         inner(this, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_nested_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetNestedType",
@@ -1144,18 +906,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetNestedType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetNestedType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_nested_type(
@@ -1169,21 +928,16 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::Il2CppString,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_nested_type::get_offset() as isize),
-        );
+        ) -> ::unity2::SystemType = ::core::mem::transmute(__lookup_get_nested_type::get_method_info().method_ptr);
         inner(this, name, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_nested_types {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetNestedTypes",
@@ -1195,18 +949,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetNestedTypes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetNestedTypes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_nested_types(
@@ -1218,21 +969,16 @@ mod __EnumBuilder_unity2_raw {
             EnumBuilder,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_nested_types::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<::unity2::SystemType> = ::core::mem::transmute(__lookup_get_nested_types::get_method_info().method_ptr);
         inner(this, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_properties {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetProperties",
@@ -1244,18 +990,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetProperties",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetProperties",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_properties(
@@ -1267,23 +1010,23 @@ mod __EnumBuilder_unity2_raw {
             EnumBuilder,
             crate::system::reflection::bindingflags::BindingFlags,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::propertyinfo::PropertyInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_properties::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> =
+            ::core::mem::transmute(__lookup_get_properties::get_method_info().method_ptr);
         inner(this, binding_attr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_property_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: bindingflags :: BindingFlags as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: binder :: Binder as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < :: unity2 :: SystemType > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: reflection :: parametermodifier :: ParameterModifier > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::bindingflags::BindingFlags as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::binder::Binder as ::unity2::IlType>::il_type(),
+                <::unity2::SystemType as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::SystemType> as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
                 "GetPropertyImpl",
@@ -1295,18 +1038,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "GetPropertyImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "GetPropertyImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_property_impl(
@@ -1328,29 +1068,14 @@ mod __EnumBuilder_unity2_raw {
             ::unity2::Array<::unity2::SystemType>,
             ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
             ::unity2::OptionalMethod,
-        ) -> crate::system::reflection::propertyinfo::PropertyInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_property_impl::get_offset() as isize),
-        );
-        inner(
-            this,
-            name,
-            binding_attr,
-            binder,
-            return_type,
-            types,
-            modifiers,
-            __unity2_method_info,
-        )
+        ) -> crate::system::reflection::propertyinfo::PropertyInfo = ::core::mem::transmute(__lookup_get_property_impl::get_method_info().method_ptr);
+        inner(this, name, binding_attr, binder, return_type, types, modifiers, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_element_type_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -1363,39 +1088,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "HasElementTypeImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "HasElementTypeImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn has_element_type_impl(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn has_element_type_impl(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_element_type_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_has_element_type_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_array_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -1408,39 +1121,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "IsArrayImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "IsArrayImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_array_impl(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_array_impl(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_array_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_array_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_by_ref_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -1453,39 +1154,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "IsByRefImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "IsByRefImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_by_ref_impl(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_by_ref_impl(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_by_ref_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_by_ref_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_com_object_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -1498,39 +1187,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "IsCOMObjectImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "IsCOMObjectImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_com_object_impl(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_com_object_impl(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_com_object_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_com_object_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_defined {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -1546,18 +1223,15 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "IsDefined",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "IsDefined",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_defined(
@@ -1566,25 +1240,15 @@ mod __EnumBuilder_unity2_raw {
         inherit: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            EnumBuilder,
-            ::unity2::SystemType,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_defined::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EnumBuilder, ::unity2::SystemType, bool, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_defined::get_method_info().method_ptr);
         inner(this, attribute_type, inherit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_pointer_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -1597,39 +1261,27 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "IsPointerImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "IsPointerImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_pointer_impl(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_pointer_impl(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_pointer_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_pointer_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_primitive_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EnumBuilder as ::unity2::ClassIdentity>::class(),
@@ -1642,30 +1294,20 @@ mod __EnumBuilder_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EnumBuilder as ::unity2::ClassIdentity>::NAME,
-                    "IsPrimitiveImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EnumBuilder as ::unity2::ClassIdentity>::NAME,
+                        "IsPrimitiveImpl",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_primitive_impl(
-        this: EnumBuilder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_primitive_impl(this: EnumBuilder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(EnumBuilder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_primitive_impl::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_primitive_impl::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1675,100 +1317,71 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
     #[doc = "`get_Assembly()` overload"]
     fn get_assembly(self) -> crate::system::reflection::assembly::Assembly {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_assembly(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_AssemblyQualifiedName()` overload"]
     fn get_assembly_qualified_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_assembly_qualified_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_assembly_qualified_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_BaseType()` overload"]
     fn get_base_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_base_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_FullName()` overload"]
     fn get_full_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_full_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Module()` overload"]
     fn get_module(self) -> crate::system::reflection::module::Module {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_module(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Name()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Namespace()` overload"]
     fn get_namespace(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_namespace(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetElementType()` overload"]
     fn get_element_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_element_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_UnderlyingSystemType()` overload"]
     fn get_underlying_system_type(self) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_underlying_system_type(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_underlying_system_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetAttributeFlagsImpl()` overload"]
     fn get_attribute_flags_impl(self) -> crate::system::reflection::typeattributes::TypeAttributes {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_attribute_flags_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_attribute_flags_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetConstructorImpl(crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]
@@ -1776,18 +1389,12 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         self,
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
         binder: impl ::core::convert::Into<crate::system::reflection::binder::Binder>,
-        call_convention: impl ::core::convert::Into<
-            crate::system::reflection::callingconventions::CallingConventions,
-        >,
+        call_convention: impl ::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions>,
         types: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
-        modifiers: impl ::core::convert::Into<
-            ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-        >,
+        modifiers: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>>,
     ) -> crate::system::reflection::constructorinfo::ConstructorInfo {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_constructor_impl(
                 __receiver,
                 ::core::convert::Into::into(binding_attr),
@@ -1805,30 +1412,15 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_constructors(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_constructors(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCustomAttributes(bool)` overload"]
-    fn get_custom_attributes(
-        self,
-        inherit: impl ::core::convert::Into<bool>,
-    ) -> ::unity2::Array<crate::system::object::Object> {
+    fn get_custom_attributes(self, inherit: impl ::core::convert::Into<bool>) -> ::unity2::Array<crate::system::object::Object> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_custom_attributes(
-                __receiver,
-                ::core::convert::Into::into(inherit),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"]
@@ -1838,9 +1430,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         inherit: impl ::core::convert::Into<bool>,
     ) -> ::unity2::Array<crate::system::object::Object> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_custom_attributes_2(
                 __receiver,
                 ::core::convert::Into::into(attribute_type),
@@ -1856,9 +1446,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> crate::system::reflection::eventinfo::EventInfo {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_event(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1873,14 +1461,8 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_events(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_events(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)
         }
     }
     #[doc = "`GetField(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]
@@ -1890,9 +1472,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> crate::system::reflection::fieldinfo::FieldInfo {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_field(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1907,14 +1487,8 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_fields(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_fields(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)
         }
     }
     #[doc = "`GetInterface(::unity2::Il2CppString, bool)` overload"]
@@ -1924,9 +1498,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         ignore_case: impl ::core::convert::Into<bool>,
     ) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_interface(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1938,9 +1510,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
     #[doc = "`GetInterfaces()` overload"]
     fn get_interfaces(self) -> ::unity2::Array<::unity2::SystemType> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_interfaces(__receiver, ::core::option::Option::None)
         }
     }
@@ -1950,18 +1520,12 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
         binder: impl ::core::convert::Into<crate::system::reflection::binder::Binder>,
-        call_convention: impl ::core::convert::Into<
-            crate::system::reflection::callingconventions::CallingConventions,
-        >,
+        call_convention: impl ::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions>,
         types: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
-        modifiers: impl ::core::convert::Into<
-            ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-        >,
+        modifiers: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>>,
     ) -> crate::system::reflection::methodinfo::MethodInfo {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_method_impl(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -1980,14 +1544,8 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_methods(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_methods(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)
         }
     }
     #[doc = "`GetNestedType(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]
@@ -1997,9 +1555,7 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::SystemType {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_nested_type(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -2014,14 +1570,8 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::Array<::unity2::SystemType> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_nested_types(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_nested_types(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)
         }
     }
     #[doc = "`GetProperties(crate::system::reflection::bindingflags::BindingFlags)` overload"]
@@ -2030,14 +1580,8 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binding_attr: impl ::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>,
     ) -> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::get_properties(
-                __receiver,
-                ::core::convert::Into::into(binding_attr),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::get_properties(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPropertyImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]
@@ -2048,14 +1592,10 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
         binder: impl ::core::convert::Into<crate::system::reflection::binder::Binder>,
         return_type: impl ::core::convert::Into<::unity2::SystemType>,
         types: impl ::core::convert::Into<::unity2::Array<::unity2::SystemType>>,
-        modifiers: impl ::core::convert::Into<
-            ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
-        >,
+        modifiers: impl ::core::convert::Into<::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>>,
     ) -> crate::system::reflection::propertyinfo::PropertyInfo {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::get_property_impl(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -2071,52 +1611,35 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
     #[doc = "`HasElementTypeImpl()` overload"]
     fn has_element_type_impl(self) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EnumBuilder_unity2_raw::has_element_type_impl(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EnumBuilder_unity2_raw::has_element_type_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsArrayImpl()` overload"]
     fn is_array_impl(self) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::is_array_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsByRefImpl()` overload"]
     fn is_by_ref_impl(self) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::is_by_ref_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsCOMObjectImpl()` overload"]
     fn is_com_object_impl(self) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::is_com_object_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsDefined(::unity2::SystemType, bool)` overload"]
-    fn is_defined(
-        self,
-        attribute_type: impl ::core::convert::Into<::unity2::SystemType>,
-        inherit: impl ::core::convert::Into<bool>,
-    ) -> bool {
+    fn is_defined(self, attribute_type: impl ::core::convert::Into<::unity2::SystemType>, inherit: impl ::core::convert::Into<bool>) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::is_defined(
                 __receiver,
                 ::core::convert::Into::into(attribute_type),
@@ -2128,18 +1651,14 @@ pub trait IEnumBuilderMethods: IEnumBuilder {
     #[doc = "`IsPointerImpl()` overload"]
     fn is_pointer_impl(self) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::is_pointer_impl(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPrimitiveImpl()` overload"]
     fn is_primitive_impl(self) -> bool {
         unsafe {
-            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EnumBuilder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EnumBuilder_unity2_raw::is_primitive_impl(__receiver, ::core::option::Option::None)
         }
     }
@@ -2151,16 +1670,15 @@ impl<__T: IEnumBuilder> IEnumBuilderMethods for __T {}
 #[cfg(feature = "system-reflection-emit-enumbuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EnumBuilder;
-    pub use super::IEnumBuilder;
-    pub use super::IEnumBuilderMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{EnumBuilder, IEnumBuilder, IEnumBuilderMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::reflection::memberinfo::IMemberInfo;
     #[cfg(feature = "system-reflection-memberinfo")]
     pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    pub use crate::system::reflection::typeinfo::ITypeInfo;
     #[cfg(feature = "system-reflection-typeinfo")]
     pub use crate::system::reflection::typeinfo::ITypeInfoMethods;
+    pub use crate::system::{
+        object::IObject,
+        reflection::{memberinfo::IMemberInfo, typeinfo::ITypeInfo},
+    };
 }

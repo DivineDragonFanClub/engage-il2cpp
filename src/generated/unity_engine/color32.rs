@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-color32-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/color32/Color32.md"))]
     #[repr(C)]
@@ -20,9 +22,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for Color32 {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "Color32";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for Color32 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -53,195 +51,112 @@ mod __Color32_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <u8 as ::unity2::IlType>::il_type(),
                 <u8 as ::unity2::IlType>::il_type(),
                 <u8 as ::unity2::IlType>::il_type(),
                 <u8 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Color32 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Color32 as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Color32 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Color32 as ::unity2::ClassIdentity>::NAME, ".ctor", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: Color32,
-        r: u8,
-        g: u8,
-        b: u8,
-        a: u8,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: Color32, r: u8, g: u8, b: u8, a: u8, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Color32, u8, u8, u8, u8, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r, g, b, a, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Color32 as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color::Color as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Color32 as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Color32 as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Color32 as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
         c: crate::unity_engine::color::Color,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color32::Color32 {
-        let inner: extern "C" fn(
-            crate::unity_engine::color::Color,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color32::Color32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color::Color, ::unity2::OptionalMethod) -> crate::unity_engine::color32::Color32 =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Color32 as ::unity2::ClassIdentity>::class(),
-                "op_Implicit",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Color32 as ::unity2::ClassIdentity>::class(), "op_Implicit", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Color32 as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Color32 as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit_2(
         c: crate::unity_engine::color32::Color32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::color::Color {
-        let inner: extern "C" fn(
-            crate::unity_engine::color32::Color32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::color::Color = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_implicit_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::color32::Color32, ::unity2::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__lookup_op_implicit_2::get_method_info().method_ptr);
         inner(c, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Color32 as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Color32 as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Color32 as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Color32 as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: Color32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: Color32, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Color32, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -249,26 +164,13 @@ mod __Color32_unity2_raw {
 #[cfg(feature = "unity_engine-color32")]
 impl Color32 {
     #[doc = "`op_Implicit(crate::unity_engine::color::Color)` overload"]
-    pub fn op_implicit(
-        c: impl ::core::convert::Into<crate::unity_engine::color::Color>,
-    ) -> crate::unity_engine::color32::Color32 {
-        unsafe {
-            __Color32_unity2_raw::op_implicit(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit(c: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> crate::unity_engine::color32::Color32 {
+        unsafe { __Color32_unity2_raw::op_implicit(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(crate::unity_engine::color32::Color32)` overload"]
-    pub fn op_implicit_2(
-        c: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
-    ) -> crate::unity_engine::color::Color {
-        unsafe {
-            __Color32_unity2_raw::op_implicit_2(
-                ::core::convert::Into::into(c),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn op_implicit_2(c: impl ::core::convert::Into<crate::unity_engine::color32::Color32>) -> crate::unity_engine::color::Color {
+        unsafe { __Color32_unity2_raw::op_implicit_2(::core::convert::Into::into(c), ::core::option::Option::None) }
     }
 }
 
@@ -293,6 +195,7 @@ impl Color32 {
             )
         }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __Color32_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -303,10 +206,9 @@ impl Color32 {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Color32;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

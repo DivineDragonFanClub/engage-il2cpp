@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-failedtoloadscriptobject-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::object_2::{IObject_2, Object_2},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/failedtoloadscriptobject/FailedToLoadScriptObject.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "FailedToLoadScriptObject")]
@@ -20,12 +22,10 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-failedtoloadscriptobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FailedToLoadScriptObject;
-    pub use super::IFailedToLoadScriptObject;
-    pub use crate::system::object::IObject;
+    pub use super::{FailedToLoadScriptObject, IFailedToLoadScriptObject};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{system::object::IObject, unity_engine::object_2::IObject_2};
 }

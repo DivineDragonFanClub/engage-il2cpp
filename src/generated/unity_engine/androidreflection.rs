@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-androidreflection-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidreflection/AndroidReflection.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AndroidReflection")]
@@ -13,8 +13,7 @@ mod __types {
     pub struct AndroidReflection {
         #[static_field]
         #[rename(name = "s_ReflectionHelperClass")]
-        pub s_reflection_helper_class:
-            crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,
+        pub s_reflection_helper_class: crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,
         #[static_field]
         #[rename(name = "s_ReflectionHelperGetConstructorID")]
         pub s_reflection_helper_get_constructor_id: ::unity2::IntPtr,
@@ -51,11 +50,8 @@ mod __AndroidReflection_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_primitive {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AndroidReflection as ::unity2::ClassIdentity>::class(),
                 "IsPrimitive",
@@ -67,39 +63,27 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "IsPrimitive",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "IsPrimitive",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_primitive(
-        t: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_primitive(t: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_primitive::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_primitive::get_method_info().method_ptr);
         inner(t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_assignable_from {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -115,43 +99,27 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "IsAssignableFrom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "IsAssignableFrom",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_assignable_from(
-        t: ::unity2::SystemType,
-        from: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ::unity2::SystemType,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_assignable_from::get_offset() as isize),
-        );
+    pub unsafe fn is_assignable_from(t: ::unity2::SystemType, from: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::SystemType, ::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_assignable_from::get_method_info().method_ptr);
         inner(t, from, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_static_method_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -168,18 +136,15 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "GetStaticMethodID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "GetStaticMethodID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_static_method_id(
@@ -193,20 +158,14 @@ mod __AndroidReflection_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_static_method_id::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_get_static_method_id::get_method_info().method_ptr);
         inner(clazz, method_name, signature, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -223,18 +182,15 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "GetMethodID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "GetMethodID",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_id(
@@ -248,20 +204,14 @@ mod __AndroidReflection_unity2_raw {
             ::unity2::Il2CppString,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_id::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_get_method_id::get_method_info().method_ptr);
         inner(clazz, method_name, signature, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_constructor_member {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -277,18 +227,15 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "GetConstructorMember",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "GetConstructorMember",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_constructor_member(
@@ -296,24 +243,15 @@ mod __AndroidReflection_unity2_raw {
         signature: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_constructor_member::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_get_constructor_member::get_method_info().method_ptr);
         inner(jclass, signature, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_member {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -331,18 +269,15 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "GetMethodMember",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "GetMethodMember",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_member(
@@ -358,26 +293,14 @@ mod __AndroidReflection_unity2_raw {
             ::unity2::Il2CppString,
             bool,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_member::get_offset() as isize),
-        );
-        inner(
-            jclass,
-            method_name,
-            signature,
-            is_static,
-            __unity2_method_info,
-        )
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_get_method_member::get_method_info().method_ptr);
+        inner(jclass, method_name, signature, is_static, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_new_proxy_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -393,18 +316,15 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    "NewProxyInstance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        "NewProxyInstance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn new_proxy_instance(
@@ -412,24 +332,15 @@ mod __AndroidReflection_unity2_raw {
         interfaze: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::IntPtr {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_new_proxy_instance::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::IntPtr =
+            ::core::mem::transmute(__lookup_new_proxy_instance::get_method_info().method_ptr);
         inner(delegate_handle, interfaze, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AndroidReflection as ::unity2::ClassIdentity>::class(),
@@ -442,26 +353,19 @@ mod __AndroidReflection_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AndroidReflection as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AndroidReflection as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -470,18 +374,11 @@ mod __AndroidReflection_unity2_raw {
 impl AndroidReflection {
     #[doc = "`IsPrimitive(::unity2::SystemType)` overload"]
     pub fn is_primitive(t: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
-        unsafe {
-            __AndroidReflection_unity2_raw::is_primitive(
-                ::core::convert::Into::into(t),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AndroidReflection_unity2_raw::is_primitive(::core::convert::Into::into(t), ::core::option::Option::None) }
     }
+
     #[doc = "`IsAssignableFrom(::unity2::SystemType, ::unity2::SystemType)` overload"]
-    pub fn is_assignable_from(
-        t: impl ::core::convert::Into<::unity2::SystemType>,
-        from: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> bool {
+    pub fn is_assignable_from(t: impl ::core::convert::Into<::unity2::SystemType>, from: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
         unsafe {
             __AndroidReflection_unity2_raw::is_assignable_from(
                 ::core::convert::Into::into(t),
@@ -490,6 +387,7 @@ impl AndroidReflection {
             )
         }
     }
+
     #[doc = "`GetStaticMethodID(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn get_static_method_id(
         clazz: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -505,6 +403,7 @@ impl AndroidReflection {
             )
         }
     }
+
     #[doc = "`GetMethodID(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
     pub fn get_method_id(
         clazz: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -520,6 +419,7 @@ impl AndroidReflection {
             )
         }
     }
+
     #[doc = "`GetConstructorMember(::unity2::IntPtr, ::unity2::Il2CppString)` overload"]
     pub fn get_constructor_member(
         jclass: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -533,6 +433,7 @@ impl AndroidReflection {
             )
         }
     }
+
     #[doc = "`GetMethodMember(::unity2::IntPtr, ::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]
     pub fn get_method_member(
         jclass: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -550,6 +451,7 @@ impl AndroidReflection {
             )
         }
     }
+
     #[doc = "`NewProxyInstance(::unity2::IntPtr, ::unity2::IntPtr)` overload"]
     pub fn new_proxy_instance(
         delegate_handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -563,6 +465,7 @@ impl AndroidReflection {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __AndroidReflection_unity2_raw::cctor(::core::option::Option::None) }
@@ -572,8 +475,7 @@ impl AndroidReflection {
 #[cfg(feature = "unity_engine-androidreflection")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AndroidReflection;
-    pub use super::IAndroidReflection;
+    pub use super::{AndroidReflection, IAndroidReflection};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

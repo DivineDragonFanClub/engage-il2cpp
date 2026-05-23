@@ -2,31 +2,28 @@
 
 #[cfg(feature = "app-struct_object-basedata_3-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/struct_object/basedata_3/BaseData_3.md"))]
     #[::unity2::class(namespace = "App.StructObject", name = "BaseData`3")]
     #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
     #[parent(crate::unity_engine::object_2::Object_2)]
     #[parent(crate::system::object::Object)]
-    pub struct BaseData_3<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-    > {
+    pub struct BaseData_3<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity> {
         #[static_field]
         #[rename(name = "instance")]
         pub instance: T0,
         #[rename(name = "IndexKey")]
-        pub index_key: crate::system::collections::generic::dictionary_2::Dictionary_2<
-            ::unity2::Il2CppString,
-            i32,
-        >,
+        pub index_key: crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, i32>,
         #[rename(name = "Items")]
         pub items: crate::system::collections::generic::list_1::List_1<T1>,
         #[rename(name = "MinItem")]
@@ -43,9 +40,7 @@ pub use __types::*;
 
 #[cfg(feature = "app-struct_object-basedata_3")]
 #[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity>
-    BaseData_3<T0, T1, T2>
-{
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity> BaseData_3<T0, T1, T2> {
     #[doc = "`Load(::unity2::Il2CppString)` overload"]
     #[method(name = "Load", args = 1)]
     pub fn load(path: ::unity2::Il2CppString) -> i32;
@@ -128,18 +123,11 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
 }
 
 #[cfg(feature = "app-struct_object-basedata_3")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity>
-    BaseData_3<T0, T1, T2>
-{
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity> BaseData_3<T0, T1, T2> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BaseData_3),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(BaseData_3), ::core::stringify!(new),));
         <Self as IBaseData_3Methods<T0, T1, T2>>::ctor(this);
         this
     }
@@ -148,16 +136,15 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::Cla
 #[cfg(feature = "app-struct_object-basedata_3")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BaseData_3;
-    pub use super::IBaseData_3;
-    pub use super::IBaseData_3Methods;
-    pub use crate::system::object::IObject;
+    pub use super::{BaseData_3, IBaseData_3, IBaseData_3Methods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

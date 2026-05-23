@@ -2,15 +2,21 @@
 
 #[cfg(feature = "app-jobintrodata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::structbase::{IStructBase, StructBase};
-    use crate::app::structdataarray_1::{IStructDataArray_1, StructDataArray_1};
-    use crate::app::structtemplate_1::{IStructTemplate_1, StructTemplate_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrodata/JobIntroData.md"))]
     #[::unity2::class(namespace = "App", name = "JobIntroData")]
@@ -19,21 +25,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrodata/JobIntroData_BattleType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct JobIntroData_BattleType {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for JobIntroData_BattleType {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "JobIntroData.BattleType";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -44,10 +43,7 @@ mod __types {
 
     impl ::unity2::IlType for JobIntroData_BattleType {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -110,9 +106,7 @@ mod __JobIntroData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_dlc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -125,41 +119,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_DLC",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_DLC",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_dlc(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_dlc(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_dlc::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_dlc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dlc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_DLC",
@@ -171,40 +152,27 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_DLC",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_DLC",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_dlc(
-        this: JobIntroData,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_dlc(this: JobIntroData, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(JobIntroData, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_dlc::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_dlc::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_person {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -217,43 +185,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Person",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Person",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_person(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_person::get_offset() as isize),
-        );
+    pub unsafe fn get_person(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_person::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_person {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Person",
@@ -265,18 +218,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Person",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Person",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_person(
@@ -284,24 +234,15 @@ mod __JobIntroData_unity2_raw {
         value: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_person::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_person::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -314,43 +255,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Job",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Job",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_job(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_job::get_offset() as isize),
-        );
+    pub unsafe fn get_job(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_job::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Job",
@@ -362,43 +288,27 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Job",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Job",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_job(
-        this: JobIntroData,
-        value: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_job::get_offset() as isize),
-        );
+    pub unsafe fn set_job(this: JobIntroData, value: ::unity2::Array<::unity2::Il2CppString>, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(JobIntroData, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_job::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -411,43 +321,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Weapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Weapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_weapon(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_weapon::get_offset() as isize),
-        );
+    pub unsafe fn get_weapon(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Weapon",
@@ -459,18 +354,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Weapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Weapon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_weapon(
@@ -478,24 +370,15 @@ mod __JobIntroData_unity2_raw {
         value: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_weapon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_weapon::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enemy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -508,43 +391,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Enemy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Enemy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enemy(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enemy::get_offset() as isize),
-        );
+    pub unsafe fn get_enemy(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_enemy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enemy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Enemy",
@@ -556,18 +424,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Enemy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Enemy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enemy(
@@ -575,24 +440,15 @@ mod __JobIntroData_unity2_raw {
         value: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enemy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_enemy::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enemy_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -605,43 +461,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_EnemyJob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_EnemyJob",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enemy_job(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enemy_job::get_offset() as isize),
-        );
+    pub unsafe fn get_enemy_job(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_enemy_job::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enemy_job {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_EnemyJob",
@@ -653,18 +494,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_EnemyJob",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_EnemyJob",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enemy_job(
@@ -672,24 +510,15 @@ mod __JobIntroData_unity2_raw {
         value: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enemy_job::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_enemy_job::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enemy_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -702,43 +531,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_EnemyWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_EnemyWeapon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enemy_weapon(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<::unity2::Il2CppString> {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<::unity2::Il2CppString> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enemy_weapon::get_offset() as isize),
-        );
+    pub unsafe fn get_enemy_weapon(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> {
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Array<::unity2::Il2CppString> =
+            ::core::mem::transmute(__lookup_get_enemy_weapon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enemy_weapon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_EnemyWeapon",
@@ -750,18 +564,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_EnemyWeapon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_EnemyWeapon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_enemy_weapon(
@@ -769,202 +580,123 @@ mod __JobIntroData_unity2_raw {
         value: ::unity2::Array<::unity2::Il2CppString>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_enemy_weapon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::Array<::unity2::Il2CppString>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_enemy_weapon::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroData as ::unity2::ClassIdentity>::class(),
-                "get_X",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<JobIntroData as ::unity2::ClassIdentity>::class(), "get_X", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_X",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_X",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_x(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroData as ::unity2::ClassIdentity>::class(),
-                "set_X",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<JobIntroData as ::unity2::ClassIdentity>::class(), "set_X", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_X",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_X",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_x(
-        this: JobIntroData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_x(this: JobIntroData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(JobIntroData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_x::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroData as ::unity2::ClassIdentity>::class(),
-                "get_Z",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<JobIntroData as ::unity2::ClassIdentity>::class(), "get_Z", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Z",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Z",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_z(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroData as ::unity2::ClassIdentity>::class(),
-                "set_Z",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<JobIntroData as ::unity2::ClassIdentity>::class(), "set_Z", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Z",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Z",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_z(
-        this: JobIntroData,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_z(this: JobIntroData, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(JobIntroData, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_z::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -977,41 +709,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Distance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Distance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_distance(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_distance(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_distance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_distance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Distance",
@@ -1023,40 +742,27 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Distance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Distance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_distance(
-        this: JobIntroData,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_distance(this: JobIntroData, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(JobIntroData, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_distance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_distance::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -1069,41 +775,28 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Field",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Field",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_field(
-        this: JobIntroData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn get_field(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_field::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_field::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Field",
@@ -1115,43 +808,27 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Field",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Field",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_field(
-        this: JobIntroData,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_field::get_offset() as isize),
-        );
+    pub unsafe fn set_field(this: JobIntroData, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(JobIntroData, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_field::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -1164,44 +841,32 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Attack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Attack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_attack(
         this: JobIntroData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::jobintrodata::JobIntroData_BattleType {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::jobintrodata::JobIntroData_BattleType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> crate::app::jobintrodata::JobIntroData_BattleType =
+            ::core::mem::transmute(__lookup_get_attack::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_attack {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Attack",
@@ -1213,18 +878,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Attack",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Attack",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_attack(
@@ -1232,24 +894,15 @@ mod __JobIntroData_unity2_raw {
         value: crate::app::jobintrodata::JobIntroData_BattleType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            crate::app::jobintrodata::JobIntroData_BattleType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_attack::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, crate::app::jobintrodata::JobIntroData_BattleType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_attack::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -1262,44 +915,32 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Counter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Counter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_counter(
         this: JobIntroData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::jobintrodata::JobIntroData_BattleType {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::jobintrodata::JobIntroData_BattleType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_counter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> crate::app::jobintrodata::JobIntroData_BattleType =
+            ::core::mem::transmute(__lookup_get_counter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_counter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Counter",
@@ -1311,18 +952,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Counter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Counter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_counter(
@@ -1330,24 +968,15 @@ mod __JobIntroData_unity2_raw {
         value: crate::app::jobintrodata::JobIntroData_BattleType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            crate::app::jobintrodata::JobIntroData_BattleType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_counter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, crate::app::jobintrodata::JobIntroData_BattleType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_counter::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pursuit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
@@ -1360,44 +989,32 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "get_Pursuit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "get_Pursuit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pursuit(
         this: JobIntroData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::jobintrodata::JobIntroData_BattleType {
-        let inner: extern "C" fn(
-            JobIntroData,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::jobintrodata::JobIntroData_BattleType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pursuit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> crate::app::jobintrodata::JobIntroData_BattleType =
+            ::core::mem::transmute(__lookup_get_pursuit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pursuit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::jobintrodata::JobIntroData_BattleType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <JobIntroData as ::unity2::ClassIdentity>::class(),
                 "set_Pursuit",
@@ -1409,18 +1026,15 @@ mod __JobIntroData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "set_Pursuit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "set_Pursuit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_pursuit(
@@ -1428,103 +1042,61 @@ mod __JobIntroData_unity2_raw {
         value: crate::app::jobintrodata::JobIntroData_BattleType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            JobIntroData,
-            crate::app::jobintrodata::JobIntroData_BattleType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_pursuit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(JobIntroData, crate::app::jobintrodata::JobIntroData_BattleType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_pursuit::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroData as ::unity2::ClassIdentity>::class(),
-                "Load",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<JobIntroData as ::unity2::ClassIdentity>::class(), "Load", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    "Load",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        "Load",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load(
-        progress: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load(progress: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load::get_method_info().method_ptr);
         inner(progress, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <JobIntroData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<JobIntroData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <JobIntroData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <JobIntroData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: JobIntroData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(JobIntroData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1533,12 +1105,7 @@ mod __JobIntroData_unity2_raw {
 impl JobIntroData {
     #[doc = "`Load(::unity2::Il2CppString)` overload"]
     pub fn load(progress: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            __JobIntroData_unity2_raw::load(
-                ::core::convert::Into::into(progress),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __JobIntroData_unity2_raw::load(::core::convert::Into::into(progress), ::core::option::Option::None) }
     }
 }
 
@@ -1547,344 +1114,203 @@ pub trait IJobIntroDataMethods: IJobIntroData {
     #[doc = "`get_DLC()` overload"]
     fn get_dlc(self) -> bool {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_dlc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_DLC(bool)` overload"]
     fn set_dlc(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_dlc(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_dlc(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Person()` overload"]
     fn get_person(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_person(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Person(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_person(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_person(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_person(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_person(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Job()` overload"]
     fn get_job(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_job(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Job(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_job(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_job(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_job(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_job(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Weapon()` overload"]
     fn get_weapon(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_weapon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Weapon(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_weapon(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_weapon(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_weapon(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_weapon(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Enemy()` overload"]
     fn get_enemy(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_enemy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Enemy(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_enemy(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_enemy(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_enemy(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_enemy(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EnemyJob()` overload"]
     fn get_enemy_job(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_enemy_job(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EnemyJob(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_enemy_job(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_enemy_job(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_enemy_job(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_enemy_job(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EnemyWeapon()` overload"]
     fn get_enemy_weapon(self) -> ::unity2::Array<::unity2::Il2CppString> {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_enemy_weapon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EnemyWeapon(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn set_enemy_weapon(
-        self,
-        value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
+    fn set_enemy_weapon(self, value: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_enemy_weapon(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_enemy_weapon(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_X()` overload"]
     fn get_x(self) -> i32 {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_x(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_X(i32)` overload"]
     fn set_x(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_x(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_x(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Z()` overload"]
     fn get_z(self) -> i32 {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_z(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Z(i32)` overload"]
     fn set_z(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_z(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_z(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Distance()` overload"]
     fn get_distance(self) -> f32 {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_distance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Distance(f32)` overload"]
     fn set_distance(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_distance(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_distance(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Field()` overload"]
     fn get_field(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_field(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Field(::unity2::Il2CppString)` overload"]
     fn set_field(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_field(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_field(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Attack()` overload"]
     fn get_attack(self) -> crate::app::jobintrodata::JobIntroData_BattleType {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_attack(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Attack(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]
-    fn set_attack(
-        self,
-        value: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>,
-    ) -> () {
+    fn set_attack(self, value: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_attack(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_attack(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Counter()` overload"]
     fn get_counter(self) -> crate::app::jobintrodata::JobIntroData_BattleType {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_counter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Counter(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]
-    fn set_counter(
-        self,
-        value: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>,
-    ) -> () {
+    fn set_counter(self, value: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_counter(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_counter(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Pursuit()` overload"]
     fn get_pursuit(self) -> crate::app::jobintrodata::JobIntroData_BattleType {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::get_pursuit(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Pursuit(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]
-    fn set_pursuit(
-        self,
-        value: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>,
-    ) -> () {
+    fn set_pursuit(self, value: impl ::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __JobIntroData_unity2_raw::set_pursuit(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __JobIntroData_unity2_raw::set_pursuit(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <JobIntroData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __JobIntroData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1897,13 +1323,8 @@ impl<__T: IJobIntroData> IJobIntroDataMethods for __T {}
 impl JobIntroData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JobIntroData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(JobIntroData), ::core::stringify!(new),));
         <Self as IJobIntroDataMethods>::ctor(this);
         this
     }
@@ -1912,26 +1333,21 @@ impl JobIntroData {
 #[cfg(feature = "app-jobintrodata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IJobIntroData;
-    pub use super::IJobIntroDataMethods;
-    pub use super::JobIntroData;
-    pub use super::JobIntroData_BattleType;
-    pub use crate::app::structbase::IStructBase;
+    pub use super::{IJobIntroData, IJobIntroDataMethods, JobIntroData, JobIntroData_BattleType};
     #[cfg(feature = "app-structbase")]
     pub use crate::app::structbase::IStructBaseMethods;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
     #[cfg(feature = "app-structdataarray_1")]
     pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
     #[cfg(feature = "app-structtemplate_1")]
     pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

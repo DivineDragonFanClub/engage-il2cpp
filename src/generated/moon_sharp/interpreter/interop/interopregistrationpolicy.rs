@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/interopregistrationpolicy/InteropRegistrationPolicy.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "InteropRegistrationPolicy"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "InteropRegistrationPolicy")]
     #[parent(crate::system::object::Object)]
     pub struct InteropRegistrationPolicy {}
 }
@@ -28,9 +25,7 @@ mod __InteropRegistrationPolicy_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_default {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InteropRegistrationPolicy as ::unity2::ClassIdentity>::class(),
@@ -43,30 +38,32 @@ mod __InteropRegistrationPolicy_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InteropRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
-                    "get_Default",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InteropRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
+                        "get_Default",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_default (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_default :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_default(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy =
+            ::core::mem::transmute(__lookup_get_default::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_explicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InteropRegistrationPolicy as ::unity2::ClassIdentity>::class(),
@@ -79,30 +76,32 @@ mod __InteropRegistrationPolicy_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InteropRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
-                    "get_Explicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InteropRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
+                        "get_Explicit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_explicit (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_explicit :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_explicit(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy =
+            ::core::mem::transmute(__lookup_get_explicit::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_automatic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InteropRegistrationPolicy as ::unity2::ClassIdentity>::class(),
@@ -115,47 +114,51 @@ mod __InteropRegistrationPolicy_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InteropRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
-                    "get_Automatic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InteropRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
+                        "get_Automatic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_automatic (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_automatic :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_automatic(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy =
+            ::core::mem::transmute(__lookup_get_automatic::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy")]
 impl InteropRegistrationPolicy {
-    #[doc = "`get_Default()` overload"]    pub fn get_default () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
+    #[doc = "`get_Default()` overload"]
+    pub fn get_default() -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
         unsafe { __InteropRegistrationPolicy_unity2_raw::get_default(::core::option::Option::None) }
     }
-    #[doc = "`get_Explicit()` overload"]    pub fn get_explicit () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        unsafe {
-            __InteropRegistrationPolicy_unity2_raw::get_explicit(::core::option::Option::None)
-        }
+
+    #[doc = "`get_Explicit()` overload"]
+    pub fn get_explicit() -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        unsafe { __InteropRegistrationPolicy_unity2_raw::get_explicit(::core::option::Option::None) }
     }
-    #[doc = "`get_Automatic()` overload"]    pub fn get_automatic () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy{
-        unsafe {
-            __InteropRegistrationPolicy_unity2_raw::get_automatic(::core::option::Option::None)
-        }
+
+    #[doc = "`get_Automatic()` overload"]
+    pub fn get_automatic() -> crate::moon_sharp::interpreter::interop::registration_policies::iregistrationpolicy::IRegistrationPolicy {
+        unsafe { __InteropRegistrationPolicy_unity2_raw::get_automatic(::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInteropRegistrationPolicy;
-    pub use super::InteropRegistrationPolicy;
+    pub use super::{IInteropRegistrationPolicy, InteropRegistrationPolicy};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

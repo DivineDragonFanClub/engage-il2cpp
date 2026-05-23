@@ -2,16 +2,45 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem")]
+    #[parent(crate::system::object::Object)]
+    pub struct XRSystem {
+        #[rename(name = "emptyPass")]
+        pub empty_pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
+        #[rename(name = "framePasses")]
+        pub frame_passes: crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrpass::XRPass>,
+        #[static_field]
+        #[rename(name = "displayList")]
+        pub display_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem>,
+        #[rename(name = "display")]
+        pub display: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem,
+        #[static_field]
+        #[rename(name = "msaaLevel")]
+        pub msaa_level: i32,
+        #[rename(name = "occlusionMeshMaterial")]
+        pub occlusion_mesh_material: crate::unity_engine::material::Material,
+        #[rename(name = "mirrorViewMaterial")]
+        pub mirror_view_material: crate::unity_engine::material::Material,
+        #[rename(name = "mirrorViewMaterialProperty")]
+        pub mirror_view_material_property: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
+        #[rename(name = "testRenderTexture")]
+        pub test_render_texture: crate::unity_engine::rendertexture::RenderTexture,
+        #[static_field]
+        #[rename(name = "k_XRMirrorTag")]
+        pub k_xr_mirror_tag: ::unity2::Il2CppString,
+        #[static_field]
+        #[rename(name = "_XRMirrorProfilingSampler")]
+        pub xr_mirror_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Rendering.Universal",
-        name = "XRSystem.XRShaderIDs"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem.XRShaderIDs")]
     #[parent(crate::system::object::Object)]
     pub struct XRSystem_XRShaderIDs {
         #[static_field]
@@ -24,104 +53,10 @@ mod __types {
         #[rename(name = "_SRGBWrite")]
         pub srgb_write: i32,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem")]
-    #[parent(crate::system::object::Object)]
-    pub struct XRSystem {
-        #[rename(name = "emptyPass")]
-        pub empty_pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
-        #[rename(name = "framePasses")]
-        pub frame_passes: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::xrpass::XRPass,
-        >,
-        #[static_field]
-        #[rename(name = "displayList")]
-        pub display_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem,
-        >,
-        #[rename(name = "display")]
-        pub display: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem,
-        #[static_field]
-        #[rename(name = "msaaLevel")]
-        pub msaa_level: i32,
-        #[rename(name = "occlusionMeshMaterial")]
-        pub occlusion_mesh_material: crate::unity_engine::material::Material,
-        #[rename(name = "mirrorViewMaterial")]
-        pub mirror_view_material: crate::unity_engine::material::Material,
-        #[rename(name = "mirrorViewMaterialProperty")]
-        pub mirror_view_material_property:
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        #[rename(name = "testRenderTexture")]
-        pub test_render_texture: crate::unity_engine::rendertexture::RenderTexture,
-        #[static_field]
-        #[rename(name = "k_XRMirrorTag")]
-        pub k_xr_mirror_tag: ::unity2::Il2CppString,
-        #[static_field]
-        #[rename(name = "_XRMirrorProfilingSampler")]
-        pub xr_mirror_profiling_sampler:
-            crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __XRSystem_XRShaderIDs_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
-impl XRSystem_XRShaderIDs {
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __XRSystem_XRShaderIDs_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
 #[doc(hidden)]
@@ -132,51 +67,35 @@ mod __XRSystem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSystem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<XRSystem as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: XRSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_xr_system_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "InitializeXRSystemData",
@@ -188,18 +107,15 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "InitializeXRSystemData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "InitializeXRSystemData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize_xr_system_data(
@@ -207,24 +123,15 @@ mod __XRSystem_unity2_raw {
         data: crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            XRSystem,
-            crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize_xr_system_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(XRSystem, crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_initialize_xr_system_data::get_method_info().method_ptr);
         inner(this, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_display_subsystem {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
@@ -237,35 +144,27 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "GetDisplaySubsystem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "GetDisplaySubsystem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_display_subsystem(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_display_subsystem::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_display_subsystem::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_xr_system_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
@@ -278,37 +177,27 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "XRSystemInit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "XRSystemInit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn xr_system_init(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_xr_system_init::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_xr_system_init::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_msaa_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "UpdateMSAALevel",
@@ -320,38 +209,27 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMSAALevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMSAALevel",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_msaa_level(
-        level: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_msaa_level::get_offset() as isize),
-        );
+    pub unsafe fn update_msaa_level(level: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_msaa_level::get_method_info().method_ptr);
         inner(level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_msaa_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
@@ -364,37 +242,27 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "GetMSAALevel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "GetMSAALevel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_msaa_level(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_msaa_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(__lookup_get_msaa_level::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_render_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "UpdateRenderScale",
@@ -406,38 +274,27 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateRenderScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateRenderScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_render_scale(
-        render_scale: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_render_scale::get_offset() as isize),
-        );
+    pub unsafe fn update_render_scale(render_scale: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_render_scale::get_method_info().method_ptr);
         inner(render_scale, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_views {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
@@ -450,92 +307,64 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxViews",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxViews",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_max_views(
-        this: XRSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_max_views(this: XRSystem, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_views::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_views::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSystem as ::unity2::ClassIdentity>::class(),
-                "SetupFrame",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<XRSystem as ::unity2::ClassIdentity>::class(), "SetupFrame", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "SetupFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "SetupFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_frame(
         this: XRSystem,
         camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::rendering::universal::xrpass::XRPass,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrpass::XRPass> {
         let inner: extern "C" fn(
             XRSystem,
             crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::rendering::universal::xrpass::XRPass,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_frame::get_offset() as isize),
-        );
+        )
+            -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrpass::XRPass> =
+            ::core::mem::transmute(__lookup_setup_frame::get_method_info().method_ptr);
         inner(this, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_release_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
@@ -548,38 +377,27 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseFrame",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn release_frame(
-        this: XRSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_frame::get_offset() as isize),
-        );
+    pub unsafe fn release_frame(this: XRSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_frame::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_refresh_xr_sdk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
@@ -592,40 +410,31 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "RefreshXrSdk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "RefreshXrSdk",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn refresh_xr_sdk(
-        this: XRSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn refresh_xr_sdk(this: XRSystem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_refresh_xr_sdk::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_refresh_xr_sdk::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_camera_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::xrpass::XRPass as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "UpdateCameraData",
@@ -637,18 +446,15 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateCameraData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateCameraData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_camera_data(
@@ -662,21 +468,18 @@ mod __XRSystem_unity2_raw {
             *mut crate::unity_engine::rendering::universal::cameradata::CameraData,
             *mut crate::unity_engine::rendering::universal::xrpass::XRPass,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_camera_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_camera_data::get_method_info().method_ptr);
         inner(this, base_camera_data, xr, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_from_camera {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: universal :: cameradata :: CameraData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::universal::xrpass::XRPass as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::universal::cameradata::CameraData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "UpdateFromCamera",
@@ -688,18 +491,15 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "UpdateFromCamera",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "UpdateFromCamera",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_from_camera(
@@ -713,20 +513,14 @@ mod __XRSystem_unity2_raw {
             *mut crate::unity_engine::rendering::universal::xrpass::XRPass,
             crate::unity_engine::rendering::universal::cameradata::CameraData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_from_camera::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_update_from_camera::get_method_info().method_ptr);
         inner(this, xr_pass, camera_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_layout_from_xr_sdk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -742,18 +536,15 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "CreateLayoutFromXrSdk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "CreateLayoutFromXrSdk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_layout_from_xr_sdk(
@@ -762,67 +553,43 @@ mod __XRSystem_unity2_raw {
         single_pass_allowed: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            XRSystem,
-            crate::unity_engine::camera::Camera,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_layout_from_xr_sdk::get_offset() as isize),
-        );
+        let inner: extern "C" fn(XRSystem, crate::unity_engine::camera::Camera, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_create_layout_from_xr_sdk::get_method_info().method_ptr);
         inner(this, camera, single_pass_allowed, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSystem as ::unity2::ClassIdentity>::class(),
-                "Dispose",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<XRSystem as ::unity2::ClassIdentity>::class(), "Dispose", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dispose(this: XRSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose::get_offset() as isize),
-        );
+        let inner: extern "C" fn(XRSystem, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_pass_to_frame {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::universal::xrpass::XRPass as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "AddPassToFrame",
@@ -834,18 +601,15 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "AddPassToFrame",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "AddPassToFrame",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_pass_to_frame(
@@ -853,25 +617,19 @@ mod __XRSystem_unity2_raw {
         xr_pass: crate::unity_engine::rendering::universal::xrpass::XRPass,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            XRSystem,
-            crate::unity_engine::rendering::universal::xrpass::XRPass,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_pass_to_frame::get_offset() as isize),
-        );
+        let inner: extern "C" fn(XRSystem, crate::unity_engine::rendering::universal::xrpass::XRPass, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_pass_to_frame::get_method_info().method_ptr);
         inner(this, xr_pass, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_render_mirror_view {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::commandbuffer::CommandBuffer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <XRSystem as ::unity2::ClassIdentity>::class(),
                 "RenderMirrorView",
@@ -883,18 +641,15 @@ mod __XRSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    "RenderMirrorView",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        "RenderMirrorView",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn render_mirror_view(
@@ -908,52 +663,33 @@ mod __XRSystem_unity2_raw {
             crate::unity_engine::rendering::commandbuffer::CommandBuffer,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_render_mirror_view::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_render_mirror_view::get_method_info().method_ptr);
         inner(this, cmd, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <XRSystem as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<XRSystem as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <XRSystem as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -964,32 +700,27 @@ impl XRSystem {
     pub fn get_display_subsystem() -> () {
         unsafe { __XRSystem_unity2_raw::get_display_subsystem(::core::option::Option::None) }
     }
+
     #[doc = "`XRSystemInit()` overload"]
     pub fn xr_system_init() -> () {
         unsafe { __XRSystem_unity2_raw::xr_system_init(::core::option::Option::None) }
     }
+
     #[doc = "`UpdateMSAALevel(i32)` overload"]
     pub fn update_msaa_level(level: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __XRSystem_unity2_raw::update_msaa_level(
-                ::core::convert::Into::into(level),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __XRSystem_unity2_raw::update_msaa_level(::core::convert::Into::into(level), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMSAALevel()` overload"]
     pub fn get_msaa_level() -> i32 {
         unsafe { __XRSystem_unity2_raw::get_msaa_level(::core::option::Option::None) }
     }
+
     #[doc = "`UpdateRenderScale(f32)` overload"]
     pub fn update_render_scale(render_scale: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            __XRSystem_unity2_raw::update_render_scale(
-                ::core::convert::Into::into(render_scale),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __XRSystem_unity2_raw::update_render_scale(::core::convert::Into::into(render_scale), ::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __XRSystem_unity2_raw::cctor(::core::option::Option::None) }
@@ -1001,74 +732,48 @@ pub trait IXRSystemMethods: IXRSystem {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitializeXRSystemData(crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData)` overload"]
     fn initialize_xr_system_data(
         self,
-        data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData,
-        >,
+        data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData>,
     ) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __XRSystem_unity2_raw::initialize_xr_system_data(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __XRSystem_unity2_raw::initialize_xr_system_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaxViews()` overload"]
     fn get_max_views(self) -> i32 {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::get_max_views(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupFrame(crate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
     fn setup_frame(
         self,
-        camera_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::cameradata::CameraData,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::rendering::universal::xrpass::XRPass,
-    > {
+        camera_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::cameradata::CameraData>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrpass::XRPass> {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __XRSystem_unity2_raw::setup_frame(
-                __receiver,
-                ::core::convert::Into::into(camera_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __XRSystem_unity2_raw::setup_frame(__receiver, ::core::convert::Into::into(camera_data), ::core::option::Option::None)
         }
     }
     #[doc = "`ReleaseFrame()` overload"]
     fn release_frame(self) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::release_frame(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RefreshXrSdk()` overload"]
     fn refresh_xr_sdk(self) -> bool {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::refresh_xr_sdk(__receiver, ::core::option::Option::None)
         }
     }
@@ -1080,38 +785,21 @@ pub trait IXRSystemMethods: IXRSystem {
         crate::unity_engine::rendering::universal::xrpass::XRPass,
     ) {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::cameradata::CameraData,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::xrpass::XRPass,
-            >::uninit();
-            __XRSystem_unity2_raw::update_camera_data(
-                __receiver,
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::cameradata::CameraData>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::xrpass::XRPass>::uninit();
+            __XRSystem_unity2_raw::update_camera_data(__receiver, __out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
     #[doc = "`UpdateFromCamera(*mutcrate::unity_engine::rendering::universal::xrpass::XRPass, crate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]
     fn update_from_camera(
         self,
-        camera_data: impl ::core::convert::Into<
-            crate::unity_engine::rendering::universal::cameradata::CameraData,
-        >,
+        camera_data: impl ::core::convert::Into<crate::unity_engine::rendering::universal::cameradata::CameraData>,
     ) -> crate::unity_engine::rendering::universal::xrpass::XRPass {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::rendering::universal::xrpass::XRPass,
-            >::uninit();
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::rendering::universal::xrpass::XRPass>::uninit();
             __XRSystem_unity2_raw::update_from_camera(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -1128,9 +816,7 @@ pub trait IXRSystemMethods: IXRSystem {
         single_pass_allowed: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::create_layout_from_xr_sdk(
                 __receiver,
                 ::core::convert::Into::into(camera),
@@ -1142,26 +828,15 @@ pub trait IXRSystemMethods: IXRSystem {
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`AddPassToFrame(crate::unity_engine::rendering::universal::xrpass::XRPass)` overload"]
-    fn add_pass_to_frame(
-        self,
-        xr_pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrpass::XRPass>,
-    ) -> () {
+    fn add_pass_to_frame(self, xr_pass: impl ::core::convert::Into<crate::unity_engine::rendering::universal::xrpass::XRPass>) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __XRSystem_unity2_raw::add_pass_to_frame(
-                __receiver,
-                ::core::convert::Into::into(xr_pass),
-                ::core::option::Option::None,
-            )
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __XRSystem_unity2_raw::add_pass_to_frame(__receiver, ::core::convert::Into::into(xr_pass), ::core::option::Option::None)
         }
     }
     #[doc = "`RenderMirrorView(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::camera::Camera)` overload"]
@@ -1171,9 +846,7 @@ pub trait IXRSystemMethods: IXRSystem {
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> () {
         unsafe {
-            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <XRSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __XRSystem_unity2_raw::render_mirror_view(
                 __receiver,
                 ::core::convert::Into::into(cmd),
@@ -1191,13 +864,8 @@ impl<__T: IXRSystem> IXRSystemMethods for __T {}
 impl XRSystem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRSystem),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(XRSystem), ::core::stringify!(new),));
         <Self as IXRSystemMethods>::ctor(this);
         this
     }
@@ -1205,12 +873,55 @@ impl XRSystem {
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __XRSystem_XRShaderIDs_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <XRSystem_XRShaderIDs as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
+impl XRSystem_XRShaderIDs {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __XRSystem_XRShaderIDs_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IXRSystem;
-    pub use super::IXRSystemMethods;
-    pub use super::IXRSystem_XRShaderIDs;
-    pub use super::XRSystem;
-    pub use super::XRSystem_XRShaderIDs;
+    pub use super::{IXRSystem, IXRSystemMethods, IXRSystem_XRShaderIDs, XRSystem, XRSystem_XRShaderIDs};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

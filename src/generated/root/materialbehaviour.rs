@@ -2,14 +2,32 @@
 
 #[cfg(feature = "root-materialbehaviour-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialbehaviour/MaterialBehaviour_TextureInfo.md"))]
+    #[::unity2::class(namespace = "", name = "MaterialBehaviour.TextureInfo")]
+    #[parent(crate::system::object::Object)]
+    pub struct MaterialBehaviour_TextureInfo {
+        #[rename(name = "Name")]
+        pub name: ::unity2::Il2CppString,
+        #[rename(name = "Attr")]
+        pub attr: ::unity2::Il2CppString,
+        #[rename(name = "Tiling")]
+        pub tiling: crate::unity_engine::vector2::Vector2,
+        #[rename(name = "Offset")]
+        pub offset: crate::unity_engine::vector2::Vector2,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialbehaviour/MaterialBehaviour.md"))]
     #[::unity2::class(namespace = "", name = "MaterialBehaviour")]
@@ -41,24 +59,102 @@ mod __types {
         #[rename(name = "MultiMap")]
         pub multi_map: crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialbehaviour/MaterialBehaviour_TextureInfo.md"))]
-    #[::unity2::class(namespace = "", name = "MaterialBehaviour.TextureInfo")]
-    #[parent(crate::system::object::Object)]
-    pub struct MaterialBehaviour_TextureInfo {
-        #[rename(name = "Name")]
-        pub name: ::unity2::Il2CppString,
-        #[rename(name = "Attr")]
-        pub attr: ::unity2::Il2CppString,
-        #[rename(name = "Tiling")]
-        pub tiling: crate::unity_engine::vector2::Vector2,
-        #[rename(name = "Offset")]
-        pub offset: crate::unity_engine::vector2::Vector2,
-    }
 }
 
 #[cfg(feature = "root-materialbehaviour-types")]
 pub use __types::*;
+
+#[cfg(feature = "root-materialbehaviour")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MaterialBehaviour_TextureInfo_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
+                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MaterialBehaviour_TextureInfo,
+        material: crate::unity_engine::material::Material,
+        names: ::unity2::Array<::unity2::Il2CppString>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialBehaviour_TextureInfo,
+            crate::unity_engine::material::Material,
+            ::unity2::Array<::unity2::Il2CppString>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, material, names, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "root-materialbehaviour")]
+pub trait IMaterialBehaviour_TextureInfoMethods: IMaterialBehaviour_TextureInfo {
+    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    fn ctor(
+        self,
+        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+        names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialBehaviour_TextureInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_TextureInfo_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(material),
+                ::core::convert::Into::into(names),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "root-materialbehaviour")]
+impl<__T: IMaterialBehaviour_TextureInfo> IMaterialBehaviour_TextureInfoMethods for __T {}
+
+#[cfg(feature = "root-materialbehaviour")]
+impl MaterialBehaviour_TextureInfo {
+    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new(material: crate::unity_engine::material::Material, names: ::unity2::Array<::unity2::Il2CppString>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialBehaviour_TextureInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialBehaviour_TextureInfoMethods>::ctor(this, material, names);
+        this
+    }
+}
 
 #[cfg(feature = "root-materialbehaviour")]
 #[doc(hidden)]
@@ -69,9 +165,7 @@ mod __MaterialBehaviour_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_elapsed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -84,39 +178,27 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_Elapsed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_Elapsed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_elapsed(
-        this: MaterialBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_elapsed(this: MaterialBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MaterialBehaviour, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_elapsed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_elapsed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -129,41 +211,30 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "get_Render",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "get_Render",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_render(
         this: MaterialBehaviour,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::meshrenderer::MeshRenderer {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::meshrenderer::MeshRenderer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_render::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialBehaviour, ::unity2::OptionalMethod) -> crate::unity_engine::meshrenderer::MeshRenderer =
+            ::core::mem::transmute(__lookup_get_render::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -176,39 +247,27 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn initialize(
-        this: MaterialBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn initialize(this: MaterialBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaterialBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -221,40 +280,33 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_time(
-        this: MaterialBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_time(this: MaterialBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaterialBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_tiling_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: meshrenderer :: MeshRenderer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type () , < crate :: root :: materialbehaviour :: MaterialBehaviour_TextureInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::meshrenderer::MeshRenderer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+                <crate::root::materialbehaviour::MaterialBehaviour_TextureInfo as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
                 "SetTilingImpl",
@@ -266,18 +318,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetTilingImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetTilingImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_tiling_impl(
@@ -293,21 +342,20 @@ mod __MaterialBehaviour_unity2_raw {
             crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_tiling_impl::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_tiling_impl::get_method_info().method_ptr);
         inner(render, property, info, tiling, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_offset_impl {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: meshrenderer :: MeshRenderer as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: materialpropertyblock :: MaterialPropertyBlock as :: unity2 :: IlType > :: il_type () , < crate :: root :: materialbehaviour :: MaterialBehaviour_TextureInfo as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: vector2 :: Vector2 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::meshrenderer::MeshRenderer as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::materialpropertyblock::MaterialPropertyBlock as ::unity2::IlType>::il_type(),
+                <crate::root::materialbehaviour::MaterialBehaviour_TextureInfo as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
                 "SetOffsetImpl",
@@ -319,18 +367,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetOffsetImpl",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetOffsetImpl",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_offset_impl(
@@ -346,22 +391,15 @@ mod __MaterialBehaviour_unity2_raw {
             crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_offset_impl::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_offset_impl::get_method_info().method_ptr);
         inner(render, property, info, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_main_tex_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
                 "SetMainTexOffset",
@@ -373,18 +411,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetMainTexOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetMainTexOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_main_tex_offset(
@@ -392,26 +427,16 @@ mod __MaterialBehaviour_unity2_raw {
         offset: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_main_tex_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialBehaviour, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_main_tex_offset::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_bump_map_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
                 "SetBumpMapOffset",
@@ -423,18 +448,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetBumpMapOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetBumpMapOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_bump_map_offset(
@@ -442,26 +464,16 @@ mod __MaterialBehaviour_unity2_raw {
         offset: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_bump_map_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialBehaviour, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_bump_map_offset::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_multi_map_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
                 "SetMultiMapOffset",
@@ -473,18 +485,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetMultiMapOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetMultiMapOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_multi_map_offset(
@@ -492,26 +501,16 @@ mod __MaterialBehaviour_unity2_raw {
         offset: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_multi_map_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialBehaviour, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_multi_map_offset::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_texture_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
                 "SetTextureOffset",
@@ -523,18 +522,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetTextureOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetTextureOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_texture_offset(
@@ -542,24 +538,15 @@ mod __MaterialBehaviour_unity2_raw {
         offset: crate::unity_engine::vector2::Vector2,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            crate::unity_engine::vector2::Vector2,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_texture_offset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialBehaviour, crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_texture_offset::get_method_info().method_ptr);
         inner(this, offset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vector {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -575,18 +562,15 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_vector(
@@ -595,25 +579,15 @@ mod __MaterialBehaviour_unity2_raw {
         value: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            ::unity2::Il2CppString,
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_vector::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialBehaviour, ::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_vector::get_method_info().method_ptr);
         inner(this, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_float {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -629,45 +603,27 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "SetFloat",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "SetFloat",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_float(
-        this: MaterialBehaviour,
-        name: ::unity2::Il2CppString,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour,
-            ::unity2::Il2CppString,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_float::get_offset() as isize),
-        );
+    pub unsafe fn set_float(this: MaterialBehaviour, name: ::unity2::Il2CppString, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MaterialBehaviour, ::unity2::Il2CppString, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_float::get_method_info().method_ptr);
         inner(this, name, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_perlin_noise {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -680,39 +636,27 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "GetPerlinNoise",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "GetPerlinNoise",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_perlin_noise(
-        this: MaterialBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_perlin_noise(this: MaterialBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MaterialBehaviour, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_perlin_noise::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_perlin_noise::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -725,39 +669,27 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MaterialBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MaterialBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaterialBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialBehaviour as ::unity2::ClassIdentity>::class(),
@@ -770,26 +702,19 @@ mod __MaterialBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -799,9 +724,7 @@ impl MaterialBehaviour {
     #[doc = "`SetTilingImpl(crate::unity_engine::meshrenderer::MeshRenderer, crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, crate::unity_engine::vector2::Vector2)` overload"]
     pub fn set_tiling_impl(
         render: impl ::core::convert::Into<crate::unity_engine::meshrenderer::MeshRenderer>,
-        property: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        property: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
         info: impl ::core::convert::Into<crate::root::materialbehaviour::MaterialBehaviour_TextureInfo>,
         tiling: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
@@ -815,12 +738,11 @@ impl MaterialBehaviour {
             )
         }
     }
+
     #[doc = "`SetOffsetImpl(crate::unity_engine::meshrenderer::MeshRenderer, crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, crate::unity_engine::vector2::Vector2)` overload"]
     pub fn set_offset_impl(
         render: impl ::core::convert::Into<crate::unity_engine::meshrenderer::MeshRenderer>,
-        property: impl ::core::convert::Into<
-            crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
-        >,
+        property: impl ::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock>,
         info: impl ::core::convert::Into<crate::root::materialbehaviour::MaterialBehaviour_TextureInfo>,
         offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
@@ -834,6 +756,7 @@ impl MaterialBehaviour {
             )
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __MaterialBehaviour_unity2_raw::cctor(::core::option::Option::None) }
@@ -845,101 +768,57 @@ pub trait IMaterialBehaviourMethods: IMaterialBehaviour {
     #[doc = "`get_Elapsed()` overload"]
     fn get_elapsed(self) -> f32 {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::get_elapsed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Render()` overload"]
     fn get_render(self) -> crate::unity_engine::meshrenderer::MeshRenderer {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::get_render(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Initialize()` overload"]
     fn initialize(self) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::initialize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateTime()` overload"]
     fn update_time(self) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::update_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMainTexOffset(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_main_tex_offset(
-        self,
-        offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_main_tex_offset(self, offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaterialBehaviour_unity2_raw::set_main_tex_offset(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_unity2_raw::set_main_tex_offset(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`SetBumpMapOffset(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_bump_map_offset(
-        self,
-        offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_bump_map_offset(self, offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaterialBehaviour_unity2_raw::set_bump_map_offset(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_unity2_raw::set_bump_map_offset(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`SetMultiMapOffset(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_multi_map_offset(
-        self,
-        offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_multi_map_offset(self, offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaterialBehaviour_unity2_raw::set_multi_map_offset(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_unity2_raw::set_multi_map_offset(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`SetTextureOffset(crate::unity_engine::vector2::Vector2)` overload"]
-    fn set_texture_offset(
-        self,
-        offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
-    ) -> () {
+    fn set_texture_offset(self, offset: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaterialBehaviour_unity2_raw::set_texture_offset(
-                __receiver,
-                ::core::convert::Into::into(offset),
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_unity2_raw::set_texture_offset(__receiver, ::core::convert::Into::into(offset), ::core::option::Option::None)
         }
     }
     #[doc = "`SetVector(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]
@@ -949,9 +828,7 @@ pub trait IMaterialBehaviourMethods: IMaterialBehaviour {
         value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::set_vector(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -961,15 +838,9 @@ pub trait IMaterialBehaviourMethods: IMaterialBehaviour {
         }
     }
     #[doc = "`SetFloat(::unity2::Il2CppString, f32)` overload"]
-    fn set_float(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set_float(self, name: impl ::core::convert::Into<::unity2::Il2CppString>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::set_float(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -981,21 +852,14 @@ pub trait IMaterialBehaviourMethods: IMaterialBehaviour {
     #[doc = "`GetPerlinNoise()` overload"]
     fn get_perlin_noise(self) -> f32 {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaterialBehaviour_unity2_raw::get_perlin_noise(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialBehaviour_unity2_raw::get_perlin_noise(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1022,132 +886,23 @@ impl MaterialBehaviour {
 
 #[cfg(feature = "root-materialbehaviour")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MaterialBehaviour_TextureInfo_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::material::Material as ::unity2::IlType>::il_type(),
-                <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialBehaviour_TextureInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MaterialBehaviour_TextureInfo,
-        material: crate::unity_engine::material::Material,
-        names: ::unity2::Array<::unity2::Il2CppString>,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialBehaviour_TextureInfo,
-            crate::unity_engine::material::Material,
-            ::unity2::Array<::unity2::Il2CppString>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, material, names, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "root-materialbehaviour")]
-pub trait IMaterialBehaviour_TextureInfoMethods: IMaterialBehaviour_TextureInfo {
-    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    fn ctor(
-        self,
-        material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-        names: impl ::core::convert::Into<::unity2::Array<::unity2::Il2CppString>>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MaterialBehaviour_TextureInfo as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MaterialBehaviour_TextureInfo_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(material),
-                ::core::convert::Into::into(names),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "root-materialbehaviour")]
-impl<__T: IMaterialBehaviour_TextureInfo> IMaterialBehaviour_TextureInfoMethods for __T {}
-
-#[cfg(feature = "root-materialbehaviour")]
-impl MaterialBehaviour_TextureInfo {
-    #[doc = "`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(
-        material: crate::unity_engine::material::Material,
-        names: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaterialBehaviour_TextureInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMaterialBehaviour_TextureInfoMethods>::ctor(this, material, names);
-        this
-    }
-}
-
-#[cfg(feature = "root-materialbehaviour")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IMaterialBehaviour;
-    pub use super::IMaterialBehaviourMethods;
-    pub use super::IMaterialBehaviour_TextureInfo;
-    pub use super::IMaterialBehaviour_TextureInfoMethods;
-    pub use super::MaterialBehaviour;
-    pub use super::MaterialBehaviour_TextureInfo;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        IMaterialBehaviour, IMaterialBehaviourMethods, IMaterialBehaviour_TextureInfo, IMaterialBehaviour_TextureInfoMethods, MaterialBehaviour,
+        MaterialBehaviour_TextureInfo,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

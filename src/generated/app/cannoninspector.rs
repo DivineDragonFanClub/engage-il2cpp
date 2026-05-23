@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-cannoninspector-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::mapinspector::{IMapInspector, MapInspector};
-    use crate::app::scriptutil::{IScriptUtil, ScriptUtil};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cannoninspector/CannonInspector.md"))]
     #[::unity2::class(namespace = "App", name = "CannonInspector")]
@@ -39,9 +43,7 @@ mod __CannonInspector_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -58,42 +60,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CannonInspector,
-        x: i32,
-        z: i32,
-        max_shells: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CannonInspector, x: i32, z: i32, max_shells: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CannonInspector, i32, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, x, z, max_shells, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_eanble {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -106,39 +93,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "IsEanble",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "IsEanble",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_eanble(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_eanble(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_eanble::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_eanble::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_completed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -151,39 +126,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "Completed",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "Completed",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn completed(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn completed(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_completed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_completed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_x {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -196,39 +159,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "get_X",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "get_X",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_x(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_x(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_x::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_x::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_z {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -241,39 +192,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "get_Z",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "get_Z",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_z(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_z(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_z::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_z::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_shells {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -286,41 +225,28 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxShells",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxShells",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_max_shells(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_max_shells(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_shells::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_shells::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shells {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
                 "SetShells",
@@ -332,40 +258,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "SetShells",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "SetShells",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_shells(
-        this: CannonInspector,
-        num: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_shells(this: CannonInspector, num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CannonInspector, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_shells::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_shells::get_method_info().method_ptr);
         inner(this, num, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shells {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -378,39 +291,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "GetShells",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "GetShells",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_shells(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_shells(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_shells::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_shells::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_decrease_shell {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -423,41 +324,28 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "DecreaseShell",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "DecreaseShell",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn decrease_shell(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn decrease_shell(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_decrease_shell::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_decrease_shell::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cannon_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
                 "GetCannonSkill",
@@ -469,18 +357,15 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "GetCannonSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "GetCannonSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cannon_skill(
@@ -488,24 +373,15 @@ mod __CannonInspector_unity2_raw {
         is_force: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::skilldata::SkillData {
-        let inner: extern "C" fn(
-            CannonInspector,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::skilldata::SkillData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cannon_skill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CannonInspector, bool, ::unity2::OptionalMethod) -> crate::app::skilldata::SkillData =
+            ::core::mem::transmute(__lookup_get_cannon_skill::get_method_info().method_ptr);
         inner(this, is_force, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_terrain_flag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::terraindata_2::TerrainData_Flags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -519,18 +395,15 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "IsTerrainFlag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "IsTerrainFlag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_terrain_flag(
@@ -538,24 +411,15 @@ mod __CannonInspector_unity2_raw {
         flags: crate::app::terraindata_2::TerrainData_Flags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            CannonInspector,
-            crate::app::terraindata_2::TerrainData_Flags,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_terrain_flag::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CannonInspector, crate::app::terraindata_2::TerrainData_Flags, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_terrain_flag::get_method_info().method_ptr);
         inner(this, flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_bow_cannon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -568,39 +432,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "IsBowCannon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "IsBowCannon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_bow_cannon(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_bow_cannon(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_bow_cannon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_bow_cannon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_magic_cannon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -613,39 +465,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "IsMagicCannon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "IsMagicCannon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_magic_cannon(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_magic_cannon(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_magic_cannon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_magic_cannon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_fire_cannon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -658,39 +498,27 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "IsFireCannon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "IsFireCannon",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_fire_cannon(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_fire_cannon(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_fire_cannon::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_fire_cannon::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_terrain {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CannonInspector as ::unity2::ClassIdentity>::class(),
@@ -703,32 +531,20 @@ mod __CannonInspector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CannonInspector as ::unity2::ClassIdentity>::NAME,
-                    "GetTerrain",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CannonInspector as ::unity2::ClassIdentity>::NAME,
+                        "GetTerrain",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_terrain(
-        this: CannonInspector,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::terraindata_2::TerrainData_2 {
-        let inner: extern "C" fn(
-            CannonInspector,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::terraindata_2::TerrainData_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_terrain::get_offset() as isize),
-        );
+    pub unsafe fn get_terrain(this: CannonInspector, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 {
+        let inner: extern "C" fn(CannonInspector, ::unity2::OptionalMethod) -> crate::app::terraindata_2::TerrainData_2 =
+            ::core::mem::transmute(__lookup_get_terrain::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -736,16 +552,9 @@ mod __CannonInspector_unity2_raw {
 #[cfg(feature = "app-cannoninspector")]
 pub trait ICannonInspectorMethods: ICannonInspector {
     #[doc = "`.ctor(i32, i32, i32)` overload"]
-    fn ctor(
-        self,
-        x: impl ::core::convert::Into<i32>,
-        z: impl ::core::convert::Into<i32>,
-        max_shells: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn ctor(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>, max_shells: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -758,144 +567,98 @@ pub trait ICannonInspectorMethods: ICannonInspector {
     #[doc = "`IsEanble()` overload"]
     fn is_eanble(self) -> bool {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::is_eanble(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Completed()` overload"]
     fn completed(self) -> () {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::completed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_X()` overload"]
     fn get_x(self) -> i32 {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::get_x(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Z()` overload"]
     fn get_z(self) -> i32 {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::get_z(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaxShells()` overload"]
     fn get_max_shells(self) -> i32 {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::get_max_shells(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetShells(i32)` overload"]
     fn set_shells(self, num: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CannonInspector_unity2_raw::set_shells(
-                __receiver,
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CannonInspector_unity2_raw::set_shells(__receiver, ::core::convert::Into::into(num), ::core::option::Option::None)
         }
     }
     #[doc = "`GetShells()` overload"]
     fn get_shells(self) -> i32 {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::get_shells(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DecreaseShell()` overload"]
     fn decrease_shell(self) -> () {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::decrease_shell(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCannonSkill(bool)` overload"]
-    fn get_cannon_skill(
-        self,
-        is_force: impl ::core::convert::Into<bool>,
-    ) -> crate::app::skilldata::SkillData {
+    fn get_cannon_skill(self, is_force: impl ::core::convert::Into<bool>) -> crate::app::skilldata::SkillData {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CannonInspector_unity2_raw::get_cannon_skill(
-                __receiver,
-                ::core::convert::Into::into(is_force),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CannonInspector_unity2_raw::get_cannon_skill(__receiver, ::core::convert::Into::into(is_force), ::core::option::Option::None)
         }
     }
     #[doc = "`IsTerrainFlag(crate::app::terraindata_2::TerrainData_Flags)` overload"]
-    fn is_terrain_flag(
-        self,
-        flags: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_Flags>,
-    ) -> bool {
+    fn is_terrain_flag(self, flags: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_Flags>) -> bool {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CannonInspector_unity2_raw::is_terrain_flag(
-                __receiver,
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CannonInspector_unity2_raw::is_terrain_flag(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
         }
     }
     #[doc = "`IsBowCannon()` overload"]
     fn is_bow_cannon(self) -> bool {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::is_bow_cannon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsMagicCannon()` overload"]
     fn is_magic_cannon(self) -> bool {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::is_magic_cannon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsFireCannon()` overload"]
     fn is_fire_cannon(self) -> bool {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::is_fire_cannon(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTerrain()` overload"]
     fn get_terrain(self) -> crate::app::terraindata_2::TerrainData_2 {
         unsafe {
-            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CannonInspector as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CannonInspector_unity2_raw::get_terrain(__receiver, ::core::option::Option::None)
         }
     }
@@ -923,16 +686,15 @@ impl CannonInspector {
 #[cfg(feature = "app-cannoninspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CannonInspector;
-    pub use super::ICannonInspector;
-    pub use super::ICannonInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
+    pub use super::{CannonInspector, ICannonInspector, ICannonInspectorMethods};
     #[cfg(feature = "app-mapinspector")]
     pub use crate::app::mapinspector::IMapInspectorMethods;
-    pub use crate::app::scriptutil::IScriptUtil;
     #[cfg(feature = "app-scriptutil")]
     pub use crate::app::scriptutil::IScriptUtilMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, scriptutil::IScriptUtil},
+        system::object::IObject,
+    };
 }

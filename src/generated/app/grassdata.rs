@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-grassdata-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::scriptableobject::{IScriptableObject, ScriptableObject};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassdata/GrassData.md"))]
     #[::unity2::class(namespace = "App", name = "GrassData")]
@@ -27,9 +31,7 @@ mod __types {
         #[rename(name = "m_spriteAtlas")]
         pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
         #[rename(name = "m_spriteInfos")]
-        pub m_sprite_infos: crate::system::collections::generic::list_1::List_1<
-            crate::app::grassdata::GrassData_SpriteInfo,
-        >,
+        pub m_sprite_infos: crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassdata/GrassData_SpriteInfo.md"))]
@@ -75,59 +77,34 @@ mod __GrassData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_copy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::grassdata::GrassData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassData as ::unity2::ClassIdentity>::class(),
-                "Copy",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::grassdata::GrassData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<GrassData as ::unity2::ClassIdentity>::class(), "Copy", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData as ::unity2::ClassIdentity>::NAME,
-                    "Copy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData as ::unity2::ClassIdentity>::NAME,
+                        "Copy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn copy(
-        this: GrassData,
-        src: crate::app::grassdata::GrassData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            GrassData,
-            crate::app::grassdata::GrassData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy::get_offset() as isize),
-        );
+    pub unsafe fn copy(this: GrassData, src: crate::app::grassdata::GrassData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(GrassData, crate::app::grassdata::GrassData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_verify_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GrassData as ::unity2::ClassIdentity>::class(),
@@ -140,40 +117,36 @@ mod __GrassData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData as ::unity2::ClassIdentity>::NAME,
-                    "VerifyData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData as ::unity2::ClassIdentity>::NAME,
+                        "VerifyData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn verify_data(
-        this: GrassData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn verify_data(this: GrassData, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(GrassData, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_verify_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_verify_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_parse_sprite_infos {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: grassdata :: GrassData_SpriteInfo > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector4 :: Vector4 > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<f32> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GrassData as ::unity2::ClassIdentity>::class(),
                 "ParseSpriteInfos",
@@ -185,64 +158,37 @@ mod __GrassData_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData as ::unity2::ClassIdentity>::NAME,
-                    "ParseSpriteInfos",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData as ::unity2::ClassIdentity>::NAME,
+                        "ParseSpriteInfos",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn parse_sprite_infos(
-        src: crate::system::collections::generic::list_1::List_1<
-            crate::app::grassdata::GrassData_SpriteInfo,
-        >,
-        out_scale: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
+        src: crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo>,
+        out_scale: *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         out_aspect: *mut crate::system::collections::generic::list_1::List_1<f32>,
-        out_st: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector4::Vector4,
-        >,
-        out_top_color: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::color::Color,
-        >,
-        out_bottom_color: *mut crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::color::Color,
-        >,
+        out_st: *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+        out_top_color: *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+        out_bottom_color: *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
         out_wind_color_influence: *mut crate::system::collections::generic::list_1::List_1<f32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::grassdata::GrassData_SpriteInfo,
-            >,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo>,
+            *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
             *mut crate::system::collections::generic::list_1::List_1<f32>,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::vector4::Vector4,
-            >,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::color::Color,
-            >,
-            *mut crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::color::Color,
-            >,
+            *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+            *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+            *mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
             *mut crate::system::collections::generic::list_1::List_1<f32>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_parse_sprite_infos::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_parse_sprite_infos::get_method_info().method_ptr);
         inner(
             src,
             out_scale,
@@ -258,42 +204,26 @@ mod __GrassData_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <GrassData as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<GrassData as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: GrassData, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(GrassData, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(GrassData, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -302,11 +232,7 @@ mod __GrassData_unity2_raw {
 impl GrassData {
     #[doc = "`ParseSpriteInfos(crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, *mutcrate::system::collections::generic::list_1::List_1<f32>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<f32>)` overload"]
     pub fn parse_sprite_infos(
-        src: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::grassdata::GrassData_SpriteInfo,
-            >,
-        >,
+        src: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo>>,
     ) -> (
         crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
         crate::system::collections::generic::list_1::List_1<f32>,
@@ -316,32 +242,16 @@ impl GrassData {
         crate::system::collections::generic::list_1::List_1<f32>,
     ) {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                >,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<f32>,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::vector4::Vector4,
-                >,
-            >::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::color::Color,
-                >,
-            >::uninit();
-            let mut __out_4 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::color::Color,
-                >,
-            >::uninit();
-            let mut __out_5 = ::core::mem::MaybeUninit::<
-                crate::system::collections::generic::list_1::List_1<f32>,
-            >::uninit();
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<f32>>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>>::uninit();
+            let mut __out_3 =
+                ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>>::uninit();
+            let mut __out_4 =
+                ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>>::uninit();
+            let mut __out_5 = ::core::mem::MaybeUninit::<crate::system::collections::generic::list_1::List_1<f32>>::uninit();
             __GrassData_unity2_raw::parse_sprite_infos(
                 ::core::convert::Into::into(src),
                 __out_0.as_mut_ptr(),
@@ -369,31 +279,21 @@ pub trait IGrassDataMethods: IGrassData {
     #[doc = "`Copy(crate::app::grassdata::GrassData)` overload"]
     fn copy(self, src: impl ::core::convert::Into<crate::app::grassdata::GrassData>) -> () {
         unsafe {
-            let __receiver = <GrassData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GrassData_unity2_raw::copy(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver = <GrassData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GrassData_unity2_raw::copy(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`VerifyData()` overload"]
     fn verify_data(self) -> bool {
         unsafe {
-            let __receiver = <GrassData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GrassData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GrassData_unity2_raw::verify_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GrassData as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GrassData as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GrassData_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -406,13 +306,8 @@ impl<__T: IGrassData> IGrassDataMethods for __T {}
 impl GrassData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GrassData),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(GrassData), ::core::stringify!(new),));
         <Self as IGrassDataMethods>::ctor(this);
         this
     }
@@ -427,9 +322,7 @@ mod __GrassData_SpriteInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_copy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::grassdata::GrassData_SpriteInfo as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -443,18 +336,15 @@ mod __GrassData_SpriteInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData_SpriteInfo as ::unity2::ClassIdentity>::NAME,
-                    "Copy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData_SpriteInfo as ::unity2::ClassIdentity>::NAME,
+                        "Copy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy(
@@ -462,24 +352,15 @@ mod __GrassData_SpriteInfo_unity2_raw {
         src: crate::app::grassdata::GrassData_SpriteInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            GrassData_SpriteInfo,
-            crate::app::grassdata::GrassData_SpriteInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy::get_offset() as isize),
-        );
+        let inner: extern "C" fn(GrassData_SpriteInfo, crate::app::grassdata::GrassData_SpriteInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy::get_method_info().method_ptr);
         inner(this, src, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_default {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GrassData_SpriteInfo as ::unity2::ClassIdentity>::class(),
@@ -492,39 +373,27 @@ mod __GrassData_SpriteInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData_SpriteInfo as ::unity2::ClassIdentity>::NAME,
-                    "SetDefault",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData_SpriteInfo as ::unity2::ClassIdentity>::NAME,
+                        "SetDefault",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_default(
-        this: GrassData_SpriteInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_default(this: GrassData_SpriteInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GrassData_SpriteInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_default::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_default::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GrassData_SpriteInfo as ::unity2::ClassIdentity>::class(),
@@ -537,30 +406,20 @@ mod __GrassData_SpriteInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GrassData_SpriteInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GrassData_SpriteInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GrassData_SpriteInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GrassData_SpriteInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GrassData_SpriteInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -568,36 +427,26 @@ mod __GrassData_SpriteInfo_unity2_raw {
 #[cfg(feature = "app-grassdata")]
 pub trait IGrassData_SpriteInfoMethods: IGrassData_SpriteInfo {
     #[doc = "`Copy(crate::app::grassdata::GrassData_SpriteInfo)` overload"]
-    fn copy(
-        self,
-        src: impl ::core::convert::Into<crate::app::grassdata::GrassData_SpriteInfo>,
-    ) -> () {
+    fn copy(self, src: impl ::core::convert::Into<crate::app::grassdata::GrassData_SpriteInfo>) -> () {
         unsafe {
-            let __receiver = <GrassData_SpriteInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __GrassData_SpriteInfo_unity2_raw::copy(
-                __receiver,
-                ::core::convert::Into::into(src),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <GrassData_SpriteInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __GrassData_SpriteInfo_unity2_raw::copy(__receiver, ::core::convert::Into::into(src), ::core::option::Option::None)
         }
     }
     #[doc = "`SetDefault()` overload"]
     fn set_default(self) -> () {
         unsafe {
-            let __receiver = <GrassData_SpriteInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <GrassData_SpriteInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GrassData_SpriteInfo_unity2_raw::set_default(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GrassData_SpriteInfo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <GrassData_SpriteInfo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GrassData_SpriteInfo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -625,19 +474,15 @@ impl GrassData_SpriteInfo {
 #[cfg(feature = "app-grassdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GrassData;
-    pub use super::GrassData_SpriteInfo;
-    pub use super::IGrassData;
-    pub use super::IGrassDataMethods;
-    pub use super::IGrassData_SpriteInfo;
-    pub use super::IGrassData_SpriteInfoMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GrassData, GrassData_SpriteInfo, IGrassData, IGrassDataMethods, IGrassData_SpriteInfo, IGrassData_SpriteInfoMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
     #[cfg(feature = "unity_engine-scriptableobject")]
     pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

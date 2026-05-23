@@ -35,9 +35,7 @@ pub use animationplayableextensions::{AnimationPlayableExtensions, IAnimationPla
 #[cfg(any(feature = "unity_engine-animations-animationplayablegraphextensions-types"))]
 pub mod animationplayablegraphextensions;
 #[cfg(feature = "unity_engine-animations-animationplayablegraphextensions-types")]
-pub use animationplayablegraphextensions::{
-    AnimationPlayableGraphExtensions, IAnimationPlayableGraphExtensions,
-};
+pub use animationplayablegraphextensions::{AnimationPlayableGraphExtensions, IAnimationPlayableGraphExtensions};
 #[cfg(any(feature = "unity_engine-animations-animationplayableoutput-types"))]
 pub mod animationplayableoutput;
 #[cfg(feature = "unity_engine-animations-animationplayableoutput-types")]

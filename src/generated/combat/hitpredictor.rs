@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-hitpredictor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitpredictor/HitPredictor.md"))]
     #[::unity2::class(namespace = "Combat", name = "HitPredictor")]
@@ -25,9 +25,7 @@ mod __HitPredictor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_calc_local_hit_time_from_attack_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <crate::combat::skillstack::SkillStack as ::unity2::IlType>::il_type(),
@@ -44,18 +42,15 @@ mod __HitPredictor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                    "CalcLocalHitTimeFromAttackStart",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
+                        "CalcLocalHitTimeFromAttackStart",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calc_local_hit_time_from_attack_start(
@@ -64,25 +59,15 @@ mod __HitPredictor_unity2_raw {
         anim_time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            crate::combat::skillstack::SkillStack,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calc_local_hit_time_from_attack_start::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::combat::character::Character, crate::combat::skillstack::SkillStack, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_local_hit_time_from_attack_start::get_method_info().method_ptr);
         inner(chr, skills, anim_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_predict_hit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -98,43 +83,27 @@ mod __HitPredictor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                    "PredictHit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
+                        "PredictHit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn predict_hit(
-        chr: crate::combat::character::Character,
-        start_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_predict_hit::get_offset() as isize),
-        );
+    pub unsafe fn predict_hit(chr: crate::combat::character::Character, start_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_predict_hit::get_method_info().method_ptr);
         inner(chr, start_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_predict_shoot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -150,43 +119,27 @@ mod __HitPredictor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                    "PredictShoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
+                        "PredictShoot",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn predict_shoot(
-        chr: crate::combat::character::Character,
-        start_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_predict_shoot::get_offset() as isize),
-        );
+    pub unsafe fn predict_shoot(chr: crate::combat::character::Character, start_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_predict_shoot::get_method_info().method_ptr);
         inner(chr, start_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_predict_magic {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::combat::character::Character as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -202,34 +155,20 @@ mod __HitPredictor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <HitPredictor as ::unity2::ClassIdentity>::NAME,
-                    "PredictMagic",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <HitPredictor as ::unity2::ClassIdentity>::NAME,
+                        "PredictMagic",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn predict_magic(
-        chr: crate::combat::character::Character,
-        start_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(
-            crate::combat::character::Character,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_predict_magic::get_offset() as isize),
-        );
+    pub unsafe fn predict_magic(chr: crate::combat::character::Character, start_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(crate::combat::character::Character, f32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_predict_magic::get_method_info().method_ptr);
         inner(chr, start_time, __unity2_method_info)
     }
 }
@@ -251,11 +190,9 @@ impl HitPredictor {
             )
         }
     }
+
     #[doc = "`PredictHit(crate::combat::character::Character, f32)` overload"]
-    pub fn predict_hit(
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-        start_time: impl ::core::convert::Into<f32>,
-    ) -> f32 {
+    pub fn predict_hit(chr: impl ::core::convert::Into<crate::combat::character::Character>, start_time: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
             __HitPredictor_unity2_raw::predict_hit(
                 ::core::convert::Into::into(chr),
@@ -264,11 +201,9 @@ impl HitPredictor {
             )
         }
     }
+
     #[doc = "`PredictShoot(crate::combat::character::Character, f32)` overload"]
-    pub fn predict_shoot(
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-        start_time: impl ::core::convert::Into<f32>,
-    ) -> f32 {
+    pub fn predict_shoot(chr: impl ::core::convert::Into<crate::combat::character::Character>, start_time: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
             __HitPredictor_unity2_raw::predict_shoot(
                 ::core::convert::Into::into(chr),
@@ -277,11 +212,9 @@ impl HitPredictor {
             )
         }
     }
+
     #[doc = "`PredictMagic(crate::combat::character::Character, f32)` overload"]
-    pub fn predict_magic(
-        chr: impl ::core::convert::Into<crate::combat::character::Character>,
-        start_time: impl ::core::convert::Into<f32>,
-    ) -> f32 {
+    pub fn predict_magic(chr: impl ::core::convert::Into<crate::combat::character::Character>, start_time: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
             __HitPredictor_unity2_raw::predict_magic(
                 ::core::convert::Into::into(chr),
@@ -295,8 +228,7 @@ impl HitPredictor {
 #[cfg(feature = "combat-hitpredictor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HitPredictor;
-    pub use super::IHitPredictor;
+    pub use super::{HitPredictor, IHitPredictor};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

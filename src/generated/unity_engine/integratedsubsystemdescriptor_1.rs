@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::integratedsubsystemdescriptor::{
-        IIntegratedSubsystemDescriptor, IntegratedSubsystemDescriptor,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::integratedsubsystemdescriptor::{IIntegratedSubsystemDescriptor, IntegratedSubsystemDescriptor},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystemdescriptor_1/IntegratedSubsystemDescriptor_1.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "IntegratedSubsystemDescriptor`1")]
@@ -47,14 +47,13 @@ impl<T0: ::unity2::ClassIdentity> IntegratedSubsystemDescriptor_1<T0> {
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIntegratedSubsystemDescriptor_1;
-    pub use super::IIntegratedSubsystemDescriptor_1Methods;
-    pub use super::IntegratedSubsystemDescriptor_1;
-    pub use crate::system::object::IObject;
+    pub use super::{IIntegratedSubsystemDescriptor_1, IIntegratedSubsystemDescriptor_1Methods, IntegratedSubsystemDescriptor_1};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::integratedsubsystemdescriptor::IIntegratedSubsystemDescriptor;
     #[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
     pub use crate::unity_engine::integratedsubsystemdescriptor::IIntegratedSubsystemDescriptorMethods;
-    pub use crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::integratedsubsystemdescriptor::{IIntegratedSubsystemDescriptor, IntegratedSubsystemDescriptor},
+    };
 }

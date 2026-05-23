@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-list_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/list_1/List_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "List`1")]
@@ -36,9 +38,8 @@ mod __types {
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for List_1_Enumerator<T0> {
-        const NAMESPACE: &'static str = "System.Collections.Generic";
-
         const NAME: &'static str = "List`1.Enumerator";
+        const NAMESPACE: &'static str = "System.Collections.Generic";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -53,10 +54,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for List_1_Enumerator<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -77,10 +75,7 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(
-        self,
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> ();
+    pub fn ctor_3(self, collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> ();
 
     #[doc = "`get_Capacity()` overload"]
     #[method(name = "get_Capacity", args = 0)]
@@ -124,11 +119,7 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`System.Collections.IList.set_Item(i32, crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IList.set_Item", args = 2)]
-    pub fn system_collections_i_list_set_item(
-        self,
-        index: i32,
-        value: crate::system::object::Object,
-    ) -> ();
+    pub fn system_collections_i_list_set_item(self, index: i32, value: crate::system::object::Object) -> ();
 
     #[doc = "`Add(T0)` overload"]
     #[method(name = "Add", args = 1)]
@@ -140,16 +131,11 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`AddRange(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` overload"]
     #[method(name = "AddRange", args = 1)]
-    pub fn add_range(
-        self,
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> ();
+    pub fn add_range(self, collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> ();
 
     #[doc = "`AsReadOnly()` overload"]
     #[method(name = "AsReadOnly", args = 0)]
-    pub fn as_read_only(
-        self,
-    ) -> crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<T0>;
+    pub fn as_read_only(self) -> crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<T0>;
 
     #[doc = "`BinarySearch(i32, i32, T0, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
     #[method(name = "BinarySearch", args = 4)]
@@ -158,20 +144,12 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
         index: i32,
         count: i32,
         item: T0,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> i32;
 
     #[doc = "`BinarySearch(T0, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
     #[method(name = "BinarySearch", args = 2)]
-    pub fn binary_search_2(
-        self,
-        item: T0,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
-    ) -> i32;
+    pub fn binary_search_2(self, item: T0, comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>) -> i32;
 
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
@@ -191,21 +169,11 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
     #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        array_index: i32,
-    ) -> ();
+    pub fn system_collections_i_collection_copy_to(self, array: ::unity2::IlInstance, array_index: i32) -> ();
 
     #[doc = "`CopyTo(i32, ::unity2::Array<T0>, i32, i32)` overload"]
     #[method(name = "CopyTo", args = 4)]
-    pub fn copy_to_2(
-        self,
-        index: i32,
-        array: ::unity2::Array<T0>,
-        array_index: i32,
-        count: i32,
-    ) -> ();
+    pub fn copy_to_2(self, index: i32, array: ::unity2::Array<T0>, array_index: i32, count: i32) -> ();
 
     #[doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"]
     #[method(name = "CopyTo", args = 2)]
@@ -225,10 +193,7 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`FindAll(crate::system::predicate_1::Predicate_1<T0>)` overload"]
     #[method(name = "FindAll", args = 1)]
-    pub fn find_all(
-        self,
-        r#match: crate::system::predicate_1::Predicate_1<T0>,
-    ) -> crate::system::collections::generic::list_1::List_1<T0>;
+    pub fn find_all(self, r#match: crate::system::predicate_1::Predicate_1<T0>) -> crate::system::collections::generic::list_1::List_1<T0>;
 
     #[doc = "`FindIndex(crate::system::predicate_1::Predicate_1<T0>)` overload"]
     #[method(name = "FindIndex", args = 1)]
@@ -236,12 +201,7 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`FindIndex(i32, i32, crate::system::predicate_1::Predicate_1<T0>)` overload"]
     #[method(name = "FindIndex", args = 3)]
-    pub fn find_index_2(
-        self,
-        start_index: i32,
-        count: i32,
-        r#match: crate::system::predicate_1::Predicate_1<T0>,
-    ) -> i32;
+    pub fn find_index_2(self, start_index: i32, count: i32, r#match: crate::system::predicate_1::Predicate_1<T0>) -> i32;
 
     #[doc = "`ForEach(crate::system::action_1::Action_1<T0>)` overload"]
     #[method(name = "ForEach", args = 1)]
@@ -249,15 +209,11 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1_Enumerator<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::list_1::List_1_Enumerator<T0>;
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
     #[doc = "`IndexOf(T0)` overload"]
     #[method(name = "IndexOf", args = 1)]
@@ -273,19 +229,11 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`System.Collections.IList.Insert(i32, crate::system::object::Object)` overload"]
     #[method(name = "System.Collections.IList.Insert", args = 2)]
-    pub fn system_collections_i_list_insert(
-        self,
-        index: i32,
-        item: crate::system::object::Object,
-    ) -> ();
+    pub fn system_collections_i_list_insert(self, index: i32, item: crate::system::object::Object) -> ();
 
     #[doc = "`InsertRange(i32, crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` overload"]
     #[method(name = "InsertRange", args = 2)]
-    pub fn insert_range(
-        self,
-        index: i32,
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> ();
+    pub fn insert_range(self, index: i32, collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> ();
 
     #[doc = "`Remove(T0)` overload"]
     #[method(name = "Remove", args = 1)]
@@ -321,12 +269,7 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 
     #[doc = "`Sort(crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
     #[method(name = "Sort", args = 1)]
-    pub fn sort_2(
-        self,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
-    ) -> ();
+    pub fn sort_2(self, comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>) -> ();
 
     #[doc = "`Sort(i32, i32, crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>)` overload"]
     #[method(name = "Sort", args = 3)]
@@ -334,9 +277,7 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
         self,
         index: i32,
         count: i32,
-        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
-            T0,
-        >,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T0>,
     ) -> ();
 
     #[doc = "`Sort(crate::system::comparison_1::Comparison_1<T0>)` overload"]
@@ -356,41 +297,24 @@ impl<T0: ::unity2::ClassIdentity> List_1<T0> {
 impl<T0: ::unity2::ClassIdentity> List_1<T0> {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(List_1),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(List_1), ::core::stringify!(new),));
         <Self as IList_1Methods<T0>>::ctor(this);
         this
     }
 
     #[doc = "`.ctor(i32)` — overload selector"]
     pub fn new_2(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(List_1),
-                ::core::stringify!(new_2),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(List_1), ::core::stringify!(new_2),));
         <Self as IList_1Methods<T0>>::ctor_2(this, capacity);
         this
     }
 
     #[doc = "`.ctor(crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>)` — overload selector"]
-    pub fn new_3(
-        collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(List_1),
-                ::core::stringify!(new_3),
-            )
-        });
+    pub fn new_3(collection: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(List_1), ::core::stringify!(new_3),));
         <Self as IList_1Methods<T0>>::ctor_3(this, collection);
         this
     }
@@ -431,14 +355,10 @@ impl<T0: ::unity2::ClassIdentity> List_1_Enumerator<T0> {
 #[cfg(feature = "system-collections-generic-list_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IList_1;
-    pub use super::IList_1Methods;
-    pub use super::List_1;
-    pub use super::List_1_Enumerator;
-    pub use crate::system::object::IObject;
+    pub use super::{IList_1, IList_1Methods, List_1, List_1_Enumerator};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

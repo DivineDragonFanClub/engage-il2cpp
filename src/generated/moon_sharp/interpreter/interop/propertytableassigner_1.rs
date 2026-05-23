@@ -2,21 +2,17 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/propertytableassigner_1/PropertyTableAssigner_1.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop",
-        name = "PropertyTableAssigner`1"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "PropertyTableAssigner`1")]
     #[parent(crate::system::object::Object)]
     pub struct PropertyTableAssigner_1<T0: ::unity2::ClassIdentity> {
         #[rename(name = "m_InternalAssigner")]
-        pub m_internal_assigner:
-            crate::moon_sharp::interpreter::interop::propertytableassigner::PropertyTableAssigner,
+        pub m_internal_assigner: crate::moon_sharp::interpreter::interop::propertytableassigner::PropertyTableAssigner,
     }
 }
 
@@ -40,23 +36,18 @@ impl<T0: ::unity2::ClassIdentity> PropertyTableAssigner_1<T0> {
 
     #[doc = "`GetTypeUnsafeAssigner()` overload"]
     #[method(name = "GetTypeUnsafeAssigner", args = 0)]
-    pub fn get_type_unsafe_assigner(
-        self,
-    ) -> crate::moon_sharp::interpreter::interop::propertytableassigner::PropertyTableAssigner;
+    pub fn get_type_unsafe_assigner(self) -> crate::moon_sharp::interpreter::interop::propertytableassigner::PropertyTableAssigner;
 
     #[doc = "`SetSubassignerForType(::unity2::SystemType, crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface)` overload"]
     #[method(name = "SetSubassignerForType", args = 2)]
     pub fn set_subassigner_for_type(
         self,
         property_type: ::unity2::SystemType,
-        assigner : crate :: moon_sharp :: interpreter :: interop :: ipropertytableassigner_interface :: IPropertyTableAssigner_Interface,
+        assigner: crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface,
     ) -> ();
 
     #[doc = "`MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"]
-    #[method(
-        name = "MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",
-        args = 2
-    )]
+    #[method(name = "MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked", args = 2)]
     pub fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(
         self,
         o: crate::system::object::Object,
@@ -83,9 +74,7 @@ impl<T0: ::unity2::ClassIdentity> PropertyTableAssigner_1<T0> {
 #[cfg(feature = "moon_sharp-interpreter-interop-propertytableassigner_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPropertyTableAssigner_1;
-    pub use super::IPropertyTableAssigner_1Methods;
-    pub use super::PropertyTableAssigner_1;
+    pub use super::{IPropertyTableAssigner_1, IPropertyTableAssigner_1Methods, PropertyTableAssigner_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

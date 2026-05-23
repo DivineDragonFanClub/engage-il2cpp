@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-matrix4x4-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/matrix4x4/Matrix4x4.md"))]
     #[repr(C)]
@@ -31,9 +33,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for Matrix4x4 {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "Matrix4x4";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -44,10 +45,7 @@ mod __types {
 
     impl ::unity2::IlType for Matrix4x4 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -64,9 +62,7 @@ mod __Matrix4x4_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -79,41 +75,27 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetRotation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_rotation(
-        this: Matrix4x4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rotation::get_offset() as isize),
-        );
+    pub unsafe fn get_rotation(this: Matrix4x4, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion {
+        let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_rotation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lossy_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -126,41 +108,27 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetLossyScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetLossyScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_lossy_scale(
-        this: Matrix4x4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lossy_scale::get_offset() as isize),
-        );
+    pub unsafe fn get_lossy_scale(this: Matrix4x4, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_lossy_scale::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_decompose_projection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -173,41 +141,30 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "DecomposeProjection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "DecomposeProjection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn decompose_projection(
         this: Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::frustumplanes::FrustumPlanes {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::frustumplanes::FrustumPlanes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_decompose_projection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> crate::unity_engine::frustumplanes::FrustumPlanes =
+            ::core::mem::transmute(__lookup_decompose_projection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_decompose_projection {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -220,69 +177,42 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "get_decomposeProjection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "get_decomposeProjection",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_decompose_projection(
         this: Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::frustumplanes::FrustumPlanes {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::frustumplanes::FrustumPlanes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_decompose_projection::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> crate::unity_engine::frustumplanes::FrustumPlanes =
+            ::core::mem::transmute(__lookup_get_decompose_projection::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_trs {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "TRS",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "TRS", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "TRS",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Matrix4x4 as ::unity2::ClassIdentity>::NAME, "TRS", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn trs(
@@ -296,68 +226,44 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::quaternion::Quaternion,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_trs::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_trs::get_method_info().method_ptr);
         inner(pos, q, s, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_inverse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "Inverse",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "Inverse", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Inverse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Inverse",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn inverse(
         m: crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_inverse::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_inverse::get_method_info().method_ptr);
         inner(m, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_inverse {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -370,41 +276,27 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "get_inverse",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "get_inverse",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_inverse(
-        this: Matrix4x4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_inverse::get_offset() as isize),
-        );
+    pub unsafe fn get_inverse(this: Matrix4x4, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_get_inverse::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perspective {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -422,18 +314,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Perspective",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Perspective",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perspective(
@@ -443,54 +332,34 @@ mod __Matrix4x4_unity2_raw {
         z_far: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            f32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perspective::get_offset() as isize),
-        );
+        let inner: extern "C" fn(f32, f32, f32, f32, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_perspective::get_method_info().method_ptr);
         inner(fov, aspect, z_near, z_far, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_look_at {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "LookAt",
-                3,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "LookAt", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "LookAt",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "LookAt",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn look_at(
@@ -504,49 +373,34 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::vector3::Vector3,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_look_at::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_look_at::get_method_info().method_ptr);
         inner(from, to, up, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), ".ctor", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -564,176 +418,99 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::vector4::Vector4,
             crate::unity_engine::vector4::Vector4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            column0,
-            column1,
-            column2,
-            column3,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, column0, column1, column2, column3, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "set_Item", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item(
-        this: Matrix4x4,
-        row: i32,
-        column: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item(this: Matrix4x4, row: i32, column: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Matrix4x4, i32, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, row, column, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item(
-        this: Matrix4x4,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_item(this: Matrix4x4, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(Matrix4x4, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "set_Item", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "set_Item",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item_2(
-        this: Matrix4x4,
-        index: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item_2(this: Matrix4x4, index: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Matrix4x4, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item_2::get_method_info().method_ptr);
         inner(this, index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -746,114 +523,69 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: Matrix4x4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: Matrix4x4, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals(
-        this: Matrix4x4,
-        other: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+    pub unsafe fn equals(this: Matrix4x4, other: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(Matrix4x4, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "Equals",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "Equals", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals_2(
@@ -861,24 +593,15 @@ mod __Matrix4x4_unity2_raw {
         other: crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_multiply {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -894,18 +617,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "op_Multiply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "op_Multiply",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_multiply(
@@ -917,20 +637,14 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_multiply::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(__lookup_op_multiply::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_multiply_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
@@ -946,18 +660,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "op_Multiply",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "op_Multiply",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_multiply_2(
@@ -969,20 +680,14 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::vector4::Vector4,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_multiply_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(__lookup_op_multiply_2::get_method_info().method_ptr);
         inner(lhs, vector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_equality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -998,18 +703,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "op_Equality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "op_Equality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_equality(
@@ -1021,20 +723,14 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_equality::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_equality::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_inequality {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -1050,18 +746,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "op_Inequality",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "op_Inequality",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_inequality(
@@ -1073,147 +766,86 @@ mod __Matrix4x4_unity2_raw {
             crate::unity_engine::matrix4x4::Matrix4x4,
             crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_inequality::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_inequality::get_method_info().method_ptr);
         inner(lhs, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_column {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "GetColumn",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "GetColumn", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetColumn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetColumn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_column(
-        this: Matrix4x4,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_column::get_offset() as isize),
-        );
+    pub unsafe fn get_column(this: Matrix4x4, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(Matrix4x4, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_column::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_row {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "GetRow",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "GetRow", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetRow",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetRow",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_row(
-        this: Matrix4x4,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector4::Vector4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_row::get_offset() as isize),
-        );
+    pub unsafe fn get_row(this: Matrix4x4, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 {
+        let inner: extern "C" fn(Matrix4x4, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector4::Vector4 =
+            ::core::mem::transmute(__lookup_get_row::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_column {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "SetColumn",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "SetColumn", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "SetColumn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "SetColumn",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_column(
@@ -1222,27 +854,16 @@ mod __Matrix4x4_unity2_raw {
         column: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            Matrix4x4,
-            i32,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_column::get_offset() as isize),
-        );
+        let inner: extern "C" fn(Matrix4x4, i32, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_column::get_method_info().method_ptr);
         inner(this, index, column, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_point {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
                 "MultiplyPoint",
@@ -1254,18 +875,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyPoint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyPoint",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_point(
@@ -1277,22 +895,15 @@ mod __Matrix4x4_unity2_raw {
             Matrix4x4,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_point::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_multiply_point::get_method_info().method_ptr);
         inner(this, point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_point3x4 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
                 "MultiplyPoint3x4",
@@ -1304,18 +915,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyPoint3x4",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyPoint3x4",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_point3x4(
@@ -1327,22 +935,15 @@ mod __Matrix4x4_unity2_raw {
             Matrix4x4,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_point3x4::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_multiply_point3x4::get_method_info().method_ptr);
         inner(this, point, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_multiply_vector {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
                 "MultiplyVector",
@@ -1354,18 +955,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "MultiplyVector",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "MultiplyVector",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn multiply_vector(
@@ -1377,209 +975,132 @@ mod __Matrix4x4_unity2_raw {
             Matrix4x4,
             crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_multiply_vector::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(__lookup_multiply_vector::get_method_info().method_ptr);
         inner(this, vector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "Scale",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "Scale", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Scale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Scale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn scale(
         vector: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_scale::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_scale::get_method_info().method_ptr);
         inner(vector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_translate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "Translate",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "Translate", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Translate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Translate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn translate(
         vector: crate::unity_engine::vector3::Vector3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            crate::unity_engine::vector3::Vector3,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_translate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_translate::get_method_info().method_ptr);
         inner(vector, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rotate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "Rotate",
-                1,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "Rotate", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Rotate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Rotate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rotate(
         q: crate::unity_engine::quaternion::Quaternion,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            crate::unity_engine::quaternion::Quaternion,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rotate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_rotate::get_method_info().method_ptr);
         inner(q, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_zero {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "get_zero",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "get_zero", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "get_zero",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "get_zero",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_zero(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_zero::get_offset() as isize),
-        );
+    pub unsafe fn get_zero(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_get_zero::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_identity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Matrix4x4 as ::unity2::ClassIdentity>::class(),
@@ -1592,125 +1113,80 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "get_identity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "get_identity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_identity(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::matrix4x4::Matrix4x4 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_identity::get_offset() as isize),
-        );
+    pub unsafe fn get_identity(__unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::matrix4x4::Matrix4x4 =
+            ::core::mem::transmute(__lookup_get_identity::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: Matrix4x4,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: Matrix4x4, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Matrix4x4, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Matrix4x4 as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Matrix4x4 as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rotation_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -1726,18 +1202,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetRotation_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetRotation_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rotation_injected(
@@ -1749,20 +1222,14 @@ mod __Matrix4x4_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::quaternion::Quaternion,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rotation_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_rotation_injected::get_method_info().method_ptr);
         inner(unity_self, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_lossy_scale_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -1778,18 +1245,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "GetLossyScale_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "GetLossyScale_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_lossy_scale_injected(
@@ -1801,20 +1265,14 @@ mod __Matrix4x4_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::vector3::Vector3,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_lossy_scale_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_get_lossy_scale_injected::get_method_info().method_ptr);
         inner(unity_self, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_decompose_projection_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::frustumplanes::FrustumPlanes as ::unity2::IlType>::il_type(),
@@ -1830,18 +1288,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "DecomposeProjection_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "DecomposeProjection_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn decompose_projection_injected(
@@ -1853,20 +1308,14 @@ mod __Matrix4x4_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::frustumplanes::FrustumPlanes,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_decompose_projection_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_decompose_projection_injected::get_method_info().method_ptr);
         inner(unity_self, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_trs_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::quaternion::Quaternion as ::unity2::IlType>::il_type(),
@@ -1884,18 +1333,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "TRS_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "TRS_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn trs_injected(
@@ -1911,20 +1357,14 @@ mod __Matrix4x4_unity2_raw {
             *mut crate::unity_engine::vector3::Vector3,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_trs_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_trs_injected::get_method_info().method_ptr);
         inner(pos, q, s, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_inverse_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::matrix4x4::Matrix4x4 as ::unity2::IlType>::il_type(),
@@ -1940,18 +1380,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Inverse_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Inverse_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn inverse_injected(
@@ -1963,20 +1400,14 @@ mod __Matrix4x4_unity2_raw {
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_inverse_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_inverse_injected::get_method_info().method_ptr);
         inner(m, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_perspective_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1995,18 +1426,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "Perspective_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "Perspective_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn perspective_injected(
@@ -2017,27 +1445,15 @@ mod __Matrix4x4_unity2_raw {
         ret: *mut crate::unity_engine::matrix4x4::Matrix4x4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            f32,
-            f32,
-            f32,
-            f32,
-            *mut crate::unity_engine::matrix4x4::Matrix4x4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_perspective_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(f32, f32, f32, f32, *mut crate::unity_engine::matrix4x4::Matrix4x4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_perspective_injected::get_method_info().method_ptr);
         inner(fov, aspect, z_near, z_far, ret, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_look_at_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
@@ -2055,18 +1471,15 @@ mod __Matrix4x4_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
-                    "LookAt_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Matrix4x4 as ::unity2::ClassIdentity>::NAME,
+                        "LookAt_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn look_at_injected(
@@ -2082,11 +1495,7 @@ mod __Matrix4x4_unity2_raw {
             *mut crate::unity_engine::vector3::Vector3,
             *mut crate::unity_engine::matrix4x4::Matrix4x4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_look_at_injected::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_look_at_injected::get_method_info().method_ptr);
         inner(from, to, up, ret, __unity2_method_info)
     }
 }
@@ -2108,17 +1517,12 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`Inverse(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    pub fn inverse(
-        m: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Matrix4x4_unity2_raw::inverse(
-                ::core::convert::Into::into(m),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn inverse(m: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Matrix4x4_unity2_raw::inverse(::core::convert::Into::into(m), ::core::option::Option::None) }
     }
+
     #[doc = "`Perspective(f32, f32, f32, f32)` overload"]
     pub fn perspective(
         fov: impl ::core::convert::Into<f32>,
@@ -2136,6 +1540,7 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`LookAt(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
     pub fn look_at(
         from: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
@@ -2151,6 +1556,7 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`op_Multiply(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn op_multiply(
         lhs: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -2164,6 +1570,7 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`op_Multiply(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector4::Vector4)` overload"]
     pub fn op_multiply_2(
         lhs: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -2177,6 +1584,7 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`op_Equality(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn op_equality(
         lhs: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -2190,6 +1598,7 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`op_Inequality(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn op_inequality(
         lhs: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
@@ -2203,106 +1612,70 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`Scale(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn scale(
-        vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Matrix4x4_unity2_raw::scale(
-                ::core::convert::Into::into(vector),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn scale(vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Matrix4x4_unity2_raw::scale(::core::convert::Into::into(vector), ::core::option::Option::None) }
     }
+
     #[doc = "`Translate(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn translate(
-        vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Matrix4x4_unity2_raw::translate(
-                ::core::convert::Into::into(vector),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn translate(vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Matrix4x4_unity2_raw::translate(::core::convert::Into::into(vector), ::core::option::Option::None) }
     }
+
     #[doc = "`Rotate(crate::unity_engine::quaternion::Quaternion)` overload"]
-    pub fn rotate(
-        q: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
-    ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
-        unsafe {
-            __Matrix4x4_unity2_raw::rotate(
-                ::core::convert::Into::into(q),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn rotate(q: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>) -> crate::unity_engine::matrix4x4::Matrix4x4 {
+        unsafe { __Matrix4x4_unity2_raw::rotate(::core::convert::Into::into(q), ::core::option::Option::None) }
     }
+
     #[doc = "`get_zero()` overload"]
     pub fn get_zero() -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe { __Matrix4x4_unity2_raw::get_zero(::core::option::Option::None) }
     }
+
     #[doc = "`get_identity()` overload"]
     pub fn get_identity() -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe { __Matrix4x4_unity2_raw::get_identity(::core::option::Option::None) }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Matrix4x4_unity2_raw::cctor(::core::option::Option::None) }
     }
+
     #[doc = "`GetRotation_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::quaternion::Quaternion)` overload"]
-    pub fn get_rotation_injected() -> (
-        crate::unity_engine::matrix4x4::Matrix4x4,
-        crate::unity_engine::quaternion::Quaternion,
-    ) {
+    pub fn get_rotation_injected() -> (crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::quaternion::Quaternion) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            __Matrix4x4_unity2_raw::get_rotation_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            __Matrix4x4_unity2_raw::get_rotation_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`GetLossyScale_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::vector3::Vector3)` overload"]
-    pub fn get_lossy_scale_injected() -> (
-        crate::unity_engine::matrix4x4::Matrix4x4,
-        crate::unity_engine::vector3::Vector3,
-    ) {
+    pub fn get_lossy_scale_injected() -> (crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::vector3::Vector3) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            __Matrix4x4_unity2_raw::get_lossy_scale_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            __Matrix4x4_unity2_raw::get_lossy_scale_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`DecomposeProjection_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::frustumplanes::FrustumPlanes)` overload"]
     pub fn decompose_projection_injected() -> (
         crate::unity_engine::matrix4x4::Matrix4x4,
         crate::unity_engine::frustumplanes::FrustumPlanes,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::frustumplanes::FrustumPlanes,
-            >::uninit();
-            __Matrix4x4_unity2_raw::decompose_projection_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::frustumplanes::FrustumPlanes>::uninit();
+            __Matrix4x4_unity2_raw::decompose_projection_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`TRS_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn trs_injected() -> (
         crate::unity_engine::vector3::Vector3,
@@ -2311,14 +1684,10 @@ impl Matrix4x4 {
         crate::unity_engine::matrix4x4::Matrix4x4,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::quaternion::Quaternion>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __Matrix4x4_unity2_raw::trs_injected(
                 __out_0.as_mut_ptr(),
                 __out_1.as_mut_ptr(),
@@ -2326,32 +1695,20 @@ impl Matrix4x4 {
                 __out_3.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init(), __out_3.assume_init())
         }
     }
+
     #[doc = "`Inverse_Injected(*mutcrate::unity_engine::matrix4x4::Matrix4x4, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    pub fn inverse_injected() -> (
-        crate::unity_engine::matrix4x4::Matrix4x4,
-        crate::unity_engine::matrix4x4::Matrix4x4,
-    ) {
+    pub fn inverse_injected() -> (crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
-            __Matrix4x4_unity2_raw::inverse_injected(
-                __out_0.as_mut_ptr(),
-                __out_1.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            __Matrix4x4_unity2_raw::inverse_injected(__out_0.as_mut_ptr(), __out_1.as_mut_ptr(), ::core::option::Option::None);
             (__out_0.assume_init(), __out_1.assume_init())
         }
     }
+
     #[doc = "`Perspective_Injected(f32, f32, f32, f32, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn perspective_injected(
         fov: impl ::core::convert::Into<f32>,
@@ -2360,8 +1717,7 @@ impl Matrix4x4 {
         z_far: impl ::core::convert::Into<f32>,
     ) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __Matrix4x4_unity2_raw::perspective_injected(
                 ::core::convert::Into::into(fov),
                 ::core::convert::Into::into(aspect),
@@ -2373,6 +1729,7 @@ impl Matrix4x4 {
             __out_0.assume_init()
         }
     }
+
     #[doc = "`LookAt_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::matrix4x4::Matrix4x4)` overload"]
     pub fn look_at_injected() -> (
         crate::unity_engine::vector3::Vector3,
@@ -2381,14 +1738,10 @@ impl Matrix4x4 {
         crate::unity_engine::matrix4x4::Matrix4x4,
     ) {
         unsafe {
-            let mut __out_0 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_1 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_2 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
-            let mut __out_3 =
-                ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::vector3::Vector3>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::matrix4x4::Matrix4x4>::uninit();
             __Matrix4x4_unity2_raw::look_at_injected(
                 __out_0.as_mut_ptr(),
                 __out_1.as_mut_ptr(),
@@ -2396,12 +1749,7 @@ impl Matrix4x4 {
                 __out_3.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-                __out_3.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init(), __out_3.assume_init())
         }
     }
 }
@@ -2412,24 +1760,27 @@ impl Matrix4x4 {
     pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe { __Matrix4x4_unity2_raw::get_rotation(self, ::core::option::Option::None) }
     }
+
     #[doc = "`GetLossyScale()` overload"]
     pub fn get_lossy_scale(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe { __Matrix4x4_unity2_raw::get_lossy_scale(self, ::core::option::Option::None) }
     }
+
     #[doc = "`DecomposeProjection()` overload"]
     pub fn decompose_projection(self) -> crate::unity_engine::frustumplanes::FrustumPlanes {
         unsafe { __Matrix4x4_unity2_raw::decompose_projection(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_decomposeProjection()` overload"]
     pub fn get_decompose_projection(self) -> crate::unity_engine::frustumplanes::FrustumPlanes {
-        unsafe {
-            __Matrix4x4_unity2_raw::get_decompose_projection(self, ::core::option::Option::None)
-        }
+        unsafe { __Matrix4x4_unity2_raw::get_decompose_projection(self, ::core::option::Option::None) }
     }
+
     #[doc = "`get_inverse()` overload"]
     pub fn get_inverse(self) -> crate::unity_engine::matrix4x4::Matrix4x4 {
         unsafe { __Matrix4x4_unity2_raw::get_inverse(self, ::core::option::Option::None) }
     }
+
     #[doc = "`.ctor(crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4)` overload"]
     pub fn ctor(
         self,
@@ -2449,6 +1800,7 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`set_Item(i32, i32, f32)` overload"]
     pub fn set_item(
         self,
@@ -2466,22 +1818,14 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`get_Item(i32)` overload"]
     pub fn get_item(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            __Matrix4x4_unity2_raw::get_item(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Matrix4x4_unity2_raw::get_item(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`set_Item(i32, f32)` overload"]
-    pub fn set_item_2(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_item_2(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __Matrix4x4_unity2_raw::set_item_2(
                 self,
@@ -2491,65 +1835,34 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __Matrix4x4_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals(self, other: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __Matrix4x4_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Matrix4x4_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]
-    pub fn equals_2(
-        self,
-        other: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>,
-    ) -> bool {
-        unsafe {
-            __Matrix4x4_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals_2(self, other: impl ::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>) -> bool {
+        unsafe { __Matrix4x4_unity2_raw::equals_2(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`GetColumn(i32)` overload"]
-    pub fn get_column(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            __Matrix4x4_unity2_raw::get_column(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_column(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
+        unsafe { __Matrix4x4_unity2_raw::get_column(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`GetRow(i32)` overload"]
-    pub fn get_row(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector4::Vector4 {
-        unsafe {
-            __Matrix4x4_unity2_raw::get_row(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_row(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector4::Vector4 {
+        unsafe { __Matrix4x4_unity2_raw::get_row(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`SetColumn(i32, crate::unity_engine::vector4::Vector4)` overload"]
-    pub fn set_column(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        column: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
-    ) -> () {
+    pub fn set_column(self, index: impl ::core::convert::Into<i32>, column: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>) -> () {
         unsafe {
             __Matrix4x4_unity2_raw::set_column(
                 self,
@@ -2559,45 +1872,25 @@ impl Matrix4x4 {
             )
         }
     }
+
     #[doc = "`MultiplyPoint(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn multiply_point(
-        self,
-        point: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __Matrix4x4_unity2_raw::multiply_point(
-                self,
-                ::core::convert::Into::into(point),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn multiply_point(self, point: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
+        unsafe { __Matrix4x4_unity2_raw::multiply_point(self, ::core::convert::Into::into(point), ::core::option::Option::None) }
     }
+
     #[doc = "`MultiplyPoint3x4(crate::unity_engine::vector3::Vector3)` overload"]
     pub fn multiply_point3x4(
         self,
         point: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
     ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __Matrix4x4_unity2_raw::multiply_point3x4(
-                self,
-                ::core::convert::Into::into(point),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Matrix4x4_unity2_raw::multiply_point3x4(self, ::core::convert::Into::into(point), ::core::option::Option::None) }
     }
+
     #[doc = "`MultiplyVector(crate::unity_engine::vector3::Vector3)` overload"]
-    pub fn multiply_vector(
-        self,
-        vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        unsafe {
-            __Matrix4x4_unity2_raw::multiply_vector(
-                self,
-                ::core::convert::Into::into(vector),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn multiply_vector(self, vector: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>) -> crate::unity_engine::vector3::Vector3 {
+        unsafe { __Matrix4x4_unity2_raw::multiply_vector(self, ::core::convert::Into::into(vector), ::core::option::Option::None) }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __Matrix4x4_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -2608,10 +1901,9 @@ impl Matrix4x4 {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Matrix4x4;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

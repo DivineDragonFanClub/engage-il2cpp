@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-playables-scriptplayable_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/scriptplayable_1/ScriptPlayable_1.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ScriptPlayable_1<T0> {
-        const NAMESPACE: &'static str = "UnityEngine.Playables";
-
         const NAME: &'static str = "ScriptPlayable`1";
+        const NAMESPACE: &'static str = "UnityEngine.Playables";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,10 +34,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ScriptPlayable_1<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -81,19 +79,16 @@ impl<T0: ::unity2::ClassIdentity> ScriptPlayable_1<T0> {
     #[doc = "`CloneScriptInstance(crate::unity_engine::playables::iplayablebehaviour_interface::IPlayableBehaviour_Interface)` overload"]
     #[method(name = "CloneScriptInstance", args = 1)]
     pub fn clone_script_instance(
-        source : crate :: unity_engine :: playables :: iplayablebehaviour_interface :: IPlayableBehaviour_Interface,
+        source: crate::unity_engine::playables::iplayablebehaviour_interface::IPlayableBehaviour_Interface,
     ) -> crate::system::object::Object;
 
     #[doc = "`CloneScriptInstanceFromEngineObject(crate::unity_engine::object_2::Object_2)` overload"]
     #[method(name = "CloneScriptInstanceFromEngineObject", args = 1)]
-    pub fn clone_script_instance_from_engine_object(
-        source: crate::unity_engine::object_2::Object_2,
-    ) -> crate::system::object::Object;
+    pub fn clone_script_instance_from_engine_object(source: crate::unity_engine::object_2::Object_2) -> crate::system::object::Object;
 
     #[doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, handle: crate::unity_engine::playables::playablehandle::PlayableHandle)
-        -> ();
+    pub fn ctor(self, handle: crate::unity_engine::playables::playablehandle::PlayableHandle) -> ();
 
     #[doc = "`GetHandle()` overload"]
     #[method(name = "GetHandle", args = 0)]
@@ -117,10 +112,7 @@ impl<T0: ::unity2::ClassIdentity> ScriptPlayable_1<T0> {
 
     #[doc = "`Equals(crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>)` overload"]
     #[method(name = "Equals", args = 1)]
-    pub fn equals(
-        self,
-        other: crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>,
-    ) -> bool;
+    pub fn equals(self, other: crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>) -> bool;
 
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
@@ -131,10 +123,9 @@ impl<T0: ::unity2::ClassIdentity> ScriptPlayable_1<T0> {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ScriptPlayable_1;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "system-io-pathinternal-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/pathinternal/PathInternal.md"))]
     #[::unity2::class(namespace = "System.IO", name = "PathInternal")]
@@ -25,11 +25,8 @@ mod __PathInternal_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_partially_qualified {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PathInternal as ::unity2::ClassIdentity>::class(),
                 "IsPartiallyQualified",
@@ -41,39 +38,27 @@ mod __PathInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PathInternal as ::unity2::ClassIdentity>::NAME,
-                    "IsPartiallyQualified",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PathInternal as ::unity2::ClassIdentity>::NAME,
+                        "IsPartiallyQualified",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_partially_qualified(
-        path: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_partially_qualified(path: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_partially_qualified::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_partially_qualified::get_method_info().method_ptr);
         inner(path, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_has_illegal_characters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -89,18 +74,15 @@ mod __PathInternal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PathInternal as ::unity2::ClassIdentity>::NAME,
-                    "HasIllegalCharacters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PathInternal as ::unity2::ClassIdentity>::NAME,
+                        "HasIllegalCharacters",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn has_illegal_characters(
@@ -109,11 +91,7 @@ mod __PathInternal_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, bool, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_has_illegal_characters::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_has_illegal_characters::get_method_info().method_ptr);
         inner(path, check_additional, __unity2_method_info)
     }
 }
@@ -121,16 +99,10 @@ mod __PathInternal_unity2_raw {
 #[cfg(feature = "system-io-pathinternal")]
 impl PathInternal {
     #[doc = "`IsPartiallyQualified(::unity2::Il2CppString)` overload"]
-    pub fn is_partially_qualified(
-        path: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
-        unsafe {
-            __PathInternal_unity2_raw::is_partially_qualified(
-                ::core::convert::Into::into(path),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn is_partially_qualified(path: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
+        unsafe { __PathInternal_unity2_raw::is_partially_qualified(::core::convert::Into::into(path), ::core::option::Option::None) }
     }
+
     #[doc = "`HasIllegalCharacters(::unity2::Il2CppString, bool)` overload"]
     pub fn has_illegal_characters(
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
@@ -149,8 +121,7 @@ impl PathInternal {
 #[cfg(feature = "system-io-pathinternal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPathInternal;
-    pub use super::PathInternal;
+    pub use super::{IPathInternal, PathInternal};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

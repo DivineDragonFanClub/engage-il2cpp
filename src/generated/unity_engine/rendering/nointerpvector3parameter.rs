@@ -2,14 +2,16 @@
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector3parameter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter, VolumeParameter};
-    use crate::unity_engine::rendering::volumeparameter_1::{
-        IVolumeParameter_1, VolumeParameter_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpvector3parameter/NoInterpVector3Parameter.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpVector3Parameter")]
@@ -29,9 +31,7 @@ mod __NoInterpVector3Parameter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector3::Vector3 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -47,18 +47,15 @@ mod __NoInterpVector3Parameter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NoInterpVector3Parameter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NoInterpVector3Parameter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -67,16 +64,8 @@ mod __NoInterpVector3Parameter_unity2_raw {
         override_state: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NoInterpVector3Parameter,
-            crate::unity_engine::vector3::Vector3,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NoInterpVector3Parameter, crate::unity_engine::vector3::Vector3, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, value, override_state, __unity2_method_info)
     }
 }
@@ -84,16 +73,10 @@ mod __NoInterpVector3Parameter_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-nointerpvector3parameter")]
 pub trait INoInterpVector3ParameterMethods: INoInterpVector3Parameter {
     #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, bool)` overload"]
-    fn ctor(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
-        override_state: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn ctor(self, value: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>, override_state: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <NoInterpVector3Parameter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <NoInterpVector3Parameter as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NoInterpVector3Parameter_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -126,16 +109,15 @@ impl NoInterpVector3Parameter {
 #[cfg(feature = "unity_engine-rendering-nointerpvector3parameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INoInterpVector3Parameter;
-    pub use super::INoInterpVector3ParameterMethods;
-    pub use super::NoInterpVector3Parameter;
-    pub use crate::system::object::IObject;
+    pub use super::{INoInterpVector3Parameter, INoInterpVector3ParameterMethods, NoInterpVector3Parameter};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
     #[cfg(feature = "unity_engine-rendering-volumeparameter")]
     pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
     #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
     pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

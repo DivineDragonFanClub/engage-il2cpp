@@ -2,12 +2,16 @@
 
 #[cfg(feature = "app-terrainmesh-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::dynamicmesh::{DynamicMesh, IDynamicMesh};
-    use crate::app::map::{IMap_CellMesh, Map_CellMesh};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            dynamicmesh::{DynamicMesh, IDynamicMesh},
+            map::{IMap_CellMesh, Map_CellMesh},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainmesh/TerrainMesh.md"))]
     #[::unity2::class(namespace = "App", name = "TerrainMesh")]
@@ -30,51 +34,33 @@ mod __TerrainMesh_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainMesh as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TerrainMesh as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainMesh as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainMesh as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TerrainMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TerrainMesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TerrainMesh, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -82,29 +68,20 @@ mod __TerrainMesh_unity2_raw {
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector2::Vector2 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainMesh as ::unity2::ClassIdentity>::class(),
-                "AddMesh",
-                5,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TerrainMesh as ::unity2::ClassIdentity>::class(), "AddMesh", 5, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainMesh as ::unity2::ClassIdentity>::NAME,
-                    "AddMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainMesh as ::unity2::ClassIdentity>::NAME,
+                        "AddMesh",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_mesh(
@@ -124,22 +101,15 @@ mod __TerrainMesh_unity2_raw {
             crate::unity_engine::vector2::Vector2,
             crate::unity_engine::vector2::Vector2,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_mesh::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_mesh::get_method_info().method_ptr);
         inner(this, x, z, color, pos, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TerrainMesh as ::unity2::ClassIdentity>::class(),
                 "GetPosition",
@@ -151,18 +121,15 @@ mod __TerrainMesh_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainMesh as ::unity2::ClassIdentity>::NAME,
-                    "GetPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainMesh as ::unity2::ClassIdentity>::NAME,
+                        "GetPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_position(
@@ -170,52 +137,34 @@ mod __TerrainMesh_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector2::Vector2 {
-        let inner: extern "C" fn(
-            TerrainMesh,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector2::Vector2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TerrainMesh, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector2::Vector2 =
+            ::core::mem::transmute(__lookup_get_position::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::mapterrain::MapTerrain as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainMesh as ::unity2::ClassIdentity>::class(),
-                "Update",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TerrainMesh as ::unity2::ClassIdentity>::class(), "Update", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainMesh as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainMesh as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update(
@@ -225,68 +174,35 @@ mod __TerrainMesh_unity2_raw {
         show_overlap: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TerrainMesh,
-            crate::app::mapterrain::MapTerrain,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
-        inner(
-            this,
-            terrain,
-            show_layer,
-            show_overlap,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(TerrainMesh, crate::app::mapterrain::MapTerrain, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
+        inner(this, terrain, show_layer, show_overlap, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TerrainMesh as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TerrainMesh as ::unity2::ClassIdentity>::class(), "Update", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TerrainMesh as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TerrainMesh as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_2(
-        this: TerrainMesh,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_2(this: TerrainMesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TerrainMesh, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -296,9 +212,7 @@ pub trait ITerrainMeshMethods: ITerrainMesh {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainMesh_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -312,9 +226,7 @@ pub trait ITerrainMeshMethods: ITerrainMesh {
         size: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>,
     ) -> () {
         unsafe {
-            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainMesh_unity2_raw::add_mesh(
                 __receiver,
                 ::core::convert::Into::into(x),
@@ -327,19 +239,10 @@ pub trait ITerrainMeshMethods: ITerrainMesh {
         }
     }
     #[doc = "`GetPosition(i32)` overload"]
-    fn get_position(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::vector2::Vector2 {
+    fn get_position(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector2::Vector2 {
         unsafe {
-            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TerrainMesh_unity2_raw::get_position(
-                __receiver,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TerrainMesh_unity2_raw::get_position(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)
         }
     }
     #[doc = "`Update(crate::app::mapterrain::MapTerrain, bool, bool)` overload"]
@@ -350,9 +253,7 @@ pub trait ITerrainMeshMethods: ITerrainMesh {
         show_overlap: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainMesh_unity2_raw::update(
                 __receiver,
                 ::core::convert::Into::into(terrain),
@@ -365,9 +266,7 @@ pub trait ITerrainMeshMethods: ITerrainMesh {
     #[doc = "`Update()` overload"]
     fn update_2(self) -> () {
         unsafe {
-            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TerrainMesh as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TerrainMesh_unity2_raw::update_2(__receiver, ::core::option::Option::None)
         }
     }
@@ -380,13 +279,8 @@ impl<__T: ITerrainMesh> ITerrainMeshMethods for __T {}
 impl TerrainMesh {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainMesh),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TerrainMesh), ::core::stringify!(new),));
         <Self as ITerrainMeshMethods>::ctor(this);
         this
     }
@@ -395,16 +289,15 @@ impl TerrainMesh {
 #[cfg(feature = "app-terrainmesh")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITerrainMesh;
-    pub use super::ITerrainMeshMethods;
-    pub use super::TerrainMesh;
-    pub use crate::app::dynamicmesh::IDynamicMesh;
+    pub use super::{ITerrainMesh, ITerrainMeshMethods, TerrainMesh};
     #[cfg(feature = "app-dynamicmesh")]
     pub use crate::app::dynamicmesh::IDynamicMeshMethods;
-    pub use crate::app::map::IMap_CellMesh;
     #[cfg(feature = "app-map")]
     pub use crate::app::map::IMap_CellMeshMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{dynamicmesh::IDynamicMesh, map::IMap_CellMesh},
+        system::object::IObject,
+    };
 }

@@ -2,23 +2,36 @@
 
 #[cfg(feature = "unity_engine-video-videoplayer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_EventHandler.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.EventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct VideoPlayer_EventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_FrameReadyEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Video",
-        name = "VideoPlayer.FrameReadyEventHandler"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.FrameReadyEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct VideoPlayer_FrameReadyEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_ErrorEventHandler.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.ErrorEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct VideoPlayer_ErrorEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer.md"))]
     #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer")]
@@ -37,34 +50,149 @@ mod __types {
         #[rename(name = "seekCompleted")]
         pub seek_completed: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
         #[rename(name = "clockResyncOccurred")]
-        pub clock_resync_occurred:
-            crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
+        pub clock_resync_occurred: crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
         #[rename(name = "frameReady")]
-        pub frame_ready:
-            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
+        pub frame_ready: crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_TimeEventHandler.md"))]
     #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.TimeEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct VideoPlayer_TimeEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_EventHandler.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.EventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct VideoPlayer_EventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_ErrorEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Video",
-        name = "VideoPlayer.ErrorEventHandler"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct VideoPlayer_ErrorEventHandler {}
 }
 
 #[cfg(feature = "unity_engine-video-videoplayer-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VideoPlayer_EventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VideoPlayer_EventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer_EventHandler, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: VideoPlayer_EventHandler,
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer_EventHandler, crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, source, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+pub trait IVideoPlayer_EventHandlerMethods: IVideoPlayer_EventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <VideoPlayer_EventHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_EventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
+    fn invoke(self, source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>) -> () {
+        unsafe {
+            let __receiver =
+                <VideoPlayer_EventHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_EventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl<__T: IVideoPlayer_EventHandler> IVideoPlayer_EventHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer_EventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VideoPlayer_EventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVideoPlayer_EventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-video-videoplayer")]
 #[doc(hidden)]
@@ -75,9 +203,7 @@ mod __VideoPlayer_FrameReadyEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -93,18 +219,15 @@ mod __VideoPlayer_FrameReadyEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_FrameReadyEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_FrameReadyEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -118,23 +241,16 @@ mod __VideoPlayer_FrameReadyEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
                 <i64 as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -148,18 +264,15 @@ mod __VideoPlayer_FrameReadyEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_FrameReadyEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_FrameReadyEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -173,11 +286,7 @@ mod __VideoPlayer_FrameReadyEventHandler_unity2_raw {
             crate::unity_engine::video::videoplayer::VideoPlayer,
             i64,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, source, frame_idx, __unity2_method_info)
     }
 }
@@ -185,16 +294,11 @@ mod __VideoPlayer_FrameReadyEventHandler_unity2_raw {
 #[cfg(feature = "unity_engine-video-videoplayer")]
 pub trait IVideoPlayer_FrameReadyEventHandlerMethods: IVideoPlayer_FrameReadyEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver =
-                <VideoPlayer_FrameReadyEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <VideoPlayer_FrameReadyEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __VideoPlayer_FrameReadyEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -210,10 +314,9 @@ pub trait IVideoPlayer_FrameReadyEventHandlerMethods: IVideoPlayer_FrameReadyEve
         frame_idx: impl ::core::convert::Into<i64>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <VideoPlayer_FrameReadyEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <VideoPlayer_FrameReadyEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __VideoPlayer_FrameReadyEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(source),
@@ -246,6957 +349,13 @@ impl VideoPlayer_FrameReadyEventHandler {
 #[cfg(feature = "unity_engine-video-videoplayer")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VideoPlayer_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_source",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_source",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_source(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videosource::VideoSource {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::video::videosource::VideoSource = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_source::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videosource::VideoSource as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_source",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_source",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_source(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videosource::VideoSource,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videosource::VideoSource,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_source::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_url {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_url",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_url",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_url(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_url::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_url {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_url",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_url",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_url(
-        this: VideoPlayer,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_url::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_clip",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_clip",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_clip(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videoclip::VideoClip {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::video::videoclip::VideoClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clip::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_clip {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoclip::VideoClip as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_clip",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_clip",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_clip(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoclip::VideoClip,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoclip::VideoClip,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_clip::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_render_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_renderMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_renderMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_render_mode(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videorendermode::VideoRenderMode {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::video::videorendermode::VideoRenderMode =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_render_mode::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_render_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videorendermode :: VideoRenderMode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_renderMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_renderMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_render_mode(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videorendermode::VideoRenderMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videorendermode::VideoRenderMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_render_mode::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_targetCamera",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_targetCamera",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_camera(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::camera::Camera {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::camera::Camera = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_camera::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_camera {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_targetCamera",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_targetCamera",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_camera(
-        this: VideoPlayer,
-        value: crate::unity_engine::camera::Camera,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::camera::Camera,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_camera::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_targetTexture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_targetTexture",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_texture(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rendertexture::RenderTexture {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rendertexture::RenderTexture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_texture::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_targetTexture",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_targetTexture",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_texture(
-        this: VideoPlayer,
-        value: crate::unity_engine::rendertexture::RenderTexture,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::rendertexture::RenderTexture,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_texture::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_material_renderer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_targetMaterialRenderer",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_targetMaterialRenderer",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_material_renderer(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::renderer::Renderer {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::renderer::Renderer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_material_renderer::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_material_renderer {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_targetMaterialRenderer",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_targetMaterialRenderer",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_material_renderer(
-        this: VideoPlayer,
-        value: crate::unity_engine::renderer::Renderer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::renderer::Renderer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_material_renderer::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_material_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_targetMaterialProperty",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_targetMaterialProperty",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_material_property(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_target_material_property::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_material_property {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_targetMaterialProperty",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_targetMaterialProperty",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_material_property(
-        this: VideoPlayer,
-        value: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_material_property::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_aspect_ratio {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_aspectRatio",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_aspectRatio",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_aspect_ratio(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videoaspectratio::VideoAspectRatio {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::video::videoaspectratio::VideoAspectRatio =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_aspect_ratio::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_aspect_ratio {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoaspectratio :: VideoAspectRatio as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_aspectRatio",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_aspectRatio",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_aspect_ratio(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoaspectratio::VideoAspectRatio,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoaspectratio::VideoAspectRatio,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_aspect_ratio::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_camera_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_targetCameraAlpha",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_targetCameraAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_camera_alpha(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_target_camera_alpha::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_camera_alpha {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_targetCameraAlpha",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_targetCameraAlpha",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_camera_alpha(
-        this: VideoPlayer,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_target_camera_alpha::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_camera3_d_layout {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_targetCamera3DLayout",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_targetCamera3DLayout",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_camera3_d_layout(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::video3dlayout::Video3DLayout {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::video::video3dlayout::Video3DLayout = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_camera3_d_layout::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_camera3_d_layout {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: video3dlayout :: Video3DLayout as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_targetCamera3DLayout",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_targetCamera3DLayout",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_camera3_d_layout(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::video3dlayout::Video3DLayout,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::video3dlayout::Video3DLayout,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_camera3_d_layout::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_texture {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_texture",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_texture",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_texture(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_texture::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_prepare {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "Prepare",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Prepare",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn prepare(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_prepare::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_prepared {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_isPrepared",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_isPrepared",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_prepared(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_prepared::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_wait_for_first_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_waitForFirstFrame",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_waitForFirstFrame",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_wait_for_first_frame(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_wait_for_first_frame::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_wait_for_first_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_waitForFirstFrame",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_waitForFirstFrame",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_wait_for_first_frame(
-        this: VideoPlayer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_wait_for_first_frame::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_play_on_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_playOnAwake",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_playOnAwake",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_play_on_awake(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_play_on_awake::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_play_on_awake {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_playOnAwake",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_playOnAwake",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_play_on_awake(
-        this: VideoPlayer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_play_on_awake::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "Play",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn play(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_play::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_pause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "Pause",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Pause",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn pause(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pause::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_stop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "Stop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn stop(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_playing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_isPlaying",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_isPlaying",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_playing(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_playing::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_paused {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_isPaused",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_isPaused",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_paused(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_paused::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_set_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_canSetTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_canSetTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_can_set_time(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_can_set_time::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_time",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_time",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_time(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_time",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_time",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_time(
-        this: VideoPlayer,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_time::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_frame",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_frame",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_frame(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_frame::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_frame {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_frame",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_frame",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_frame(
-        this: VideoPlayer,
-        value: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, i64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_frame::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_clock_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_clockTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_clockTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_clock_time(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_clock_time::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_step {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_canStep",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_canStep",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_can_step(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_can_step::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_step_forward {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "StepForward",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "StepForward",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn step_forward(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_step_forward::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_set_playback_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_canSetPlaybackSpeed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_canSetPlaybackSpeed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_can_set_playback_speed(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_can_set_playback_speed::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_playback_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_playbackSpeed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_playbackSpeed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_playback_speed(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_playback_speed::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_playback_speed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_playbackSpeed",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_playbackSpeed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_playback_speed(
-        this: VideoPlayer,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_playback_speed::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_looping {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_isLooping",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_isLooping",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_looping(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_looping::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_is_looping {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_isLooping",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_isLooping",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_is_looping(
-        this: VideoPlayer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_looping::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_set_time_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_canSetTimeSource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_canSetTimeSource",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_can_set_time_source(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_can_set_time_source::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_time_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_timeSource",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_timeSource",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_time_source(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videotimesource::VideoTimeSource {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::video::videotimesource::VideoTimeSource =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time_source::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_time_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videotimesource :: VideoTimeSource as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_timeSource",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_timeSource",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_time_source(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videotimesource::VideoTimeSource,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videotimesource::VideoTimeSource,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_time_source::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_time_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_timeReference",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_timeReference",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_time_reference(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videotimereference::VideoTimeReference {
-        let inner : extern "C" fn (VideoPlayer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: video :: videotimereference :: VideoTimeReference = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_time_reference :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_time_reference {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videotimereference :: VideoTimeReference as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_timeReference",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_timeReference",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_time_reference(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videotimereference::VideoTimeReference,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videotimereference::VideoTimeReference,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_time_reference::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_external_reference_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_externalReferenceTime",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_externalReferenceTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_external_reference_time(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_external_reference_time::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_external_reference_time {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_externalReferenceTime",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_externalReferenceTime",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_external_reference_time(
-        this: VideoPlayer,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_external_reference_time::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_set_skip_on_drop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_canSetSkipOnDrop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_canSetSkipOnDrop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_can_set_skip_on_drop(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_can_set_skip_on_drop::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_skip_on_drop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_skipOnDrop",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_skipOnDrop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_skip_on_drop(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_skip_on_drop::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_skip_on_drop {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_skipOnDrop",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_skipOnDrop",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_skip_on_drop(
-        this: VideoPlayer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_skip_on_drop::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_frame_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_frameCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_frameCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_frame_count(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_frame_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_frame_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_frameRate",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_frameRate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_frame_rate(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_frame_rate::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_length {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_length",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_length",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_length(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_length::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_width {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_width",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_width",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_width(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_width::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_height {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_height",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_height",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_height(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_height::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pixel_aspect_ratio_numerator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_pixelAspectRatioNumerator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_pixelAspectRatioNumerator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pixel_aspect_ratio_numerator(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pixel_aspect_ratio_numerator::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pixel_aspect_ratio_denominator {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_pixelAspectRatioDenominator",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_pixelAspectRatioDenominator",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pixel_aspect_ratio_denominator(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_pixel_aspect_ratio_denominator::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_audio_track_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_audioTrackCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_audioTrackCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_audio_track_count(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_audio_track_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_audio_language_code {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "GetAudioLanguageCode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetAudioLanguageCode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_audio_language_code(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_audio_language_code::get_offset() as isize),
-        );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_audio_channel_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "GetAudioChannelCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetAudioChannelCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_audio_channel_count(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_audio_channel_count::get_offset() as isize),
-            );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_audio_sample_rate {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "GetAudioSampleRate",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetAudioSampleRate",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_audio_sample_rate(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u32 {
-        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> u32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_audio_sample_rate::get_offset() as isize),
-            );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_controlled_audio_track_max_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_controlledAudioTrackMaxCount",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_controlledAudioTrackMaxCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_controlled_audio_track_max_count(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_controlled_audio_track_max_count::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_controlled_audio_track_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_controlledAudioTrackCount",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_controlledAudioTrackCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_controlled_audio_track_count(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u16 {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u16 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_controlled_audio_track_count::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_controlled_audio_track_count {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_controlledAudioTrackCount",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_controlledAudioTrackCount",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_controlled_audio_track_count(
-        this: VideoPlayer,
-        value: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_controlled_audio_track_count::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enable_audio_track {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "EnableAudioTrack",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "EnableAudioTrack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enable_audio_track(
-        this: VideoPlayer,
-        track_index: u16,
-        enabled: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, u16, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_audio_track::get_offset() as isize),
-            );
-        inner(this, track_index, enabled, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_audio_track_enabled {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "IsAudioTrackEnabled",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsAudioTrackEnabled",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_audio_track_enabled(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_audio_track_enabled::get_offset() as isize),
-            );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_audio_output_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_audioOutputMode",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_audioOutputMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_audio_output_mode(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode {
-        let inner : extern "C" fn (VideoPlayer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: video :: videoaudiooutputmode :: VideoAudioOutputMode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_audio_output_mode :: get_offset () as isize) ,) ;
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_audio_output_mode {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoaudiooutputmode :: VideoAudioOutputMode as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_audioOutputMode",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_audioOutputMode",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_audio_output_mode(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_audio_output_mode::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_can_set_direct_audio_volume {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_canSetDirectAudioVolume",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_canSetDirectAudioVolume",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_can_set_direct_audio_volume(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_can_set_direct_audio_volume::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_direct_audio_volume {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "GetDirectAudioVolume",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetDirectAudioVolume",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_direct_audio_volume(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_direct_audio_volume::get_offset() as isize),
-            );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_direct_audio_volume {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "SetDirectAudioVolume",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "SetDirectAudioVolume",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_direct_audio_volume(
-        this: VideoPlayer,
-        track_index: u16,
-        volume: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, u16, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_direct_audio_volume::get_offset() as isize),
-            );
-        inner(this, track_index, volume, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_direct_audio_mute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "GetDirectAudioMute",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetDirectAudioMute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_direct_audio_mute(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_direct_audio_mute::get_offset() as isize),
-            );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_direct_audio_mute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "SetDirectAudioMute",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "SetDirectAudioMute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_direct_audio_mute(
-        this: VideoPlayer,
-        track_index: u16,
-        mute: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, u16, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_direct_audio_mute::get_offset() as isize),
-            );
-        inner(this, track_index, mute, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_target_audio_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u16 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "GetTargetAudioSource",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "GetTargetAudioSource",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_target_audio_source(
-        this: VideoPlayer,
-        track_index: u16,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::audiosource::AudioSource {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            u16,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::audiosource::AudioSource = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_target_audio_source::get_offset() as isize),
-        );
-        inner(this, track_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_target_audio_source {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <u16 as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::audiosource::AudioSource as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "SetTargetAudioSource",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "SetTargetAudioSource",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_target_audio_source(
-        this: VideoPlayer,
-        track_index: u16,
-        source: crate::unity_engine::audiosource::AudioSource,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            u16,
-            crate::unity_engine::audiosource::AudioSource,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_audio_source::get_offset() as isize),
-        );
-        inner(this, track_index, source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_prepare_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_prepareCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_prepareCompleted",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_prepare_completed(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_prepare_completed::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_prepare_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_prepareCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_prepareCompleted",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_prepare_completed(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_prepare_completed::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_loop_point_reached {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_loopPointReached",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_loopPointReached",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_loop_point_reached(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_loop_point_reached::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_loop_point_reached {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_loopPointReached",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_loopPointReached",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_loop_point_reached(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_loop_point_reached::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_started {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_started",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_started",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_started(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_started::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_started {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_started",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_started",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_started(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_started::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_frame_dropped {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_frameDropped",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_frameDropped",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_frame_dropped(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_frame_dropped::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_frame_dropped {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_frameDropped",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_frameDropped",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_frame_dropped(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_frame_dropped::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_error_received {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_ErrorEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_errorReceived",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_errorReceived",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_error_received(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_error_received::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_error_received {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_ErrorEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_errorReceived",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_errorReceived",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_error_received(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_error_received::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_seek_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_seekCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_seekCompleted",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_seek_completed(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_seek_completed::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_seek_completed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_EventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_seekCompleted",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_seekCompleted",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_seek_completed(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_seek_completed::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_clock_resync_occurred {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_TimeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_clockResyncOccurred",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_clockResyncOccurred",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_clock_resync_occurred(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_clock_resync_occurred::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_clock_resync_occurred {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_TimeEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_clockResyncOccurred",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_clockResyncOccurred",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_clock_resync_occurred(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_clock_resync_occurred::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_send_frame_ready_events {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "get_sendFrameReadyEvents",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "get_sendFrameReadyEvents",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_send_frame_ready_events(
-        this: VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_send_frame_ready_events::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_send_frame_ready_events {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "set_sendFrameReadyEvents",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "set_sendFrameReadyEvents",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_send_frame_ready_events(
-        this: VideoPlayer,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_send_frame_ready_events::get_offset() as isize),
-            );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_add_frame_ready {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_FrameReadyEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "add_frameReady",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "add_frameReady",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn add_frame_ready(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_frame_ready::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_remove_frame_ready {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: video :: videoplayer :: VideoPlayer_FrameReadyEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "remove_frameReady",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "remove_frameReady",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn remove_frame_ready(
-        this: VideoPlayer,
-        value: crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer,
-            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_frame_ready::get_offset() as isize),
-        );
-        inner(this, value, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_prepare_completed_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokePrepareCompletedCallback_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokePrepareCompletedCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_prepare_completed_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_prepare_completed_callback_internal::get_offset() as isize),
-        );
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_frame_ready_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-                <i64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeFrameReadyCallback_Internal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeFrameReadyCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_frame_ready_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        frame_idx: i64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            i64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_frame_ready_callback_internal::get_offset() as isize),
-        );
-        inner(source, frame_idx, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_loop_point_reached_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeLoopPointReachedCallback_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeLoopPointReachedCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_loop_point_reached_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_invoke_loop_point_reached_callback_internal::get_offset() as isize,
-                ),
-        );
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_started_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeStartedCallback_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeStartedCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_started_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_started_callback_internal::get_offset() as isize),
-        );
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_frame_dropped_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeFrameDroppedCallback_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeFrameDroppedCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_frame_dropped_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_frame_dropped_callback_internal::get_offset() as isize),
-        );
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_error_received_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeErrorReceivedCallback_Internal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeErrorReceivedCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_error_received_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        error_str: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_error_received_callback_internal::get_offset() as isize),
-        );
-        inner(source, error_str, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_seek_completed_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeSeekCompletedCallback_Internal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeSeekCompletedCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_seek_completed_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_seek_completed_callback_internal::get_offset() as isize),
-        );
-        inner(source, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke_clock_resync_occurred_callback_internal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                "InvokeClockResyncOccurredCallback_Internal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    "InvokeClockResyncOccurredCallback_Internal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke_clock_resync_occurred_callback_internal(
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        seconds: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            f64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_invoke_clock_resync_occurred_callback_internal::get_offset() as isize,
-                ),
-        );
-        inner(source, seconds, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer {
-    #[doc = "`get_controlledAudioTrackMaxCount()` overload"]
-    pub fn get_controlled_audio_track_max_count() -> u16 {
-        unsafe {
-            __VideoPlayer_unity2_raw::get_controlled_audio_track_max_count(
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokePrepareCompletedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    pub fn invoke_prepare_completed_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_prepare_completed_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeFrameReadyCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]
-    pub fn invoke_frame_ready_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-        frame_idx: impl ::core::convert::Into<i64>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_frame_ready_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::convert::Into::into(frame_idx),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeLoopPointReachedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    pub fn invoke_loop_point_reached_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_loop_point_reached_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeStartedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    pub fn invoke_started_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_started_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeFrameDroppedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    pub fn invoke_frame_dropped_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_frame_dropped_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeErrorReceivedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"]
-    pub fn invoke_error_received_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-        error_str: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_error_received_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::convert::Into::into(error_str),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeSeekCompletedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    pub fn invoke_seek_completed_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_seek_completed_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`InvokeClockResyncOccurredCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]
-    pub fn invoke_clock_resync_occurred_callback_internal(
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-        seconds: impl ::core::convert::Into<f64>,
-    ) -> () {
-        unsafe {
-            __VideoPlayer_unity2_raw::invoke_clock_resync_occurred_callback_internal(
-                ::core::convert::Into::into(source),
-                ::core::convert::Into::into(seconds),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-pub trait IVideoPlayerMethods: IVideoPlayer {
-    #[doc = "`get_source()` overload"]
-    fn get_source(self) -> crate::unity_engine::video::videosource::VideoSource {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_source(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_source(crate::unity_engine::video::videosource::VideoSource)` overload"]
-    fn set_source(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::video::videosource::VideoSource>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_source(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_url()` overload"]
-    fn get_url(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_url(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_url(::unity2::Il2CppString)` overload"]
-    fn set_url(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_url(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_clip()` overload"]
-    fn get_clip(self) -> crate::unity_engine::video::videoclip::VideoClip {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_clip(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_clip(crate::unity_engine::video::videoclip::VideoClip)` overload"]
-    fn set_clip(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::video::videoclip::VideoClip>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_clip(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_renderMode()` overload"]
-    fn get_render_mode(self) -> crate::unity_engine::video::videorendermode::VideoRenderMode {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_render_mode(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_renderMode(crate::unity_engine::video::videorendermode::VideoRenderMode)` overload"]
-    fn set_render_mode(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::video::videorendermode::VideoRenderMode>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_render_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_targetCamera()` overload"]
-    fn get_target_camera(self) -> crate::unity_engine::camera::Camera {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_camera(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_targetCamera(crate::unity_engine::camera::Camera)` overload"]
-    fn set_target_camera(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_camera(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_targetTexture()` overload"]
-    fn get_target_texture(self) -> crate::unity_engine::rendertexture::RenderTexture {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_targetTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]
-    fn set_target_texture(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_texture(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_targetMaterialRenderer()` overload"]
-    fn get_target_material_renderer(self) -> crate::unity_engine::renderer::Renderer {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_material_renderer(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_targetMaterialRenderer(crate::unity_engine::renderer::Renderer)` overload"]
-    fn set_target_material_renderer(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_material_renderer(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_targetMaterialProperty()` overload"]
-    fn get_target_material_property(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_material_property(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_targetMaterialProperty(::unity2::Il2CppString)` overload"]
-    fn set_target_material_property(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_material_property(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_aspectRatio()` overload"]
-    fn get_aspect_ratio(self) -> crate::unity_engine::video::videoaspectratio::VideoAspectRatio {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_aspect_ratio(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_aspectRatio(crate::unity_engine::video::videoaspectratio::VideoAspectRatio)` overload"]
-    fn set_aspect_ratio(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoaspectratio::VideoAspectRatio,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_aspect_ratio(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_targetCameraAlpha()` overload"]
-    fn get_target_camera_alpha(self) -> f32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_camera_alpha(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_targetCameraAlpha(f32)` overload"]
-    fn set_target_camera_alpha(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_camera_alpha(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_targetCamera3DLayout()` overload"]
-    fn get_target_camera3_d_layout(
-        self,
-    ) -> crate::unity_engine::video::video3dlayout::Video3DLayout {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_camera3_d_layout(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_targetCamera3DLayout(crate::unity_engine::video::video3dlayout::Video3DLayout)` overload"]
-    fn set_target_camera3_d_layout(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::video::video3dlayout::Video3DLayout>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_camera3_d_layout(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_texture()` overload"]
-    fn get_texture(self) -> crate::unity_engine::texture::Texture {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_texture(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Prepare()` overload"]
-    fn prepare(self) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::prepare(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isPrepared()` overload"]
-    fn get_is_prepared(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_is_prepared(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_waitForFirstFrame()` overload"]
-    fn get_wait_for_first_frame(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_wait_for_first_frame(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_waitForFirstFrame(bool)` overload"]
-    fn set_wait_for_first_frame(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_wait_for_first_frame(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_playOnAwake()` overload"]
-    fn get_play_on_awake(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_play_on_awake(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_playOnAwake(bool)` overload"]
-    fn set_play_on_awake(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_play_on_awake(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Play()` overload"]
-    fn play(self) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::play(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Pause()` overload"]
-    fn pause(self) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::pause(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Stop()` overload"]
-    fn stop(self) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::stop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isPlaying()` overload"]
-    fn get_is_playing(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_is_playing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_isPaused()` overload"]
-    fn get_is_paused(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_is_paused(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_canSetTime()` overload"]
-    fn get_can_set_time(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_can_set_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_time()` overload"]
-    fn get_time(self) -> f64 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_time(f64)` overload"]
-    fn set_time(self, value: impl ::core::convert::Into<f64>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_frame()` overload"]
-    fn get_frame(self) -> i64 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_frame(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_frame(i64)` overload"]
-    fn set_frame(self, value: impl ::core::convert::Into<i64>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_frame(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_clockTime()` overload"]
-    fn get_clock_time(self) -> f64 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_clock_time(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_canStep()` overload"]
-    fn get_can_step(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_can_step(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`StepForward()` overload"]
-    fn step_forward(self) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::step_forward(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_canSetPlaybackSpeed()` overload"]
-    fn get_can_set_playback_speed(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_can_set_playback_speed(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_playbackSpeed()` overload"]
-    fn get_playback_speed(self) -> f32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_playback_speed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_playbackSpeed(f32)` overload"]
-    fn set_playback_speed(self, value: impl ::core::convert::Into<f32>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_playback_speed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_isLooping()` overload"]
-    fn get_is_looping(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_is_looping(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_isLooping(bool)` overload"]
-    fn set_is_looping(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_is_looping(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_canSetTimeSource()` overload"]
-    fn get_can_set_time_source(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_can_set_time_source(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_timeSource()` overload"]
-    fn get_time_source(self) -> crate::unity_engine::video::videotimesource::VideoTimeSource {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_time_source(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_timeSource(crate::unity_engine::video::videotimesource::VideoTimeSource)` overload"]
-    fn set_time_source(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::video::videotimesource::VideoTimeSource>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_time_source(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_timeReference()` overload"]
-    fn get_time_reference(
-        self,
-    ) -> crate::unity_engine::video::videotimereference::VideoTimeReference {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_time_reference(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_timeReference(crate::unity_engine::video::videotimereference::VideoTimeReference)` overload"]
-    fn set_time_reference(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videotimereference::VideoTimeReference,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_time_reference(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_externalReferenceTime()` overload"]
-    fn get_external_reference_time(self) -> f64 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_external_reference_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_externalReferenceTime(f64)` overload"]
-    fn set_external_reference_time(self, value: impl ::core::convert::Into<f64>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_external_reference_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_canSetSkipOnDrop()` overload"]
-    fn get_can_set_skip_on_drop(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_can_set_skip_on_drop(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_skipOnDrop()` overload"]
-    fn get_skip_on_drop(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_skip_on_drop(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`set_skipOnDrop(bool)` overload"]
-    fn set_skip_on_drop(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_skip_on_drop(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_frameCount()` overload"]
-    fn get_frame_count(self) -> u64 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_frame_count(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_frameRate()` overload"]
-    fn get_frame_rate(self) -> f32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_frame_rate(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_length()` overload"]
-    fn get_length(self) -> f64 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_length(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_width()` overload"]
-    fn get_width(self) -> u32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_width(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_height()` overload"]
-    fn get_height(self) -> u32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_height(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_pixelAspectRatioNumerator()` overload"]
-    fn get_pixel_aspect_ratio_numerator(self) -> u32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_pixel_aspect_ratio_numerator(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_pixelAspectRatioDenominator()` overload"]
-    fn get_pixel_aspect_ratio_denominator(self) -> u32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_pixel_aspect_ratio_denominator(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_audioTrackCount()` overload"]
-    fn get_audio_track_count(self) -> u16 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_audio_track_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAudioLanguageCode(u16)` overload"]
-    fn get_audio_language_code(
-        self,
-        track_index: impl ::core::convert::Into<u16>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_audio_language_code(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAudioChannelCount(u16)` overload"]
-    fn get_audio_channel_count(self, track_index: impl ::core::convert::Into<u16>) -> u16 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_audio_channel_count(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetAudioSampleRate(u16)` overload"]
-    fn get_audio_sample_rate(self, track_index: impl ::core::convert::Into<u16>) -> u32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_audio_sample_rate(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_controlledAudioTrackCount()` overload"]
-    fn get_controlled_audio_track_count(self) -> u16 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_controlled_audio_track_count(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_controlledAudioTrackCount(u16)` overload"]
-    fn set_controlled_audio_track_count(self, value: impl ::core::convert::Into<u16>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_controlled_audio_track_count(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnableAudioTrack(u16, bool)` overload"]
-    fn enable_audio_track(
-        self,
-        track_index: impl ::core::convert::Into<u16>,
-        enabled: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::enable_audio_track(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::convert::Into::into(enabled),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsAudioTrackEnabled(u16)` overload"]
-    fn is_audio_track_enabled(self, track_index: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::is_audio_track_enabled(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_audioOutputMode()` overload"]
-    fn get_audio_output_mode(
-        self,
-    ) -> crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_audio_output_mode(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_audioOutputMode(crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode)` overload"]
-    fn set_audio_output_mode(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_audio_output_mode(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_canSetDirectAudioVolume()` overload"]
-    fn get_can_set_direct_audio_volume(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_can_set_direct_audio_volume(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetDirectAudioVolume(u16)` overload"]
-    fn get_direct_audio_volume(self, track_index: impl ::core::convert::Into<u16>) -> f32 {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_direct_audio_volume(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetDirectAudioVolume(u16, f32)` overload"]
-    fn set_direct_audio_volume(
-        self,
-        track_index: impl ::core::convert::Into<u16>,
-        volume: impl ::core::convert::Into<f32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_direct_audio_volume(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::convert::Into::into(volume),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetDirectAudioMute(u16)` overload"]
-    fn get_direct_audio_mute(self, track_index: impl ::core::convert::Into<u16>) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_direct_audio_mute(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetDirectAudioMute(u16, bool)` overload"]
-    fn set_direct_audio_mute(
-        self,
-        track_index: impl ::core::convert::Into<u16>,
-        mute: impl ::core::convert::Into<bool>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_direct_audio_mute(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::convert::Into::into(mute),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetTargetAudioSource(u16)` overload"]
-    fn get_target_audio_source(
-        self,
-        track_index: impl ::core::convert::Into<u16>,
-    ) -> crate::unity_engine::audiosource::AudioSource {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_target_audio_source(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetTargetAudioSource(u16, crate::unity_engine::audiosource::AudioSource)` overload"]
-    fn set_target_audio_source(
-        self,
-        track_index: impl ::core::convert::Into<u16>,
-        source: impl ::core::convert::Into<crate::unity_engine::audiosource::AudioSource>,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_target_audio_source(
-                __receiver,
-                ::core::convert::Into::into(track_index),
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_prepareCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn add_prepare_completed(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_prepare_completed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_prepareCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn remove_prepare_completed(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_prepare_completed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_loopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn add_loop_point_reached(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_loop_point_reached(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_loopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn remove_loop_point_reached(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_loop_point_reached(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_started(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn add_started(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_started(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_started(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn remove_started(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_started(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_frameDropped(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn add_frame_dropped(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_frame_dropped(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_frameDropped(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn remove_frame_dropped(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_frame_dropped(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_errorReceived(crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler)` overload"]
-    fn add_error_received(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_error_received(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_errorReceived(crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler)` overload"]
-    fn remove_error_received(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_error_received(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_seekCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn add_seek_completed(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_seek_completed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_seekCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
-    fn remove_seek_completed(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_seek_completed(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_clockResyncOccurred(crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler)` overload"]
-    fn add_clock_resync_occurred(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_clock_resync_occurred(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_clockResyncOccurred(crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler)` overload"]
-    fn remove_clock_resync_occurred(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_clock_resync_occurred(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_sendFrameReadyEvents()` overload"]
-    fn get_send_frame_ready_events(self) -> bool {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::get_send_frame_ready_events(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`set_sendFrameReadyEvents(bool)` overload"]
-    fn set_send_frame_ready_events(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::set_send_frame_ready_events(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`add_frameReady(crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler)` overload"]
-    fn add_frame_ready(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::add_frame_ready(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`remove_frameReady(crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler)` overload"]
-    fn remove_frame_ready(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::remove_frame_ready(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __VideoPlayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl<__T: IVideoPlayer> IVideoPlayerMethods for __T {}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VideoPlayer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVideoPlayerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VideoPlayer_TimeEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VideoPlayer_TimeEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer_TimeEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-                <f64 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: VideoPlayer_TimeEventHandler,
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        seconds: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer_TimeEventHandler,
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            f64,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, source, seconds, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-pub trait IVideoPlayer_TimeEventHandlerMethods: IVideoPlayer_TimeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <VideoPlayer_TimeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VideoPlayer_TimeEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]
-    fn invoke(
-        self,
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-        seconds: impl ::core::convert::Into<f64>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <VideoPlayer_TimeEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VideoPlayer_TimeEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(source),
-                ::core::convert::Into::into(seconds),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl<__T: IVideoPlayer_TimeEventHandler> IVideoPlayer_TimeEventHandlerMethods for __T {}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer_TimeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VideoPlayer_TimeEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVideoPlayer_TimeEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __VideoPlayer_EventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: VideoPlayer_EventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer_EventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_EventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: VideoPlayer_EventHandler,
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer_EventHandler,
-            crate::unity_engine::video::videoplayer::VideoPlayer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, source, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-pub trait IVideoPlayer_EventHandlerMethods: IVideoPlayer_EventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <VideoPlayer_EventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VideoPlayer_EventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
-    fn invoke(
-        self,
-        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <VideoPlayer_EventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __VideoPlayer_EventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl<__T: IVideoPlayer_EventHandler> IVideoPlayer_EventHandlerMethods for __T {}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer_EventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VideoPlayer_EventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVideoPlayer_EventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __VideoPlayer_ErrorEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -7212,18 +371,15 @@ mod __VideoPlayer_ErrorEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_ErrorEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_ErrorEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -7232,28 +388,17 @@ mod __VideoPlayer_ErrorEventHandler_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            VideoPlayer_ErrorEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(VideoPlayer_ErrorEventHandler, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -7267,18 +412,15 @@ mod __VideoPlayer_ErrorEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <VideoPlayer_ErrorEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_ErrorEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -7292,11 +434,7 @@ mod __VideoPlayer_ErrorEventHandler_unity2_raw {
             crate::unity_engine::video::videoplayer::VideoPlayer,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, source, message, __unity2_method_info)
     }
 }
@@ -7304,16 +442,10 @@ mod __VideoPlayer_ErrorEventHandler_unity2_raw {
 #[cfg(feature = "unity_engine-video-videoplayer")]
 pub trait IVideoPlayer_ErrorEventHandlerMethods: IVideoPlayer_ErrorEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <VideoPlayer_ErrorEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VideoPlayer_ErrorEventHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VideoPlayer_ErrorEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -7330,9 +462,7 @@ pub trait IVideoPlayer_ErrorEventHandlerMethods: IVideoPlayer_ErrorEventHandler 
     ) -> () {
         unsafe {
             let __receiver =
-                <VideoPlayer_ErrorEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <VideoPlayer_ErrorEventHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __VideoPlayer_ErrorEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(source),
@@ -7364,38 +494,4805 @@ impl VideoPlayer_ErrorEventHandler {
 
 #[cfg(feature = "unity_engine-video-videoplayer")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VideoPlayer_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_source",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_source",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_source(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::videosource::VideoSource {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videosource::VideoSource =
+            ::core::mem::transmute(__lookup_get_source::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videosource::VideoSource as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_source",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_source",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_source(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videosource::VideoSource,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videosource::VideoSource, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_source::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_url {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), "get_url", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_url",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_url(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_url::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_url {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), "set_url", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_url",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_url(this: VideoPlayer, value: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_url::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_clip",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_clip",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_clip(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::video::videoclip::VideoClip {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videoclip::VideoClip =
+            ::core::mem::transmute(__lookup_get_clip::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_clip {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoclip::VideoClip as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_clip",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_clip",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_clip(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoclip::VideoClip,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoclip::VideoClip, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_clip::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_render_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_renderMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_renderMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_render_mode(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::videorendermode::VideoRenderMode {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videorendermode::VideoRenderMode =
+            ::core::mem::transmute(__lookup_get_render_mode::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_render_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videorendermode::VideoRenderMode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_renderMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_renderMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_render_mode(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videorendermode::VideoRenderMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videorendermode::VideoRenderMode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_render_mode::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_targetCamera",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_targetCamera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_camera(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::camera::Camera =
+            ::core::mem::transmute(__lookup_get_target_camera::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_camera {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_targetCamera",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_targetCamera",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_camera(
+        this: VideoPlayer,
+        value: crate::unity_engine::camera::Camera,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::camera::Camera, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_camera::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_targetTexture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_targetTexture",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_texture(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::rendertexture::RenderTexture {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::rendertexture::RenderTexture =
+            ::core::mem::transmute(__lookup_get_target_texture::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendertexture::RenderTexture as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_targetTexture",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_targetTexture",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_texture(
+        this: VideoPlayer,
+        value: crate::unity_engine::rendertexture::RenderTexture,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::rendertexture::RenderTexture, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_texture::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_material_renderer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_targetMaterialRenderer",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_targetMaterialRenderer",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_material_renderer(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::renderer::Renderer {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::renderer::Renderer =
+            ::core::mem::transmute(__lookup_get_target_material_renderer::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_material_renderer {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::renderer::Renderer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_targetMaterialRenderer",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_targetMaterialRenderer",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_material_renderer(
+        this: VideoPlayer,
+        value: crate::unity_engine::renderer::Renderer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::renderer::Renderer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_material_renderer::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_material_property {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_targetMaterialProperty",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_targetMaterialProperty",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_material_property(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_target_material_property::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_material_property {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_targetMaterialProperty",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_targetMaterialProperty",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_material_property(
+        this: VideoPlayer,
+        value: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_material_property::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_aspect_ratio {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_aspectRatio",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_aspectRatio",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_aspect_ratio(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::videoaspectratio::VideoAspectRatio {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videoaspectratio::VideoAspectRatio =
+            ::core::mem::transmute(__lookup_get_aspect_ratio::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_aspect_ratio {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoaspectratio::VideoAspectRatio as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_aspectRatio",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_aspectRatio",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_aspect_ratio(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoaspectratio::VideoAspectRatio,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoaspectratio::VideoAspectRatio, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_aspect_ratio::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_camera_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_targetCameraAlpha",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_targetCameraAlpha",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_camera_alpha(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_target_camera_alpha::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_camera_alpha {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_targetCameraAlpha",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_targetCameraAlpha",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_camera_alpha(this: VideoPlayer, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_camera_alpha::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_camera3_d_layout {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_targetCamera3DLayout",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_targetCamera3DLayout",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_camera3_d_layout(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::video3dlayout::Video3DLayout {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::video3dlayout::Video3DLayout =
+            ::core::mem::transmute(__lookup_get_target_camera3_d_layout::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_camera3_d_layout {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::video3dlayout::Video3DLayout as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_targetCamera3DLayout",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_targetCamera3DLayout",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_camera3_d_layout(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::video3dlayout::Video3DLayout,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::video3dlayout::Video3DLayout, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_camera3_d_layout::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_texture {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_texture",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_texture",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_texture(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_texture::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_prepare {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), "Prepare", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Prepare",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn prepare(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_prepared {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_isPrepared",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_isPrepared",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_prepared(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_prepared::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_wait_for_first_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_waitForFirstFrame",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_waitForFirstFrame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_wait_for_first_frame(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_wait_for_first_frame::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_wait_for_first_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_waitForFirstFrame",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_waitForFirstFrame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_wait_for_first_frame(this: VideoPlayer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_wait_for_first_frame::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_play_on_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_playOnAwake",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_playOnAwake",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_play_on_awake(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_play_on_awake::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_play_on_awake {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_playOnAwake",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_playOnAwake",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_play_on_awake(this: VideoPlayer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_play_on_awake::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), "Play", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn play(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_pause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), "Pause", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Pause",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn pause(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_pause::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_stop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), "Stop", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn stop(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_playing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_isPlaying",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_isPlaying",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_playing(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_playing::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_paused {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_isPaused",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_isPaused",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_paused(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_paused::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_set_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_canSetTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_canSetTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_set_time(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_can_set_time::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_time",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_time",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_time(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(__lookup_get_time::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_time",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_time",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_time(this: VideoPlayer, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, f64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_time::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_frame",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_frame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_frame(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(__lookup_get_frame::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_frame {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_frame",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_frame",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_frame(this: VideoPlayer, value: i64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, i64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_frame::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_clock_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_clockTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_clockTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_clock_time(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(__lookup_get_clock_time::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_step {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_canStep",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_canStep",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_step(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_can_step::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_step_forward {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "StepForward",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "StepForward",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn step_forward(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_step_forward::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_set_playback_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_canSetPlaybackSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_canSetPlaybackSpeed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_set_playback_speed(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_can_set_playback_speed::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_playback_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_playbackSpeed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_playbackSpeed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_playback_speed(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_playback_speed::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_playback_speed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_playbackSpeed",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_playbackSpeed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_playback_speed(this: VideoPlayer, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_playback_speed::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_looping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_isLooping",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_isLooping",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_looping(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_looping::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_is_looping {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_isLooping",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_isLooping",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_is_looping(this: VideoPlayer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_looping::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_set_time_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_canSetTimeSource",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_canSetTimeSource",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_set_time_source(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_can_set_time_source::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_time_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_timeSource",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_timeSource",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_time_source(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::videotimesource::VideoTimeSource {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videotimesource::VideoTimeSource =
+            ::core::mem::transmute(__lookup_get_time_source::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_time_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videotimesource::VideoTimeSource as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_timeSource",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_timeSource",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_time_source(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videotimesource::VideoTimeSource,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videotimesource::VideoTimeSource, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_time_source::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_time_reference {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_timeReference",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_timeReference",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_time_reference(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::videotimereference::VideoTimeReference {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videotimereference::VideoTimeReference =
+            ::core::mem::transmute(__lookup_get_time_reference::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_time_reference {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videotimereference::VideoTimeReference as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_timeReference",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_timeReference",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_time_reference(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videotimereference::VideoTimeReference,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videotimereference::VideoTimeReference, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_time_reference::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_external_reference_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_externalReferenceTime",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_externalReferenceTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_external_reference_time(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(__lookup_get_external_reference_time::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_external_reference_time {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_externalReferenceTime",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_externalReferenceTime",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_external_reference_time(this: VideoPlayer, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, f64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_external_reference_time::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_set_skip_on_drop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_canSetSkipOnDrop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_canSetSkipOnDrop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_set_skip_on_drop(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_can_set_skip_on_drop::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_skip_on_drop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_skipOnDrop",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_skipOnDrop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_skip_on_drop(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_skip_on_drop::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_skip_on_drop {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_skipOnDrop",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_skipOnDrop",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_skip_on_drop(this: VideoPlayer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_skip_on_drop::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_frame_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_frameCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_frameCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_frame_count(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u64 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u64 =
+            ::core::mem::transmute(__lookup_get_frame_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_frame_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_frameRate",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_frameRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_frame_rate(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_frame_rate::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_length {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_length",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_length",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_length(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> f64 =
+            ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_width {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_width",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_width",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_width(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_width::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_height {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_height",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_height",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_height(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_height::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pixel_aspect_ratio_numerator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_pixelAspectRatioNumerator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_pixelAspectRatioNumerator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pixel_aspect_ratio_numerator(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_pixel_aspect_ratio_numerator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pixel_aspect_ratio_denominator {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_pixelAspectRatioDenominator",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_pixelAspectRatioDenominator",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pixel_aspect_ratio_denominator(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_pixel_aspect_ratio_denominator::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_audio_track_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_audioTrackCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_audioTrackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_audio_track_count(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_audio_track_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_audio_language_code {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "GetAudioLanguageCode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetAudioLanguageCode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_audio_language_code(
+        this: VideoPlayer,
+        track_index: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_audio_language_code::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_audio_channel_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "GetAudioChannelCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetAudioChannelCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_audio_channel_count(this: VideoPlayer, track_index: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_audio_channel_count::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_audio_sample_rate {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "GetAudioSampleRate",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetAudioSampleRate",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_audio_sample_rate(this: VideoPlayer, track_index: u16, __unity2_method_info: ::unity2::OptionalMethod) -> u32 {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> u32 =
+            ::core::mem::transmute(__lookup_get_audio_sample_rate::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_controlled_audio_track_max_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_controlledAudioTrackMaxCount",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_controlledAudioTrackMaxCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_controlled_audio_track_max_count(__unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_controlled_audio_track_max_count::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_controlled_audio_track_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_controlledAudioTrackCount",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_controlledAudioTrackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_controlled_audio_track_count(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> u16 {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> u16 =
+            ::core::mem::transmute(__lookup_get_controlled_audio_track_count::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_controlled_audio_track_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_controlledAudioTrackCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_controlledAudioTrackCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_controlled_audio_track_count(this: VideoPlayer, value: u16, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_controlled_audio_track_count::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enable_audio_track {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "EnableAudioTrack",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "EnableAudioTrack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enable_audio_track(this: VideoPlayer, track_index: u16, enabled: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, u16, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enable_audio_track::get_method_info().method_ptr);
+        inner(this, track_index, enabled, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_audio_track_enabled {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "IsAudioTrackEnabled",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsAudioTrackEnabled",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_audio_track_enabled(this: VideoPlayer, track_index: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_audio_track_enabled::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_audio_output_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_audioOutputMode",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_audioOutputMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_audio_output_mode(
+        this: VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode =
+            ::core::mem::transmute(__lookup_get_audio_output_mode::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_audio_output_mode {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_audioOutputMode",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_audioOutputMode",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_audio_output_mode(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VideoPlayer,
+            crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_set_audio_output_mode::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_can_set_direct_audio_volume {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_canSetDirectAudioVolume",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_canSetDirectAudioVolume",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_can_set_direct_audio_volume(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_can_set_direct_audio_volume::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direct_audio_volume {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "GetDirectAudioVolume",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetDirectAudioVolume",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_direct_audio_volume(this: VideoPlayer, track_index: u16, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_direct_audio_volume::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direct_audio_volume {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "SetDirectAudioVolume",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "SetDirectAudioVolume",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_direct_audio_volume(this: VideoPlayer, track_index: u16, volume: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, u16, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_direct_audio_volume::get_method_info().method_ptr);
+        inner(this, track_index, volume, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_direct_audio_mute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "GetDirectAudioMute",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetDirectAudioMute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_direct_audio_mute(this: VideoPlayer, track_index: u16, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_direct_audio_mute::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_direct_audio_mute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<u16 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "SetDirectAudioMute",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "SetDirectAudioMute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_direct_audio_mute(this: VideoPlayer, track_index: u16, mute: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, u16, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_direct_audio_mute::get_method_info().method_ptr);
+        inner(this, track_index, mute, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_target_audio_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u16 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "GetTargetAudioSource",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "GetTargetAudioSource",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_target_audio_source(
+        this: VideoPlayer,
+        track_index: u16,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::audiosource::AudioSource {
+        let inner: extern "C" fn(VideoPlayer, u16, ::unity2::OptionalMethod) -> crate::unity_engine::audiosource::AudioSource =
+            ::core::mem::transmute(__lookup_get_target_audio_source::get_method_info().method_ptr);
+        inner(this, track_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_target_audio_source {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <u16 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::audiosource::AudioSource as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "SetTargetAudioSource",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "SetTargetAudioSource",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_target_audio_source(
+        this: VideoPlayer,
+        track_index: u16,
+        source: crate::unity_engine::audiosource::AudioSource,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, u16, crate::unity_engine::audiosource::AudioSource, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_audio_source::get_method_info().method_ptr);
+        inner(this, track_index, source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_prepare_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_prepareCompleted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_prepareCompleted",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_prepare_completed(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_prepare_completed::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_prepare_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_prepareCompleted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_prepareCompleted",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_prepare_completed(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_prepare_completed::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_loop_point_reached {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_loopPointReached",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_loopPointReached",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_loop_point_reached(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_loop_point_reached::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_loop_point_reached {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_loopPointReached",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_loopPointReached",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_loop_point_reached(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_loop_point_reached::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_started {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_started",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_started",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_started(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_started::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_started {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_started",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_started",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_started(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_started::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_frame_dropped {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_frameDropped",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_frameDropped",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_frame_dropped(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_frame_dropped::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_frame_dropped {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_frameDropped",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_frameDropped",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_frame_dropped(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_frame_dropped::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_error_received {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_errorReceived",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_errorReceived",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_error_received(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VideoPlayer,
+            crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_error_received::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_error_received {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_errorReceived",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_errorReceived",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_error_received(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VideoPlayer,
+            crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_remove_error_received::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_seek_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_seekCompleted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_seekCompleted",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_seek_completed(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_seek_completed::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_seek_completed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_seekCompleted",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_seekCompleted",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_seek_completed(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_seek_completed::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_clock_resync_occurred {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_clockResyncOccurred",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_clockResyncOccurred",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_clock_resync_occurred(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_clock_resync_occurred::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_clock_resync_occurred {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_clockResyncOccurred",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_clockResyncOccurred",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_clock_resync_occurred(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer, crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_clock_resync_occurred::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_send_frame_ready_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "get_sendFrameReadyEvents",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "get_sendFrameReadyEvents",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_send_frame_ready_events(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_send_frame_ready_events::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_send_frame_ready_events {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "set_sendFrameReadyEvents",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "set_sendFrameReadyEvents",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_send_frame_ready_events(this: VideoPlayer, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_send_frame_ready_events::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_add_frame_ready {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "add_frameReady",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "add_frameReady",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn add_frame_ready(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VideoPlayer,
+            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_add_frame_ready::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_remove_frame_ready {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "remove_frameReady",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "remove_frameReady",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn remove_frame_ready(
+        this: VideoPlayer,
+        value: crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VideoPlayer,
+            crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_remove_frame_ready::get_method_info().method_ptr);
+        inner(this, value, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_prepare_completed_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokePrepareCompletedCallback_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokePrepareCompletedCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_prepare_completed_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_prepare_completed_callback_internal::get_method_info().method_ptr);
+        inner(source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_frame_ready_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
+                <i64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeFrameReadyCallback_Internal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeFrameReadyCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_frame_ready_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        frame_idx: i64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, i64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_frame_ready_callback_internal::get_method_info().method_ptr);
+        inner(source, frame_idx, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_loop_point_reached_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeLoopPointReachedCallback_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeLoopPointReachedCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_loop_point_reached_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_loop_point_reached_callback_internal::get_method_info().method_ptr);
+        inner(source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_started_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeStartedCallback_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeStartedCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_started_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_started_callback_internal::get_method_info().method_ptr);
+        inner(source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_frame_dropped_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeFrameDroppedCallback_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeFrameDroppedCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_frame_dropped_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_frame_dropped_callback_internal::get_method_info().method_ptr);
+        inner(source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_error_received_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeErrorReceivedCallback_Internal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeErrorReceivedCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_error_received_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        error_str: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_error_received_callback_internal::get_method_info().method_ptr);
+        inner(source, error_str, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_seek_completed_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeSeekCompletedCallback_Internal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeSeekCompletedCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_seek_completed_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_seek_completed_callback_internal::get_method_info().method_ptr);
+        inner(source, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke_clock_resync_occurred_callback_internal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer as ::unity2::ClassIdentity>::class(),
+                "InvokeClockResyncOccurredCallback_Internal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        "InvokeClockResyncOccurredCallback_Internal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke_clock_resync_occurred_callback_internal(
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        seconds: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(crate::unity_engine::video::videoplayer::VideoPlayer, f64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke_clock_resync_occurred_callback_internal::get_method_info().method_ptr);
+        inner(source, seconds, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<VideoPlayer as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: VideoPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(VideoPlayer, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer {
+    #[doc = "`get_controlledAudioTrackMaxCount()` overload"]
+    pub fn get_controlled_audio_track_max_count() -> u16 {
+        unsafe { __VideoPlayer_unity2_raw::get_controlled_audio_track_max_count(::core::option::Option::None) }
+    }
+
+    #[doc = "`InvokePrepareCompletedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
+    pub fn invoke_prepare_completed_callback_internal(
+        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
+    ) -> () {
+        unsafe {
+            __VideoPlayer_unity2_raw::invoke_prepare_completed_callback_internal(::core::convert::Into::into(source), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`InvokeFrameReadyCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]
+    pub fn invoke_frame_ready_callback_internal(
+        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
+        frame_idx: impl ::core::convert::Into<i64>,
+    ) -> () {
+        unsafe {
+            __VideoPlayer_unity2_raw::invoke_frame_ready_callback_internal(
+                ::core::convert::Into::into(source),
+                ::core::convert::Into::into(frame_idx),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`InvokeLoopPointReachedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
+    pub fn invoke_loop_point_reached_callback_internal(
+        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
+    ) -> () {
+        unsafe {
+            __VideoPlayer_unity2_raw::invoke_loop_point_reached_callback_internal(::core::convert::Into::into(source), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`InvokeStartedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
+    pub fn invoke_started_callback_internal(source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>) -> () {
+        unsafe { __VideoPlayer_unity2_raw::invoke_started_callback_internal(::core::convert::Into::into(source), ::core::option::Option::None) }
+    }
+
+    #[doc = "`InvokeFrameDroppedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
+    pub fn invoke_frame_dropped_callback_internal(source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>) -> () {
+        unsafe { __VideoPlayer_unity2_raw::invoke_frame_dropped_callback_internal(::core::convert::Into::into(source), ::core::option::Option::None) }
+    }
+
+    #[doc = "`InvokeErrorReceivedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"]
+    pub fn invoke_error_received_callback_internal(
+        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
+        error_str: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            __VideoPlayer_unity2_raw::invoke_error_received_callback_internal(
+                ::core::convert::Into::into(source),
+                ::core::convert::Into::into(error_str),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`InvokeSeekCompletedCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]
+    pub fn invoke_seek_completed_callback_internal(source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>) -> () {
+        unsafe {
+            __VideoPlayer_unity2_raw::invoke_seek_completed_callback_internal(::core::convert::Into::into(source), ::core::option::Option::None)
+        }
+    }
+
+    #[doc = "`InvokeClockResyncOccurredCallback_Internal(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]
+    pub fn invoke_clock_resync_occurred_callback_internal(
+        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
+        seconds: impl ::core::convert::Into<f64>,
+    ) -> () {
+        unsafe {
+            __VideoPlayer_unity2_raw::invoke_clock_resync_occurred_callback_internal(
+                ::core::convert::Into::into(source),
+                ::core::convert::Into::into(seconds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+pub trait IVideoPlayerMethods: IVideoPlayer {
+    #[doc = "`get_source()` overload"]
+    fn get_source(self) -> crate::unity_engine::video::videosource::VideoSource {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_source(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_source(crate::unity_engine::video::videosource::VideoSource)` overload"]
+    fn set_source(self, value: impl ::core::convert::Into<crate::unity_engine::video::videosource::VideoSource>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_source(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_url()` overload"]
+    fn get_url(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_url(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_url(::unity2::Il2CppString)` overload"]
+    fn set_url(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_url(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_clip()` overload"]
+    fn get_clip(self) -> crate::unity_engine::video::videoclip::VideoClip {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_clip(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_clip(crate::unity_engine::video::videoclip::VideoClip)` overload"]
+    fn set_clip(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoclip::VideoClip>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_clip(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_renderMode()` overload"]
+    fn get_render_mode(self) -> crate::unity_engine::video::videorendermode::VideoRenderMode {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_render_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_renderMode(crate::unity_engine::video::videorendermode::VideoRenderMode)` overload"]
+    fn set_render_mode(self, value: impl ::core::convert::Into<crate::unity_engine::video::videorendermode::VideoRenderMode>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_render_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetCamera()` overload"]
+    fn get_target_camera(self) -> crate::unity_engine::camera::Camera {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_camera(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_targetCamera(crate::unity_engine::camera::Camera)` overload"]
+    fn set_target_camera(self, value: impl ::core::convert::Into<crate::unity_engine::camera::Camera>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_camera(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetTexture()` overload"]
+    fn get_target_texture(self) -> crate::unity_engine::rendertexture::RenderTexture {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_texture(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_targetTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]
+    fn set_target_texture(self, value: impl ::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_texture(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetMaterialRenderer()` overload"]
+    fn get_target_material_renderer(self) -> crate::unity_engine::renderer::Renderer {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_material_renderer(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_targetMaterialRenderer(crate::unity_engine::renderer::Renderer)` overload"]
+    fn set_target_material_renderer(self, value: impl ::core::convert::Into<crate::unity_engine::renderer::Renderer>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_material_renderer(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetMaterialProperty()` overload"]
+    fn get_target_material_property(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_material_property(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_targetMaterialProperty(::unity2::Il2CppString)` overload"]
+    fn set_target_material_property(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_material_property(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_aspectRatio()` overload"]
+    fn get_aspect_ratio(self) -> crate::unity_engine::video::videoaspectratio::VideoAspectRatio {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_aspect_ratio(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_aspectRatio(crate::unity_engine::video::videoaspectratio::VideoAspectRatio)` overload"]
+    fn set_aspect_ratio(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoaspectratio::VideoAspectRatio>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_aspect_ratio(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetCameraAlpha()` overload"]
+    fn get_target_camera_alpha(self) -> f32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_camera_alpha(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_targetCameraAlpha(f32)` overload"]
+    fn set_target_camera_alpha(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_camera_alpha(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_targetCamera3DLayout()` overload"]
+    fn get_target_camera3_d_layout(self) -> crate::unity_engine::video::video3dlayout::Video3DLayout {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_camera3_d_layout(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_targetCamera3DLayout(crate::unity_engine::video::video3dlayout::Video3DLayout)` overload"]
+    fn set_target_camera3_d_layout(self, value: impl ::core::convert::Into<crate::unity_engine::video::video3dlayout::Video3DLayout>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_camera3_d_layout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_texture()` overload"]
+    fn get_texture(self) -> crate::unity_engine::texture::Texture {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_texture(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Prepare()` overload"]
+    fn prepare(self) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::prepare(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isPrepared()` overload"]
+    fn get_is_prepared(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_is_prepared(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_waitForFirstFrame()` overload"]
+    fn get_wait_for_first_frame(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_wait_for_first_frame(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_waitForFirstFrame(bool)` overload"]
+    fn set_wait_for_first_frame(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_wait_for_first_frame(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_playOnAwake()` overload"]
+    fn get_play_on_awake(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_play_on_awake(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_playOnAwake(bool)` overload"]
+    fn set_play_on_awake(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_play_on_awake(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Play()` overload"]
+    fn play(self) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::play(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Pause()` overload"]
+    fn pause(self) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::pause(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Stop()` overload"]
+    fn stop(self) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::stop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isPlaying()` overload"]
+    fn get_is_playing(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_is_playing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isPaused()` overload"]
+    fn get_is_paused(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_is_paused(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canSetTime()` overload"]
+    fn get_can_set_time(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_can_set_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_time()` overload"]
+    fn get_time(self) -> f64 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_time(f64)` overload"]
+    fn set_time(self, value: impl ::core::convert::Into<f64>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_frame()` overload"]
+    fn get_frame(self) -> i64 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_frame(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_frame(i64)` overload"]
+    fn set_frame(self, value: impl ::core::convert::Into<i64>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_frame(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_clockTime()` overload"]
+    fn get_clock_time(self) -> f64 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_clock_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canStep()` overload"]
+    fn get_can_step(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_can_step(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`StepForward()` overload"]
+    fn step_forward(self) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::step_forward(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canSetPlaybackSpeed()` overload"]
+    fn get_can_set_playback_speed(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_can_set_playback_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_playbackSpeed()` overload"]
+    fn get_playback_speed(self) -> f32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_playback_speed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_playbackSpeed(f32)` overload"]
+    fn set_playback_speed(self, value: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_playback_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_isLooping()` overload"]
+    fn get_is_looping(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_is_looping(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_isLooping(bool)` overload"]
+    fn set_is_looping(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_is_looping(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canSetTimeSource()` overload"]
+    fn get_can_set_time_source(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_can_set_time_source(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_timeSource()` overload"]
+    fn get_time_source(self) -> crate::unity_engine::video::videotimesource::VideoTimeSource {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_time_source(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_timeSource(crate::unity_engine::video::videotimesource::VideoTimeSource)` overload"]
+    fn set_time_source(self, value: impl ::core::convert::Into<crate::unity_engine::video::videotimesource::VideoTimeSource>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_time_source(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_timeReference()` overload"]
+    fn get_time_reference(self) -> crate::unity_engine::video::videotimereference::VideoTimeReference {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_time_reference(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_timeReference(crate::unity_engine::video::videotimereference::VideoTimeReference)` overload"]
+    fn set_time_reference(self, value: impl ::core::convert::Into<crate::unity_engine::video::videotimereference::VideoTimeReference>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_time_reference(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_externalReferenceTime()` overload"]
+    fn get_external_reference_time(self) -> f64 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_external_reference_time(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_externalReferenceTime(f64)` overload"]
+    fn set_external_reference_time(self, value: impl ::core::convert::Into<f64>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_external_reference_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canSetSkipOnDrop()` overload"]
+    fn get_can_set_skip_on_drop(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_can_set_skip_on_drop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_skipOnDrop()` overload"]
+    fn get_skip_on_drop(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_skip_on_drop(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_skipOnDrop(bool)` overload"]
+    fn set_skip_on_drop(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_skip_on_drop(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_frameCount()` overload"]
+    fn get_frame_count(self) -> u64 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_frame_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_frameRate()` overload"]
+    fn get_frame_rate(self) -> f32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_frame_rate(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_length()` overload"]
+    fn get_length(self) -> f64 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_length(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_width()` overload"]
+    fn get_width(self) -> u32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_width(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_height()` overload"]
+    fn get_height(self) -> u32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_height(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_pixelAspectRatioNumerator()` overload"]
+    fn get_pixel_aspect_ratio_numerator(self) -> u32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_pixel_aspect_ratio_numerator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_pixelAspectRatioDenominator()` overload"]
+    fn get_pixel_aspect_ratio_denominator(self) -> u32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_pixel_aspect_ratio_denominator(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_audioTrackCount()` overload"]
+    fn get_audio_track_count(self) -> u16 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_audio_track_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAudioLanguageCode(u16)` overload"]
+    fn get_audio_language_code(self, track_index: impl ::core::convert::Into<u16>) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_audio_language_code(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAudioChannelCount(u16)` overload"]
+    fn get_audio_channel_count(self, track_index: impl ::core::convert::Into<u16>) -> u16 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_audio_channel_count(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetAudioSampleRate(u16)` overload"]
+    fn get_audio_sample_rate(self, track_index: impl ::core::convert::Into<u16>) -> u32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_audio_sample_rate(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_controlledAudioTrackCount()` overload"]
+    fn get_controlled_audio_track_count(self) -> u16 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_controlled_audio_track_count(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_controlledAudioTrackCount(u16)` overload"]
+    fn set_controlled_audio_track_count(self, value: impl ::core::convert::Into<u16>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_controlled_audio_track_count(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnableAudioTrack(u16, bool)` overload"]
+    fn enable_audio_track(self, track_index: impl ::core::convert::Into<u16>, enabled: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::enable_audio_track(
+                __receiver,
+                ::core::convert::Into::into(track_index),
+                ::core::convert::Into::into(enabled),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsAudioTrackEnabled(u16)` overload"]
+    fn is_audio_track_enabled(self, track_index: impl ::core::convert::Into<u16>) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::is_audio_track_enabled(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_audioOutputMode()` overload"]
+    fn get_audio_output_mode(self) -> crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_audio_output_mode(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_audioOutputMode(crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode)` overload"]
+    fn set_audio_output_mode(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoaudiooutputmode::VideoAudioOutputMode>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_audio_output_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_canSetDirectAudioVolume()` overload"]
+    fn get_can_set_direct_audio_volume(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_can_set_direct_audio_volume(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDirectAudioVolume(u16)` overload"]
+    fn get_direct_audio_volume(self, track_index: impl ::core::convert::Into<u16>) -> f32 {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_direct_audio_volume(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetDirectAudioVolume(u16, f32)` overload"]
+    fn set_direct_audio_volume(self, track_index: impl ::core::convert::Into<u16>, volume: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_direct_audio_volume(
+                __receiver,
+                ::core::convert::Into::into(track_index),
+                ::core::convert::Into::into(volume),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetDirectAudioMute(u16)` overload"]
+    fn get_direct_audio_mute(self, track_index: impl ::core::convert::Into<u16>) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_direct_audio_mute(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetDirectAudioMute(u16, bool)` overload"]
+    fn set_direct_audio_mute(self, track_index: impl ::core::convert::Into<u16>, mute: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_direct_audio_mute(
+                __receiver,
+                ::core::convert::Into::into(track_index),
+                ::core::convert::Into::into(mute),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetTargetAudioSource(u16)` overload"]
+    fn get_target_audio_source(self, track_index: impl ::core::convert::Into<u16>) -> crate::unity_engine::audiosource::AudioSource {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_target_audio_source(__receiver, ::core::convert::Into::into(track_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetTargetAudioSource(u16, crate::unity_engine::audiosource::AudioSource)` overload"]
+    fn set_target_audio_source(
+        self,
+        track_index: impl ::core::convert::Into<u16>,
+        source: impl ::core::convert::Into<crate::unity_engine::audiosource::AudioSource>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_target_audio_source(
+                __receiver,
+                ::core::convert::Into::into(track_index),
+                ::core::convert::Into::into(source),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`add_prepareCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn add_prepare_completed(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_prepare_completed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_prepareCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn remove_prepare_completed(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_prepare_completed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_loopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn add_loop_point_reached(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_loop_point_reached(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_loopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn remove_loop_point_reached(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_loop_point_reached(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_started(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn add_started(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_started(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_started(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn remove_started(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_started(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_frameDropped(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn add_frame_dropped(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_frame_dropped(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_frameDropped(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn remove_frame_dropped(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_frame_dropped(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_errorReceived(crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler)` overload"]
+    fn add_error_received(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_error_received(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_errorReceived(crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler)` overload"]
+    fn remove_error_received(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_error_received(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_seekCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn add_seek_completed(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_seek_completed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_seekCompleted(crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler)` overload"]
+    fn remove_seek_completed(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_seek_completed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_clockResyncOccurred(crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler)` overload"]
+    fn add_clock_resync_occurred(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_clock_resync_occurred(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_clockResyncOccurred(crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler)` overload"]
+    fn remove_clock_resync_occurred(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_clock_resync_occurred(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`get_sendFrameReadyEvents()` overload"]
+    fn get_send_frame_ready_events(self) -> bool {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::get_send_frame_ready_events(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`set_sendFrameReadyEvents(bool)` overload"]
+    fn set_send_frame_ready_events(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::set_send_frame_ready_events(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`add_frameReady(crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler)` overload"]
+    fn add_frame_ready(self, value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler>) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::add_frame_ready(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`remove_frameReady(crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler)` overload"]
+    fn remove_frame_ready(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::remove_frame_ready(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <VideoPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl<__T: IVideoPlayer> IVideoPlayerMethods for __T {}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(VideoPlayer), ::core::stringify!(new),));
+        <Self as IVideoPlayerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __VideoPlayer_TimeEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: VideoPlayer_TimeEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(VideoPlayer_TimeEventHandler, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::video::videoplayer::VideoPlayer as ::unity2::IlType>::il_type(),
+                <f64 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <VideoPlayer_TimeEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: VideoPlayer_TimeEventHandler,
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        seconds: f64,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            VideoPlayer_TimeEventHandler,
+            crate::unity_engine::video::videoplayer::VideoPlayer,
+            f64,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, source, seconds, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+pub trait IVideoPlayer_TimeEventHandlerMethods: IVideoPlayer_TimeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <VideoPlayer_TimeEventHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_TimeEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]
+    fn invoke(
+        self,
+        source: impl ::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>,
+        seconds: impl ::core::convert::Into<f64>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <VideoPlayer_TimeEventHandler as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __VideoPlayer_TimeEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(source),
+                ::core::convert::Into::into(seconds),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl<__T: IVideoPlayer_TimeEventHandler> IVideoPlayer_TimeEventHandlerMethods for __T {}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer_TimeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VideoPlayer_TimeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVideoPlayer_TimeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::IVideoPlayer;
-    pub use super::IVideoPlayerMethods;
-    pub use super::IVideoPlayer_ErrorEventHandler;
-    pub use super::IVideoPlayer_ErrorEventHandlerMethods;
-    pub use super::IVideoPlayer_EventHandler;
-    pub use super::IVideoPlayer_EventHandlerMethods;
-    pub use super::IVideoPlayer_FrameReadyEventHandler;
-    pub use super::IVideoPlayer_FrameReadyEventHandlerMethods;
-    pub use super::IVideoPlayer_TimeEventHandler;
-    pub use super::IVideoPlayer_TimeEventHandlerMethods;
-    pub use super::VideoPlayer;
-    pub use super::VideoPlayer_ErrorEventHandler;
-    pub use super::VideoPlayer_EventHandler;
-    pub use super::VideoPlayer_FrameReadyEventHandler;
-    pub use super::VideoPlayer_TimeEventHandler;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        IVideoPlayer, IVideoPlayerMethods, IVideoPlayer_ErrorEventHandler, IVideoPlayer_ErrorEventHandlerMethods, IVideoPlayer_EventHandler,
+        IVideoPlayer_EventHandlerMethods, IVideoPlayer_FrameReadyEventHandler, IVideoPlayer_FrameReadyEventHandlerMethods,
+        IVideoPlayer_TimeEventHandler, IVideoPlayer_TimeEventHandlerMethods, VideoPlayer, VideoPlayer_ErrorEventHandler, VideoPlayer_EventHandler,
+        VideoPlayer_FrameReadyEventHandler, VideoPlayer_TimeEventHandler,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
+    };
 }

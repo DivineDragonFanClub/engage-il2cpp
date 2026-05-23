@@ -2,24 +2,26 @@
 
 #[cfg(feature = "app-solanelinfomenuitemcontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenuitemcontent/SolanelInfoMenuItemContent.md"))]
     #[::unity2::class(namespace = "App", name = "SolanelInfoMenuItemContent")]
     #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
     pub struct SolanelInfoMenuItemContent {
         #[rename(name = "m_IconObjList")]
-        pub m_icon_obj_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_icon_obj_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_SubNameObj")]
         pub m_sub_name_obj: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_UnitIcon")]
@@ -39,11 +41,8 @@ mod __SolanelInfoMenuItemContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "Build",
@@ -55,18 +54,15 @@ mod __SolanelInfoMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build(
@@ -74,24 +70,15 @@ mod __SolanelInfoMenuItemContent_unity2_raw {
         menu_item: crate::app::basicmenuitem::BasicMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuItemContent,
-            crate::app::basicmenuitem::BasicMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SolanelInfoMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
         inner(this, menu_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -104,39 +91,27 @@ mod __SolanelInfoMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text_color(
-        this: SolanelInfoMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_text_color(this: SolanelInfoMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SolanelInfoMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_text_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -149,30 +124,20 @@ mod __SolanelInfoMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SolanelInfoMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SolanelInfoMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SolanelInfoMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -180,42 +145,26 @@ mod __SolanelInfoMenuItemContent_unity2_raw {
 #[cfg(feature = "app-solanelinfomenuitemcontent")]
 pub trait ISolanelInfoMenuItemContentMethods: ISolanelInfoMenuItemContent {
     #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(
-        self,
-        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
+    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
         unsafe {
             let __receiver =
-                <SolanelInfoMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuItemContent_unity2_raw::build(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
+                <SolanelInfoMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
         }
     }
     #[doc = "`BuildTextColor()` overload"]
     fn build_text_color(self) -> () {
         unsafe {
             let __receiver =
-                <SolanelInfoMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuItemContent_unity2_raw::build_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SolanelInfoMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SolanelInfoMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SolanelInfoMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SolanelInfoMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -243,25 +192,22 @@ impl SolanelInfoMenuItemContent {
 #[cfg(feature = "app-solanelinfomenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISolanelInfoMenuItemContent;
-    pub use super::ISolanelInfoMenuItemContentMethods;
-    pub use super::SolanelInfoMenuItemContent;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use super::{ISolanelInfoMenuItemContent, ISolanelInfoMenuItemContentMethods, SolanelInfoMenuItemContent};
     #[cfg(feature = "app-basicmenuitemcontent")]
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenuitemcontent::IBasicMenuItemContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

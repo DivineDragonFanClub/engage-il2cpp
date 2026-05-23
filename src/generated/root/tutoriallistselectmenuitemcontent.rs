@@ -2,15 +2,19 @@
 
 #[cfg(feature = "root-tutoriallistselectmenuitemcontent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallistselectmenuitemcontent/TutorialListSelectMenuItemContent.md"))]
     #[::unity2::class(namespace = "", name = "TutorialListSelectMenuItemContent")]
@@ -37,9 +41,7 @@ mod __TutorialListSelectMenuItemContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_build_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -52,41 +54,27 @@ mod __TutorialListSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text(
-        this: TutorialListSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TutorialListSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_text::get_offset() as isize),
-        );
+    pub unsafe fn build_text(this: TutorialListSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialListSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -99,43 +87,28 @@ mod __TutorialListSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_text_color(
-        this: TutorialListSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TutorialListSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_text_color::get_offset() as isize),
-        );
+    pub unsafe fn update_text_color(this: TutorialListSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialListSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_new_mark {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "SetNewMark",
@@ -147,43 +120,27 @@ mod __TutorialListSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "SetNewMark",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SetNewMark",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_new_mark(
-        this: TutorialListSelectMenuItemContent,
-        enable: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TutorialListSelectMenuItemContent,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_new_mark::get_offset() as isize),
-        );
+    pub unsafe fn set_new_mark(this: TutorialListSelectMenuItemContent, enable: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialListSelectMenuItemContent, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_new_mark::get_method_info().method_ptr);
         inner(this, enable, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_synchronize_new_icon_animation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -196,41 +153,27 @@ mod __TutorialListSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "SynchronizeNewIconAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SynchronizeNewIconAnimation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn synchronize_new_icon_animation(
-        this: TutorialListSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TutorialListSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_synchronize_new_icon_animation::get_offset() as isize),
-        );
+    pub unsafe fn synchronize_new_icon_animation(this: TutorialListSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialListSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_synchronize_new_icon_animation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -243,32 +186,20 @@ mod __TutorialListSelectMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TutorialListSelectMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TutorialListSelectMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TutorialListSelectMenuItemContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: TutorialListSelectMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TutorialListSelectMenuItemContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -278,36 +209,27 @@ pub trait ITutorialListSelectMenuItemContentMethods: ITutorialListSelectMenuItem
     #[doc = "`BuildText()` overload"]
     fn build_text(self) -> () {
         unsafe {
-            let __receiver =
-                <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TutorialListSelectMenuItemContent_unity2_raw::build_text(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialListSelectMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateTextColor()` overload"]
     fn update_text_color(self) -> () {
         unsafe {
-            let __receiver =
-                <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TutorialListSelectMenuItemContent_unity2_raw::update_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialListSelectMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetNewMark(bool)` overload"]
     fn set_new_mark(self, enable: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver =
-                <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __TutorialListSelectMenuItemContent_unity2_raw::set_new_mark(
                 __receiver,
                 ::core::convert::Into::into(enable),
@@ -318,27 +240,19 @@ pub trait ITutorialListSelectMenuItemContentMethods: ITutorialListSelectMenuItem
     #[doc = "`SynchronizeNewIconAnimation()` overload"]
     fn synchronize_new_icon_animation(self) -> () {
         unsafe {
-            let __receiver =
-                <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TutorialListSelectMenuItemContent_unity2_raw::synchronize_new_icon_animation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialListSelectMenuItemContent_unity2_raw::synchronize_new_icon_animation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __TutorialListSelectMenuItemContent_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TutorialListSelectMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __TutorialListSelectMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -365,25 +279,22 @@ impl TutorialListSelectMenuItemContent {
 #[cfg(feature = "root-tutoriallistselectmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITutorialListSelectMenuItemContent;
-    pub use super::ITutorialListSelectMenuItemContentMethods;
-    pub use super::TutorialListSelectMenuItemContent;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use super::{ITutorialListSelectMenuItemContent, ITutorialListSelectMenuItemContentMethods, TutorialListSelectMenuItemContent};
     #[cfg(feature = "app-basicmenuitemcontent")]
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenuitemcontent::IBasicMenuItemContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

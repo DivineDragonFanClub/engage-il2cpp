@@ -2,30 +2,34 @@
 
 #[cfg(feature = "unity_engine-scripting-garbagecollector-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]
+    #[::unity2::class(namespace = "UnityEngine.Scripting", name = "GarbageCollector")]
+    #[parent(crate::system::object::Object)]
+    pub struct GarbageCollector {
+        #[static_field]
+        #[rename(name = "GCModeChanged")]
+        pub gc_mode_changed: crate::system::action_1::Action_1<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode>,
+    }
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GarbageCollector_Mode {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GarbageCollector_Mode {
-        const NAMESPACE: &'static str = "UnityEngine.Scripting";
-
         const NAME: &'static str = "GarbageCollector.Mode";
+        const NAMESPACE: &'static str = "UnityEngine.Scripting";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -36,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for GarbageCollector_Mode {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -56,17 +57,6 @@ mod __types {
             Self { value: 2 }
         }
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]
-    #[::unity2::class(namespace = "UnityEngine.Scripting", name = "GarbageCollector")]
-    #[parent(crate::system::object::Object)]
-    pub struct GarbageCollector {
-        #[static_field]
-        #[rename(name = "GCModeChanged")]
-        pub gc_mode_changed: crate::system::action_1::Action_1<
-            crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-        >,
-    }
 }
 
 #[cfg(feature = "unity_engine-scripting-garbagecollector-types")]
@@ -81,9 +71,7 @@ mod __GarbageCollector_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_gc_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
@@ -96,34 +84,31 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "get_GCMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "get_GCMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_gc_mode(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_gc_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode =
+            ::core::mem::transmute(__lookup_get_gc_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_gc_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
                 "set_GCMode",
@@ -135,42 +120,32 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "set_GCMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "set_GCMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_gc_mode(
         value: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_gc_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_gc_mode::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
                 "SetMode",
@@ -182,41 +157,30 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "SetMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "SetMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mode(
         mode: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mode::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mode::get_method_info().method_ptr);
         inner(mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mode {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
@@ -229,33 +193,29 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "GetMode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "GetMode",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_mode(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_mode :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode =
+            ::core::mem::transmute(__lookup_get_mode::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_incremental {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
@@ -268,35 +228,27 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "get_isIncremental",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "get_isIncremental",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_is_incremental(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_incremental::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_incremental::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_incremental_time_slice_nanoseconds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
@@ -309,39 +261,28 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "get_incrementalTimeSliceNanoseconds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "get_incrementalTimeSliceNanoseconds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_incremental_time_slice_nanoseconds(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> u64 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> u64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_incremental_time_slice_nanoseconds::get_offset() as isize),
-        );
+    pub unsafe fn get_incremental_time_slice_nanoseconds(__unity2_method_info: ::unity2::OptionalMethod) -> u64 {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> u64 =
+            ::core::mem::transmute(__lookup_get_incremental_time_slice_nanoseconds::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_incremental_time_slice_nanoseconds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<u64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<u64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GarbageCollector as ::unity2::ClassIdentity>::class(),
                 "set_incrementalTimeSliceNanoseconds",
@@ -353,29 +294,20 @@ mod __GarbageCollector_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GarbageCollector as ::unity2::ClassIdentity>::NAME,
-                    "set_incrementalTimeSliceNanoseconds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GarbageCollector as ::unity2::ClassIdentity>::NAME,
+                        "set_incrementalTimeSliceNanoseconds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_incremental_time_slice_nanoseconds(
-        value: u64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(u64, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_incremental_time_slice_nanoseconds::get_offset() as isize),
-        );
+    pub unsafe fn set_incremental_time_slice_nanoseconds(value: u64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(u64, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_incremental_time_slice_nanoseconds::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
 }
@@ -383,59 +315,39 @@ mod __GarbageCollector_unity2_raw {
 #[cfg(feature = "unity_engine-scripting-garbagecollector")]
 impl GarbageCollector {
     #[doc = "`get_GCMode()` overload"]
-    pub fn get_gc_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode
-    {
+    pub fn get_gc_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode {
         unsafe { __GarbageCollector_unity2_raw::get_gc_mode(::core::option::Option::None) }
     }
+
     #[doc = "`set_GCMode(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode)` overload"]
-    pub fn set_gc_mode(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-        >,
-    ) -> () {
-        unsafe {
-            __GarbageCollector_unity2_raw::set_gc_mode(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_gc_mode(value: impl ::core::convert::Into<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode>) -> () {
+        unsafe { __GarbageCollector_unity2_raw::set_gc_mode(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`SetMode(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode)` overload"]
-    pub fn set_mode(
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-        >,
-    ) -> () {
-        unsafe {
-            __GarbageCollector_unity2_raw::set_mode(
-                ::core::convert::Into::into(mode),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_mode(mode: impl ::core::convert::Into<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode>) -> () {
+        unsafe { __GarbageCollector_unity2_raw::set_mode(::core::convert::Into::into(mode), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMode()` overload"]
     pub fn get_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode {
         unsafe { __GarbageCollector_unity2_raw::get_mode(::core::option::Option::None) }
     }
+
     #[doc = "`get_isIncremental()` overload"]
     pub fn get_is_incremental() -> bool {
         unsafe { __GarbageCollector_unity2_raw::get_is_incremental(::core::option::Option::None) }
     }
+
     #[doc = "`get_incrementalTimeSliceNanoseconds()` overload"]
     pub fn get_incremental_time_slice_nanoseconds() -> u64 {
-        unsafe {
-            __GarbageCollector_unity2_raw::get_incremental_time_slice_nanoseconds(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __GarbageCollector_unity2_raw::get_incremental_time_slice_nanoseconds(::core::option::Option::None) }
     }
+
     #[doc = "`set_incrementalTimeSliceNanoseconds(u64)` overload"]
     pub fn set_incremental_time_slice_nanoseconds(value: impl ::core::convert::Into<u64>) -> () {
         unsafe {
-            __GarbageCollector_unity2_raw::set_incremental_time_slice_nanoseconds(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            __GarbageCollector_unity2_raw::set_incremental_time_slice_nanoseconds(::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
 }
@@ -443,16 +355,12 @@ impl GarbageCollector {
 #[cfg(feature = "unity_engine-scripting-garbagecollector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GarbageCollector;
-    pub use super::GarbageCollector_Mode;
-    pub use super::IGarbageCollector;
-    pub use crate::system::object::IObject;
+    pub use super::{GarbageCollector, GarbageCollector_Mode, IGarbageCollector};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

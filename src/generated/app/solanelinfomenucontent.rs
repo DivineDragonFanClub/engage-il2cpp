@@ -2,59 +2,19 @@
 
 #[cfg(feature = "app-solanelinfomenucontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicmenucontent::{BasicMenuContent, IBasicMenuContent};
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_Infomation.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.Infomation")]
-    #[parent(crate::system::object::Object)]
-    pub struct SolanelInfoMenuContent_Infomation {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Title")]
-        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_Message")]
-        pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_HelpFastTravel.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.HelpFastTravel")]
-    #[parent(crate::system::object::Object)]
-    pub struct SolanelInfoMenuContent_HelpFastTravel {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::ui::image::Image,
-        #[rename(name = "m_Name")]
-        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_CheckDone")]
-        pub m_check_done: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Value")]
-        pub m_value: crate::unity_engine::gameobject::GameObject,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_SolanelUnit.md"))]
-    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.SolanelUnit")]
-    #[parent(crate::system::object::Object)]
-    pub struct SolanelInfoMenuContent_SolanelUnit {
-        #[rename(name = "m_Root")]
-        pub m_root: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_UnitName")]
-        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_TalkIcon")]
-        pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
-    }
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent.md"))]
     #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent")]
@@ -74,35 +34,25 @@ mod __types {
         #[rename(name = "m_MapArrowMoveFrame")]
         pub m_map_arrow_move_frame: f32,
         #[rename(name = "m_MapPoint")]
-        pub m_map_point: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_map_point: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_AreaName")]
         pub m_area_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_AreaHelp")]
         pub m_area_help: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_AreaFastTravelObj")]
-        pub m_area_fast_travel_obj: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_area_fast_travel_obj: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_HelpFastTravelList")]
-        pub m_help_fast_travel_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::solanelinfomenucontent::SolanelInfoMenuContent_HelpFastTravel,
-        >,
+        pub m_help_fast_travel_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::solanelinfomenucontent::SolanelInfoMenuContent_HelpFastTravel>,
         #[rename(name = "m_UnitListObj")]
-        pub m_unit_list_obj: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_unit_list_obj: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_SolanelUnitList")]
-        pub m_solanel_unit_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::solanelinfomenucontent::SolanelInfoMenuContent_SolanelUnit,
-        >,
+        pub m_solanel_unit_list:
+            crate::system::collections::generic::list_1::List_1<crate::app::solanelinfomenucontent::SolanelInfoMenuContent_SolanelUnit>,
         #[rename(name = "m_InfomationAbsentObj")]
         pub m_infomation_absent_obj: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_InfomationListObj")]
-        pub m_infomation_list_obj: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
+        pub m_infomation_list_obj: crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_Pos")]
         pub m_pos: crate::unity_engine::vector2::Vector2,
         #[rename(name = "m_From")]
@@ -112,6 +62,50 @@ mod __types {
         #[rename(name = "m_MoveTick")]
         pub m_move_tick: f32,
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_SolanelUnit.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.SolanelUnit")]
+    #[parent(crate::system::object::Object)]
+    pub struct SolanelInfoMenuContent_SolanelUnit {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_UnitName")]
+        pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_TalkIcon")]
+        pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_HelpFastTravel.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.HelpFastTravel")]
+    #[parent(crate::system::object::Object)]
+    pub struct SolanelInfoMenuContent_HelpFastTravel {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Name")]
+        pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_CheckDone")]
+        pub m_check_done: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Value")]
+        pub m_value: crate::unity_engine::gameobject::GameObject,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_Infomation.md"))]
+    #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.Infomation")]
+    #[parent(crate::system::object::Object)]
+    pub struct SolanelInfoMenuContent_Infomation {
+        #[rename(name = "m_Root")]
+        pub m_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::ui::image::Image,
+        #[rename(name = "m_Title")]
+        pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_Message")]
+        pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
 }
 
 #[cfg(feature = "app-solanelinfomenucontent-types")]
@@ -120,126 +114,17 @@ pub use __types::*;
 #[cfg(feature = "app-solanelinfomenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SolanelInfoMenuContent_Infomation_unity2_raw {
+mod __SolanelInfoMenuContent_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_after_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SolanelInfoMenuContent_Infomation,
-        root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_Infomation,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_show {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::class(),
-                "Show",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::NAME,
-                    "Show",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn show(
-        this: SolanelInfoMenuContent_Infomation,
-        sprite: crate::unity_engine::sprite::Sprite,
-        title: ::unity2::Il2CppString,
-        message: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_Infomation,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show::get_offset() as isize),
-        );
-        inner(this, sprite, title, message, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::class(),
-                "Hide",
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "AfterBuild",
                 0,
                 param_types,
                 false,
@@ -248,127 +133,31 @@ mod __SolanelInfoMenuContent_Infomation_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: SolanelInfoMenuContent_Infomation,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_Infomation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hide::get_offset() as isize),
-        );
+    pub unsafe fn after_build(this: SolanelInfoMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-pub trait ISolanelInfoMenuContent_InfomationMethods: ISolanelInfoMenuContent_Infomation {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_Infomation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuContent_Infomation_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Show(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn show(
-        self,
-        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-        title: impl ::core::convert::Into<::unity2::Il2CppString>,
-        message: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_Infomation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuContent_Infomation_unity2_raw::show(
-                __receiver,
-                ::core::convert::Into::into(sprite),
-                ::core::convert::Into::into(title),
-                ::core::convert::Into::into(message),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
-        unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_Infomation as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuContent_Infomation_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-impl<__T: ISolanelInfoMenuContent_Infomation> ISolanelInfoMenuContent_InfomationMethods for __T {}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent_Infomation {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuContent_Infomation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoMenuContent_InfomationMethods>::ctor(this, root);
-        this
-    }
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SolanelInfoMenuContent_HelpFastTravel_unity2_raw {
-    use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
+    pub mod __lookup_calc_cursor_moved_pos_y {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcCursorMovedPosY",
                 1,
                 param_types,
                 false,
@@ -377,101 +166,31 @@ mod __SolanelInfoMenuContent_HelpFastTravel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SolanelInfoMenuContent_HelpFastTravel,
-        root: crate::unity_engine::gameobject::GameObject,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_HelpFastTravel,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, root, __unity2_method_info)
+    pub unsafe fn calc_cursor_moved_pos_y(this: SolanelInfoMenuContent, menu_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SolanelInfoMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_cursor_moved_pos_y::get_method_info().method_ptr);
+        inner(this, menu_item_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_try_set_fast_travel {
+    pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::hubfacilitydata::HubFacilityData as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
-                "TrySetFastTravel",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
-                    "TrySetFastTravel",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn try_set_fast_travel(
-        this: SolanelInfoMenuContent_HelpFastTravel,
-        data: crate::app::hubfacilitydata::HubFacilityData,
-        sprite: crate::unity_engine::sprite::Sprite,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_HelpFastTravel,
-            crate::app::hubfacilitydata::HubFacilityData,
-            crate::unity_engine::sprite::Sprite,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_fast_travel::get_offset() as isize),
-        );
-        inner(this, data, sprite, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_hide {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
-                "Hide",
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "Update",
                 0,
                 param_types,
                 false,
@@ -480,146 +199,295 @@ mod __SolanelInfoMenuContent_HelpFastTravel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: SolanelInfoMenuContent_HelpFastTravel,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_HelpFastTravel,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hide::get_offset() as isize),
-        );
+    pub unsafe fn update(this: SolanelInfoMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_one_only {
+    pub mod __lookup_load_prefab_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
-                "SetOneOnly",
-                1,
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "LoadPrefabAsync",
+                0,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
-                    "SetOneOnly",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "LoadPrefabAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_one_only(
-        this: SolanelInfoMenuContent_HelpFastTravel,
-        is_done: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_HelpFastTravel,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_one_only::get_offset() as isize),
-        );
-        inner(this, is_done, __unity2_method_info)
+    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_load_prefab_async::get_method_info().method_ptr);
+        inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_one_done {
+    pub mod __lookup_is_loading_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
-                "SetOneDone",
-                1,
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "IsLoadingPrefab",
+                0,
                 param_types,
-                false,
+                true,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
-                    "SetOneDone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingPrefab",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_one_done(
-        this: SolanelInfoMenuContent_HelpFastTravel,
-        is_done: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_HelpFastTravel,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_one_done::get_offset() as isize),
-        );
-        inner(this, is_done, __unity2_method_info)
+    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_is_loading_prefab::get_method_info().method_ptr);
+        inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_set_count {
+    pub mod __lookup_unload_prefab {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
-                "SetCount",
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "UnloadPrefab",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "UnloadPrefab",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_unload_prefab::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "Create",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create(__unity2_method_info: ::unity2::OptionalMethod) -> crate::app::solanelinfomenucontent::SolanelInfoMenuContent {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::app::solanelinfomenucontent::SolanelInfoMenuContent =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_w {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcW",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcW",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_w(this: SolanelInfoMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_w::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_calc_h {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "CalcH",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "CalcH",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn calc_h(this: SolanelInfoMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_calc_h::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn initialize(this: SolanelInfoMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_sprite_atlas_manager {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "GetSpriteAtlasManager",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "GetSpriteAtlasManager",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_sprite_atlas_manager(
+        this: SolanelInfoMenuContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 =
+            ::core::mem::transmute(__lookup_get_sprite_atlas_manager::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_area_detail {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubareadata::HubAreaData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                "SetAreaDetail",
                 1,
                 param_types,
                 false,
@@ -628,135 +496,216 @@ mod __SolanelInfoMenuContent_HelpFastTravel_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
-                    "SetCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        "SetAreaDetail",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_count(
-        this: SolanelInfoMenuContent_HelpFastTravel,
-        num: i32,
+    pub unsafe fn set_area_detail(
+        this: SolanelInfoMenuContent,
+        data: crate::app::hubareadata::HubAreaData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_HelpFastTravel,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_count::get_offset() as isize),
-        );
-        inner(this, num, __unity2_method_info)
+        let inner: extern "C" fn(SolanelInfoMenuContent, crate::app::hubareadata::HubAreaData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_area_detail::get_method_info().method_ptr);
+        inner(this, data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SolanelInfoMenuContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
+                ".cctor",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-solanelinfomenucontent")]
-pub trait ISolanelInfoMenuContent_HelpFastTravelMethods:
-    ISolanelInfoMenuContent_HelpFastTravel
-{
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+impl SolanelInfoMenuContent {
+    #[doc = "`LoadPrefabAsync()` overload"]
+    pub fn load_prefab_async() -> () {
+        unsafe { __SolanelInfoMenuContent_unity2_raw::load_prefab_async(::core::option::Option::None) }
+    }
+
+    #[doc = "`IsLoadingPrefab()` overload"]
+    pub fn is_loading_prefab() -> bool {
+        unsafe { __SolanelInfoMenuContent_unity2_raw::is_loading_prefab(::core::option::Option::None) }
+    }
+
+    #[doc = "`UnloadPrefab()` overload"]
+    pub fn unload_prefab() -> () {
+        unsafe { __SolanelInfoMenuContent_unity2_raw::unload_prefab(::core::option::Option::None) }
+    }
+
+    #[doc = "`Create()` overload"]
+    pub fn create() -> crate::app::solanelinfomenucontent::SolanelInfoMenuContent {
+        unsafe { __SolanelInfoMenuContent_unity2_raw::create(::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __SolanelInfoMenuContent_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+pub trait ISolanelInfoMenuContentMethods: ISolanelInfoMenuContent {
+    #[doc = "`AfterBuild()` overload"]
+    fn after_build(self) -> () {
         unsafe {
-            let __receiver = < SolanelInfoMenuContent_HelpFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::ctor(
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
+    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::calc_cursor_moved_pos_y(
                 __receiver,
-                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(menu_item_index),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`TrySetFastTravel(crate::app::hubfacilitydata::HubFacilityData, crate::unity_engine::sprite::Sprite)` overload"]
-    fn try_set_fast_travel(
-        self,
-        data: impl ::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>,
-        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
-    ) -> bool {
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
         unsafe {
-            let __receiver = < SolanelInfoMenuContent_HelpFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::try_set_fast_travel(
-                __receiver,
-                ::core::convert::Into::into(data),
-                ::core::convert::Into::into(sprite),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`Hide()` overload"]
-    fn hide(self) -> () {
+    #[doc = "`CalcW()` overload"]
+    fn calc_w(self) -> f32 {
         unsafe {
-            let __receiver = < SolanelInfoMenuContent_HelpFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`SetOneOnly(bool)` overload"]
-    fn set_one_only(self, is_done: impl ::core::convert::Into<bool>) -> () {
+    #[doc = "`CalcH()` overload"]
+    fn calc_h(self) -> f32 {
         unsafe {
-            let __receiver = < SolanelInfoMenuContent_HelpFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::set_one_only(
-                __receiver,
-                ::core::convert::Into::into(is_done),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`SetOneDone(bool)` overload"]
-    fn set_one_done(self, is_done: impl ::core::convert::Into<bool>) -> () {
+    #[doc = "`Initialize()` overload"]
+    fn initialize(self) -> () {
         unsafe {
-            let __receiver = < SolanelInfoMenuContent_HelpFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::set_one_done(
-                __receiver,
-                ::core::convert::Into::into(is_done),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::initialize(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`SetCount(i32)` overload"]
-    fn set_count(self, num: impl ::core::convert::Into<i32>) -> () {
+    #[doc = "`GetSpriteAtlasManager()` overload"]
+    fn get_sprite_atlas_manager(self) -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 {
         unsafe {
-            let __receiver = < SolanelInfoMenuContent_HelpFastTravel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::set_count(
-                __receiver,
-                ::core::convert::Into::into(num),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::get_sprite_atlas_manager(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetAreaDetail(crate::app::hubareadata::HubAreaData)` overload"]
+    fn set_area_detail(self, data: impl ::core::convert::Into<crate::app::hubareadata::HubAreaData>) -> () {
+        unsafe {
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::set_area_detail(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SolanelInfoMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-solanelinfomenucontent")]
-impl<__T: ISolanelInfoMenuContent_HelpFastTravel> ISolanelInfoMenuContent_HelpFastTravelMethods
-    for __T
-{
-}
+impl<__T: ISolanelInfoMenuContent> ISolanelInfoMenuContentMethods for __T {}
 
 #[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent_HelpFastTravel {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+impl SolanelInfoMenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuContent_HelpFastTravel),
+                ::core::stringify!(SolanelInfoMenuContent),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISolanelInfoMenuContent_HelpFastTravelMethods>::ctor(this, root);
+        <Self as ISolanelInfoMenuContentMethods>::ctor(this);
         this
     }
 }
@@ -770,9 +719,7 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -786,18 +733,15 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -805,24 +749,15 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         root: crate::unity_engine::gameobject::GameObject,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_SolanelUnit,
-            crate::unity_engine::gameobject::GameObject,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SolanelInfoMenuContent_SolanelUnit, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::hubaccessdata::HubAccessData as ::unity2::IlType>::il_type(),
@@ -838,18 +773,15 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
-                    "SetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
+                        "SetUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_unit(
@@ -863,20 +795,14 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
             crate::app::unit::Unit,
             crate::app::hubaccessdata::HubAccessData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_unit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_unit::get_method_info().method_ptr);
         inner(this, unit, hub_access_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_god_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::goddata::GodData as ::unity2::IlType>::il_type(),
                 <crate::app::hubaccessdata::HubAccessData as ::unity2::IlType>::il_type(),
@@ -892,18 +818,15 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
-                    "SetGodUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
+                        "SetGodUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_god_unit(
@@ -917,20 +840,14 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
             crate::app::goddata::GodData,
             crate::app::hubaccessdata::HubAccessData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_god_unit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_god_unit::get_method_info().method_ptr);
         inner(this, god, hub_access_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::class(),
@@ -943,43 +860,28 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
-                    "Hide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide(
-        this: SolanelInfoMenuContent_SolanelUnit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_SolanelUnit,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_hide::get_offset() as isize),
-        );
+    pub unsafe fn hide(this: SolanelInfoMenuContent_SolanelUnit, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_SolanelUnit, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_talk_icon {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubaccessdata::HubAccessData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::hubaccessdata::HubAccessData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::class(),
                 "SetTalkIcon",
@@ -991,18 +893,15 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
-                    "SetTalkIcon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_SolanelUnit as ::unity2::ClassIdentity>::NAME,
+                        "SetTalkIcon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_talk_icon(
@@ -1010,15 +909,8 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
         hub_access_data: crate::app::hubaccessdata::HubAccessData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent_SolanelUnit,
-            crate::app::hubaccessdata::HubAccessData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_talk_icon::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SolanelInfoMenuContent_SolanelUnit, crate::app::hubaccessdata::HubAccessData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_talk_icon::get_method_info().method_ptr);
         inner(this, hub_access_data, __unity2_method_info)
     }
 }
@@ -1026,20 +918,12 @@ mod __SolanelInfoMenuContent_SolanelUnit_unity2_raw {
 #[cfg(feature = "app-solanelinfomenucontent")]
 pub trait ISolanelInfoMenuContent_SolanelUnitMethods: ISolanelInfoMenuContent_SolanelUnit {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    fn ctor(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> () {
+    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuContent_SolanelUnit_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(root),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_SolanelUnit_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
         }
     }
     #[doc = "`SetUnit(crate::app::unit::Unit, crate::app::hubaccessdata::HubAccessData)` overload"]
@@ -1049,10 +933,9 @@ pub trait ISolanelInfoMenuContent_SolanelUnitMethods: ISolanelInfoMenuContent_So
         hub_access_data: impl ::core::convert::Into<crate::app::hubaccessdata::HubAccessData>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __SolanelInfoMenuContent_SolanelUnit_unity2_raw::set_unit(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -1068,10 +951,9 @@ pub trait ISolanelInfoMenuContent_SolanelUnitMethods: ISolanelInfoMenuContent_So
         hub_access_data: impl ::core::convert::Into<crate::app::hubaccessdata::HubAccessData>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __SolanelInfoMenuContent_SolanelUnit_unity2_raw::set_god_unit(
                 __receiver,
                 ::core::convert::Into::into(god),
@@ -1083,26 +965,18 @@ pub trait ISolanelInfoMenuContent_SolanelUnitMethods: ISolanelInfoMenuContent_So
     #[doc = "`Hide()` overload"]
     fn hide(self) -> () {
         unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SolanelInfoMenuContent_SolanelUnit_unity2_raw::hide(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_SolanelUnit_unity2_raw::hide(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetTalkIcon(crate::app::hubaccessdata::HubAccessData)` overload"]
-    fn set_talk_icon(
-        self,
-        hub_access_data: impl ::core::convert::Into<crate::app::hubaccessdata::HubAccessData>,
-    ) -> () {
+    fn set_talk_icon(self, hub_access_data: impl ::core::convert::Into<crate::app::hubaccessdata::HubAccessData>) -> () {
         unsafe {
-            let __receiver =
-                <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <SolanelInfoMenuContent_SolanelUnit as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __SolanelInfoMenuContent_SolanelUnit_unity2_raw::set_talk_icon(
                 __receiver,
                 ::core::convert::Into::into(hub_access_data),
@@ -1134,558 +1008,100 @@ impl SolanelInfoMenuContent_SolanelUnit {
 #[cfg(feature = "app-solanelinfomenucontent")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SolanelInfoMenuContent_unity2_raw {
+mod __SolanelInfoMenuContent_HelpFastTravel_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_after_build {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "AfterBuild",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "AfterBuild",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn after_build(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_after_build::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_cursor_moved_pos_y {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcCursorMovedPosY",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcCursorMovedPosY",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_cursor_moved_pos_y(
-        this: SolanelInfoMenuContent,
-        menu_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(SolanelInfoMenuContent, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_cursor_moved_pos_y::get_offset() as isize),
-            );
-        inner(this, menu_item_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "Update",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_load_prefab_async {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "LoadPrefabAsync",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "LoadPrefabAsync",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn load_prefab_async(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_load_prefab_async::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_loading_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "IsLoadingPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingPrefab",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_loading_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_loading_prefab::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_unload_prefab {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "UnloadPrefab",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "UnloadPrefab",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn unload_prefab(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_prefab::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "Create",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::solanelinfomenucontent::SolanelInfoMenuContent {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::solanelinfomenucontent::SolanelInfoMenuContent = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_w {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcW",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcW",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_w(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_w::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_calc_h {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "CalcH",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "CalcH",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn calc_h(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
-        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_h::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn initialize(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_initialize::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_sprite_atlas_manager {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "GetSpriteAtlasManager",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "GetSpriteAtlasManager",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_sprite_atlas_manager(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sprite_atlas_manager::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_area_detail {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::hubareadata::HubAreaData as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                "SetAreaDetail",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    "SetAreaDetail",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_area_detail(
-        this: SolanelInfoMenuContent,
-        data: crate::app::hubareadata::HubAreaData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SolanelInfoMenuContent,
-            crate::app::hubareadata::HubAreaData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_area_detail::get_offset() as isize),
-        );
-        inner(this, data, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SolanelInfoMenuContent_HelpFastTravel,
+        root: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_HelpFastTravel, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_try_set_fast_travel {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::hubfacilitydata::HubFacilityData as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
+                "TrySetFastTravel",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
+                        "TrySetFastTravel",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn try_set_fast_travel(
+        this: SolanelInfoMenuContent_HelpFastTravel,
+        data: crate::app::hubfacilitydata::HubFacilityData,
+        sprite: crate::unity_engine::sprite::Sprite,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> bool {
+        let inner: extern "C" fn(
+            SolanelInfoMenuContent_HelpFastTravel,
+            crate::app::hubfacilitydata::HubFacilityData,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__lookup_try_set_fast_travel::get_method_info().method_ptr);
+        inner(this, data, sprite, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                ".ctor",
+                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
+                "Hide",
                 0,
                 param_types,
                 false,
@@ -1694,223 +1110,400 @@ mod __SolanelInfoMenuContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SolanelInfoMenuContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+    pub unsafe fn hide(this: SolanelInfoMenuContent_HelpFastTravel, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_HelpFastTravel, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
+    pub mod __lookup_set_one_only {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SolanelInfoMenuContent as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
+                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
+                "SetOneOnly",
+                1,
                 param_types,
-                true,
+                false,
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SolanelInfoMenuContent as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
+                        "SetOneOnly",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn set_one_only(this: SolanelInfoMenuContent_HelpFastTravel, is_done: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_HelpFastTravel, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_one_only::get_method_info().method_ptr);
+        inner(this, is_done, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_one_done {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
+                "SetOneDone",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
+                        "SetOneDone",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
+    pub unsafe fn set_one_done(this: SolanelInfoMenuContent_HelpFastTravel, is_done: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_HelpFastTravel, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_one_done::get_method_info().method_ptr);
+        inner(this, is_done, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_count {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::class(),
+                "SetCount",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_HelpFastTravel as ::unity2::ClassIdentity>::NAME,
+                        "SetCount",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_count(this: SolanelInfoMenuContent_HelpFastTravel, num: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_HelpFastTravel, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_count::get_method_info().method_ptr);
+        inner(this, num, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent {
-    #[doc = "`LoadPrefabAsync()` overload"]
-    pub fn load_prefab_async() -> () {
+pub trait ISolanelInfoMenuContent_HelpFastTravelMethods: ISolanelInfoMenuContent_HelpFastTravel {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
         unsafe {
-            __SolanelInfoMenuContent_unity2_raw::load_prefab_async(::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsLoadingPrefab()` overload"]
-    pub fn is_loading_prefab() -> bool {
-        unsafe {
-            __SolanelInfoMenuContent_unity2_raw::is_loading_prefab(::core::option::Option::None)
-        }
-    }
-    #[doc = "`UnloadPrefab()` overload"]
-    pub fn unload_prefab() -> () {
-        unsafe { __SolanelInfoMenuContent_unity2_raw::unload_prefab(::core::option::Option::None) }
-    }
-    #[doc = "`Create()` overload"]
-    pub fn create() -> crate::app::solanelinfomenucontent::SolanelInfoMenuContent {
-        unsafe { __SolanelInfoMenuContent_unity2_raw::create(::core::option::Option::None) }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __SolanelInfoMenuContent_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-pub trait ISolanelInfoMenuContentMethods: ISolanelInfoMenuContent {
-    #[doc = "`AfterBuild()` overload"]
-    fn after_build(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <SolanelInfoMenuContent_HelpFastTravel as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __SolanelInfoMenuContent_unity2_raw::after_build(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
         }
     }
-    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
-    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoMenuContent_unity2_raw::calc_cursor_moved_pos_y(
-                __receiver,
-                ::core::convert::Into::into(menu_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Update()` overload"]
-    fn update(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoMenuContent_unity2_raw::update(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcW()` overload"]
-    fn calc_w(self) -> f32 {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`CalcH()` overload"]
-    fn calc_h(self) -> f32 {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Initialize()` overload"]
-    fn initialize(self) -> () {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoMenuContent_unity2_raw::initialize(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSpriteAtlasManager()` overload"]
-    fn get_sprite_atlas_manager(self) -> crate::app::spriteatlasmanager_2::SpriteAtlasManager_2 {
-        unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SolanelInfoMenuContent_unity2_raw::get_sprite_atlas_manager(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`SetAreaDetail(crate::app::hubareadata::HubAreaData)` overload"]
-    fn set_area_detail(
+    #[doc = "`TrySetFastTravel(crate::app::hubfacilitydata::HubFacilityData, crate::unity_engine::sprite::Sprite)` overload"]
+    fn try_set_fast_travel(
         self,
-        data: impl ::core::convert::Into<crate::app::hubareadata::HubAreaData>,
-    ) -> () {
+        data: impl ::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>,
+        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+    ) -> bool {
         unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <SolanelInfoMenuContent_HelpFastTravel as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __SolanelInfoMenuContent_unity2_raw::set_area_detail(
+            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::try_set_fast_travel(
                 __receiver,
                 ::core::convert::Into::into(data),
+                ::core::convert::Into::into(sprite),
                 ::core::option::Option::None,
             )
         }
     }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
         unsafe {
-            let __receiver = <SolanelInfoMenuContent as ::unity2::FromIlInstance>::from_il_instance(
+            let __receiver = <SolanelInfoMenuContent_HelpFastTravel as ::unity2::FromIlInstance>::from_il_instance(
                 <Self as ::unity2::SystemObject>::as_instance(self),
             );
-            __SolanelInfoMenuContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetOneOnly(bool)` overload"]
+    fn set_one_only(self, is_done: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoMenuContent_HelpFastTravel as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::set_one_only(
+                __receiver,
+                ::core::convert::Into::into(is_done),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetOneDone(bool)` overload"]
+    fn set_one_done(self, is_done: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoMenuContent_HelpFastTravel as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::set_one_done(
+                __receiver,
+                ::core::convert::Into::into(is_done),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`SetCount(i32)` overload"]
+    fn set_count(self, num: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoMenuContent_HelpFastTravel as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_HelpFastTravel_unity2_raw::set_count(__receiver, ::core::convert::Into::into(num), ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-solanelinfomenucontent")]
-impl<__T: ISolanelInfoMenuContent> ISolanelInfoMenuContentMethods for __T {}
+impl<__T: ISolanelInfoMenuContent_HelpFastTravel> ISolanelInfoMenuContent_HelpFastTravelMethods for __T {}
 
 #[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl SolanelInfoMenuContent_HelpFastTravel {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuContent),
+                ::core::stringify!(SolanelInfoMenuContent_HelpFastTravel),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISolanelInfoMenuContentMethods>::ctor(this);
+        <Self as ISolanelInfoMenuContent_HelpFastTravelMethods>::ctor(this, root);
+        this
+    }
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SolanelInfoMenuContent_Infomation_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SolanelInfoMenuContent_Infomation,
+        root: crate::unity_engine::gameobject::GameObject,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_Infomation, crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, root, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_show {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::sprite::Sprite as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::class(),
+                "Show",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::NAME,
+                        "Show",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn show(
+        this: SolanelInfoMenuContent_Infomation,
+        sprite: crate::unity_engine::sprite::Sprite,
+        title: ::unity2::Il2CppString,
+        message: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SolanelInfoMenuContent_Infomation,
+            crate::unity_engine::sprite::Sprite,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_show::get_method_info().method_ptr);
+        inner(this, sprite, title, message, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_hide {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::class(),
+                "Hide",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SolanelInfoMenuContent_Infomation as ::unity2::ClassIdentity>::NAME,
+                        "Hide",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn hide(this: SolanelInfoMenuContent_Infomation, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SolanelInfoMenuContent_Infomation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_hide::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+pub trait ISolanelInfoMenuContent_InfomationMethods: ISolanelInfoMenuContent_Infomation {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    fn ctor(self, root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoMenuContent_Infomation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_Infomation_unity2_raw::ctor(__receiver, ::core::convert::Into::into(root), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Show(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn show(
+        self,
+        sprite: impl ::core::convert::Into<crate::unity_engine::sprite::Sprite>,
+        title: impl ::core::convert::Into<::unity2::Il2CppString>,
+        message: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoMenuContent_Infomation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_Infomation_unity2_raw::show(
+                __receiver,
+                ::core::convert::Into::into(sprite),
+                ::core::convert::Into::into(title),
+                ::core::convert::Into::into(message),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Hide()` overload"]
+    fn hide(self) -> () {
+        unsafe {
+            let __receiver = <SolanelInfoMenuContent_Infomation as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SolanelInfoMenuContent_Infomation_unity2_raw::hide(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+impl<__T: ISolanelInfoMenuContent_Infomation> ISolanelInfoMenuContent_InfomationMethods for __T {}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+impl SolanelInfoMenuContent_Infomation {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoMenuContent_Infomation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoMenuContent_InfomationMethods>::ctor(this, root);
         this
     }
 }
@@ -1918,34 +1511,27 @@ impl SolanelInfoMenuContent {
 #[cfg(feature = "app-solanelinfomenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISolanelInfoMenuContent;
-    pub use super::ISolanelInfoMenuContentMethods;
-    pub use super::ISolanelInfoMenuContent_HelpFastTravel;
-    pub use super::ISolanelInfoMenuContent_HelpFastTravelMethods;
-    pub use super::ISolanelInfoMenuContent_Infomation;
-    pub use super::ISolanelInfoMenuContent_InfomationMethods;
-    pub use super::ISolanelInfoMenuContent_SolanelUnit;
-    pub use super::ISolanelInfoMenuContent_SolanelUnitMethods;
-    pub use super::SolanelInfoMenuContent;
-    pub use super::SolanelInfoMenuContent_HelpFastTravel;
-    pub use super::SolanelInfoMenuContent_Infomation;
-    pub use super::SolanelInfoMenuContent_SolanelUnit;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
+    pub use super::{
+        ISolanelInfoMenuContent, ISolanelInfoMenuContentMethods, ISolanelInfoMenuContent_HelpFastTravel,
+        ISolanelInfoMenuContent_HelpFastTravelMethods, ISolanelInfoMenuContent_Infomation, ISolanelInfoMenuContent_InfomationMethods,
+        ISolanelInfoMenuContent_SolanelUnit, ISolanelInfoMenuContent_SolanelUnitMethods, SolanelInfoMenuContent,
+        SolanelInfoMenuContent_HelpFastTravel, SolanelInfoMenuContent_Infomation, SolanelInfoMenuContent_SolanelUnit,
+    };
     #[cfg(feature = "app-basicmenucontent")]
     pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -8,15 +8,13 @@ pub use addressables::{Addressables, Addressables_MergeMode, IAddressables};
 pub mod addressablesimpl;
 #[cfg(feature = "unity_engine-addressable_assets-addressablesimpl-types")]
 pub use addressablesimpl::{
-    AddressablesImpl, AddressablesImpl_LoadResourceLocationKeyOp,
-    AddressablesImpl_LoadResourceLocationKeysOp, AddressablesImpl_ResourceLocatorInfo,
-    IAddressablesImpl, IAddressablesImpl_LoadResourceLocationKeyOp,
-    IAddressablesImpl_LoadResourceLocationKeysOp, IAddressablesImpl_ResourceLocatorInfo,
+    AddressablesImpl, AddressablesImpl_LoadResourceLocationKeyOp, AddressablesImpl_LoadResourceLocationKeysOp, AddressablesImpl_ResourceLocatorInfo,
+    IAddressablesImpl, IAddressablesImpl_LoadResourceLocationKeyOp, IAddressablesImpl_LoadResourceLocationKeysOp,
+    IAddressablesImpl_ResourceLocatorInfo,
 };
 #[cfg(feature = "unity_engine-addressable_assets-addressablesimpl")]
 pub use addressablesimpl::{
-    IAddressablesImplMethods, IAddressablesImpl_LoadResourceLocationKeyOpMethods,
-    IAddressablesImpl_LoadResourceLocationKeysOpMethods,
+    IAddressablesImplMethods, IAddressablesImpl_LoadResourceLocationKeyOpMethods, IAddressablesImpl_LoadResourceLocationKeysOpMethods,
     IAddressablesImpl_ResourceLocatorInfoMethods,
 };
 #[cfg(any(feature = "unity_engine-addressable_assets-addressablesplatform-types"))]
@@ -124,9 +122,7 @@ pub use platformmappingservice::{IPlatformMappingService, PlatformMappingService
     feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap-types"
 ))]
 pub mod resource_locators;
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider-types"
-))]
+#[cfg(any(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider-types"))]
 pub mod resource_providers;
 #[cfg(any(feature = "unity_engine-addressable_assets-updatecatalogsoperation-types"))]
 pub mod updatecatalogsoperation;

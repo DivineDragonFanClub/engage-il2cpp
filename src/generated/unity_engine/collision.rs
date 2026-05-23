@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-collision-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/collision/Collision.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "Collision")]
@@ -40,9 +40,7 @@ mod __Collision_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_relative_velocity {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collision as ::unity2::ClassIdentity>::class(),
@@ -55,41 +53,27 @@ mod __Collision_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collision as ::unity2::ClassIdentity>::NAME,
-                    "get_relativeVelocity",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collision as ::unity2::ClassIdentity>::NAME,
+                        "get_relativeVelocity",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_relative_velocity(
-        this: Collision,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            Collision,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_relative_velocity::get_offset() as isize),
-        );
+    pub unsafe fn get_relative_velocity(this: Collision, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 {
+        let inner: extern "C" fn(Collision, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_relative_velocity::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_collider {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collision as ::unity2::ClassIdentity>::class(),
@@ -102,41 +86,27 @@ mod __Collision_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collision as ::unity2::ClassIdentity>::NAME,
-                    "get_collider",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collision as ::unity2::ClassIdentity>::NAME,
+                        "get_collider",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_collider(
-        this: Collision,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::collider::Collider {
-        let inner: extern "C" fn(
-            Collision,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::collider::Collider = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_collider::get_offset() as isize),
-        );
+    pub unsafe fn get_collider(this: Collision, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::collider::Collider {
+        let inner: extern "C" fn(Collision, ::unity2::OptionalMethod) -> crate::unity_engine::collider::Collider =
+            ::core::mem::transmute(__lookup_get_collider::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <Collision as ::unity2::ClassIdentity>::class(),
@@ -149,32 +119,20 @@ mod __Collision_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Collision as ::unity2::ClassIdentity>::NAME,
-                    "get_gameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Collision as ::unity2::ClassIdentity>::NAME,
+                        "get_gameObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_game_object(
-        this: Collision,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            Collision,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_game_object::get_offset() as isize),
-        );
+    pub unsafe fn get_game_object(this: Collision, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject {
+        let inner: extern "C" fn(Collision, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_game_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -184,27 +142,21 @@ pub trait ICollisionMethods: ICollision {
     #[doc = "`get_relativeVelocity()` overload"]
     fn get_relative_velocity(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <Collision as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Collision as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Collision_unity2_raw::get_relative_velocity(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_collider()` overload"]
     fn get_collider(self) -> crate::unity_engine::collider::Collider {
         unsafe {
-            let __receiver = <Collision as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Collision as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Collision_unity2_raw::get_collider(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_gameObject()` overload"]
     fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <Collision as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <Collision as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __Collision_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)
         }
     }
@@ -216,9 +168,7 @@ impl<__T: ICollision> ICollisionMethods for __T {}
 #[cfg(feature = "unity_engine-collision")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Collision;
-    pub use super::ICollision;
-    pub use super::ICollisionMethods;
+    pub use super::{Collision, ICollision, ICollisionMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

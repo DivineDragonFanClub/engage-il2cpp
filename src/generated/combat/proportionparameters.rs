@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-proportionparameters-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/proportionparameters/ProportionParameters.md"))]
     #[::unity2::class(namespace = "Combat", name = "ProportionParameters")]
@@ -64,11 +64,8 @@ mod __ProportionParameters_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_import_leg_scale_params_from_model {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::transform::Transform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
                 "ImportLegScaleParamsFromModel",
@@ -80,18 +77,15 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "ImportLegScaleParamsFromModel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "ImportLegScaleParamsFromModel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn import_leg_scale_params_from_model(
@@ -99,24 +93,15 @@ mod __ProportionParameters_unity2_raw {
         root: crate::unity_engine::transform::Transform,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            crate::unity_engine::transform::Transform,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_import_leg_scale_params_from_model::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProportionParameters, crate::unity_engine::transform::Transform, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_import_leg_scale_params_from_model::get_method_info().method_ptr);
         inner(this, root, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -129,40 +114,29 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: proportionparameters :: ProportionParameters as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::proportionparameters::ProportionParameters as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -174,18 +148,15 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -193,24 +164,15 @@ mod __ProportionParameters_unity2_raw {
         rhs: crate::combat::proportionparameters::ProportionParameters,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            crate::combat::proportionparameters::ProportionParameters,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProportionParameters, crate::combat::proportionparameters::ProportionParameters, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_to_one {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -223,39 +185,27 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "ResetToOne",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "ResetToOne",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_to_one(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_to_one(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_to_one::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_to_one::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_clipboard_formed_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -268,41 +218,27 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "GetClipboardFormedString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "GetClipboardFormedString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_clipboard_formed_string(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_clipboard_formed_string::get_offset() as isize),
-        );
+    pub unsafe fn get_clipboard_formed_string(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_clipboard_formed_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_random {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -315,39 +251,27 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "Random",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "Random",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn random(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn random(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_random::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_random::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_valid {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -360,40 +284,29 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "get_IsValid",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "get_IsValid",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_valid(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_valid(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_valid::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_valid::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_from {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: proportionparameters :: ProportionParameters as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::combat::proportionparameters::ProportionParameters as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
                 "CopyFrom",
@@ -405,18 +318,15 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "CopyFrom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "CopyFrom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_from(
@@ -424,26 +334,16 @@ mod __ProportionParameters_unity2_raw {
         rhs: crate::combat::proportionparameters::ProportionParameters,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            crate::combat::proportionparameters::ProportionParameters,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_from::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProportionParameters, crate::combat::proportionparameters::ProportionParameters, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_copy_from::get_method_info().method_ptr);
         inner(this, rhs, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_import_from_asset_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::assettable::AssetTable_Result as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::assettable::AssetTable_Result as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
                 "ImportFromAssetResult",
@@ -455,18 +355,15 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "ImportFromAssetResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "ImportFromAssetResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn import_from_asset_result(
@@ -474,24 +371,15 @@ mod __ProportionParameters_unity2_raw {
         r: crate::app::assettable::AssetTable_Result,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            crate::app::assettable::AssetTable_Result,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_import_from_asset_result::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProportionParameters, crate::app::assettable::AssetTable_Result, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_import_from_asset_result::get_method_info().method_ptr);
         inner(this, r, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -504,41 +392,27 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "DumpToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "DumpToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dump_to_string(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump_to_string::get_offset() as isize),
-        );
+    pub unsafe fn dump_to_string(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_dump_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dump_to_short_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -551,41 +425,27 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "DumpToShortString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "DumpToShortString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dump_to_short_string(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dump_to_short_string::get_offset() as isize),
-        );
+    pub unsafe fn dump_to_short_string(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_dump_to_short_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::combat::characterjoint::CharacterJoint as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -599,18 +459,15 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "Calculate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "Calculate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn calculate(
@@ -618,24 +475,15 @@ mod __ProportionParameters_unity2_raw {
         j: crate::combat::characterjoint::CharacterJoint,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProportionParameters,
-            crate::combat::characterjoint::CharacterJoint,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_calculate::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProportionParameters, crate::combat::characterjoint::CharacterJoint, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_calculate::get_method_info().method_ptr);
         inner(this, j, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_flush {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProportionParameters as ::unity2::ClassIdentity>::class(),
@@ -648,30 +496,20 @@ mod __ProportionParameters_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProportionParameters as ::unity2::ClassIdentity>::NAME,
-                    "Flush",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProportionParameters as ::unity2::ClassIdentity>::NAME,
+                        "Flush",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn flush(
-        this: ProportionParameters,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn flush(this: ProportionParameters, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ProportionParameters, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_flush::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_flush::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -679,14 +517,10 @@ mod __ProportionParameters_unity2_raw {
 #[cfg(feature = "combat-proportionparameters")]
 pub trait IProportionParametersMethods: IProportionParameters {
     #[doc = "`ImportLegScaleParamsFromModel(crate::unity_engine::transform::Transform)` overload"]
-    fn import_leg_scale_params_from_model(
-        self,
-        root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>,
-    ) -> () {
+    fn import_leg_scale_params_from_model(self, root: impl ::core::convert::Into<crate::unity_engine::transform::Transform>) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProportionParameters_unity2_raw::import_leg_scale_params_from_model(
                 __receiver,
                 ::core::convert::Into::into(root),
@@ -697,151 +531,96 @@ pub trait IProportionParametersMethods: IProportionParameters {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProportionParameters_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::combat::proportionparameters::ProportionParameters)` overload"]
-    fn ctor_2(
-        self,
-        rhs: impl ::core::convert::Into<crate::combat::proportionparameters::ProportionParameters>,
-    ) -> () {
+    fn ctor_2(self, rhs: impl ::core::convert::Into<crate::combat::proportionparameters::ProportionParameters>) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(rhs), ::core::option::Option::None)
         }
     }
     #[doc = "`ResetToOne()` overload"]
     fn reset_to_one(self) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::reset_to_one(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::reset_to_one(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetClipboardFormedString()` overload"]
     fn get_clipboard_formed_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::get_clipboard_formed_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::get_clipboard_formed_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Random()` overload"]
     fn random(self) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProportionParameters_unity2_raw::random(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsValid()` overload"]
     fn get_is_valid(self) -> bool {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::get_is_valid(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CopyFrom(crate::combat::proportionparameters::ProportionParameters)` overload"]
-    fn copy_from(
-        self,
-        rhs: impl ::core::convert::Into<crate::combat::proportionparameters::ProportionParameters>,
-    ) -> () {
+    fn copy_from(self, rhs: impl ::core::convert::Into<crate::combat::proportionparameters::ProportionParameters>) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::copy_from(
-                __receiver,
-                ::core::convert::Into::into(rhs),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::copy_from(__receiver, ::core::convert::Into::into(rhs), ::core::option::Option::None)
         }
     }
     #[doc = "`ImportFromAssetResult(crate::app::assettable::AssetTable_Result)` overload"]
-    fn import_from_asset_result(
-        self,
-        r: impl ::core::convert::Into<crate::app::assettable::AssetTable_Result>,
-    ) -> () {
+    fn import_from_asset_result(self, r: impl ::core::convert::Into<crate::app::assettable::AssetTable_Result>) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::import_from_asset_result(
-                __receiver,
-                ::core::convert::Into::into(r),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::import_from_asset_result(__receiver, ::core::convert::Into::into(r), ::core::option::Option::None)
         }
     }
     #[doc = "`DumpToString()` overload"]
     fn dump_to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::dump_to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::dump_to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DumpToShortString()` overload"]
     fn dump_to_short_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::dump_to_short_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::dump_to_short_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Calculate(crate::combat::characterjoint::CharacterJoint)` overload"]
-    fn calculate(
-        self,
-        j: impl ::core::convert::Into<crate::combat::characterjoint::CharacterJoint>,
-    ) -> () {
+    fn calculate(self, j: impl ::core::convert::Into<crate::combat::characterjoint::CharacterJoint>) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ProportionParameters_unity2_raw::calculate(
-                __receiver,
-                ::core::convert::Into::into(j),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ProportionParameters_unity2_raw::calculate(__receiver, ::core::convert::Into::into(j), ::core::option::Option::None)
         }
     }
     #[doc = "`Flush()` overload"]
     fn flush(self) -> () {
         unsafe {
-            let __receiver = <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <ProportionParameters as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ProportionParameters_unity2_raw::flush(__receiver, ::core::option::Option::None)
         }
     }
@@ -882,9 +661,7 @@ impl ProportionParameters {
 #[cfg(feature = "combat-proportionparameters")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProportionParameters;
-    pub use super::IProportionParametersMethods;
-    pub use super::ProportionParameters;
+    pub use super::{IProportionParameters, IProportionParametersMethods, ProportionParameters};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -55,9 +55,7 @@ pub use itaginfo::{IITagInfo, ITagInfo};
 #[cfg(any(feature = "nintendo-message_studio-lib-libms-types"))]
 pub mod libms;
 #[cfg(feature = "nintendo-message_studio-lib-libms-types")]
-pub use libms::{
-    ILibms, ILibms_LMSFreePtr, ILibms_LMSMallocPtr, Libms, Libms_LMSFreePtr, Libms_LMSMallocPtr,
-};
+pub use libms::{ILibms, ILibms_LMSFreePtr, ILibms_LMSMallocPtr, Libms, Libms_LMSFreePtr, Libms_LMSMallocPtr};
 #[cfg(feature = "nintendo-message_studio-lib-libms")]
 pub use libms::{ILibms_LMSFreePtrMethods, ILibms_LMSMallocPtrMethods};
 #[cfg(any(feature = "nintendo-message_studio-lib-libmstype-types"))]

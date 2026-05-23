@@ -2,18 +2,20 @@
 
 #[cfg(feature = "app-irawassetbundle_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/irawassetbundle_1/IRawAssetBundle_1.md"))]
     #[::unity2::class(namespace = "App", name = "IRawAssetBundle`1")]
     #[parent(crate::system::object::Object)]
-    pub struct IRawAssetBundle_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Handle")] pub m_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < T0 > ,
-# [rename (name = "m_Asset")] pub m_asset : T0 ,
-}
+    pub struct IRawAssetBundle_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Handle")]
+        pub m_handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<T0>,
+        #[rename(name = "m_Asset")]
+        pub m_asset: T0,
+    }
 }
 
 #[cfg(feature = "app-irawassetbundle_1-types")]
@@ -70,9 +72,7 @@ impl<T0: ::unity2::ClassIdentity> IRawAssetBundle_1<T0> {
 #[cfg(feature = "app-irawassetbundle_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIRawAssetBundle_1;
-    pub use super::IIRawAssetBundle_1Methods;
-    pub use super::IRawAssetBundle_1;
+    pub use super::{IIRawAssetBundle_1, IIRawAssetBundle_1Methods, IRawAssetBundle_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

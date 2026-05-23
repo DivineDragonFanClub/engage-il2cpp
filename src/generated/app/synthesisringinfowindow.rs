@@ -2,14 +2,32 @@
 
 #[cfg(feature = "app-synthesisringinfowindow-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md"))]
+    #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.RingEnhance")]
+    #[parent(crate::system::object::Object)]
+    pub struct SynthesisRingInfoWindow_RingEnhance {
+        #[rename(name = "m_ParentObject")]
+        pub m_parent_object: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_ValueText")]
+        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_ArrowImage")]
+        pub m_arrow_image: crate::unity_engine::ui::image::Image,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md"))]
     #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.CharaPhoto")]
@@ -25,20 +43,6 @@ mod __types {
         pub m_frame_image: crate::unity_engine::ui::image::Image,
         #[rename(name = "m_IsSetup")]
         pub m_is_setup: bool,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md"))]
-    #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.RingEnhance")]
-    #[parent(crate::system::object::Object)]
-    pub struct SynthesisRingInfoWindow_RingEnhance {
-        #[rename(name = "m_ParentObject")]
-        pub m_parent_object: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_TitleText")]
-        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_ValueText")]
-        pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        #[rename(name = "m_ArrowImage")]
-        pub m_arrow_image: crate::unity_engine::ui::image::Image,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow.md"))]
@@ -58,9 +62,7 @@ mod __types {
         #[rename(name = "m_PiecesOfBondValueText")]
         pub m_pieces_of_bond_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BasePhotos")]
-        pub m_base_photos: ::unity2::Array<
-            crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
-        >,
+        pub m_base_photos: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>,
         #[rename(name = "m_BasePhotoIdx")]
         pub m_base_photo_idx: i32,
         #[rename(name = "m_BaseRingImage")]
@@ -68,9 +70,7 @@ mod __types {
         #[rename(name = "m_BaseRingNameText")]
         pub m_base_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BaseRingEnhances")]
-        pub m_base_ring_enhances: ::unity2::Array<
-            crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance,
-        >,
+        pub m_base_ring_enhances: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance>,
         #[rename(name = "m_BaseRingCountCaptionText")]
         pub m_base_ring_count_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BaseRingCountBeforeText")]
@@ -78,9 +78,7 @@ mod __types {
         #[rename(name = "m_BaseRingCountAfterText")]
         pub m_base_ring_count_after_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_SynthesisedPhotos")]
-        pub m_synthesised_photos: ::unity2::Array<
-            crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
-        >,
+        pub m_synthesised_photos: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>,
         #[rename(name = "m_SynthesisedPhotoIdx")]
         pub m_synthesised_photo_idx: i32,
         #[rename(name = "m_SynthesisedRingImage")]
@@ -88,9 +86,7 @@ mod __types {
         #[rename(name = "m_SynthesisedRingNameText")]
         pub m_synthesised_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_SynthesisedRingEnhances")]
-        pub m_synthesised_ring_enhances: ::unity2::Array<
-            crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance,
-        >,
+        pub m_synthesised_ring_enhances: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance>,
         #[rename(name = "m_SynthesisedRingCountCaptionText")]
         pub m_synthesised_ring_count_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_SynthesisedRingCountBeforeText")]
@@ -120,15 +116,85 @@ pub use __types::*;
 #[cfg(feature = "app-synthesisringinfowindow")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SynthesisRingInfoWindow_RingEnhance_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SynthesisRingInfoWindow_RingEnhance as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow_RingEnhance as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SynthesisRingInfoWindow_RingEnhance, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SynthesisRingInfoWindow_RingEnhance, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+pub trait ISynthesisRingInfoWindow_RingEnhanceMethods: ISynthesisRingInfoWindow_RingEnhance {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SynthesisRingInfoWindow_RingEnhance as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SynthesisRingInfoWindow_RingEnhance_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl<__T: ISynthesisRingInfoWindow_RingEnhance> ISynthesisRingInfoWindow_RingEnhanceMethods for __T {}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl SynthesisRingInfoWindow_RingEnhance {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingInfoWindow_RingEnhance),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingInfoWindow_RingEnhanceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __SynthesisRingInfoWindow_CharaPhoto_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::class(),
@@ -141,41 +207,27 @@ mod __SynthesisRingInfoWindow_CharaPhoto_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SynthesisRingInfoWindow_CharaPhoto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingInfoWindow_CharaPhoto,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: SynthesisRingInfoWindow_CharaPhoto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SynthesisRingInfoWindow_CharaPhoto, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fade_in {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::class(),
@@ -188,41 +240,27 @@ mod __SynthesisRingInfoWindow_CharaPhoto_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    "FadeIn",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                        "FadeIn",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fade_in(
-        this: SynthesisRingInfoWindow_CharaPhoto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingInfoWindow_CharaPhoto,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fade_in::get_offset() as isize),
-        );
+    pub unsafe fn fade_in(this: SynthesisRingInfoWindow_CharaPhoto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SynthesisRingInfoWindow_CharaPhoto, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_in::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_fade_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::class(),
@@ -235,43 +273,28 @@ mod __SynthesisRingInfoWindow_CharaPhoto_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    "FadeOut",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                        "FadeOut",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn fade_out(
-        this: SynthesisRingInfoWindow_CharaPhoto,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingInfoWindow_CharaPhoto,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_fade_out::get_offset() as isize),
-        );
+    pub unsafe fn fade_out(this: SynthesisRingInfoWindow_CharaPhoto, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SynthesisRingInfoWindow_CharaPhoto, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_fade_out::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_ring_chara {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::class(),
                 "SetRingChara",
@@ -283,18 +306,15 @@ mod __SynthesisRingInfoWindow_CharaPhoto_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
-                    "SetRingChara",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow_CharaPhoto as ::unity2::ClassIdentity>::NAME,
+                        "SetRingChara",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_ring_chara(
@@ -302,15 +322,8 @@ mod __SynthesisRingInfoWindow_CharaPhoto_unity2_raw {
         ring_data: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingInfoWindow_CharaPhoto,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_ring_chara::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SynthesisRingInfoWindow_CharaPhoto, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_ring_chara::get_method_info().method_ptr);
         inner(this, ring_data, __unity2_method_info)
     }
 }
@@ -320,52 +333,36 @@ pub trait ISynthesisRingInfoWindow_CharaPhotoMethods: ISynthesisRingInfoWindow_C
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FadeIn()` overload"]
     fn fade_in(self) -> () {
         unsafe {
-            let __receiver =
-                <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::fade_in(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::fade_in(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`FadeOut()` overload"]
     fn fade_out(self) -> () {
         unsafe {
-            let __receiver =
-                <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::fade_out(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::fade_out(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetRingChara(crate::app::ringdata::RingData)` overload"]
-    fn set_ring_chara(
-        self,
-        ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
-    ) -> () {
+    fn set_ring_chara(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
         unsafe {
-            let __receiver =
-                <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <SynthesisRingInfoWindow_CharaPhoto as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __SynthesisRingInfoWindow_CharaPhoto_unity2_raw::set_ring_chara(
                 __receiver,
                 ::core::convert::Into::into(ring_data),
@@ -397,110 +394,13 @@ impl SynthesisRingInfoWindow_CharaPhoto {
 #[cfg(feature = "app-synthesisringinfowindow")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SynthesisRingInfoWindow_RingEnhance_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SynthesisRingInfoWindow_RingEnhance as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow_RingEnhance as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SynthesisRingInfoWindow_RingEnhance,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingInfoWindow_RingEnhance,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-pub trait ISynthesisRingInfoWindow_RingEnhanceMethods:
-    ISynthesisRingInfoWindow_RingEnhance
-{
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SynthesisRingInfoWindow_RingEnhance as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SynthesisRingInfoWindow_RingEnhance_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-impl<__T: ISynthesisRingInfoWindow_RingEnhance> ISynthesisRingInfoWindow_RingEnhanceMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-impl SynthesisRingInfoWindow_RingEnhance {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingInfoWindow_RingEnhance),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingInfoWindow_RingEnhanceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __SynthesisRingInfoWindow_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::class(),
@@ -513,39 +413,27 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: SynthesisRingInfoWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: SynthesisRingInfoWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SynthesisRingInfoWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::class(),
@@ -558,39 +446,27 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "OnDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "OnDestroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_destroy(
-        this: SynthesisRingInfoWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_destroy(this: SynthesisRingInfoWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SynthesisRingInfoWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_open {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::class(),
@@ -603,39 +479,27 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "Open",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "Open",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn open(
-        this: SynthesisRingInfoWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn open(this: SynthesisRingInfoWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SynthesisRingInfoWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_open::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_open::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::class(),
@@ -648,41 +512,28 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: SynthesisRingInfoWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: SynthesisRingInfoWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SynthesisRingInfoWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::ringdata::RingData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::class(),
                 "SetData",
@@ -694,18 +545,15 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data(
@@ -713,28 +561,17 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         ring_data: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SynthesisRingInfoWindow,
-            crate::app::ringdata::RingData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SynthesisRingInfoWindow, crate::app::ringdata::RingData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
         inner(this, ring_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_chara_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::Array<
-                    crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
-                > as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <crate::app::ringdata::RingData as ::unity2::IlType>::il_type(),
             ];
@@ -749,25 +586,20 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    "SetupCharaImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        "SetupCharaImage",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_chara_image(
         this: SynthesisRingInfoWindow,
-        photo: ::unity2::Array<
-            crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
-        >,
+        photo: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>,
         idx: *mut i32,
         data: crate::app::ringdata::RingData,
         __unity2_method_info: ::unity2::OptionalMethod,
@@ -778,20 +610,14 @@ mod __SynthesisRingInfoWindow_unity2_raw {
             *mut i32,
             crate::app::ringdata::RingData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_chara_image::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_chara_image::get_method_info().method_ptr);
         inner(this, photo, idx, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::class(),
@@ -804,30 +630,20 @@ mod __SynthesisRingInfoWindow_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SynthesisRingInfoWindow as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SynthesisRingInfoWindow,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SynthesisRingInfoWindow, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SynthesisRingInfoWindow, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -838,9 +654,7 @@ pub trait ISynthesisRingInfoWindowMethods: ISynthesisRingInfoWindow {
     fn start(self) -> () {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SynthesisRingInfoWindow_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
@@ -848,22 +662,15 @@ pub trait ISynthesisRingInfoWindowMethods: ISynthesisRingInfoWindow {
     fn on_destroy(self) -> () {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SynthesisRingInfoWindow_unity2_raw::on_destroy(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SynthesisRingInfoWindow_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Open()` overload"]
     fn open(self) -> () {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SynthesisRingInfoWindow_unity2_raw::open(__receiver, ::core::option::Option::None)
         }
     }
@@ -871,9 +678,7 @@ pub trait ISynthesisRingInfoWindowMethods: ISynthesisRingInfoWindow {
     fn close(self) -> () {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SynthesisRingInfoWindow_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
@@ -881,31 +686,19 @@ pub trait ISynthesisRingInfoWindowMethods: ISynthesisRingInfoWindow {
     fn set_data(self, ring_data: impl ::core::convert::Into<crate::app::ringdata::RingData>) -> () {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SynthesisRingInfoWindow_unity2_raw::set_data(
-                __receiver,
-                ::core::convert::Into::into(ring_data),
-                ::core::option::Option::None,
-            )
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SynthesisRingInfoWindow_unity2_raw::set_data(__receiver, ::core::convert::Into::into(ring_data), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupCharaImage(::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>, *muti32, crate::app::ringdata::RingData)` overload"]
     fn setup_chara_image(
         self,
-        photo: impl ::core::convert::Into<
-            ::unity2::Array<
-                crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
-            >,
-        >,
+        photo: impl ::core::convert::Into<::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>>,
         data: impl ::core::convert::Into<crate::app::ringdata::RingData>,
     ) -> i32 {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
             __SynthesisRingInfoWindow_unity2_raw::setup_chara_image(
                 __receiver,
@@ -921,9 +714,7 @@ pub trait ISynthesisRingInfoWindowMethods: ISynthesisRingInfoWindow {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SynthesisRingInfoWindow as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SynthesisRingInfoWindow_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -951,28 +742,23 @@ impl SynthesisRingInfoWindow {
 #[cfg(feature = "app-synthesisringinfowindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISynthesisRingInfoWindow;
-    pub use super::ISynthesisRingInfoWindowMethods;
-    pub use super::ISynthesisRingInfoWindow_CharaPhoto;
-    pub use super::ISynthesisRingInfoWindow_CharaPhotoMethods;
-    pub use super::ISynthesisRingInfoWindow_RingEnhance;
-    pub use super::ISynthesisRingInfoWindow_RingEnhanceMethods;
-    pub use super::SynthesisRingInfoWindow;
-    pub use super::SynthesisRingInfoWindow_CharaPhoto;
-    pub use super::SynthesisRingInfoWindow_RingEnhance;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ISynthesisRingInfoWindow, ISynthesisRingInfoWindowMethods, ISynthesisRingInfoWindow_CharaPhoto, ISynthesisRingInfoWindow_CharaPhotoMethods,
+        ISynthesisRingInfoWindow_RingEnhance, ISynthesisRingInfoWindow_RingEnhanceMethods, SynthesisRingInfoWindow,
+        SynthesisRingInfoWindow_CharaPhoto, SynthesisRingInfoWindow_RingEnhance,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

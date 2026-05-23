@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-aksoundenginecontroller-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksoundenginecontroller/AkSoundEngineController.md"))]
     #[::unity2::class(namespace = "", name = "AkSoundEngineController")]
@@ -29,9 +29,7 @@ mod __AkSoundEngineController_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
@@ -44,41 +42,27 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "get_Instance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "get_Instance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_instance(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::root::aksoundenginecontroller::AkSoundEngineController {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::root::aksoundenginecontroller::AkSoundEngineController =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_instance::get_offset() as isize),
-            );
+    pub unsafe fn get_instance(__unity2_method_info: ::unity2::OptionalMethod) -> crate::root::aksoundenginecontroller::AkSoundEngineController {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::root::aksoundenginecontroller::AkSoundEngineController =
+            ::core::mem::transmute(__lookup_get_instance::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
@@ -91,39 +75,27 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkSoundEngineController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkSoundEngineController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
@@ -136,39 +108,27 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: AkSoundEngineController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: AkSoundEngineController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_late_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
@@ -181,41 +141,28 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "LateUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "LateUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn late_update(
-        this: AkSoundEngineController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn late_update(this: AkSoundEngineController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_late_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_late_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::root::akinitializer::AkInitializer as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::root::akinitializer::AkInitializer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
                 "Init",
@@ -227,18 +174,15 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(
@@ -246,24 +190,15 @@ mod __AkSoundEngineController_unity2_raw {
         ak_initializer: crate::root::akinitializer::AkInitializer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkSoundEngineController,
-            crate::root::akinitializer::AkInitializer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkSoundEngineController, crate::root::akinitializer::AkInitializer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, ak_initializer, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
@@ -276,39 +211,27 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: AkSoundEngineController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: AkSoundEngineController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terminate {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
@@ -321,41 +244,28 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "Terminate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "Terminate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn terminate(
-        this: AkSoundEngineController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn terminate(this: AkSoundEngineController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_terminate::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_terminate::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_application_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
                 "OnApplicationPause",
@@ -367,42 +277,28 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "OnApplicationPause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "OnApplicationPause",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_application_pause(
-        this: AkSoundEngineController,
-        pause_status: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_application_pause(this: AkSoundEngineController, pause_status: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_application_pause::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_application_pause::get_method_info().method_ptr);
         inner(this, pause_status, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_application_focus {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
                 "OnApplicationFocus",
@@ -414,44 +310,29 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "OnApplicationFocus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "OnApplicationFocus",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_application_focus(
-        this: AkSoundEngineController,
-        focus: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_application_focus(this: AkSoundEngineController, focus: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkSoundEngineController, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_application_focus::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_application_focus::get_method_info().method_ptr);
         inner(this, focus, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_activate_audio {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkSoundEngineController as ::unity2::ClassIdentity>::class(),
                 "ActivateAudio",
@@ -463,18 +344,15 @@ mod __AkSoundEngineController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
-                    "ActivateAudio",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkSoundEngineController as ::unity2::ClassIdentity>::NAME,
+                        "ActivateAudio",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn activate_audio(
@@ -483,16 +361,8 @@ mod __AkSoundEngineController_unity2_raw {
         render_anyway: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AkSoundEngineController,
-            bool,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_activate_audio::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AkSoundEngineController, bool, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_activate_audio::get_method_info().method_ptr);
         inner(this, activate, render_anyway, __unity2_method_info)
     }
 }
@@ -511,9 +381,7 @@ pub trait IAkSoundEngineControllerMethods: IAkSoundEngineController {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSoundEngineController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -521,9 +389,7 @@ pub trait IAkSoundEngineControllerMethods: IAkSoundEngineController {
     fn finalize(self) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSoundEngineController_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
@@ -531,65 +397,39 @@ pub trait IAkSoundEngineControllerMethods: IAkSoundEngineController {
     fn late_update(self) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkSoundEngineController_unity2_raw::late_update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSoundEngineController_unity2_raw::late_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Init(crate::root::akinitializer::AkInitializer)` overload"]
-    fn init(
-        self,
-        ak_initializer: impl ::core::convert::Into<crate::root::akinitializer::AkInitializer>,
-    ) -> () {
+    fn init(self, ak_initializer: impl ::core::convert::Into<crate::root::akinitializer::AkInitializer>) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkSoundEngineController_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(ak_initializer),
-                ::core::option::Option::None,
-            )
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSoundEngineController_unity2_raw::init(__receiver, ::core::convert::Into::into(ak_initializer), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkSoundEngineController_unity2_raw::on_disable(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSoundEngineController_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Terminate()` overload"]
     fn terminate(self) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkSoundEngineController_unity2_raw::terminate(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSoundEngineController_unity2_raw::terminate(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnApplicationPause(bool)` overload"]
     fn on_application_pause(self, pause_status: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSoundEngineController_unity2_raw::on_application_pause(
                 __receiver,
                 ::core::convert::Into::into(pause_status),
@@ -601,27 +441,15 @@ pub trait IAkSoundEngineControllerMethods: IAkSoundEngineController {
     fn on_application_focus(self, focus: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AkSoundEngineController_unity2_raw::on_application_focus(
-                __receiver,
-                ::core::convert::Into::into(focus),
-                ::core::option::Option::None,
-            )
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AkSoundEngineController_unity2_raw::on_application_focus(__receiver, ::core::convert::Into::into(focus), ::core::option::Option::None)
         }
     }
     #[doc = "`ActivateAudio(bool, bool)` overload"]
-    fn activate_audio(
-        self,
-        activate: impl ::core::convert::Into<bool>,
-        render_anyway: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn activate_audio(self, activate: impl ::core::convert::Into<bool>, render_anyway: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <AkSoundEngineController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkSoundEngineController_unity2_raw::activate_audio(
                 __receiver,
                 ::core::convert::Into::into(activate),
@@ -654,9 +482,7 @@ impl AkSoundEngineController {
 #[cfg(feature = "root-aksoundenginecontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkSoundEngineController;
-    pub use super::IAkSoundEngineController;
-    pub use super::IAkSoundEngineControllerMethods;
+    pub use super::{AkSoundEngineController, IAkSoundEngineController, IAkSoundEngineControllerMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,26 +2,25 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-tableconstructor-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::tree::expression::{Expression, IExpression};
-    use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase, NodeBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::tree::{
+            expression::{Expression, IExpression},
+            nodebase::{INodeBase, NodeBase},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/tableconstructor/TableConstructor.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Expressions",
-        name = "TableConstructor"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "TableConstructor")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct TableConstructor {
         #[rename(name = "m_Shared")]
         pub m_shared: bool,
         #[rename(name = "m_PositionalValues")]
-        pub m_positional_values: crate::system::collections::generic::list_1::List_1<
-            crate::moon_sharp::interpreter::tree::expression::Expression,
-        >,
+        pub m_positional_values: crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::expression::Expression>,
         #[rename(name = "m_CtorArgs")]
         pub m_ctor_args: crate::system::collections::generic::list_1::List_1<
             crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<
@@ -44,10 +43,11 @@ mod __TableConstructor_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConstructor as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -59,23 +59,20 @@ mod __TableConstructor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConstructor as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConstructor as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: TableConstructor,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         shared: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -84,21 +81,16 @@ mod __TableConstructor_unity2_raw {
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             bool,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, lcontext, shared, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_map_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConstructor as ::unity2::ClassIdentity>::class(),
                 "MapField",
@@ -110,44 +102,36 @@ mod __TableConstructor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConstructor as ::unity2::ClassIdentity>::NAME,
-                    "MapField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConstructor as ::unity2::ClassIdentity>::NAME,
+                        "MapField",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn map_field(
         this: TableConstructor,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TableConstructor,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_map_field::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_map_field::get_method_info().method_ptr);
         inner(this, lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_struct_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConstructor as ::unity2::ClassIdentity>::class(),
                 "StructField",
@@ -159,44 +143,36 @@ mod __TableConstructor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConstructor as ::unity2::ClassIdentity>::NAME,
-                    "StructField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConstructor as ::unity2::ClassIdentity>::NAME,
+                        "StructField",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn struct_field(
         this: TableConstructor,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TableConstructor,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_struct_field::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_struct_field::get_method_info().method_ptr);
         inner(this, lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_array_field {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConstructor as ::unity2::ClassIdentity>::class(),
                 "ArrayField",
@@ -208,44 +184,36 @@ mod __TableConstructor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConstructor as ::unity2::ClassIdentity>::NAME,
-                    "ArrayField",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConstructor as ::unity2::ClassIdentity>::NAME,
+                        "ArrayField",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn array_field(
         this: TableConstructor,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TableConstructor,
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_array_field::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_array_field::get_method_info().method_ptr);
         inner(this, lcontext, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compile {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConstructor as ::unity2::ClassIdentity>::class(),
                 "Compile",
@@ -257,18 +225,15 @@ mod __TableConstructor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConstructor as ::unity2::ClassIdentity>::NAME,
-                    "Compile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConstructor as ::unity2::ClassIdentity>::NAME,
+                        "Compile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile(
@@ -280,21 +245,16 @@ mod __TableConstructor_unity2_raw {
             TableConstructor,
             crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
         inner(this, bc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_eval {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConstructor as ::unity2::ClassIdentity>::class(),
                 "Eval",
@@ -306,18 +266,15 @@ mod __TableConstructor_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConstructor as ::unity2::ClassIdentity>::NAME,
-                    "Eval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConstructor as ::unity2::ClassIdentity>::NAME,
+                        "Eval",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn eval(
@@ -329,11 +286,7 @@ mod __TableConstructor_unity2_raw {
             TableConstructor,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_eval::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_eval::get_method_info().method_ptr);
         inner(this, context, __unity2_method_info)
     }
 }
@@ -343,15 +296,11 @@ pub trait ITableConstructorMethods: ITableConstructor {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, bool)` overload"]
     fn ctor(
         self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
         shared: impl ::core::convert::Into<bool>,
     ) -> () {
         unsafe {
-            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TableConstructor_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(lcontext),
@@ -363,91 +312,48 @@ pub trait ITableConstructorMethods: ITableConstructor {
     #[doc = "`MapField(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     fn map_field(
         self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> () {
         unsafe {
-            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TableConstructor_unity2_raw::map_field(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TableConstructor_unity2_raw::map_field(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
         }
     }
     #[doc = "`StructField(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     fn struct_field(
         self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> () {
         unsafe {
-            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TableConstructor_unity2_raw::struct_field(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TableConstructor_unity2_raw::struct_field(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
         }
     }
     #[doc = "`ArrayField(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]
     fn array_field(
         self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
     ) -> () {
         unsafe {
-            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TableConstructor_unity2_raw::array_field(
-                __receiver,
-                ::core::convert::Into::into(lcontext),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TableConstructor_unity2_raw::array_field(__receiver, ::core::convert::Into::into(lcontext), ::core::option::Option::None)
         }
     }
     #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(
-        self,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
+    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
         unsafe {
-            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TableConstructor_unity2_raw::compile(
-                __receiver,
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TableConstructor_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
         }
     }
     #[doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
     fn eval(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TableConstructor_unity2_raw::eval(
-                __receiver,
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TableConstructor as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TableConstructor_unity2_raw::eval(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)
         }
     }
 }
@@ -458,10 +364,7 @@ impl<__T: ITableConstructor> ITableConstructorMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-tableconstructor")]
 impl TableConstructor {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, bool)` — overload selector"]
-    pub fn new(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
-        shared: bool,
-    ) -> Self {
+    pub fn new(lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, shared: bool) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -477,16 +380,15 @@ impl TableConstructor {
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-tableconstructor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITableConstructor;
-    pub use super::ITableConstructorMethods;
-    pub use super::TableConstructor;
-    pub use crate::moon_sharp::interpreter::tree::expression::IExpression;
+    pub use super::{ITableConstructor, ITableConstructorMethods, TableConstructor};
     #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
     pub use crate::moon_sharp::interpreter::tree::expression::IExpressionMethods;
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
     #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
     pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::tree::{expression::IExpression, nodebase::INodeBase},
+        system::object::IObject,
+    };
 }

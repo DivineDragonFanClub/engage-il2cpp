@@ -5,9 +5,7 @@ pub mod autodescribinguserdatadescriptor;
 #[cfg(feature = "moon_sharp-interpreter-autodescribinguserdatadescriptor")]
 pub use autodescribinguserdatadescriptor::IAutoDescribingUserDataDescriptorMethods;
 #[cfg(feature = "moon_sharp-interpreter-autodescribinguserdatadescriptor-types")]
-pub use autodescribinguserdatadescriptor::{
-    AutoDescribingUserDataDescriptor, IAutoDescribingUserDataDescriptor,
-};
+pub use autodescribinguserdatadescriptor::{AutoDescribingUserDataDescriptor, IAutoDescribingUserDataDescriptor};
 #[cfg(any(feature = "moon_sharp-interpreter-callbackarguments-types"))]
 pub mod callbackarguments;
 #[cfg(feature = "moon_sharp-interpreter-callbackarguments")]
@@ -75,9 +73,7 @@ pub use coremodules::CoreModules;
 #[cfg(any(feature = "moon_sharp-interpreter-coremodules_extensionmethods-types"))]
 pub mod coremodules_extensionmethods;
 #[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods-types")]
-pub use coremodules_extensionmethods::{
-    CoreModules_ExtensionMethods, ICoreModules_ExtensionMethods,
-};
+pub use coremodules_extensionmethods::{CoreModules_ExtensionMethods, ICoreModules_ExtensionMethods};
 #[cfg(any(feature = "moon_sharp-interpreter-coroutine_2-types"))]
 pub mod coroutine_2;
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
@@ -300,9 +296,7 @@ pub mod moonsharphidememberattribute;
 #[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute")]
 pub use moonsharphidememberattribute::IMoonSharpHideMemberAttributeMethods;
 #[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute-types")]
-pub use moonsharphidememberattribute::{
-    IMoonSharpHideMemberAttribute, MoonSharpHideMemberAttribute,
-};
+pub use moonsharphidememberattribute::{IMoonSharpHideMemberAttribute, MoonSharpHideMemberAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpmoduleattribute-types"))]
 pub mod moonsharpmoduleattribute;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
@@ -314,17 +308,13 @@ pub mod moonsharpmoduleconstantattribute;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute")]
 pub use moonsharpmoduleconstantattribute::IMoonSharpModuleConstantAttributeMethods;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleconstantattribute-types")]
-pub use moonsharpmoduleconstantattribute::{
-    IMoonSharpModuleConstantAttribute, MoonSharpModuleConstantAttribute,
-};
+pub use moonsharpmoduleconstantattribute::{IMoonSharpModuleConstantAttribute, MoonSharpModuleConstantAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharpmodulemethodattribute-types"))]
 pub mod moonsharpmodulemethodattribute;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmodulemethodattribute")]
 pub use moonsharpmodulemethodattribute::IMoonSharpModuleMethodAttributeMethods;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmodulemethodattribute-types")]
-pub use moonsharpmodulemethodattribute::{
-    IMoonSharpModuleMethodAttribute, MoonSharpModuleMethodAttribute,
-};
+pub use moonsharpmodulemethodattribute::{IMoonSharpModuleMethodAttribute, MoonSharpModuleMethodAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-moonsharppropertyattribute-types"))]
 pub mod moonsharppropertyattribute;
 #[cfg(feature = "moon_sharp-interpreter-moonsharppropertyattribute")]
@@ -342,9 +332,7 @@ pub mod moonsharpuserdatametamethodattribute;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdatametamethodattribute")]
 pub use moonsharpuserdatametamethodattribute::IMoonSharpUserDataMetamethodAttributeMethods;
 #[cfg(feature = "moon_sharp-interpreter-moonsharpuserdatametamethodattribute-types")]
-pub use moonsharpuserdatametamethodattribute::{
-    IMoonSharpUserDataMetamethodAttribute, MoonSharpUserDataMetamethodAttribute,
-};
+pub use moonsharpuserdatametamethodattribute::{IMoonSharpUserDataMetamethodAttribute, MoonSharpUserDataMetamethodAttribute};
 #[cfg(any(feature = "moon_sharp-interpreter-namespacedoc-types"))]
 pub mod namespacedoc;
 #[cfg(feature = "moon_sharp-interpreter-namespacedoc-types")]
@@ -411,9 +399,7 @@ pub use scriptoptions::{IScriptOptions, ScriptOptions};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptprivateresource_extension-types"))]
 pub mod scriptprivateresource_extension;
 #[cfg(feature = "moon_sharp-interpreter-scriptprivateresource_extension-types")]
-pub use scriptprivateresource_extension::{
-    IScriptPrivateResource_Extension, ScriptPrivateResource_Extension,
-};
+pub use scriptprivateresource_extension::{IScriptPrivateResource_Extension, ScriptPrivateResource_Extension};
 #[cfg(any(feature = "moon_sharp-interpreter-scriptruntimeexception-types"))]
 pub mod scriptruntimeexception;
 #[cfg(feature = "moon_sharp-interpreter-scriptruntimeexception")]

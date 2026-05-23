@@ -2,39 +2,319 @@
 
 #[cfg(feature = "app-materialmenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "MaterialMenuItem")]
-    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-    pub struct MaterialMenuItem {
-        #[rename(name = "m_SelectEventHandler")]
-        pub m_select_event_handler:
-            crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        #[rename(name = "m_DecideEventHandler")]
-        pub m_decide_event_handler:
-            crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
-    }
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "MaterialMenuItem.SelectEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct MaterialMenuItem_SelectEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]
     #[::unity2::class(namespace = "App", name = "MaterialMenuItem.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct MaterialMenuItem_DecideEventHandler {}
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "MaterialMenuItem.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct MaterialMenuItem_SelectEventHandler {}
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "MaterialMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct MaterialMenuItem {
+        #[rename(name = "m_SelectEventHandler")]
+        pub m_select_event_handler: crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-materialmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-materialmenuitem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MaterialMenuItem_SelectEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MaterialMenuItem_SelectEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialMenuItem_SelectEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MaterialMenuItem_SelectEventHandler,
+        material_id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MaterialMenuItem_SelectEventHandler, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, material_id, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+pub trait IMaterialMenuItem_SelectEventHandlerMethods: IMaterialMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <MaterialMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MaterialMenuItem_SelectEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    fn invoke(self, material_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <MaterialMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MaterialMenuItem_SelectEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(material_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+impl<__T: IMaterialMenuItem_SelectEventHandler> IMaterialMenuItem_SelectEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-materialmenuitem")]
+impl MaterialMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialMenuItem_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MaterialMenuItem_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: MaterialMenuItem_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            MaterialMenuItem_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: MaterialMenuItem_DecideEventHandler,
+        material_id: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(MaterialMenuItem_DecideEventHandler, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, material_id, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+pub trait IMaterialMenuItem_DecideEventHandlerMethods: IMaterialMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <MaterialMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MaterialMenuItem_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    fn invoke(self, material_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <MaterialMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MaterialMenuItem_DecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::convert::Into::into(material_id),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+impl<__T: IMaterialMenuItem_DecideEventHandler> IMaterialMenuItem_DecideEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-materialmenuitem")]
+impl MaterialMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialMenuItem_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "app-materialmenuitem")]
 #[doc(hidden)]
@@ -45,9 +325,7 @@ mod __MaterialMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_m_item_refine_exchange_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
@@ -60,43 +338,32 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "get_m_ItemRefineExchangeData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "get_m_ItemRefineExchangeData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_m_item_refine_exchange_data(
         this: MaterialMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
-        let inner: extern "C" fn(
-            MaterialMenuItem,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::app::itemrefineexchangedata::ItemRefineExchangeData = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_m_item_refine_exchange_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData =
+            ::core::mem::transmute(__lookup_get_m_item_refine_exchange_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_m_item_refine_exchange_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::itemrefineexchangedata::ItemRefineExchangeData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
                 "set_m_ItemRefineExchangeData",
@@ -108,18 +375,15 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "set_m_ItemRefineExchangeData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "set_m_ItemRefineExchangeData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_m_item_refine_exchange_data(
@@ -127,25 +391,20 @@ mod __MaterialMenuItem_unity2_raw {
         value: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MaterialMenuItem,
-            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_m_item_refine_exchange_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MaterialMenuItem, crate::app::itemrefineexchangedata::ItemRefineExchangeData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_m_item_refine_exchange_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData as :: unity2 :: IlType > :: il_type () , < crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::itemrefineexchangedata::ItemRefineExchangeData as ::unity2::IlType>::il_type(),
+                <crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -157,18 +416,15 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -184,11 +440,7 @@ mod __MaterialMenuItem_unity2_raw {
             crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
             crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(
             this,
             item_refine_exchange_data,
@@ -201,9 +453,7 @@ mod __MaterialMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
@@ -216,42 +466,29 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: MaterialMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MaterialMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: MaterialMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_select_event_handler {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
                 "SetSelectEventHandler",
@@ -263,18 +500,15 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetSelectEventHandler",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetSelectEventHandler",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_select_event_handler(
@@ -286,20 +520,14 @@ mod __MaterialMenuItem_unity2_raw {
             MaterialMenuItem,
             crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_select_event_handler::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_select_event_handler::get_method_info().method_ptr);
         inner(this, select_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
@@ -312,39 +540,27 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_select(
-        this: MaterialMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_select(this: MaterialMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MaterialMenuItem as ::unity2::ClassIdentity>::class(),
@@ -357,32 +573,20 @@ mod __MaterialMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MaterialMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn a_call(
-        this: MaterialMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            MaterialMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn a_call(this: MaterialMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -390,28 +594,16 @@ mod __MaterialMenuItem_unity2_raw {
 #[cfg(feature = "app-materialmenuitem")]
 pub trait IMaterialMenuItemMethods: IMaterialMenuItem {
     #[doc = "`get_m_ItemRefineExchangeData()` overload"]
-    fn get_m_item_refine_exchange_data(
-        self,
-    ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
+    fn get_m_item_refine_exchange_data(self) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MaterialMenuItem_unity2_raw::get_m_item_refine_exchange_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MaterialMenuItem_unity2_raw::get_m_item_refine_exchange_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_m_ItemRefineExchangeData(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]
-    fn set_m_item_refine_exchange_data(
-        self,
-        value: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>,
-    ) -> () {
+    fn set_m_item_refine_exchange_data(self, value: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>) -> () {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialMenuItem_unity2_raw::set_m_item_refine_exchange_data(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -422,20 +614,12 @@ pub trait IMaterialMenuItemMethods: IMaterialMenuItem {
     #[doc = "`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` overload"]
     fn ctor(
         self,
-        item_refine_exchange_data: impl ::core::convert::Into<
-            crate::app::itemrefineexchangedata::ItemRefineExchangeData,
-        >,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,
-        >,
+        item_refine_exchange_data: impl ::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>,
+        select_event_handler: impl ::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(item_refine_exchange_data),
@@ -448,23 +632,17 @@ pub trait IMaterialMenuItemMethods: IMaterialMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetSelectEventHandler(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)` overload"]
     fn set_select_event_handler(
         self,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,
-        >,
+        select_event_handler: impl ::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialMenuItem_unity2_raw::set_select_event_handler(
                 __receiver,
                 ::core::convert::Into::into(select_event_handler),
@@ -475,18 +653,14 @@ pub trait IMaterialMenuItemMethods: IMaterialMenuItem {
     #[doc = "`OnSelect()` overload"]
     fn on_select(self) -> () {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <MaterialMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MaterialMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -510,356 +684,7 @@ impl MaterialMenuItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IMaterialMenuItemMethods>::ctor(
-            this,
-            item_refine_exchange_data,
-            select_event_handler,
-            decide_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MaterialMenuItem_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MaterialMenuItem_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialMenuItem_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MaterialMenuItem_DecideEventHandler,
-        material_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialMenuItem_DecideEventHandler,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, material_id, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-pub trait IMaterialMenuItem_DecideEventHandlerMethods:
-    IMaterialMenuItem_DecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MaterialMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MaterialMenuItem_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    fn invoke(self, material_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <MaterialMenuItem_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MaterialMenuItem_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(material_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-impl<__T: IMaterialMenuItem_DecideEventHandler> IMaterialMenuItem_DecideEventHandlerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaterialMenuItem_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMaterialMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MaterialMenuItem_SelectEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MaterialMenuItem_SelectEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialMenuItem_SelectEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MaterialMenuItem_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: MaterialMenuItem_SelectEventHandler,
-        material_id: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MaterialMenuItem_SelectEventHandler,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, material_id, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-pub trait IMaterialMenuItem_SelectEventHandlerMethods:
-    IMaterialMenuItem_SelectEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <MaterialMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MaterialMenuItem_SelectEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    fn invoke(self, material_id: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
-        unsafe {
-            let __receiver =
-                <MaterialMenuItem_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MaterialMenuItem_SelectEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(material_id),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-impl<__T: IMaterialMenuItem_SelectEventHandler> IMaterialMenuItem_SelectEventHandlerMethods
-    for __T
-{
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaterialMenuItem_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMaterialMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
+        <Self as IMaterialMenuItemMethods>::ctor(this, item_refine_exchange_data, select_event_handler, decide_event_handler);
         this
     }
 }
@@ -867,25 +692,21 @@ impl MaterialMenuItem_SelectEventHandler {
 #[cfg(feature = "app-materialmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMaterialMenuItem;
-    pub use super::IMaterialMenuItemMethods;
-    pub use super::IMaterialMenuItem_DecideEventHandler;
-    pub use super::IMaterialMenuItem_DecideEventHandlerMethods;
-    pub use super::IMaterialMenuItem_SelectEventHandler;
-    pub use super::IMaterialMenuItem_SelectEventHandlerMethods;
-    pub use super::MaterialMenuItem;
-    pub use super::MaterialMenuItem_DecideEventHandler;
-    pub use super::MaterialMenuItem_SelectEventHandler;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{
+        IMaterialMenuItem, IMaterialMenuItemMethods, IMaterialMenuItem_DecideEventHandler, IMaterialMenuItem_DecideEventHandlerMethods,
+        IMaterialMenuItem_SelectEventHandler, IMaterialMenuItem_SelectEventHandlerMethods, MaterialMenuItem, MaterialMenuItem_DecideEventHandler,
+        MaterialMenuItem_SelectEventHandler,
+    };
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::basicmenuitem::IBasicMenuItem,
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

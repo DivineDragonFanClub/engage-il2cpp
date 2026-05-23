@@ -2,47 +2,20 @@
 
 #[cfg(feature = "app-aiorder-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder_Func.md"))]
     #[::unity2::class(namespace = "App", name = "AIOrder.Func")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct AIOrder_Func {}
-
-    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
-    #[repr(C)]
-    #[derive(::core::clone::Clone, ::core::marker::Copy)]
-    pub struct AIOrder_UnitPriority {
-        pub number: i32,
-        pub priority: u32,
-    }
-
-    impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
-        const NAMESPACE: &'static str = "App";
-
-        const NAME: &'static str = "AIOrder.UnitPriority";
-
-        fn class() -> ::unity2::Class {
-            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-        }
-    }
-
-    impl ::unity2::IlType for AIOrder_UnitPriority {
-        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
-        }
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiorder/AIOrder.md"))]
     #[::unity2::class(namespace = "App", name = "AIOrder")]
@@ -50,22 +23,14 @@ mod __types {
     pub struct AIOrder {
         #[static_field]
         #[rename(name = "aFunc")]
-        pub a_func:
-            crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
-                crate::app::aiorder::AIOrder_Func,
-            >,
+        pub a_func: crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func>,
         #[static_field]
         #[rename(name = "aFuncEntrust")]
-        pub a_func_entrust:
-            crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
-                crate::app::aiorder::AIOrder_Func,
-            >,
+        pub a_func_entrust: crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func>,
         #[static_field]
         #[rename(name = "aFuncUncontroll")]
         pub a_func_uncontroll:
-            crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
-                crate::app::aiorder::AIOrder_Func,
-            >,
+            crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func>,
         #[static_field]
         #[rename(name = "UnitMax")]
         pub unit_max: i32,
@@ -90,6 +55,31 @@ mod __types {
         #[rename(name = "m_IsAllowIdle")]
         pub m_is_allow_idle: bool,
     }
+
+    #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiorder/AIOrder_UnitPriority.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AIOrder_UnitPriority {
+        pub number: i32,
+        pub priority: u32,
+    }
+
+    impl ::unity2::ClassIdentity for AIOrder_UnitPriority {
+        const NAME: &'static str = "AIOrder.UnitPriority";
+        const NAMESPACE: &'static str = "App";
+
+        fn class() -> ::unity2::Class {
+            static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+            *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+
+    impl ::unity2::IlType for AIOrder_UnitPriority {
+        fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-aiorder-types")]
@@ -104,36 +94,25 @@ mod __AIOrder_Func_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder_Func as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder_Func as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -142,66 +121,35 @@ mod __AIOrder_Func_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AIOrder_Func,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AIOrder_Func, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder_Func as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder_Func as ::unity2::ClassIdentity>::class(), "Invoke", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder_Func as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: AIOrder_Func,
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AIOrder_Func,
-            crate::app::aiorder::AIOrder,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: AIOrder_Func, order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder_Func, crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, order, __unity2_method_info)
     }
 }
@@ -209,15 +157,9 @@ mod __AIOrder_Func_unity2_raw {
 #[cfg(feature = "app-aiorder")]
 pub trait IAIOrder_FuncMethods: IAIOrder_Func {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AIOrder_Func_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -229,14 +171,8 @@ pub trait IAIOrder_FuncMethods: IAIOrder_Func {
     #[doc = "`Invoke(crate::app::aiorder::AIOrder)` overload"]
     fn invoke(self, order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
         unsafe {
-            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_Func_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
+            let __receiver = <AIOrder_Func as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(order), ::core::option::Option::None)
         }
     }
 }
@@ -248,14 +184,2860 @@ impl<__T: IAIOrder_Func> IAIOrder_FuncMethods for __T {}
 impl AIOrder_Func {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIOrder_Func),
-                ::core::stringify!(new),
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AIOrder_Func), ::core::stringify!(new),));
+        <Self as IAIOrder_FuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AIOrder_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AIOrder as ::unity2::ClassIdentity>::NAME, ".ctor", e),
+            }
+        }
+    }
+    pub unsafe fn ctor(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_engage_or_god_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "SetEngageOrGodChange",
+                1,
+                param_types,
+                false,
             )
         });
-        <Self as IAIOrder_FuncMethods>::ctor(this, object, method);
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SetEngageOrGodChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_engage_or_god_change(this: AIOrder, unit_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_engage_or_god_change::get_method_info().method_ptr);
+        inner(this, unit_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_engage_or_god_change {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "IsEngageOrGodChange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "IsEngageOrGodChange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_engage_or_god_change(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_engage_or_god_change::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "SetRemove", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SetRemove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_remove(this: AIOrder, unit_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_remove::get_method_info().method_ptr);
+        inner(this, unit_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_remove {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "IsRemove", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "IsRemove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_remove(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_remove::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_remagic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "SetRemagic", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SetRemagic",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_remagic(this: AIOrder, unit_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_remagic::get_method_info().method_ptr);
+        inner(this, unit_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_remagic {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "IsRemagic", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "IsRemagic",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_remagic(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_remagic::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_rerewarp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "SetRerewarp", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SetRerewarp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_rerewarp(this: AIOrder, unit_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_rerewarp::get_method_info().method_ptr);
+        inner(this, unit_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_rerewarp {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "IsRerewarp", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "IsRerewarp",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_rerewarp(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_rerewarp::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_move_over {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "SetMoveOver", 1, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SetMoveOver",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn set_move_over(this: AIOrder, unit_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_move_over::get_method_info().method_ptr);
+        inner(this, unit_index, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_move_over {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "IsMoveOver", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "IsMoveOver",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_move_over(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_move_over::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_allow_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "IsAllowIdle", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "IsAllowIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_allow_idle(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_allow_idle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_processing {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "Processing", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "Processing",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn processing(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_processing::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "GetUnit", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "GetUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_next {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "Next", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AIOrder as ::unity2::ClassIdentity>::NAME, "Next", e),
+            }
+        }
+    }
+    pub unsafe fn next(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_next::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_update_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticUpdateTarget",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticUpdateTarget",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_update_target(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_update_target::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_allow_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticAllowIdle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticAllowIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_allow_idle(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_allow_idle::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticPriority",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticPriority",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_priority(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_priority::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_cause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "StaticCause", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticCause",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_cause(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_cause::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_mind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "StaticMind", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticMind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_mind(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_mind::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_attack_crossfire {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticAttackCrossfire",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticAttackCrossfire",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_attack_crossfire(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_attack_crossfire::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_attack_long_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticAttackLongRange",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticAttackLongRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_attack_long_range(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_attack_long_range::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_attack_high {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticAttackHigh",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticAttackHigh",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_attack_high(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_attack_high::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_attack_middle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticAttackMiddle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticAttackMiddle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_attack_middle(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_attack_middle::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_attack_low {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticAttackLow",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticAttackLow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_attack_low(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_attack_low::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "StaticMove", 1, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_move(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_move::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_turn_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticTurnEnd",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticTurnEnd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_turn_end(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_turn_end::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_update_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustUpdateIdle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustUpdateIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_update_idle(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_update_idle::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustHeal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustHeal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_heal(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_heal::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_update_cannon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustUpdateCannon",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustUpdateCannon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_update_cannon(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_update_cannon::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustAttack",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_attack(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_attack::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_hero_rush_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustHeroRushMove",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustHeroRushMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_hero_rush_move(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_hero_rush_move::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustMove",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_move(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_move::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_entrust_fixed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticEntrustFixed",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticEntrustFixed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_entrust_fixed(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_entrust_fixed::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_uncontroll_update_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticUncontrollUpdateIdle",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticUncontrollUpdateIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_uncontroll_update_idle(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_uncontroll_update_idle::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_uncontroll_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticUncontrollHeal",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticUncontrollHeal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_uncontroll_heal(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_uncontroll_heal::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_uncontroll_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticUncontrollAttack",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticUncontrollAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_uncontroll_attack(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_uncontroll_attack::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_uncontroll_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticUncontrollMove",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticUncontrollMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_uncontroll_move(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_uncontroll_move::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_static_uncontroll_fixed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "StaticUncontrollFixed",
+                1,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "StaticUncontrollFixed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn static_uncontroll_fixed(order: crate::app::aiorder::AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_static_uncontroll_fixed::get_method_info().method_ptr);
+        inner(order, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_distance_from_enemy {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "GetDistanceFromEnemy",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "GetDistanceFromEnemy",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_distance_from_enemy(this: AIOrder, actor: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(AIOrder, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_distance_from_enemy::get_method_info().method_ptr);
+        inner(this, actor, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_has_long_range_weapon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "HasLongRangeWeapon",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "HasLongRangeWeapon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn has_long_range_weapon(this: AIOrder, unit: crate::app::unit::Unit, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(AIOrder, crate::app::unit::Unit, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_has_long_range_weapon::get_method_info().method_ptr);
+        inner(this, unit, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_enchant_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "GetEnchantPriority",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "GetEnchantPriority",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_enchant_priority(
+        this: AIOrder,
+        unit: crate::app::unit::Unit,
+        is_entrust: bool,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(AIOrder, crate::app::unit::Unit, bool, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_enchant_priority::get_method_info().method_ptr);
+        inner(this, unit, is_entrust, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_allow_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "AllowIdle", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "AllowIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn allow_idle(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_allow_idle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_descend {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "SortDescend", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SortDescend",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn sort_descend(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sort_descend::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_sort_ascend {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "SortAscend", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "SortAscend",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn sort_ascend(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sort_ascend::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_all {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumerateAll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateAll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_all(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_all::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumeratePriority",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumeratePriority",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_priority(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_priority::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_attack_long_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumerateAttackLongRange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateAttackLongRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_attack_long_range(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_attack_long_range::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumerateAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_attack(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_attack::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumerateMove",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_move(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_move::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_entrust {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumerateEntrust",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateEntrust",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_entrust(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_entrust::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_enumerate_uncontroll {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EnumerateUncontroll",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EnumerateUncontroll",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn enumerate_uncontroll(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_enumerate_uncontroll::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_ask_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UpdateAskHeal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UpdateAskHeal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_ask_heal(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_ask_heal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_update_target {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UpdateTarget",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTarget",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn update_target(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_target::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_priority {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "Priority", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "Priority",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn priority(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_priority::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cause {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "Cause", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AIOrder as ::unity2::ClassIdentity>::NAME, "Cause", e),
+            }
+        }
+    }
+    pub unsafe fn cause(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cause::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_mind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "Mind", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AIOrder as ::unity2::ClassIdentity>::NAME, "Mind", e),
+            }
+        }
+    }
+    pub unsafe fn mind(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_mind::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attack_crossfire {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "AttackCrossfire",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "AttackCrossfire",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn attack_crossfire(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_attack_crossfire::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attack_long_range {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "AttackLongRange",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "AttackLongRange",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn attack_long_range(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_attack_long_range::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attack_high {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "AttackHigh", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "AttackHigh",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn attack_high(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_attack_high::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attack_middle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "AttackMiddle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "AttackMiddle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn attack_middle(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_attack_middle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_attack_low {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "AttackLow", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "AttackLow",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn attack_low(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_attack_low::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "Move", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <AIOrder as ::unity2::ClassIdentity>::NAME, "Move", e),
+            }
+        }
+    }
+    pub unsafe fn r#move(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_move::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_turn_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "TurnEnd", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "TurnEnd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn turn_end(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_turn_end::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_update_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EntrustUpdateIdle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustUpdateIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_update_idle(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_update_idle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "EntrustHeal", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustHeal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_heal(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_heal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_update_cannon {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EntrustUpdateCannon",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustUpdateCannon",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_update_cannon(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_update_cannon::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EntrustAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_attack(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_attack::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), "EntrustMove", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_move(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_move::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_hero_rush_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EntrustHeroRushMove",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustHeroRushMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_hero_rush_move(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_hero_rush_move::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_entrust_fixed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "EntrustFixed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "EntrustFixed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn entrust_fixed(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_entrust_fixed::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uncontroll_update_idle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UncontrollUpdateIdle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UncontrollUpdateIdle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn uncontroll_update_idle(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_uncontroll_update_idle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uncontroll_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UncontrollHeal",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UncontrollHeal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn uncontroll_heal(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_uncontroll_heal::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uncontroll_attack {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UncontrollAttack",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UncontrollAttack",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn uncontroll_attack(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_uncontroll_attack::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uncontroll_move {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UncontrollMove",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UncontrollMove",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn uncontroll_move(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_uncontroll_move::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_uncontroll_fixed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <AIOrder as ::unity2::ClassIdentity>::class(),
+                "UncontrollFixed",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        "UncontrollFixed",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn uncontroll_fixed(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_uncontroll_fixed::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<AIOrder as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+impl AIOrder {
+    #[doc = "`StaticUpdateTarget(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_update_target(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_update_target(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticAllowIdle(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_allow_idle(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_allow_idle(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticPriority(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_priority(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_priority(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticCause(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_cause(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_cause(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticMind(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_mind(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_mind(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticAttackCrossfire(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_attack_crossfire(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_attack_crossfire(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticAttackLongRange(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_attack_long_range(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_attack_long_range(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticAttackHigh(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_attack_high(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_attack_high(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticAttackMiddle(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_attack_middle(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_attack_middle(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticAttackLow(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_attack_low(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_attack_low(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticMove(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_move(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_move(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticTurnEnd(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_turn_end(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_turn_end(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustUpdateIdle(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_update_idle(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_update_idle(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustHeal(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_heal(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_heal(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustUpdateCannon(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_update_cannon(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_update_cannon(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustAttack(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_attack(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_attack(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustHeroRushMove(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_hero_rush_move(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_hero_rush_move(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustMove(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_move(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_move(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticEntrustFixed(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_entrust_fixed(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_entrust_fixed(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticUncontrollUpdateIdle(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_uncontroll_update_idle(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_uncontroll_update_idle(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticUncontrollHeal(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_uncontroll_heal(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_uncontroll_heal(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticUncontrollAttack(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_uncontroll_attack(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_uncontroll_attack(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticUncontrollMove(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_uncontroll_move(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_uncontroll_move(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`StaticUncontrollFixed(crate::app::aiorder::AIOrder)` overload"]
+    pub fn static_uncontroll_fixed(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
+        unsafe { __AIOrder_unity2_raw::static_uncontroll_fixed(::core::convert::Into::into(order), ::core::option::Option::None) }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __AIOrder_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+pub trait IAIOrderMethods: IAIOrder {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetEngageOrGodChange(i32)` overload"]
+    fn set_engage_or_god_change(self, unit_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::set_engage_or_god_change(__receiver, ::core::convert::Into::into(unit_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsEngageOrGodChange()` overload"]
+    fn is_engage_or_god_change(self) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::is_engage_or_god_change(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetRemove(i32)` overload"]
+    fn set_remove(self, unit_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::set_remove(__receiver, ::core::convert::Into::into(unit_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsRemove()` overload"]
+    fn is_remove(self) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::is_remove(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetRemagic(i32)` overload"]
+    fn set_remagic(self, unit_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::set_remagic(__receiver, ::core::convert::Into::into(unit_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsRemagic()` overload"]
+    fn is_remagic(self) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::is_remagic(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetRerewarp(i32)` overload"]
+    fn set_rerewarp(self, unit_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::set_rerewarp(__receiver, ::core::convert::Into::into(unit_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsRerewarp()` overload"]
+    fn is_rerewarp(self) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::is_rerewarp(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SetMoveOver(i32)` overload"]
+    fn set_move_over(self, unit_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::set_move_over(__receiver, ::core::convert::Into::into(unit_index), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsMoveOver()` overload"]
+    fn is_move_over(self) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::is_move_over(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsAllowIdle()` overload"]
+    fn is_allow_idle(self) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::is_allow_idle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Processing()` overload"]
+    fn processing(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::processing(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit()` overload"]
+    fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Next()` overload"]
+    fn next(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::next(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetDistanceFromEnemy(crate::app::unit::Unit)` overload"]
+    fn get_distance_from_enemy(self, actor: impl ::core::convert::Into<crate::app::unit::Unit>) -> i32 {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::get_distance_from_enemy(__receiver, ::core::convert::Into::into(actor), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`HasLongRangeWeapon(crate::app::unit::Unit)` overload"]
+    fn has_long_range_weapon(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>) -> bool {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::has_long_range_weapon(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetEnchantPriority(crate::app::unit::Unit, bool)` overload"]
+    fn get_enchant_priority(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, is_entrust: impl ::core::convert::Into<bool>) -> i32 {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::get_enchant_priority(
+                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(is_entrust),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`AllowIdle()` overload"]
+    fn allow_idle(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::allow_idle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SortDescend()` overload"]
+    fn sort_descend(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::sort_descend(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SortAscend()` overload"]
+    fn sort_ascend(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::sort_ascend(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumerateAll()` overload"]
+    fn enumerate_all(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_all(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumeratePriority()` overload"]
+    fn enumerate_priority(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_priority(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumerateAttackLongRange()` overload"]
+    fn enumerate_attack_long_range(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_attack_long_range(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumerateAttack()` overload"]
+    fn enumerate_attack(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_attack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumerateMove()` overload"]
+    fn enumerate_move(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_move(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumerateEntrust()` overload"]
+    fn enumerate_entrust(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_entrust(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EnumerateUncontroll()` overload"]
+    fn enumerate_uncontroll(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::enumerate_uncontroll(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateAskHeal()` overload"]
+    fn update_ask_heal(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::update_ask_heal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UpdateTarget()` overload"]
+    fn update_target(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::update_target(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Priority()` overload"]
+    fn priority(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::priority(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Cause()` overload"]
+    fn cause(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::cause(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Mind()` overload"]
+    fn mind(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::mind(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AttackCrossfire()` overload"]
+    fn attack_crossfire(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::attack_crossfire(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AttackLongRange()` overload"]
+    fn attack_long_range(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::attack_long_range(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AttackHigh()` overload"]
+    fn attack_high(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::attack_high(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AttackMiddle()` overload"]
+    fn attack_middle(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::attack_middle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AttackLow()` overload"]
+    fn attack_low(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::attack_low(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`Move()` overload"]
+    fn r#move(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::r#move(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`TurnEnd()` overload"]
+    fn turn_end(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::turn_end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustUpdateIdle()` overload"]
+    fn entrust_update_idle(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_update_idle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustHeal()` overload"]
+    fn entrust_heal(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_heal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustUpdateCannon()` overload"]
+    fn entrust_update_cannon(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_update_cannon(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustAttack()` overload"]
+    fn entrust_attack(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_attack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustMove()` overload"]
+    fn entrust_move(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_move(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustHeroRushMove()` overload"]
+    fn entrust_hero_rush_move(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_hero_rush_move(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`EntrustFixed()` overload"]
+    fn entrust_fixed(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::entrust_fixed(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UncontrollUpdateIdle()` overload"]
+    fn uncontroll_update_idle(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::uncontroll_update_idle(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UncontrollHeal()` overload"]
+    fn uncontroll_heal(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::uncontroll_heal(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UncontrollAttack()` overload"]
+    fn uncontroll_attack(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::uncontroll_attack(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UncontrollMove()` overload"]
+    fn uncontroll_move(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::uncontroll_move(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`UncontrollFixed()` overload"]
+    fn uncontroll_fixed(self) -> () {
+        unsafe {
+            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AIOrder_unity2_raw::uncontroll_fixed(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-aiorder")]
+impl<__T: IAIOrder> IAIOrderMethods for __T {}
+
+#[cfg(feature = "app-aiorder")]
+impl AIOrder {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(AIOrder), ::core::stringify!(new),));
+        <Self as IAIOrderMethods>::ctor(this);
         this
     }
 }
@@ -269,9 +3051,7 @@ mod __AIOrder_UnitPriority_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_op_less_than_or_equal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
                 <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
@@ -287,18 +3067,15 @@ mod __AIOrder_UnitPriority_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
-                    "op_LessThanOrEqual",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
+                        "op_LessThanOrEqual",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_less_than_or_equal(
@@ -310,20 +3087,14 @@ mod __AIOrder_UnitPriority_unity2_raw {
             crate::app::aiorder::AIOrder_UnitPriority,
             crate::app::aiorder::AIOrder_UnitPriority,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_less_than_or_equal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_less_than_or_equal::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_greater_than_or_equal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
                 <crate::app::aiorder::AIOrder_UnitPriority as ::unity2::IlType>::il_type(),
@@ -339,18 +3110,15 @@ mod __AIOrder_UnitPriority_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
-                    "op_GreaterThanOrEqual",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AIOrder_UnitPriority as ::unity2::ClassIdentity>::NAME,
+                        "op_GreaterThanOrEqual",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_greater_than_or_equal(
@@ -362,11 +3130,7 @@ mod __AIOrder_UnitPriority_unity2_raw {
             crate::app::aiorder::AIOrder_UnitPriority,
             crate::app::aiorder::AIOrder_UnitPriority,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_op_greater_than_or_equal::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_op_greater_than_or_equal::get_method_info().method_ptr);
         inner(a, b, __unity2_method_info)
     }
 }
@@ -386,6 +3150,7 @@ impl AIOrder_UnitPriority {
             )
         }
     }
+
     #[doc = "`op_GreaterThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]
     pub fn op_greater_than_or_equal(
         a: impl ::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>,
@@ -403,4265 +3168,15 @@ impl AIOrder_UnitPriority {
 
 #[cfg(feature = "app-aiorder")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __AIOrder_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_engage_or_god_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SetEngageOrGodChange",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SetEngageOrGodChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_engage_or_god_change(
-        this: AIOrder,
-        unit_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_engage_or_god_change::get_offset() as isize),
-            );
-        inner(this, unit_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_engage_or_god_change {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "IsEngageOrGodChange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "IsEngageOrGodChange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_engage_or_god_change(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_engage_or_god_change::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SetRemove",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SetRemove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_remove(
-        this: AIOrder,
-        unit_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_remove::get_offset() as isize),
-            );
-        inner(this, unit_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_remove {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "IsRemove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "IsRemove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_remove(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_remove::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_remagic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SetRemagic",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SetRemagic",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_remagic(
-        this: AIOrder,
-        unit_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_remagic::get_offset() as isize),
-            );
-        inner(this, unit_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_remagic {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "IsRemagic",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "IsRemagic",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_remagic(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_remagic::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_rerewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SetRerewarp",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SetRerewarp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_rerewarp(
-        this: AIOrder,
-        unit_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_rerewarp::get_offset() as isize),
-            );
-        inner(this, unit_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_rerewarp {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "IsRerewarp",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "IsRerewarp",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_rerewarp(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_rerewarp::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_set_move_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SetMoveOver",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SetMoveOver",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn set_move_over(
-        this: AIOrder,
-        unit_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_move_over::get_offset() as isize),
-            );
-        inner(this, unit_index, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_move_over {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "IsMoveOver",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "IsMoveOver",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_move_over(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_move_over::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_allow_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "IsAllowIdle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "IsAllowIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_allow_idle(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_allow_idle::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_processing {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "Processing",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "Processing",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn processing(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_processing::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_unit::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_next {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "Next",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "Next",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn next(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_next::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_update_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticUpdateTarget",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticUpdateTarget",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_update_target(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_update_target::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_allow_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticAllowIdle",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticAllowIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_allow_idle(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_allow_idle::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticPriority",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticPriority",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_priority(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_priority::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_cause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticCause",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticCause",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_cause(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_cause::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_mind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticMind",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticMind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_mind(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_mind::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_attack_crossfire {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticAttackCrossfire",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticAttackCrossfire",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_attack_crossfire(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_attack_crossfire::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_attack_long_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticAttackLongRange",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticAttackLongRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_attack_long_range(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_attack_long_range::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_attack_high {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticAttackHigh",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticAttackHigh",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_attack_high(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_attack_high::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_attack_middle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticAttackMiddle",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticAttackMiddle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_attack_middle(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_attack_middle::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_attack_low {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticAttackLow",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticAttackLow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_attack_low(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_attack_low::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticMove",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_move(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_move::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_turn_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticTurnEnd",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticTurnEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_turn_end(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_turn_end::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_update_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustUpdateIdle",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustUpdateIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_update_idle(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_update_idle::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustHeal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustHeal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_heal(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_heal::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_update_cannon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustUpdateCannon",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustUpdateCannon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_update_cannon(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_update_cannon::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustAttack",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_attack(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_attack::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_hero_rush_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustHeroRushMove",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustHeroRushMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_hero_rush_move(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_hero_rush_move::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustMove",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_move(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_move::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_entrust_fixed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticEntrustFixed",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticEntrustFixed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_entrust_fixed(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_entrust_fixed::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_uncontroll_update_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticUncontrollUpdateIdle",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticUncontrollUpdateIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_uncontroll_update_idle(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_uncontroll_update_idle::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_uncontroll_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticUncontrollHeal",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticUncontrollHeal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_uncontroll_heal(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_uncontroll_heal::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_uncontroll_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticUncontrollAttack",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticUncontrollAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_uncontroll_attack(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_uncontroll_attack::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_uncontroll_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticUncontrollMove",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticUncontrollMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_uncontroll_move(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_uncontroll_move::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_static_uncontroll_fixed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::aiorder::AIOrder as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "StaticUncontrollFixed",
-                1,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "StaticUncontrollFixed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn static_uncontroll_fixed(
-        order: crate::app::aiorder::AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(crate::app::aiorder::AIOrder, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_static_uncontroll_fixed::get_offset() as isize),
-            );
-        inner(order, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_distance_from_enemy {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "GetDistanceFromEnemy",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "GetDistanceFromEnemy",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_distance_from_enemy(
-        this: AIOrder,
-        actor: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(AIOrder, crate::app::unit::Unit, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_distance_from_enemy::get_offset() as isize),
-            );
-        inner(this, actor, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_has_long_range_weapon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unit::Unit as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "HasLongRangeWeapon",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "HasLongRangeWeapon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn has_long_range_weapon(
-        this: AIOrder,
-        unit: crate::app::unit::Unit,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            AIOrder,
-            crate::app::unit::Unit,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_has_long_range_weapon::get_offset() as isize),
-        );
-        inner(this, unit, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_enchant_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "GetEnchantPriority",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "GetEnchantPriority",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_enchant_priority(
-        this: AIOrder,
-        unit: crate::app::unit::Unit,
-        is_entrust: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            AIOrder,
-            crate::app::unit::Unit,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_enchant_priority::get_offset() as isize),
-        );
-        inner(this, unit, is_entrust, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_allow_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "AllowIdle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "AllowIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn allow_idle(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_allow_idle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sort_descend {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SortDescend",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SortDescend",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn sort_descend(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sort_descend::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_sort_ascend {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "SortAscend",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "SortAscend",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn sort_ascend(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sort_ascend::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_all {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumerateAll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateAll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_all(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_all::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumeratePriority",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumeratePriority",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_priority(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_priority::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_attack_long_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumerateAttackLongRange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateAttackLongRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_attack_long_range(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_attack_long_range::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumerateAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_attack(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_attack::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumerateMove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_move(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_move::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_entrust {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumerateEntrust",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateEntrust",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_entrust(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_entrust::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_enumerate_uncontroll {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EnumerateUncontroll",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EnumerateUncontroll",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn enumerate_uncontroll(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_enumerate_uncontroll::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_ask_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UpdateAskHeal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UpdateAskHeal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_ask_heal(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_ask_heal::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_update_target {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UpdateTarget",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTarget",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn update_target(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_target::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_priority {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "Priority",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "Priority",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn priority(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_priority::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cause {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "Cause",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "Cause",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cause(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cause::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_mind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "Mind",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "Mind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn mind(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_mind::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_attack_crossfire {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "AttackCrossfire",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "AttackCrossfire",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn attack_crossfire(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_crossfire::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_attack_long_range {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "AttackLongRange",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "AttackLongRange",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn attack_long_range(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_long_range::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_attack_high {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "AttackHigh",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "AttackHigh",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn attack_high(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_high::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_attack_middle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "AttackMiddle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "AttackMiddle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn attack_middle(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_middle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_attack_low {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "AttackLow",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "AttackLow",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn attack_low(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_attack_low::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "Move",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "Move",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn r#move(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_move::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_turn_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "TurnEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "TurnEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn turn_end(this: AIOrder, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_turn_end::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_update_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustUpdateIdle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustUpdateIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_update_idle(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_update_idle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustHeal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustHeal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_heal(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_heal::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_update_cannon {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustUpdateCannon",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustUpdateCannon",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_update_cannon(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_update_cannon::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_attack(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_attack::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustMove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_move(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_move::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_hero_rush_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustHeroRushMove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustHeroRushMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_hero_rush_move(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_hero_rush_move::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_entrust_fixed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "EntrustFixed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "EntrustFixed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn entrust_fixed(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_entrust_fixed::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_uncontroll_update_idle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UncontrollUpdateIdle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UncontrollUpdateIdle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn uncontroll_update_idle(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_uncontroll_update_idle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_uncontroll_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UncontrollHeal",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UncontrollHeal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn uncontroll_heal(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_uncontroll_heal::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_uncontroll_attack {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UncontrollAttack",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UncontrollAttack",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn uncontroll_attack(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_uncontroll_attack::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_uncontroll_move {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UncontrollMove",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UncontrollMove",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn uncontroll_move(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_uncontroll_move::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_uncontroll_fixed {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                "UncontrollFixed",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    "UncontrollFixed",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn uncontroll_fixed(
-        this: AIOrder,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(AIOrder, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_uncontroll_fixed::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AIOrder as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AIOrder as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-impl AIOrder {
-    #[doc = "`StaticUpdateTarget(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_update_target(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_update_target(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticAllowIdle(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_allow_idle(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_allow_idle(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticPriority(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_priority(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_priority(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticCause(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_cause(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_cause(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticMind(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_mind(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_mind(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticAttackCrossfire(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_attack_crossfire(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_attack_crossfire(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticAttackLongRange(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_attack_long_range(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_attack_long_range(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticAttackHigh(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_attack_high(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_attack_high(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticAttackMiddle(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_attack_middle(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_attack_middle(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticAttackLow(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_attack_low(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_attack_low(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticMove(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_move(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_move(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticTurnEnd(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_turn_end(order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_turn_end(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustUpdateIdle(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_update_idle(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_update_idle(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustHeal(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_heal(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_heal(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustUpdateCannon(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_update_cannon(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_update_cannon(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustAttack(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_attack(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_attack(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustHeroRushMove(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_hero_rush_move(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_hero_rush_move(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustMove(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_move(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_move(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticEntrustFixed(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_entrust_fixed(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_entrust_fixed(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticUncontrollUpdateIdle(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_uncontroll_update_idle(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_uncontroll_update_idle(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticUncontrollHeal(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_uncontroll_heal(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_uncontroll_heal(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticUncontrollAttack(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_uncontroll_attack(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_uncontroll_attack(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticUncontrollMove(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_uncontroll_move(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_uncontroll_move(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`StaticUncontrollFixed(crate::app::aiorder::AIOrder)` overload"]
-    pub fn static_uncontroll_fixed(
-        order: impl ::core::convert::Into<crate::app::aiorder::AIOrder>,
-    ) -> () {
-        unsafe {
-            __AIOrder_unity2_raw::static_uncontroll_fixed(
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __AIOrder_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-pub trait IAIOrderMethods: IAIOrder {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetEngageOrGodChange(i32)` overload"]
-    fn set_engage_or_god_change(self, unit_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::set_engage_or_god_change(
-                __receiver,
-                ::core::convert::Into::into(unit_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEngageOrGodChange()` overload"]
-    fn is_engage_or_god_change(self) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::is_engage_or_god_change(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRemove(i32)` overload"]
-    fn set_remove(self, unit_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::set_remove(
-                __receiver,
-                ::core::convert::Into::into(unit_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRemove()` overload"]
-    fn is_remove(self) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::is_remove(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRemagic(i32)` overload"]
-    fn set_remagic(self, unit_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::set_remagic(
-                __receiver,
-                ::core::convert::Into::into(unit_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRemagic()` overload"]
-    fn is_remagic(self) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::is_remagic(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetRerewarp(i32)` overload"]
-    fn set_rerewarp(self, unit_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::set_rerewarp(
-                __receiver,
-                ::core::convert::Into::into(unit_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsRerewarp()` overload"]
-    fn is_rerewarp(self) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::is_rerewarp(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SetMoveOver(i32)` overload"]
-    fn set_move_over(self, unit_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::set_move_over(
-                __receiver,
-                ::core::convert::Into::into(unit_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsMoveOver()` overload"]
-    fn is_move_over(self) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::is_move_over(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`IsAllowIdle()` overload"]
-    fn is_allow_idle(self) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::is_allow_idle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Processing()` overload"]
-    fn processing(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::processing(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Next()` overload"]
-    fn next(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::next(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetDistanceFromEnemy(crate::app::unit::Unit)` overload"]
-    fn get_distance_from_enemy(
-        self,
-        actor: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::get_distance_from_enemy(
-                __receiver,
-                ::core::convert::Into::into(actor),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`HasLongRangeWeapon(crate::app::unit::Unit)` overload"]
-    fn has_long_range_weapon(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-    ) -> bool {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::has_long_range_weapon(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetEnchantPriority(crate::app::unit::Unit, bool)` overload"]
-    fn get_enchant_priority(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        is_entrust: impl ::core::convert::Into<bool>,
-    ) -> i32 {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::get_enchant_priority(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(is_entrust),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`AllowIdle()` overload"]
-    fn allow_idle(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::allow_idle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SortDescend()` overload"]
-    fn sort_descend(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::sort_descend(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SortAscend()` overload"]
-    fn sort_ascend(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::sort_ascend(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnumerateAll()` overload"]
-    fn enumerate_all(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_all(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnumeratePriority()` overload"]
-    fn enumerate_priority(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_priority(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnumerateAttackLongRange()` overload"]
-    fn enumerate_attack_long_range(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_attack_long_range(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`EnumerateAttack()` overload"]
-    fn enumerate_attack(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnumerateMove()` overload"]
-    fn enumerate_move(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_move(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnumerateEntrust()` overload"]
-    fn enumerate_entrust(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_entrust(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EnumerateUncontroll()` overload"]
-    fn enumerate_uncontroll(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::enumerate_uncontroll(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateAskHeal()` overload"]
-    fn update_ask_heal(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::update_ask_heal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UpdateTarget()` overload"]
-    fn update_target(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::update_target(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Priority()` overload"]
-    fn priority(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::priority(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Cause()` overload"]
-    fn cause(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::cause(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Mind()` overload"]
-    fn mind(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::mind(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AttackCrossfire()` overload"]
-    fn attack_crossfire(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::attack_crossfire(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AttackLongRange()` overload"]
-    fn attack_long_range(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::attack_long_range(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AttackHigh()` overload"]
-    fn attack_high(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::attack_high(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AttackMiddle()` overload"]
-    fn attack_middle(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::attack_middle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`AttackLow()` overload"]
-    fn attack_low(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::attack_low(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`Move()` overload"]
-    fn r#move(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::r#move(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`TurnEnd()` overload"]
-    fn turn_end(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::turn_end(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustUpdateIdle()` overload"]
-    fn entrust_update_idle(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_update_idle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustHeal()` overload"]
-    fn entrust_heal(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_heal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustUpdateCannon()` overload"]
-    fn entrust_update_cannon(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_update_cannon(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustAttack()` overload"]
-    fn entrust_attack(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustMove()` overload"]
-    fn entrust_move(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_move(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustHeroRushMove()` overload"]
-    fn entrust_hero_rush_move(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_hero_rush_move(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`EntrustFixed()` overload"]
-    fn entrust_fixed(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::entrust_fixed(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UncontrollUpdateIdle()` overload"]
-    fn uncontroll_update_idle(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::uncontroll_update_idle(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UncontrollHeal()` overload"]
-    fn uncontroll_heal(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::uncontroll_heal(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UncontrollAttack()` overload"]
-    fn uncontroll_attack(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::uncontroll_attack(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UncontrollMove()` overload"]
-    fn uncontroll_move(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::uncontroll_move(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`UncontrollFixed()` overload"]
-    fn uncontroll_fixed(self) -> () {
-        unsafe {
-            let __receiver = <AIOrder as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AIOrder_unity2_raw::uncontroll_fixed(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-impl<__T: IAIOrder> IAIOrderMethods for __T {}
-
-#[cfg(feature = "app-aiorder")]
-impl AIOrder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIOrder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIOrderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-aiorder")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::AIOrder;
-    pub use super::AIOrder_Func;
-    pub use super::AIOrder_UnitPriority;
-    pub use super::IAIOrder;
-    pub use super::IAIOrderMethods;
-    pub use super::IAIOrder_Func;
-    pub use super::IAIOrder_FuncMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{AIOrder, AIOrder_Func, AIOrder_UnitPriority, IAIOrder, IAIOrderMethods, IAIOrder_Func, IAIOrder_FuncMethods};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, valuetype::IValueType};
 }

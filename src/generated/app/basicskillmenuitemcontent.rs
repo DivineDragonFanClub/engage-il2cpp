@@ -2,53 +2,34 @@
 
 #[cfg(feature = "app-basicskillmenuitemcontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]
-    #[::unity2::class(namespace = "App", name = "BasicSkillMenuItemContent")]
-    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-    pub struct BasicSkillMenuItemContent {
-        #[rename(name = "m_Icon")]
-        pub m_icon: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Name")]
-        pub m_name: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_SubText")]
-        pub m_sub_text: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Border")]
-        pub m_border: crate::unity_engine::gameobject::GameObject,
-        #[rename(name = "m_Efficacy")]
-        pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
-        #[rename(name = "m_IsDouble")]
-        pub m_is_double: bool,
-    }
+    use crate::{
+        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct BasicSkillMenuItemContent_SubText {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for BasicSkillMenuItemContent_SubText {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "BasicSkillMenuItemContent.SubText";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -59,10 +40,7 @@ mod __types {
 
     impl ::unity2::IlType for BasicSkillMenuItemContent_SubText {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -103,6 +81,24 @@ mod __types {
             Self { value: 8 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]
+    #[::unity2::class(namespace = "App", name = "BasicSkillMenuItemContent")]
+    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+    pub struct BasicSkillMenuItemContent {
+        #[rename(name = "m_Icon")]
+        pub m_icon: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Name")]
+        pub m_name: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_SubText")]
+        pub m_sub_text: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Border")]
+        pub m_border: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Efficacy")]
+        pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+        #[rename(name = "m_IsDouble")]
+        pub m_is_double: bool,
+    }
 }
 
 #[cfg(feature = "app-basicskillmenuitemcontent-types")]
@@ -117,9 +113,7 @@ mod __BasicSkillMenuItemContent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_update_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -132,41 +126,28 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "UpdateTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "UpdateTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_text_color(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_text_color(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_text_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_icon_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "SetIconColor",
@@ -178,42 +159,28 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "SetIconColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SetIconColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_icon_color(
-        this: BasicSkillMenuItemContent,
-        is_active_icon: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_icon_color(this: BasicSkillMenuItemContent, is_active_icon: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_icon_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_icon_color::get_method_info().method_ptr);
         inner(this, is_active_icon, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_find_game_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "FindGameObject",
@@ -225,18 +192,15 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "FindGameObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "FindGameObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn find_game_object(
@@ -248,20 +212,14 @@ mod __BasicSkillMenuItemContent_unity2_raw {
             BasicSkillMenuItemContent,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_find_game_object::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__lookup_find_game_object::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -274,39 +232,27 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "SetupObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "SetupObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_objects(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup_objects(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_objects::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_blank {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -319,41 +265,28 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "Blank",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "Blank",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn blank(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn blank(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_blank::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_blank::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::basicmenuitem::BasicMenuItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
                 "Build",
@@ -365,18 +298,15 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "Build",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "Build",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build(
@@ -384,24 +314,15 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         menu_item: crate::app::basicmenuitem::BasicMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BasicSkillMenuItemContent,
-            crate::app::basicmenuitem::BasicMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BasicSkillMenuItemContent, crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build::get_method_info().method_ptr);
         inner(this, menu_item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -414,39 +335,27 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_text(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_text::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::skilldata::SkillData as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
@@ -462,18 +371,15 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn build_text_2(
@@ -482,25 +388,15 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         is_active_icon: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            BasicSkillMenuItemContent,
-            crate::app::skilldata::SkillData,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_text_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BasicSkillMenuItemContent, crate::app::skilldata::SkillData, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_build_text_2::get_method_info().method_ptr);
         inner(this, skill, is_active_icon, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_sub_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -513,39 +409,27 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildSubText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildSubText",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_sub_text(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_sub_text(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_sub_text::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_sub_text::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_build_text_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -558,39 +442,27 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    "BuildTextColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        "BuildTextColor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn build_text_color(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn build_text_color(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_build_text_color::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_build_text_color::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::class(),
@@ -603,30 +475,20 @@ mod __BasicSkillMenuItemContent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BasicSkillMenuItemContent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BasicSkillMenuItemContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BasicSkillMenuItemContent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -637,22 +499,15 @@ pub trait IBasicSkillMenuItemContentMethods: IBasicSkillMenuItemContent {
     fn update_text_color(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::update_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetIconColor(bool)` overload"]
     fn set_icon_color(self, is_active_icon: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BasicSkillMenuItemContent_unity2_raw::set_icon_color(
                 __receiver,
                 ::core::convert::Into::into(is_active_icon),
@@ -661,73 +516,43 @@ pub trait IBasicSkillMenuItemContentMethods: IBasicSkillMenuItemContent {
         }
     }
     #[doc = "`FindGameObject(::unity2::Il2CppString)` overload"]
-    fn find_game_object(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::gameobject::GameObject {
+    fn find_game_object(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::find_game_object(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::find_game_object(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupObjects()` overload"]
     fn setup_objects(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::setup_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::setup_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Blank()` overload"]
     fn blank(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BasicSkillMenuItemContent_unity2_raw::blank(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    fn build(
-        self,
-        menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>,
-    ) -> () {
+    fn build(self, menu_item: impl ::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::build(
-                __receiver,
-                ::core::convert::Into::into(menu_item),
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)
         }
     }
     #[doc = "`BuildText()` overload"]
     fn build_text(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::build_text(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildText(crate::app::skilldata::SkillData, bool)` overload"]
@@ -738,9 +563,7 @@ pub trait IBasicSkillMenuItemContentMethods: IBasicSkillMenuItemContent {
     ) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BasicSkillMenuItemContent_unity2_raw::build_text_2(
                 __receiver,
                 ::core::convert::Into::into(skill),
@@ -753,35 +576,23 @@ pub trait IBasicSkillMenuItemContentMethods: IBasicSkillMenuItemContent {
     fn build_sub_text(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::build_sub_text(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::build_sub_text(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BuildTextColor()` overload"]
     fn build_text_color(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BasicSkillMenuItemContent_unity2_raw::build_text_color(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BasicSkillMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <BasicSkillMenuItemContent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BasicSkillMenuItemContent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -809,32 +620,26 @@ impl BasicSkillMenuItemContent {
 #[cfg(feature = "app-basicskillmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BasicSkillMenuItemContent;
-    pub use super::BasicSkillMenuItemContent_SubText;
-    pub use super::IBasicSkillMenuItemContent;
-    pub use super::IBasicSkillMenuItemContentMethods;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+    pub use super::{BasicSkillMenuItemContent, BasicSkillMenuItemContent_SubText, IBasicSkillMenuItemContent, IBasicSkillMenuItemContentMethods};
     #[cfg(feature = "app-basicmenuitemcontent")]
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenuitemcontent::IBasicMenuItemContent,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

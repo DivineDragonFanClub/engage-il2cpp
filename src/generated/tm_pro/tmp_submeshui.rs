@@ -2,17 +2,23 @@
 
 #[cfg(feature = "tm_pro-tmp_submeshui-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::graphic::{Graphic, IGraphic};
-    use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::{
+                graphic::{Graphic, IGraphic},
+                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
+            },
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_submeshui/TMP_SubMeshUI.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TMP_SubMeshUI")]
@@ -61,9 +67,7 @@ mod __TMP_SubMeshUI_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -76,41 +80,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_fontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_fontAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_font_asset(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_font_asset::get_offset() as isize),
-        );
+    pub unsafe fn get_font_asset(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset =
+            ::core::mem::transmute(__lookup_get_font_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::tm_pro::tmp_fontasset::TMP_FontAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -124,18 +114,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_fontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_fontAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_font_asset(
@@ -143,24 +130,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         value: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_font_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::tm_pro::tmp_fontasset::TMP_FontAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_font_asset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sprite_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -173,44 +151,32 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_spriteAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_spriteAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sprite_asset(
         this: TMP_SubMeshUI,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_sprite_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset =
+            ::core::mem::transmute(__lookup_get_sprite_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sprite_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_spriteAsset",
@@ -222,18 +188,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_spriteAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_spriteAsset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_sprite_asset(
@@ -241,24 +204,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         value: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sprite_asset::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_sprite_asset::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_main_texture {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -271,41 +225,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_mainTexture",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_mainTexture",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_main_texture(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::texture::Texture {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::texture::Texture = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_main_texture::get_offset() as isize),
-        );
+    pub unsafe fn get_main_texture(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture {
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::texture::Texture =
+            ::core::mem::transmute(__lookup_get_main_texture::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -318,43 +258,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_material",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_material",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_material(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material::get_offset() as isize),
-        );
+    pub unsafe fn get_material(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::material::Material {
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_material",
@@ -366,18 +291,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_material",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_material",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_material(
@@ -385,24 +307,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         value: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shared_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -415,43 +328,31 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_sharedMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_sharedMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shared_material(
         this: TMP_SubMeshUI,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shared_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_shared_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shared_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_sharedMaterial",
@@ -463,18 +364,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_sharedMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_sharedMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shared_material(
@@ -482,24 +380,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         value: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shared_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_shared_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fallback_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -512,43 +401,31 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_fallbackMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_fallbackMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fallback_material(
         this: TMP_SubMeshUI,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fallback_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_fallback_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fallback_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_fallbackMaterial",
@@ -560,18 +437,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_fallbackMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_fallbackMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fallback_material(
@@ -579,24 +453,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         value: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fallback_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fallback_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fallback_source_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -609,43 +474,31 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_fallbackSourceMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_fallbackSourceMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fallback_source_material(
         this: TMP_SubMeshUI,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fallback_source_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_fallback_source_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_fallback_source_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_fallbackSourceMaterial",
@@ -657,18 +510,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_fallbackSourceMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_fallbackSourceMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_fallback_source_material(
@@ -676,24 +526,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         value: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_fallback_source_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_fallback_source_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material_for_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -706,41 +547,30 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_materialForRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_materialForRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_material_for_rendering(
         this: TMP_SubMeshUI,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::material::Material {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material_for_rendering::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__lookup_get_material_for_rendering::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_default_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -753,41 +583,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_isDefaultMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_isDefaultMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_default_material(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_default_material(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_default_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_default_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_default_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_isDefaultMaterial",
@@ -799,40 +616,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_isDefaultMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_isDefaultMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_default_material(
-        this: TMP_SubMeshUI,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_default_material(this: TMP_SubMeshUI, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_default_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_default_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_padding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -845,41 +649,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_padding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_padding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_padding(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_padding(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_padding::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_padding::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_padding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_padding",
@@ -891,40 +682,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_padding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_padding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_padding(
-        this: TMP_SubMeshUI,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_padding(this: TMP_SubMeshUI, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_padding::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_padding::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -937,43 +715,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_mesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_mesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mesh(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mesh::get_offset() as isize),
-        );
+    pub unsafe fn get_mesh(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "set_mesh",
@@ -985,43 +748,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "set_mesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "set_mesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mesh(
-        this: TMP_SubMeshUI,
-        value: crate::unity_engine::mesh::Mesh,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::mesh::Mesh,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mesh::get_offset() as isize),
-        );
+    pub unsafe fn set_mesh(this: TMP_SubMeshUI, value: crate::unity_engine::mesh::Mesh, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mesh::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text_component {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1034,45 +781,30 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "get_textComponent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "get_textComponent",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_text_component(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::tmp_text::TMP_Text {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_text::TMP_Text = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_component::get_offset() as isize),
-        );
+    pub unsafe fn get_text_component(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::tmp_text::TMP_Text {
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_text::TMP_Text =
+            ::core::mem::transmute(__lookup_get_text_component::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_sub_text_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::textmeshprougui::TextMeshProUGUI as ::unity2::IlType>::il_type(),
-                <crate::tm_pro::materialreference::MaterialReference as ::unity2::IlType>::il_type(
-                ),
+                <crate::tm_pro::materialreference::MaterialReference as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1085,18 +817,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "AddSubTextObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "AddSubTextObject",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_sub_text_object(
@@ -1108,20 +837,14 @@ mod __TMP_SubMeshUI_unity2_raw {
             crate::tm_pro::textmeshprougui::TextMeshProUGUI,
             crate::tm_pro::materialreference::MaterialReference,
             ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_submeshui::TMP_SubMeshUI = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_sub_text_object::get_offset() as isize),
-        );
+        ) -> crate::tm_pro::tmp_submeshui::TMP_SubMeshUI = ::core::mem::transmute(__lookup_add_sub_text_object::get_method_info().method_ptr);
         inner(text_component, material_reference, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1134,39 +857,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1179,39 +890,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1224,39 +923,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "OnDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "OnDestroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_destroy(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_destroy(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_transform_parent_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1269,41 +956,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "OnTransformParentChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "OnTransformParentChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_transform_parent_changed(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_transform_parent_changed(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_transform_parent_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_transform_parent_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_modified_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "GetModifiedMaterial",
@@ -1315,18 +989,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "GetModifiedMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "GetModifiedMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_modified_material(
@@ -1338,20 +1009,14 @@ mod __TMP_SubMeshUI_unity2_raw {
             TMP_SubMeshUI,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_modified_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_modified_material::get_method_info().method_ptr);
         inner(this, base_material, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_padding_for_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1364,41 +1029,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "GetPaddingForMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "GetPaddingForMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_padding_for_material(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_padding_for_material(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_padding_for_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_padding_for_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_padding_for_material_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "GetPaddingForMaterial",
@@ -1410,18 +1062,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "GetPaddingForMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "GetPaddingForMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_padding_for_material_2(
@@ -1429,28 +1078,17 @@ mod __TMP_SubMeshUI_unity2_raw {
         mat: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> f32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_padding_for_material_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> f32 =
+            ::core::mem::transmute(__lookup_get_padding_for_material_2::get_method_info().method_ptr);
         inner(this, mat, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_mesh_padding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "UpdateMeshPadding",
@@ -1462,18 +1100,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMeshPadding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMeshPadding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_mesh_padding(
@@ -1483,20 +1118,14 @@ mod __TMP_SubMeshUI_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_mesh_padding::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_mesh_padding::get_method_info().method_ptr);
         inner(this, is_extra_padding, is_using_bold, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_all_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1509,39 +1138,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "SetAllDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "SetAllDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_all_dirty(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_all_dirty(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_all_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_all_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vertices_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1554,39 +1171,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "SetVerticesDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "SetVerticesDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_vertices_dirty(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_vertices_dirty(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_vertices_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_vertices_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1599,39 +1204,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_layout_dirty(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_layout_dirty(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_layout_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_material_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1644,39 +1237,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "SetMaterialDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "SetMaterialDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_material_dirty(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_material_dirty(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_material_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_material_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_pivot_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1689,39 +1270,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "SetPivotDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "SetPivotDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_pivot_dirty(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_pivot_dirty(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_pivot_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_pivot_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_root_canvas_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1734,68 +1303,48 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "GetRootCanvasTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "GetRootCanvasTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_root_canvas_transform(
         this: TMP_SubMeshUI,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_root_canvas_transform::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_root_canvas_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cull {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::rect::Rect as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
-                "Cull",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_SubMeshUI as ::unity2::ClassIdentity>::class(), "Cull", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "Cull",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "Cull",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cull(
@@ -1804,25 +1353,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         valid_rect: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::rect::Rect,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cull::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::rect::Rect, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cull::get_method_info().method_ptr);
         inner(this, clip_rect, valid_rect, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1835,43 +1374,29 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGeometry",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_geometry(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_geometry(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_geometry::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "Rebuild",
@@ -1883,18 +1408,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "Rebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "Rebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rebuild(
@@ -1902,24 +1424,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         update: crate::unity_engine::ui::canvasupdate::CanvasUpdate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_SubMeshUI,
-            crate::unity_engine::ui::canvasupdate::CanvasUpdate,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rebuild::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_SubMeshUI, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rebuild::get_method_info().method_ptr);
         inner(this, update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_refresh_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1932,39 +1445,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "RefreshMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "RefreshMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn refresh_material(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn refresh_material(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_refresh_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_refresh_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -1977,39 +1478,27 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_material(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_material(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_recalculate_clipping {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
@@ -2022,41 +1511,28 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "RecalculateClipping",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "RecalculateClipping",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn recalculate_clipping(
-        this: TMP_SubMeshUI,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn recalculate_clipping(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_recalculate_clipping::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_recalculate_clipping::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "GetMaterial",
@@ -2068,18 +1544,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_material_2(
@@ -2091,22 +1564,15 @@ mod __TMP_SubMeshUI_unity2_raw {
             TMP_SubMeshUI,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material_2::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_material_2::get_method_info().method_ptr);
         inner(this, mat, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_material_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
                 "CreateMaterialInstance",
@@ -2118,18 +1584,15 @@ mod __TMP_SubMeshUI_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    "CreateMaterialInstance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        "CreateMaterialInstance",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_material_instance(
@@ -2141,53 +1604,33 @@ mod __TMP_SubMeshUI_unity2_raw {
             TMP_SubMeshUI,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_material_instance::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_create_material_instance::get_method_info().method_ptr);
         inner(this, source, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_SubMeshUI as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_SubMeshUI as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_SubMeshUI as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TMP_SubMeshUI, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -2197,9 +1640,7 @@ impl TMP_SubMeshUI {
     #[doc = "`AddSubTextObject(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::tm_pro::materialreference::MaterialReference)` overload"]
     pub fn add_sub_text_object(
         text_component: impl ::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-        material_reference: impl ::core::convert::Into<
-            crate::tm_pro::materialreference::MaterialReference,
-        >,
+        material_reference: impl ::core::convert::Into<crate::tm_pro::materialreference::MaterialReference>,
     ) -> crate::tm_pro::tmp_submeshui::TMP_SubMeshUI {
         unsafe {
             __TMP_SubMeshUI_unity2_raw::add_sub_text_object(
@@ -2216,298 +1657,176 @@ pub trait ITMP_SubMeshUIMethods: ITMP_SubMeshUI {
     #[doc = "`get_fontAsset()` overload"]
     fn get_font_asset(self) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_font_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fontAsset(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]
-    fn set_font_asset(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
-    ) -> () {
+    fn set_font_asset(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_font_asset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_font_asset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_spriteAsset()` overload"]
     fn get_sprite_asset(self) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_sprite_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_spriteAsset(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)` overload"]
-    fn set_sprite_asset(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>,
-    ) -> () {
+    fn set_sprite_asset(self, value: impl ::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_sprite_asset(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_sprite_asset(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_mainTexture()` overload"]
     fn get_main_texture(self) -> crate::unity_engine::texture::Texture {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_material()` overload"]
     fn get_material(self) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_material(crate::unity_engine::material::Material)` overload"]
-    fn set_material(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    fn set_material(self, value: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_material(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_sharedMaterial()` overload"]
     fn get_shared_material(self) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_shared_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_shared_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_sharedMaterial(crate::unity_engine::material::Material)` overload"]
-    fn set_shared_material(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    fn set_shared_material(self, value: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_shared_material(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_shared_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fallbackMaterial()` overload"]
     fn get_fallback_material(self) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_fallback_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_fallback_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fallbackMaterial(crate::unity_engine::material::Material)` overload"]
-    fn set_fallback_material(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    fn set_fallback_material(self, value: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_fallback_material(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_fallback_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_fallbackSourceMaterial()` overload"]
     fn get_fallback_source_material(self) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_fallback_source_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_fallback_source_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_fallbackSourceMaterial(crate::unity_engine::material::Material)` overload"]
-    fn set_fallback_source_material(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    fn set_fallback_source_material(self, value: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_fallback_source_material(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_fallback_source_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_materialForRendering()` overload"]
     fn get_material_for_rendering(self) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_material_for_rendering(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_material_for_rendering(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_isDefaultMaterial()` overload"]
     fn get_is_default_material(self) -> bool {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_is_default_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_is_default_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_isDefaultMaterial(bool)` overload"]
     fn set_is_default_material(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_is_default_material(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_is_default_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_padding()` overload"]
     fn get_padding(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_padding(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_padding(f32)` overload"]
     fn set_padding(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_padding(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_padding(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_mesh()` overload"]
     fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_mesh(crate::unity_engine::mesh::Mesh)` overload"]
     fn set_mesh(self, value: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::set_mesh(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::set_mesh(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_textComponent()` overload"]
     fn get_text_component(self) -> crate::tm_pro::tmp_text::TMP_Text {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::get_text_component(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDestroy()` overload"]
     fn on_destroy(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnTransformParentChanged()` overload"]
     fn on_transform_parent_changed(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::on_transform_parent_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]
@@ -2516,54 +1835,28 @@ pub trait ITMP_SubMeshUIMethods: ITMP_SubMeshUI {
         base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_modified_material(
-                __receiver,
-                ::core::convert::Into::into(base_material),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)
         }
     }
     #[doc = "`GetPaddingForMaterial()` overload"]
     fn get_padding_for_material(self) -> f32 {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_padding_for_material(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_padding_for_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPaddingForMaterial(crate::unity_engine::material::Material)` overload"]
-    fn get_padding_for_material_2(
-        self,
-        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> f32 {
+    fn get_padding_for_material_2(self, mat: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> f32 {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_padding_for_material_2(
-                __receiver,
-                ::core::convert::Into::into(mat),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_padding_for_material_2(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMeshPadding(bool, bool)` overload"]
-    fn update_mesh_padding(
-        self,
-        is_extra_padding: impl ::core::convert::Into<bool>,
-        is_using_bold: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn update_mesh_padding(self, is_extra_padding: impl ::core::convert::Into<bool>, is_using_bold: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::update_mesh_padding(
                 __receiver,
                 ::core::convert::Into::into(is_extra_padding),
@@ -2575,70 +1868,49 @@ pub trait ITMP_SubMeshUIMethods: ITMP_SubMeshUI {
     #[doc = "`SetAllDirty()` overload"]
     fn set_all_dirty(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::set_all_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetVerticesDirty()` overload"]
     fn set_vertices_dirty(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::set_vertices_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLayoutDirty()` overload"]
     fn set_layout_dirty(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::set_layout_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMaterialDirty()` overload"]
     fn set_material_dirty(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::set_material_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPivotDirty()` overload"]
     fn set_pivot_dirty(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::set_pivot_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetRootCanvasTransform()` overload"]
     fn get_root_canvas_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_root_canvas_transform(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_root_canvas_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"]
-    fn cull(
-        self,
-        clip_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>,
-        valid_rect: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn cull(self, clip_rect: impl ::core::convert::Into<crate::unity_engine::rect::Rect>, valid_rect: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::cull(
                 __receiver,
                 ::core::convert::Into::into(clip_rect),
@@ -2650,72 +1922,43 @@ pub trait ITMP_SubMeshUIMethods: ITMP_SubMeshUI {
     #[doc = "`UpdateGeometry()` overload"]
     fn update_geometry(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
-    fn rebuild(
-        self,
-        update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>,
-    ) -> () {
+    fn rebuild(self, update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::rebuild(
-                __receiver,
-                ::core::convert::Into::into(update),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)
         }
     }
     #[doc = "`RefreshMaterial()` overload"]
     fn refresh_material(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::refresh_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMaterial()` overload"]
     fn update_material(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::update_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`RecalculateClipping()` overload"]
     fn recalculate_clipping(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::recalculate_clipping(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaterial(crate::unity_engine::material::Material)` overload"]
-    fn get_material_2(
-        self,
-        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> crate::unity_engine::material::Material {
+    fn get_material_2(self, mat: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::get_material_2(
-                __receiver,
-                ::core::convert::Into::into(mat),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::get_material_2(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateMaterialInstance(crate::unity_engine::material::Material)` overload"]
@@ -2724,22 +1967,14 @@ pub trait ITMP_SubMeshUIMethods: ITMP_SubMeshUI {
         source: impl ::core::convert::Into<crate::unity_engine::material::Material>,
     ) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TMP_SubMeshUI_unity2_raw::create_material_instance(
-                __receiver,
-                ::core::convert::Into::into(source),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TMP_SubMeshUI_unity2_raw::create_material_instance(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TMP_SubMeshUI as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TMP_SubMeshUI_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2752,13 +1987,8 @@ impl<__T: ITMP_SubMeshUI> ITMP_SubMeshUIMethods for __T {}
 impl TMP_SubMeshUI {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_SubMeshUI),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TMP_SubMeshUI), ::core::stringify!(new),));
         <Self as ITMP_SubMeshUIMethods>::ctor(this);
         this
     }
@@ -2767,31 +1997,32 @@ impl TMP_SubMeshUI {
 #[cfg(feature = "tm_pro-tmp_submeshui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_SubMeshUI;
-    pub use super::ITMP_SubMeshUIMethods;
-    pub use super::TMP_SubMeshUI;
-    pub use crate::system::object::IObject;
+    pub use super::{ITMP_SubMeshUI, ITMP_SubMeshUIMethods, TMP_SubMeshUI};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::graphic::IGraphic;
     #[cfg(feature = "unity_engine-ui-graphic")]
     pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
     #[cfg(feature = "unity_engine-ui-maskablegraphic")]
     pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
+        },
+    };
 }

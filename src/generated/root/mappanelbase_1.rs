@@ -2,48 +2,25 @@
 
 #[cfg(feature = "root-mappanelbase_1-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::singletonmonobehaviour_1::{
-        ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1,
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
     };
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))]
-    #[::unity2::class(namespace = "", name = "MapPanelBase`1")]
-    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)]
-    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-    #[parent(crate::unity_engine::behaviour::Behaviour)]
-    #[parent(crate::unity_engine::component::Component)]
-    #[parent(crate::unity_engine::object_2::Object_2)]
-    #[parent(crate::system::object::Object)]
-    pub struct MapPanelBase_1<T0: ::unity2::ClassIdentity> {
-        #[rename(name = "m_Materials")]
-        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[rename(name = "m_Mesh")]
-        pub m_mesh: crate::app::map::Map_CellMesh,
-        #[rename(name = "m_HalfTexelX")]
-        pub m_half_texel_x: f32,
-        #[rename(name = "m_HalfTexelY")]
-        pub m_half_texel_y: f32,
-        #[rename(name = "m_RendererMaterials")]
-        pub m_renderer_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-        #[static_field]
-        #[rename(name = "CheckImageOffsetXTable")]
-        pub check_image_offset_x_table: ::unity2::Array<i32>,
-        #[static_field]
-        #[rename(name = "CheckIMageOffsetZTable")]
-        pub check_i_mage_offset_z_table: ::unity2::Array<i32>,
-    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1_ImageGetFunction.md"))]
     #[::unity2::class(namespace = "", name = "MapPanelBase`1.ImageGetFunction")]
@@ -54,22 +31,15 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappanelbase_1/MapPanelBase_1_PanelType.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MapPanelBase_1_PanelType<T0: ::unity2::ClassIdentity> {
         pub value: i32,
         pub _phantom: ::core::marker::PhantomData<(T0)>,
     }
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapPanelBase_1_PanelType<T0> {
-        const NAMESPACE: &'static str = "";
-
         const NAME: &'static str = "MapPanelBase`1.PanelType";
+        const NAMESPACE: &'static str = "";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -80,10 +50,7 @@ mod __types {
 
     impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapPanelBase_1_PanelType<T0> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -130,10 +97,65 @@ mod __types {
             }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelbase_1/MapPanelBase_1.md"))]
+    #[::unity2::class(namespace = "", name = "MapPanelBase`1")]
+    # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < T0 >)]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    #[parent(crate::unity_engine::behaviour::Behaviour)]
+    #[parent(crate::unity_engine::component::Component)]
+    #[parent(crate::unity_engine::object_2::Object_2)]
+    #[parent(crate::system::object::Object)]
+    pub struct MapPanelBase_1<T0: ::unity2::ClassIdentity> {
+        #[rename(name = "m_Materials")]
+        pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[rename(name = "m_Mesh")]
+        pub m_mesh: crate::app::map::Map_CellMesh,
+        #[rename(name = "m_HalfTexelX")]
+        pub m_half_texel_x: f32,
+        #[rename(name = "m_HalfTexelY")]
+        pub m_half_texel_y: f32,
+        #[rename(name = "m_RendererMaterials")]
+        pub m_renderer_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+        #[static_field]
+        #[rename(name = "CheckImageOffsetXTable")]
+        pub check_image_offset_x_table: ::unity2::Array<i32>,
+        #[static_field]
+        #[rename(name = "CheckIMageOffsetZTable")]
+        pub check_i_mage_offset_z_table: ::unity2::Array<i32>,
+    }
 }
 
 #[cfg(feature = "root-mappanelbase_1-types")]
 pub use __types::*;
+
+#[cfg(feature = "root-mappanelbase_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> bool;
+}
+
+#[cfg(feature = "root-mappanelbase_1")]
+impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelBase_1_ImageGetFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelBase_1_ImageGetFunctionMethods<T0>>::ctor(this, object, method);
+        this
+    }
+}
 
 #[cfg(feature = "root-mappanelbase_1")]
 #[::unity2::methods]
@@ -192,13 +214,7 @@ impl<T0: ::unity2::ClassIdentity> MapPanelBase_1<T0> {
 
     #[doc = "`CheckImage(crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, i32, i32, bool)` overload"]
     #[method(name = "CheckImage", args = 4)]
-    pub fn check_image(
-        self,
-        func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>,
-        x: i32,
-        z: i32,
-        step_check: bool,
-    ) -> u32;
+    pub fn check_image(self, func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, x: i32, z: i32, step_check: bool) -> u32;
 
     #[doc = "`CheckWholeDangerImageForGunner(crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, i32, i32, bool)` overload"]
     #[method(name = "CheckWholeDangerImageForGunner", args = 6)]
@@ -214,12 +230,7 @@ impl<T0: ::unity2::ClassIdentity> MapPanelBase_1<T0> {
 
     #[doc = "`CheckImageNotImmobile(crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, i32, i32)` overload"]
     #[method(name = "CheckImageNotImmobile", args = 3)]
-    pub fn check_image_not_immobile(
-        self,
-        func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>,
-        x: i32,
-        z: i32,
-    ) -> u32;
+    pub fn check_image_not_immobile(self, func: crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, x: i32, z: i32) -> u32;
 
     #[doc = "`CheckImageForAct(crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, i32, i32, bool)` overload"]
     #[method(name = "CheckImageForAct", args = 5)]
@@ -242,26 +253,11 @@ impl<T0: ::unity2::ClassIdentity> MapPanelBase_1<T0> {
 
     #[doc = "`AddCell(i32, i32, f32, f32, crate::unity_engine::color::Color, f32)` overload"]
     #[method(name = "AddCell", args = 6)]
-    pub fn add_cell_2(
-        self,
-        x: i32,
-        z: i32,
-        u: f32,
-        v: f32,
-        color: crate::unity_engine::color::Color,
-        distance: f32,
-    ) -> ();
+    pub fn add_cell_2(self, x: i32, z: i32, u: f32, v: f32, color: crate::unity_engine::color::Color, distance: f32) -> ();
 
     #[doc = "`AddCell(i32, i32, u32, crate::unity_engine::color::Color, f32)` overload"]
     #[method(name = "AddCell", args = 5)]
-    pub fn add_cell_3(
-        self,
-        x: i32,
-        z: i32,
-        mask: u32,
-        color: crate::unity_engine::color::Color,
-        distance: f32,
-    ) -> ();
+    pub fn add_cell_3(self, x: i32, z: i32, mask: u32, color: crate::unity_engine::color::Color, distance: f32) -> ();
 
     #[doc = "`AddCell(crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<T0>, i32, i32, crate::unity_engine::color::Color)` overload"]
     #[method(name = "AddCell", args = 4)]
@@ -291,23 +287,11 @@ impl<T0: ::unity2::ClassIdentity> MapPanelBase_1<T0> {
 
     #[doc = "`GetUV0(f32, f32, i32, i32)` overload"]
     #[method(name = "GetUV0", args = 4)]
-    pub fn get_uv0(
-        self,
-        unit_x: f32,
-        unit_y: f32,
-        index_x: i32,
-        index_y: i32,
-    ) -> crate::unity_engine::vector2::Vector2;
+    pub fn get_uv0(self, unit_x: f32, unit_y: f32, index_x: i32, index_y: i32) -> crate::unity_engine::vector2::Vector2;
 
     #[doc = "`GetUV2(f32, f32, i32, i32)` overload"]
     #[method(name = "GetUV2", args = 4)]
-    pub fn get_uv2(
-        self,
-        unit_x: f32,
-        unit_y: f32,
-        index_x: i32,
-        index_y: i32,
-    ) -> crate::unity_engine::vector2::Vector2;
+    pub fn get_uv2(self, unit_x: f32, unit_y: f32, index_x: i32, index_y: i32) -> crate::unity_engine::vector2::Vector2;
 
     #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::root::mappanelbase_1::MapPanelBase_1_PanelType<T0>, f32)` overload"]
     #[method(name = "AddCell", args = 5)]
@@ -370,71 +354,35 @@ impl<T0: ::unity2::ClassIdentity> MapPanelBase_1<T0> {
 }
 
 #[cfg(feature = "root-mappanelbase_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, x: i32, z: i32) -> bool;
-}
-
-#[cfg(feature = "root-mappanelbase_1")]
-impl<T0: ::unity2::ClassIdentity> MapPanelBase_1_ImageGetFunction<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelBase_1_ImageGetFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelBase_1_ImageGetFunctionMethods<T0>>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "root-mappanelbase_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapPanelBase_1;
-    pub use super::IMapPanelBase_1Methods;
-    pub use super::IMapPanelBase_1_ImageGetFunction;
-    pub use super::IMapPanelBase_1_ImageGetFunctionMethods;
-    pub use super::MapPanelBase_1;
-    pub use super::MapPanelBase_1_ImageGetFunction;
-    pub use super::MapPanelBase_1_PanelType;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+    pub use super::{
+        IMapPanelBase_1, IMapPanelBase_1Methods, IMapPanelBase_1_ImageGetFunction, IMapPanelBase_1_ImageGetFunctionMethods, MapPanelBase_1,
+        MapPanelBase_1_ImageGetFunction, MapPanelBase_1_PanelType,
+    };
     #[cfg(feature = "app-singletonmonobehaviour_1")]
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

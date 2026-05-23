@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-listwithevents_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/listwithevents_1/ListWithEvents_1.md"))]
     #[::unity2::class(namespace = "", name = "ListWithEvents`1")]
@@ -84,9 +84,7 @@ impl<T0: ::unity2::ClassIdentity> ListWithEvents_1<T0> {
 
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(
-        self,
-    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+    pub fn get_enumerator(self) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
 
     #[doc = "`IndexOf(T0)` overload"]
     #[method(name = "IndexOf", args = 1)]
@@ -106,9 +104,7 @@ impl<T0: ::unity2::ClassIdentity> ListWithEvents_1<T0> {
 
     #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
     #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
+    pub fn system_collections_i_enumerable_get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -134,9 +130,7 @@ impl<T0: ::unity2::ClassIdentity> ListWithEvents_1<T0> {
 #[cfg(feature = "root-listwithevents_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IListWithEvents_1;
-    pub use super::IListWithEvents_1Methods;
-    pub use super::ListWithEvents_1;
+    pub use super::{IListWithEvents_1, IListWithEvents_1Methods, ListWithEvents_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

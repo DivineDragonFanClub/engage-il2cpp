@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-nullablecomparer_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nullablecomparer_1/NullableComparer_1.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "NullableComparer`1")]
@@ -49,7 +49,5 @@ impl<T0: ::unity2::ClassIdentity> NullableComparer_1<T0> {
 #[cfg(feature = "system-collections-generic-nullablecomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INullableComparer_1;
-    pub use super::INullableComparer_1Methods;
-    pub use super::NullableComparer_1;
+    pub use super::{INullableComparer_1, INullableComparer_1Methods, NullableComparer_1};
 }

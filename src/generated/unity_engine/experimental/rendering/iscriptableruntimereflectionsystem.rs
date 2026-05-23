@@ -2,21 +2,16 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/iscriptableruntimereflectionsystem/IScriptableRuntimeReflectionSystem.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering",
-        name = "IScriptableRuntimeReflectionSystem"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering", name = "IScriptableRuntimeReflectionSystem")]
     pub struct IScriptableRuntimeReflectionSystem {}
 }
 
-#[cfg(
-    feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem-types"
-)]
+#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
@@ -28,9 +23,7 @@ mod __IScriptableRuntimeReflectionSystem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_tick_realtime_probes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IScriptableRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
@@ -43,32 +36,20 @@ mod __IScriptableRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IScriptableRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    "TickRealtimeProbes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IScriptableRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        "TickRealtimeProbes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_realtime_probes(
-        this: IScriptableRuntimeReflectionSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            IScriptableRuntimeReflectionSystem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tick_realtime_probes::get_offset() as isize),
-        );
+    pub unsafe fn tick_realtime_probes(this: IScriptableRuntimeReflectionSystem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(IScriptableRuntimeReflectionSystem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_tick_realtime_probes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -78,14 +59,10 @@ pub trait IIScriptableRuntimeReflectionSystemMethods: IIScriptableRuntimeReflect
     #[doc = "`TickRealtimeProbes()` overload"]
     fn tick_realtime_probes(self) -> bool {
         unsafe {
-            let __receiver =
-                <IScriptableRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __IScriptableRuntimeReflectionSystem_unity2_raw::tick_realtime_probes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <IScriptableRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __IScriptableRuntimeReflectionSystem_unity2_raw::tick_realtime_probes(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -96,7 +73,5 @@ impl<__T: IIScriptableRuntimeReflectionSystem> IIScriptableRuntimeReflectionSyst
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIScriptableRuntimeReflectionSystem;
-    pub use super::IIScriptableRuntimeReflectionSystemMethods;
-    pub use super::IScriptableRuntimeReflectionSystem;
+    pub use super::{IIScriptableRuntimeReflectionSystem, IIScriptableRuntimeReflectionSystemMethods, IScriptableRuntimeReflectionSystem};
 }

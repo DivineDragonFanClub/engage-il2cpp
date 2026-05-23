@@ -75,36 +75,27 @@ pub use enumerablewrapper::{EnumerableWrapper, IEnumerableWrapper};
 pub mod eventmemberdescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor-types")]
 pub use eventmemberdescriptor::{
-    EventMemberDescriptor, EventMemberDescriptor_EventWrapper00,
-    EventMemberDescriptor_EventWrapper01, EventMemberDescriptor_EventWrapper02,
-    EventMemberDescriptor_EventWrapper03, EventMemberDescriptor_EventWrapper04,
-    EventMemberDescriptor_EventWrapper05, EventMemberDescriptor_EventWrapper06,
-    EventMemberDescriptor_EventWrapper07, EventMemberDescriptor_EventWrapper08,
-    EventMemberDescriptor_EventWrapper09, EventMemberDescriptor_EventWrapper10,
-    EventMemberDescriptor_EventWrapper11, EventMemberDescriptor_EventWrapper12,
-    EventMemberDescriptor_EventWrapper13, EventMemberDescriptor_EventWrapper14,
-    EventMemberDescriptor_EventWrapper15, EventMemberDescriptor_EventWrapper16,
-    IEventMemberDescriptor, IEventMemberDescriptor_EventWrapper00,
-    IEventMemberDescriptor_EventWrapper01, IEventMemberDescriptor_EventWrapper02,
-    IEventMemberDescriptor_EventWrapper03, IEventMemberDescriptor_EventWrapper04,
-    IEventMemberDescriptor_EventWrapper05, IEventMemberDescriptor_EventWrapper06,
-    IEventMemberDescriptor_EventWrapper07, IEventMemberDescriptor_EventWrapper08,
-    IEventMemberDescriptor_EventWrapper09, IEventMemberDescriptor_EventWrapper10,
-    IEventMemberDescriptor_EventWrapper11, IEventMemberDescriptor_EventWrapper12,
-    IEventMemberDescriptor_EventWrapper13, IEventMemberDescriptor_EventWrapper14,
-    IEventMemberDescriptor_EventWrapper15, IEventMemberDescriptor_EventWrapper16,
+    EventMemberDescriptor, EventMemberDescriptor_EventWrapper00, EventMemberDescriptor_EventWrapper01, EventMemberDescriptor_EventWrapper02,
+    EventMemberDescriptor_EventWrapper03, EventMemberDescriptor_EventWrapper04, EventMemberDescriptor_EventWrapper05,
+    EventMemberDescriptor_EventWrapper06, EventMemberDescriptor_EventWrapper07, EventMemberDescriptor_EventWrapper08,
+    EventMemberDescriptor_EventWrapper09, EventMemberDescriptor_EventWrapper10, EventMemberDescriptor_EventWrapper11,
+    EventMemberDescriptor_EventWrapper12, EventMemberDescriptor_EventWrapper13, EventMemberDescriptor_EventWrapper14,
+    EventMemberDescriptor_EventWrapper15, EventMemberDescriptor_EventWrapper16, IEventMemberDescriptor, IEventMemberDescriptor_EventWrapper00,
+    IEventMemberDescriptor_EventWrapper01, IEventMemberDescriptor_EventWrapper02, IEventMemberDescriptor_EventWrapper03,
+    IEventMemberDescriptor_EventWrapper04, IEventMemberDescriptor_EventWrapper05, IEventMemberDescriptor_EventWrapper06,
+    IEventMemberDescriptor_EventWrapper07, IEventMemberDescriptor_EventWrapper08, IEventMemberDescriptor_EventWrapper09,
+    IEventMemberDescriptor_EventWrapper10, IEventMemberDescriptor_EventWrapper11, IEventMemberDescriptor_EventWrapper12,
+    IEventMemberDescriptor_EventWrapper13, IEventMemberDescriptor_EventWrapper14, IEventMemberDescriptor_EventWrapper15,
+    IEventMemberDescriptor_EventWrapper16,
 };
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 pub use eventmemberdescriptor::{
-    IEventMemberDescriptorMethods, IEventMemberDescriptor_EventWrapper00Methods,
-    IEventMemberDescriptor_EventWrapper01Methods, IEventMemberDescriptor_EventWrapper02Methods,
-    IEventMemberDescriptor_EventWrapper03Methods, IEventMemberDescriptor_EventWrapper04Methods,
-    IEventMemberDescriptor_EventWrapper05Methods, IEventMemberDescriptor_EventWrapper06Methods,
-    IEventMemberDescriptor_EventWrapper07Methods, IEventMemberDescriptor_EventWrapper08Methods,
-    IEventMemberDescriptor_EventWrapper09Methods, IEventMemberDescriptor_EventWrapper10Methods,
-    IEventMemberDescriptor_EventWrapper11Methods, IEventMemberDescriptor_EventWrapper12Methods,
-    IEventMemberDescriptor_EventWrapper13Methods, IEventMemberDescriptor_EventWrapper14Methods,
-    IEventMemberDescriptor_EventWrapper15Methods, IEventMemberDescriptor_EventWrapper16Methods,
+    IEventMemberDescriptorMethods, IEventMemberDescriptor_EventWrapper00Methods, IEventMemberDescriptor_EventWrapper01Methods,
+    IEventMemberDescriptor_EventWrapper02Methods, IEventMemberDescriptor_EventWrapper03Methods, IEventMemberDescriptor_EventWrapper04Methods,
+    IEventMemberDescriptor_EventWrapper05Methods, IEventMemberDescriptor_EventWrapper06Methods, IEventMemberDescriptor_EventWrapper07Methods,
+    IEventMemberDescriptor_EventWrapper08Methods, IEventMemberDescriptor_EventWrapper09Methods, IEventMemberDescriptor_EventWrapper10Methods,
+    IEventMemberDescriptor_EventWrapper11Methods, IEventMemberDescriptor_EventWrapper12Methods, IEventMemberDescriptor_EventWrapper13Methods,
+    IEventMemberDescriptor_EventWrapper14Methods, IEventMemberDescriptor_EventWrapper15Methods, IEventMemberDescriptor_EventWrapper16Methods,
 };
 #[cfg(any(feature = "moon_sharp-interpreter-interop-fieldmemberdescriptor-types"))]
 pub mod fieldmemberdescriptor;
@@ -117,17 +108,13 @@ pub mod functionmemberdescriptorbase;
 #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
 pub use functionmemberdescriptorbase::IFunctionMemberDescriptorBaseMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase-types")]
-pub use functionmemberdescriptorbase::{
-    FunctionMemberDescriptorBase, IFunctionMemberDescriptorBase,
-};
+pub use functionmemberdescriptorbase::{FunctionMemberDescriptorBase, IFunctionMemberDescriptorBase};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor-types"))]
 pub mod igeneratoruserdatadescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]
 pub use igeneratoruserdatadescriptor::IIGeneratorUserDataDescriptorMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor-types")]
-pub use igeneratoruserdatadescriptor::{
-    IGeneratorUserDataDescriptor, IIGeneratorUserDataDescriptor,
-};
+pub use igeneratoruserdatadescriptor::{IGeneratorUserDataDescriptor, IIGeneratorUserDataDescriptor};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy-types"))]
 pub mod interopregistrationpolicy;
 #[cfg(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy-types")]
@@ -137,9 +124,7 @@ pub mod ipropertytableassigner_interface;
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface")]
 pub use ipropertytableassigner_interface::IIPropertyTableAssigner_InterfaceMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-ipropertytableassigner_interface-types")]
-pub use ipropertytableassigner_interface::{
-    IIPropertyTableAssigner_Interface, IPropertyTableAssigner_Interface,
-};
+pub use ipropertytableassigner_interface::{IIPropertyTableAssigner_Interface, IPropertyTableAssigner_Interface};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-iproxyfactory-types"))]
 pub mod iproxyfactory;
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
@@ -200,22 +185,18 @@ pub mod objectcallbackmemberdescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
 pub use objectcallbackmemberdescriptor::IObjectCallbackMemberDescriptorMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor-types")]
-pub use objectcallbackmemberdescriptor::{
-    IObjectCallbackMemberDescriptor, ObjectCallbackMemberDescriptor,
-};
+pub use objectcallbackmemberdescriptor::{IObjectCallbackMemberDescriptor, ObjectCallbackMemberDescriptor};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor-types"))]
 pub mod overloadedmethodmemberdescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor-types")]
 pub use overloadedmethodmemberdescriptor::{
     IOverloadedMethodMemberDescriptor, IOverloadedMethodMemberDescriptor_OverloadCacheItem,
-    IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer,
-    OverloadedMethodMemberDescriptor, OverloadedMethodMemberDescriptor_OverloadCacheItem,
-    OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer,
+    IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer, OverloadedMethodMemberDescriptor,
+    OverloadedMethodMemberDescriptor_OverloadCacheItem, OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer,
 };
 #[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]
 pub use overloadedmethodmemberdescriptor::{
-    IOverloadedMethodMemberDescriptorMethods,
-    IOverloadedMethodMemberDescriptor_OverloadCacheItemMethods,
+    IOverloadedMethodMemberDescriptorMethods, IOverloadedMethodMemberDescriptor_OverloadCacheItemMethods,
     IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods,
 };
 #[cfg(any(feature = "moon_sharp-interpreter-interop-propertymemberdescriptor-types"))]
@@ -270,17 +251,13 @@ pub mod standardenumuserdatadescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-standardenumuserdatadescriptor")]
 pub use standardenumuserdatadescriptor::IStandardEnumUserDataDescriptorMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-standardenumuserdatadescriptor-types")]
-pub use standardenumuserdatadescriptor::{
-    IStandardEnumUserDataDescriptor, StandardEnumUserDataDescriptor,
-};
+pub use standardenumuserdatadescriptor::{IStandardEnumUserDataDescriptor, StandardEnumUserDataDescriptor};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-standardgenericsuserdatadescriptor-types"))]
 pub mod standardgenericsuserdatadescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-standardgenericsuserdatadescriptor")]
 pub use standardgenericsuserdatadescriptor::IStandardGenericsUserDataDescriptorMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-standardgenericsuserdatadescriptor-types")]
-pub use standardgenericsuserdatadescriptor::{
-    IStandardGenericsUserDataDescriptor, StandardGenericsUserDataDescriptor,
-};
+pub use standardgenericsuserdatadescriptor::{IStandardGenericsUserDataDescriptor, StandardGenericsUserDataDescriptor};
 #[cfg(any(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor-types"))]
 pub mod standarduserdatadescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
@@ -301,6 +278,4 @@ pub mod valuetypedefaultctormemberdescriptor;
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
 pub use valuetypedefaultctormemberdescriptor::IValueTypeDefaultCtorMemberDescriptorMethods;
 #[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor-types")]
-pub use valuetypedefaultctormemberdescriptor::{
-    IValueTypeDefaultCtorMemberDescriptor, ValueTypeDefaultCtorMemberDescriptor,
-};
+pub use valuetypedefaultctormemberdescriptor::{IValueTypeDefaultCtorMemberDescriptor, ValueTypeDefaultCtorMemberDescriptor};

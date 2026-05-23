@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-animatorlayer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animatorlayer/AnimatorLayer.md"))]
     #[::unity2::class(namespace = "Combat", name = "AnimatorLayer")]
@@ -23,8 +23,7 @@ pub use __types::*;
 #[cfg(feature = "combat-animatorlayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimatorLayer;
-    pub use super::IAnimatorLayer;
+    pub use super::{AnimatorLayer, IAnimatorLayer};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

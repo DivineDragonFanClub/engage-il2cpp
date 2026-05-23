@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-reflection-assemblydelaysignattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydelaysignattribute/AssemblyDelaySignAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyDelaySignAttribute")]
@@ -26,11 +26,8 @@ mod __AssemblyDelaySignAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssemblyDelaySignAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -42,31 +39,20 @@ mod __AssemblyDelaySignAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssemblyDelaySignAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssemblyDelaySignAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AssemblyDelaySignAttribute,
-        delay_sign: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AssemblyDelaySignAttribute, delay_sign: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AssemblyDelaySignAttribute, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, delay_sign, __unity2_method_info)
     }
 }
@@ -77,14 +63,8 @@ pub trait IAssemblyDelaySignAttributeMethods: IAssemblyDelaySignAttribute {
     fn ctor(self, delay_sign: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <AssemblyDelaySignAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AssemblyDelaySignAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(delay_sign),
-                ::core::option::Option::None,
-            )
+                <AssemblyDelaySignAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssemblyDelaySignAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(delay_sign), ::core::option::Option::None)
         }
     }
 }
@@ -111,7 +91,5 @@ impl AssemblyDelaySignAttribute {
 #[cfg(feature = "system-reflection-assemblydelaysignattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssemblyDelaySignAttribute;
-    pub use super::IAssemblyDelaySignAttribute;
-    pub use super::IAssemblyDelaySignAttributeMethods;
+    pub use super::{AssemblyDelaySignAttribute, IAssemblyDelaySignAttribute, IAssemblyDelaySignAttributeMethods};
 }

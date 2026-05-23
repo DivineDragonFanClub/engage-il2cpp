@@ -2,15 +2,12 @@
 
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-binaryencoding-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/io/binaryencoding/BinaryEncoding.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.CoreLib.IO",
-        name = "BinaryEncoding"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib.IO", name = "BinaryEncoding")]
     pub struct BinaryEncoding {}
 }
 
@@ -26,9 +23,7 @@ mod __BinaryEncoding_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinaryEncoding as ::unity2::ClassIdentity>::class(),
@@ -41,36 +36,27 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: BinaryEncoding, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BinaryEncoding, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_byte_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -87,18 +73,15 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    "GetByteCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        "GetByteCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_byte_count(
@@ -108,26 +91,15 @@ mod __BinaryEncoding_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BinaryEncoding,
-            ::unity2::Array<u16>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_byte_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BinaryEncoding, ::unity2::Array<u16>, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_byte_count::get_method_info().method_ptr);
         inner(this, chars, index, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_bytes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -146,18 +118,15 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    "GetBytes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        "GetBytes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_bytes(
@@ -169,36 +138,15 @@ mod __BinaryEncoding_unity2_raw {
         byte_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BinaryEncoding,
-            ::unity2::Array<u16>,
-            i32,
-            i32,
-            ::unity2::Array<u8>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_bytes::get_offset() as isize),
-        );
-        inner(
-            this,
-            chars,
-            char_index,
-            char_count,
-            bytes,
-            byte_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(BinaryEncoding, ::unity2::Array<u16>, i32, i32, ::unity2::Array<u8>, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_bytes::get_method_info().method_ptr);
+        inner(this, chars, char_index, char_count, bytes, byte_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_char_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -215,18 +163,15 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    "GetCharCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        "GetCharCount",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_char_count(
@@ -236,26 +181,15 @@ mod __BinaryEncoding_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BinaryEncoding,
-            ::unity2::Array<u8>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_char_count::get_offset() as isize),
-        );
+        let inner: extern "C" fn(BinaryEncoding, ::unity2::Array<u8>, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_char_count::get_method_info().method_ptr);
         inner(this, bytes, index, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_chars {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u8> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -274,18 +208,15 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    "GetChars",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        "GetChars",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_chars(
@@ -297,38 +228,16 @@ mod __BinaryEncoding_unity2_raw {
         char_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            BinaryEncoding,
-            ::unity2::Array<u8>,
-            i32,
-            i32,
-            ::unity2::Array<u16>,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_chars::get_offset() as isize),
-        );
-        inner(
-            this,
-            bytes,
-            byte_index,
-            byte_count,
-            chars,
-            char_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(BinaryEncoding, ::unity2::Array<u8>, i32, i32, ::unity2::Array<u16>, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_chars::get_method_info().method_ptr);
+        inner(this, bytes, byte_index, byte_count, chars, char_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_byte_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinaryEncoding as ::unity2::ClassIdentity>::class(),
                 "GetMaxByteCount",
@@ -340,42 +249,28 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxByteCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxByteCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_max_byte_count(
-        this: BinaryEncoding,
-        char_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_max_byte_count(this: BinaryEncoding, char_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BinaryEncoding, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_byte_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_byte_count::get_method_info().method_ptr);
         inner(this, char_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_max_char_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BinaryEncoding as ::unity2::ClassIdentity>::class(),
                 "GetMaxCharCount",
@@ -387,31 +282,20 @@ mod __BinaryEncoding_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
-                    "GetMaxCharCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BinaryEncoding as ::unity2::ClassIdentity>::NAME,
+                        "GetMaxCharCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_max_char_count(
-        this: BinaryEncoding,
-        byte_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_max_char_count(this: BinaryEncoding, byte_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(BinaryEncoding, i32, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_max_char_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_max_char_count::get_method_info().method_ptr);
         inner(this, byte_count, __unity2_method_info)
     }
 }
@@ -421,9 +305,7 @@ pub trait IBinaryEncodingMethods: IBinaryEncoding {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinaryEncoding_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -435,9 +317,7 @@ pub trait IBinaryEncodingMethods: IBinaryEncoding {
         count: impl ::core::convert::Into<i32>,
     ) -> i32 {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinaryEncoding_unity2_raw::get_byte_count(
                 __receiver,
                 ::core::convert::Into::into(chars),
@@ -457,9 +337,7 @@ pub trait IBinaryEncodingMethods: IBinaryEncoding {
         byte_index: impl ::core::convert::Into<i32>,
     ) -> i32 {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinaryEncoding_unity2_raw::get_bytes(
                 __receiver,
                 ::core::convert::Into::into(chars),
@@ -479,9 +357,7 @@ pub trait IBinaryEncodingMethods: IBinaryEncoding {
         count: impl ::core::convert::Into<i32>,
     ) -> i32 {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinaryEncoding_unity2_raw::get_char_count(
                 __receiver,
                 ::core::convert::Into::into(bytes),
@@ -501,9 +377,7 @@ pub trait IBinaryEncodingMethods: IBinaryEncoding {
         char_index: impl ::core::convert::Into<i32>,
     ) -> i32 {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BinaryEncoding_unity2_raw::get_chars(
                 __receiver,
                 ::core::convert::Into::into(bytes),
@@ -518,27 +392,15 @@ pub trait IBinaryEncodingMethods: IBinaryEncoding {
     #[doc = "`GetMaxByteCount(i32)` overload"]
     fn get_max_byte_count(self, char_count: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinaryEncoding_unity2_raw::get_max_byte_count(
-                __receiver,
-                ::core::convert::Into::into(char_count),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinaryEncoding_unity2_raw::get_max_byte_count(__receiver, ::core::convert::Into::into(char_count), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaxCharCount(i32)` overload"]
     fn get_max_char_count(self, byte_count: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __BinaryEncoding_unity2_raw::get_max_char_count(
-                __receiver,
-                ::core::convert::Into::into(byte_count),
-                ::core::option::Option::None,
-            )
+            let __receiver = <BinaryEncoding as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BinaryEncoding_unity2_raw::get_max_char_count(__receiver, ::core::convert::Into::into(byte_count), ::core::option::Option::None)
         }
     }
 }
@@ -565,7 +427,5 @@ impl BinaryEncoding {
 #[cfg(feature = "moon_sharp-interpreter-core_lib-io-binaryencoding")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BinaryEncoding;
-    pub use super::IBinaryEncoding;
-    pub use super::IBinaryEncodingMethods;
+    pub use super::{BinaryEncoding, IBinaryEncoding, IBinaryEncodingMethods};
 }

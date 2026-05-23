@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-idictionaryenumerator-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/idictionaryenumerator/IDictionaryEnumerator.md"))]
     #[::unity2::class(namespace = "System.Collections", name = "IDictionaryEnumerator")]
@@ -23,9 +23,7 @@ mod __IDictionaryEnumerator_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_key {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
@@ -38,41 +36,27 @@ mod __IDictionaryEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDictionaryEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Key",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDictionaryEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Key",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_key(
-        this: IDictionaryEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            IDictionaryEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_key::get_offset() as isize),
-        );
+    pub unsafe fn get_key(this: IDictionaryEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_key::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
@@ -85,41 +69,27 @@ mod __IDictionaryEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDictionaryEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDictionaryEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: IDictionaryEnumerator,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::object::Object {
-        let inner: extern "C" fn(
-            IDictionaryEnumerator,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_value::get_offset() as isize),
-        );
+    pub unsafe fn get_value(this: IDictionaryEnumerator, __unity2_method_info: ::unity2::OptionalMethod) -> crate::system::object::Object {
+        let inner: extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_entry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IDictionaryEnumerator as ::unity2::ClassIdentity>::class(),
@@ -132,34 +102,23 @@ mod __IDictionaryEnumerator_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IDictionaryEnumerator as ::unity2::ClassIdentity>::NAME,
-                    "get_Entry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IDictionaryEnumerator as ::unity2::ClassIdentity>::NAME,
+                        "get_Entry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_entry(
         this: IDictionaryEnumerator,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::dictionaryentry::DictionaryEntry {
-        let inner: extern "C" fn(
-            IDictionaryEnumerator,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::collections::dictionaryentry::DictionaryEntry =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_entry::get_offset() as isize),
-            );
+        let inner: extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod) -> crate::system::collections::dictionaryentry::DictionaryEntry =
+            ::core::mem::transmute(__lookup_get_entry::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -169,27 +128,24 @@ pub trait IIDictionaryEnumeratorMethods: IIDictionaryEnumerator {
     #[doc = "`get_Key()` overload"]
     fn get_key(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <IDictionaryEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <IDictionaryEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDictionaryEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Value()` overload"]
     fn get_value(self) -> crate::system::object::Object {
         unsafe {
-            let __receiver = <IDictionaryEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <IDictionaryEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDictionaryEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Entry()` overload"]
     fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry {
         unsafe {
-            let __receiver = <IDictionaryEnumerator as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <IDictionaryEnumerator as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IDictionaryEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)
         }
     }
@@ -201,7 +157,5 @@ impl<__T: IIDictionaryEnumerator> IIDictionaryEnumeratorMethods for __T {}
 #[cfg(feature = "system-collections-idictionaryenumerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IDictionaryEnumerator;
-    pub use super::IIDictionaryEnumerator;
-    pub use super::IIDictionaryEnumeratorMethods;
+    pub use super::{IDictionaryEnumerator, IIDictionaryEnumerator, IIDictionaryEnumeratorMethods};
 }

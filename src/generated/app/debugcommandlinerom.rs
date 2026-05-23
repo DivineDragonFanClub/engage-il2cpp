@@ -2,10 +2,15 @@
 
 #[cfg(feature = "app-debugcommandlinerom-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandlinerom/DebugCommandlineRom_Options.md"))]
+    #[::unity2::class(namespace = "App", name = "DebugCommandlineRom.Options")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugCommandlineRom_Options {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandlinerom/DebugCommandlineRom.md"))]
     #[::unity2::class(namespace = "App", name = "DebugCommandlineRom")]
@@ -15,345 +20,10 @@ mod __types {
         #[rename(name = "s_Options")]
         pub s_options: crate::app::debugcommandlinerom::DebugCommandlineRom_Options,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandlinerom/DebugCommandlineRom_Options.md"))]
-    #[::unity2::class(namespace = "App", name = "DebugCommandlineRom.Options")]
-    #[parent(crate::system::object::Object)]
-    pub struct DebugCommandlineRom_Options {}
 }
 
 #[cfg(feature = "app-debugcommandlinerom-types")]
 pub use __types::*;
-
-#[cfg(feature = "app-debugcommandlinerom")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DebugCommandlineRom_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_initialize {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
-                "Initialize",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_save_data_root_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
-                "get_SaveDataRootPath",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
-                    "get_SaveDataRootPath",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_save_data_root_path(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_save_data_root_path::get_offset() as isize),
-            );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_relay_data_root_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
-                "get_RelayDataRootPath",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
-                    "get_RelayDataRootPath",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_relay_data_root_path(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_relay_data_root_path::get_offset() as isize),
-            );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_versus_data_root_path {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
-                "get_VersusDataRootPath",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
-                    "get_VersusDataRootPath",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_versus_data_root_path(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_versus_data_root_path::get_offset() as isize),
-            );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_auto_play {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
-                "get_IsAutoPlay",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAutoPlay",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_auto_play(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_auto_play::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DebugCommandlineRom,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(DebugCommandlineRom, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-debugcommandlinerom")]
-impl DebugCommandlineRom {
-    #[doc = "`Initialize()` overload"]
-    pub fn initialize() -> () {
-        unsafe { __DebugCommandlineRom_unity2_raw::initialize(::core::option::Option::None) }
-    }
-    #[doc = "`get_SaveDataRootPath()` overload"]
-    pub fn get_save_data_root_path() -> ::unity2::Il2CppString {
-        unsafe {
-            __DebugCommandlineRom_unity2_raw::get_save_data_root_path(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_RelayDataRootPath()` overload"]
-    pub fn get_relay_data_root_path() -> ::unity2::Il2CppString {
-        unsafe {
-            __DebugCommandlineRom_unity2_raw::get_relay_data_root_path(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_VersusDataRootPath()` overload"]
-    pub fn get_versus_data_root_path() -> ::unity2::Il2CppString {
-        unsafe {
-            __DebugCommandlineRom_unity2_raw::get_versus_data_root_path(
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_IsAutoPlay()` overload"]
-    pub fn get_is_auto_play() -> bool {
-        unsafe { __DebugCommandlineRom_unity2_raw::get_is_auto_play(::core::option::Option::None) }
-    }
-}
-
-#[cfg(feature = "app-debugcommandlinerom")]
-pub trait IDebugCommandlineRomMethods: IDebugCommandlineRom {
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <DebugCommandlineRom as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DebugCommandlineRom_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "app-debugcommandlinerom")]
-impl<__T: IDebugCommandlineRom> IDebugCommandlineRomMethods for __T {}
-
-#[cfg(feature = "app-debugcommandlinerom")]
-impl DebugCommandlineRom {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandlineRom),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandlineRomMethods>::ctor(this);
-        this
-    }
-}
 
 #[cfg(feature = "app-debugcommandlinerom")]
 #[doc(hidden)]
@@ -364,9 +34,7 @@ mod __DebugCommandlineRom_Options_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_save_data_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
@@ -379,43 +47,31 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "get_SaveDataRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "get_SaveDataRootPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_save_data_root_path(
         this: DebugCommandlineRom_Options,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_save_data_root_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_save_data_root_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_save_data_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
                 "set_SaveDataRootPath",
@@ -427,18 +83,15 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "set_SaveDataRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "set_SaveDataRootPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_save_data_root_path(
@@ -446,24 +99,15 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_save_data_root_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_save_data_root_path::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_relay_data_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
@@ -476,43 +120,31 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "get_RelayDataRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "get_RelayDataRootPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_relay_data_root_path(
         this: DebugCommandlineRom_Options,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_relay_data_root_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_relay_data_root_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_relay_data_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
                 "set_RelayDataRootPath",
@@ -524,18 +156,15 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "set_RelayDataRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "set_RelayDataRootPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_relay_data_root_path(
@@ -543,24 +172,15 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_relay_data_root_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_relay_data_root_path::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_versus_data_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
@@ -573,43 +193,31 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "get_VersusDataRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "get_VersusDataRootPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_versus_data_root_path(
         this: DebugCommandlineRom_Options,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_versus_data_root_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_versus_data_root_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_versus_data_root_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
                 "set_VersusDataRootPath",
@@ -621,18 +229,15 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "set_VersusDataRootPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "set_VersusDataRootPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_versus_data_root_path(
@@ -640,24 +245,15 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_versus_data_root_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_versus_data_root_path::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_auto_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
@@ -670,41 +266,28 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "get_IsAutoPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAutoPlay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_auto_play(
-        this: DebugCommandlineRom_Options,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_auto_play(this: DebugCommandlineRom_Options, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_auto_play::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_auto_play::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_auto_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
                 "set_IsAutoPlay",
@@ -716,43 +299,27 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    "set_IsAutoPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        "set_IsAutoPlay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_auto_play(
-        this: DebugCommandlineRom_Options,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DebugCommandlineRom_Options,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_is_auto_play::get_offset() as isize),
-        );
+    pub unsafe fn set_is_auto_play(this: DebugCommandlineRom_Options, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugCommandlineRom_Options, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_is_auto_play::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::class(),
@@ -765,30 +332,20 @@ mod __DebugCommandlineRom_Options_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom_Options as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DebugCommandlineRom_Options,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DebugCommandlineRom_Options, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DebugCommandlineRom_Options, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -799,25 +356,15 @@ pub trait IDebugCommandlineRom_OptionsMethods: IDebugCommandlineRom_Options {
     fn get_save_data_root_path(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandlineRom_Options_unity2_raw::get_save_data_root_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugCommandlineRom_Options_unity2_raw::get_save_data_root_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SaveDataRootPath(::unity2::Il2CppString)` overload"]
-    fn set_save_data_root_path(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_save_data_root_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugCommandlineRom_Options_unity2_raw::set_save_data_root_path(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -829,25 +376,15 @@ pub trait IDebugCommandlineRom_OptionsMethods: IDebugCommandlineRom_Options {
     fn get_relay_data_root_path(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandlineRom_Options_unity2_raw::get_relay_data_root_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugCommandlineRom_Options_unity2_raw::get_relay_data_root_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_RelayDataRootPath(::unity2::Il2CppString)` overload"]
-    fn set_relay_data_root_path(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_relay_data_root_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugCommandlineRom_Options_unity2_raw::set_relay_data_root_path(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -859,25 +396,15 @@ pub trait IDebugCommandlineRom_OptionsMethods: IDebugCommandlineRom_Options {
     fn get_versus_data_root_path(self) -> ::unity2::Il2CppString {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandlineRom_Options_unity2_raw::get_versus_data_root_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugCommandlineRom_Options_unity2_raw::get_versus_data_root_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_VersusDataRootPath(::unity2::Il2CppString)` overload"]
-    fn set_versus_data_root_path(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_versus_data_root_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugCommandlineRom_Options_unity2_raw::set_versus_data_root_path(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -889,36 +416,23 @@ pub trait IDebugCommandlineRom_OptionsMethods: IDebugCommandlineRom_Options {
     fn get_is_auto_play(self) -> bool {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandlineRom_Options_unity2_raw::get_is_auto_play(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugCommandlineRom_Options_unity2_raw::get_is_auto_play(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsAutoPlay(bool)` overload"]
     fn set_is_auto_play(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __DebugCommandlineRom_Options_unity2_raw::set_is_auto_play(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugCommandlineRom_Options_unity2_raw::set_is_auto_play(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <DebugCommandlineRom_Options as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DebugCommandlineRom_Options_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -945,13 +459,272 @@ impl DebugCommandlineRom_Options {
 
 #[cfg(feature = "app-debugcommandlinerom")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DebugCommandlineRom_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_initialize {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
+                "Initialize",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn initialize(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_save_data_root_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
+                "get_SaveDataRootPath",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
+                        "get_SaveDataRootPath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_save_data_root_path(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_save_data_root_path::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_relay_data_root_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
+                "get_RelayDataRootPath",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
+                        "get_RelayDataRootPath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_relay_data_root_path(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_relay_data_root_path::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_versus_data_root_path {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
+                "get_VersusDataRootPath",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
+                        "get_VersusDataRootPath",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_versus_data_root_path(__unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_versus_data_root_path::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_auto_play {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
+                "get_IsAutoPlay",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
+                        "get_IsAutoPlay",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_auto_play(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_get_is_auto_play::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DebugCommandlineRom as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DebugCommandlineRom as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DebugCommandlineRom, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DebugCommandlineRom, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-debugcommandlinerom")]
+impl DebugCommandlineRom {
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe { __DebugCommandlineRom_unity2_raw::initialize(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_SaveDataRootPath()` overload"]
+    pub fn get_save_data_root_path() -> ::unity2::Il2CppString {
+        unsafe { __DebugCommandlineRom_unity2_raw::get_save_data_root_path(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_RelayDataRootPath()` overload"]
+    pub fn get_relay_data_root_path() -> ::unity2::Il2CppString {
+        unsafe { __DebugCommandlineRom_unity2_raw::get_relay_data_root_path(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_VersusDataRootPath()` overload"]
+    pub fn get_versus_data_root_path() -> ::unity2::Il2CppString {
+        unsafe { __DebugCommandlineRom_unity2_raw::get_versus_data_root_path(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_IsAutoPlay()` overload"]
+    pub fn get_is_auto_play() -> bool {
+        unsafe { __DebugCommandlineRom_unity2_raw::get_is_auto_play(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "app-debugcommandlinerom")]
+pub trait IDebugCommandlineRomMethods: IDebugCommandlineRom {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DebugCommandlineRom as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DebugCommandlineRom_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-debugcommandlinerom")]
+impl<__T: IDebugCommandlineRom> IDebugCommandlineRomMethods for __T {}
+
+#[cfg(feature = "app-debugcommandlinerom")]
+impl DebugCommandlineRom {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandlineRom),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandlineRomMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-debugcommandlinerom")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugCommandlineRom;
-    pub use super::DebugCommandlineRom_Options;
-    pub use super::IDebugCommandlineRom;
-    pub use super::IDebugCommandlineRomMethods;
-    pub use super::IDebugCommandlineRom_Options;
-    pub use super::IDebugCommandlineRom_OptionsMethods;
+    pub use super::{
+        DebugCommandlineRom, DebugCommandlineRom_Options, IDebugCommandlineRom, IDebugCommandlineRomMethods, IDebugCommandlineRom_Options,
+        IDebugCommandlineRom_OptionsMethods,
+    };
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

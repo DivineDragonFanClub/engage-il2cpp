@@ -2,52 +2,285 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{
-        AsyncOperationBase_1, IAsyncOperationBase_1,
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_SceneOp.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "SceneProvider.SceneOp"
-    )]
-    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >)]
-    pub struct SceneProvider_SceneOp {
-# [rename (name = "m_ActivateOnLoad")] pub m_activate_on_load : bool ,
-# [rename (name = "m_Inst")] pub m_inst : crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance ,
-# [rename (name = "m_Location")] pub m_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ,
-# [rename (name = "m_LoadMode")] pub m_load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode ,
-# [rename (name = "m_Priority")] pub m_priority : i32 ,
-# [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ,
-# [rename (name = "m_ResourceManager")] pub m_resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
-}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "SceneProvider"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "SceneProvider")]
     #[parent(crate::system::object::Object)]
     pub struct SceneProvider {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_SceneOp.md"))]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "SceneProvider.SceneOp")]
+    # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >)]
+    pub struct SceneProvider_SceneOp {
+        #[rename(name = "m_ActivateOnLoad")]
+        pub m_activate_on_load: bool,
+        #[rename(name = "m_Inst")]
+        pub m_inst: crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        #[rename(name = "m_Location")]
+        pub m_location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        #[rename(name = "m_LoadMode")]
+        pub m_load_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        #[rename(name = "m_Priority")]
+        pub m_priority: i32,
+        #[rename(name = "m_DepOp")]
+        pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
+        #[rename(name = "m_ResourceManager")]
+        pub m_resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+    }
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_UnloadSceneOp.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-        name = "SceneProvider.UnloadSceneOp"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "SceneProvider.UnloadSceneOp")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >)]
     pub struct SceneProvider_UnloadSceneOp {
-# [rename (name = "m_Instance")] pub m_instance : crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance ,
-# [rename (name = "m_sceneLoadHandle")] pub m_scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ,
-}
+        #[rename(name = "m_Instance")]
+        pub m_instance: crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        #[rename(name = "m_sceneLoadHandle")]
+        pub m_scene_load_handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        >,
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider-types")]
 pub use __types::*;
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SceneProvider_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_provide_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resourcemanager::ResourceManager as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneProvider as ::unity2::ClassIdentity>::class(),
+                "ProvideScene",
+                5,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider as ::unity2::ClassIdentity>::NAME,
+                        "ProvideScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn provide_scene(
+        this: SceneProvider,
+        resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+        load_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+        activate_on_load: bool,
+        priority: i32,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        let inner: extern "C" fn(
+            SceneProvider,
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        > = ::core::mem::transmute(__lookup_provide_scene::get_method_info().method_ptr);
+        inner(
+            this,
+            resource_manager,
+            location,
+            load_mode,
+            activate_on_load,
+            priority,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_scene {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resourcemanager::ResourceManager as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                    crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+                > as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SceneProvider as ::unity2::ClassIdentity>::class(),
+                "ReleaseScene",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseScene",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn release_scene(
+        this: SceneProvider,
+        resource_manager: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        scene_load_handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        >,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        let inner: extern "C" fn(
+            SceneProvider,
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+            >,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        > = ::core::mem::transmute(__lookup_release_scene::get_method_info().method_ptr);
+        inner(this, resource_manager, scene_load_handle, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: SceneProvider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SceneProvider, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+pub trait ISceneProviderMethods: ISceneProvider {
+    #[doc = "`ProvideScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]
+    fn provide_scene(
+        self,
+        resource_manager: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>,
+        location: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
+        load_mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
+        activate_on_load: impl ::core::convert::Into<bool>,
+        priority: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        unsafe {
+            let __receiver = <SceneProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_unity2_raw::provide_scene(
+                __receiver,
+                ::core::convert::Into::into(resource_manager),
+                ::core::convert::Into::into(location),
+                ::core::convert::Into::into(load_mode),
+                ::core::convert::Into::into(activate_on_load),
+                ::core::convert::Into::into(priority),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`ReleaseScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]
+    fn release_scene(
+        self,
+        resource_manager: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>,
+        scene_load_handle: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+            >,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+    > {
+        unsafe {
+            let __receiver = <SceneProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_unity2_raw::release_scene(
+                __receiver,
+                ::core::convert::Into::into(resource_manager),
+                ::core::convert::Into::into(scene_load_handle),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SceneProvider as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+impl<__T: ISceneProvider> ISceneProviderMethods for __T {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+impl SceneProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SceneProvider), ::core::stringify!(new),));
+        <Self as ISceneProviderMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
 #[doc(hidden)]
@@ -58,10 +291,9 @@ mod __SceneProvider_SceneOp_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::resource_management::resourcemanager::ResourceManager as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -73,18 +305,15 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -96,24 +325,16 @@ mod __SceneProvider_SceneOp_unity2_raw {
             SceneProvider_SceneOp,
             crate::unity_engine::resource_management::resourcemanager::ResourceManager,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, rm, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_download_status {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::hashset_1::HashSet_1<
-                    crate::system::object::Object,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 "GetDownloadStatus",
@@ -125,39 +346,46 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "GetDownloadStatus",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "GetDownloadStatus",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_download_status(
         this: SceneProvider_SceneOp,
-        visited: crate::system::collections::generic::hashset_1::HashSet_1<
-            crate::system::object::Object,
-        >,
+        visited: crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus
-    {
-        let inner : extern "C" fn (SceneProvider_SceneOp , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_download_status :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus {
+        let inner: extern "C" fn(
+            SceneProvider_SceneOp,
+            crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus =
+            ::core::mem::transmute(__lookup_get_download_status::get_method_info().method_ptr);
         inner(this, visited, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                    crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                        crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+                    >,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 "Init",
@@ -169,47 +397,50 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(
         this: SceneProvider_SceneOp,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         load_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
         activate_on_load: bool,
         priority: i32,
-        dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (SceneProvider_SceneOp , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , bool , i32 , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            location,
-            load_mode,
-            activate_on_load,
-            priority,
-            dep_op,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            SceneProvider_SceneOp,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            bool,
+            i32,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+                >,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
+        inner(this, location, load_mode, activate_on_load, priority, dep_op, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_wait_for_completion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
@@ -222,40 +453,30 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "InvokeWaitForCompletion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "InvokeWaitForCompletion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_wait_for_completion(
-        this: SceneProvider_SceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn invoke_wait_for_completion(this: SceneProvider_SceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_wait_for_completion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_wait_for_completion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_dependencies {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 "GetDependencies",
@@ -267,35 +488,38 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "GetDependencies",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "GetDependencies",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_dependencies(
         this: SceneProvider_SceneOp,
-        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        deps: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (SceneProvider_SceneOp , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_dependencies :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            SceneProvider_SceneOp,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_get_dependencies::get_method_info().method_ptr);
         inner(this, deps, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_debug_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
@@ -308,41 +532,27 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "get_DebugName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "get_DebugName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_debug_name(
-        this: SceneProvider_SceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            SceneProvider_SceneOp,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_debug_name::get_offset() as isize),
-        );
+    pub unsafe fn get_debug_name(this: SceneProvider_SceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_debug_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
@@ -355,40 +565,34 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute(
-        this: SceneProvider_SceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute(this: SceneProvider_SceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_load_scene {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 "InternalLoadScene",
@@ -400,31 +604,36 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "InternalLoadScene",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "InternalLoadScene",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_load_scene(
         this: SceneProvider_SceneOp,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        location: crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
         loading_from_bundle: bool,
         load_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
         activate_on_load: bool,
         priority: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance
-    {
-        let inner : extern "C" fn (SceneProvider_SceneOp , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , bool , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , bool , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_internal_load_scene :: get_offset () as isize) ,) ;
+    ) -> crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance {
+        let inner: extern "C" fn(
+            SceneProvider_SceneOp,
+            crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,
+            bool,
+            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+            bool,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance =
+            ::core::mem::transmute(__lookup_internal_load_scene::get_method_info().method_ptr);
         inner(
             this,
             location,
@@ -439,10 +648,12 @@ mod __SceneProvider_SceneOp_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_internal_load {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 "InternalLoad",
@@ -454,18 +665,15 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "InternalLoad",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "InternalLoad",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn internal_load(
@@ -481,20 +689,14 @@ mod __SceneProvider_SceneOp_unity2_raw {
             bool,
             crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::asyncoperation::AsyncOperation = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_load::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::asyncoperation::AsyncOperation = ::core::mem::transmute(__lookup_internal_load::get_method_info().method_ptr);
         inner(this, path, loading_from_bundle, mode, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
@@ -507,39 +709,27 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "Destroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "Destroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy(
-        this: SceneProvider_SceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy(this: SceneProvider_SceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_progress {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
@@ -552,41 +742,28 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "get_Progress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "get_Progress",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_progress(
-        this: SceneProvider_SceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_progress(this: SceneProvider_SceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_progress::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_progress::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unity_engine_resource_management_i_update_receiver_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_SceneOp as ::unity2::ClassIdentity>::class(),
                 "UnityEngine.ResourceManagement.IUpdateReceiver.Update",
@@ -598,18 +775,15 @@ mod __SceneProvider_SceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
-                    "UnityEngine.ResourceManagement.IUpdateReceiver.Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_SceneOp as ::unity2::ClassIdentity>::NAME,
+                        "UnityEngine.ResourceManagement.IUpdateReceiver.Update",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unity_engine_resource_management_i_update_receiver_update(
@@ -617,7 +791,8 @@ mod __SceneProvider_SceneOp_unity2_raw {
         unscaled_delta_time: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (SceneProvider_SceneOp , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_unity_engine_resource_management_i_update_receiver_update :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(SceneProvider_SceneOp, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unity_engine_resource_management_i_update_receiver_update::get_method_info().method_ptr);
         inner(this, unscaled_delta_time, __unity2_method_info)
     }
 }
@@ -625,59 +800,42 @@ mod __SceneProvider_SceneOp_unity2_raw {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
 pub trait ISceneProvider_SceneOpMethods: ISceneProvider_SceneOp {
     #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
-    fn ctor(
-        self,
-        rm: impl ::core::convert::Into<
-            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-        >,
-    ) -> () {
+    fn ctor(self, rm: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>) -> () {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(rm),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::ctor(__receiver, ::core::convert::Into::into(rm), ::core::option::Option::None)
         }
     }
     #[doc = "`GetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"]
     fn get_download_status(
         self,
-        visited: impl ::core::convert::Into<
-            crate::system::collections::generic::hashset_1::HashSet_1<
-                crate::system::object::Object,
-            >,
-        >,
-    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus
-    {
+        visited: impl ::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>>,
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw::get_download_status(
-                __receiver,
-                ::core::convert::Into::into(visited),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::get_download_status(__receiver, ::core::convert::Into::into(visited), ::core::option::Option::None)
         }
     }
     #[doc = "`Init(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>)` overload"]
     fn init(
         self,
-        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
-        load_mode: impl ::core::convert::Into<
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        >,
+        location: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
+        load_mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
         activate_on_load: impl ::core::convert::Into<bool>,
         priority: impl ::core::convert::Into<i32>,
-        dep_op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > >,
+        dep_op: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+                >,
+            >,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_SceneOp_unity2_raw::init(
                 __receiver,
                 ::core::convert::Into::into(location),
@@ -692,68 +850,54 @@ pub trait ISceneProvider_SceneOpMethods: ISceneProvider_SceneOp {
     #[doc = "`InvokeWaitForCompletion()` overload"]
     fn invoke_wait_for_completion(self) -> bool {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw::invoke_wait_for_completion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]
     fn get_dependencies(
         self,
-        deps : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >,
+        deps: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
     ) -> () {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw::get_dependencies(
-                __receiver,
-                ::core::convert::Into::into(deps),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::get_dependencies(__receiver, ::core::convert::Into::into(deps), ::core::option::Option::None)
         }
     }
     #[doc = "`get_DebugName()` overload"]
     fn get_debug_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw::get_debug_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Execute()` overload"]
     fn execute(self) -> () {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_SceneOp_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InternalLoadScene(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, bool, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]
     fn internal_load_scene(
         self,
-        location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        location: impl ::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>,
         loading_from_bundle: impl ::core::convert::Into<bool>,
-        load_mode: impl ::core::convert::Into<
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        >,
+        load_mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
         activate_on_load: impl ::core::convert::Into<bool>,
         priority: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance
-    {
+    ) -> crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_SceneOp_unity2_raw::internal_load_scene(
                 __receiver,
                 ::core::convert::Into::into(location),
@@ -770,14 +914,11 @@ pub trait ISceneProvider_SceneOpMethods: ISceneProvider_SceneOp {
         self,
         path: impl ::core::convert::Into<::unity2::Il2CppString>,
         loading_from_bundle: impl ::core::convert::Into<bool>,
-        mode: impl ::core::convert::Into<
-            crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
-        >,
+        mode: impl ::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode>,
     ) -> crate::unity_engine::asyncoperation::AsyncOperation {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_SceneOp_unity2_raw::internal_load(
                 __receiver,
                 ::core::convert::Into::into(path),
@@ -790,34 +931,29 @@ pub trait ISceneProvider_SceneOpMethods: ISceneProvider_SceneOp {
     #[doc = "`Destroy()` overload"]
     fn destroy(self) -> () {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_SceneOp_unity2_raw::destroy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Progress()` overload"]
     fn get_progress(self) -> f32 {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw::get_progress(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::get_progress(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnityEngine.ResourceManagement.IUpdateReceiver.Update(f32)` overload"]
-    fn unity_engine_resource_management_i_update_receiver_update(
-        self,
-        unscaled_delta_time: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn unity_engine_resource_management_i_update_receiver_update(self, unscaled_delta_time: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_SceneOp_unity2_raw :: unity_engine_resource_management_i_update_receiver_update (__receiver , :: core :: convert :: Into :: into (unscaled_delta_time) , :: core :: option :: Option :: None)
+            let __receiver =
+                <SceneProvider_SceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_SceneOp_unity2_raw::unity_engine_resource_management_i_update_receiver_update(
+                __receiver,
+                ::core::convert::Into::into(unscaled_delta_time),
+                ::core::option::Option::None,
+            )
         }
     }
 }
@@ -828,9 +964,7 @@ impl<__T: ISceneProvider_SceneOp> ISceneProvider_SceneOpMethods for __T {}
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
 impl SceneProvider_SceneOp {
     #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]
-    pub fn new(
-        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
-    ) -> Self {
+    pub fn new(rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -846,211 +980,18 @@ impl SceneProvider_SceneOp {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SceneProvider_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_provide_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneProvider as ::unity2::ClassIdentity>::class(),
-                "ProvideScene",
-                5,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider as ::unity2::ClassIdentity>::NAME,
-                    "ProvideScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn provide_scene (this : SceneProvider , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        let inner : extern "C" fn (SceneProvider , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , bool , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_provide_scene :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            resource_manager,
-            location,
-            load_mode,
-            activate_on_load,
-            priority,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_scene {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneProvider as ::unity2::ClassIdentity>::class(),
-                "ReleaseScene",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseScene",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn release_scene (this : SceneProvider , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        let inner : extern "C" fn (SceneProvider , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_release_scene :: get_offset () as isize) ,) ;
-        inner(
-            this,
-            resource_manager,
-            scene_load_handle,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SceneProvider as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(this: SceneProvider, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(SceneProvider, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-pub trait ISceneProviderMethods: ISceneProvider {
-    #[doc = "`ProvideScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]    fn provide_scene (self , resource_manager : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , load_mode : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode > , activate_on_load : impl :: core :: convert :: Into < bool > , priority : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        unsafe {
-            let __receiver = <SceneProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_unity2_raw::provide_scene(
-                __receiver,
-                ::core::convert::Into::into(resource_manager),
-                ::core::convert::Into::into(location),
-                ::core::convert::Into::into(load_mode),
-                ::core::convert::Into::into(activate_on_load),
-                ::core::convert::Into::into(priority),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReleaseScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]    fn release_scene (self , resource_manager : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , scene_load_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >{
-        unsafe {
-            let __receiver = <SceneProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_unity2_raw::release_scene(
-                __receiver,
-                ::core::convert::Into::into(resource_manager),
-                ::core::convert::Into::into(scene_load_handle),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = <SceneProvider as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SceneProvider_unity2_raw::ctor(__receiver, ::core::option::Option::None)
-        }
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-impl<__T: ISceneProvider> ISceneProviderMethods for __T {}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-impl SceneProvider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SceneProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISceneProviderMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __SceneProvider_UnloadSceneOp_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                    crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+                > as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
                 "Init",
@@ -1062,35 +1003,38 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(
         this: SceneProvider_UnloadSceneOp,
-        scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >,
+        scene_load_handle: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+        >,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (SceneProvider_UnloadSceneOp , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_init :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            SceneProvider_UnloadSceneOp,
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+            >,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, scene_load_handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
@@ -1103,39 +1047,27 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute(
-        this: SceneProvider_UnloadSceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute(this: SceneProvider_UnloadSceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_wait_for_completion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
@@ -1148,43 +1080,29 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    "InvokeWaitForCompletion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        "InvokeWaitForCompletion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_wait_for_completion(
-        this: SceneProvider_UnloadSceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn invoke_wait_for_completion(this: SceneProvider_UnloadSceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke_wait_for_completion::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke_wait_for_completion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_scene_completed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
                 "UnloadSceneCompleted",
@@ -1196,18 +1114,15 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    "UnloadSceneCompleted",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        "UnloadSceneCompleted",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_scene_completed(
@@ -1215,28 +1130,17 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         obj: crate::unity_engine::asyncoperation::AsyncOperation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SceneProvider_UnloadSceneOp,
-            crate::unity_engine::asyncoperation::AsyncOperation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_scene_completed::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SceneProvider_UnloadSceneOp, crate::unity_engine::asyncoperation::AsyncOperation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_scene_completed::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unload_scene_completed_no_release {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::asyncoperation::AsyncOperation as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
                 "UnloadSceneCompletedNoRelease",
@@ -1248,18 +1152,15 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    "UnloadSceneCompletedNoRelease",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        "UnloadSceneCompletedNoRelease",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unload_scene_completed_no_release(
@@ -1267,24 +1168,15 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         obj: crate::unity_engine::asyncoperation::AsyncOperation,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SceneProvider_UnloadSceneOp,
-            crate::unity_engine::asyncoperation::AsyncOperation,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unload_scene_completed_no_release::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SceneProvider_UnloadSceneOp, crate::unity_engine::asyncoperation::AsyncOperation, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_unload_scene_completed_no_release::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_progress {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
@@ -1297,39 +1189,27 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    "get_Progress",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        "get_Progress",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_progress(
-        this: SceneProvider_UnloadSceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_progress(this: SceneProvider_UnloadSceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_progress::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_progress::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::class(),
@@ -1342,30 +1222,20 @@ mod __SceneProvider_UnloadSceneOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SceneProvider_UnloadSceneOp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SceneProvider_UnloadSceneOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SceneProvider_UnloadSceneOp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1375,56 +1245,39 @@ pub trait ISceneProvider_UnloadSceneOpMethods: ISceneProvider_UnloadSceneOp {
     #[doc = "`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]
     fn init(
         self,
-        scene_load_handle : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > >,
+        scene_load_handle: impl ::core::convert::Into<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+                crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance,
+            >,
+        >,
     ) -> () {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SceneProvider_UnloadSceneOp_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(scene_load_handle),
-                ::core::option::Option::None,
-            )
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_UnloadSceneOp_unity2_raw::init(__receiver, ::core::convert::Into::into(scene_load_handle), ::core::option::Option::None)
         }
     }
     #[doc = "`Execute()` overload"]
     fn execute(self) -> () {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SceneProvider_UnloadSceneOp_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_UnloadSceneOp_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InvokeWaitForCompletion()` overload"]
     fn invoke_wait_for_completion(self) -> bool {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SceneProvider_UnloadSceneOp_unity2_raw::invoke_wait_for_completion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_UnloadSceneOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UnloadSceneCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    fn unload_scene_completed(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
-    ) -> () {
+    fn unload_scene_completed(self, obj: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>) -> () {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_UnloadSceneOp_unity2_raw::unload_scene_completed(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -1433,15 +1286,10 @@ pub trait ISceneProvider_UnloadSceneOpMethods: ISceneProvider_UnloadSceneOp {
         }
     }
     #[doc = "`UnloadSceneCompletedNoRelease(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    fn unload_scene_completed_no_release(
-        self,
-        obj: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>,
-    ) -> () {
+    fn unload_scene_completed_no_release(self, obj: impl ::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>) -> () {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_UnloadSceneOp_unity2_raw::unload_scene_completed_no_release(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -1453,22 +1301,15 @@ pub trait ISceneProvider_UnloadSceneOpMethods: ISceneProvider_UnloadSceneOp {
     fn get_progress(self) -> f32 {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SceneProvider_UnloadSceneOp_unity2_raw::get_progress(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SceneProvider_UnloadSceneOp_unity2_raw::get_progress(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SceneProvider_UnloadSceneOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SceneProvider_UnloadSceneOp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1496,19 +1337,13 @@ impl SceneProvider_UnloadSceneOp {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISceneProvider;
-    pub use super::ISceneProviderMethods;
-    pub use super::ISceneProvider_SceneOp;
-    pub use super::ISceneProvider_SceneOpMethods;
-    pub use super::ISceneProvider_UnloadSceneOp;
-    pub use super::ISceneProvider_UnloadSceneOpMethods;
-    pub use super::SceneProvider;
-    pub use super::SceneProvider_SceneOp;
-    pub use super::SceneProvider_UnloadSceneOp;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ISceneProvider, ISceneProviderMethods, ISceneProvider_SceneOp, ISceneProvider_SceneOpMethods, ISceneProvider_UnloadSceneOp,
+        ISceneProvider_UnloadSceneOpMethods, SceneProvider, SceneProvider_SceneOp, SceneProvider_UnloadSceneOp,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
 }

@@ -2,44 +2,31 @@
 
 #[cfg(feature = "app-myroomwakeupsequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1};
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]
-    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence.RelianceWakeup")]
-    #[parent(crate::system::object::Object)]
-    pub struct MyRoomWakeupSequence_RelianceWakeup {
-        #[rename(name = "m_pid")]
-        pub m_pid: ::unity2::Il2CppString,
-        #[rename(name = "m_level")]
-        pub m_level: crate::app::reliancedata::RelianceData_Level,
-        #[rename(name = "m_pattern")]
-        pub m_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
-    }
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct MyRoomWakeupSequence_Label {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for MyRoomWakeupSequence_Label {
-        const NAMESPACE: &'static str = "App";
-
         const NAME: &'static str = "MyRoomWakeupSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -50,10 +37,7 @@ mod __types {
 
     impl ::unity2::IlType for MyRoomWakeupSequence_Label {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -69,6 +53,18 @@ mod __types {
         pub fn skip_end_fade() -> Self {
             Self { value: 2 }
         }
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]
+    #[::unity2::class(namespace = "App", name = "MyRoomWakeupSequence.RelianceWakeup")]
+    #[parent(crate::system::object::Object)]
+    pub struct MyRoomWakeupSequence_RelianceWakeup {
+        #[rename(name = "m_pid")]
+        pub m_pid: ::unity2::Il2CppString,
+        #[rename(name = "m_level")]
+        pub m_level: crate::app::reliancedata::RelianceData_Level,
+        #[rename(name = "m_pattern")]
+        pub m_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupsequence/MyRoomWakeupSequence.md"))]
@@ -118,18 +114,13 @@ mod __types {
         #[rename(name = "m_aocHandle")]
         pub m_aoc_handle: ::unity2::Array<crate::app::resourcehandle_2::ResourceHandle_2>,
         #[rename(name = "m_effectHandle")]
-        pub m_effect_handle: crate::system::collections::generic::list_1::List_1<
-            crate::app::resourcehandle_2::ResourceHandle_2,
-        >,
+        pub m_effect_handle: crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2>,
         #[rename(name = "m_aocList")]
-        pub m_aoc_list: ::unity2::Array<
-            crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController,
-        >,
+        pub m_aoc_list: ::unity2::Array<crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController>,
         #[rename(name = "m_currentAnimName")]
         pub m_current_anim_name: ::unity2::Il2CppString,
         #[rename(name = "m_eventVoiceList")]
-        pub m_event_voice_list:
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        pub m_event_voice_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
         #[rename(name = "m_eventCanvas")]
         pub m_event_canvas: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_eventCanvasForeground")]
@@ -167,14 +158,11 @@ mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::class(),
@@ -187,18 +175,15 @@ mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -214,20 +199,14 @@ mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw {
             crate::app::reliancedata::RelianceData_Level,
             crate::app::gamesound::GameSound_WakeupVoicePattern,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, pid, level, pattern, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::class(),
@@ -240,40 +219,26 @@ mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence_RelianceWakeup as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: MyRoomWakeupSequence_RelianceWakeup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence_RelianceWakeup,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: MyRoomWakeupSequence_RelianceWakeup, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomWakeupSequence_RelianceWakeup, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-myroomwakeupsequence")]
-pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:
-    IMyRoomWakeupSequence_RelianceWakeup
-{
+pub trait IMyRoomWakeupSequence_RelianceWakeupMethods: IMyRoomWakeupSequence_RelianceWakeup {
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
     fn ctor(
         self,
@@ -282,10 +247,9 @@ pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:
         pattern: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>,
     ) -> () {
         unsafe {
-            let __receiver =
-                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -298,23 +262,16 @@ pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver =
-                <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::to_string(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MyRoomWakeupSequence_RelianceWakeup as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MyRoomWakeupSequence_RelianceWakeup_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-myroomwakeupsequence")]
-impl<__T: IMyRoomWakeupSequence_RelianceWakeup> IMyRoomWakeupSequence_RelianceWakeupMethods
-    for __T
-{
-}
+impl<__T: IMyRoomWakeupSequence_RelianceWakeup> IMyRoomWakeupSequence_RelianceWakeupMethods for __T {}
 
 #[cfg(feature = "app-myroomwakeupsequence")]
 impl MyRoomWakeupSequence_RelianceWakeup {
@@ -345,9 +302,7 @@ mod __MyRoomWakeupSequence_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_voice_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -360,41 +315,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_VoiceID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_VoiceID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_voice_id(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_voice_id::get_offset() as isize),
-        );
+    pub unsafe fn get_voice_id(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_voice_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -407,41 +348,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Character",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Character",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_character(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::combat::character::Character {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::combat::character::Character = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_character::get_offset() as isize),
-        );
+    pub unsafe fn get_character(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> crate::combat::character::Character {
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::combat::character::Character =
+            ::core::mem::transmute(__lookup_get_character::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_level {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -454,41 +381,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Level",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Level",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_level(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::reliancedata::RelianceData_Level {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::reliancedata::RelianceData_Level = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_level::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::app::reliancedata::RelianceData_Level =
+            ::core::mem::transmute(__lookup_get_level::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -501,41 +417,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Pattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Pattern",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_pattern(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::gamesound::GameSound_WakeupVoicePattern {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::gamesound::GameSound_WakeupVoicePattern = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_pattern::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::app::gamesound::GameSound_WakeupVoicePattern =
+            ::core::mem::transmute(__lookup_get_pattern::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_footstep_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -548,41 +453,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_FootstepID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_FootstepID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_footstep_id(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_footstep_id::get_offset() as isize),
-        );
+    pub unsafe fn get_footstep_id(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_footstep_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_fade_render {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -595,41 +486,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_FadeRender",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_FadeRender",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_fade_render(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::myroomfaderender::MyRoomFadeRender {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::myroomfaderender::MyRoomFadeRender = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_fade_render::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::app::myroomfaderender::MyRoomFadeRender =
+            ::core::mem::transmute(__lookup_get_fade_render::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_canvas {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -642,41 +522,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_EventCanvas",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_EventCanvas",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_event_canvas(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_canvas::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_event_canvas::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_canvas_foreground {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -689,41 +558,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_EventCanvasForeground",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_EventCanvasForeground",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_event_canvas_foreground(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_canvas_foreground::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_event_canvas_foreground::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_event_canvas_background {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -736,41 +594,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_EventCanvasBackground",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_EventCanvasBackground",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_event_canvas_background(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_canvas_background::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_event_canvas_background::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_root {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -783,41 +630,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CameraRoot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CameraRoot",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_root(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_root::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_camera_root::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_root_parent {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -830,41 +666,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CameraRootParent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CameraRootParent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_root_parent(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_root_parent::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_camera_root_parent::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -877,41 +702,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CameraData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CameraData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_data(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_camera_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_camera_data2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -924,41 +738,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CameraData2",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CameraData2",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_camera_data2(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::gameobject::GameObject {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_camera_data2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::gameobject::GameObject =
+            ::core::mem::transmute(__lookup_get_camera_data2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_position {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -971,41 +774,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CharacterPosition",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CharacterPosition",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_character_position(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_character_position::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_character_position::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_rotation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1018,41 +810,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_CharacterRotation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_CharacterRotation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_character_rotation(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::quaternion::Quaternion {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_character_rotation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::unity_engine::quaternion::Quaternion =
+            ::core::mem::transmute(__lookup_get_character_rotation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1065,39 +846,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Time",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Time",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_playable_asset_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1110,43 +879,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_PlayableAssetPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_PlayableAssetPath",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_playable_asset_path(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_playable_asset_path::get_offset() as isize),
-        );
+    pub unsafe fn get_playable_asset_path(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_playable_asset_path::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_playable_asset_path {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_PlayableAssetPath",
@@ -1158,18 +912,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_PlayableAssetPath",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_PlayableAssetPath",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_playable_asset_path(
@@ -1177,24 +928,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         value: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_playable_asset_path::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_playable_asset_path::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enter_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1207,41 +949,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_EnterStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_EnterStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enter_start_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_enter_start_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_enter_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_enter_start_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enter_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_EnterStartTime",
@@ -1253,40 +982,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_EnterStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_EnterStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_enter_start_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_enter_start_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enter_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_enter_start_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_enter_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1299,41 +1015,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_EnterEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_EnterEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_enter_end_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_enter_end_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_enter_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_enter_end_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enter_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_EnterEndTime",
@@ -1345,40 +1048,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_EnterEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_EnterEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_enter_end_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_enter_end_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enter_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_enter_end_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wakeup_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1391,41 +1081,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_WakeupStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_WakeupStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_wakeup_start_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_wakeup_start_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_wakeup_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_wakeup_start_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_wakeup_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_WakeupStartTime",
@@ -1437,40 +1114,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_WakeupStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_WakeupStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_wakeup_start_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_wakeup_start_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_wakeup_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_wakeup_start_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wakeup_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1483,41 +1147,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_WakeupEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_WakeupEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_wakeup_end_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_wakeup_end_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_wakeup_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_wakeup_end_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_wakeup_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_WakeupEndTime",
@@ -1529,40 +1180,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_WakeupEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_WakeupEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_wakeup_end_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_wakeup_end_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_wakeup_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_wakeup_end_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_before_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1575,41 +1213,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_BeforeStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_BeforeStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_before_start_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_before_start_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_before_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_before_start_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_before_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_BeforeStartTime",
@@ -1621,40 +1246,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_BeforeStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_BeforeStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_before_start_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_before_start_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_before_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_before_start_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_before_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1667,41 +1279,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_BeforeEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_BeforeEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_before_end_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_before_end_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_before_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_before_end_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_before_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_BeforeEndTime",
@@ -1713,40 +1312,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_BeforeEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_BeforeEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_before_end_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_before_end_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_before_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_before_end_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_after_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1759,41 +1345,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_AfterStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_AfterStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_after_start_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_after_start_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_after_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_after_start_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_after_start_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_AfterStartTime",
@@ -1805,40 +1378,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_AfterStartTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_AfterStartTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_after_start_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_after_start_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_after_start_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_after_start_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_after_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -1851,41 +1411,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_AfterEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_AfterEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_after_end_time(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f64 {
+    pub unsafe fn get_after_end_time(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f64 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_after_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_after_end_time::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_after_end_time {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f64 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f64 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_AfterEndTime",
@@ -1897,42 +1444,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_AfterEndTime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_AfterEndTime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_after_end_time(
-        this: MyRoomWakeupSequence,
-        value: f64,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_after_end_time(this: MyRoomWakeupSequence, value: f64, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f64, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_after_end_time::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_after_end_time::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_event_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "AddEventVoice",
@@ -1944,18 +1477,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "AddEventVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "AddEventVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_event_voice(
@@ -1963,26 +1493,16 @@ mod __MyRoomWakeupSequence_unity2_raw {
         event_voice: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_event_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_add_event_voice::get_method_info().method_ptr);
         inner(this, event_voice, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_event_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "RemoveEventVoice",
@@ -1994,18 +1514,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "RemoveEventVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "RemoveEventVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_event_voice(
@@ -2013,26 +1530,16 @@ mod __MyRoomWakeupSequence_unity2_raw {
         event_voice: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_event_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_remove_event_voice::get_method_info().method_ptr);
         inner(this, event_voice, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_contains_event_voice {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "ContainsEventVoice",
@@ -2044,18 +1551,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ContainsEventVoice",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ContainsEventVoice",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn contains_event_voice(
@@ -2063,26 +1567,16 @@ mod __MyRoomWakeupSequence_unity2_raw {
         event_voice: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_contains_event_voice::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_contains_event_voice::get_method_info().method_ptr);
         inner(this, event_voice, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_switch_look_at_ik {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "SwitchLookAtIK",
@@ -2094,42 +1588,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "SwitchLookAtIK",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "SwitchLookAtIK",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn switch_look_at_ik(
-        this: MyRoomWakeupSequence,
-        looking_camera: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn switch_look_at_ik(this: MyRoomWakeupSequence, looking_camera: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_switch_look_at_ik::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_switch_look_at_ik::get_method_info().method_ptr);
         inner(this, looking_camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_caption {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "SetCaption",
@@ -2141,45 +1621,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetCaption",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetCaption",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_caption(
-        this: MyRoomWakeupSequence,
-        mid: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_caption::get_offset() as isize),
-        );
+    pub unsafe fn set_caption(this: MyRoomWakeupSequence, mid: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_caption::get_method_info().method_ptr);
         inner(this, mid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -2191,44 +1654,31 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind_recall {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(),
                 <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -2242,18 +1692,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateBindRecall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateBindRecall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind_recall(
@@ -2269,22 +1716,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
             crate::app::gamesound::GameSound_WakeupVoicePattern,
             crate::app::reliancedata::RelianceData_Level,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind_recall::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_create_bind_recall::get_method_info().method_ptr);
         inner(super_, pid, pattern, level, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_body_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "GetBodyClip",
@@ -2296,18 +1736,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetBodyClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetBodyClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_body_clip(
@@ -2319,22 +1756,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
             MyRoomWakeupSequence,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_body_clip::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_body_clip::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_face_clip {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "GetFaceClip",
@@ -2346,18 +1776,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetFaceClip",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetFaceClip",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_face_clip(
@@ -2369,20 +1796,14 @@ mod __MyRoomWakeupSequence_unity2_raw {
             MyRoomWakeupSequence,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_face_clip::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::animationclip::AnimationClip = ::core::mem::transmute(__lookup_get_face_clip::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_player {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2395,41 +1816,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_Player",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_Player",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_player(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::hubplayercontroller::HubPlayerController {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::hubplayercontroller::HubPlayerController = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_player::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::app::hubplayercontroller::HubPlayerController =
+            ::core::mem::transmute(__lookup_get_player::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_save_zoom_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2442,41 +1852,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_SaveZoomParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_SaveZoomParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_save_zoom_param(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_save_zoom_param(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_save_zoom_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_save_zoom_param::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_save_zoom_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_SaveZoomParam",
@@ -2488,40 +1885,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_SaveZoomParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_SaveZoomParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_save_zoom_param(
-        this: MyRoomWakeupSequence,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_save_zoom_param(this: MyRoomWakeupSequence, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_save_zoom_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_save_zoom_param::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_save_time_zone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2534,41 +1918,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_SaveTimeZone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_SaveTimeZone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_save_time_zone(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_save_time_zone(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_save_time_zone::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_save_time_zone::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_save_time_zone {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_SaveTimeZone",
@@ -2580,40 +1951,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_SaveTimeZone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_SaveTimeZone",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_save_time_zone(
-        this: MyRoomWakeupSequence,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_save_time_zone(this: MyRoomWakeupSequence, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_save_time_zone::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_save_time_zone::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_return_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2626,41 +1984,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "get_IsReturnEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "get_IsReturnEnv",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_return_env(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_return_env(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_return_env::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_return_env::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_is_return_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "set_IsReturnEnv",
@@ -2672,40 +2017,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "set_IsReturnEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "set_IsReturnEnv",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_is_return_env(
-        this: MyRoomWakeupSequence,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_is_return_env(this: MyRoomWakeupSequence, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_is_return_env::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_is_return_env::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2718,39 +2050,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_switch_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2763,39 +2083,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "SwitchEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "SwitchEnv",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn switch_env(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn switch_env(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_switch_env::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_switch_env::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_reset_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2808,39 +2116,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ResetEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ResetEnv",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn reset_env(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn reset_env(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_reset_env::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_reset_env::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_selected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2853,39 +2149,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsSelected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsSelected",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_selected(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_selected(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_selected::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_selected::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_change_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2898,46 +2182,34 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ChangeEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ChangeEnv",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn change_env(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_change_env::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_change_env::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_wakeup_ignore_pattern {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -2950,18 +2222,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsWakeupIgnorePattern",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsWakeupIgnorePattern",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn is_wakeup_ignore_pattern(
@@ -2977,22 +2246,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
             crate::app::reliancedata::RelianceData_Level,
             crate::app::gamesound::GameSound_WakeupVoicePattern,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_wakeup_ignore_pattern::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_is_wakeup_ignore_pattern::get_method_info().method_ptr);
         inner(this, pid, level, pattern, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_wakeup_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "GetWakeupUnit",
@@ -3004,18 +2266,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetWakeupUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetWakeupUnit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_wakeup_unit(
@@ -3023,29 +2282,19 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pid: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_wakeup_unit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_wakeup_unit::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_achive_done {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::app::reliancedata::RelianceData_Level as ::unity2::IlType>::il_type(),
-                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(
-                ),
+                <crate::app::gamesound::GameSound_WakeupVoicePattern as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3058,18 +2307,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "SetAchiveDone",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "SetAchiveDone",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_achive_done(
@@ -3085,20 +2331,14 @@ mod __MyRoomWakeupSequence_unity2_raw {
             crate::app::reliancedata::RelianceData_Level,
             crate::app::gamesound::GameSound_WakeupVoicePattern,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_achive_done::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_achive_done::get_method_info().method_ptr);
         inner(this, pid, level, pattern, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_select_reliance_wakeup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3111,39 +2351,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "SelectRelianceWakeup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "SelectRelianceWakeup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn select_reliance_wakeup(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn select_reliance_wakeup(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_select_reliance_wakeup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_select_reliance_wakeup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_init_wakeup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3156,39 +2384,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "InitWakeup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "InitWakeup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn init_wakeup(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn init_wakeup(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_init_wakeup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_init_wakeup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_loading_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3201,41 +2417,28 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "IsLoadingResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "IsLoadingResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_loading_resources(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_loading_resources(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_loading_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_loading_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_character_appearance_remove_acc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
                 "GetCharacterAppearanceRemoveAcc",
@@ -3247,18 +2450,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "GetCharacterAppearanceRemoveAcc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "GetCharacterAppearanceRemoveAcc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_character_appearance_remove_acc(
@@ -3270,21 +2470,15 @@ mod __MyRoomWakeupSequence_unity2_raw {
             MyRoomWakeupSequence,
             ::unity2::Il2CppString,
             ::unity2::OptionalMethod,
-        )
-            -> crate::combat::characterappearance::CharacterAppearance = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_character_appearance_remove_acc::get_offset() as isize),
-        );
+        ) -> crate::combat::characterappearance::CharacterAppearance =
+            ::core::mem::transmute(__lookup_get_character_appearance_remove_acc::get_method_info().method_ptr);
         inner(this, pid, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3297,39 +2491,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "LoadResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "LoadResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_resources(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_resources(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_resources::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_process_frame_face_animation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3342,39 +2524,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ProcessFrameFaceAnimation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ProcessFrameFaceAnimation",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn process_frame_face_animation(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn process_frame_face_animation(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_process_frame_face_animation::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_process_frame_face_animation::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_before_wakeup_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3387,39 +2557,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "BeforeWakeupAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "BeforeWakeupAction",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn before_wakeup_action(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn before_wakeup_action(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_before_wakeup_action::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_before_wakeup_action::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_wait_before_wakeup_action {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3432,41 +2590,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "WaitBeforeWakeupAction",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "WaitBeforeWakeupAction",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn wait_before_wakeup_action(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_wait_before_wakeup_action::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_wait_before_wakeup_action::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_start_wakeup_timeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3479,39 +2626,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "StartWakeupTimeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "StartWakeupTimeline",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start_wakeup_timeline(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start_wakeup_timeline(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start_wakeup_timeline::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start_wakeup_timeline::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_main_wakeup_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3524,41 +2659,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "MainWakeupEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "MainWakeupEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn main_wakeup_enter(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_main_wakeup_enter::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_main_wakeup_enter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_main_wakeup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3571,41 +2695,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "MainWakeup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "MainWakeup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn main_wakeup(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_main_wakeup::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_main_wakeup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_main_wakeup_before_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3618,41 +2731,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "MainWakeupBeforeAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "MainWakeupBeforeAfter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn main_wakeup_before_after(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_main_wakeup_before_after::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_main_wakeup_before_after::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exit_wakeup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3665,39 +2767,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitWakeup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitWakeup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exit_wakeup(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn exit_wakeup(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_wakeup::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exit_wakeup::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exit_env {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3710,41 +2800,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitEnv",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitEnv",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn exit_env(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exit_env::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> crate::system::collections::ienumerator::IEnumerator =
+            ::core::mem::transmute(__lookup_exit_env::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_exit_wakeup_after {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3757,39 +2836,27 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "ExitWakeupAfter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "ExitWakeupAfter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exit_wakeup_after(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn exit_wakeup_after(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_exit_wakeup_after::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_exit_wakeup_after::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_desc {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3802,41 +2869,30 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    "CreateDesc",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        "CreateDesc",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_desc(
         this: MyRoomWakeupSequence,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
-        let inner: extern "C" fn(
-            MyRoomWakeupSequence,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_desc::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> ::unity2::Array<crate::app::procdesc::ProcDesc> =
+            ::core::mem::transmute(__lookup_create_desc::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomWakeupSequence as ::unity2::ClassIdentity>::class(),
@@ -3849,30 +2905,20 @@ mod __MyRoomWakeupSequence_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomWakeupSequence as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MyRoomWakeupSequence,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MyRoomWakeupSequence, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomWakeupSequence, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -3881,13 +2927,9 @@ mod __MyRoomWakeupSequence_unity2_raw {
 impl MyRoomWakeupSequence {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MyRoomWakeupSequence_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MyRoomWakeupSequence_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
+
     #[doc = "`CreateBindRecall(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::gamesound::GameSound_WakeupVoicePattern, crate::app::reliancedata::RelianceData_Level)` overload"]
     pub fn create_bind_recall(
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
@@ -3912,455 +2954,296 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
     #[doc = "`get_VoiceID()` overload"]
     fn get_voice_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_voice_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_voice_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Character()` overload"]
     fn get_character(self) -> crate::combat::character::Character {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_character(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_character(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Level()` overload"]
     fn get_level(self) -> crate::app::reliancedata::RelianceData_Level {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::get_level(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Pattern()` overload"]
     fn get_pattern(self) -> crate::app::gamesound::GameSound_WakeupVoicePattern {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::get_pattern(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_FootstepID()` overload"]
     fn get_footstep_id(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_footstep_id(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_footstep_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_FadeRender()` overload"]
     fn get_fade_render(self) -> crate::app::myroomfaderender::MyRoomFadeRender {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_fade_render(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_fade_render(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_EventCanvas()` overload"]
     fn get_event_canvas(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_event_canvas(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_event_canvas(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_EventCanvasForeground()` overload"]
     fn get_event_canvas_foreground(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_event_canvas_foreground(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_event_canvas_foreground(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_EventCanvasBackground()` overload"]
     fn get_event_canvas_background(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_event_canvas_background(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_event_canvas_background(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CameraRoot()` overload"]
     fn get_camera_root(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_camera_root(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_camera_root(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CameraRootParent()` overload"]
     fn get_camera_root_parent(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_camera_root_parent(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_camera_root_parent(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CameraData()` overload"]
     fn get_camera_data(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_camera_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_camera_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CameraData2()` overload"]
     fn get_camera_data2(self) -> crate::unity_engine::gameobject::GameObject {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_camera_data2(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_camera_data2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CharacterPosition()` overload"]
     fn get_character_position(self) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_character_position(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_character_position(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_CharacterRotation()` overload"]
     fn get_character_rotation(self) -> crate::unity_engine::quaternion::Quaternion {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_character_rotation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_character_rotation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Time()` overload"]
     fn get_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::get_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_PlayableAssetPath()` overload"]
     fn get_playable_asset_path(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_playable_asset_path(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_playable_asset_path(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_PlayableAssetPath(::unity2::Il2CppString)` overload"]
-    fn set_playable_asset_path(
-        self,
-        value: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn set_playable_asset_path(self, value: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_playable_asset_path(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_playable_asset_path(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EnterStartTime()` overload"]
     fn get_enter_start_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_enter_start_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_enter_start_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EnterStartTime(f64)` overload"]
     fn set_enter_start_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_enter_start_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_enter_start_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_EnterEndTime()` overload"]
     fn get_enter_end_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_enter_end_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_enter_end_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_EnterEndTime(f64)` overload"]
     fn set_enter_end_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_enter_end_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_enter_end_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_WakeupStartTime()` overload"]
     fn get_wakeup_start_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_wakeup_start_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_wakeup_start_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_WakeupStartTime(f64)` overload"]
     fn set_wakeup_start_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_wakeup_start_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_wakeup_start_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_WakeupEndTime()` overload"]
     fn get_wakeup_end_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_wakeup_end_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_wakeup_end_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_WakeupEndTime(f64)` overload"]
     fn set_wakeup_end_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_wakeup_end_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_wakeup_end_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_BeforeStartTime()` overload"]
     fn get_before_start_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_before_start_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_before_start_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BeforeStartTime(f64)` overload"]
     fn set_before_start_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_before_start_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_before_start_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_BeforeEndTime()` overload"]
     fn get_before_end_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_before_end_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_before_end_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_BeforeEndTime(f64)` overload"]
     fn set_before_end_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_before_end_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_before_end_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AfterStartTime()` overload"]
     fn get_after_start_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_after_start_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_after_start_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AfterStartTime(f64)` overload"]
     fn set_after_start_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_after_start_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_after_start_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_AfterEndTime()` overload"]
     fn get_after_end_time(self) -> f64 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_after_end_time(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_after_end_time(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_AfterEndTime(f64)` overload"]
     fn set_after_end_time(self, value: impl ::core::convert::Into<f64>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_after_end_time(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_after_end_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`AddEventVoice(::unity2::Il2CppString)` overload"]
-    fn add_event_voice(
-        self,
-        event_voice: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn add_event_voice(self, event_voice: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::add_event_voice(
-                __receiver,
-                ::core::convert::Into::into(event_voice),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::add_event_voice(__receiver, ::core::convert::Into::into(event_voice), ::core::option::Option::None)
         }
     }
     #[doc = "`RemoveEventVoice(::unity2::Il2CppString)` overload"]
-    fn remove_event_voice(
-        self,
-        event_voice: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn remove_event_voice(self, event_voice: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::remove_event_voice(
-                __receiver,
-                ::core::convert::Into::into(event_voice),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::remove_event_voice(__receiver, ::core::convert::Into::into(event_voice), ::core::option::Option::None)
         }
     }
     #[doc = "`ContainsEventVoice(::unity2::Il2CppString)` overload"]
-    fn contains_event_voice(
-        self,
-        event_voice: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> bool {
+    fn contains_event_voice(self, event_voice: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::contains_event_voice(
                 __receiver,
                 ::core::convert::Into::into(event_voice),
@@ -4371,9 +3254,8 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
     #[doc = "`SwitchLookAtIK(bool)` overload"]
     fn switch_look_at_ik(self, looking_camera: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::switch_look_at_ik(
                 __receiver,
                 ::core::convert::Into::into(looking_camera),
@@ -4384,174 +3266,120 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
     #[doc = "`SetCaption(::unity2::Il2CppString)` overload"]
     fn set_caption(self, mid: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_caption(
-                __receiver,
-                ::core::convert::Into::into(mid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_caption(__receiver, ::core::convert::Into::into(mid), ::core::option::Option::None)
         }
     }
     #[doc = "`GetBodyClip(::unity2::Il2CppString)` overload"]
-    fn get_body_clip(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
+    fn get_body_clip(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_body_clip(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_body_clip(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`GetFaceClip(::unity2::Il2CppString)` overload"]
-    fn get_face_clip(
-        self,
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::animationclip::AnimationClip {
+    fn get_face_clip(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::animationclip::AnimationClip {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_face_clip(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_face_clip(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Player()` overload"]
     fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::get_player(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_SaveZoomParam()` overload"]
     fn get_save_zoom_param(self) -> f32 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_save_zoom_param(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_save_zoom_param(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SaveZoomParam(f32)` overload"]
     fn set_save_zoom_param(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_save_zoom_param(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_save_zoom_param(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_SaveTimeZone()` overload"]
     fn get_save_time_zone(self) -> i32 {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_save_time_zone(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_save_time_zone(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_SaveTimeZone(i32)` overload"]
     fn set_save_time_zone(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_save_time_zone(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_save_time_zone(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsReturnEnv()` overload"]
     fn get_is_return_env(self) -> bool {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_is_return_env(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_is_return_env(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_IsReturnEnv(bool)` overload"]
     fn set_is_return_env(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::set_is_return_env(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::set_is_return_env(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Init()` overload"]
     fn init(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::init(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SwitchEnv()` overload"]
     fn switch_env(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::switch_env(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ResetEnv()` overload"]
     fn reset_env(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::reset_env(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsSelected()` overload"]
     fn is_selected(self) -> bool {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::is_selected(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ChangeEnv()` overload"]
     fn change_env(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::change_env(__receiver, ::core::option::Option::None)
         }
     }
@@ -4563,9 +3391,8 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
         pattern: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>,
     ) -> bool {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::is_wakeup_ignore_pattern(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -4576,19 +3403,11 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
         }
     }
     #[doc = "`GetWakeupUnit(::unity2::Il2CppString)` overload"]
-    fn get_wakeup_unit(
-        self,
-        pid: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::app::unit::Unit {
+    fn get_wakeup_unit(self, pid: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::app::unit::Unit {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::get_wakeup_unit(
-                __receiver,
-                ::core::convert::Into::into(pid),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::get_wakeup_unit(__receiver, ::core::convert::Into::into(pid), ::core::option::Option::None)
         }
     }
     #[doc = "`SetAchiveDone(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]
@@ -4599,9 +3418,8 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
         pattern: impl ::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>,
     ) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::set_achive_done(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -4614,34 +3432,25 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
     #[doc = "`SelectRelianceWakeup()` overload"]
     fn select_reliance_wakeup(self) -> bool {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::select_reliance_wakeup(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::select_reliance_wakeup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InitWakeup()` overload"]
     fn init_wakeup(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::init_wakeup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsLoadingResources()` overload"]
     fn is_loading_resources(self) -> bool {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::is_loading_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::is_loading_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetCharacterAppearanceRemoveAcc(::unity2::Il2CppString)` overload"]
@@ -4650,9 +3459,8 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
         pid: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::combat::characterappearance::CharacterAppearance {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::get_character_appearance_remove_acc(
                 __receiver,
                 ::core::convert::Into::into(pid),
@@ -4663,141 +3471,104 @@ pub trait IMyRoomWakeupSequenceMethods: IMyRoomWakeupSequence {
     #[doc = "`LoadResources()` overload"]
     fn load_resources(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::load_resources(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::load_resources(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ProcessFrameFaceAnimation()` overload"]
     fn process_frame_face_animation(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::process_frame_face_animation(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::process_frame_face_animation(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BeforeWakeupAction()` overload"]
     fn before_wakeup_action(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::before_wakeup_action(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::before_wakeup_action(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`WaitBeforeWakeupAction()` overload"]
     fn wait_before_wakeup_action(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::wait_before_wakeup_action(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::wait_before_wakeup_action(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`StartWakeupTimeline()` overload"]
     fn start_wakeup_timeline(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::start_wakeup_timeline(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::start_wakeup_timeline(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MainWakeupEnter()` overload"]
     fn main_wakeup_enter(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::main_wakeup_enter(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::main_wakeup_enter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MainWakeup()` overload"]
     fn main_wakeup(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::main_wakeup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`MainWakeupBeforeAfter()` overload"]
     fn main_wakeup_before_after(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::main_wakeup_before_after(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::main_wakeup_before_after(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ExitWakeup()` overload"]
     fn exit_wakeup(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::exit_wakeup(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ExitEnv()` overload"]
     fn exit_env(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::exit_env(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ExitWakeupAfter()` overload"]
     fn exit_wakeup_after(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __MyRoomWakeupSequence_unity2_raw::exit_wakeup_after(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MyRoomWakeupSequence_unity2_raw::exit_wakeup_after(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CreateDesc()` overload"]
     fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc> {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::create_desc(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomWakeupSequence as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomWakeupSequence_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -4825,26 +3596,22 @@ impl MyRoomWakeupSequence {
 #[cfg(feature = "app-myroomwakeupsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomWakeupSequence;
-    pub use super::IMyRoomWakeupSequenceMethods;
-    pub use super::IMyRoomWakeupSequence_RelianceWakeup;
-    pub use super::IMyRoomWakeupSequence_RelianceWakeupMethods;
-    pub use super::MyRoomWakeupSequence;
-    pub use super::MyRoomWakeupSequence_Label;
-    pub use super::MyRoomWakeupSequence_RelianceWakeup;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IMyRoomWakeupSequence, IMyRoomWakeupSequenceMethods, IMyRoomWakeupSequence_RelianceWakeup, IMyRoomWakeupSequence_RelianceWakeupMethods,
+        MyRoomWakeupSequence, MyRoomWakeupSequence_Label, MyRoomWakeupSequence_RelianceWakeup,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     #[cfg(feature = "app-singletonprocinst_1")]
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

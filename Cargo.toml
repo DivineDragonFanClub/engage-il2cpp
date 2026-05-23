@@ -7,7 +7,6 @@ include = ["src/**/*", "docs/**/*", "Cargo.toml", "features.json", "README*", "L
 [dependencies]
 unity2 = { git = "https://github.com/DivineDragonFanClub/unity2" }
 skyline = "0.6"
-lazysimd = { git = "https://github.com/Raytwo/lazysimd" }
 
 [features]
 default = []

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-soundtestplayer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::bgmplayer::{BgmPlayer, IBgmPlayer};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::bgmplayer::{BgmPlayer, IBgmPlayer},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundtestplayer/SoundTestPlayer.md"))]
     #[::unity2::class(namespace = "App", name = "SoundTestPlayer")]
@@ -17,9 +19,7 @@ mod __types {
         #[rename(name = "m_currentPause")]
         pub m_current_pause: bool,
         #[rename(name = "m_soundList")]
-        pub m_sound_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::gamesound::GameSound_Handle,
-        >,
+        pub m_sound_list: crate::system::collections::generic::list_1::List_1<crate::app::gamesound::GameSound_Handle>,
     }
 }
 
@@ -35,9 +35,7 @@ mod __SoundTestPlayer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_pause_current_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
@@ -50,39 +48,27 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "PauseCurrentBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "PauseCurrentBgm",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn pause_current_bgm(
-        this: SoundTestPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn pause_current_bgm(this: SoundTestPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_pause_current_bgm::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_pause_current_bgm::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
@@ -95,41 +81,28 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsPlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing(
-        this: SoundTestPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing(this: SoundTestPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
                 "IsPlaying",
@@ -141,45 +114,28 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "IsPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "IsPlaying",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing_2(
-        this: SoundTestPlayer,
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            SoundTestPlayer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_playing_2::get_offset() as isize),
-        );
+    pub unsafe fn is_playing_2(this: SoundTestPlayer, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SoundTestPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_playing_2::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
                 "Play",
@@ -191,43 +147,27 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Play",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Play",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn play(
-        this: SoundTestPlayer,
-        event_name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SoundTestPlayer,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play::get_offset() as isize),
-        );
+    pub unsafe fn play(this: SoundTestPlayer, event_name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SoundTestPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play::get_method_info().method_ptr);
         inner(this, event_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_stop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
@@ -240,39 +180,27 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Stop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Stop",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn stop(
-        this: SoundTestPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn stop(this: SoundTestPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_stop::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_stop::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::myroomsoundmenu::MyRoomSoundMenu as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -286,18 +214,15 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn tick(
@@ -305,24 +230,15 @@ mod __SoundTestPlayer_unity2_raw {
         menu: crate::app::myroomsoundmenu::MyRoomSoundMenu,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SoundTestPlayer,
-            crate::app::myroomsoundmenu::MyRoomSoundMenu,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_tick::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SoundTestPlayer, crate::app::myroomsoundmenu::MyRoomSoundMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
         inner(this, menu, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
@@ -335,39 +251,27 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    "Close",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        "Close",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close(
-        this: SoundTestPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn close(this: SoundTestPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SoundTestPlayer as ::unity2::ClassIdentity>::class(),
@@ -380,30 +284,20 @@ mod __SoundTestPlayer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SoundTestPlayer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: SoundTestPlayer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: SoundTestPlayer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -413,90 +307,56 @@ pub trait ISoundTestPlayerMethods: ISoundTestPlayer {
     #[doc = "`PauseCurrentBgm()` overload"]
     fn pause_current_bgm(self) -> () {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundTestPlayer_unity2_raw::pause_current_bgm(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundTestPlayer_unity2_raw::pause_current_bgm(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlaying()` overload"]
     fn is_playing(self) -> bool {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundTestPlayer_unity2_raw::is_playing(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlaying(::unity2::Il2CppString)` overload"]
     fn is_playing_2(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundTestPlayer_unity2_raw::is_playing_2(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundTestPlayer_unity2_raw::is_playing_2(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
     #[doc = "`Play(::unity2::Il2CppString)` overload"]
     fn play(self, event_name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundTestPlayer_unity2_raw::play(
-                __receiver,
-                ::core::convert::Into::into(event_name),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundTestPlayer_unity2_raw::play(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)
         }
     }
     #[doc = "`Stop()` overload"]
     fn stop(self) -> () {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundTestPlayer_unity2_raw::stop(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Tick(crate::app::myroomsoundmenu::MyRoomSoundMenu)` overload"]
-    fn tick(
-        self,
-        menu: impl ::core::convert::Into<crate::app::myroomsoundmenu::MyRoomSoundMenu>,
-    ) -> () {
+    fn tick(self, menu: impl ::core::convert::Into<crate::app::myroomsoundmenu::MyRoomSoundMenu>) -> () {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SoundTestPlayer_unity2_raw::tick(
-                __receiver,
-                ::core::convert::Into::into(menu),
-                ::core::option::Option::None,
-            )
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SoundTestPlayer_unity2_raw::tick(__receiver, ::core::convert::Into::into(menu), ::core::option::Option::None)
         }
     }
     #[doc = "`Close()` overload"]
     fn close(self) -> () {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundTestPlayer_unity2_raw::close(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <SoundTestPlayer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SoundTestPlayer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -524,13 +384,10 @@ impl SoundTestPlayer {
 #[cfg(feature = "app-soundtestplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISoundTestPlayer;
-    pub use super::ISoundTestPlayerMethods;
-    pub use super::SoundTestPlayer;
-    pub use crate::app::bgmplayer::IBgmPlayer;
+    pub use super::{ISoundTestPlayer, ISoundTestPlayerMethods, SoundTestPlayer};
     #[cfg(feature = "app-bgmplayer")]
     pub use crate::app::bgmplayer::IBgmPlayerMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::bgmplayer::IBgmPlayer, system::object::IObject};
 }

@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-reflection-monomethodinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/monomethodinfo/MonoMethodInfo.md"))]
     #[repr(C)]
@@ -20,9 +22,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for MonoMethodInfo {
-        const NAMESPACE: &'static str = "System.Reflection";
-
         const NAME: &'static str = "MonoMethodInfo";
+        const NAMESPACE: &'static str = "System.Reflection";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,10 +34,7 @@ mod __types {
 
     impl ::unity2::IlType for MonoMethodInfo {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -53,10 +51,11 @@ mod __MonoMethodInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: system :: reflection :: monomethodinfo :: MonoMethodInfo as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::system::reflection::monomethodinfo::MonoMethodInfo as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "get_method_info",
@@ -68,18 +67,15 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_method_info",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_method_info",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_info(
@@ -87,26 +83,16 @@ mod __MonoMethodInfo_unity2_raw {
         info: *mut crate::system::reflection::monomethodinfo::MonoMethodInfo,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            *mut crate::system::reflection::monomethodinfo::MonoMethodInfo,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, *mut crate::system::reflection::monomethodinfo::MonoMethodInfo, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_method_info::get_method_info().method_ptr);
         inner(handle, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "get_method_attributes",
@@ -118,41 +104,28 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_method_attributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_method_attributes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_method_attributes(
-        handle: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_method_attributes(handle: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_method_attributes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_method_attributes::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_info_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "GetMethodInfo",
@@ -164,44 +137,31 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetMethodInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetMethodInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_info_2(
         handle: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::monomethodinfo::MonoMethodInfo {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::reflection::monomethodinfo::MonoMethodInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method_info_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> crate::system::reflection::monomethodinfo::MonoMethodInfo =
+            ::core::mem::transmute(__lookup_get_method_info_2::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_declaring_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "GetDeclaringType",
@@ -213,43 +173,28 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetDeclaringType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetDeclaringType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_declaring_type(
-        handle: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_declaring_type::get_offset() as isize),
-        );
+    pub unsafe fn get_declaring_type(handle: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_declaring_type::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_return_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "GetReturnType",
@@ -261,43 +206,28 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetReturnType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetReturnType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_return_type(
-        handle: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::SystemType {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::SystemType = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_return_type::get_offset() as isize),
-        );
+    pub unsafe fn get_return_type(handle: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::SystemType {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::SystemType =
+            ::core::mem::transmute(__lookup_get_return_type::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_attributes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "GetAttributes",
@@ -309,45 +239,31 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetAttributes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetAttributes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_attributes(
         handle: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::methodattributes::MethodAttributes {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::system::reflection::methodattributes::MethodAttributes =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_attributes::get_offset() as isize),
-            );
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> crate::system::reflection::methodattributes::MethodAttributes =
+            ::core::mem::transmute(__lookup_get_attributes::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_calling_convention {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "GetCallingConvention",
@@ -359,36 +275,31 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetCallingConvention",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetCallingConvention",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_calling_convention(
         handle: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::callingconventions::CallingConventions {
-        let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: callingconventions :: CallingConventions = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_calling_convention :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> crate::system::reflection::callingconventions::CallingConventions =
+            ::core::mem::transmute(__lookup_get_calling_convention::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method_implementation_flags {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MonoMethodInfo as ::unity2::ClassIdentity>::class(),
                 "GetMethodImplementationFlags",
@@ -400,34 +311,33 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetMethodImplementationFlags",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetMethodImplementationFlags",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_method_implementation_flags(
         handle: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
-        let inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodimplattributes :: MethodImplAttributes = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_method_implementation_flags :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes =
+            ::core::mem::transmute(__lookup_get_method_implementation_flags::get_method_info().method_ptr);
         inner(handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_parameter_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::system::reflection::memberinfo::MemberInfo as ::unity2::IlType>::il_type(),
@@ -443,18 +353,15 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "get_parameter_info",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "get_parameter_info",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_parameter_info(
@@ -466,22 +373,15 @@ mod __MonoMethodInfo_unity2_raw {
             ::unity2::IntPtr,
             crate::system::reflection::memberinfo::MemberInfo,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::parameterinfo::ParameterInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_parameter_info::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> =
+            ::core::mem::transmute(__lookup_get_parameter_info::get_method_info().method_ptr);
         inner(handle, member, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_parameters_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <crate::system::reflection::memberinfo::MemberInfo as ::unity2::IlType>::il_type(),
@@ -497,18 +397,15 @@ mod __MonoMethodInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
-                    "GetParametersInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MonoMethodInfo as ::unity2::ClassIdentity>::NAME,
+                        "GetParametersInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_parameters_info(
@@ -520,13 +417,8 @@ mod __MonoMethodInfo_unity2_raw {
             ::unity2::IntPtr,
             crate::system::reflection::memberinfo::MemberInfo,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<
-            crate::system::reflection::parameterinfo::ParameterInfo,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_parameters_info::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> =
+            ::core::mem::transmute(__lookup_get_parameters_info::get_method_info().method_ptr);
         inner(handle, member, __unity2_method_info)
     }
 }
@@ -534,96 +426,53 @@ mod __MonoMethodInfo_unity2_raw {
 #[cfg(feature = "system-reflection-monomethodinfo")]
 impl MonoMethodInfo {
     #[doc = "`get_method_info(::unity2::IntPtr, *mutcrate::system::reflection::monomethodinfo::MonoMethodInfo)` overload"]
-    pub fn get_method_info(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> crate::system::reflection::monomethodinfo::MonoMethodInfo {
+    pub fn get_method_info(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> crate::system::reflection::monomethodinfo::MonoMethodInfo {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::system::reflection::monomethodinfo::MonoMethodInfo,
-            >::uninit();
-            __MonoMethodInfo_unity2_raw::get_method_info(
-                ::core::convert::Into::into(handle),
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::reflection::monomethodinfo::MonoMethodInfo>::uninit();
+            __MonoMethodInfo_unity2_raw::get_method_info(::core::convert::Into::into(handle), __out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`get_method_attributes(::unity2::IntPtr)` overload"]
     pub fn get_method_attributes(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_method_attributes(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MonoMethodInfo_unity2_raw::get_method_attributes(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMethodInfo(::unity2::IntPtr)` overload"]
-    pub fn get_method_info_2(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> crate::system::reflection::monomethodinfo::MonoMethodInfo {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_method_info_2(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_method_info_2(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> crate::system::reflection::monomethodinfo::MonoMethodInfo {
+        unsafe { __MonoMethodInfo_unity2_raw::get_method_info_2(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetDeclaringType(::unity2::IntPtr)` overload"]
-    pub fn get_declaring_type(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::SystemType {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_declaring_type(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_declaring_type(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::SystemType {
+        unsafe { __MonoMethodInfo_unity2_raw::get_declaring_type(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetReturnType(::unity2::IntPtr)` overload"]
-    pub fn get_return_type(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::SystemType {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_return_type(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_return_type(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::SystemType {
+        unsafe { __MonoMethodInfo_unity2_raw::get_return_type(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetAttributes(::unity2::IntPtr)` overload"]
-    pub fn get_attributes(
-        handle: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> crate::system::reflection::methodattributes::MethodAttributes {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_attributes(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_attributes(handle: impl ::core::convert::Into<::unity2::IntPtr>) -> crate::system::reflection::methodattributes::MethodAttributes {
+        unsafe { __MonoMethodInfo_unity2_raw::get_attributes(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetCallingConvention(::unity2::IntPtr)` overload"]
     pub fn get_calling_convention(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> crate::system::reflection::callingconventions::CallingConventions {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_calling_convention(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MonoMethodInfo_unity2_raw::get_calling_convention(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetMethodImplementationFlags(::unity2::IntPtr)` overload"]
     pub fn get_method_implementation_flags(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
-        unsafe {
-            __MonoMethodInfo_unity2_raw::get_method_implementation_flags(
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MonoMethodInfo_unity2_raw::get_method_implementation_flags(::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`get_parameter_info(::unity2::IntPtr, crate::system::reflection::memberinfo::MemberInfo)` overload"]
     pub fn get_parameter_info(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -637,6 +486,7 @@ impl MonoMethodInfo {
             )
         }
     }
+
     #[doc = "`GetParametersInfo(::unity2::IntPtr, crate::system::reflection::memberinfo::MemberInfo)` overload"]
     pub fn get_parameters_info(
         handle: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -656,10 +506,9 @@ impl MonoMethodInfo {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MonoMethodInfo;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

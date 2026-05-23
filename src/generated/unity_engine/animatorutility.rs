@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-animatorutility-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatorutility/AnimatorUtility.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "AnimatorUtility")]
@@ -25,9 +25,7 @@ mod __AnimatorUtility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_optimize_transform_hierarchy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <::unity2::Array<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
@@ -43,18 +41,15 @@ mod __AnimatorUtility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimatorUtility as ::unity2::ClassIdentity>::NAME,
-                    "OptimizeTransformHierarchy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimatorUtility as ::unity2::ClassIdentity>::NAME,
+                        "OptimizeTransformHierarchy",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn optimize_transform_hierarchy(
@@ -66,11 +61,7 @@ mod __AnimatorUtility_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             ::unity2::Array<::unity2::Il2CppString>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_optimize_transform_hierarchy::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_optimize_transform_hierarchy::get_method_info().method_ptr);
         inner(go, exposed_transforms, __unity2_method_info)
     }
 }
@@ -95,8 +86,7 @@ impl AnimatorUtility {
 #[cfg(feature = "unity_engine-animatorutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimatorUtility;
-    pub use super::IAnimatorUtility;
+    pub use super::{AnimatorUtility, IAnimatorUtility};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

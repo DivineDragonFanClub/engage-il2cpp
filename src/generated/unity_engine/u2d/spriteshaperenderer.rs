@@ -2,13 +2,17 @@
 
 #[cfg(feature = "unity_engine-u2d-spriteshaperenderer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::renderer::{IRenderer, Renderer};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+            renderer::{IRenderer, Renderer},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/u2d/spriteshaperenderer/SpriteShapeRenderer.md"))]
     #[::unity2::class(namespace = "UnityEngine.U2D", name = "SpriteShapeRenderer")]
@@ -22,18 +26,17 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-u2d-spriteshaperenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISpriteShapeRenderer;
-    pub use super::SpriteShapeRenderer;
-    pub use crate::system::object::IObject;
+    pub use super::{ISpriteShapeRenderer, SpriteShapeRenderer};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::renderer::IRenderer;
     #[cfg(feature = "unity_engine-renderer")]
     pub use crate::unity_engine::renderer::IRendererMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{component::IComponent, object_2::IObject_2, renderer::IRenderer},
+    };
 }

@@ -2,14 +2,14 @@
 
 #[cfg(feature = "root-battlemenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::root::tutoriallisttopbasicmenuitem::{
-        ITutorialListTopBasicMenuItem, TutorialListTopBasicMenuItem,
+    use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem, TutorialListTopBasicMenuItem},
+        system::object::{IObject, Object},
     };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/battlemenuitem/BattleMenuItem.md"))]
     #[::unity2::class(namespace = "", name = "BattleMenuItem")]
@@ -29,10 +29,11 @@ mod __BattleMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type () , < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -44,24 +45,21 @@ mod __BattleMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: BattleMenuItem,
         is_get_all_tutorial: bool,
-        decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler,
+        decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -69,25 +67,14 @@ mod __BattleMenuItem_unity2_raw {
             bool,
             crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            is_get_all_tutorial,
-            decide_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, is_get_all_tutorial, decide_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BattleMenuItem as ::unity2::ClassIdentity>::class(),
@@ -100,32 +87,20 @@ mod __BattleMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BattleMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BattleMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn a_call(
-        this: BattleMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            BattleMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+    pub unsafe fn a_call(this: BattleMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(BattleMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -136,14 +111,10 @@ pub trait IBattleMenuItemMethods: IBattleMenuItem {
     fn ctor(
         self,
         is_get_all_tutorial: impl ::core::convert::Into<bool>,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,
-        >,
+        decide_event_handler: impl ::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <BattleMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(is_get_all_tutorial),
@@ -155,9 +126,7 @@ pub trait IBattleMenuItemMethods: IBattleMenuItem {
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <BattleMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <BattleMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __BattleMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -169,10 +138,7 @@ impl<__T: IBattleMenuItem> IBattleMenuItemMethods for __T {}
 #[cfg(feature = "root-battlemenuitem")]
 impl BattleMenuItem {
     #[doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        is_get_all_tutorial: bool,
-        decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler,
-    ) -> Self {
+    pub fn new(is_get_all_tutorial: bool, decide_event_handler: crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -188,16 +154,12 @@ impl BattleMenuItem {
 #[cfg(feature = "root-battlemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleMenuItem;
-    pub use super::IBattleMenuItem;
-    pub use super::IBattleMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{BattleMenuItem, IBattleMenuItem, IBattleMenuItemMethods};
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::root::tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItem;
     #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
     pub use crate::root::tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, root::tutoriallisttopbasicmenuitem::ITutorialListTopBasicMenuItem, system::object::IObject};
 }

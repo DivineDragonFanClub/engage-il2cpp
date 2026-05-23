@@ -2,42 +2,199 @@
 
 #[cfg(feature = "system-io-compression-deflatestreamnative-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative_SafeDeflateStreamHandle.md"))]
+    #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStreamNative.SafeDeflateStreamHandle")]
+    pub struct DeflateStreamNative_SafeDeflateStreamHandle {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative.md"))]
     #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStreamNative")]
     #[parent(crate::system::object::Object)]
     pub struct DeflateStreamNative {
-# [rename (name = "feeder")] pub feeder : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_UnmanagedReadOrWrite ,
-# [rename (name = "base_stream")] pub base_stream : crate :: system :: io :: stream :: Stream ,
-# [rename (name = "z_stream")] pub z_stream : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle ,
-# [rename (name = "disposed")] pub disposed : bool ,
-# [rename (name = "io_buffer")] pub io_buffer : :: unity2 :: Array < u8 > ,
-}
+        #[rename(name = "feeder")]
+        pub feeder: crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite,
+        #[rename(name = "base_stream")]
+        pub base_stream: crate::system::io::stream::Stream,
+        #[rename(name = "z_stream")]
+        pub z_stream: crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
+        #[rename(name = "disposed")]
+        pub disposed: bool,
+        #[rename(name = "io_buffer")]
+        pub io_buffer: ::unity2::Array<u8>,
+    }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative_UnmanagedReadOrWrite.md"))]
-    #[::unity2::class(
-        namespace = "System.IO.Compression",
-        name = "DeflateStreamNative.UnmanagedReadOrWrite"
-    )]
+    #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStreamNative.UnmanagedReadOrWrite")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct DeflateStreamNative_UnmanagedReadOrWrite {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestreamnative/DeflateStreamNative_SafeDeflateStreamHandle.md"))]
-    #[::unity2::class(
-        namespace = "System.IO.Compression",
-        name = "DeflateStreamNative.SafeDeflateStreamHandle"
-    )]
-    pub struct DeflateStreamNative_SafeDeflateStreamHandle {}
 }
 
 #[cfg(feature = "system-io-compression-deflatestreamnative-types")]
 pub use __types::*;
+
+#[cfg(feature = "system-io-compression-deflatestreamnative")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_is_invalid {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::class(),
+                "get_IsInvalid",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::NAME,
+                        "get_IsInvalid",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_is_invalid(this: DeflateStreamNative_SafeDeflateStreamHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_get_is_invalid::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: DeflateStreamNative_SafeDeflateStreamHandle, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_release_handle {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::class(),
+                "ReleaseHandle",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseHandle",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn release_handle(this: DeflateStreamNative_SafeDeflateStreamHandle, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_release_handle::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "system-io-compression-deflatestreamnative")]
+pub trait IDeflateStreamNative_SafeDeflateStreamHandleMethods: IDeflateStreamNative_SafeDeflateStreamHandle {
+    #[doc = "`get_IsInvalid()` overload"]
+    fn get_is_invalid(self) -> bool {
+        unsafe {
+            let __receiver = <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::get_is_invalid(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ReleaseHandle()` overload"]
+    fn release_handle(self) -> bool {
+        unsafe {
+            let __receiver = <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::release_handle(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "system-io-compression-deflatestreamnative")]
+impl<__T: IDeflateStreamNative_SafeDeflateStreamHandle> IDeflateStreamNative_SafeDeflateStreamHandleMethods for __T {}
+
+#[cfg(feature = "system-io-compression-deflatestreamnative")]
+impl DeflateStreamNative_SafeDeflateStreamHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DeflateStreamNative_SafeDeflateStreamHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeflateStreamNative_SafeDeflateStreamHandleMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
 #[doc(hidden)]
@@ -48,9 +205,7 @@ mod __DeflateStreamNative_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
@@ -63,40 +218,32 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DeflateStreamNative,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DeflateStreamNative, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DeflateStreamNative, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type () , < crate :: system :: io :: compression :: compressionmode :: CompressionMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::io::stream::Stream as ::unity2::IlType>::il_type(),
+                <crate::system::io::compression::compressionmode::CompressionMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -108,18 +255,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -128,16 +272,20 @@ mod __DeflateStreamNative_unity2_raw {
         gzip: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::io::compression::deflatestreamnative::DeflateStreamNative {
-        let inner : extern "C" fn (crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionmode :: CompressionMode , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::io::stream::Stream,
+            crate::system::io::compression::compressionmode::CompressionMode,
+            bool,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::compression::deflatestreamnative::DeflateStreamNative =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(compressed_stream, mode, gzip, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_finalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
@@ -150,41 +298,28 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "Finalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "Finalize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn finalize(
-        this: DeflateStreamNative,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn finalize(this: DeflateStreamNative, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DeflateStreamNative, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_finalize::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_finalize::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -196,40 +331,27 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: DeflateStreamNative,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: DeflateStreamNative, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DeflateStreamNative, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_flush {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
@@ -242,43 +364,29 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "Flush",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "Flush",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn flush(
-        this: DeflateStreamNative,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn flush(this: DeflateStreamNative, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DeflateStreamNative, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_flush::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_flush::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_z_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "ReadZStream",
@@ -290,18 +398,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "ReadZStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "ReadZStream",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read_z_stream(
@@ -310,29 +415,17 @@ mod __DeflateStreamNative_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            DeflateStreamNative,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_z_stream::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DeflateStreamNative, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_read_z_stream::get_method_info().method_ptr);
         inner(this, buffer, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_z_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "WriteZStream",
@@ -344,18 +437,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "WriteZStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "WriteZStream",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_z_stream(
@@ -364,25 +454,15 @@ mod __DeflateStreamNative_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DeflateStreamNative,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_write_z_stream::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DeflateStreamNative, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_write_z_stream::get_method_info().method_ptr);
         inner(this, buffer, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unmanaged_read {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -399,18 +479,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "UnmanagedRead",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "UnmanagedRead",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unmanaged_read(
@@ -419,29 +496,17 @@ mod __DeflateStreamNative_unity2_raw {
         data: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unmanaged_read::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_unmanaged_read::get_method_info().method_ptr);
         inner(buffer, length, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unmanaged_read_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "UnmanagedRead",
@@ -453,18 +518,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "UnmanagedRead",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "UnmanagedRead",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unmanaged_read_2(
@@ -473,25 +535,15 @@ mod __DeflateStreamNative_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            DeflateStreamNative,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unmanaged_read_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DeflateStreamNative, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_unmanaged_read_2::get_method_info().method_ptr);
         inner(this, buffer, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unmanaged_write {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -508,18 +560,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "UnmanagedWrite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "UnmanagedWrite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unmanaged_write(
@@ -528,29 +577,17 @@ mod __DeflateStreamNative_unity2_raw {
         data: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unmanaged_write::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::IntPtr, i32, ::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_unmanaged_write::get_method_info().method_ptr);
         inner(buffer, length, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_unmanaged_write_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::IntPtr as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "UnmanagedWrite",
@@ -562,18 +599,15 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "UnmanagedWrite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "UnmanagedWrite",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn unmanaged_write_2(
@@ -582,25 +616,15 @@ mod __DeflateStreamNative_unity2_raw {
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            DeflateStreamNative,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_unmanaged_write_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DeflateStreamNative, ::unity2::IntPtr, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_unmanaged_write_2::get_method_info().method_ptr);
         inner(this, buffer, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_check_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -616,41 +640,33 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "CheckResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "CheckResult",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn check_result(
-        result: i32,
-        r#where: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn check_result(result: i32, r#where: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(i32, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_check_result::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_check_result::get_method_info().method_ptr);
         inner(result, r#where, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_z_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: compression :: compressionmode :: CompressionMode as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_UnmanagedReadOrWrite as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::io::compression::compressionmode::CompressionMode as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "CreateZStream",
@@ -662,32 +678,40 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "CreateZStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "CreateZStream",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn create_z_stream (compress : crate :: system :: io :: compression :: compressionmode :: CompressionMode , gzip : bool , feeder : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_UnmanagedReadOrWrite , data : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle{
-        let inner : extern "C" fn (crate :: system :: io :: compression :: compressionmode :: CompressionMode , bool , crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_UnmanagedReadOrWrite , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_z_stream :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn create_z_stream(
+        compress: crate::system::io::compression::compressionmode::CompressionMode,
+        gzip: bool,
+        feeder: crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite,
+        data: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle {
+        let inner: extern "C" fn(
+            crate::system::io::compression::compressionmode::CompressionMode,
+            bool,
+            crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle =
+            ::core::mem::transmute(__lookup_create_z_stream::get_method_info().method_ptr);
         inner(compress, gzip, feeder, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_close_z_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "CloseZStream",
@@ -699,40 +723,29 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "CloseZStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "CloseZStream",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn close_z_stream(
-        stream: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn close_z_stream(stream: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_close_z_stream::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_close_z_stream::get_method_info().method_ptr);
         inner(stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_flush_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "Flush",
@@ -744,35 +757,37 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "Flush",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "Flush",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn flush_2(
-        stream : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle,
+        stream: crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_flush_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_flush_2::get_method_info().method_ptr);
         inner(stream, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_z_stream_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "ReadZStream",
@@ -784,37 +799,41 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "ReadZStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "ReadZStream",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read_z_stream_2(
-        stream : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle,
+        stream: crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
         buffer: ::unity2::IntPtr,
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle , :: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_read_z_stream_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
+            ::unity2::IntPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_read_z_stream_2::get_method_info().method_ptr);
         inner(stream, buffer, length, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write_z_stream_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DeflateStreamNative as ::unity2::ClassIdentity>::class(),
                 "WriteZStream",
@@ -826,27 +845,29 @@ mod __DeflateStreamNative_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
-                    "WriteZStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative as ::unity2::ClassIdentity>::NAME,
+                        "WriteZStream",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn write_z_stream_2(
-        stream : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle,
+        stream: crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
         buffer: ::unity2::IntPtr,
         length: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle , :: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_write_z_stream_2 :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle,
+            ::unity2::IntPtr,
+            i32,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_write_z_stream_2::get_method_info().method_ptr);
         inner(stream, buffer, length, __unity2_method_info)
     }
 }
@@ -856,9 +877,7 @@ impl DeflateStreamNative {
     #[doc = "`Create(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` overload"]
     pub fn create(
         compressed_stream: impl ::core::convert::Into<crate::system::io::stream::Stream>,
-        mode: impl ::core::convert::Into<
-            crate::system::io::compression::compressionmode::CompressionMode,
-        >,
+        mode: impl ::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode>,
         gzip: impl ::core::convert::Into<bool>,
     ) -> crate::system::io::compression::deflatestreamnative::DeflateStreamNative {
         unsafe {
@@ -870,6 +889,7 @@ impl DeflateStreamNative {
             )
         }
     }
+
     #[doc = "`UnmanagedRead(::unity2::IntPtr, i32, ::unity2::IntPtr)` overload"]
     pub fn unmanaged_read(
         buffer: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -885,6 +905,7 @@ impl DeflateStreamNative {
             )
         }
     }
+
     #[doc = "`UnmanagedWrite(::unity2::IntPtr, i32, ::unity2::IntPtr)` overload"]
     pub fn unmanaged_write(
         buffer: impl ::core::convert::Into<::unity2::IntPtr>,
@@ -900,11 +921,9 @@ impl DeflateStreamNative {
             )
         }
     }
+
     #[doc = "`CheckResult(i32, ::unity2::Il2CppString)` overload"]
-    pub fn check_result(
-        result: impl ::core::convert::Into<i32>,
-        r#where: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    pub fn check_result(result: impl ::core::convert::Into<i32>, r#where: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             __DeflateStreamNative_unity2_raw::check_result(
                 ::core::convert::Into::into(result),
@@ -913,7 +932,14 @@ impl DeflateStreamNative {
             )
         }
     }
-    #[doc = "`CreateZStream(crate::system::io::compression::compressionmode::CompressionMode, bool, crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite, ::unity2::IntPtr)` overload"]    pub fn create_z_stream (compress : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionmode :: CompressionMode > , gzip : impl :: core :: convert :: Into < bool > , feeder : impl :: core :: convert :: Into < crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_UnmanagedReadOrWrite > , data : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle{
+
+    #[doc = "`CreateZStream(crate::system::io::compression::compressionmode::CompressionMode, bool, crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite, ::unity2::IntPtr)` overload"]
+    pub fn create_z_stream(
+        compress: impl ::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode>,
+        gzip: impl ::core::convert::Into<bool>,
+        feeder: impl ::core::convert::Into<crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite>,
+        data: impl ::core::convert::Into<::unity2::IntPtr>,
+    ) -> crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle {
         unsafe {
             __DeflateStreamNative_unity2_raw::create_z_stream(
                 ::core::convert::Into::into(compress),
@@ -924,29 +950,22 @@ impl DeflateStreamNative {
             )
         }
     }
+
     #[doc = "`CloseZStream(::unity2::IntPtr)` overload"]
     pub fn close_z_stream(stream: impl ::core::convert::Into<::unity2::IntPtr>) -> i32 {
-        unsafe {
-            __DeflateStreamNative_unity2_raw::close_z_stream(
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DeflateStreamNative_unity2_raw::close_z_stream(::core::convert::Into::into(stream), ::core::option::Option::None) }
     }
+
     #[doc = "`Flush(crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle)` overload"]
     pub fn flush_2(
-        stream : impl :: core :: convert :: Into < crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle >,
+        stream: impl ::core::convert::Into<crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle>,
     ) -> i32 {
-        unsafe {
-            __DeflateStreamNative_unity2_raw::flush_2(
-                ::core::convert::Into::into(stream),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DeflateStreamNative_unity2_raw::flush_2(::core::convert::Into::into(stream), ::core::option::Option::None) }
     }
+
     #[doc = "`ReadZStream(crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::IntPtr, i32)` overload"]
     pub fn read_z_stream_2(
-        stream : impl :: core :: convert :: Into < crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle >,
+        stream: impl ::core::convert::Into<crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle>,
         buffer: impl ::core::convert::Into<::unity2::IntPtr>,
         length: impl ::core::convert::Into<i32>,
     ) -> i32 {
@@ -959,9 +978,10 @@ impl DeflateStreamNative {
             )
         }
     }
+
     #[doc = "`WriteZStream(crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::IntPtr, i32)` overload"]
     pub fn write_z_stream_2(
-        stream : impl :: core :: convert :: Into < crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative_SafeDeflateStreamHandle >,
+        stream: impl ::core::convert::Into<crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle>,
         buffer: impl ::core::convert::Into<::unity2::IntPtr>,
         length: impl ::core::convert::Into<i32>,
     ) -> i32 {
@@ -981,53 +1001,35 @@ pub trait IDeflateStreamNativeMethods: IDeflateStreamNative {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Finalize()` overload"]
     fn finalize(self) -> () {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::finalize(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DeflateStreamNative_unity2_raw::dispose(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DeflateStreamNative_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`Flush()` overload"]
     fn flush(self) -> () {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::flush(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReadZStream(::unity2::IntPtr, i32)` overload"]
-    fn read_z_stream(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::IntPtr>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn read_z_stream(self, buffer: impl ::core::convert::Into<::unity2::IntPtr>, length: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::read_z_stream(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -1037,15 +1039,9 @@ pub trait IDeflateStreamNativeMethods: IDeflateStreamNative {
         }
     }
     #[doc = "`WriteZStream(::unity2::IntPtr, i32)` overload"]
-    fn write_z_stream(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::IntPtr>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn write_z_stream(self, buffer: impl ::core::convert::Into<::unity2::IntPtr>, length: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::write_z_stream(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -1055,15 +1051,9 @@ pub trait IDeflateStreamNativeMethods: IDeflateStreamNative {
         }
     }
     #[doc = "`UnmanagedRead(::unity2::IntPtr, i32)` overload"]
-    fn unmanaged_read_2(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::IntPtr>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn unmanaged_read_2(self, buffer: impl ::core::convert::Into<::unity2::IntPtr>, length: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::unmanaged_read_2(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -1073,15 +1063,9 @@ pub trait IDeflateStreamNativeMethods: IDeflateStreamNative {
         }
     }
     #[doc = "`UnmanagedWrite(::unity2::IntPtr, i32)` overload"]
-    fn unmanaged_write_2(
-        self,
-        buffer: impl ::core::convert::Into<::unity2::IntPtr>,
-        length: impl ::core::convert::Into<i32>,
-    ) -> i32 {
+    fn unmanaged_write_2(self, buffer: impl ::core::convert::Into<::unity2::IntPtr>, length: impl ::core::convert::Into<i32>) -> i32 {
         unsafe {
-            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <DeflateStreamNative as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DeflateStreamNative_unity2_raw::unmanaged_write_2(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -1120,9 +1104,7 @@ mod __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1138,18 +1120,15 @@ mod __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1163,20 +1142,14 @@ mod __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1193,18 +1166,15 @@ mod __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -1214,33 +1184,20 @@ mod __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw {
         data: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            DeflateStreamNative_UnmanagedReadOrWrite,
-            ::unity2::IntPtr,
-            i32,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DeflateStreamNative_UnmanagedReadOrWrite, ::unity2::IntPtr, i32, ::unity2::IntPtr, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, buffer, length, data, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
-pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:
-    IDeflateStreamNative_UnmanagedReadOrWrite
-{
+pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods: IDeflateStreamNative_UnmanagedReadOrWrite {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < DeflateStreamNative_UnmanagedReadOrWrite as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1257,7 +1214,9 @@ pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:
         data: impl ::core::convert::Into<::unity2::IntPtr>,
     ) -> i32 {
         unsafe {
-            let __receiver = < DeflateStreamNative_UnmanagedReadOrWrite as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <DeflateStreamNative_UnmanagedReadOrWrite as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(buffer),
@@ -1270,10 +1229,7 @@ pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:
 }
 
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
-impl<__T: IDeflateStreamNative_UnmanagedReadOrWrite>
-    IDeflateStreamNative_UnmanagedReadOrWriteMethods for __T
-{
-}
+impl<__T: IDeflateStreamNative_UnmanagedReadOrWrite> IDeflateStreamNative_UnmanagedReadOrWriteMethods for __T {}
 
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
 impl DeflateStreamNative_UnmanagedReadOrWrite {
@@ -1293,229 +1249,17 @@ impl DeflateStreamNative_UnmanagedReadOrWrite {
 
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_is_invalid {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::class(),
-                "get_IsInvalid",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::NAME,
-                    "get_IsInvalid",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_is_invalid(
-        this: DeflateStreamNative_SafeDeflateStreamHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DeflateStreamNative_SafeDeflateStreamHandle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_is_invalid::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: DeflateStreamNative_SafeDeflateStreamHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            DeflateStreamNative_SafeDeflateStreamHandle,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_release_handle {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::class(),
-                "ReleaseHandle",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DeflateStreamNative_SafeDeflateStreamHandle as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseHandle",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn release_handle(
-        this: DeflateStreamNative_SafeDeflateStreamHandle,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DeflateStreamNative_SafeDeflateStreamHandle,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_handle::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestreamnative")]
-pub trait IDeflateStreamNative_SafeDeflateStreamHandleMethods:
-    IDeflateStreamNative_SafeDeflateStreamHandle
-{
-    #[doc = "`get_IsInvalid()` overload"]
-    fn get_is_invalid(self) -> bool {
-        unsafe {
-            let __receiver = < DeflateStreamNative_SafeDeflateStreamHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::get_is_invalid(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < DeflateStreamNative_SafeDeflateStreamHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ReleaseHandle()` overload"]
-    fn release_handle(self) -> bool {
-        unsafe {
-            let __receiver = < DeflateStreamNative_SafeDeflateStreamHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::release_handle(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestreamnative")]
-impl<__T: IDeflateStreamNative_SafeDeflateStreamHandle>
-    IDeflateStreamNative_SafeDeflateStreamHandleMethods for __T
-{
-}
-
-#[cfg(feature = "system-io-compression-deflatestreamnative")]
-impl DeflateStreamNative_SafeDeflateStreamHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DeflateStreamNative_SafeDeflateStreamHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDeflateStreamNative_SafeDeflateStreamHandleMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "system-io-compression-deflatestreamnative")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::DeflateStreamNative;
-    pub use super::DeflateStreamNative_SafeDeflateStreamHandle;
-    pub use super::DeflateStreamNative_UnmanagedReadOrWrite;
-    pub use super::IDeflateStreamNative;
-    pub use super::IDeflateStreamNativeMethods;
-    pub use super::IDeflateStreamNative_SafeDeflateStreamHandle;
-    pub use super::IDeflateStreamNative_SafeDeflateStreamHandleMethods;
-    pub use super::IDeflateStreamNative_UnmanagedReadOrWrite;
-    pub use super::IDeflateStreamNative_UnmanagedReadOrWriteMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        DeflateStreamNative, DeflateStreamNative_SafeDeflateStreamHandle, DeflateStreamNative_UnmanagedReadOrWrite, IDeflateStreamNative,
+        IDeflateStreamNativeMethods, IDeflateStreamNative_SafeDeflateStreamHandle, IDeflateStreamNative_SafeDeflateStreamHandleMethods,
+        IDeflateStreamNative_UnmanagedReadOrWrite, IDeflateStreamNative_UnmanagedReadOrWriteMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-tableconversions-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/tableconversions/TableConversions.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.Converters",
-        name = "TableConversions"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.Converters", name = "TableConversions")]
     #[parent(crate::system::object::Object)]
     pub struct TableConversions {}
 }
@@ -28,9 +25,7 @@ mod __TableConversions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_convert_i_list_to_table {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
                 <crate::system::collections::ilist::IList as ::unity2::IlType>::il_type(),
@@ -46,18 +41,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertIListToTable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertIListToTable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_i_list_to_table(
@@ -69,24 +61,17 @@ mod __TableConversions_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::collections::ilist::IList,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_i_list_to_table::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(__lookup_convert_i_list_to_table::get_method_info().method_ptr);
         inner(script, list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_i_dictionary_to_table {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::script::Script as ::unity2::IlType>::il_type(),
-                <crate::system::collections::idictionary::IDictionary as ::unity2::IlType>::il_type(
-                ),
+                <crate::system::collections::idictionary::IDictionary as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TableConversions as ::unity2::ClassIdentity>::class(),
@@ -99,18 +84,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertIDictionaryToTable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertIDictionaryToTable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_i_dictionary_to_table(
@@ -122,20 +104,15 @@ mod __TableConversions_unity2_raw {
             crate::moon_sharp::interpreter::script::Script,
             crate::system::collections::idictionary::IDictionary,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::table::Table = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_i_dictionary_to_table::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::table::Table =
+            ::core::mem::transmute(__lookup_convert_i_dictionary_to_table::get_method_info().method_ptr);
         inner(script, dict, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_can_convert_table_to_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -151,18 +128,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "CanConvertTableToType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "CanConvertTableToType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn can_convert_table_to_type(
@@ -170,24 +144,15 @@ mod __TableConversions_unity2_raw {
         t: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            crate::moon_sharp::interpreter::table::Table,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_can_convert_table_to_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_can_convert_table_to_type::get_method_info().method_ptr);
         inner(table, t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_table_to_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::moon_sharp::interpreter::table::Table as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -203,18 +168,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertTableToType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertTableToType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_table_to_type(
@@ -226,20 +188,14 @@ mod __TableConversions_unity2_raw {
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::SystemType,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_table_to_type::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_convert_table_to_type::get_method_info().method_ptr);
         inner(table, t, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_table_to_dictionary_of_generic_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -257,18 +213,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertTableToDictionaryOfGenericType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertTableToDictionaryOfGenericType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_table_to_dictionary_of_generic_type(
@@ -284,28 +237,15 @@ mod __TableConversions_unity2_raw {
             ::unity2::SystemType,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(
-                    __lookup_convert_table_to_dictionary_of_generic_type::get_offset() as isize,
-                ),
-        );
-        inner(
-            dictionary_type,
-            key_type,
-            value_type,
-            table,
-            __unity2_method_info,
-        )
+        ) -> crate::system::object::Object =
+            ::core::mem::transmute(__lookup_convert_table_to_dictionary_of_generic_type::get_method_info().method_ptr);
+        inner(dictionary_type, key_type, value_type, table, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_table_to_array_of_generic_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -322,18 +262,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertTableToArrayOfGenericType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertTableToArrayOfGenericType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_table_to_array_of_generic_type(
@@ -347,20 +284,14 @@ mod __TableConversions_unity2_raw {
             ::unity2::SystemType,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_table_to_array_of_generic_type::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_convert_table_to_array_of_generic_type::get_method_info().method_ptr);
         inner(array_type, item_type, table, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_table_to_list_of_generic_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
                 <::unity2::SystemType as ::unity2::IlType>::il_type(),
@@ -377,18 +308,15 @@ mod __TableConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TableConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertTableToListOfGenericType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TableConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertTableToListOfGenericType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_table_to_list_of_generic_type(
@@ -402,11 +330,7 @@ mod __TableConversions_unity2_raw {
             ::unity2::SystemType,
             crate::moon_sharp::interpreter::table::Table,
             ::unity2::OptionalMethod,
-        ) -> crate::system::object::Object = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_table_to_list_of_generic_type::get_offset() as isize),
-        );
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_convert_table_to_list_of_generic_type::get_method_info().method_ptr);
         inner(list_type, item_type, table, __unity2_method_info)
     }
 }
@@ -426,6 +350,7 @@ impl TableConversions {
             )
         }
     }
+
     #[doc = "`ConvertIDictionaryToTable(crate::moon_sharp::interpreter::script::Script, crate::system::collections::idictionary::IDictionary)` overload"]
     pub fn convert_i_dictionary_to_table(
         script: impl ::core::convert::Into<crate::moon_sharp::interpreter::script::Script>,
@@ -439,6 +364,7 @@ impl TableConversions {
             )
         }
     }
+
     #[doc = "`CanConvertTableToType(crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType)` overload"]
     pub fn can_convert_table_to_type(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
@@ -452,6 +378,7 @@ impl TableConversions {
             )
         }
     }
+
     #[doc = "`ConvertTableToType(crate::moon_sharp::interpreter::table::Table, ::unity2::SystemType)` overload"]
     pub fn convert_table_to_type(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
@@ -465,6 +392,7 @@ impl TableConversions {
             )
         }
     }
+
     #[doc = "`ConvertTableToDictionaryOfGenericType(::unity2::SystemType, ::unity2::SystemType, ::unity2::SystemType, crate::moon_sharp::interpreter::table::Table)` overload"]
     pub fn convert_table_to_dictionary_of_generic_type(
         dictionary_type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -482,6 +410,7 @@ impl TableConversions {
             )
         }
     }
+
     #[doc = "`ConvertTableToArrayOfGenericType(::unity2::SystemType, ::unity2::SystemType, crate::moon_sharp::interpreter::table::Table)` overload"]
     pub fn convert_table_to_array_of_generic_type(
         array_type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -497,6 +426,7 @@ impl TableConversions {
             )
         }
     }
+
     #[doc = "`ConvertTableToListOfGenericType(::unity2::SystemType, ::unity2::SystemType, crate::moon_sharp::interpreter::table::Table)` overload"]
     pub fn convert_table_to_list_of_generic_type(
         list_type: impl ::core::convert::Into<::unity2::SystemType>,
@@ -512,60 +442,43 @@ impl TableConversions {
             )
         }
     }
+
     pub fn table_to_list<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-        converter: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>,
-        >,
+        converter: impl ::core::convert::Into<crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>>,
     ) -> crate::system::collections::generic::list_1::List_1<M0> {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <TableConversions as ::unity2::ClassIdentity>::class(),
-                "TableToList",
-                2,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<TableConversions as ::unity2::ClassIdentity>::class(), "TableToList", 2)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <TableConversions as ::unity2::ClassIdentity>::NAME,
-                "TableToList",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableConversions as ::unity2::ClassIdentity>::NAME,
+                    "TableToList",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
             let __f: extern "C" fn(
                 crate::moon_sharp::interpreter::table::Table,
-                crate::system::func_2::Func_2<
-                    crate::moon_sharp::interpreter::dynvalue::DynValue,
-                    M0,
-                >,
+                crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>,
                 ::unity2::OptionalMethod,
-            )
-                -> crate::system::collections::generic::list_1::List_1<M0> =
-                ::core::mem::transmute(__inflated.method_ptr);
+            ) -> crate::system::collections::generic::list_1::List_1<M0> = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 ::core::convert::Into::into(table),
@@ -574,61 +487,51 @@ impl TableConversions {
             )
         }
     }
+
     pub fn table_to_dictionary<
         M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
         M1: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
     >(
         table: impl ::core::convert::Into<crate::moon_sharp::interpreter::table::Table>,
-        keyconverter: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>,
-        >,
-        valconverter: impl ::core::convert::Into<
-            crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M1>,
-        >,
+        keyconverter: impl ::core::convert::Into<crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>>,
+        valconverter: impl ::core::convert::Into<crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M1>>,
     ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<M0, M1> {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <TableConversions as ::unity2::ClassIdentity>::class(),
-                "TableToDictionary",
-                3,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<TableConversions as ::unity2::ClassIdentity>::class(), "TableToDictionary", 3)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = true;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <TableConversions as ::unity2::ClassIdentity>::NAME,
-                "TableToDictionary",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <TableConversions as ::unity2::ClassIdentity>::NAME,
+                    "TableToDictionary",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize)
-            ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = (<M0 as ::unity2::IlType>::il_type() as *const _ as usize) ^ (<M1 as ::unity2::IlType>::il_type() as *const _ as usize);
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
             *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[
-                        <M0 as ::unity2::IlType>::il_type(),
-                        <M1 as ::unity2::IlType>::il_type(),
-                    ],
-                )
+                ::unity2::il2cpp::generic::create_generic_method_info(__open, &[
+                    <M0 as ::unity2::IlType>::il_type(),
+                    <M1 as ::unity2::IlType>::il_type(),
+                ])
             })
         };
         unsafe {
-            let __f : extern "C" fn (crate :: moon_sharp :: interpreter :: table :: Table , crate :: system :: func_2 :: Func_2 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , M0 > , crate :: system :: func_2 :: Func_2 < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , M1 > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < M0 , M1 > = :: core :: mem :: transmute (__inflated . method_ptr) ;
+            let __f: extern "C" fn(
+                crate::moon_sharp::interpreter::table::Table,
+                crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M0>,
+                crate::system::func_2::Func_2<crate::moon_sharp::interpreter::dynvalue::DynValue, M1>,
+                ::unity2::OptionalMethod,
+            ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<M0, M1> = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 ::core::convert::Into::into(table),
@@ -643,8 +546,7 @@ impl TableConversions {
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-tableconversions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITableConversions;
-    pub use super::TableConversions;
+    pub use super::{ITableConversions, TableConversions};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

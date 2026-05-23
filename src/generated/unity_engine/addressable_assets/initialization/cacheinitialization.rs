@@ -2,19 +2,16 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{
-        AsyncOperationBase_1, IAsyncOperationBase_1,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization_CacheInitOp.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.Initialization",
-        name = "CacheInitialization.CacheInitOp"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Initialization", name = "CacheInitialization.CacheInitOp")]
     # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)]
     pub struct CacheInitialization_CacheInitOp {
         #[rename(name = "m_Callback")]
@@ -22,10 +19,7 @@ mod __types {
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.AddressableAssets.Initialization",
-        name = "CacheInitialization"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.AddressableAssets.Initialization", name = "CacheInitialization")]
     #[parent(crate::system::object::Object)]
     pub struct CacheInitialization {}
 }
@@ -42,11 +36,8 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_init {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::func_1::Func_1<bool> as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::func_1::Func_1<bool> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::class(),
                 "Init",
@@ -58,18 +49,15 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
-                    "Init",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
+                        "Init",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn init(
@@ -77,24 +65,15 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
         callback: crate::system::func_1::Func_1<bool>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CacheInitialization_CacheInitOp,
-            crate::system::func_1::Func_1<bool>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_init::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CacheInitialization_CacheInitOp, crate::system::func_1::Func_1<bool>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_init::get_method_info().method_ptr);
         inner(this, callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke_wait_for_completion {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::class(),
@@ -107,43 +86,28 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
-                    "InvokeWaitForCompletion",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
+                        "InvokeWaitForCompletion",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke_wait_for_completion(
-        this: CacheInitialization_CacheInitOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            CacheInitialization_CacheInitOp,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke_wait_for_completion::get_offset() as isize),
-        );
+    pub unsafe fn invoke_wait_for_completion(this: CacheInitialization_CacheInitOp, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_invoke_wait_for_completion::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::class(),
                 "Update",
@@ -155,43 +119,27 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: CacheInitialization_CacheInitOp,
-        unscaled_delta_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            CacheInitialization_CacheInitOp,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update::get_offset() as isize),
-        );
+    pub unsafe fn update(this: CacheInitialization_CacheInitOp, unscaled_delta_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(CacheInitialization_CacheInitOp, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, unscaled_delta_time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::class(),
@@ -204,39 +152,27 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn execute(
-        this: CacheInitialization_CacheInitOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn execute(this: CacheInitialization_CacheInitOp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_execute::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::class(),
@@ -249,30 +185,20 @@ mod __CacheInitialization_CacheInitOp_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization_CacheInitOp as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CacheInitialization_CacheInitOp,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CacheInitialization_CacheInitOp, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -283,36 +209,23 @@ pub trait ICacheInitialization_CacheInitOpMethods: ICacheInitialization_CacheIni
     fn init(self, callback: impl ::core::convert::Into<crate::system::func_1::Func_1<bool>>) -> () {
         unsafe {
             let __receiver =
-                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CacheInitialization_CacheInitOp_unity2_raw::init(
-                __receiver,
-                ::core::convert::Into::into(callback),
-                ::core::option::Option::None,
-            )
+                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CacheInitialization_CacheInitOp_unity2_raw::init(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)
         }
     }
     #[doc = "`InvokeWaitForCompletion()` overload"]
     fn invoke_wait_for_completion(self) -> bool {
         unsafe {
             let __receiver =
-                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CacheInitialization_CacheInitOp_unity2_raw::invoke_wait_for_completion(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CacheInitialization_CacheInitOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update(f32)` overload"]
     fn update(self, unscaled_delta_time: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CacheInitialization_CacheInitOp_unity2_raw::update(
                 __receiver,
                 ::core::convert::Into::into(unscaled_delta_time),
@@ -324,26 +237,16 @@ pub trait ICacheInitialization_CacheInitOpMethods: ICacheInitialization_CacheIni
     fn execute(self) -> () {
         unsafe {
             let __receiver =
-                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CacheInitialization_CacheInitOp_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CacheInitialization_CacheInitOp_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __CacheInitialization_CacheInitOp_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <CacheInitialization_CacheInitOp as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CacheInitialization_CacheInitOp_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -376,9 +279,7 @@ mod __CacheInitialization_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_initialize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -394,18 +295,15 @@ mod __CacheInitialization_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization as ::unity2::ClassIdentity>::NAME,
-                    "Initialize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization as ::unity2::ClassIdentity>::NAME,
+                        "Initialize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn initialize(
@@ -414,26 +312,20 @@ mod __CacheInitialization_unity2_raw {
         data_str: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            CacheInitialization,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_initialize::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CacheInitialization, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_initialize::get_method_info().method_ptr);
         inner(this, id, data_str, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_initialize_async {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::resource_management::resourcemanager::ResourceManager as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization as ::unity2::ClassIdentity>::class(),
                 "InitializeAsync",
@@ -445,30 +337,40 @@ mod __CacheInitialization_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization as ::unity2::ClassIdentity>::NAME,
-                    "InitializeAsync",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization as ::unity2::ClassIdentity>::NAME,
+                        "InitializeAsync",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn initialize_async (this : CacheInitialization , rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , id : :: unity2 :: Il2CppString , data : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool >{
-        let inner : extern "C" fn (CacheInitialization , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_initialize_async :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn initialize_async(
+        this: CacheInitialization,
+        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        id: ::unity2::Il2CppString,
+        data: ::unity2::Il2CppString,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> {
+        let inner: extern "C" fn(
+            CacheInitialization,
+            crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> =
+            ::core::mem::transmute(__lookup_initialize_async::get_method_info().method_ptr);
         inner(this, rm, id, data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CacheInitialization as ::unity2::ClassIdentity>::class(),
@@ -481,30 +383,20 @@ mod __CacheInitialization_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CacheInitialization as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CacheInitialization as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CacheInitialization,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CacheInitialization, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CacheInitialization, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -518,9 +410,7 @@ pub trait ICacheInitializationMethods: ICacheInitialization {
         data_str: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> bool {
         unsafe {
-            let __receiver = <CacheInitialization as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CacheInitialization as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CacheInitialization_unity2_raw::initialize(
                 __receiver,
                 ::core::convert::Into::into(id),
@@ -529,11 +419,15 @@ pub trait ICacheInitializationMethods: ICacheInitialization {
             )
         }
     }
-    #[doc = "`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]    fn initialize_async (self , rm : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool >{
+    #[doc = "`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    fn initialize_async(
+        self,
+        rm: impl ::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>,
+        id: impl ::core::convert::Into<::unity2::Il2CppString>,
+        data: impl ::core::convert::Into<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> {
         unsafe {
-            let __receiver = <CacheInitialization as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CacheInitialization as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CacheInitialization_unity2_raw::initialize_async(
                 __receiver,
                 ::core::convert::Into::into(rm),
@@ -546,9 +440,7 @@ pub trait ICacheInitializationMethods: ICacheInitialization {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CacheInitialization as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CacheInitialization as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CacheInitialization_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -576,16 +468,13 @@ impl CacheInitialization {
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CacheInitialization;
-    pub use super::CacheInitialization_CacheInitOp;
-    pub use super::ICacheInitialization;
-    pub use super::ICacheInitializationMethods;
-    pub use super::ICacheInitialization_CacheInitOp;
-    pub use super::ICacheInitialization_CacheInitOpMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        CacheInitialization, CacheInitialization_CacheInitOp, ICacheInitialization, ICacheInitializationMethods, ICacheInitialization_CacheInitOp,
+        ICacheInitialization_CacheInitOpMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
 }

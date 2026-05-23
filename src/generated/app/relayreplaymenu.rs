@@ -2,59 +2,28 @@
 
 #[cfg(feature = "app-relayreplaymenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            basicdialog::{BasicDialog, IBasicDialog},
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
 
-    use crate::app::basicdialog::{BasicDialog, IBasicDialog};
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem"
-    )]
-    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
-    pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem {
-# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: relayreplaymenu :: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayMenu")]
-    #[parent(crate::app::basicmenu::BasicMenu)]
-    pub struct RelayReplayMenu {
-        #[rename(name = "m_RequestCloseEventHandler")]
-        pub m_request_close_event_handler:
-            crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
-    }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem.DialogDecideEventHandler"
-    )]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_DecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.DecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_SelectEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.SelectEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RelayReplayMenu_SelectEventHandler {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.RelayConfirmReplayDialog")]
-    #[parent(crate::app::basicdialog::BasicDialog)]
-    pub struct RelayReplayMenu_RelayConfirmReplayDialog {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RequestCloseEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.RequestCloseEventHandler")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RelayReplayMenu_RequestCloseEventHandler {}
+    pub struct RelayReplayMenu_DecideEventHandler {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_ReplayMenuItem.md"))]
     #[::unity2::class(namespace = "App", name = "RelayReplayMenu.ReplayMenuItem")]
@@ -70,14 +39,570 @@ mod __types {
         pub m_is_awarded: bool,
     }
 
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_DecideEventHandler.md"))]
-    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.DecideEventHandler")]
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem")]
+    #[parent(crate::app::basicdialogitem::BasicDialogItem)]
+    pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem {
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem.DialogDecideEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct RelayReplayMenu_DecideEventHandler {}
+    pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.RelayConfirmReplayDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct RelayReplayMenu_RelayConfirmReplayDialog {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu")]
+    #[parent(crate::app::basicmenu::BasicMenu)]
+    pub struct RelayReplayMenu {
+        #[rename(name = "m_RequestCloseEventHandler")]
+        pub m_request_close_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
+    }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_SelectEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.SelectEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RelayReplayMenu_SelectEventHandler {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RequestCloseEventHandler.md"))]
+    #[::unity2::class(namespace = "App", name = "RelayReplayMenu.RequestCloseEventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct RelayReplayMenu_RequestCloseEventHandler {}
 }
 
 #[cfg(feature = "app-relayreplaymenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayReplayMenu_DecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayReplayMenu_DecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayReplayMenu_DecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(this: RelayReplayMenu_DecideEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayReplayMenu_DecideEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+pub trait IRelayReplayMenu_DecideEventHandlerMethods: IRelayReplayMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <RelayReplayMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayReplayMenu_DecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> () {
+        unsafe {
+            let __receiver = <RelayReplayMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayReplayMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl<__T: IRelayReplayMenu_DecideEventHandler> IRelayReplayMenu_DecideEventHandlerMethods for __T {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayReplayMenu_ReplayMenuItem_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
+                <crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler as ::unity2::IlType>::il_type(),
+                <crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayReplayMenu_ReplayMenuItem,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        select_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
+        decide_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayReplayMenu_ReplayMenuItem,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
+            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, meta_data, select_event_handler, decide_event_handler, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_end {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "IsEnd",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsEnd",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_end(this: RelayReplayMenu_ReplayMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_end::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_is_awarded {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "IsAwarded",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsAwarded",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn is_awarded(this: RelayReplayMenu_ReplayMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_awarded::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_user_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetUserName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUserName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_user_name(this: RelayReplayMenu_ReplayMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_user_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_build_menu_item_content {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnBuildMenuItemContent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnBuildMenuItemContent",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_build_menu_item_content(this: RelayReplayMenu_ReplayMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_build_menu_item_content::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_build_attribute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn build_attribute(
+        this: RelayReplayMenu_ReplayMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_select(this: RelayReplayMenu_ReplayMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: RelayReplayMenu_ReplayMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+pub trait IRelayReplayMenu_ReplayMenuItemMethods: IRelayReplayMenu_ReplayMenuItem {
+    #[doc = "`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        select_event_handler: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(select_event_handler),
+                ::core::convert::Into::into(decide_event_handler),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`IsEnd()` overload"]
+    fn is_end(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::is_end(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsAwarded()` overload"]
+    fn is_awarded(self) -> bool {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::is_awarded(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUserName()` overload"]
+    fn get_user_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::get_user_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    fn on_build_menu_item_content(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __RelayReplayMenu_ReplayMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl<__T: IRelayReplayMenu_ReplayMenuItem> IRelayReplayMenu_ReplayMenuItemMethods for __T {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_ReplayMenuItem {
+    #[doc = "`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        select_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
+        decide_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_ReplayMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_ReplayMenuItemMethods>::ctor(this, meta_data, select_event_handler, decide_event_handler);
+        this
+    }
+}
 
 #[cfg(feature = "app-relayreplaymenu")]
 #[doc(hidden)]
@@ -88,47 +613,70 @@ mod __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
         this: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem,
         text: ::unity2::Il2CppString,
-        decide : crate :: app :: relayreplaymenu :: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+        decide: crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (RelayReplayMenu_RelayConfirmReplayDialog_DialogItem , :: unity2 :: Il2CppString , crate :: app :: relayreplaymenu :: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_ctor :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            RelayReplayMenu_RelayConfirmReplayDialog_DialogItem,
+            ::unity2::Il2CppString,
+            crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, text, decide, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as :: unity2 :: ClassIdentity > :: class () , "ACall" , 0 , param_types , false ,)
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn a_call(
@@ -138,27 +686,23 @@ mod __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw {
         let inner: extern "C" fn(
             RelayReplayMenu_RelayConfirmReplayDialog_DialogItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-relayreplaymenu")]
-pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods:
-    IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem
-{
+pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods: IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem {
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)` overload"]
     fn ctor(
         self,
         text: impl ::core::convert::Into<::unity2::Il2CppString>,
-        decide : impl :: core :: convert :: Into < crate :: app :: relayreplaymenu :: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler >,
+        decide: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(text),
@@ -170,27 +714,23 @@ pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods:
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-relayreplaymenu")]
-impl<__T: IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem>
-    IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods for __T
-{
-}
+impl<__T: IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem> IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods for __T {}
 
 #[cfg(feature = "app-relayreplaymenu")]
 impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem {
     #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)` — overload selector"]
     pub fn new(
         text: ::unity2::Il2CppString,
-        decide : crate :: app :: relayreplaymenu :: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+        decide: crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -199,9 +739,314 @@ impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem {
                 ::core::stringify!(new),
             )
         });
-        <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods>::ctor(
-            this, text, decide,
-        );
+        <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods>::ctor(this, text, decide);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+        object: crate::system::object::Object,
+        method: ::unity2::IntPtr,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+            crate::system::object::Object,
+            ::unity2::IntPtr,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, object, method, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_invoke {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as ::unity2::ClassIdentity>::class(),
+                "Invoke",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn invoke(
+        this: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(
+            RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods:
+    IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(object),
+                ::core::convert::Into::into(method),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`Invoke()` overload"]
+    fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                    <Self as ::unity2::SystemObject>::as_instance(self),
+                );
+            __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw::invoke(
+                __receiver,
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl<__T: IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>
+    IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods for __T
+{
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __RelayReplayMenu_RelayConfirmReplayDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: RelayReplayMenu_RelayConfirmReplayDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            RelayReplayMenu_RelayConfirmReplayDialog,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicdialogcontent::BasicDialogContent,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(),
+                <crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                3,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        decide: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::relayservermetadata::RelayServerMetaData,
+            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, meta_data, decide, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_RelayConfirmReplayDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
+        decide: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            __RelayReplayMenu_RelayConfirmReplayDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(meta_data),
+                ::core::convert::Into::into(decide),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+pub trait IRelayReplayMenu_RelayConfirmReplayDialogMethods: IRelayReplayMenu_RelayConfirmReplayDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayReplayMenu_RelayConfirmReplayDialog_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl<__T: IRelayReplayMenu_RelayConfirmReplayDialog> IRelayReplayMenu_RelayConfirmReplayDialogMethods for __T {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_RelayConfirmReplayDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_RelayConfirmReplayDialogMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }
@@ -215,9 +1060,7 @@ mod __RelayReplayMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu as ::unity2::ClassIdentity>::class(),
@@ -230,46 +1073,35 @@ mod __RelayReplayMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_bind(
         super_: crate::app::procinst::ProcInst,
         root_object: crate::unity_engine::gameobject::GameObject,
-        search_results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
+        search_results: crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         select_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
         decide_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-        request_close_event_handler : crate :: app :: relayreplaymenu :: RelayReplayMenu_RequestCloseEventHandler,
+        request_close_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::relayreplaymenu::RelayReplayMenu {
         let inner: extern "C" fn(
             crate::app::procinst::ProcInst,
             crate::unity_engine::gameobject::GameObject,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
             crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
             crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
             crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
             ::unity2::OptionalMethod,
-        ) -> crate::app::relayreplaymenu::RelayReplayMenu = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
+        ) -> crate::app::relayreplaymenu::RelayReplayMenu = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(
             super_,
             root_object,
@@ -284,10 +1116,12 @@ mod __RelayReplayMenu_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: relaymapmenucontent :: RelayMapMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_RequestCloseEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::relaymapmenucontent::RelayMapMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -299,57 +1133,38 @@ mod __RelayReplayMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: RelayReplayMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::relaymapmenucontent::RelayMapMenuContent,
-        request_close_event_handler : crate :: app :: relayreplaymenu :: RelayReplayMenu_RequestCloseEventHandler,
+        request_close_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             RelayReplayMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             crate::app::relaymapmenucontent::RelayMapMenuContent,
             crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            request_close_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, menu_content, request_close_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu as ::unity2::ClassIdentity>::class(),
@@ -362,41 +1177,27 @@ mod __RelayReplayMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: RelayReplayMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RelayReplayMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
+    pub unsafe fn get_name(this: RelayReplayMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_tutorial {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu as ::unity2::ClassIdentity>::class(),
@@ -409,41 +1210,27 @@ mod __RelayReplayMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetTutorial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetTutorial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_tutorial(
-        this: RelayReplayMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RelayReplayMenu,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_tutorial::get_offset() as isize),
-        );
+    pub unsafe fn get_tutorial(this: RelayReplayMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_tutorial::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_b_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu as ::unity2::ClassIdentity>::class(),
@@ -456,32 +1243,20 @@ mod __RelayReplayMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn b_call(
-        this: RelayReplayMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RelayReplayMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
+    pub unsafe fn b_call(this: RelayReplayMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -493,19 +1268,11 @@ impl RelayReplayMenu {
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         root_object: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
         search_results: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::relayservermetadata::RelayServerMetaData,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>,
         >,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-        >,
-        request_close_event_handler: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
-        >,
+        select_event_handler: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler>,
+        decide_event_handler: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler>,
+        request_close_event_handler: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler>,
     ) -> crate::app::relayreplaymenu::RelayReplayMenu {
         unsafe {
             __RelayReplayMenu_unity2_raw::create_bind(
@@ -526,20 +1293,12 @@ pub trait IRelayReplayMenuMethods: IRelayReplayMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymapmenucontent::RelayMapMenuContent, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` overload"]
     fn ctor(
         self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
         menu_content: impl ::core::convert::Into<crate::app::relaymapmenucontent::RelayMapMenuContent>,
-        request_close_event_handler: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
-        >,
+        request_close_event_handler: impl ::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler>,
     ) -> () {
         unsafe {
-            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayMenu_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(menu_item_list),
@@ -552,27 +1311,21 @@ pub trait IRelayReplayMenuMethods: IRelayReplayMenu {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTutorial()` overload"]
     fn get_tutorial(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayMenu_unity2_raw::get_tutorial(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`BCall()` overload"]
     fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <RelayReplayMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __RelayReplayMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)
         }
     }
@@ -585,11 +1338,9 @@ impl<__T: IRelayReplayMenu> IRelayReplayMenuMethods for __T {}
 impl RelayReplayMenu {
     #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymapmenucontent::RelayMapMenuContent, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         menu_content: crate::app::relaymapmenucontent::RelayMapMenuContent,
-        request_close_event_handler : crate :: app :: relayreplaymenu :: RelayReplayMenu_RequestCloseEventHandler,
+        request_close_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -598,140 +1349,7 @@ impl RelayReplayMenu {
                 ::core::stringify!(new),
             )
         });
-        <Self as IRelayReplayMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            request_close_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            :: unity2 :: lookup :: method_info_on_class_with_signature (< RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: ClassIdentity > :: class () , "Invoke" , 0 , param_types , false ,)
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods:
-    IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw :: ctor (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None)
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = < RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw :: invoke (__receiver , :: core :: option :: Option :: None)
-        }
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl<__T: IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>
-    IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods for __T
-{
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods > :: ctor (this , object , method) ;
+        <Self as IRelayReplayMenuMethods>::ctor(this, menu_item_list, menu_content, request_close_event_handler);
         this
     }
 }
@@ -745,9 +1363,7 @@ mod __RelayReplayMenu_SelectEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -763,18 +1379,15 @@ mod __RelayReplayMenu_SelectEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -788,24 +1401,16 @@ mod __RelayReplayMenu_SelectEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::app::relayservermetadata::RelayServerMetaData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu_SelectEventHandler as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -817,18 +1422,15 @@ mod __RelayReplayMenu_SelectEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_SelectEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -840,11 +1442,7 @@ mod __RelayReplayMenu_SelectEventHandler_unity2_raw {
             RelayReplayMenu_SelectEventHandler,
             crate::app::relayservermetadata::RelayServerMetaData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, meta_data, __unity2_method_info)
     }
 }
@@ -852,16 +1450,11 @@ mod __RelayReplayMenu_SelectEventHandler_unity2_raw {
 #[cfg(feature = "app-relayreplaymenu")]
 pub trait IRelayReplayMenu_SelectEventHandlerMethods: IRelayReplayMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver =
-                <RelayReplayMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <RelayReplayMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RelayReplayMenu_SelectEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -871,20 +1464,12 @@ pub trait IRelayReplayMenu_SelectEventHandlerMethods: IRelayReplayMenu_SelectEve
         }
     }
     #[doc = "`Invoke(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    fn invoke(
-        self,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-    ) -> () {
+    fn invoke(self, meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>) -> () {
         unsafe {
-            let __receiver =
-                <RelayReplayMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_SelectEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::convert::Into::into(meta_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayMenu_SelectEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayReplayMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)
         }
     }
 }
@@ -911,211 +1496,13 @@ impl RelayReplayMenu_SelectEventHandler {
 #[cfg(feature = "app-relayreplaymenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayReplayMenu_RelayConfirmReplayDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type(),
-                <crate::app::basicdialogcontent::BasicDialogContent as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayReplayMenu_RelayConfirmReplayDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayMenu_RelayConfirmReplayDialog,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::basicdialogcontent::BasicDialogContent,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, menu_item_list, menu_content, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                3,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_RelayConfirmReplayDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        decide: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(super_, meta_data, decide, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_RelayConfirmReplayDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        decide: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            __RelayReplayMenu_RelayConfirmReplayDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(decide),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-pub trait IRelayReplayMenu_RelayConfirmReplayDialogMethods:
-    IRelayReplayMenu_RelayConfirmReplayDialog
-{
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
-    ) -> () {
-        unsafe {
-            let __receiver = < RelayReplayMenu_RelayConfirmReplayDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayReplayMenu_RelayConfirmReplayDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl<__T: IRelayReplayMenu_RelayConfirmReplayDialog>
-    IRelayReplayMenu_RelayConfirmReplayDialogMethods for __T
-{
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_RelayConfirmReplayDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_RelayConfirmReplayDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __RelayReplayMenu_RequestCloseEventHandler_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1131,18 +1518,15 @@ mod __RelayReplayMenu_RequestCloseEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1156,20 +1540,14 @@ mod __RelayReplayMenu_RequestCloseEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RelayReplayMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::class(),
@@ -1182,48 +1560,32 @@ mod __RelayReplayMenu_RequestCloseEventHandler_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RelayReplayMenu_RequestCloseEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: RelayReplayMenu_RequestCloseEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayMenu_RequestCloseEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+    pub unsafe fn invoke(this: RelayReplayMenu_RequestCloseEventHandler, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(RelayReplayMenu_RequestCloseEventHandler, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-relayreplaymenu")]
-pub trait IRelayReplayMenu_RequestCloseEventHandlerMethods:
-    IRelayReplayMenu_RequestCloseEventHandler
-{
+pub trait IRelayReplayMenu_RequestCloseEventHandlerMethods: IRelayReplayMenu_RequestCloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < RelayReplayMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <RelayReplayMenu_RequestCloseEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __RelayReplayMenu_RequestCloseEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1235,20 +1597,16 @@ pub trait IRelayReplayMenu_RequestCloseEventHandlerMethods:
     #[doc = "`Invoke()` overload"]
     fn invoke(self) -> () {
         unsafe {
-            let __receiver = < RelayReplayMenu_RequestCloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __RelayReplayMenu_RequestCloseEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <RelayReplayMenu_RequestCloseEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __RelayReplayMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-relayreplaymenu")]
-impl<__T: IRelayReplayMenu_RequestCloseEventHandler>
-    IRelayReplayMenu_RequestCloseEventHandlerMethods for __T
-{
-}
+impl<__T: IRelayReplayMenu_RequestCloseEventHandler> IRelayReplayMenu_RequestCloseEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-relayreplaymenu")]
 impl RelayReplayMenu_RequestCloseEventHandler {
@@ -1268,751 +1626,39 @@ impl RelayReplayMenu_RequestCloseEventHandler {
 
 #[cfg(feature = "app-relayreplaymenu")]
 #[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayReplayMenu_ReplayMenuItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: relayservermetadata :: RelayServerMetaData as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_SelectEventHandler as :: unity2 :: IlType > :: il_type () , < crate :: app :: relayreplaymenu :: RelayReplayMenu_DecideEventHandler as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayReplayMenu_ReplayMenuItem,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        select_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
-        decide_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayMenu_ReplayMenuItem,
-            crate::app::relayservermetadata::RelayServerMetaData,
-            crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
-            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            meta_data,
-            select_event_handler,
-            decide_event_handler,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_end {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "IsEnd",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsEnd",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_end(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_end::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_awarded {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "IsAwarded",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsAwarded",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_awarded(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_awarded::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_user_name {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetUserName",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUserName",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_user_name(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            RelayReplayMenu_ReplayMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_user_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_build_menu_item_content {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnBuildMenuItemContent",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuildMenuItemContent",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_build_menu_item_content(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            RelayReplayMenu_ReplayMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_select(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::class(),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_ReplayMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: RelayReplayMenu_ReplayMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            RelayReplayMenu_ReplayMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-pub trait IRelayReplayMenu_ReplayMenuItemMethods: IRelayReplayMenu_ReplayMenuItem {
-    #[doc = "`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]
-    fn ctor(
-        self,
-        meta_data: impl ::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>,
-        select_event_handler: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
-        >,
-        decide_event_handler: impl ::core::convert::Into<
-            crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(meta_data),
-                ::core::convert::Into::into(select_event_handler),
-                ::core::convert::Into::into(decide_event_handler),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsEnd()` overload"]
-    fn is_end(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::is_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsAwarded()` overload"]
-    fn is_awarded(self) -> bool {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::is_awarded(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetUserName()` overload"]
-    fn get_user_name(self) -> ::unity2::Il2CppString {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::get_user_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    fn on_build_menu_item_content(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::on_build_menu_item_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::on_select(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`ACall()` overload"]
-    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_ReplayMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_ReplayMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl<__T: IRelayReplayMenu_ReplayMenuItem> IRelayReplayMenu_ReplayMenuItemMethods for __T {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_ReplayMenuItem {
-    #[doc = "`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        select_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,
-        decide_event_handler: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_ReplayMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_ReplayMenuItemMethods>::ctor(
-            this,
-            meta_data,
-            select_event_handler,
-            decide_event_handler,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __RelayReplayMenu_DecideEventHandler_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::system::object::Object as ::unity2::IlType>::il_type(),
-                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: RelayReplayMenu_DecideEventHandler,
-        object: crate::system::object::Object,
-        method: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayMenu_DecideEventHandler,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, object, method, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_invoke {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::class(),
-                "Invoke",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RelayReplayMenu_DecideEventHandler as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn invoke(
-        this: RelayReplayMenu_DecideEventHandler,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            RelayReplayMenu_DecideEventHandler,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-pub trait IRelayReplayMenu_DecideEventHandlerMethods: IRelayReplayMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_DecideEventHandler_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(object),
-                ::core::convert::Into::into(method),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Invoke()` overload"]
-    fn invoke(self) -> () {
-        unsafe {
-            let __receiver =
-                <RelayReplayMenu_DecideEventHandler as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __RelayReplayMenu_DecideEventHandler_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl<__T: IRelayReplayMenu_DecideEventHandler> IRelayReplayMenu_DecideEventHandlerMethods for __T {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[doc(hidden)]
 pub mod prelude {
-    pub use super::IRelayReplayMenu;
-    pub use super::IRelayReplayMenuMethods;
-    pub use super::IRelayReplayMenu_DecideEventHandler;
-    pub use super::IRelayReplayMenu_DecideEventHandlerMethods;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialogMethods;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods;
-    pub use super::IRelayReplayMenu_ReplayMenuItem;
-    pub use super::IRelayReplayMenu_ReplayMenuItemMethods;
-    pub use super::IRelayReplayMenu_RequestCloseEventHandler;
-    pub use super::IRelayReplayMenu_RequestCloseEventHandlerMethods;
-    pub use super::IRelayReplayMenu_SelectEventHandler;
-    pub use super::IRelayReplayMenu_SelectEventHandlerMethods;
-    pub use super::RelayReplayMenu;
-    pub use super::RelayReplayMenu_DecideEventHandler;
-    pub use super::RelayReplayMenu_RelayConfirmReplayDialog;
-    pub use super::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem;
-    pub use super::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler;
-    pub use super::RelayReplayMenu_ReplayMenuItem;
-    pub use super::RelayReplayMenu_RequestCloseEventHandler;
-    pub use super::RelayReplayMenu_SelectEventHandler;
-    pub use crate::app::basicdialog::IBasicDialog;
+    pub use super::{
+        IRelayReplayMenu, IRelayReplayMenuMethods, IRelayReplayMenu_DecideEventHandler, IRelayReplayMenu_DecideEventHandlerMethods,
+        IRelayReplayMenu_RelayConfirmReplayDialog, IRelayReplayMenu_RelayConfirmReplayDialogMethods,
+        IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem, IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods,
+        IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,
+        IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods, IRelayReplayMenu_ReplayMenuItem,
+        IRelayReplayMenu_ReplayMenuItemMethods, IRelayReplayMenu_RequestCloseEventHandler, IRelayReplayMenu_RequestCloseEventHandlerMethods,
+        IRelayReplayMenu_SelectEventHandler, IRelayReplayMenu_SelectEventHandlerMethods, RelayReplayMenu, RelayReplayMenu_DecideEventHandler,
+        RelayReplayMenu_RelayConfirmReplayDialog, RelayReplayMenu_RelayConfirmReplayDialog_DialogItem,
+        RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler, RelayReplayMenu_ReplayMenuItem,
+        RelayReplayMenu_RequestCloseEventHandler, RelayReplayMenu_SelectEventHandler,
+    };
     #[cfg(feature = "app-basicdialog")]
     pub use crate::app::basicdialog::IBasicDialogMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            basicdialog::IBasicDialog, basicdialogitem::IBasicDialogItem, basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst,
+        },
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

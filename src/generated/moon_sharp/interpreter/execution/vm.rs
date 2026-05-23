@@ -3,9 +3,7 @@
 #[cfg(any(feature = "moon_sharp-interpreter-execution-vm-bytecode-types"))]
 pub mod bytecode;
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode-types")]
-pub use bytecode::{
-    ByteCode, ByteCode_SourceCodeStackGuard, IByteCode, IByteCode_SourceCodeStackGuard,
-};
+pub use bytecode::{ByteCode, ByteCode_SourceCodeStackGuard, IByteCode, IByteCode_SourceCodeStackGuard};
 #[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
 pub use bytecode::{IByteCodeMethods, IByteCode_SourceCodeStackGuardMethods};
 #[cfg(any(feature = "moon_sharp-interpreter-execution-vm-callstackitem-types"))]

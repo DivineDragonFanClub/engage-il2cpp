@@ -2,38 +2,25 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.Converters",
-        name = "StringConversions"
-    )]
-    #[parent(crate::system::object::Object)]
-    pub struct StringConversions {}
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions_StringSubtype.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct StringConversions_StringSubtype {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for StringConversions_StringSubtype {
-        const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop.Converters";
-
         const NAME: &'static str = "StringConversions.StringSubtype";
+        const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop.Converters";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -44,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for StringConversions_StringSubtype {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -68,6 +52,11 @@ mod __types {
             Self { value: 3 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.Converters", name = "StringConversions")]
+    #[parent(crate::system::object::Object)]
+    pub struct StringConversions {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions-types")]
@@ -82,11 +71,8 @@ mod __StringConversions_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_string_subtype {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StringConversions as ::unity2::ClassIdentity>::class(),
                 "GetStringSubtype",
@@ -98,30 +84,33 @@ mod __StringConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StringConversions as ::unity2::ClassIdentity>::NAME,
-                    "GetStringSubtype",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StringConversions as ::unity2::ClassIdentity>::NAME,
+                        "GetStringSubtype",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_string_subtype (desired_type : :: unity2 :: SystemType , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype{
-        let inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_string_subtype :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn get_string_subtype(
+        desired_type: ::unity2::SystemType,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype {
+        let inner: extern "C" fn(
+            ::unity2::SystemType,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype =
+            ::core::mem::transmute(__lookup_get_string_subtype::get_method_info().method_ptr);
         inner(desired_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_convert_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: datatype :: DataType as :: unity2 :: IlType > :: il_type ()] ;
             ::unity2::lookup::method_info_on_class_with_signature(
                 <StringConversions as ::unity2::ClassIdentity>::class(),
@@ -134,51 +123,49 @@ mod __StringConversions_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <StringConversions as ::unity2::ClassIdentity>::NAME,
-                    "ConvertString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <StringConversions as ::unity2::ClassIdentity>::NAME,
+                        "ConvertString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_string(
-        string_sub_type : crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype,
+        string_sub_type: crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype,
         str: ::unity2::Il2CppString,
         desired_type: ::unity2::SystemType,
         data_type: crate::moon_sharp::interpreter::datatype::DataType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::object::Object {
-        let inner : extern "C" fn (crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype , :: unity2 :: Il2CppString , :: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: datatype :: DataType , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_convert_string :: get_offset () as isize) ,) ;
-        inner(
-            string_sub_type,
-            str,
-            desired_type,
-            data_type,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype,
+            ::unity2::Il2CppString,
+            ::unity2::SystemType,
+            crate::moon_sharp::interpreter::datatype::DataType,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(__lookup_convert_string::get_method_info().method_ptr);
+        inner(string_sub_type, str, desired_type, data_type, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions")]
 impl StringConversions {
-    #[doc = "`GetStringSubtype(::unity2::SystemType)` overload"]    pub fn get_string_subtype (desired_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype{
-        unsafe {
-            __StringConversions_unity2_raw::get_string_subtype(
-                ::core::convert::Into::into(desired_type),
-                ::core::option::Option::None,
-            )
-        }
+    #[doc = "`GetStringSubtype(::unity2::SystemType)` overload"]
+    pub fn get_string_subtype(
+        desired_type: impl ::core::convert::Into<::unity2::SystemType>,
+    ) -> crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype {
+        unsafe { __StringConversions_unity2_raw::get_string_subtype(::core::convert::Into::into(desired_type), ::core::option::Option::None) }
     }
+
     #[doc = "`ConvertString(crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype, ::unity2::Il2CppString, ::unity2::SystemType, crate::moon_sharp::interpreter::datatype::DataType)` overload"]
     pub fn convert_string(
-        string_sub_type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype >,
+        string_sub_type: impl ::core::convert::Into<
+            crate::moon_sharp::interpreter::interop::converters::stringconversions::StringConversions_StringSubtype,
+        >,
         str: impl ::core::convert::Into<::unity2::Il2CppString>,
         desired_type: impl ::core::convert::Into<::unity2::SystemType>,
         data_type: impl ::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType>,
@@ -198,16 +185,12 @@ impl StringConversions {
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IStringConversions;
-    pub use super::StringConversions;
-    pub use super::StringConversions_StringSubtype;
-    pub use crate::system::object::IObject;
+    pub use super::{IStringConversions, StringConversions, StringConversions_StringSubtype};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

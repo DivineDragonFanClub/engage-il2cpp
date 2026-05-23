@@ -22,15 +22,13 @@ pub use videoclip::{IVideoClip, VideoClip};
 pub mod videoplayer;
 #[cfg(feature = "unity_engine-video-videoplayer-types")]
 pub use videoplayer::{
-    IVideoPlayer, IVideoPlayer_ErrorEventHandler, IVideoPlayer_EventHandler,
-    IVideoPlayer_FrameReadyEventHandler, IVideoPlayer_TimeEventHandler, VideoPlayer,
-    VideoPlayer_ErrorEventHandler, VideoPlayer_EventHandler, VideoPlayer_FrameReadyEventHandler,
-    VideoPlayer_TimeEventHandler,
+    IVideoPlayer, IVideoPlayer_ErrorEventHandler, IVideoPlayer_EventHandler, IVideoPlayer_FrameReadyEventHandler, IVideoPlayer_TimeEventHandler,
+    VideoPlayer, VideoPlayer_ErrorEventHandler, VideoPlayer_EventHandler, VideoPlayer_FrameReadyEventHandler, VideoPlayer_TimeEventHandler,
 };
 #[cfg(feature = "unity_engine-video-videoplayer")]
 pub use videoplayer::{
-    IVideoPlayerMethods, IVideoPlayer_ErrorEventHandlerMethods, IVideoPlayer_EventHandlerMethods,
-    IVideoPlayer_FrameReadyEventHandlerMethods, IVideoPlayer_TimeEventHandlerMethods,
+    IVideoPlayerMethods, IVideoPlayer_ErrorEventHandlerMethods, IVideoPlayer_EventHandlerMethods, IVideoPlayer_FrameReadyEventHandlerMethods,
+    IVideoPlayer_TimeEventHandlerMethods,
 };
 #[cfg(any(feature = "unity_engine-video-videorendermode-types"))]
 pub mod videorendermode;

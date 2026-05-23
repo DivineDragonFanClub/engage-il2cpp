@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-reflection-assemblyfileversionattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyfileversionattribute/AssemblyFileVersionAttribute.md"))]
     #[::unity2::class(namespace = "System.Reflection", name = "AssemblyFileVersionAttribute")]
@@ -26,11 +26,8 @@ mod __AssemblyFileVersionAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssemblyFileVersionAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -42,34 +39,20 @@ mod __AssemblyFileVersionAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssemblyFileVersionAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssemblyFileVersionAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AssemblyFileVersionAttribute,
-        version: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            AssemblyFileVersionAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: AssemblyFileVersionAttribute, version: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(AssemblyFileVersionAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, version, __unity2_method_info)
     }
 }
@@ -80,14 +63,8 @@ pub trait IAssemblyFileVersionAttributeMethods: IAssemblyFileVersionAttribute {
     fn ctor(self, version: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <AssemblyFileVersionAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AssemblyFileVersionAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(version),
-                ::core::option::Option::None,
-            )
+                <AssemblyFileVersionAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssemblyFileVersionAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(version), ::core::option::Option::None)
         }
     }
 }
@@ -114,7 +91,5 @@ impl AssemblyFileVersionAttribute {
 #[cfg(feature = "system-reflection-assemblyfileversionattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssemblyFileVersionAttribute;
-    pub use super::IAssemblyFileVersionAttribute;
-    pub use super::IAssemblyFileVersionAttributeMethods;
+    pub use super::{AssemblyFileVersionAttribute, IAssemblyFileVersionAttribute, IAssemblyFileVersionAttributeMethods};
 }

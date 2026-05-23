@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-mapsequencetemporarysave-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetemporarysave/MapSequenceTemporarySave.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceTemporarySave")]
@@ -29,11 +31,8 @@ mod __MapSequenceTemporarySave_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTemporarySave as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -45,39 +44,27 @@ mod __MapSequenceTemporarySave_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_write {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTemporarySave as ::unity2::ClassIdentity>::class(),
@@ -90,39 +77,27 @@ mod __MapSequenceTemporarySave_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
-                    "Write",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
+                        "Write",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn write(
-        this: MapSequenceTemporarySave,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn write(this: MapSequenceTemporarySave, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTemporarySave, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_write::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_write::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_post_write {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTemporarySave as ::unity2::ClassIdentity>::class(),
@@ -135,39 +110,27 @@ mod __MapSequenceTemporarySave_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
-                    "PostWrite",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
+                        "PostWrite",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn post_write(
-        this: MapSequenceTemporarySave,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn post_write(this: MapSequenceTemporarySave, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTemporarySave, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_post_write::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_post_write::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <bool as ::unity2::IlType>::il_type(),
                 <crate::app::gamesavedataheader::GameSaveDataHeader as ::unity2::IlType>::il_type(),
@@ -183,18 +146,15 @@ mod __MapSequenceTemporarySave_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
-                    "OnResult",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
+                        "OnResult",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_result(
@@ -203,25 +163,15 @@ mod __MapSequenceTemporarySave_unity2_raw {
         header: crate::app::gamesavedataheader::GameSaveDataHeader,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTemporarySave,
-            bool,
-            crate::app::gamesavedataheader::GameSaveDataHeader,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_result::get_offset() as isize),
-        );
+        let inner: extern "C" fn(MapSequenceTemporarySave, bool, crate::app::gamesavedataheader::GameSaveDataHeader, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_result::get_method_info().method_ptr);
         inner(this, is_success, header, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTemporarySave as ::unity2::ClassIdentity>::class(),
@@ -234,30 +184,20 @@ mod __MapSequenceTemporarySave_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTemporarySave as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapSequenceTemporarySave,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapSequenceTemporarySave, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTemporarySave, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -266,12 +206,7 @@ mod __MapSequenceTemporarySave_unity2_raw {
 impl MapSequenceTemporarySave {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MapSequenceTemporarySave_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapSequenceTemporarySave_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -281,9 +216,7 @@ pub trait IMapSequenceTemporarySaveMethods: IMapSequenceTemporarySave {
     fn write(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceTemporarySave_unity2_raw::write(__receiver, ::core::option::Option::None)
         }
     }
@@ -291,13 +224,8 @@ pub trait IMapSequenceTemporarySaveMethods: IMapSequenceTemporarySave {
     fn post_write(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceTemporarySave_unity2_raw::post_write(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceTemporarySave_unity2_raw::post_write(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnResult(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
@@ -308,9 +236,7 @@ pub trait IMapSequenceTemporarySaveMethods: IMapSequenceTemporarySave {
     ) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceTemporarySave_unity2_raw::on_result(
                 __receiver,
                 ::core::convert::Into::into(is_success),
@@ -323,9 +249,7 @@ pub trait IMapSequenceTemporarySaveMethods: IMapSequenceTemporarySave {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceTemporarySave as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceTemporarySave_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -353,13 +277,10 @@ impl MapSequenceTemporarySave {
 #[cfg(feature = "app-mapsequencetemporarysave")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapSequenceTemporarySave;
-    pub use super::IMapSequenceTemporarySaveMethods;
-    pub use super::MapSequenceTemporarySave;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{IMapSequenceTemporarySave, IMapSequenceTemporarySaveMethods, MapSequenceTemporarySave};
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::procinst::IProcInst, system::object::IObject};
 }

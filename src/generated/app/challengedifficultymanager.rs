@@ -2,18 +2,17 @@
 
 #[cfg(feature = "app-challengedifficultymanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymanager/ChallengeDifficultyManager_ReturnEventHandler.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ChallengeDifficultyManager.ReturnEventHandler"
-    )]
+    #[::unity2::class(namespace = "App", name = "ChallengeDifficultyManager.ReturnEventHandler")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     pub struct ChallengeDifficultyManager_ReturnEventHandler {}
 
@@ -22,8 +21,7 @@ mod __types {
     #[parent(crate::system::object::Object)]
     pub struct ChallengeDifficultyManager {
         #[rename(name = "m_ReturnEventHandler")]
-        pub m_return_event_handler:
-            crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
+        pub m_return_event_handler: crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
         #[rename(name = "m_Menu")]
         pub m_menu: crate::app::challengedifficultymenu::ChallengeDifficultyMenu,
         #[rename(name = "m_ChallengeData")]
@@ -45,9 +43,7 @@ mod __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -61,12 +57,17 @@ mod __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn ctor(
@@ -80,20 +81,14 @@ mod __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw {
             crate::system::object::Object,
             ::unity2::IntPtr,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::basicmenu::BasicMenu_Result as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -107,12 +102,17 @@ mod __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: ClassIdentity > :: NAME , "Invoke" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager_ReturnEventHandler as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn invoke(
@@ -126,27 +126,19 @@ mod __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw {
             crate::app::basicmenu::BasicMenu_Result,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, result, difficulty, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-challengedifficultymanager")]
-pub trait IChallengeDifficultyManager_ReturnEventHandlerMethods:
-    IChallengeDifficultyManager_ReturnEventHandler
-{
+pub trait IChallengeDifficultyManager_ReturnEventHandlerMethods: IChallengeDifficultyManager_ReturnEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
-            let __receiver = < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ChallengeDifficultyManager_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -156,13 +148,11 @@ pub trait IChallengeDifficultyManager_ReturnEventHandlerMethods:
         }
     }
     #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, i32)` overload"]
-    fn invoke(
-        self,
-        result: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu_Result>,
-        difficulty: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn invoke(self, result: impl ::core::convert::Into<crate::app::basicmenu::BasicMenu_Result>, difficulty: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ChallengeDifficultyManager_ReturnEventHandler as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ChallengeDifficultyManager_ReturnEventHandler_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(result),
@@ -174,10 +164,7 @@ pub trait IChallengeDifficultyManager_ReturnEventHandlerMethods:
 }
 
 #[cfg(feature = "app-challengedifficultymanager")]
-impl<__T: IChallengeDifficultyManager_ReturnEventHandler>
-    IChallengeDifficultyManager_ReturnEventHandlerMethods for __T
-{
-}
+impl<__T: IChallengeDifficultyManager_ReturnEventHandler> IChallengeDifficultyManager_ReturnEventHandlerMethods for __T {}
 
 #[cfg(feature = "app-challengedifficultymanager")]
 impl ChallengeDifficultyManager_ReturnEventHandler {
@@ -204,10 +191,13 @@ mod __ChallengeDifficultyManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengedata :: ChallengeData as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::challengemapselectroot::ChallengeMapSelectRoot as ::unity2::IlType>::il_type(),
+                <crate::app::challengedata::ChallengeData as ::unity2::IlType>::il_type(),
+                <crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ChallengeDifficultyManager as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -219,44 +209,45 @@ mod __ChallengeDifficultyManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
         super_: crate::app::procinst::ProcInst,
         root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
         challenge_data: crate::app::challengedata::ChallengeData,
-        return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler,
+        return_event_handler: crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::challengedifficultymanager::ChallengeDifficultyManager {
-        let inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot , crate :: app :: challengedata :: ChallengeData , crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
-        inner(
-            super_,
-            root,
-            challenge_data,
-            return_event_handler,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+            crate::app::challengedata::ChallengeData,
+            crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::challengedifficultymanager::ChallengeDifficultyManager =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
+        inner(super_, root, challenge_data, return_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengedata :: ChallengeData as :: unity2 :: IlType > :: il_type () , < crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::challengemapselectroot::ChallengeMapSelectRoot as ::unity2::IlType>::il_type(),
+                <crate::app::challengedata::ChallengeData as ::unity2::IlType>::il_type(),
+                <crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ChallengeDifficultyManager as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -268,18 +259,15 @@ mod __ChallengeDifficultyManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -287,7 +275,7 @@ mod __ChallengeDifficultyManager_unity2_raw {
         super_: crate::app::procinst::ProcInst,
         root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
         challenge_data: crate::app::challengedata::ChallengeData,
-        return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler,
+        return_event_handler: crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
@@ -297,29 +285,15 @@ mod __ChallengeDifficultyManager_unity2_raw {
             crate::app::challengedata::ChallengeData,
             crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            super_,
-            root,
-            challenge_data,
-            return_event_handler,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, super_, root, challenge_data, return_event_handler, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decide {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ChallengeDifficultyManager as ::unity2::ClassIdentity>::class(),
                 "OnDecide",
@@ -331,40 +305,27 @@ mod __ChallengeDifficultyManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
-                    "OnDecide",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
+                        "OnDecide",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_decide(
-        this: ChallengeDifficultyManager,
-        difficulty: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_decide(this: ChallengeDifficultyManager, difficulty: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ChallengeDifficultyManager, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_decide::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_decide::get_method_info().method_ptr);
         inner(this, difficulty, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_decide_yes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ChallengeDifficultyManager as ::unity2::ClassIdentity>::class(),
@@ -377,41 +338,28 @@ mod __ChallengeDifficultyManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
-                    "OnDecideYes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
+                        "OnDecideYes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_decide_yes(
-        this: ChallengeDifficultyManager,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_decide_yes(this: ChallengeDifficultyManager, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ChallengeDifficultyManager, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_decide_yes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_decide_yes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_request_close {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ChallengeDifficultyManager as ::unity2::ClassIdentity>::class(),
                 "OnRequestClose",
@@ -423,31 +371,20 @@ mod __ChallengeDifficultyManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
-                    "OnRequestClose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ChallengeDifficultyManager as ::unity2::ClassIdentity>::NAME,
+                        "OnRequestClose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_request_close(
-        this: ChallengeDifficultyManager,
-        difficulty: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_request_close(this: ChallengeDifficultyManager, difficulty: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ChallengeDifficultyManager, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_request_close::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_request_close::get_method_info().method_ptr);
         inner(this, difficulty, __unity2_method_info)
     }
 }
@@ -459,9 +396,7 @@ impl ChallengeDifficultyManager {
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         root: impl ::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot>,
         challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler>,
     ) -> crate::app::challengedifficultymanager::ChallengeDifficultyManager {
         unsafe {
             __ChallengeDifficultyManager_unity2_raw::create(
@@ -483,15 +418,11 @@ pub trait IChallengeDifficultyManagerMethods: IChallengeDifficultyManager {
         super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
         root: impl ::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot>,
         challenge_data: impl ::core::convert::Into<crate::app::challengedata::ChallengeData>,
-        return_event_handler: impl ::core::convert::Into<
-            crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
-        >,
+        return_event_handler: impl ::core::convert::Into<crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler>,
     ) -> () {
         unsafe {
             let __receiver =
-                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ChallengeDifficultyManager_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(super_),
@@ -506,36 +437,23 @@ pub trait IChallengeDifficultyManagerMethods: IChallengeDifficultyManager {
     fn on_decide(self, difficulty: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ChallengeDifficultyManager_unity2_raw::on_decide(
-                __receiver,
-                ::core::convert::Into::into(difficulty),
-                ::core::option::Option::None,
-            )
+                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ChallengeDifficultyManager_unity2_raw::on_decide(__receiver, ::core::convert::Into::into(difficulty), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDecideYes()` overload"]
     fn on_decide_yes(self) -> () {
         unsafe {
             let __receiver =
-                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ChallengeDifficultyManager_unity2_raw::on_decide_yes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ChallengeDifficultyManager_unity2_raw::on_decide_yes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnRequestClose(i32)` overload"]
     fn on_request_close(self, difficulty: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <ChallengeDifficultyManager as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ChallengeDifficultyManager_unity2_raw::on_request_close(
                 __receiver,
                 ::core::convert::Into::into(difficulty),
@@ -555,7 +473,7 @@ impl ChallengeDifficultyManager {
         super_: crate::app::procinst::ProcInst,
         root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
         challenge_data: crate::app::challengedata::ChallengeData,
-        return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler,
+        return_event_handler: crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
@@ -564,13 +482,7 @@ impl ChallengeDifficultyManager {
                 ::core::stringify!(new),
             )
         });
-        <Self as IChallengeDifficultyManagerMethods>::ctor(
-            this,
-            super_,
-            root,
-            challenge_data,
-            return_event_handler,
-        );
+        <Self as IChallengeDifficultyManagerMethods>::ctor(this, super_, root, challenge_data, return_event_handler);
         this
     }
 }
@@ -578,19 +490,15 @@ impl ChallengeDifficultyManager {
 #[cfg(feature = "app-challengedifficultymanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChallengeDifficultyManager;
-    pub use super::ChallengeDifficultyManager_ReturnEventHandler;
-    pub use super::IChallengeDifficultyManager;
-    pub use super::IChallengeDifficultyManagerMethods;
-    pub use super::IChallengeDifficultyManager_ReturnEventHandler;
-    pub use super::IChallengeDifficultyManager_ReturnEventHandlerMethods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        ChallengeDifficultyManager, ChallengeDifficultyManager_ReturnEventHandler, IChallengeDifficultyManager, IChallengeDifficultyManagerMethods,
+        IChallengeDifficultyManager_ReturnEventHandler, IChallengeDifficultyManager_ReturnEventHandlerMethods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

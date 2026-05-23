@@ -2,21 +2,16 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/registration_policies/iregistrationpolicy/IRegistrationPolicy.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Interop.RegistrationPolicies",
-        name = "IRegistrationPolicy"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop.RegistrationPolicies", name = "IRegistrationPolicy")]
     pub struct IRegistrationPolicy {}
 }
 
-#[cfg(
-    feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types"
-)]
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types")]
 pub use __types::*;
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
@@ -28,10 +23,11 @@ mod __IRegistrationPolicy_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_handle_registration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IRegistrationPolicy as ::unity2::ClassIdentity>::class(),
                 "HandleRegistration",
@@ -43,38 +39,38 @@ mod __IRegistrationPolicy_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
-                    "HandleRegistration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
+                        "HandleRegistration",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn handle_registration(
         this: IRegistrationPolicy,
-        new_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
-        old_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+        new_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+        old_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
-        let inner : extern "C" fn (IRegistrationPolicy , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor , crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_handle_registration :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            IRegistrationPolicy,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            ::unity2::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor =
+            ::core::mem::transmute(__lookup_handle_registration::get_method_info().method_ptr);
         inner(this, new_descriptor, old_descriptor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_allow_type_auto_registration {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IRegistrationPolicy as ::unity2::ClassIdentity>::class(),
                 "AllowTypeAutoRegistration",
@@ -86,18 +82,15 @@ mod __IRegistrationPolicy_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
-                    "AllowTypeAutoRegistration",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IRegistrationPolicy as ::unity2::ClassIdentity>::NAME,
+                        "AllowTypeAutoRegistration",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn allow_type_auto_registration(
@@ -105,15 +98,8 @@ mod __IRegistrationPolicy_unity2_raw {
         r#type: ::unity2::SystemType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> bool {
-        let inner: extern "C" fn(
-            IRegistrationPolicy,
-            ::unity2::SystemType,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_allow_type_auto_registration::get_offset() as isize),
-        );
+        let inner: extern "C" fn(IRegistrationPolicy, ::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_allow_type_auto_registration::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
 }
@@ -123,17 +109,11 @@ pub trait IIRegistrationPolicyMethods: IIRegistrationPolicy {
     #[doc = "`HandleRegistration(crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor)` overload"]
     fn handle_registration(
         self,
-        new_descriptor: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-        >,
-        old_descriptor: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
-        >,
+        new_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
+        old_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
     ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
         unsafe {
-            let __receiver = <IRegistrationPolicy as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IRegistrationPolicy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IRegistrationPolicy_unity2_raw::handle_registration(
                 __receiver,
                 ::core::convert::Into::into(new_descriptor),
@@ -143,14 +123,9 @@ pub trait IIRegistrationPolicyMethods: IIRegistrationPolicy {
         }
     }
     #[doc = "`AllowTypeAutoRegistration(::unity2::SystemType)` overload"]
-    fn allow_type_auto_registration(
-        self,
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> bool {
+    fn allow_type_auto_registration(self, r#type: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
         unsafe {
-            let __receiver = <IRegistrationPolicy as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <IRegistrationPolicy as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __IRegistrationPolicy_unity2_raw::allow_type_auto_registration(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -166,7 +141,5 @@ impl<__T: IIRegistrationPolicy> IIRegistrationPolicyMethods for __T {}
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIRegistrationPolicy;
-    pub use super::IIRegistrationPolicyMethods;
-    pub use super::IRegistrationPolicy;
+    pub use super::{IIRegistrationPolicy, IIRegistrationPolicyMethods, IRegistrationPolicy};
 }

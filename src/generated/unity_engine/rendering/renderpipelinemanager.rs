@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-renderpipelinemanager-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/renderpipelinemanager/RenderPipelineManager.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "RenderPipelineManager")]
@@ -13,8 +13,7 @@ mod __types {
     pub struct RenderPipelineManager {
         #[static_field]
         #[rename(name = "s_CurrentPipelineAsset")]
-        pub s_current_pipeline_asset:
-            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+        pub s_current_pipeline_asset: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
         #[static_field]
         #[rename(name = "s_Cameras")]
         pub s_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
@@ -60,9 +59,7 @@ mod __RenderPipelineManager_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_current_pipeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
@@ -75,42 +72,31 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "get_currentPipeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "get_currentPipeline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_current_pipeline(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::renderpipeline::RenderPipeline {
-        let inner: extern "C" fn(
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::renderpipeline::RenderPipeline =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_current_pipeline::get_offset() as isize),
-            );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::rendering::renderpipeline::RenderPipeline =
+            ::core::mem::transmute(__lookup_get_current_pipeline::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_current_pipeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderpipeline :: RenderPipeline as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::renderpipeline::RenderPipeline as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "set_currentPipeline",
@@ -122,42 +108,34 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "set_currentPipeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "set_currentPipeline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_current_pipeline(
         value: crate::unity_engine::rendering::renderpipeline::RenderPipeline,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::renderpipeline::RenderPipeline,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_current_pipeline::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::renderpipeline::RenderPipeline, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_current_pipeline::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_begin_camera_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+                crate::unity_engine::camera::Camera,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "add_beginCameraRendering",
@@ -169,18 +147,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "add_beginCameraRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "add_beginCameraRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_begin_camera_rendering(
@@ -196,21 +171,18 @@ mod __RenderPipelineManager_unity2_raw {
                 crate::unity_engine::camera::Camera,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_begin_camera_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_begin_camera_rendering::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_begin_camera_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+                crate::unity_engine::camera::Camera,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "remove_beginCameraRendering",
@@ -222,18 +194,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "remove_beginCameraRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "remove_beginCameraRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_begin_camera_rendering(
@@ -249,21 +218,18 @@ mod __RenderPipelineManager_unity2_raw {
                 crate::unity_engine::camera::Camera,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_begin_camera_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_begin_camera_rendering::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_end_camera_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+                crate::unity_engine::camera::Camera,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "add_endCameraRendering",
@@ -275,18 +241,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "add_endCameraRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "add_endCameraRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_end_camera_rendering(
@@ -302,21 +265,18 @@ mod __RenderPipelineManager_unity2_raw {
                 crate::unity_engine::camera::Camera,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_end_camera_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_end_camera_rendering::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_end_camera_rendering {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+                crate::unity_engine::camera::Camera,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "remove_endCameraRendering",
@@ -328,18 +288,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "remove_endCameraRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "remove_endCameraRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_end_camera_rendering(
@@ -355,21 +312,18 @@ mod __RenderPipelineManager_unity2_raw {
                 crate::unity_engine::camera::Camera,
             >,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_end_camera_rendering::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_end_camera_rendering::get_method_info().method_ptr);
         inner(value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_frame_rendering_fn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::camera::Camera> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "BeginFrameRendering",
@@ -381,18 +335,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "BeginFrameRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "BeginFrameRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn begin_frame_rendering_fn(
@@ -404,21 +355,18 @@ mod __RenderPipelineManager_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             ::unity2::Array<crate::unity_engine::camera::Camera>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_frame_rendering_fn::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_begin_frame_rendering_fn::get_method_info().method_ptr);
         inner(context, cameras, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_begin_camera_rendering_fn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "BeginCameraRendering",
@@ -430,18 +378,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "BeginCameraRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "BeginCameraRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn begin_camera_rendering_fn(
@@ -453,21 +398,18 @@ mod __RenderPipelineManager_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_begin_camera_rendering_fn::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_begin_camera_rendering_fn::get_method_info().method_ptr);
         inner(context, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_frame_rendering_fn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <::unity2::Array<crate::unity_engine::camera::Camera> as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "EndFrameRendering",
@@ -479,18 +421,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "EndFrameRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "EndFrameRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end_frame_rendering_fn(
@@ -502,21 +441,18 @@ mod __RenderPipelineManager_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             ::unity2::Array<crate::unity_engine::camera::Camera>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_frame_rendering_fn::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_end_frame_rendering_fn::get_method_info().method_ptr);
         inner(context, cameras, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_end_camera_rendering_fn {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: camera :: Camera as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::camera::Camera as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "EndCameraRendering",
@@ -528,18 +464,15 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "EndCameraRendering",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "EndCameraRendering",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn end_camera_rendering_fn(
@@ -551,20 +484,14 @@ mod __RenderPipelineManager_unity2_raw {
             crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
             crate::unity_engine::camera::Camera,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_end_camera_rendering_fn::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_end_camera_rendering_fn::get_method_info().method_ptr);
         inner(context, camera, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cleanup_render_pipeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
@@ -577,36 +504,29 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "CleanupRenderPipeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "CleanupRenderPipeline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cleanup_render_pipeline(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cleanup_render_pipeline::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_cleanup_render_pipeline::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_cameras {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "GetCameras",
@@ -618,42 +538,36 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "GetCameras",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "GetCameras",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_cameras(
         context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_cameras::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_cameras::get_method_info().method_ptr);
         inner(context, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_do_render_loop_internal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset as :: unity2 :: IlType > :: il_type () , < :: unity2 :: IntPtr as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: camera :: Camera_RenderRequest > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset as ::unity2::IlType>::il_type(),
+                <::unity2::IntPtr as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest> as ::unity2::IlType>::il_type(
+                ),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "DoRenderLoop_Internal",
@@ -665,50 +579,38 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "DoRenderLoop_Internal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "DoRenderLoop_Internal",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn do_render_loop_internal(
         pipe: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
         loop_ptr: ::unity2::IntPtr,
-        render_requests: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::camera::Camera_RenderRequest,
-        >,
+        render_requests: crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
             ::unity2::IntPtr,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::camera::Camera_RenderRequest,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_do_render_loop_internal::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_do_render_loop_internal::get_method_info().method_ptr);
         inner(pipe, loop_ptr, render_requests, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_prepare_render_pipeline {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: renderpipelineasset :: RenderPipelineAsset as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
                 "PrepareRenderPipeline",
@@ -720,41 +622,30 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    "PrepareRenderPipeline",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        "PrepareRenderPipeline",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn prepare_render_pipeline(
         pipeline_asset: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_prepare_render_pipeline::get_offset() as isize),
-        );
+        let inner: extern "C" fn(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_prepare_render_pipeline::get_method_info().method_ptr);
         inner(pipeline_asset, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <RenderPipelineManager as ::unity2::ClassIdentity>::class(),
@@ -767,26 +658,19 @@ mod __RenderPipelineManager_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <RenderPipelineManager as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -794,25 +678,15 @@ mod __RenderPipelineManager_unity2_raw {
 #[cfg(feature = "unity_engine-rendering-renderpipelinemanager")]
 impl RenderPipelineManager {
     #[doc = "`get_currentPipeline()` overload"]
-    pub fn get_current_pipeline() -> crate::unity_engine::rendering::renderpipeline::RenderPipeline
-    {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::get_current_pipeline(::core::option::Option::None)
-        }
+    pub fn get_current_pipeline() -> crate::unity_engine::rendering::renderpipeline::RenderPipeline {
+        unsafe { __RenderPipelineManager_unity2_raw::get_current_pipeline(::core::option::Option::None) }
     }
+
     #[doc = "`set_currentPipeline(crate::unity_engine::rendering::renderpipeline::RenderPipeline)` overload"]
-    pub fn set_current_pipeline(
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderpipeline::RenderPipeline,
-        >,
-    ) -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::set_current_pipeline(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_current_pipeline(value: impl ::core::convert::Into<crate::unity_engine::rendering::renderpipeline::RenderPipeline>) -> () {
+        unsafe { __RenderPipelineManager_unity2_raw::set_current_pipeline(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`add_beginCameraRendering(crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,crate::unity_engine::camera::Camera>)` overload"]
     pub fn add_begin_camera_rendering(
         value: impl ::core::convert::Into<
@@ -822,13 +696,9 @@ impl RenderPipelineManager {
             >,
         >,
     ) -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::add_begin_camera_rendering(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RenderPipelineManager_unity2_raw::add_begin_camera_rendering(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`remove_beginCameraRendering(crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,crate::unity_engine::camera::Camera>)` overload"]
     pub fn remove_begin_camera_rendering(
         value: impl ::core::convert::Into<
@@ -838,13 +708,9 @@ impl RenderPipelineManager {
             >,
         >,
     ) -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::remove_begin_camera_rendering(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RenderPipelineManager_unity2_raw::remove_begin_camera_rendering(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`add_endCameraRendering(crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,crate::unity_engine::camera::Camera>)` overload"]
     pub fn add_end_camera_rendering(
         value: impl ::core::convert::Into<
@@ -854,13 +720,9 @@ impl RenderPipelineManager {
             >,
         >,
     ) -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::add_end_camera_rendering(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RenderPipelineManager_unity2_raw::add_end_camera_rendering(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`remove_endCameraRendering(crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,crate::unity_engine::camera::Camera>)` overload"]
     pub fn remove_end_camera_rendering(
         value: impl ::core::convert::Into<
@@ -870,18 +732,12 @@ impl RenderPipelineManager {
             >,
         >,
     ) -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::remove_end_camera_rendering(
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RenderPipelineManager_unity2_raw::remove_end_camera_rendering(::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`BeginFrameRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]
     pub fn begin_frame_rendering_fn(
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         cameras: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::camera::Camera>>,
     ) -> () {
         unsafe {
@@ -892,11 +748,10 @@ impl RenderPipelineManager {
             )
         }
     }
+
     #[doc = "`BeginCameraRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::camera::Camera)` overload"]
     pub fn begin_camera_rendering_fn(
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> () {
         unsafe {
@@ -907,11 +762,10 @@ impl RenderPipelineManager {
             )
         }
     }
+
     #[doc = "`EndFrameRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]
     pub fn end_frame_rendering_fn(
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         cameras: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::camera::Camera>>,
     ) -> () {
         unsafe {
@@ -922,11 +776,10 @@ impl RenderPipelineManager {
             )
         }
     }
+
     #[doc = "`EndCameraRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::camera::Camera)` overload"]
     pub fn end_camera_rendering_fn(
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
+        context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>,
         camera: impl ::core::convert::Into<crate::unity_engine::camera::Camera>,
     ) -> () {
         unsafe {
@@ -937,37 +790,23 @@ impl RenderPipelineManager {
             )
         }
     }
+
     #[doc = "`CleanupRenderPipeline()` overload"]
     pub fn cleanup_render_pipeline() -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::cleanup_render_pipeline(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __RenderPipelineManager_unity2_raw::cleanup_render_pipeline(::core::option::Option::None) }
     }
+
     #[doc = "`GetCameras(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)` overload"]
-    pub fn get_cameras(
-        context: impl ::core::convert::Into<
-            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        >,
-    ) -> () {
-        unsafe {
-            __RenderPipelineManager_unity2_raw::get_cameras(
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_cameras(context: impl ::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>) -> () {
+        unsafe { __RenderPipelineManager_unity2_raw::get_cameras(::core::convert::Into::into(context), ::core::option::Option::None) }
     }
+
     #[doc = "`DoRenderLoop_Internal(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset, ::unity2::IntPtr, crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest>)` overload"]
     pub fn do_render_loop_internal(
-        pipe: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
-        >,
+        pipe: impl ::core::convert::Into<crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset>,
         loop_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
         render_requests: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::camera::Camera_RenderRequest,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest>,
         >,
     ) -> () {
         unsafe {
@@ -979,19 +818,16 @@ impl RenderPipelineManager {
             )
         }
     }
+
     #[doc = "`PrepareRenderPipeline(crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset)` overload"]
     pub fn prepare_render_pipeline(
-        pipeline_asset: impl ::core::convert::Into<
-            crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
-        >,
+        pipeline_asset: impl ::core::convert::Into<crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset>,
     ) -> () {
         unsafe {
-            __RenderPipelineManager_unity2_raw::prepare_render_pipeline(
-                ::core::convert::Into::into(pipeline_asset),
-                ::core::option::Option::None,
-            )
+            __RenderPipelineManager_unity2_raw::prepare_render_pipeline(::core::convert::Into::into(pipeline_asset), ::core::option::Option::None)
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __RenderPipelineManager_unity2_raw::cctor(::core::option::Option::None) }
@@ -1001,8 +837,7 @@ impl RenderPipelineManager {
 #[cfg(feature = "unity_engine-rendering-renderpipelinemanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRenderPipelineManager;
-    pub use super::RenderPipelineManager;
+    pub use super::{IRenderPipelineManager, RenderPipelineManager};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

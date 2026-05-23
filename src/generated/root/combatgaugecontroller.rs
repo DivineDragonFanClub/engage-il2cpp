@@ -2,14 +2,18 @@
 
 #[cfg(feature = "root-combatgaugecontroller-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/combatgaugecontroller/CombatGaugeController_Value.md"))]
     #[::unity2::class(namespace = "", name = "CombatGaugeController.Value")]
@@ -97,9 +101,7 @@ mod __types {
         #[rename(name = "m_BtlCritTitle")]
         pub m_btl_crit_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BtlAtk")]
-        pub m_btl_atk: crate::system::collections::generic::list_1::List_1<
-            crate::root::combatgaugecontroller::CombatGaugeController_Value,
-        >,
+        pub m_btl_atk: crate::system::collections::generic::list_1::List_1<crate::root::combatgaugecontroller::CombatGaugeController_Value>,
         #[rename(name = "m_BtlHit")]
         pub m_btl_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
         #[rename(name = "m_BtlCrit")]
@@ -119,18 +121,13 @@ mod __types {
         #[rename(name = "m_EngageCount")]
         pub m_engage_count: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
         #[rename(name = "m_TriggeredSkillListSetter")]
-        pub m_triggered_skill_list_setter:
-            crate::app::triggeredskilllistsetter::TriggeredSkillListSetter,
+        pub m_triggered_skill_list_setter: crate::app::triggeredskilllistsetter::TriggeredSkillListSetter,
         #[rename(name = "m_BattleStartSkillList")]
-        pub m_battle_start_skill_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::ui::image::Image,
-        >,
+        pub m_battle_start_skill_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
         #[rename(name = "m_BattleStartSkillIndex")]
         pub m_battle_start_skill_index: i32,
         #[rename(name = "m_forceTexture")]
-        pub m_force_texture: crate::system::collections::generic::list_1::List_1<
-            crate::app::forcetexturesetter::ForceTextureSetter,
-        >,
+        pub m_force_texture: crate::system::collections::generic::list_1::List_1<crate::app::forcetexturesetter::ForceTextureSetter>,
         #[rename(name = "m_Animator")]
         pub m_animator: crate::unity_engine::animator::Animator,
     }
@@ -148,9 +145,7 @@ mod __CombatGaugeController_Value_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController_Value as ::unity2::ClassIdentity>::class(),
@@ -163,30 +158,20 @@ mod __CombatGaugeController_Value_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController_Value as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController_Value as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CombatGaugeController_Value,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CombatGaugeController_Value, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController_Value, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -197,9 +182,7 @@ pub trait ICombatGaugeController_ValueMethods: ICombatGaugeController_Value {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <CombatGaugeController_Value as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <CombatGaugeController_Value as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_Value_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -233,9 +216,7 @@ mod __CombatGaugeController_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_start {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -248,39 +229,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "Start",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "Start",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn start(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn start(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_start::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_start::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -293,41 +262,28 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_common {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::force::Force_Type as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "SetupCommon",
@@ -339,18 +295,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupCommon",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupCommon",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_common(
@@ -358,26 +311,16 @@ mod __CombatGaugeController_unity2_raw {
         force_type: crate::app::force::Force_Type,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            crate::app::force::Force_Type,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_common::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, crate::app::force::Force_Type, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_common::get_method_info().method_ptr);
         inner(this, force_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::unititem::UnitItem as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "SetupItem",
@@ -389,18 +332,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupItem",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_item(
@@ -408,25 +348,20 @@ mod __CombatGaugeController_unity2_raw {
         item: crate::app::unititem::UnitItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            crate::app::unititem::UnitItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, crate::app::unititem::UnitItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_item::get_method_info().method_ptr);
         inner(this, item, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString> as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "SetupParam",
@@ -438,18 +373,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_param(
@@ -465,20 +397,14 @@ mod __CombatGaugeController_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_param::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_param::get_method_info().method_ptr);
         inner(this, atk_list, hit, crit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_battle_atk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
                 <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
@@ -496,18 +422,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupBattleAtk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupBattleAtk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_battle_atk(
@@ -525,27 +448,14 @@ mod __CombatGaugeController_unity2_raw {
             crate::app::battlescenelist::BattleSceneList,
             crate::app::battleinfoside::BattleInfoSide,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_battle_atk::get_offset() as isize),
-        );
-        inner(
-            this,
-            side_type,
-            info,
-            scene_list,
-            side,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_setup_battle_atk::get_method_info().method_ptr);
+        inner(this, side_type, info, scene_list, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_interference {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::app::battleinfoside::BattleInfoSide as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -559,18 +469,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupInterference",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupInterference",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_interference(
@@ -578,24 +485,15 @@ mod __CombatGaugeController_unity2_raw {
         side: crate::app::battleinfoside::BattleInfoSide,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            crate::app::battleinfoside::BattleInfoSide,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_interference::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_interference::get_method_info().method_ptr);
         inner(this, side, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_heal_atk {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
                 <crate::app::battleinfo::BattleInfo as ::unity2::IlType>::il_type(),
@@ -612,18 +510,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupHealAtk",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupHealAtk",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_heal_atk(
@@ -639,20 +534,14 @@ mod __CombatGaugeController_unity2_raw {
             crate::app::battleinfo::BattleInfo,
             crate::app::battlescenelist::BattleSceneList,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_heal_atk::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup_heal_atk::get_method_info().method_ptr);
         inner(this, side_type, info, scene_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -665,39 +554,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "HideParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "HideParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_param(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_param(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_param::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_param_border {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -710,39 +587,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupParamBorder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupParamBorder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_param_border(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup_param_border(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_param_border::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_param_border::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_chain_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -759,18 +624,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupChainParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupChainParam",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup_chain_param(
@@ -780,26 +642,15 @@ mod __CombatGaugeController_unity2_raw {
         crit: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            ::unity2::Il2CppString,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup_chain_param::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, ::unity2::Il2CppString, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_setup_chain_param::get_method_info().method_ptr);
         inner(this, atk, hit, crit, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_chain_param {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -812,39 +663,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "HideChainParam",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "HideChainParam",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_chain_param(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_chain_param(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_chain_param::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_chain_param::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_show_hp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -862,18 +701,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "ShowHp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "ShowHp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn show_hp(
@@ -891,20 +727,14 @@ mod __CombatGaugeController_unity2_raw {
             i32,
             crate::app::force::Force_Type,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_show_hp::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_show_hp::get_method_info().method_ptr);
         inner(this, unit, hp, max_hp, force_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_hp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -917,43 +747,28 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "HideHp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "HideHp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_hp(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_hp(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_hp::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_hp::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup_hp_gauge {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "SetupHpGauge",
@@ -965,41 +780,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SetupHpGauge",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SetupHpGauge",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn setup_hp_gauge(
-        this: CombatGaugeController,
-        now: i32,
-        max: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn setup_hp_gauge(this: CombatGaugeController, now: i32, max: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_setup_hp_gauge::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_setup_hp_gauge::get_method_info().method_ptr);
         inner(this, now, max, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_set_gauge_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::color::Color as ::unity2::IlType>::il_type(),
@@ -1015,18 +816,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "TrySetGaugeColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "TrySetGaugeColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_set_gauge_color(
@@ -1040,20 +838,14 @@ mod __CombatGaugeController_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             crate::unity_engine::color::Color,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_gauge_color::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_try_set_gauge_color::get_method_info().method_ptr);
         inner(this, gauge, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_trg_set_gauge_layout {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1069,18 +861,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "TrgSetGaugeLayout",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "TrgSetGaugeLayout",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn trg_set_gauge_layout(
@@ -1089,25 +878,15 @@ mod __CombatGaugeController_unity2_raw {
         width: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            crate::unity_engine::gameobject::GameObject,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_trg_set_gauge_layout::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, crate::unity_engine::gameobject::GameObject, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_trg_set_gauge_layout::get_method_info().method_ptr);
         inner(this, obj, width, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_try_set_gauge_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1123,18 +902,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "TrySetGaugeWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "TrySetGaugeWidth",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn try_set_gauge_width(
@@ -1143,27 +919,16 @@ mod __CombatGaugeController_unity2_raw {
         width: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            crate::unity_engine::gameobject::GameObject,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_try_set_gauge_width::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, crate::unity_engine::gameobject::GameObject, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_try_set_gauge_width::get_method_info().method_ptr);
         inner(this, gauge, width, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calc_hp_gauge_max_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "CalcHpGaugeMaxWidth",
@@ -1175,40 +940,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "CalcHpGaugeMaxWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "CalcHpGaugeMaxWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calc_hp_gauge_max_width(
-        this: CombatGaugeController,
-        max_hp: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn calc_hp_gauge_max_width(this: CombatGaugeController, max_hp: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(CombatGaugeController, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calc_hp_gauge_max_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calc_hp_gauge_max_width::get_method_info().method_ptr);
         inner(this, max_hp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_setup {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::battleside::BattleSide_Type as ::unity2::IlType>::il_type(),
                 <crate::app::battlecalculator::BattleCalculator as ::unity2::IlType>::il_type(),
@@ -1224,18 +976,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "Setup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "Setup",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn setup(
@@ -1249,20 +998,14 @@ mod __CombatGaugeController_unity2_raw {
             crate::app::battleside::BattleSide_Type,
             crate::app::battlecalculator::BattleCalculator,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_setup::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_setup::get_method_info().method_ptr);
         inner(this, side_type, calculator, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_values {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1279,18 +1022,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateValues",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateValues",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_values(
@@ -1300,30 +1040,16 @@ mod __CombatGaugeController_unity2_raw {
         engage_count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            i32,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_values::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, i32, i32, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_values::get_method_info().method_ptr);
         inner(this, hp, maxhp, engage_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_hp {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "UpdateHp",
@@ -1335,43 +1061,28 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateHp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateHp",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_hp(
-        this: CombatGaugeController,
-        hp: i32,
-        maxhp: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_hp(this: CombatGaugeController, hp: i32, maxhp: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_hp::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_hp::get_method_info().method_ptr);
         inner(this, hp, maxhp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_engage_count {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "UpdateEngageCount",
@@ -1383,40 +1094,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "UpdateEngageCount",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "UpdateEngageCount",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_engage_count(
-        this: CombatGaugeController,
-        engage_count: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_engage_count(this: CombatGaugeController, engage_count: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_engage_count::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_engage_count::get_method_info().method_ptr);
         inner(this, engage_count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_moving {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1429,39 +1127,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "IsMoving",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "IsMoving",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_moving(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_moving(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_moving::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_moving::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_skip_gauge_anime {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1474,39 +1160,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "SkipGaugeAnime",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "SkipGaugeAnime",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn skip_gauge_anime(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn skip_gauge_anime(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_skip_gauge_anime::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_skip_gauge_anime::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_hide_skill_display {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1519,41 +1193,28 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "HideSkillDisplay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "HideSkillDisplay",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn hide_skill_display(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn hide_skill_display(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_hide_skill_display::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_hide_skill_display::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_push_show_skill {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::skilldata::SkillData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "PushShowSkill",
@@ -1565,18 +1226,15 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "PushShowSkill",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "PushShowSkill",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn push_show_skill(
@@ -1584,24 +1242,15 @@ mod __CombatGaugeController_unity2_raw {
         skill_data: crate::app::skilldata::SkillData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            CombatGaugeController,
-            crate::app::skilldata::SkillData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_push_show_skill::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CombatGaugeController, crate::app::skilldata::SkillData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_push_show_skill::get_method_info().method_ptr);
         inner(this, skill_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_in {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1614,41 +1263,28 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "In",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "In",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn r#in(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn r#in(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_in::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_in::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_out {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
                 "Out",
@@ -1660,40 +1296,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "Out",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "Out",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn out(
-        this: CombatGaugeController,
-        ntime: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn out(this: CombatGaugeController, ntime: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_out::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_out::get_method_info().method_ptr);
         inner(this, ntime, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_playing_anim {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1706,39 +1329,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    "IsPlayingAnim",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        "IsPlayingAnim",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_playing_anim(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_playing_anim(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_playing_anim::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_playing_anim::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1751,39 +1362,27 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: CombatGaugeController,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: CombatGaugeController, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(CombatGaugeController, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CombatGaugeController as ::unity2::ClassIdentity>::class(),
@@ -1796,26 +1395,19 @@ mod __CombatGaugeController_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CombatGaugeController as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -1833,63 +1425,45 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`Start()` overload"]
     fn start(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::start(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Update()` overload"]
     fn update(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupCommon(crate::app::force::Force_Type)` overload"]
-    fn setup_common(
-        self,
-        force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
-    ) -> () {
+    fn setup_common(self, force_type: impl ::core::convert::Into<crate::app::force::Force_Type>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::setup_common(
-                __receiver,
-                ::core::convert::Into::into(force_type),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::setup_common(__receiver, ::core::convert::Into::into(force_type), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupItem(crate::app::unititem::UnitItem)` overload"]
     fn setup_item(self, item: impl ::core::convert::Into<crate::app::unititem::UnitItem>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::setup_item(
-                __receiver,
-                ::core::convert::Into::into(item),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::setup_item(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupParam(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, i32, i32)` overload"]
     fn setup_param(
         self,
-        atk_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        >,
+        atk_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>>,
         hit: impl ::core::convert::Into<i32>,
         crit: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::setup_param(
                 __receiver,
                 ::core::convert::Into::into(atk_list),
@@ -1908,9 +1482,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::setup_battle_atk(
                 __receiver,
                 ::core::convert::Into::into(side_type),
@@ -1922,19 +1495,11 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         }
     }
     #[doc = "`SetupInterference(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    fn setup_interference(
-        self,
-        side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>,
-    ) -> () {
+    fn setup_interference(self, side: impl ::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::setup_interference(
-                __receiver,
-                ::core::convert::Into::into(side),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::setup_interference(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)
         }
     }
     #[doc = "`SetupHealAtk(crate::app::battleside::BattleSide_Type, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]
@@ -1945,9 +1510,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         scene_list: impl ::core::convert::Into<crate::app::battlescenelist::BattleSceneList>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::setup_heal_atk(
                 __receiver,
                 ::core::convert::Into::into(side_type),
@@ -1960,22 +1524,17 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`HideParam()` overload"]
     fn hide_param(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::hide_param(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupParamBorder()` overload"]
     fn setup_param_border(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::setup_param_border(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::setup_param_border(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupChainParam(::unity2::Il2CppString, i32, i32)` overload"]
@@ -1986,9 +1545,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         crit: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::setup_chain_param(
                 __receiver,
                 ::core::convert::Into::into(atk),
@@ -2001,13 +1559,9 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`HideChainParam()` overload"]
     fn hide_chain_param(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::hide_chain_param(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::hide_chain_param(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ShowHp(crate::app::unit::Unit, i32, i32, crate::app::force::Force_Type)` overload"]
@@ -2019,9 +1573,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         force_type: impl ::core::convert::Into<crate::app::force::Force_Type>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::show_hp(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -2035,22 +1588,16 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`HideHp()` overload"]
     fn hide_hp(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::hide_hp(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetupHpGauge(i32, i32)` overload"]
-    fn setup_hp_gauge(
-        self,
-        now: impl ::core::convert::Into<i32>,
-        max: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn setup_hp_gauge(self, now: impl ::core::convert::Into<i32>, max: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::setup_hp_gauge(
                 __receiver,
                 ::core::convert::Into::into(now),
@@ -2066,9 +1613,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         color: impl ::core::convert::Into<crate::unity_engine::color::Color>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::try_set_gauge_color(
                 __receiver,
                 ::core::convert::Into::into(gauge),
@@ -2084,9 +1630,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         width: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::trg_set_gauge_layout(
                 __receiver,
                 ::core::convert::Into::into(obj),
@@ -2102,9 +1647,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         width: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::try_set_gauge_width(
                 __receiver,
                 ::core::convert::Into::into(gauge),
@@ -2116,14 +1660,9 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`CalcHpGaugeMaxWidth(i32)` overload"]
     fn calc_hp_gauge_max_width(self, max_hp: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::calc_hp_gauge_max_width(
-                __receiver,
-                ::core::convert::Into::into(max_hp),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::calc_hp_gauge_max_width(__receiver, ::core::convert::Into::into(max_hp), ::core::option::Option::None)
         }
     }
     #[doc = "`Setup(crate::app::battleside::BattleSide_Type, crate::app::battlecalculator::BattleCalculator)` overload"]
@@ -2133,9 +1672,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         calculator: impl ::core::convert::Into<crate::app::battlecalculator::BattleCalculator>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::setup(
                 __receiver,
                 ::core::convert::Into::into(side_type),
@@ -2152,9 +1690,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         engage_count: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::update_values(
                 __receiver,
                 ::core::convert::Into::into(hp),
@@ -2165,15 +1702,10 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
         }
     }
     #[doc = "`UpdateHp(i32, i32)` overload"]
-    fn update_hp(
-        self,
-        hp: impl ::core::convert::Into<i32>,
-        maxhp: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn update_hp(self, hp: impl ::core::convert::Into<i32>, maxhp: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::update_hp(
                 __receiver,
                 ::core::convert::Into::into(hp),
@@ -2185,9 +1717,8 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`UpdateEngageCount(i32)` overload"]
     fn update_engage_count(self, engage_count: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::update_engage_count(
                 __receiver,
                 ::core::convert::Into::into(engage_count),
@@ -2198,92 +1729,64 @@ pub trait ICombatGaugeControllerMethods: ICombatGaugeController {
     #[doc = "`IsMoving()` overload"]
     fn is_moving(self) -> bool {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::is_moving(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SkipGaugeAnime()` overload"]
     fn skip_gauge_anime(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::skip_gauge_anime(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::skip_gauge_anime(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`HideSkillDisplay()` overload"]
     fn hide_skill_display(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::hide_skill_display(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::hide_skill_display(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PushShowSkill(crate::app::skilldata::SkillData)` overload"]
-    fn push_show_skill(
-        self,
-        skill_data: impl ::core::convert::Into<crate::app::skilldata::SkillData>,
-    ) -> () {
+    fn push_show_skill(self, skill_data: impl ::core::convert::Into<crate::app::skilldata::SkillData>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::push_show_skill(
-                __receiver,
-                ::core::convert::Into::into(skill_data),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::push_show_skill(__receiver, ::core::convert::Into::into(skill_data), ::core::option::Option::None)
         }
     }
     #[doc = "`In()` overload"]
     fn r#in(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::r#in(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Out(f32)` overload"]
     fn out(self, ntime: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::out(
-                __receiver,
-                ::core::convert::Into::into(ntime),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::out(__receiver, ::core::convert::Into::into(ntime), ::core::option::Option::None)
         }
     }
     #[doc = "`IsPlayingAnim()` overload"]
     fn is_playing_anim(self) -> bool {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __CombatGaugeController_unity2_raw::is_playing_anim(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __CombatGaugeController_unity2_raw::is_playing_anim(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <CombatGaugeController as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CombatGaugeController_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -2311,25 +1814,22 @@ impl CombatGaugeController {
 #[cfg(feature = "root-combatgaugecontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CombatGaugeController;
-    pub use super::CombatGaugeController_Value;
-    pub use super::ICombatGaugeController;
-    pub use super::ICombatGaugeControllerMethods;
-    pub use super::ICombatGaugeController_Value;
-    pub use super::ICombatGaugeController_ValueMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        CombatGaugeController, CombatGaugeController_Value, ICombatGaugeController, ICombatGaugeControllerMethods, ICombatGaugeController_Value,
+        ICombatGaugeController_ValueMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

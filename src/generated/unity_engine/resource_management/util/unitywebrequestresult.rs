@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestresult-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/unitywebrequestresult/UnityWebRequestResult.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Util",
-        name = "UnityWebRequestResult"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "UnityWebRequestResult")]
     #[parent(crate::system::object::Object)]
     pub struct UnityWebRequestResult {}
 }
@@ -28,10 +25,9 @@ mod __UnityWebRequestResult_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::networking::unitywebrequest::UnityWebRequest as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -43,18 +39,15 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -66,20 +59,14 @@ mod __UnityWebRequestResult_unity2_raw {
             UnityWebRequestResult,
             crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, request, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
@@ -92,41 +79,27 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: UnityWebRequestResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnityWebRequestResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_to_string::get_offset() as isize),
-        );
+    pub unsafe fn to_string(this: UnityWebRequestResult, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(UnityWebRequestResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_error {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
@@ -139,41 +112,27 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    "get_Error",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Error",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_error(
-        this: UnityWebRequestResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnityWebRequestResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_error::get_offset() as isize),
-        );
+    pub unsafe fn get_error(this: UnityWebRequestResult, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(UnityWebRequestResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_error::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_response_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
@@ -186,39 +145,27 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    "get_ResponseCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        "get_ResponseCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_response_code(
-        this: UnityWebRequestResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i64 {
+    pub unsafe fn get_response_code(this: UnityWebRequestResult, __unity2_method_info: ::unity2::OptionalMethod) -> i64 {
         let inner: extern "C" fn(UnityWebRequestResult, ::unity2::OptionalMethod) -> i64 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_response_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_response_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_result {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
@@ -231,34 +178,33 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    "get_Result",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Result",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_result(
         this: UnityWebRequestResult,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result {
-        let inner : extern "C" fn (UnityWebRequestResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest_Result = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_result :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            UnityWebRequestResult,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result =
+            ::core::mem::transmute(__lookup_get_result::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_method {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
@@ -271,41 +217,27 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    "get_Method",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Method",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_method(
-        this: UnityWebRequestResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnityWebRequestResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_method::get_offset() as isize),
-        );
+    pub unsafe fn get_method(this: UnityWebRequestResult, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(UnityWebRequestResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_method::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_url {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <UnityWebRequestResult as ::unity2::ClassIdentity>::class(),
@@ -318,32 +250,20 @@ mod __UnityWebRequestResult_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
-                    "get_Url",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <UnityWebRequestResult as ::unity2::ClassIdentity>::NAME,
+                        "get_Url",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_url(
-        this: UnityWebRequestResult,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            UnityWebRequestResult,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_url::get_offset() as isize),
-        );
+    pub unsafe fn get_url(this: UnityWebRequestResult, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(UnityWebRequestResult, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_url::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -351,79 +271,58 @@ mod __UnityWebRequestResult_unity2_raw {
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestresult")]
 pub trait IUnityWebRequestResultMethods: IUnityWebRequestResult {
     #[doc = "`.ctor(crate::unity_engine::networking::unitywebrequest::UnityWebRequest)` overload"]
-    fn ctor(
-        self,
-        request: impl ::core::convert::Into<
-            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
-        >,
-    ) -> () {
+    fn ctor(self, request: impl ::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest>) -> () {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnityWebRequestResult_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(request),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityWebRequestResult_unity2_raw::ctor(__receiver, ::core::convert::Into::into(request), ::core::option::Option::None)
         }
     }
     #[doc = "`ToString()` overload"]
     fn to_string(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityWebRequestResult_unity2_raw::to_string(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Error()` overload"]
     fn get_error(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityWebRequestResult_unity2_raw::get_error(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_ResponseCode()` overload"]
     fn get_response_code(self) -> i64 {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __UnityWebRequestResult_unity2_raw::get_response_code(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __UnityWebRequestResult_unity2_raw::get_response_code(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Result()` overload"]
-    fn get_result(
-        self,
-    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result {
+    fn get_result(self) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest_Result {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityWebRequestResult_unity2_raw::get_result(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Method()` overload"]
     fn get_method(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityWebRequestResult_unity2_raw::get_method(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Url()` overload"]
     fn get_url(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <UnityWebRequestResult as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __UnityWebRequestResult_unity2_raw::get_url(__receiver, ::core::option::Option::None)
         }
     }
@@ -451,9 +350,7 @@ impl UnityWebRequestResult {
 #[cfg(feature = "unity_engine-resource_management-util-unitywebrequestresult")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnityWebRequestResult;
-    pub use super::IUnityWebRequestResultMethods;
-    pub use super::UnityWebRequestResult;
+    pub use super::{IUnityWebRequestResult, IUnityWebRequestResultMethods, UnityWebRequestResult};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

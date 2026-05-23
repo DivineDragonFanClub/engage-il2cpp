@@ -2,12 +2,16 @@
 
 #[cfg(feature = "system-io-cstreamreader-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::io::streamreader::{IStreamReader, StreamReader};
-    use crate::system::io::textreader::{ITextReader, TextReader};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        io::{
+            streamreader::{IStreamReader, StreamReader},
+            textreader::{ITextReader, TextReader},
+        },
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/cstreamreader/CStreamReader.md"))]
     #[::unity2::class(namespace = "System.IO", name = "CStreamReader")]
@@ -27,121 +31,80 @@ mod __CStreamReader_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_peek {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CStreamReader as ::unity2::ClassIdentity>::class(),
-                "Peek",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CStreamReader as ::unity2::ClassIdentity>::class(), "Peek", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CStreamReader as ::unity2::ClassIdentity>::NAME,
-                    "Peek",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CStreamReader as ::unity2::ClassIdentity>::NAME,
+                        "Peek",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn peek(this: CStreamReader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CStreamReader, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_peek::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_peek::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CStreamReader as ::unity2::ClassIdentity>::class(),
-                "Read",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CStreamReader as ::unity2::ClassIdentity>::class(), "Read", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CStreamReader as ::unity2::ClassIdentity>::NAME,
-                    "Read",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CStreamReader as ::unity2::ClassIdentity>::NAME,
+                        "Read",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read(this: CStreamReader, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(CStreamReader, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_read::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_read::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Array<u16> as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <CStreamReader as ::unity2::ClassIdentity>::class(),
-                "Read",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<CStreamReader as ::unity2::ClassIdentity>::class(), "Read", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CStreamReader as ::unity2::ClassIdentity>::NAME,
-                    "Read",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CStreamReader as ::unity2::ClassIdentity>::NAME,
+                        "Read",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn read_2(
@@ -151,26 +114,15 @@ mod __CStreamReader_unity2_raw {
         count: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            CStreamReader,
-            ::unity2::Array<u16>,
-            i32,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(CStreamReader, ::unity2::Array<u16>, i32, i32, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_read_2::get_method_info().method_ptr);
         inner(this, dest, index, count, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_line {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CStreamReader as ::unity2::ClassIdentity>::class(),
@@ -183,41 +135,27 @@ mod __CStreamReader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CStreamReader as ::unity2::ClassIdentity>::NAME,
-                    "ReadLine",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CStreamReader as ::unity2::ClassIdentity>::NAME,
+                        "ReadLine",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn read_line(
-        this: CStreamReader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CStreamReader,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_line::get_offset() as isize),
-        );
+    pub unsafe fn read_line(this: CStreamReader, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CStreamReader, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_read_line::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_read_to_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <CStreamReader as ::unity2::ClassIdentity>::class(),
@@ -230,32 +168,20 @@ mod __CStreamReader_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <CStreamReader as ::unity2::ClassIdentity>::NAME,
-                    "ReadToEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <CStreamReader as ::unity2::ClassIdentity>::NAME,
+                        "ReadToEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn read_to_end(
-        this: CStreamReader,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            CStreamReader,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_read_to_end::get_offset() as isize),
-        );
+    pub unsafe fn read_to_end(this: CStreamReader, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(CStreamReader, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_read_to_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -265,18 +191,14 @@ pub trait ICStreamReaderMethods: ICStreamReader {
     #[doc = "`Peek()` overload"]
     fn peek(self) -> i32 {
         unsafe {
-            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CStreamReader_unity2_raw::peek(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Read()` overload"]
     fn read(self) -> i32 {
         unsafe {
-            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CStreamReader_unity2_raw::read(__receiver, ::core::option::Option::None)
         }
     }
@@ -288,9 +210,7 @@ pub trait ICStreamReaderMethods: ICStreamReader {
         count: impl ::core::convert::Into<i32>,
     ) -> i32 {
         unsafe {
-            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CStreamReader_unity2_raw::read_2(
                 __receiver,
                 ::core::convert::Into::into(dest),
@@ -303,18 +223,14 @@ pub trait ICStreamReaderMethods: ICStreamReader {
     #[doc = "`ReadLine()` overload"]
     fn read_line(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CStreamReader_unity2_raw::read_line(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ReadToEnd()` overload"]
     fn read_to_end(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <CStreamReader as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __CStreamReader_unity2_raw::read_to_end(__receiver, ::core::option::Option::None)
         }
     }
@@ -326,16 +242,15 @@ impl<__T: ICStreamReader> ICStreamReaderMethods for __T {}
 #[cfg(feature = "system-io-cstreamreader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CStreamReader;
-    pub use super::ICStreamReader;
-    pub use super::ICStreamReaderMethods;
-    pub use crate::system::io::streamreader::IStreamReader;
+    pub use super::{CStreamReader, ICStreamReader, ICStreamReaderMethods};
     #[cfg(feature = "system-io-streamreader")]
     pub use crate::system::io::streamreader::IStreamReaderMethods;
-    pub use crate::system::io::textreader::ITextReader;
     #[cfg(feature = "system-io-textreader")]
     pub use crate::system::io::textreader::ITextReaderMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{
+        io::{streamreader::IStreamReader, textreader::ITextReader},
+        object::IObject,
+    };
 }

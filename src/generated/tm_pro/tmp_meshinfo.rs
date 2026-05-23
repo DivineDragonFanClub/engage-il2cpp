@@ -2,11 +2,13 @@
 
 #[cfg(feature = "tm_pro-tmp_meshinfo-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_meshinfo/TMP_MeshInfo.md"))]
     #[repr(C)]
@@ -25,9 +27,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for TMP_MeshInfo {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_MeshInfo";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -38,10 +39,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_MeshInfo {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -58,91 +56,56 @@ mod __TMP_MeshInfo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_MeshInfo as ::unity2::ClassIdentity>::class(), ".ctor", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TMP_MeshInfo,
-        mesh: crate::unity_engine::mesh::Mesh,
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TMP_MeshInfo,
-            crate::unity_engine::mesh::Mesh,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: TMP_MeshInfo, mesh: crate::unity_engine::mesh::Mesh, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TMP_MeshInfo, crate::unity_engine::mesh::Mesh, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, mesh, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                3,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_MeshInfo as ::unity2::ClassIdentity>::class(), ".ctor", 3, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_2(
@@ -152,28 +115,16 @@ mod __TMP_MeshInfo_unity2_raw {
         is_volumetric: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_MeshInfo,
-            crate::unity_engine::mesh::Mesh,
-            i32,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_MeshInfo, crate::unity_engine::mesh::Mesh, i32, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, mesh, size, is_volumetric, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resize_mesh_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "ResizeMeshInfo",
@@ -185,44 +136,29 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "ResizeMeshInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "ResizeMeshInfo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resize_mesh_info(
-        this: TMP_MeshInfo,
-        size: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn resize_mesh_info(this: TMP_MeshInfo, size: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resize_mesh_info::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_resize_mesh_info::get_method_info().method_ptr);
         inner(this, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resize_mesh_info_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "ResizeMeshInfo",
@@ -234,130 +170,80 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "ResizeMeshInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "ResizeMeshInfo",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn resize_mesh_info_2(
-        this: TMP_MeshInfo,
-        size: i32,
-        is_volumetric: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn resize_mesh_info_2(this: TMP_MeshInfo, size: i32, is_volumetric: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_resize_mesh_info_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_resize_mesh_info_2::get_method_info().method_ptr);
         inner(this, size, is_volumetric, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_MeshInfo as ::unity2::ClassIdentity>::class(), "Clear", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear(this: TMP_MeshInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TMP_MeshInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TMP_MeshInfo, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_clear::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
-                "Clear",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_MeshInfo as ::unity2::ClassIdentity>::class(), "Clear", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "Clear",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "Clear",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_2(
-        this: TMP_MeshInfo,
-        upload_changes: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_2(this: TMP_MeshInfo, upload_changes: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_2::get_method_info().method_ptr);
         inner(this, upload_changes, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_unused_vertices {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
@@ -370,41 +256,28 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "ClearUnusedVertices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "ClearUnusedVertices",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_unused_vertices(
-        this: TMP_MeshInfo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_unused_vertices(this: TMP_MeshInfo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_unused_vertices::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_unused_vertices::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_unused_vertices_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "ClearUnusedVertices",
@@ -416,44 +289,29 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "ClearUnusedVertices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "ClearUnusedVertices",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_unused_vertices_2(
-        this: TMP_MeshInfo,
-        start_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_unused_vertices_2(this: TMP_MeshInfo, start_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_unused_vertices_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_unused_vertices_2::get_method_info().method_ptr);
         inner(this, start_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_unused_vertices_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<i32 as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "ClearUnusedVertices",
@@ -465,18 +323,15 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "ClearUnusedVertices",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "ClearUnusedVertices",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn clear_unused_vertices_3(
@@ -486,21 +341,16 @@ mod __TMP_MeshInfo_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, i32, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_unused_vertices_3::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_unused_vertices_3::get_method_info().method_ptr);
         inner(this, start_index, update_mesh, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: vertexsortingorder :: VertexSortingOrder as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::vertexsortingorder::VertexSortingOrder as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "SortGeometry",
@@ -512,18 +362,15 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "SortGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "SortGeometry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sort_geometry(
@@ -531,25 +378,17 @@ mod __TMP_MeshInfo_unity2_raw {
         order: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TMP_MeshInfo,
-            crate::tm_pro::vertexsortingorder::VertexSortingOrder,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sort_geometry::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TMP_MeshInfo, crate::tm_pro::vertexsortingorder::VertexSortingOrder, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sort_geometry::get_method_info().method_ptr);
         inner(this, order, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sort_geometry_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < i32 > as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "SortGeometry",
@@ -561,49 +400,35 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "SortGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "SortGeometry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sort_geometry_2(
         this: TMP_MeshInfo,
-        sorting_order: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            i32,
-        >,
+        sorting_order: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             TMP_MeshInfo,
             crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sort_geometry_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_sort_geometry_2::get_method_info().method_ptr);
         inner(this, sorting_order, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_swap_vertex_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
                 "SwapVertexData",
@@ -615,73 +440,46 @@ mod __TMP_MeshInfo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    "SwapVertexData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        "SwapVertexData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn swap_vertex_data(
-        this: TMP_MeshInfo,
-        src: i32,
-        dst: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn swap_vertex_data(this: TMP_MeshInfo, src: i32, dst: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TMP_MeshInfo, i32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_swap_vertex_data::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_swap_vertex_data::get_method_info().method_ptr);
         inner(this, src, dst, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TMP_MeshInfo as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TMP_MeshInfo as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_MeshInfo as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -697,11 +495,7 @@ impl TMP_MeshInfo {
 #[cfg(feature = "tm_pro-tmp_meshinfo")]
 impl TMP_MeshInfo {
     #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, i32)` overload"]
-    pub fn ctor(
-        self,
-        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-        size: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn ctor(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>, size: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __TMP_MeshInfo_unity2_raw::ctor(
                 self,
@@ -711,6 +505,7 @@ impl TMP_MeshInfo {
             )
         }
     }
+
     #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, i32, bool)` overload"]
     pub fn ctor_2(
         self,
@@ -728,22 +523,14 @@ impl TMP_MeshInfo {
             )
         }
     }
+
     #[doc = "`ResizeMeshInfo(i32)` overload"]
     pub fn resize_mesh_info(self, size: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __TMP_MeshInfo_unity2_raw::resize_mesh_info(
-                self,
-                ::core::convert::Into::into(size),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MeshInfo_unity2_raw::resize_mesh_info(self, ::core::convert::Into::into(size), ::core::option::Option::None) }
     }
+
     #[doc = "`ResizeMeshInfo(i32, bool)` overload"]
-    pub fn resize_mesh_info_2(
-        self,
-        size: impl ::core::convert::Into<i32>,
-        is_volumetric: impl ::core::convert::Into<bool>,
-    ) -> () {
+    pub fn resize_mesh_info_2(self, size: impl ::core::convert::Into<i32>, is_volumetric: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             __TMP_MeshInfo_unity2_raw::resize_mesh_info_2(
                 self,
@@ -753,42 +540,29 @@ impl TMP_MeshInfo {
             )
         }
     }
+
     #[doc = "`Clear()` overload"]
     pub fn clear(self) -> () {
         unsafe { __TMP_MeshInfo_unity2_raw::clear(self, ::core::option::Option::None) }
     }
+
     #[doc = "`Clear(bool)` overload"]
     pub fn clear_2(self, upload_changes: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __TMP_MeshInfo_unity2_raw::clear_2(
-                self,
-                ::core::convert::Into::into(upload_changes),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MeshInfo_unity2_raw::clear_2(self, ::core::convert::Into::into(upload_changes), ::core::option::Option::None) }
     }
+
     #[doc = "`ClearUnusedVertices()` overload"]
     pub fn clear_unused_vertices(self) -> () {
-        unsafe {
-            __TMP_MeshInfo_unity2_raw::clear_unused_vertices(self, ::core::option::Option::None)
-        }
+        unsafe { __TMP_MeshInfo_unity2_raw::clear_unused_vertices(self, ::core::option::Option::None) }
     }
+
     #[doc = "`ClearUnusedVertices(i32)` overload"]
     pub fn clear_unused_vertices_2(self, start_index: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __TMP_MeshInfo_unity2_raw::clear_unused_vertices_2(
-                self,
-                ::core::convert::Into::into(start_index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MeshInfo_unity2_raw::clear_unused_vertices_2(self, ::core::convert::Into::into(start_index), ::core::option::Option::None) }
     }
+
     #[doc = "`ClearUnusedVertices(i32, bool)` overload"]
-    pub fn clear_unused_vertices_3(
-        self,
-        start_index: impl ::core::convert::Into<i32>,
-        update_mesh: impl ::core::convert::Into<bool>,
-    ) -> () {
+    pub fn clear_unused_vertices_3(self, start_index: impl ::core::convert::Into<i32>, update_mesh: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             __TMP_MeshInfo_unity2_raw::clear_unused_vertices_3(
                 self,
@@ -798,40 +572,22 @@ impl TMP_MeshInfo {
             )
         }
     }
+
     #[doc = "`SortGeometry(crate::tm_pro::vertexsortingorder::VertexSortingOrder)` overload"]
-    pub fn sort_geometry(
-        self,
-        order: impl ::core::convert::Into<crate::tm_pro::vertexsortingorder::VertexSortingOrder>,
-    ) -> () {
-        unsafe {
-            __TMP_MeshInfo_unity2_raw::sort_geometry(
-                self,
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn sort_geometry(self, order: impl ::core::convert::Into<crate::tm_pro::vertexsortingorder::VertexSortingOrder>) -> () {
+        unsafe { __TMP_MeshInfo_unity2_raw::sort_geometry(self, ::core::convert::Into::into(order), ::core::option::Option::None) }
     }
+
     #[doc = "`SortGeometry(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>)` overload"]
     pub fn sort_geometry_2(
         self,
-        sorting_order: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>,
-        >,
+        sorting_order: impl ::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<i32>>,
     ) -> () {
-        unsafe {
-            __TMP_MeshInfo_unity2_raw::sort_geometry_2(
-                self,
-                ::core::convert::Into::into(sorting_order),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __TMP_MeshInfo_unity2_raw::sort_geometry_2(self, ::core::convert::Into::into(sorting_order), ::core::option::Option::None) }
     }
+
     #[doc = "`SwapVertexData(i32, i32)` overload"]
-    pub fn swap_vertex_data(
-        self,
-        src: impl ::core::convert::Into<i32>,
-        dst: impl ::core::convert::Into<i32>,
-    ) -> () {
+    pub fn swap_vertex_data(self, src: impl ::core::convert::Into<i32>, dst: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             __TMP_MeshInfo_unity2_raw::swap_vertex_data(
                 self,
@@ -847,10 +603,9 @@ impl TMP_MeshInfo {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_MeshInfo;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

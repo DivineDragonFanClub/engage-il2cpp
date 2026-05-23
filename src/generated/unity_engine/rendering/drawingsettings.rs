@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-rendering-drawingsettings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/drawingsettings/DrawingSettings.md"))]
     #[repr(C)]
@@ -14,9 +16,8 @@ mod __types {
     pub struct DrawingSettings {}
 
     impl ::unity2::ClassIdentity for DrawingSettings {
-        const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
         const NAME: &'static str = "DrawingSettings";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -27,10 +28,7 @@ mod __types {
 
     impl ::unity2::IlType for DrawingSettings {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -47,10 +45,11 @@ mod __DrawingSettings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::rendering::shadertagid::ShaderTagId as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::sortingsettings::SortingSettings as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -62,18 +61,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -87,25 +83,14 @@ mod __DrawingSettings_unity2_raw {
             crate::unity_engine::rendering::shadertagid::ShaderTagId,
             crate::unity_engine::rendering::sortingsettings::SortingSettings,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            shader_pass_name,
-            sorting_settings,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, shader_pass_name, sorting_settings, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sorting_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
@@ -118,35 +103,32 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "get_sortingSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "get_sortingSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_sorting_settings(
         this: DrawingSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::sortingsettings::SortingSettings {
-        let inner : extern "C" fn (DrawingSettings , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_sorting_settings :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(DrawingSettings, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::sortingsettings::SortingSettings =
+            ::core::mem::transmute(__lookup_get_sorting_settings::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sorting_settings {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::sortingsettings::SortingSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_sortingSettings",
@@ -158,18 +140,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_sortingSettings",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_sortingSettings",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_sorting_settings(
@@ -177,25 +156,17 @@ mod __DrawingSettings_unity2_raw {
         value: crate::unity_engine::rendering::sortingsettings::SortingSettings,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DrawingSettings,
-            crate::unity_engine::rendering::sortingsettings::SortingSettings,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_sorting_settings::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DrawingSettings, crate::unity_engine::rendering::sortingsettings::SortingSettings, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_sorting_settings::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_per_object_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: perobjectdata :: PerObjectData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::perobjectdata::PerObjectData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_perObjectData",
@@ -207,18 +178,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_perObjectData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_perObjectData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_per_object_data(
@@ -226,26 +194,16 @@ mod __DrawingSettings_unity2_raw {
         value: crate::unity_engine::rendering::perobjectdata::PerObjectData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DrawingSettings,
-            crate::unity_engine::rendering::perobjectdata::PerObjectData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_per_object_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DrawingSettings, crate::unity_engine::rendering::perobjectdata::PerObjectData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_per_object_data::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enable_dynamic_batching {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_enableDynamicBatching",
@@ -257,42 +215,28 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_enableDynamicBatching",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_enableDynamicBatching",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_enable_dynamic_batching(
-        this: DrawingSettings,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_enable_dynamic_batching(this: DrawingSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DrawingSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enable_dynamic_batching::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_enable_dynamic_batching::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_enable_instancing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_enableInstancing",
@@ -304,42 +248,28 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_enableInstancing",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_enableInstancing",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_enable_instancing(
-        this: DrawingSettings,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_enable_instancing(this: DrawingSettings, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DrawingSettings, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_enable_instancing::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_enable_instancing::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_override_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_overrideMaterial",
@@ -351,18 +281,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_overrideMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_overrideMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_override_material(
@@ -370,26 +297,16 @@ mod __DrawingSettings_unity2_raw {
         value: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DrawingSettings,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_override_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DrawingSettings, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_override_material::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_override_material_pass_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_overrideMaterialPassIndex",
@@ -401,42 +318,28 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_overrideMaterialPassIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_overrideMaterialPassIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_override_material_pass_index(
-        this: DrawingSettings,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_override_material_pass_index(this: DrawingSettings, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DrawingSettings, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_override_material_pass_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_override_material_pass_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_main_light_index {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "set_mainLightIndex",
@@ -448,42 +351,28 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "set_mainLightIndex",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "set_mainLightIndex",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_main_light_index(
-        this: DrawingSettings,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_main_light_index(this: DrawingSettings, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DrawingSettings, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_main_light_index::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_main_light_index::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shader_pass_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "GetShaderPassName",
@@ -495,18 +384,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetShaderPassName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetShaderPassName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shader_pass_name(
@@ -514,26 +400,19 @@ mod __DrawingSettings_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::rendering::shadertagid::ShaderTagId {
-        let inner: extern "C" fn(
-            DrawingSettings,
-            i32,
-            ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::rendering::shadertagid::ShaderTagId = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shader_pass_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DrawingSettings, i32, ::unity2::OptionalMethod) -> crate::unity_engine::rendering::shadertagid::ShaderTagId =
+            ::core::mem::transmute(__lookup_get_shader_pass_name::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shader_pass_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::rendering::shadertagid::ShaderTagId as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "SetShaderPassName",
@@ -545,18 +424,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "SetShaderPassName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "SetShaderPassName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shader_pass_name(
@@ -565,26 +441,17 @@ mod __DrawingSettings_unity2_raw {
         shader_pass_name: crate::unity_engine::rendering::shadertagid::ShaderTagId,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            DrawingSettings,
-            i32,
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shader_pass_name::get_offset() as isize),
-        );
+        let inner: extern "C" fn(DrawingSettings, i32, crate::unity_engine::rendering::shadertagid::ShaderTagId, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_shader_pass_name::get_method_info().method_ptr);
         inner(this, index, shader_pass_name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: rendering :: drawingsettings :: DrawingSettings as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::rendering::drawingsettings::DrawingSettings as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -596,18 +463,15 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn equals(
@@ -619,22 +483,15 @@ mod __DrawingSettings_unity2_raw {
             DrawingSettings,
             crate::unity_engine::rendering::drawingsettings::DrawingSettings,
             ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals::get_offset() as isize),
-        );
+        ) -> bool = ::core::mem::transmute(__lookup_equals::get_method_info().method_ptr);
         inner(this, other, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_equals_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::object::Object as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
                 "Equals",
@@ -646,43 +503,27 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "Equals",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "Equals",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn equals_2(
-        this: DrawingSettings,
-        obj: crate::system::object::Object,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            DrawingSettings,
-            crate::system::object::Object,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_equals_2::get_offset() as isize),
-        );
+    pub unsafe fn equals_2(this: DrawingSettings, obj: crate::system::object::Object, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(DrawingSettings, crate::system::object::Object, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_equals_2::get_method_info().method_ptr);
         inner(this, obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_hash_code {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
@@ -695,39 +536,27 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    "GetHashCode",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        "GetHashCode",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_hash_code(
-        this: DrawingSettings,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_hash_code(this: DrawingSettings, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(DrawingSettings, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_hash_code::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_hash_code::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DrawingSettings as ::unity2::ClassIdentity>::class(),
@@ -740,26 +569,19 @@ mod __DrawingSettings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DrawingSettings as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DrawingSettings as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -777,12 +599,8 @@ impl DrawingSettings {
     #[doc = "`.ctor(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"]
     pub fn ctor(
         self,
-        shader_pass_name: impl ::core::convert::Into<
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        >,
-        sorting_settings: impl ::core::convert::Into<
-            crate::unity_engine::rendering::sortingsettings::SortingSettings,
-        >,
+        shader_pass_name: impl ::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        sorting_settings: impl ::core::convert::Into<crate::unity_engine::rendering::sortingsettings::SortingSettings>,
     ) -> () {
         unsafe {
             __DrawingSettings_unity2_raw::ctor(
@@ -793,115 +611,59 @@ impl DrawingSettings {
             )
         }
     }
+
     #[doc = "`get_sortingSettings()` overload"]
-    pub fn get_sorting_settings(
-        self,
-    ) -> crate::unity_engine::rendering::sortingsettings::SortingSettings {
-        unsafe {
-            __DrawingSettings_unity2_raw::get_sorting_settings(self, ::core::option::Option::None)
-        }
+    pub fn get_sorting_settings(self) -> crate::unity_engine::rendering::sortingsettings::SortingSettings {
+        unsafe { __DrawingSettings_unity2_raw::get_sorting_settings(self, ::core::option::Option::None) }
     }
+
     #[doc = "`set_sortingSettings(crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"]
-    pub fn set_sorting_settings(
-        self,
-        value: impl ::core::convert::Into<
-            crate::unity_engine::rendering::sortingsettings::SortingSettings,
-        >,
-    ) -> () {
-        unsafe {
-            __DrawingSettings_unity2_raw::set_sorting_settings(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_sorting_settings(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::sortingsettings::SortingSettings>) -> () {
+        unsafe { __DrawingSettings_unity2_raw::set_sorting_settings(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`set_perObjectData(crate::unity_engine::rendering::perobjectdata::PerObjectData)` overload"]
-    pub fn set_per_object_data(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rendering::perobjectdata::PerObjectData>,
-    ) -> () {
-        unsafe {
-            __DrawingSettings_unity2_raw::set_per_object_data(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_per_object_data(self, value: impl ::core::convert::Into<crate::unity_engine::rendering::perobjectdata::PerObjectData>) -> () {
+        unsafe { __DrawingSettings_unity2_raw::set_per_object_data(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`set_enableDynamicBatching(bool)` overload"]
     pub fn set_enable_dynamic_batching(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __DrawingSettings_unity2_raw::set_enable_dynamic_batching(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DrawingSettings_unity2_raw::set_enable_dynamic_batching(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`set_enableInstancing(bool)` overload"]
     pub fn set_enable_instancing(self, value: impl ::core::convert::Into<bool>) -> () {
-        unsafe {
-            __DrawingSettings_unity2_raw::set_enable_instancing(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DrawingSettings_unity2_raw::set_enable_instancing(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`set_overrideMaterial(crate::unity_engine::material::Material)` overload"]
-    pub fn set_override_material(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
-        unsafe {
-            __DrawingSettings_unity2_raw::set_override_material(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_override_material(self, value: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
+        unsafe { __DrawingSettings_unity2_raw::set_override_material(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`set_overrideMaterialPassIndex(i32)` overload"]
     pub fn set_override_material_pass_index(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            __DrawingSettings_unity2_raw::set_override_material_pass_index(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            __DrawingSettings_unity2_raw::set_override_material_pass_index(self, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
+
     #[doc = "`set_mainLightIndex(i32)` overload"]
     pub fn set_main_light_index(self, value: impl ::core::convert::Into<i32>) -> () {
-        unsafe {
-            __DrawingSettings_unity2_raw::set_main_light_index(
-                self,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DrawingSettings_unity2_raw::set_main_light_index(self, ::core::convert::Into::into(value), ::core::option::Option::None) }
     }
+
     #[doc = "`GetShaderPassName(i32)` overload"]
-    pub fn get_shader_pass_name(
-        self,
-        index: impl ::core::convert::Into<i32>,
-    ) -> crate::unity_engine::rendering::shadertagid::ShaderTagId {
-        unsafe {
-            __DrawingSettings_unity2_raw::get_shader_pass_name(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_shader_pass_name(self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::rendering::shadertagid::ShaderTagId {
+        unsafe { __DrawingSettings_unity2_raw::get_shader_pass_name(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`SetShaderPassName(i32, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"]
     pub fn set_shader_pass_name(
         self,
         index: impl ::core::convert::Into<i32>,
-        shader_pass_name: impl ::core::convert::Into<
-            crate::unity_engine::rendering::shadertagid::ShaderTagId,
-        >,
+        shader_pass_name: impl ::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
     ) -> () {
         unsafe {
             __DrawingSettings_unity2_raw::set_shader_pass_name(
@@ -912,31 +674,17 @@ impl DrawingSettings {
             )
         }
     }
+
     #[doc = "`Equals(crate::unity_engine::rendering::drawingsettings::DrawingSettings)` overload"]
-    pub fn equals(
-        self,
-        other: impl ::core::convert::Into<
-            crate::unity_engine::rendering::drawingsettings::DrawingSettings,
-        >,
-    ) -> bool {
-        unsafe {
-            __DrawingSettings_unity2_raw::equals(
-                self,
-                ::core::convert::Into::into(other),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn equals(self, other: impl ::core::convert::Into<crate::unity_engine::rendering::drawingsettings::DrawingSettings>) -> bool {
+        unsafe { __DrawingSettings_unity2_raw::equals(self, ::core::convert::Into::into(other), ::core::option::Option::None) }
     }
+
     #[doc = "`Equals(crate::system::object::Object)` overload"]
     pub fn equals_2(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
-        unsafe {
-            __DrawingSettings_unity2_raw::equals_2(
-                self,
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DrawingSettings_unity2_raw::equals_2(self, ::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHashCode()` overload"]
     pub fn get_hash_code(self) -> i32 {
         unsafe { __DrawingSettings_unity2_raw::get_hash_code(self, ::core::option::Option::None) }
@@ -947,10 +695,9 @@ impl DrawingSettings {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::DrawingSettings;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

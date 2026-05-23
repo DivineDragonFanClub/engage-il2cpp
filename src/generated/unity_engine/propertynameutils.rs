@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-propertynameutils-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/propertynameutils/PropertyNameUtils.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "PropertyNameUtils")]
@@ -25,11 +25,8 @@ mod __PropertyNameUtils_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_property_name_from_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PropertyNameUtils as ::unity2::ClassIdentity>::class(),
                 "PropertyNameFromString",
@@ -41,41 +38,30 @@ mod __PropertyNameUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyNameUtils as ::unity2::ClassIdentity>::NAME,
-                    "PropertyNameFromString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyNameUtils as ::unity2::ClassIdentity>::NAME,
+                        "PropertyNameFromString",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn property_name_from_string(
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::propertyname::PropertyName {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::propertyname::PropertyName = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_property_name_from_string::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
+            ::core::mem::transmute(__lookup_property_name_from_string::get_method_info().method_ptr);
         inner(name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_property_name_from_string_injected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::propertyname::PropertyName as ::unity2::IlType>::il_type(),
@@ -91,18 +77,15 @@ mod __PropertyNameUtils_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PropertyNameUtils as ::unity2::ClassIdentity>::NAME,
-                    "PropertyNameFromString_Injected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PropertyNameUtils as ::unity2::ClassIdentity>::NAME,
+                        "PropertyNameFromString_Injected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn property_name_from_string_injected(
@@ -110,15 +93,8 @@ mod __PropertyNameUtils_unity2_raw {
         ret: *mut crate::unity_engine::propertyname::PropertyName,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Il2CppString,
-            *mut crate::unity_engine::propertyname::PropertyName,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_property_name_from_string_injected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Il2CppString, *mut crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_property_name_from_string_injected::get_method_info().method_ptr);
         inner(name, ret, __unity2_method_info)
     }
 }
@@ -126,24 +102,16 @@ mod __PropertyNameUtils_unity2_raw {
 #[cfg(feature = "unity_engine-propertynameutils")]
 impl PropertyNameUtils {
     #[doc = "`PropertyNameFromString(::unity2::Il2CppString)` overload"]
-    pub fn property_name_from_string(
-        name: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::unity_engine::propertyname::PropertyName {
-        unsafe {
-            __PropertyNameUtils_unity2_raw::property_name_from_string(
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn property_name_from_string(name: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::unity_engine::propertyname::PropertyName {
+        unsafe { __PropertyNameUtils_unity2_raw::property_name_from_string(::core::convert::Into::into(name), ::core::option::Option::None) }
     }
+
     #[doc = "`PropertyNameFromString_Injected(::unity2::Il2CppString, *mutcrate::unity_engine::propertyname::PropertyName)` overload"]
     pub fn property_name_from_string_injected(
         name: impl ::core::convert::Into<::unity2::Il2CppString>,
     ) -> crate::unity_engine::propertyname::PropertyName {
         unsafe {
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::propertyname::PropertyName,
-            >::uninit();
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::propertyname::PropertyName>::uninit();
             __PropertyNameUtils_unity2_raw::property_name_from_string_injected(
                 ::core::convert::Into::into(name),
                 __out_0.as_mut_ptr(),
@@ -157,8 +125,7 @@ impl PropertyNameUtils {
 #[cfg(feature = "unity_engine-propertynameutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPropertyNameUtils;
-    pub use super::PropertyNameUtils;
+    pub use super::{IPropertyNameUtils, PropertyNameUtils};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

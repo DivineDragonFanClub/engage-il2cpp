@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-talk3_d-characterfactory-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactory/CharacterFactory.md"))]
     #[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactory")]
@@ -19,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "app-talk3_d-characterfactory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterFactory;
-    pub use super::ICharacterFactory;
+    pub use super::{CharacterFactory, ICharacterFactory};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

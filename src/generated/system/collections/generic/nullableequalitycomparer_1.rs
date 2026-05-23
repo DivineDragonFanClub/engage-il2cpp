@@ -2,15 +2,12 @@
 
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nullableequalitycomparer_1/NullableEqualityComparer_1.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Generic",
-        name = "NullableEqualityComparer`1"
-    )]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "NullableEqualityComparer`1")]
     pub struct NullableEqualityComparer_1<T0: ::unity2::ClassIdentity> {}
 }
 
@@ -52,7 +49,5 @@ impl<T0: ::unity2::ClassIdentity> NullableEqualityComparer_1<T0> {
 #[cfg(feature = "system-collections-generic-nullableequalitycomparer_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INullableEqualityComparer_1;
-    pub use super::INullableEqualityComparer_1Methods;
-    pub use super::NullableEqualityComparer_1;
+    pub use super::{INullableEqualityComparer_1, INullableEqualityComparer_1Methods, NullableEqualityComparer_1};
 }

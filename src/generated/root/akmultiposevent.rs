@@ -2,10 +2,10 @@
 
 #[cfg(feature = "root-akmultiposevent-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmultiposevent/AkMultiPosEvent.md"))]
     #[::unity2::class(namespace = "", name = "AkMultiPosEvent")]
@@ -14,8 +14,7 @@ mod __types {
         #[rename(name = "eventIsPlaying")]
         pub event_is_playing: bool,
         #[rename(name = "list")]
-        pub list:
-            crate::system::collections::generic::list_1::List_1<crate::root::akambient::AkAmbient>,
+        pub list: crate::system::collections::generic::list_1::List_1<crate::root::akambient::AkAmbient>,
     }
 }
 
@@ -31,9 +30,7 @@ mod __AkMultiPosEvent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_finished_playing {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <crate::root::akcallbacktype::AkCallbackType as ::unity2::IlType>::il_type(),
@@ -50,18 +47,15 @@ mod __AkMultiPosEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMultiPosEvent as ::unity2::ClassIdentity>::NAME,
-                    "FinishedPlaying",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMultiPosEvent as ::unity2::ClassIdentity>::NAME,
+                        "FinishedPlaying",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn finished_playing(
@@ -77,20 +71,14 @@ mod __AkMultiPosEvent_unity2_raw {
             crate::root::akcallbacktype::AkCallbackType,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_finished_playing::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_finished_playing::get_method_info().method_ptr);
         inner(this, in_cookie, in_type, in_info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AkMultiPosEvent as ::unity2::ClassIdentity>::class(),
@@ -103,30 +91,20 @@ mod __AkMultiPosEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AkMultiPosEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AkMultiPosEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: AkMultiPosEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: AkMultiPosEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(AkMultiPosEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -141,9 +119,7 @@ pub trait IAkMultiPosEventMethods: IAkMultiPosEvent {
         in_info: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <AkMultiPosEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMultiPosEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMultiPosEvent_unity2_raw::finished_playing(
                 __receiver,
                 ::core::convert::Into::into(in_cookie),
@@ -156,9 +132,7 @@ pub trait IAkMultiPosEventMethods: IAkMultiPosEvent {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <AkMultiPosEvent as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <AkMultiPosEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AkMultiPosEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -186,9 +160,7 @@ impl AkMultiPosEvent {
 #[cfg(feature = "root-akmultiposevent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkMultiPosEvent;
-    pub use super::IAkMultiPosEvent;
-    pub use super::IAkMultiPosEventMethods;
+    pub use super::{AkMultiPosEvent, IAkMultiPosEvent, IAkMultiPosEventMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

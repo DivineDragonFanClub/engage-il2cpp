@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-timeline-notificationutilities-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/notificationutilities/NotificationUtilities.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "NotificationUtilities")]
@@ -25,10 +25,14 @@ mod __NotificationUtilities_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_notifications_playable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+                    crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
+                > as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NotificationUtilities as ::unity2::ClassIdentity>::class(),
                 "CreateNotificationsPlayable",
@@ -40,18 +44,15 @@ mod __NotificationUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NotificationUtilities as ::unity2::ClassIdentity>::NAME,
-                    "CreateNotificationsPlayable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NotificationUtilities as ::unity2::ClassIdentity>::NAME,
+                        "CreateNotificationsPlayable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_notifications_playable(
@@ -64,18 +65,22 @@ mod __NotificationUtilities_unity2_raw {
     ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
         crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour,
     > {
-        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayable_1 :: ScriptPlayable_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create_notifications_playable :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
+            crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour,
+        > = ::core::mem::transmute(__lookup_create_notifications_playable::get_method_info().method_ptr);
         inner(graph, markers, go, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_track_type_supports_notifications {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::SystemType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NotificationUtilities as ::unity2::ClassIdentity>::class(),
                 "TrackTypeSupportsNotifications",
@@ -87,30 +92,20 @@ mod __NotificationUtilities_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NotificationUtilities as ::unity2::ClassIdentity>::NAME,
-                    "TrackTypeSupportsNotifications",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NotificationUtilities as ::unity2::ClassIdentity>::NAME,
+                        "TrackTypeSupportsNotifications",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn track_type_supports_notifications(
-        r#type: ::unity2::SystemType,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn track_type_supports_notifications(r#type: ::unity2::SystemType, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::SystemType, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_track_type_supports_notifications::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_track_type_supports_notifications::get_method_info().method_ptr);
         inner(r#type, __unity2_method_info)
     }
 }
@@ -121,9 +116,7 @@ impl NotificationUtilities {
     pub fn create_notifications_playable(
         graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
         markers: impl ::core::convert::Into<
-            crate::system::collections::generic::ienumerable_1::IEnumerable_1<
-                crate::unity_engine::timeline::imarker_interface::IMarker_Interface,
-            >,
+            crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>,
         >,
         go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
     ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<
@@ -138,15 +131,11 @@ impl NotificationUtilities {
             )
         }
     }
+
     #[doc = "`TrackTypeSupportsNotifications(::unity2::SystemType)` overload"]
-    pub fn track_type_supports_notifications(
-        r#type: impl ::core::convert::Into<::unity2::SystemType>,
-    ) -> bool {
+    pub fn track_type_supports_notifications(r#type: impl ::core::convert::Into<::unity2::SystemType>) -> bool {
         unsafe {
-            __NotificationUtilities_unity2_raw::track_type_supports_notifications(
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            __NotificationUtilities_unity2_raw::track_type_supports_notifications(::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
 }
@@ -154,8 +143,7 @@ impl NotificationUtilities {
 #[cfg(feature = "unity_engine-timeline-notificationutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INotificationUtilities;
-    pub use super::NotificationUtilities;
+    pub use super::{INotificationUtilities, NotificationUtilities};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

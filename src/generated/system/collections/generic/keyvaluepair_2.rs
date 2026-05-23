@@ -2,11 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-keyvaluepair_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/keyvaluepair_2/KeyValuePair_2.md"))]
     #[repr(C)]
@@ -15,35 +17,24 @@ mod __types {
         pub _phantom: ::core::marker::PhantomData<(T0, T1)>,
     }
 
-    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity
-        for KeyValuePair_2<T0, T1>
-    {
-        const NAMESPACE: &'static str = "System.Collections.Generic";
-
+    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity for KeyValuePair_2<T0, T1> {
         const NAME: &'static str = "KeyValuePair`2";
+        const NAMESPACE: &'static str = "System.Collections.Generic";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
             *CACHE.get_or_init(|| {
                 ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                    .make_generic(&[
-                        <T0 as ::unity2::ClassIdentity>::class(),
-                        <T1 as ::unity2::ClassIdentity>::class(),
-                    ])
+                    .make_generic(&[<T0 as ::unity2::ClassIdentity>::class(), <T1 as ::unity2::ClassIdentity>::class()])
                     .expect("generic instantiation")
             })
         }
     }
 
-    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType
-        for KeyValuePair_2<T0, T1>
-    {
+    impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType for KeyValuePair_2<T0, T1> {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -75,10 +66,9 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> KeyValuePair_2<T0
 #[doc(hidden)]
 pub mod prelude {
     pub use super::KeyValuePair_2;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

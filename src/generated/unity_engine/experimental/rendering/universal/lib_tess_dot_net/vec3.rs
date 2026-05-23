@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/vec3/Vec3.md"))]
     #[repr(C)]
@@ -18,10 +20,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for Vec3 {
-        const NAMESPACE: &'static str =
-            "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
-
         const NAME: &'static str = "Vec3";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -32,10 +32,7 @@ mod __types {
 
     impl ::unity2::IlType for Vec3 {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -52,387 +49,230 @@ mod __Vec3_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "get_Item",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "get_Item", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "get_Item", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_item(
-        this: Vec3,
-        index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_item(this: Vec3, index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(Vec3, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "set_Item",
-                2,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "set_Item", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "set_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "set_Item", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_item(
-        this: Vec3,
-        index: i32,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_item(this: Vec3, index: i32, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(Vec3, i32, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_item::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_item::get_method_info().method_ptr);
         inner(this, index, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_sub {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "Sub",
-                3,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "Sub", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "Sub",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "Sub", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sub(
-        lhs : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
-        rhs : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
-        result : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        lhs: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+        rhs: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+        result: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_sub :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_sub::get_method_info().method_ptr);
         inner(lhs, rhs, result, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_neg {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "Neg",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "Neg", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "Neg",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "Neg", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn neg(
-        v : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        v: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_neg :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_neg::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type () , < f32 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "Dot",
-                3,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type(),
+                <f32 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "Dot", 3, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "Dot",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "Dot", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn dot(
-        u : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
-        v : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        u: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+        v: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
         dot: *mut f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_dot :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            *mut f32,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_dot::get_method_info().method_ptr);
         inner(u, v, dot, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_normalize {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "Normalize",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "Normalize", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "Normalize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <Vec3 as ::unity2::ClassIdentity>::NAME,
+                        "Normalize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn normalize(
-        v : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        v: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_normalize :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_normalize::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_long_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "LongAxis",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "LongAxis", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "LongAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "LongAxis", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn long_axis(
-        v : * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        v: *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_long_axis :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            *mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
+            ::unity2::OptionalMethod,
+        ) -> i32 = ::core::mem::transmute(__lookup_long_axis::get_method_info().method_ptr);
         inner(v, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_to_string {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                "ToString",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), "ToString", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    "ToString",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, "ToString", e),
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn to_string(
-        this: Vec3,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
+    pub unsafe fn to_string(this: Vec3, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
         let inner: extern "C" fn(Vec3, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_to_string::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_to_string::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <Vec3 as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<Vec3 as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <Vec3 as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => panic!("method lookup failed: {}::{}: {}", <Vec3 as ::unity2::ClassIdentity>::NAME, ".cctor", e),
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -446,31 +286,32 @@ impl Vec3 {
         crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
     ) {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
-            let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
-            let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
+            let mut __out_2 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
             __Vec3_unity2_raw::sub(
                 __out_0.as_mut_ptr(),
                 __out_1.as_mut_ptr(),
                 __out_2.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`Neg(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]
-    pub fn neg(
-    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 {
+    pub fn neg() -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
             __Vec3_unity2_raw::neg(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`Dot(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutf32)` overload"]
     pub fn dot() -> (
         crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
@@ -478,8 +319,10 @@ impl Vec3 {
         f32,
     ) {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
-            let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
+            let mut __out_1 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
             let mut __out_2 = ::core::mem::MaybeUninit::<f32>::uninit();
             __Vec3_unity2_raw::dot(
                 __out_0.as_mut_ptr(),
@@ -487,35 +330,30 @@ impl Vec3 {
                 __out_2.as_mut_ptr(),
                 ::core::option::Option::None,
             );
-            (
-                __out_0.assume_init(),
-                __out_1.assume_init(),
-                __out_2.assume_init(),
-            )
+            (__out_0.assume_init(), __out_1.assume_init(), __out_2.assume_init())
         }
     }
+
     #[doc = "`Normalize(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]
-    pub fn normalize(
-    ) -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 {
+    pub fn normalize() -> crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3 {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
             __Vec3_unity2_raw::normalize(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`LongAxis(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]
-    pub fn long_axis() -> (
-        i32,
-        crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,
-    ) {
+    pub fn long_axis() -> (i32, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3) {
         unsafe {
-            let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ;
-            let __ret = {
-                __Vec3_unity2_raw::long_axis(__out_0.as_mut_ptr(), ::core::option::Option::None)
-            };
+            let mut __out_0 =
+                ::core::mem::MaybeUninit::<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3>::uninit();
+            let __ret = { __Vec3_unity2_raw::long_axis(__out_0.as_mut_ptr(), ::core::option::Option::None) };
             (__ret, __out_0.assume_init())
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __Vec3_unity2_raw::cctor(::core::option::Option::None) }
@@ -526,20 +364,11 @@ impl Vec3 {
 impl Vec3 {
     #[doc = "`get_Item(i32)` overload"]
     pub fn get_item(self, index: impl ::core::convert::Into<i32>) -> f32 {
-        unsafe {
-            __Vec3_unity2_raw::get_item(
-                self,
-                ::core::convert::Into::into(index),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __Vec3_unity2_raw::get_item(self, ::core::convert::Into::into(index), ::core::option::Option::None) }
     }
+
     #[doc = "`set_Item(i32, f32)` overload"]
-    pub fn set_item(
-        self,
-        index: impl ::core::convert::Into<i32>,
-        value: impl ::core::convert::Into<f32>,
-    ) -> () {
+    pub fn set_item(self, index: impl ::core::convert::Into<i32>, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             __Vec3_unity2_raw::set_item(
                 self,
@@ -549,6 +378,7 @@ impl Vec3 {
             )
         }
     }
+
     #[doc = "`ToString()` overload"]
     pub fn to_string(self) -> ::unity2::Il2CppString {
         unsafe { __Vec3_unity2_raw::to_string(self, ::core::option::Option::None) }
@@ -559,10 +389,9 @@ impl Vec3 {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Vec3;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

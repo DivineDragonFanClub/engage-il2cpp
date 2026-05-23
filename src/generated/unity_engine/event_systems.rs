@@ -49,14 +49,9 @@ pub use eventsystem::{EventSystem, IEventSystem};
 #[cfg(any(feature = "unity_engine-event_systems-eventtrigger-types"))]
 pub mod eventtrigger;
 #[cfg(feature = "unity_engine-event_systems-eventtrigger-types")]
-pub use eventtrigger::{
-    EventTrigger, EventTrigger_Entry, EventTrigger_TriggerEvent, IEventTrigger,
-    IEventTrigger_Entry, IEventTrigger_TriggerEvent,
-};
+pub use eventtrigger::{EventTrigger, EventTrigger_Entry, EventTrigger_TriggerEvent, IEventTrigger, IEventTrigger_Entry, IEventTrigger_TriggerEvent};
 #[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-pub use eventtrigger::{
-    IEventTriggerMethods, IEventTrigger_EntryMethods, IEventTrigger_TriggerEventMethods,
-};
+pub use eventtrigger::{IEventTriggerMethods, IEventTrigger_EntryMethods, IEventTrigger_TriggerEventMethods};
 #[cfg(any(feature = "unity_engine-event_systems-eventtriggertype-types"))]
 pub mod eventtriggertype;
 #[cfg(feature = "unity_engine-event_systems-eventtriggertype-types")]
@@ -66,9 +61,7 @@ pub mod executeevents;
 #[cfg(feature = "unity_engine-event_systems-executeevents")]
 pub use executeevents::IExecuteEvents_EventFunction_1Methods;
 #[cfg(feature = "unity_engine-event_systems-executeevents-types")]
-pub use executeevents::{
-    ExecuteEvents, ExecuteEvents_EventFunction_1, IExecuteEvents, IExecuteEvents_EventFunction_1,
-};
+pub use executeevents::{ExecuteEvents, ExecuteEvents_EventFunction_1, IExecuteEvents, IExecuteEvents_EventFunction_1};
 #[cfg(any(feature = "unity_engine-event_systems-ibegindraghandler-types"))]
 pub mod ibegindraghandler;
 #[cfg(feature = "unity_engine-event_systems-ibegindraghandler")]
@@ -114,9 +107,7 @@ pub mod iinitializepotentialdraghandler;
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
 pub use iinitializepotentialdraghandler::IIInitializePotentialDragHandlerMethods;
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler-types")]
-pub use iinitializepotentialdraghandler::{
-    IIInitializePotentialDragHandler, IInitializePotentialDragHandler,
-};
+pub use iinitializepotentialdraghandler::{IIInitializePotentialDragHandler, IInitializePotentialDragHandler};
 #[cfg(any(feature = "unity_engine-event_systems-imovehandler-types"))]
 pub mod imovehandler;
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
@@ -190,10 +181,7 @@ pub use physics2draycaster::{IPhysics2DRaycaster, Physics2DRaycaster};
 #[cfg(any(feature = "unity_engine-event_systems-physicsraycaster-types"))]
 pub mod physicsraycaster;
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster-types")]
-pub use physicsraycaster::{
-    IPhysicsRaycaster, IPhysicsRaycaster_RaycastHitComparer, PhysicsRaycaster,
-    PhysicsRaycaster_RaycastHitComparer,
-};
+pub use physicsraycaster::{IPhysicsRaycaster, IPhysicsRaycaster_RaycastHitComparer, PhysicsRaycaster, PhysicsRaycaster_RaycastHitComparer};
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
 pub use physicsraycaster::{IPhysicsRaycasterMethods, IPhysicsRaycaster_RaycastHitComparerMethods};
 #[cfg(any(feature = "unity_engine-event_systems-pointereventdata-types"))]
@@ -201,22 +189,18 @@ pub mod pointereventdata;
 #[cfg(feature = "unity_engine-event_systems-pointereventdata")]
 pub use pointereventdata::IPointerEventDataMethods;
 #[cfg(feature = "unity_engine-event_systems-pointereventdata-types")]
-pub use pointereventdata::{
-    IPointerEventData, PointerEventData, PointerEventData_FramePressState,
-    PointerEventData_InputButton,
-};
+pub use pointereventdata::{IPointerEventData, PointerEventData, PointerEventData_FramePressState, PointerEventData_InputButton};
 #[cfg(any(feature = "unity_engine-event_systems-pointerinputmodule-types"))]
 pub mod pointerinputmodule;
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule-types")]
 pub use pointerinputmodule::{
-    IPointerInputModule, IPointerInputModule_ButtonState, IPointerInputModule_MouseButtonEventData,
-    IPointerInputModule_MouseState, PointerInputModule, PointerInputModule_ButtonState,
-    PointerInputModule_MouseButtonEventData, PointerInputModule_MouseState,
+    IPointerInputModule, IPointerInputModule_ButtonState, IPointerInputModule_MouseButtonEventData, IPointerInputModule_MouseState,
+    PointerInputModule, PointerInputModule_ButtonState, PointerInputModule_MouseButtonEventData, PointerInputModule_MouseState,
 };
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
 pub use pointerinputmodule::{
-    IPointerInputModuleMethods, IPointerInputModule_ButtonStateMethods,
-    IPointerInputModule_MouseButtonEventDataMethods, IPointerInputModule_MouseStateMethods,
+    IPointerInputModuleMethods, IPointerInputModule_ButtonStateMethods, IPointerInputModule_MouseButtonEventDataMethods,
+    IPointerInputModule_MouseStateMethods,
 };
 #[cfg(any(feature = "unity_engine-event_systems-raycastermanager-types"))]
 pub mod raycastermanager;
@@ -231,17 +215,13 @@ pub mod standaloneinputmodule;
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule")]
 pub use standaloneinputmodule::IStandaloneInputModuleMethods;
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule-types")]
-pub use standaloneinputmodule::{
-    IStandaloneInputModule, StandaloneInputModule, StandaloneInputModule_InputMode,
-};
+pub use standaloneinputmodule::{IStandaloneInputModule, StandaloneInputModule, StandaloneInputModule_InputMode};
 #[cfg(any(feature = "unity_engine-event_systems-standaloneinputmodule18-types"))]
 pub mod standaloneinputmodule18;
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18")]
 pub use standaloneinputmodule18::IStandaloneInputModule18Methods;
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18-types")]
-pub use standaloneinputmodule18::{
-    IStandaloneInputModule18, StandaloneInputModule18, StandaloneInputModule18_InputMode,
-};
+pub use standaloneinputmodule18::{IStandaloneInputModule18, StandaloneInputModule18, StandaloneInputModule18_InputMode};
 #[cfg(any(feature = "unity_engine-event_systems-touchinputmodule-types"))]
 pub mod touchinputmodule;
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule")]

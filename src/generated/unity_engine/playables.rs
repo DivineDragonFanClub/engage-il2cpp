@@ -45,9 +45,7 @@ pub mod iplayablebehaviour_interface;
 #[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]
 pub use iplayablebehaviour_interface::IIPlayableBehaviour_InterfaceMethods;
 #[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface-types")]
-pub use iplayablebehaviour_interface::{
-    IIPlayableBehaviour_Interface, IPlayableBehaviour_Interface,
-};
+pub use iplayablebehaviour_interface::{IIPlayableBehaviour_Interface, IPlayableBehaviour_Interface};
 #[cfg(any(feature = "unity_engine-playables-iplayableoutput_interface-types"))]
 pub mod iplayableoutput_interface;
 #[cfg(feature = "unity_engine-playables-iplayableoutput_interface")]
@@ -75,9 +73,7 @@ pub mod playablebinding;
 #[cfg(feature = "unity_engine-playables-playablebinding")]
 pub use playablebinding::IPlayableBinding_CreateOutputMethodMethods;
 #[cfg(feature = "unity_engine-playables-playablebinding-types")]
-pub use playablebinding::{
-    IPlayableBinding_CreateOutputMethod, PlayableBinding, PlayableBinding_CreateOutputMethod,
-};
+pub use playablebinding::{IPlayableBinding_CreateOutputMethod, PlayableBinding, PlayableBinding_CreateOutputMethod};
 #[cfg(any(feature = "unity_engine-playables-playabledirector-types"))]
 pub mod playabledirector;
 #[cfg(feature = "unity_engine-playables-playabledirector")]

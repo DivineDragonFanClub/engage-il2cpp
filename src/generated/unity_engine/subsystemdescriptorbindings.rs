@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/subsystemdescriptorbindings/SubsystemDescriptorBindings.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "SubsystemDescriptorBindings")]
@@ -25,11 +25,8 @@ mod __SubsystemDescriptorBindings_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::IntPtr as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SubsystemDescriptorBindings as ::unity2::ClassIdentity>::class(),
                 "GetId",
@@ -41,32 +38,20 @@ mod __SubsystemDescriptorBindings_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SubsystemDescriptorBindings as ::unity2::ClassIdentity>::NAME,
-                    "GetId",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SubsystemDescriptorBindings as ::unity2::ClassIdentity>::NAME,
+                        "GetId",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_id(
-        descriptor_ptr: ::unity2::IntPtr,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_id::get_offset() as isize),
-        );
+    pub unsafe fn get_id(descriptor_ptr: ::unity2::IntPtr, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(::unity2::IntPtr, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_id::get_method_info().method_ptr);
         inner(descriptor_ptr, __unity2_method_info)
     }
 }
@@ -74,23 +59,15 @@ mod __SubsystemDescriptorBindings_unity2_raw {
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
 impl SubsystemDescriptorBindings {
     #[doc = "`GetId(::unity2::IntPtr)` overload"]
-    pub fn get_id(
-        descriptor_ptr: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> ::unity2::Il2CppString {
-        unsafe {
-            __SubsystemDescriptorBindings_unity2_raw::get_id(
-                ::core::convert::Into::into(descriptor_ptr),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn get_id(descriptor_ptr: impl ::core::convert::Into<::unity2::IntPtr>) -> ::unity2::Il2CppString {
+        unsafe { __SubsystemDescriptorBindings_unity2_raw::get_id(::core::convert::Into::into(descriptor_ptr), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISubsystemDescriptorBindings;
-    pub use super::SubsystemDescriptorBindings;
+    pub use super::{ISubsystemDescriptorBindings, SubsystemDescriptorBindings};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

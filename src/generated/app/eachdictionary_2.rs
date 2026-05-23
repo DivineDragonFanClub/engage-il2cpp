@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-eachdictionary_2-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eachdictionary_2/EachDictionary_2.md"))]
     #[::unity2::class(namespace = "App", name = "EachDictionary`2")]
@@ -67,9 +67,7 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EachDictionary_2<
 #[cfg(feature = "app-eachdictionary_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EachDictionary_2;
-    pub use super::IEachDictionary_2;
-    pub use super::IEachDictionary_2Methods;
+    pub use super::{EachDictionary_2, IEachDictionary_2, IEachDictionary_2Methods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,24 +2,21 @@
 
 #[cfg(feature = "app-profilecardvisualcharacterstampemptymenuitem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::profilecardvisualbasemenuitem::{
-        IProfileCardVisualBaseMenuItem, ProfileCardVisualBaseMenuItem,
+    use super::*;
+    use crate::{
+        app::{
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem, ProfileCardVisualBaseMenuItem},
+            profilecardvisualcharacterstampmenuitem::{IProfileCardVisualCharacterStampMenuItem, ProfileCardVisualCharacterStampMenuItem},
+        },
+        system::object::{IObject, Object},
     };
-    use crate::app::profilecardvisualcharacterstampmenuitem::{
-        IProfileCardVisualCharacterStampMenuItem, ProfileCardVisualCharacterStampMenuItem,
-    };
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualcharacterstampemptymenuitem/ProfileCardVisualCharacterStampEmptyMenuItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ProfileCardVisualCharacterStampEmptyMenuItem"
-    )]
-    # [parent (crate :: app :: profilecardvisualcharacterstampmenuitem :: ProfileCardVisualCharacterStampMenuItem)]
+    #[::unity2::class(namespace = "App", name = "ProfileCardVisualCharacterStampEmptyMenuItem")]
+    #[parent(crate::app::profilecardvisualcharacterstampmenuitem::ProfileCardVisualCharacterStampMenuItem)]
     pub struct ProfileCardVisualCharacterStampEmptyMenuItem {}
 }
 
@@ -35,11 +32,8 @@ mod __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -51,18 +45,15 @@ mod __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -70,24 +61,15 @@ mod __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw {
         initial_select: bool,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardVisualCharacterStampEmptyMenuItem,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardVisualCharacterStampEmptyMenuItem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, initial_select, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_build_menu_item_content {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::class(),
@@ -100,41 +82,30 @@ mod __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnBuildMenuItemContent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnBuildMenuItemContent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_build_menu_item_content(
         this: ProfileCardVisualCharacterStampEmptyMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardVisualCharacterStampEmptyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_build_menu_item_content::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ProfileCardVisualCharacterStampEmptyMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_build_menu_item_content::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_new_arrival {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::class(),
@@ -147,41 +118,27 @@ mod __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsNewArrival",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsNewArrival",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_new_arrival(
-        this: ProfileCardVisualCharacterStampEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            ProfileCardVisualCharacterStampEmptyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_is_new_arrival::get_offset() as isize),
-        );
+    pub unsafe fn is_new_arrival(this: ProfileCardVisualCharacterStampEmptyMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(ProfileCardVisualCharacterStampEmptyMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_new_arrival::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_already_read {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::class(),
@@ -194,44 +151,32 @@ mod __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "SetAlreadyRead",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "SetAlreadyRead",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_already_read(
-        this: ProfileCardVisualCharacterStampEmptyMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ProfileCardVisualCharacterStampEmptyMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_already_read::get_offset() as isize),
-        );
+    pub unsafe fn set_already_read(this: ProfileCardVisualCharacterStampEmptyMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ProfileCardVisualCharacterStampEmptyMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_already_read::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-profilecardvisualcharacterstampemptymenuitem")]
-pub trait IProfileCardVisualCharacterStampEmptyMenuItemMethods:
-    IProfileCardVisualCharacterStampEmptyMenuItem
-{
+pub trait IProfileCardVisualCharacterStampEmptyMenuItemMethods: IProfileCardVisualCharacterStampEmptyMenuItem {
     #[doc = "`.ctor(bool)` overload"]
     fn ctor(self, initial_select: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualCharacterStampEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(initial_select),
@@ -242,40 +187,34 @@ pub trait IProfileCardVisualCharacterStampEmptyMenuItemMethods:
     #[doc = "`OnBuildMenuItemContent()` overload"]
     fn on_build_menu_item_content(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualCharacterStampEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::on_build_menu_item_content(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`IsNewArrival()` overload"]
     fn is_new_arrival(self) -> bool {
         unsafe {
-            let __receiver = < ProfileCardVisualCharacterStampEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::is_new_arrival(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::is_new_arrival(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetAlreadyRead()` overload"]
     fn set_already_read(self) -> () {
         unsafe {
-            let __receiver = < ProfileCardVisualCharacterStampEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::set_already_read(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ProfileCardVisualCharacterStampEmptyMenuItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ProfileCardVisualCharacterStampEmptyMenuItem_unity2_raw::set_already_read(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-profilecardvisualcharacterstampemptymenuitem")]
-impl<__T: IProfileCardVisualCharacterStampEmptyMenuItem>
-    IProfileCardVisualCharacterStampEmptyMenuItemMethods for __T
-{
-}
+impl<__T: IProfileCardVisualCharacterStampEmptyMenuItem> IProfileCardVisualCharacterStampEmptyMenuItemMethods for __T {}
 
 #[cfg(feature = "app-profilecardvisualcharacterstampemptymenuitem")]
 impl ProfileCardVisualCharacterStampEmptyMenuItem {
@@ -296,19 +235,23 @@ impl ProfileCardVisualCharacterStampEmptyMenuItem {
 #[cfg(feature = "app-profilecardvisualcharacterstampemptymenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IProfileCardVisualCharacterStampEmptyMenuItem;
-    pub use super::IProfileCardVisualCharacterStampEmptyMenuItemMethods;
-    pub use super::ProfileCardVisualCharacterStampEmptyMenuItem;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
+    pub use super::{
+        IProfileCardVisualCharacterStampEmptyMenuItem, IProfileCardVisualCharacterStampEmptyMenuItemMethods,
+        ProfileCardVisualCharacterStampEmptyMenuItem,
+    };
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::profilecardvisualbasemenuitem::IProfileCardVisualBaseMenuItem;
     #[cfg(feature = "app-profilecardvisualbasemenuitem")]
     pub use crate::app::profilecardvisualbasemenuitem::IProfileCardVisualBaseMenuItemMethods;
-    pub use crate::app::profilecardvisualcharacterstampmenuitem::IProfileCardVisualCharacterStampMenuItem;
     #[cfg(feature = "app-profilecardvisualcharacterstampmenuitem")]
     pub use crate::app::profilecardvisualcharacterstampmenuitem::IProfileCardVisualCharacterStampMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            basicmenuitem::IBasicMenuItem, profilecardvisualbasemenuitem::IProfileCardVisualBaseMenuItem,
+            profilecardvisualcharacterstampmenuitem::IProfileCardVisualCharacterStampMenuItem,
+        },
+        system::object::IObject,
+    };
 }

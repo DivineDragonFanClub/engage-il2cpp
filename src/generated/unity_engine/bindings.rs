@@ -81,9 +81,7 @@ pub mod preventreadonlyinstancemodificationattribute;
 #[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
 pub use preventreadonlyinstancemodificationattribute::IPreventReadOnlyInstanceModificationAttributeMethods;
 #[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute-types")]
-pub use preventreadonlyinstancemodificationattribute::{
-    IPreventReadOnlyInstanceModificationAttribute, PreventReadOnlyInstanceModificationAttribute,
-};
+pub use preventreadonlyinstancemodificationattribute::{IPreventReadOnlyInstanceModificationAttribute, PreventReadOnlyInstanceModificationAttribute};
 #[cfg(any(feature = "unity_engine-bindings-staticaccessorattribute-types"))]
 pub mod staticaccessorattribute;
 #[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]
@@ -115,6 +113,4 @@ pub mod visibletoothermodulesattribute;
 #[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute")]
 pub use visibletoothermodulesattribute::IVisibleToOtherModulesAttributeMethods;
 #[cfg(feature = "unity_engine-bindings-visibletoothermodulesattribute-types")]
-pub use visibletoothermodulesattribute::{
-    IVisibleToOtherModulesAttribute, VisibleToOtherModulesAttribute,
-};
+pub use visibletoothermodulesattribute::{IVisibleToOtherModulesAttribute, VisibleToOtherModulesAttribute};

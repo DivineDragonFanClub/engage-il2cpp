@@ -2,18 +2,24 @@
 
 #[cfg(feature = "tm_pro-textmeshpro-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::tm_pro::tmp_text::{ITMP_Text, TMP_Text};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use crate::unity_engine::ui::graphic::{Graphic, IGraphic};
-    use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic, MaskableGraphic};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        tm_pro::tmp_text::{ITMP_Text, TMP_Text},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::{
+                graphic::{Graphic, IGraphic},
+                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
+            },
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/textmeshpro/TextMeshPro.md"))]
     #[::unity2::class(namespace = "TMPro", name = "TextMeshPro")]
@@ -50,8 +56,7 @@ mod __types {
         #[rename(name = "_SortingOrder")]
         pub sorting_order_field: i32,
         #[rename(name = "OnPreRenderText")]
-        pub on_pre_render_text:
-            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+        pub on_pre_render_text: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
         #[rename(name = "m_currentAutoSizeMode")]
         pub m_current_auto_size_mode: bool,
     }
@@ -69,51 +74,33 @@ mod __TextMeshPro_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_awake {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                "Awake",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), "Awake", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "Awake",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "Awake",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn awake(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_awake::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_awake::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -126,39 +113,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -171,39 +146,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_destroy {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -216,39 +179,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnDestroy",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnDestroy",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_destroy(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_destroy(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_destroy::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_destroy::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_load_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -261,39 +212,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "LoadFontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "LoadFontAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn load_font_asset(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn load_font_asset(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_load_font_asset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_load_font_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_env_map_matrix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -306,64 +245,42 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateEnvMapMatrix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateEnvMapMatrix",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_env_map_matrix(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_env_map_matrix(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_env_map_matrix::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_env_map_matrix::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::maskingtypes::MaskingTypes as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                "SetMask",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::maskingtypes::MaskingTypes as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), "SetMask", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mask(
@@ -371,26 +288,16 @@ mod __TextMeshPro_unity2_raw {
         mask_type: crate::tm_pro::maskingtypes::MaskingTypes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::tm_pro::maskingtypes::MaskingTypes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mask::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::tm_pro::maskingtypes::MaskingTypes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mask::get_method_info().method_ptr);
         inner(this, mask_type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mask_coordinates {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetMaskCoordinates",
@@ -402,18 +309,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMaskCoordinates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMaskCoordinates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mask_coordinates(
@@ -421,24 +325,15 @@ mod __TextMeshPro_unity2_raw {
         coords: crate::unity_engine::vector4::Vector4,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::vector4::Vector4,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mask_coordinates::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mask_coordinates::get_method_info().method_ptr);
         inner(this, coords, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mask_coordinates_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -455,18 +350,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMaskCoordinates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMaskCoordinates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mask_coordinates_2(
@@ -476,26 +368,15 @@ mod __TextMeshPro_unity2_raw {
         soft_y: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::vector4::Vector4,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mask_coordinates_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::vector4::Vector4, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mask_coordinates_2::get_method_info().method_ptr);
         inner(this, coords, soft_x, soft_y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_enable_masking {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -508,39 +389,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "EnableMasking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "EnableMasking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn enable_masking(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn enable_masking(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_enable_masking::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_enable_masking::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_disable_masking {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -553,39 +422,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "DisableMasking",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "DisableMasking",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn disable_masking(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn disable_masking(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_disable_masking::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_disable_masking::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_mask {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -598,41 +455,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMask",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_mask(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_mask(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_mask::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_mask::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "GetMaterial",
@@ -644,18 +488,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_material(
@@ -667,24 +508,16 @@ mod __TextMeshPro_unity2_raw {
             TextMeshPro,
             crate::unity_engine::material::Material,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_material::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__lookup_get_material::get_method_info().method_ptr);
         inner(this, mat, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::material::Material,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::material::Material> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "GetMaterials",
@@ -696,18 +529,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GetMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GetMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_materials(
@@ -719,23 +549,15 @@ mod __TextMeshPro_unity2_raw {
             TextMeshPro,
             ::unity2::Array<crate::unity_engine::material::Material>,
             ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_materials::get_offset() as isize),
-        );
+        ) -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__lookup_get_materials::get_method_info().method_ptr);
         inner(this, mats, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shared_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::material::Material as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetSharedMaterial",
@@ -747,18 +569,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetSharedMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetSharedMaterial",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shared_material(
@@ -766,24 +585,15 @@ mod __TextMeshPro_unity2_raw {
         mat: crate::unity_engine::material::Material,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::material::Material,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shared_material::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::material::Material, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_shared_material::get_method_info().method_ptr);
         inner(this, mat, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_shared_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -796,46 +606,32 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GetSharedMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GetSharedMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_shared_materials(
         this: TextMeshPro,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::material::Material> {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_shared_materials::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::material::Material> =
+            ::core::mem::transmute(__lookup_get_shared_materials::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shared_materials {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::unity_engine::material::Material,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::unity_engine::material::Material> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetSharedMaterials",
@@ -847,18 +643,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetSharedMaterials",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetSharedMaterials",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_shared_materials(
@@ -866,26 +659,16 @@ mod __TextMeshPro_unity2_raw {
         materials: ::unity2::Array<crate::unity_engine::material::Material>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::Array<crate::unity_engine::material::Material>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_shared_materials::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::Array<crate::unity_engine::material::Material>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_shared_materials::get_method_info().method_ptr);
         inner(this, materials, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_outline_thickness {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetOutlineThickness",
@@ -897,42 +680,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetOutlineThickness",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetOutlineThickness",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_outline_thickness(
-        this: TextMeshPro,
-        thickness: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_outline_thickness(this: TextMeshPro, thickness: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_outline_thickness::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_outline_thickness::get_method_info().method_ptr);
         inner(this, thickness, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_face_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetFaceColor",
@@ -944,18 +713,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetFaceColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetFaceColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_face_color(
@@ -963,26 +729,16 @@ mod __TextMeshPro_unity2_raw {
         color: crate::unity_engine::color32::Color32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::color32::Color32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_face_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::color32::Color32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_face_color::get_method_info().method_ptr);
         inner(this, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_outline_color {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::unity_engine::color32::Color32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetOutlineColor",
@@ -994,18 +750,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetOutlineColor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetOutlineColor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_outline_color(
@@ -1013,24 +766,15 @@ mod __TextMeshPro_unity2_raw {
         color: crate::unity_engine::color32::Color32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::color32::Color32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_outline_color::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::color32::Color32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_outline_color::get_method_info().method_ptr);
         inner(this, color, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_material_instance {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1043,39 +787,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "CreateMaterialInstance",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "CreateMaterialInstance",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_material_instance(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_material_instance(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_material_instance::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_material_instance::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_shader_depth {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1088,39 +820,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetShaderDepth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetShaderDepth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_shader_depth(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_shader_depth(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_shader_depth::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_shader_depth::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_culling {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1133,39 +853,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetCulling",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetCulling",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_culling(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_culling(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_culling::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_culling::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_perspective_correction {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1178,43 +886,29 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetPerspectiveCorrection",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetPerspectiveCorrection",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_perspective_correction(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_perspective_correction(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_perspective_correction::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_perspective_correction::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_array_sizes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::tm_pro::tmp_text::TMP_Text_UnicodeChar,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetArraySizes",
@@ -1226,18 +920,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetArraySizes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetArraySizes",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_array_sizes(
@@ -1245,24 +936,15 @@ mod __TextMeshPro_unity2_raw {
         unicode_chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i32 {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_array_sizes::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_set_array_sizes::get_method_info().method_ptr);
         inner(this, unicode_chars, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compute_margin_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1275,39 +957,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "ComputeMarginSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "ComputeMarginSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn compute_margin_size(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn compute_margin_size(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_compute_margin_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_compute_margin_size::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_did_apply_animation_properties {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1320,39 +990,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnDidApplyAnimationProperties",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnDidApplyAnimationProperties",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_did_apply_animation_properties(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_did_apply_animation_properties(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_did_apply_animation_properties::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_did_apply_animation_properties::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_transform_parent_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1365,39 +1023,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnTransformParentChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnTransformParentChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_transform_parent_changed(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_transform_parent_changed(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_transform_parent_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_transform_parent_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_rect_transform_dimensions_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1410,39 +1056,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnRectTransformDimensionsChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnRectTransformDimensionsChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_rect_transform_dimensions_change(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_rect_transform_dimensions_change(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_rect_transform_dimensions_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_rect_transform_dimensions_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1455,39 +1089,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "InternalUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "InternalUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_update(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn internal_update(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pre_render_object {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1500,39 +1122,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "OnPreRenderObject",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "OnPreRenderObject",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_pre_render_object(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_pre_render_object(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_pre_render_object::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_pre_render_object::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_generate_text_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1545,39 +1155,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GenerateTextMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GenerateTextMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn generate_text_mesh(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn generate_text_mesh(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_generate_text_mesh::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_generate_text_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text_container_local_corners {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1590,44 +1188,31 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GetTextContainerLocalCorners",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GetTextContainerLocalCorners",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_text_container_local_corners(
         this: TextMeshPro,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        )
-            -> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_container_local_corners::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> =
+            ::core::mem::transmute(__lookup_get_text_container_local_corners::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mesh_filters {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetMeshFilters",
@@ -1639,42 +1224,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMeshFilters",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMeshFilters",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_mesh_filters(
-        this: TextMeshPro,
-        state: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_mesh_filters(this: TextMeshPro, state: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_mesh_filters::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_mesh_filters::get_method_info().method_ptr);
         inner(this, state, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active_sub_meshes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetActiveSubMeshes",
@@ -1686,42 +1257,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetActiveSubMeshes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetActiveSubMeshes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_active_sub_meshes(
-        this: TextMeshPro,
-        state: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_active_sub_meshes(this: TextMeshPro, state: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_active_sub_meshes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_active_sub_meshes::get_method_info().method_ptr);
         inner(this, state, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_active_sub_text_object_renderers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "SetActiveSubTextObjectRenderers",
@@ -1733,40 +1290,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetActiveSubTextObjectRenderers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetActiveSubTextObjectRenderers",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_active_sub_text_object_renderers(
-        this: TextMeshPro,
-        state: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_active_sub_text_object_renderers(this: TextMeshPro, state: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_active_sub_text_object_renderers::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_active_sub_text_object_renderers::get_method_info().method_ptr);
         inner(this, state, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_destroy_sub_mesh_objects {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1779,41 +1323,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "DestroySubMeshObjects",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "DestroySubMeshObjects",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn destroy_sub_mesh_objects(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn destroy_sub_mesh_objects(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_destroy_sub_mesh_objects::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_destroy_sub_mesh_objects::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_sub_mesh_sorting_layer_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "UpdateSubMeshSortingLayerID",
@@ -1825,42 +1356,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateSubMeshSortingLayerID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateSubMeshSortingLayerID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_sub_mesh_sorting_layer_id(
-        this: TextMeshPro,
-        id: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_sub_mesh_sorting_layer_id(this: TextMeshPro, id: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_sub_mesh_sorting_layer_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_sub_mesh_sorting_layer_id::get_method_info().method_ptr);
         inner(this, id, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_sub_mesh_sorting_order {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "UpdateSubMeshSortingOrder",
@@ -1872,40 +1389,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateSubMeshSortingOrder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateSubMeshSortingOrder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_sub_mesh_sorting_order(
-        this: TextMeshPro,
-        order: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_sub_mesh_sorting_order(this: TextMeshPro, order: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_sub_mesh_sorting_order::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_sub_mesh_sorting_order::get_method_info().method_ptr);
         inner(this, order, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_compound_bounds {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -1918,43 +1422,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GetCompoundBounds",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GetCompoundBounds",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_compound_bounds(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::bounds::Bounds {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::bounds::Bounds = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_compound_bounds::get_offset() as isize),
-        );
+    pub unsafe fn get_compound_bounds(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds {
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::unity_engine::bounds::Bounds =
+            ::core::mem::transmute(__lookup_get_compound_bounds::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_sdf_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "UpdateSDFScale",
@@ -1966,40 +1455,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateSDFScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateSDFScale",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_sdf_scale(
-        this: TextMeshPro,
-        scale_delta: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_sdf_scale(this: TextMeshPro, scale_delta: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_sdf_scale::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_sdf_scale::get_method_info().method_ptr);
         inner(this, scale_delta, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sorting_layer_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2012,41 +1488,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_sortingLayerID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_sortingLayerID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sorting_layer_id(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_sorting_layer_id(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sorting_layer_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sorting_layer_id::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sorting_layer_id {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "set_sortingLayerID",
@@ -2058,40 +1521,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "set_sortingLayerID",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "set_sortingLayerID",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_sorting_layer_id(
-        this: TextMeshPro,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_sorting_layer_id(this: TextMeshPro, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_sorting_layer_id::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_sorting_layer_id::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_sorting_order {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2104,41 +1554,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_sortingOrder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_sortingOrder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_sorting_order(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_sorting_order(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_sorting_order::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_sorting_order::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_sorting_order {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "set_sortingOrder",
@@ -2150,40 +1587,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "set_sortingOrder",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "set_sortingOrder",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_sorting_order(
-        this: TextMeshPro,
-        value: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_sorting_order(this: TextMeshPro, value: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_sorting_order::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_sorting_order::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_auto_size_text_container {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2196,41 +1620,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_autoSizeTextContainer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_autoSizeTextContainer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_auto_size_text_container(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_auto_size_text_container(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_auto_size_text_container::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_auto_size_text_container::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_auto_size_text_container {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "set_autoSizeTextContainer",
@@ -2242,40 +1653,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "set_autoSizeTextContainer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "set_autoSizeTextContainer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_auto_size_text_container(
-        this: TextMeshPro,
-        value: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_auto_size_text_container(this: TextMeshPro, value: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_auto_size_text_container::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_auto_size_text_container::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text_container {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2288,41 +1686,30 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_textContainer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_textContainer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_text_container(
         this: TextMeshPro,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::textcontainer::TextContainer {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::textcontainer::TextContainer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_container::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::tm_pro::textcontainer::TextContainer =
+            ::core::mem::transmute(__lookup_get_text_container::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2335,41 +1722,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_transform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_transform",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_transform(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::transform::Transform {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::transform::Transform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_transform::get_offset() as isize),
-        );
+    pub unsafe fn get_transform(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform {
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::unity_engine::transform::Transform =
+            ::core::mem::transmute(__lookup_get_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_renderer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2382,41 +1755,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_renderer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_renderer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_renderer(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::renderer::Renderer {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::renderer::Renderer = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_renderer::get_offset() as isize),
-        );
+    pub unsafe fn get_renderer(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::renderer::Renderer {
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::unity_engine::renderer::Renderer =
+            ::core::mem::transmute(__lookup_get_renderer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2429,41 +1788,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_mesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_mesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mesh(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::mesh::Mesh {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::mesh::Mesh = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mesh::get_offset() as isize),
-        );
+    pub unsafe fn get_mesh(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh {
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::unity_engine::mesh::Mesh =
+            ::core::mem::transmute(__lookup_get_mesh::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mesh_filter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2476,41 +1821,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_meshFilter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_meshFilter",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mesh_filter(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::meshfilter::MeshFilter {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::meshfilter::MeshFilter = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mesh_filter::get_offset() as isize),
-        );
+    pub unsafe fn get_mesh_filter(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::meshfilter::MeshFilter {
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::unity_engine::meshfilter::MeshFilter =
+            ::core::mem::transmute(__lookup_get_mesh_filter::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_mask_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2523,43 +1854,28 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "get_maskType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "get_maskType",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_mask_type(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::tm_pro::maskingtypes::MaskingTypes {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::maskingtypes::MaskingTypes = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_mask_type::get_offset() as isize),
-        );
+    pub unsafe fn get_mask_type(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> crate::tm_pro::maskingtypes::MaskingTypes {
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> crate::tm_pro::maskingtypes::MaskingTypes =
+            ::core::mem::transmute(__lookup_get_mask_type::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mask_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::tm_pro::maskingtypes::MaskingTypes as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::tm_pro::maskingtypes::MaskingTypes as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "set_maskType",
@@ -2571,18 +1887,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "set_maskType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "set_maskType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mask_type(
@@ -2590,51 +1903,33 @@ mod __TextMeshPro_unity2_raw {
         value: crate::tm_pro::maskingtypes::MaskingTypes,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::tm_pro::maskingtypes::MaskingTypes,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mask_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::tm_pro::maskingtypes::MaskingTypes, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_mask_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mask_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::maskingtypes::MaskingTypes as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                "SetMask",
-                2,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), "SetMask", 2, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mask_2(
@@ -2648,49 +1943,34 @@ mod __TextMeshPro_unity2_raw {
             crate::tm_pro::maskingtypes::MaskingTypes,
             crate::unity_engine::vector4::Vector4,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mask_2::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_mask_2::get_method_info().method_ptr);
         inner(this, r#type, mask_coords, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_mask_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::tm_pro::maskingtypes::MaskingTypes as ::unity2::IlType>::il_type(),
                 <crate::unity_engine::vector4::Vector4 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
             ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                "SetMask",
-                4,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), "SetMask", 4, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMask",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMask",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_mask_3(
@@ -2708,27 +1988,14 @@ mod __TextMeshPro_unity2_raw {
             f32,
             f32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_mask_3::get_offset() as isize),
-        );
-        inner(
-            this,
-            r#type,
-            mask_coords,
-            softness_x,
-            softness_y,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_mask_3::get_method_info().method_ptr);
+        inner(this, r#type, mask_coords, softness_x, softness_y, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_vertices_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2741,39 +2008,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetVerticesDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetVerticesDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_vertices_dirty(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_vertices_dirty(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_vertices_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_vertices_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2786,39 +2041,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_layout_dirty(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_layout_dirty(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_layout_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_material_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2831,39 +2074,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetMaterialDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetMaterialDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_material_dirty(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_material_dirty(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_material_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_material_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_all_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2876,66 +2107,43 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "SetAllDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "SetAllDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_all_dirty(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_all_dirty(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_all_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_all_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_rebuild {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type(
-                ),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                "Rebuild",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::ui::canvasupdate::CanvasUpdate as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), "Rebuild", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "Rebuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "Rebuild",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn rebuild(
@@ -2943,24 +2151,15 @@ mod __TextMeshPro_unity2_raw {
         update: crate::unity_engine::ui::canvasupdate::CanvasUpdate,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::ui::canvasupdate::CanvasUpdate,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_rebuild::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_rebuild::get_method_info().method_ptr);
         inner(this, update, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_material {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -2973,39 +2172,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMaterial",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMaterial",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_material(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_material(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_material::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_material::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_mesh_padding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -3018,43 +2205,29 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateMeshPadding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateMeshPadding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_mesh_padding(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_mesh_padding(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_mesh_padding::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_mesh_padding::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_force_mesh_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <bool as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "ForceMeshUpdate",
@@ -3066,18 +2239,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "ForceMeshUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "ForceMeshUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn force_mesh_update(
@@ -3087,27 +2257,15 @@ mod __TextMeshPro_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(TextMeshPro, bool, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_force_mesh_update::get_offset() as isize),
-            );
-        inner(
-            this,
-            ignore_active_state,
-            force_text_reparsing,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_force_mesh_update::get_method_info().method_ptr);
+        inner(this, ignore_active_state, force_text_reparsing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_text_info {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "GetTextInfo",
@@ -3119,18 +2277,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "GetTextInfo",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "GetTextInfo",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_text_info(
@@ -3138,26 +2293,16 @@ mod __TextMeshPro_unity2_raw {
         text: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_text_info::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo =
+            ::core::mem::transmute(__lookup_get_text_info::get_method_info().method_ptr);
         inner(this, text, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_clear_mesh {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "ClearMesh",
@@ -3169,44 +2314,29 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "ClearMesh",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "ClearMesh",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn clear_mesh(
-        this: TextMeshPro,
-        update_mesh: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn clear_mesh(this: TextMeshPro, update_mesh: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, bool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_clear_mesh::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_clear_mesh::get_method_info().method_ptr);
         inner(this, update_mesh, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_add_on_pre_render_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::tm_pro::tmp_textinfo::TMP_TextInfo,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "add_OnPreRenderText",
@@ -3218,18 +2348,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "add_OnPreRenderText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "add_OnPreRenderText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn add_on_pre_render_text(
@@ -3241,24 +2368,16 @@ mod __TextMeshPro_unity2_raw {
             TextMeshPro,
             crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_add_on_pre_render_text::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_add_on_pre_render_text::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_remove_on_pre_render_text {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::action_1::Action_1<
-                    crate::tm_pro::tmp_textinfo::TMP_TextInfo,
-                > as ::unity2::IlType>::il_type()];
+                &[<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "remove_OnPreRenderText",
@@ -3270,18 +2389,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "remove_OnPreRenderText",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "remove_OnPreRenderText",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn remove_on_pre_render_text(
@@ -3293,20 +2409,14 @@ mod __TextMeshPro_unity2_raw {
             TextMeshPro,
             crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_remove_on_pre_render_text::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_remove_on_pre_render_text::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_geometry {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::mesh::Mesh as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -3322,18 +2432,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateGeometry",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateGeometry",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_geometry(
@@ -3342,26 +2449,17 @@ mod __TextMeshPro_unity2_raw {
         index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::unity_engine::mesh::Mesh,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_geometry::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::unity_engine::mesh::Mesh, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_geometry::get_method_info().method_ptr);
         inner(this, mesh, index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_vertex_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: tmp_vertexdataupdateflags :: TMP_VertexDataUpdateFlags as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
                 "UpdateVertexData",
@@ -3373,18 +2471,15 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVertexData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVertexData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn update_vertex_data(
@@ -3392,24 +2487,15 @@ mod __TextMeshPro_unity2_raw {
         flags: crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            TextMeshPro,
-            crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_update_vertex_data::get_offset() as isize),
-        );
+        let inner: extern "C" fn(TextMeshPro, crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_update_vertex_data::get_method_info().method_ptr);
         inner(this, flags, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_vertex_data_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -3422,39 +2508,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateVertexData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateVertexData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_vertex_data_2(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_vertex_data_2(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_vertex_data_2::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_vertex_data_2::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_font_asset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -3467,39 +2541,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "UpdateFontAsset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "UpdateFontAsset",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_font_asset(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_font_asset(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_font_asset::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_font_asset::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_layout_input_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -3512,39 +2574,27 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "CalculateLayoutInputHorizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "CalculateLayoutInputHorizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_layout_input_horizontal(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calculate_layout_input_horizontal(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_layout_input_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_layout_input_horizontal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_layout_input_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TextMeshPro as ::unity2::ClassIdentity>::class(),
@@ -3557,113 +2607,72 @@ mod __TextMeshPro_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    "CalculateLayoutInputVertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        "CalculateLayoutInputVertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_layout_input_vertical(
-        this: TextMeshPro,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calculate_layout_input_vertical(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_layout_input_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_layout_input_vertical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: TextMeshPro, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(TextMeshPro, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <TextMeshPro as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<TextMeshPro as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TextMeshPro as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TextMeshPro as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -3681,90 +2690,57 @@ pub trait ITextMeshProMethods: ITextMeshPro {
     #[doc = "`Awake()` overload"]
     fn awake(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::awake(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDestroy()` overload"]
     fn on_destroy(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`LoadFontAsset()` overload"]
     fn load_font_asset(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::load_font_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateEnvMapMatrix()` overload"]
     fn update_env_map_matrix(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::update_env_map_matrix(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::update_env_map_matrix(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMask(crate::tm_pro::maskingtypes::MaskingTypes)` overload"]
-    fn set_mask(
-        self,
-        mask_type: impl ::core::convert::Into<crate::tm_pro::maskingtypes::MaskingTypes>,
-    ) -> () {
+    fn set_mask(self, mask_type: impl ::core::convert::Into<crate::tm_pro::maskingtypes::MaskingTypes>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_mask(
-                __receiver,
-                ::core::convert::Into::into(mask_type),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_mask(__receiver, ::core::convert::Into::into(mask_type), ::core::option::Option::None)
         }
     }
     #[doc = "`SetMaskCoordinates(crate::unity_engine::vector4::Vector4)` overload"]
-    fn set_mask_coordinates(
-        self,
-        coords: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
-    ) -> () {
+    fn set_mask_coordinates(self, coords: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_mask_coordinates(
-                __receiver,
-                ::core::convert::Into::into(coords),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_mask_coordinates(__receiver, ::core::convert::Into::into(coords), ::core::option::Option::None)
         }
     }
     #[doc = "`SetMaskCoordinates(crate::unity_engine::vector4::Vector4, f32, f32)` overload"]
@@ -3775,9 +2751,7 @@ pub trait ITextMeshProMethods: ITextMeshPro {
         soft_y: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_mask_coordinates_2(
                 __receiver,
                 ::core::convert::Into::into(coords),
@@ -3790,44 +2764,29 @@ pub trait ITextMeshProMethods: ITextMeshPro {
     #[doc = "`EnableMasking()` overload"]
     fn enable_masking(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::enable_masking(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DisableMasking()` overload"]
     fn disable_masking(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::disable_masking(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMask()` overload"]
     fn update_mask(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::update_mask(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaterial(crate::unity_engine::material::Material)` overload"]
-    fn get_material(
-        self,
-        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> crate::unity_engine::material::Material {
+    fn get_material(self, mat: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> crate::unity_engine::material::Material {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::get_material(
-                __receiver,
-                ::core::convert::Into::into(mat),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::get_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)
         }
     }
     #[doc = "`GetMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
@@ -3836,280 +2795,161 @@ pub trait ITextMeshProMethods: ITextMeshPro {
         mats: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
     ) -> ::unity2::Array<crate::unity_engine::material::Material> {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::get_materials(
-                __receiver,
-                ::core::convert::Into::into(mats),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::get_materials(__receiver, ::core::convert::Into::into(mats), ::core::option::Option::None)
         }
     }
     #[doc = "`SetSharedMaterial(crate::unity_engine::material::Material)` overload"]
-    fn set_shared_material(
-        self,
-        mat: impl ::core::convert::Into<crate::unity_engine::material::Material>,
-    ) -> () {
+    fn set_shared_material(self, mat: impl ::core::convert::Into<crate::unity_engine::material::Material>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_shared_material(
-                __receiver,
-                ::core::convert::Into::into(mat),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_shared_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)
         }
     }
     #[doc = "`GetSharedMaterials()` overload"]
     fn get_shared_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material> {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_shared_materials(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]
-    fn set_shared_materials(
-        self,
-        materials: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>,
-    ) -> () {
+    fn set_shared_materials(self, materials: impl ::core::convert::Into<::unity2::Array<crate::unity_engine::material::Material>>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_shared_materials(
-                __receiver,
-                ::core::convert::Into::into(materials),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_shared_materials(__receiver, ::core::convert::Into::into(materials), ::core::option::Option::None)
         }
     }
     #[doc = "`SetOutlineThickness(f32)` overload"]
     fn set_outline_thickness(self, thickness: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_outline_thickness(
-                __receiver,
-                ::core::convert::Into::into(thickness),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_outline_thickness(__receiver, ::core::convert::Into::into(thickness), ::core::option::Option::None)
         }
     }
     #[doc = "`SetFaceColor(crate::unity_engine::color32::Color32)` overload"]
-    fn set_face_color(
-        self,
-        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
-    ) -> () {
+    fn set_face_color(self, color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_face_color(
-                __receiver,
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_face_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
         }
     }
     #[doc = "`SetOutlineColor(crate::unity_engine::color32::Color32)` overload"]
-    fn set_outline_color(
-        self,
-        color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>,
-    ) -> () {
+    fn set_outline_color(self, color: impl ::core::convert::Into<crate::unity_engine::color32::Color32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_outline_color(
-                __receiver,
-                ::core::convert::Into::into(color),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_outline_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)
         }
     }
     #[doc = "`CreateMaterialInstance()` overload"]
     fn create_material_instance(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::create_material_instance(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::create_material_instance(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetShaderDepth()` overload"]
     fn set_shader_depth(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_shader_depth(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetCulling()` overload"]
     fn set_culling(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_culling(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetPerspectiveCorrection()` overload"]
     fn set_perspective_correction(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_perspective_correction(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_perspective_correction(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetArraySizes(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>)` overload"]
-    fn set_array_sizes(
-        self,
-        unicode_chars: impl ::core::convert::Into<
-            ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
-        >,
-    ) -> i32 {
+    fn set_array_sizes(self, unicode_chars: impl ::core::convert::Into<::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>>) -> i32 {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_array_sizes(
-                __receiver,
-                ::core::convert::Into::into(unicode_chars),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_array_sizes(__receiver, ::core::convert::Into::into(unicode_chars), ::core::option::Option::None)
         }
     }
     #[doc = "`ComputeMarginSize()` overload"]
     fn compute_margin_size(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::compute_margin_size(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDidApplyAnimationProperties()` overload"]
     fn on_did_apply_animation_properties(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::on_did_apply_animation_properties(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnTransformParentChanged()` overload"]
     fn on_transform_parent_changed(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::on_transform_parent_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnRectTransformDimensionsChange()` overload"]
     fn on_rect_transform_dimensions_change(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::on_rect_transform_dimensions_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InternalUpdate()` overload"]
     fn internal_update(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::internal_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnPreRenderObject()` overload"]
     fn on_pre_render_object(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::on_pre_render_object(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GenerateTextMesh()` overload"]
     fn generate_text_mesh(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::generate_text_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTextContainerLocalCorners()` overload"]
-    fn get_text_container_local_corners(
-        self,
-    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
+    fn get_text_container_local_corners(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3> {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::get_text_container_local_corners(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::get_text_container_local_corners(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMeshFilters(bool)` overload"]
     fn set_mesh_filters(self, state: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_mesh_filters(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_mesh_filters(__receiver, ::core::convert::Into::into(state), ::core::option::Option::None)
         }
     }
     #[doc = "`SetActiveSubMeshes(bool)` overload"]
     fn set_active_sub_meshes(self, state: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_active_sub_meshes(
-                __receiver,
-                ::core::convert::Into::into(state),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_active_sub_meshes(__receiver, ::core::convert::Into::into(state), ::core::option::Option::None)
         }
     }
     #[doc = "`SetActiveSubTextObjectRenderers(bool)` overload"]
     fn set_active_sub_text_object_renderers(self, state: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_active_sub_text_object_renderers(
                 __receiver,
                 ::core::convert::Into::into(state),
@@ -4120,200 +2960,127 @@ pub trait ITextMeshProMethods: ITextMeshPro {
     #[doc = "`DestroySubMeshObjects()` overload"]
     fn destroy_sub_mesh_objects(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::destroy_sub_mesh_objects(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::destroy_sub_mesh_objects(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateSubMeshSortingLayerID(i32)` overload"]
     fn update_sub_mesh_sorting_layer_id(self, id: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::update_sub_mesh_sorting_layer_id(
-                __receiver,
-                ::core::convert::Into::into(id),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::update_sub_mesh_sorting_layer_id(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateSubMeshSortingOrder(i32)` overload"]
     fn update_sub_mesh_sorting_order(self, order: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::update_sub_mesh_sorting_order(
-                __receiver,
-                ::core::convert::Into::into(order),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::update_sub_mesh_sorting_order(__receiver, ::core::convert::Into::into(order), ::core::option::Option::None)
         }
     }
     #[doc = "`GetCompoundBounds()` overload"]
     fn get_compound_bounds(self) -> crate::unity_engine::bounds::Bounds {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_compound_bounds(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateSDFScale(f32)` overload"]
     fn update_sdf_scale(self, scale_delta: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::update_sdf_scale(
-                __receiver,
-                ::core::convert::Into::into(scale_delta),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::update_sdf_scale(__receiver, ::core::convert::Into::into(scale_delta), ::core::option::Option::None)
         }
     }
     #[doc = "`get_sortingLayerID()` overload"]
     fn get_sorting_layer_id(self) -> i32 {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_sorting_layer_id(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_sortingLayerID(i32)` overload"]
     fn set_sorting_layer_id(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_sorting_layer_id(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_sorting_layer_id(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_sortingOrder()` overload"]
     fn get_sorting_order(self) -> i32 {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_sorting_order(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_sortingOrder(i32)` overload"]
     fn set_sorting_order(self, value: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_sorting_order(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_sorting_order(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_autoSizeTextContainer()` overload"]
     fn get_auto_size_text_container(self) -> bool {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::get_auto_size_text_container(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::get_auto_size_text_container(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_autoSizeTextContainer(bool)` overload"]
     fn set_auto_size_text_container(self, value: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_auto_size_text_container(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_auto_size_text_container(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_textContainer()` overload"]
     fn get_text_container(self) -> crate::tm_pro::textcontainer::TextContainer {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_text_container(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_transform()` overload"]
     fn get_transform(self) -> crate::unity_engine::transform::Transform {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_renderer()` overload"]
     fn get_renderer(self) -> crate::unity_engine::renderer::Renderer {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_renderer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_mesh()` overload"]
     fn get_mesh(self) -> crate::unity_engine::mesh::Mesh {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_meshFilter()` overload"]
     fn get_mesh_filter(self) -> crate::unity_engine::meshfilter::MeshFilter {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_mesh_filter(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_maskType()` overload"]
     fn get_mask_type(self) -> crate::tm_pro::maskingtypes::MaskingTypes {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::get_mask_type(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_maskType(crate::tm_pro::maskingtypes::MaskingTypes)` overload"]
-    fn set_mask_type(
-        self,
-        value: impl ::core::convert::Into<crate::tm_pro::maskingtypes::MaskingTypes>,
-    ) -> () {
+    fn set_mask_type(self, value: impl ::core::convert::Into<crate::tm_pro::maskingtypes::MaskingTypes>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::set_mask_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::set_mask_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`SetMask(crate::tm_pro::maskingtypes::MaskingTypes, crate::unity_engine::vector4::Vector4)` overload"]
@@ -4323,9 +3090,7 @@ pub trait ITextMeshProMethods: ITextMeshPro {
         mask_coords: impl ::core::convert::Into<crate::unity_engine::vector4::Vector4>,
     ) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_mask_2(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -4343,9 +3108,7 @@ pub trait ITextMeshProMethods: ITextMeshPro {
         softness_y: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_mask_3(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -4359,83 +3122,56 @@ pub trait ITextMeshProMethods: ITextMeshPro {
     #[doc = "`SetVerticesDirty()` overload"]
     fn set_vertices_dirty(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_vertices_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLayoutDirty()` overload"]
     fn set_layout_dirty(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_layout_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetMaterialDirty()` overload"]
     fn set_material_dirty(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_material_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetAllDirty()` overload"]
     fn set_all_dirty(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::set_all_dirty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
-    fn rebuild(
-        self,
-        update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>,
-    ) -> () {
+    fn rebuild(self, update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::rebuild(
-                __receiver,
-                ::core::convert::Into::into(update),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMaterial()` overload"]
     fn update_material(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::update_material(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateMeshPadding()` overload"]
     fn update_mesh_padding(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::update_mesh_padding(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ForceMeshUpdate(bool, bool)` overload"]
-    fn force_mesh_update(
-        self,
-        ignore_active_state: impl ::core::convert::Into<bool>,
-        force_text_reparsing: impl ::core::convert::Into<bool>,
-    ) -> () {
+    fn force_mesh_update(self, ignore_active_state: impl ::core::convert::Into<bool>, force_text_reparsing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::force_mesh_update(
                 __receiver,
                 ::core::convert::Into::into(ignore_active_state),
@@ -4445,80 +3181,43 @@ pub trait ITextMeshProMethods: ITextMeshPro {
         }
     }
     #[doc = "`GetTextInfo(::unity2::Il2CppString)` overload"]
-    fn get_text_info(
-        self,
-        text: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
+    fn get_text_info(self, text: impl ::core::convert::Into<::unity2::Il2CppString>) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::get_text_info(
-                __receiver,
-                ::core::convert::Into::into(text),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::get_text_info(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)
         }
     }
     #[doc = "`ClearMesh(bool)` overload"]
     fn clear_mesh(self, update_mesh: impl ::core::convert::Into<bool>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::clear_mesh(
-                __receiver,
-                ::core::convert::Into::into(update_mesh),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::clear_mesh(__receiver, ::core::convert::Into::into(update_mesh), ::core::option::Option::None)
         }
     }
     #[doc = "`add_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]
     fn add_on_pre_render_text(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>>,
     ) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::add_on_pre_render_text(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::add_on_pre_render_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`remove_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]
     fn remove_on_pre_render_text(
         self,
-        value: impl ::core::convert::Into<
-            crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
-        >,
+        value: impl ::core::convert::Into<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>>,
     ) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::remove_on_pre_render_text(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::remove_on_pre_render_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateGeometry(crate::unity_engine::mesh::Mesh, i32)` overload"]
-    fn update_geometry(
-        self,
-        mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>,
-        index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn update_geometry(self, mesh: impl ::core::convert::Into<crate::unity_engine::mesh::Mesh>, index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::update_geometry(
                 __receiver,
                 ::core::convert::Into::into(mesh),
@@ -4528,71 +3227,44 @@ pub trait ITextMeshProMethods: ITextMeshPro {
         }
     }
     #[doc = "`UpdateVertexData(crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags)` overload"]
-    fn update_vertex_data(
-        self,
-        flags: impl ::core::convert::Into<
-            crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
-        >,
-    ) -> () {
+    fn update_vertex_data(self, flags: impl ::core::convert::Into<crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags>) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::update_vertex_data(
-                __receiver,
-                ::core::convert::Into::into(flags),
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::update_vertex_data(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateVertexData()` overload"]
     fn update_vertex_data_2(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::update_vertex_data_2(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateFontAsset()` overload"]
     fn update_font_asset(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::update_font_asset(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalculateLayoutInputHorizontal()` overload"]
     fn calculate_layout_input_horizontal(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::calculate_layout_input_horizontal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalculateLayoutInputVertical()` overload"]
     fn calculate_layout_input_vertical(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __TextMeshPro_unity2_raw::calculate_layout_input_vertical(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __TextMeshPro_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TextMeshPro as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TextMeshPro_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -4605,13 +3277,8 @@ impl<__T: ITextMeshPro> ITextMeshProMethods for __T {}
 impl TextMeshPro {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextMeshPro),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(TextMeshPro), ::core::stringify!(new),));
         <Self as ITextMeshProMethods>::ctor(this);
         this
     }
@@ -4620,34 +3287,35 @@ impl TextMeshPro {
 #[cfg(feature = "tm_pro-textmeshpro")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITextMeshPro;
-    pub use super::ITextMeshProMethods;
-    pub use super::TextMeshPro;
-    pub use crate::system::object::IObject;
+    pub use super::{ITextMeshPro, ITextMeshProMethods, TextMeshPro};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::tm_pro::tmp_text::ITMP_Text;
     #[cfg(feature = "tm_pro-tmp_text")]
     pub use crate::tm_pro::tmp_text::ITMP_TextMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
-    pub use crate::unity_engine::ui::graphic::IGraphic;
     #[cfg(feature = "unity_engine-ui-graphic")]
     pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
     #[cfg(feature = "unity_engine-ui-maskablegraphic")]
     pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
+    pub use crate::{
+        system::object::IObject,
+        tm_pro::tmp_text::ITMP_Text,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
+        },
+    };
 }

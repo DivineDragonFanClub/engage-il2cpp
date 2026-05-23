@@ -3,8 +3,6 @@
 #[cfg(any(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative-types"))]
 pub mod uielementsruntimeutilitynative;
 #[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative-types")]
-pub use uielementsruntimeutilitynative::{
-    IUIElementsRuntimeUtilityNative, UIElementsRuntimeUtilityNative,
-};
+pub use uielementsruntimeutilitynative::{IUIElementsRuntimeUtilityNative, UIElementsRuntimeUtilityNative};
 #[cfg(any(feature = "unity_engine-ui_elements-uir-utility_2-types"))]
 pub mod uir;

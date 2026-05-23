@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-networking-downloadhandlerbuffer-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::networking::downloadhandler::{DownloadHandler, IDownloadHandler};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::networking::downloadhandler::{DownloadHandler, IDownloadHandler},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/downloadhandlerbuffer/DownloadHandlerBuffer.md"))]
     #[::unity2::class(namespace = "UnityEngine.Networking", name = "DownloadHandlerBuffer")]
@@ -26,10 +28,9 @@ mod __DownloadHandlerBuffer_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: networking :: downloadhandlerbuffer :: DownloadHandlerBuffer as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerBuffer as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -41,18 +42,15 @@ mod __DownloadHandlerBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -62,20 +60,14 @@ mod __DownloadHandlerBuffer_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::IntPtr = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create::get_offset() as isize),
-        );
+        ) -> ::unity2::IntPtr = ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(obj, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_create_buffer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerBuffer as ::unity2::ClassIdentity>::class(),
@@ -88,39 +80,27 @@ mod __DownloadHandlerBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InternalCreateBuffer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InternalCreateBuffer",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_create_buffer(
-        this: DownloadHandlerBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn internal_create_buffer(this: DownloadHandlerBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DownloadHandlerBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_internal_create_buffer::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_internal_create_buffer::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerBuffer as ::unity2::ClassIdentity>::class(),
@@ -133,39 +113,27 @@ mod __DownloadHandlerBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: DownloadHandlerBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: DownloadHandlerBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(DownloadHandlerBuffer, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerBuffer as ::unity2::ClassIdentity>::class(),
@@ -178,41 +146,27 @@ mod __DownloadHandlerBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
-                    "GetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
+                        "GetData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_data(
-        this: DownloadHandlerBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            DownloadHandlerBuffer,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_data::get_offset() as isize),
-        );
+    pub unsafe fn get_data(this: DownloadHandlerBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(DownloadHandlerBuffer, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_get_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <DownloadHandlerBuffer as ::unity2::ClassIdentity>::class(),
@@ -225,32 +179,20 @@ mod __DownloadHandlerBuffer_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
-                    "InternalGetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <DownloadHandlerBuffer as ::unity2::ClassIdentity>::NAME,
+                        "InternalGetData",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn internal_get_data(
-        this: DownloadHandlerBuffer,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Array<u8> {
-        let inner: extern "C" fn(
-            DownloadHandlerBuffer,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Array<u8> = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_internal_get_data::get_offset() as isize),
-        );
+    pub unsafe fn internal_get_data(this: DownloadHandlerBuffer, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Array<u8> {
+        let inner: extern "C" fn(DownloadHandlerBuffer, ::unity2::OptionalMethod) -> ::unity2::Array<u8> =
+            ::core::mem::transmute(__lookup_internal_get_data::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -259,16 +201,9 @@ mod __DownloadHandlerBuffer_unity2_raw {
 impl DownloadHandlerBuffer {
     #[doc = "`Create(crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer)` overload"]
     pub fn create(
-        obj: impl ::core::convert::Into<
-            crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer,
-        >,
+        obj: impl ::core::convert::Into<crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer>,
     ) -> ::unity2::IntPtr {
-        unsafe {
-            __DownloadHandlerBuffer_unity2_raw::create(
-                ::core::convert::Into::into(obj),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __DownloadHandlerBuffer_unity2_raw::create(::core::convert::Into::into(obj), ::core::option::Option::None) }
     }
 }
 
@@ -277,43 +212,33 @@ pub trait IDownloadHandlerBufferMethods: IDownloadHandlerBuffer {
     #[doc = "`InternalCreateBuffer()` overload"]
     fn internal_create_buffer(self) -> () {
         unsafe {
-            let __receiver = <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DownloadHandlerBuffer_unity2_raw::internal_create_buffer(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DownloadHandlerBuffer_unity2_raw::internal_create_buffer(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DownloadHandlerBuffer_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetData()` overload"]
     fn get_data(self) -> ::unity2::Array<u8> {
         unsafe {
-            let __receiver = <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __DownloadHandlerBuffer_unity2_raw::get_data(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`InternalGetData()` overload"]
     fn internal_get_data(self) -> ::unity2::Array<u8> {
         unsafe {
-            let __receiver = <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __DownloadHandlerBuffer_unity2_raw::internal_get_data(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <DownloadHandlerBuffer as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __DownloadHandlerBuffer_unity2_raw::internal_get_data(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -340,13 +265,10 @@ impl DownloadHandlerBuffer {
 #[cfg(feature = "unity_engine-networking-downloadhandlerbuffer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DownloadHandlerBuffer;
-    pub use super::IDownloadHandlerBuffer;
-    pub use super::IDownloadHandlerBufferMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{DownloadHandlerBuffer, IDownloadHandlerBuffer, IDownloadHandlerBufferMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::networking::downloadhandler::IDownloadHandler;
     #[cfg(feature = "unity_engine-networking-downloadhandler")]
     pub use crate::unity_engine::networking::downloadhandler::IDownloadHandlerMethods;
+    pub use crate::{system::object::IObject, unity_engine::networking::downloadhandler::IDownloadHandler};
 }

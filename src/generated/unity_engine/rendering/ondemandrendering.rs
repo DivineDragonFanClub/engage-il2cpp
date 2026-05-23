@@ -2,10 +2,10 @@
 
 #[cfg(feature = "unity_engine-rendering-ondemandrendering-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ondemandrendering/OnDemandRendering.md"))]
     #[::unity2::class(namespace = "UnityEngine.Rendering", name = "OnDemandRendering")]
@@ -29,9 +29,7 @@ mod __OnDemandRendering_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_frame_interval {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <OnDemandRendering as ::unity2::ClassIdentity>::class(),
@@ -44,37 +42,28 @@ mod __OnDemandRendering_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <OnDemandRendering as ::unity2::ClassIdentity>::NAME,
-                    "get_renderFrameInterval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OnDemandRendering as ::unity2::ClassIdentity>::NAME,
+                        "get_renderFrameInterval",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_render_frame_interval(__unity2_method_info: ::unity2::OptionalMethod) -> i32 {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_render_frame_interval::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_render_frame_interval::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_render_frame_interval_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <OnDemandRendering as ::unity2::ClassIdentity>::class(),
                 "GetRenderFrameInterval",
@@ -86,38 +75,27 @@ mod __OnDemandRendering_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <OnDemandRendering as ::unity2::ClassIdentity>::NAME,
-                    "GetRenderFrameInterval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OnDemandRendering as ::unity2::ClassIdentity>::NAME,
+                        "GetRenderFrameInterval",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_render_frame_interval_2(
-        frame_interval: *mut i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(*mut i32, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_render_frame_interval_2::get_offset() as isize),
-        );
+    pub unsafe fn get_render_frame_interval_2(frame_interval: *mut i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(*mut i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_get_render_frame_interval_2::get_method_info().method_ptr);
         inner(frame_interval, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_cctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <OnDemandRendering as ::unity2::ClassIdentity>::class(),
@@ -130,26 +108,19 @@ mod __OnDemandRendering_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <OnDemandRendering as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <OnDemandRendering as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
 }
@@ -158,21 +129,18 @@ mod __OnDemandRendering_unity2_raw {
 impl OnDemandRendering {
     #[doc = "`get_renderFrameInterval()` overload"]
     pub fn get_render_frame_interval() -> i32 {
-        unsafe {
-            __OnDemandRendering_unity2_raw::get_render_frame_interval(::core::option::Option::None)
-        }
+        unsafe { __OnDemandRendering_unity2_raw::get_render_frame_interval(::core::option::Option::None) }
     }
+
     #[doc = "`GetRenderFrameInterval(*muti32)` overload"]
     pub fn get_render_frame_interval_2() -> i32 {
         unsafe {
             let mut __out_0 = ::core::mem::MaybeUninit::<i32>::uninit();
-            __OnDemandRendering_unity2_raw::get_render_frame_interval_2(
-                __out_0.as_mut_ptr(),
-                ::core::option::Option::None,
-            );
+            __OnDemandRendering_unity2_raw::get_render_frame_interval_2(__out_0.as_mut_ptr(), ::core::option::Option::None);
             __out_0.assume_init()
         }
     }
+
     #[doc = "`.cctor()` overload"]
     pub fn cctor() -> () {
         unsafe { __OnDemandRendering_unity2_raw::cctor(::core::option::Option::None) }
@@ -182,8 +150,7 @@ impl OnDemandRendering {
 #[cfg(feature = "unity_engine-rendering-ondemandrendering")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IOnDemandRendering;
-    pub use super::OnDemandRendering;
+    pub use super::{IOnDemandRendering, OnDemandRendering};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

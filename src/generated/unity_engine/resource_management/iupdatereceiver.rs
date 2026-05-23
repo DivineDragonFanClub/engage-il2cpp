@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-resource_management-iupdatereceiver-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/iupdatereceiver/IUpdateReceiver.md"))]
     #[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "IUpdateReceiver")]
@@ -23,11 +23,8 @@ mod __IUpdateReceiver_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <IUpdateReceiver as ::unity2::ClassIdentity>::class(),
                 "Update",
@@ -39,31 +36,20 @@ mod __IUpdateReceiver_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <IUpdateReceiver as ::unity2::ClassIdentity>::NAME,
-                    "Update",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <IUpdateReceiver as ::unity2::ClassIdentity>::NAME,
+                        "Update",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update(
-        this: IUpdateReceiver,
-        unscaled_delta_time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update(this: IUpdateReceiver, unscaled_delta_time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(IUpdateReceiver, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update::get_method_info().method_ptr);
         inner(this, unscaled_delta_time, __unity2_method_info)
     }
 }
@@ -73,14 +59,8 @@ pub trait IIUpdateReceiverMethods: IIUpdateReceiver {
     #[doc = "`Update(f32)` overload"]
     fn update(self, unscaled_delta_time: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <IUpdateReceiver as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __IUpdateReceiver_unity2_raw::update(
-                __receiver,
-                ::core::convert::Into::into(unscaled_delta_time),
-                ::core::option::Option::None,
-            )
+            let __receiver = <IUpdateReceiver as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __IUpdateReceiver_unity2_raw::update(__receiver, ::core::convert::Into::into(unscaled_delta_time), ::core::option::Option::None)
         }
     }
 }
@@ -91,7 +71,5 @@ impl<__T: IIUpdateReceiver> IIUpdateReceiverMethods for __T {}
 #[cfg(feature = "unity_engine-resource_management-iupdatereceiver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIUpdateReceiver;
-    pub use super::IIUpdateReceiverMethods;
-    pub use super::IUpdateReceiver;
+    pub use super::{IIUpdateReceiver, IIUpdateReceiverMethods, IUpdateReceiver};
 }

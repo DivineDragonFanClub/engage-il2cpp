@@ -2,9 +2,9 @@
 
 #[cfg(feature = "system-collections-generic-icomparer_1_interface-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/icomparer_1_interface/IComparer_1_Interface.md"))]
     #[::unity2::class(namespace = "System.Collections.Generic", name = "IComparer`1")]
@@ -25,7 +25,5 @@ impl<T0: ::unity2::ClassIdentity> IComparer_1_Interface<T0> {
 #[cfg(feature = "system-collections-generic-icomparer_1_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IComparer_1_Interface;
-    pub use super::IIComparer_1_Interface;
-    pub use super::IIComparer_1_InterfaceMethods;
+    pub use super::{IComparer_1_Interface, IIComparer_1_Interface, IIComparer_1_InterfaceMethods};
 }

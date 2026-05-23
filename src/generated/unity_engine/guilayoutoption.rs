@@ -2,12 +2,14 @@
 
 #[cfg(feature = "unity_engine-guilayoutoption-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))]
     #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutOption")]
@@ -21,21 +23,14 @@ mod __types {
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct GUILayoutOption_Type {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for GUILayoutOption_Type {
-        const NAMESPACE: &'static str = "UnityEngine";
-
         const NAME: &'static str = "GUILayoutOption.Type";
+        const NAMESPACE: &'static str = "UnityEngine";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -46,10 +41,7 @@ mod __types {
 
     impl ::unity2::IlType for GUILayoutOption_Type {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -124,10 +116,11 @@ mod __GUILayoutOption_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: guilayoutoption :: GUILayoutOption_Type as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::guilayoutoption::GUILayoutOption_Type as ::unity2::IlType>::il_type(),
+                <crate::system::object::Object as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GUILayoutOption as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -139,18 +132,15 @@ mod __GUILayoutOption_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GUILayoutOption as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GUILayoutOption as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -164,11 +154,7 @@ mod __GUILayoutOption_unity2_raw {
             crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
             crate::system::object::Object,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r#type, value, __unity2_method_info)
     }
 }
@@ -182,9 +168,7 @@ pub trait IGUILayoutOptionMethods: IGUILayoutOption {
         value: impl ::core::convert::Into<crate::system::object::Object>,
     ) -> () {
         unsafe {
-            let __receiver = <GUILayoutOption as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GUILayoutOption as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GUILayoutOption_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(r#type),
@@ -201,10 +185,7 @@ impl<__T: IGUILayoutOption> IGUILayoutOptionMethods for __T {}
 #[cfg(feature = "unity_engine-guilayoutoption")]
 impl GUILayoutOption {
     #[doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` — overload selector"]
-    pub fn new(
-        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
-        value: crate::system::object::Object,
-    ) -> Self {
+    pub fn new(r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type, value: crate::system::object::Object) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -220,17 +201,12 @@ impl GUILayoutOption {
 #[cfg(feature = "unity_engine-guilayoutoption")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUILayoutOption;
-    pub use super::GUILayoutOption_Type;
-    pub use super::IGUILayoutOption;
-    pub use super::IGUILayoutOptionMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{GUILayoutOption, GUILayoutOption_Type, IGUILayoutOption, IGUILayoutOptionMethods};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

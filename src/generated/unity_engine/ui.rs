@@ -35,10 +35,7 @@ pub mod canvasscaler;
 #[cfg(feature = "unity_engine-ui-canvasscaler")]
 pub use canvasscaler::ICanvasScalerMethods;
 #[cfg(feature = "unity_engine-ui-canvasscaler-types")]
-pub use canvasscaler::{
-    CanvasScaler, CanvasScaler_ScaleMode, CanvasScaler_ScreenMatchMode, CanvasScaler_Unit,
-    ICanvasScaler,
-};
+pub use canvasscaler::{CanvasScaler, CanvasScaler_ScaleMode, CanvasScaler_ScreenMatchMode, CanvasScaler_Unit, ICanvasScaler};
 #[cfg(any(feature = "unity_engine-ui-canvasupdate-types"))]
 pub mod canvasupdate;
 #[cfg(feature = "unity_engine-ui-canvasupdate-types")]
@@ -82,26 +79,21 @@ pub mod coroutine_tween;
 pub mod defaultcontrols;
 #[cfg(feature = "unity_engine-ui-defaultcontrols-types")]
 pub use defaultcontrols::{
-    DefaultControls, DefaultControls_DefaultRuntimeFactory, DefaultControls_IFactoryControls,
-    DefaultControls_Resources, IDefaultControls, IDefaultControls_DefaultRuntimeFactory,
-    IDefaultControls_IFactoryControls,
+    DefaultControls, DefaultControls_DefaultRuntimeFactory, DefaultControls_IFactoryControls, DefaultControls_Resources, IDefaultControls,
+    IDefaultControls_DefaultRuntimeFactory, IDefaultControls_IFactoryControls,
 };
 #[cfg(feature = "unity_engine-ui-defaultcontrols")]
-pub use defaultcontrols::{
-    IDefaultControls_DefaultRuntimeFactoryMethods, IDefaultControls_IFactoryControlsMethods,
-};
+pub use defaultcontrols::{IDefaultControls_DefaultRuntimeFactoryMethods, IDefaultControls_IFactoryControlsMethods};
 #[cfg(any(feature = "unity_engine-ui-dropdown-types"))]
 pub mod dropdown;
 #[cfg(feature = "unity_engine-ui-dropdown-types")]
 pub use dropdown::{
-    Dropdown, Dropdown_DropdownEvent, Dropdown_DropdownItem, Dropdown_OptionData,
-    Dropdown_OptionDataList, IDropdown, IDropdown_DropdownEvent, IDropdown_DropdownItem,
-    IDropdown_OptionData, IDropdown_OptionDataList,
+    Dropdown, Dropdown_DropdownEvent, Dropdown_DropdownItem, Dropdown_OptionData, Dropdown_OptionDataList, IDropdown, IDropdown_DropdownEvent,
+    IDropdown_DropdownItem, IDropdown_OptionData, IDropdown_OptionDataList,
 };
 #[cfg(feature = "unity_engine-ui-dropdown")]
 pub use dropdown::{
-    IDropdownMethods, IDropdown_DropdownEventMethods, IDropdown_DropdownItemMethods,
-    IDropdown_OptionDataListMethods, IDropdown_OptionDataMethods,
+    IDropdownMethods, IDropdown_DropdownEventMethods, IDropdown_DropdownItemMethods, IDropdown_OptionDataListMethods, IDropdown_OptionDataMethods,
 };
 #[cfg(any(feature = "unity_engine-ui-fontdata-types"))]
 pub mod fontdata;
@@ -136,10 +128,7 @@ pub mod gridlayoutgroup;
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
 pub use gridlayoutgroup::IGridLayoutGroupMethods;
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup-types")]
-pub use gridlayoutgroup::{
-    GridLayoutGroup, GridLayoutGroup_Axis, GridLayoutGroup_Constraint, GridLayoutGroup_Corner,
-    IGridLayoutGroup,
-};
+pub use gridlayoutgroup::{GridLayoutGroup, GridLayoutGroup_Axis, GridLayoutGroup_Constraint, GridLayoutGroup_Corner, IGridLayoutGroup};
 #[cfg(any(feature = "unity_engine-ui-horizontallayoutgroup-types"))]
 pub mod horizontallayoutgroup;
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup")]
@@ -151,9 +140,7 @@ pub mod horizontalorverticallayoutgroup;
 #[cfg(feature = "unity_engine-ui-horizontalorverticallayoutgroup")]
 pub use horizontalorverticallayoutgroup::IHorizontalOrVerticalLayoutGroupMethods;
 #[cfg(feature = "unity_engine-ui-horizontalorverticallayoutgroup-types")]
-pub use horizontalorverticallayoutgroup::{
-    HorizontalOrVerticalLayoutGroup, IHorizontalOrVerticalLayoutGroup,
-};
+pub use horizontalorverticallayoutgroup::{HorizontalOrVerticalLayoutGroup, IHorizontalOrVerticalLayoutGroup};
 #[cfg(any(feature = "unity_engine-ui-icanvaselement-types"))]
 pub mod icanvaselement;
 #[cfg(feature = "unity_engine-ui-icanvaselement")]
@@ -210,8 +197,7 @@ pub mod image;
 pub use image::IImageMethods;
 #[cfg(feature = "unity_engine-ui-image-types")]
 pub use image::{
-    IImage, Image, Image_FillMethod, Image_Origin180, Image_Origin360, Image_Origin90,
-    Image_OriginHorizontal, Image_OriginVertical, Image_Type,
+    IImage, Image, Image_FillMethod, Image_Origin180, Image_Origin360, Image_Origin90, Image_OriginHorizontal, Image_OriginVertical, Image_Type,
 };
 #[cfg(any(feature = "unity_engine-ui-imask_interface-types"))]
 pub mod imask_interface;
@@ -241,16 +227,12 @@ pub use imeshmodifier::{IIMeshModifier, IMeshModifier};
 pub mod inputfield;
 #[cfg(feature = "unity_engine-ui-inputfield-types")]
 pub use inputfield::{
-    IInputField, IInputField_OnChangeEvent, IInputField_OnValidateInput, IInputField_SubmitEvent,
-    InputField, InputField_CharacterValidation, InputField_ContentType, InputField_EditState,
-    InputField_InputType, InputField_LineType, InputField_OnChangeEvent,
-    InputField_OnValidateInput, InputField_SubmitEvent,
+    IInputField, IInputField_OnChangeEvent, IInputField_OnValidateInput, IInputField_SubmitEvent, InputField, InputField_CharacterValidation,
+    InputField_ContentType, InputField_EditState, InputField_InputType, InputField_LineType, InputField_OnChangeEvent, InputField_OnValidateInput,
+    InputField_SubmitEvent,
 };
 #[cfg(feature = "unity_engine-ui-inputfield")]
-pub use inputfield::{
-    IInputFieldMethods, IInputField_OnChangeEventMethods, IInputField_OnValidateInputMethods,
-    IInputField_SubmitEventMethods,
-};
+pub use inputfield::{IInputFieldMethods, IInputField_OnChangeEventMethods, IInputField_OnValidateInputMethods, IInputField_SubmitEventMethods};
 #[cfg(any(feature = "unity_engine-ui-ivertexmodifier-types"))]
 pub mod ivertexmodifier;
 #[cfg(feature = "unity_engine-ui-ivertexmodifier")]
@@ -292,10 +274,7 @@ pub use mask::{IMask, Mask};
 #[cfg(any(feature = "unity_engine-ui-maskablegraphic-types"))]
 pub mod maskablegraphic;
 #[cfg(feature = "unity_engine-ui-maskablegraphic-types")]
-pub use maskablegraphic::{
-    IMaskableGraphic, IMaskableGraphic_CullStateChangedEvent, MaskableGraphic,
-    MaskableGraphic_CullStateChangedEvent,
-};
+pub use maskablegraphic::{IMaskableGraphic, IMaskableGraphic_CullStateChangedEvent, MaskableGraphic, MaskableGraphic_CullStateChangedEvent};
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
 pub use maskablegraphic::{IMaskableGraphicMethods, IMaskableGraphic_CullStateChangedEventMethods};
 #[cfg(any(feature = "unity_engine-ui-maskutilities-types"))]
@@ -356,39 +335,30 @@ pub use rectmask2d::{IRectMask2D, RectMask2D};
 pub mod reflectionmethodscache;
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache-types")]
 pub use reflectionmethodscache::{
-    IReflectionMethodsCache, IReflectionMethodsCache_GetRayIntersectionAllCallback,
-    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
-    IReflectionMethodsCache_GetRaycastNonAllocCallback, IReflectionMethodsCache_Raycast2DCallback,
-    IReflectionMethodsCache_Raycast3DCallback, IReflectionMethodsCache_RaycastAllCallback,
-    ReflectionMethodsCache, ReflectionMethodsCache_GetRayIntersectionAllCallback,
-    ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
-    ReflectionMethodsCache_GetRaycastNonAllocCallback, ReflectionMethodsCache_Raycast2DCallback,
-    ReflectionMethodsCache_Raycast3DCallback, ReflectionMethodsCache_RaycastAllCallback,
+    IReflectionMethodsCache, IReflectionMethodsCache_GetRayIntersectionAllCallback, IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback,
+    IReflectionMethodsCache_GetRaycastNonAllocCallback, IReflectionMethodsCache_Raycast2DCallback, IReflectionMethodsCache_Raycast3DCallback,
+    IReflectionMethodsCache_RaycastAllCallback, ReflectionMethodsCache, ReflectionMethodsCache_GetRayIntersectionAllCallback,
+    ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback, ReflectionMethodsCache_GetRaycastNonAllocCallback,
+    ReflectionMethodsCache_Raycast2DCallback, ReflectionMethodsCache_Raycast3DCallback, ReflectionMethodsCache_RaycastAllCallback,
 };
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
 pub use reflectionmethodscache::{
     IReflectionMethodsCacheMethods, IReflectionMethodsCache_GetRayIntersectionAllCallbackMethods,
-    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods,
-    IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods,
-    IReflectionMethodsCache_Raycast2DCallbackMethods,
-    IReflectionMethodsCache_Raycast3DCallbackMethods,
+    IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods, IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods,
+    IReflectionMethodsCache_Raycast2DCallbackMethods, IReflectionMethodsCache_Raycast3DCallbackMethods,
     IReflectionMethodsCache_RaycastAllCallbackMethods,
 };
 #[cfg(any(feature = "unity_engine-ui-scrollbar-types"))]
 pub mod scrollbar;
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
-pub use scrollbar::{
-    IScrollbar, IScrollbar_ScrollEvent, Scrollbar, Scrollbar_Axis, Scrollbar_Direction,
-    Scrollbar_ScrollEvent,
-};
+pub use scrollbar::{IScrollbar, IScrollbar_ScrollEvent, Scrollbar, Scrollbar_Axis, Scrollbar_Direction, Scrollbar_ScrollEvent};
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 pub use scrollbar::{IScrollbarMethods, IScrollbar_ScrollEventMethods};
 #[cfg(any(feature = "unity_engine-ui-scrollrect-types"))]
 pub mod scrollrect;
 #[cfg(feature = "unity_engine-ui-scrollrect-types")]
 pub use scrollrect::{
-    IScrollRect, IScrollRect_ScrollRectEvent, ScrollRect, ScrollRect_MovementType,
-    ScrollRect_ScrollRectEvent, ScrollRect_ScrollbarVisibility,
+    IScrollRect, IScrollRect_ScrollRectEvent, ScrollRect, ScrollRect_MovementType, ScrollRect_ScrollRectEvent, ScrollRect_ScrollbarVisibility,
 };
 #[cfg(feature = "unity_engine-ui-scrollrect")]
 pub use scrollrect::{IScrollRectMethods, IScrollRect_ScrollRectEventMethods};
@@ -411,9 +381,7 @@ pub use shadow::{IShadow, Shadow};
 #[cfg(any(feature = "unity_engine-ui-slider-types"))]
 pub mod slider;
 #[cfg(feature = "unity_engine-ui-slider-types")]
-pub use slider::{
-    ISlider, ISlider_SliderEvent, Slider, Slider_Axis, Slider_Direction, Slider_SliderEvent,
-};
+pub use slider::{ISlider, ISlider_SliderEvent, Slider, Slider_Axis, Slider_Direction, Slider_SliderEvent};
 #[cfg(feature = "unity_engine-ui-slider")]
 pub use slider::{ISliderMethods, ISlider_SliderEventMethods};
 #[cfg(any(feature = "unity_engine-ui-spritestate-types"))]
@@ -425,9 +393,7 @@ pub mod stencilmaterial;
 #[cfg(feature = "unity_engine-ui-stencilmaterial")]
 pub use stencilmaterial::IStencilMaterial_MatEntryMethods;
 #[cfg(feature = "unity_engine-ui-stencilmaterial-types")]
-pub use stencilmaterial::{
-    IStencilMaterial, IStencilMaterial_MatEntry, StencilMaterial, StencilMaterial_MatEntry,
-};
+pub use stencilmaterial::{IStencilMaterial, IStencilMaterial_MatEntry, StencilMaterial, StencilMaterial_MatEntry};
 #[cfg(any(feature = "unity_engine-ui-text-types"))]
 pub mod text;
 #[cfg(feature = "unity_engine-ui-text")]
@@ -437,9 +403,7 @@ pub use text::{IText, Text};
 #[cfg(any(feature = "unity_engine-ui-toggle-types"))]
 pub mod toggle;
 #[cfg(feature = "unity_engine-ui-toggle-types")]
-pub use toggle::{
-    IToggle, IToggle_ToggleEvent, Toggle, Toggle_ToggleEvent, Toggle_ToggleTransition,
-};
+pub use toggle::{IToggle, IToggle_ToggleEvent, Toggle, Toggle_ToggleEvent, Toggle_ToggleTransition};
 #[cfg(feature = "unity_engine-ui-toggle")]
 pub use toggle::{IToggleMethods, IToggle_ToggleEventMethods};
 #[cfg(any(feature = "unity_engine-ui-togglegroup-types"))]

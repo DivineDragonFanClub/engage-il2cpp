@@ -2,11 +2,13 @@
 
 #[cfg(feature = "app-scriptsound-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::scriptutil::{IScriptUtil, ScriptUtil};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::scriptutil::{IScriptUtil, ScriptUtil},
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsound/ScriptSound.md"))]
     #[::unity2::class(namespace = "App", name = "ScriptSound")]
@@ -26,13 +28,9 @@ mod __ScriptSound_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_sound_post_event {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "SoundPostEvent",
@@ -44,45 +42,32 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "SoundPostEvent",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "SoundPostEvent",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn sound_post_event(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_sound_post_event::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_sound_post_event::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_field_phase_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "SetFieldPhaseBgm",
@@ -94,45 +79,32 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "SetFieldPhaseBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "SetFieldPhaseBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_field_phase_bgm(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_field_phase_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_field_phase_bgm::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_field_bgm_volume {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "SetFieldBgmVolume",
@@ -144,45 +116,32 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "SetFieldBgmVolume",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "SetFieldBgmVolume",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_field_bgm_volume(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_field_bgm_volume::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_field_bgm_volume::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_play_field_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "PlayFieldBgm",
@@ -194,45 +153,32 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "PlayFieldBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "PlayFieldBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn play_field_bgm(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_play_field_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_play_field_bgm::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_pause_field_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "PauseFieldBgm",
@@ -244,45 +190,32 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "PauseFieldBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "PauseFieldBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn pause_field_bgm(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_pause_field_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_pause_field_bgm::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_resume_field_bgm {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "ResumeFieldBgm",
@@ -294,45 +227,32 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "ResumeFieldBgm",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "ResumeFieldBgm",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn resume_field_bgm(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_resume_field_bgm::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_resume_field_bgm::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_field_bgm_war_situation {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Array<
-                crate::moon_sharp::interpreter::dynvalue::DynValue,
-            > as ::unity2::IlType>::il_type(
-            )];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptSound as ::unity2::ClassIdentity>::class(),
                 "SetFieldBgmWarSituation",
@@ -344,122 +264,76 @@ mod __ScriptSound_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "SetFieldBgmWarSituation",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "SetFieldBgmWarSituation",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_field_bgm_war_situation(
         args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_field_bgm_war_situation::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_field_bgm_war_situation::get_method_info().method_ptr);
         inner(args, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_regist {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::eventscript::EventScript as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptSound as ::unity2::ClassIdentity>::class(),
-                "Regist",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::eventscript::EventScript as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptSound as ::unity2::ClassIdentity>::class(), "Regist", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    "Regist",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        "Regist",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn regist(
-        script: crate::app::eventscript::EventScript,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::eventscript::EventScript,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_regist::get_offset() as isize),
-        );
+    pub unsafe fn regist(script: crate::app::eventscript::EventScript, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(crate::app::eventscript::EventScript, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_regist::get_method_info().method_ptr);
         inner(script, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ScriptSound as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<ScriptSound as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptSound as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptSound as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: ScriptSound, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(ScriptSound, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(ScriptSound, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -467,104 +341,43 @@ mod __ScriptSound_unity2_raw {
 #[cfg(feature = "app-scriptsound")]
 impl ScriptSound {
     #[doc = "`SoundPostEvent(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn sound_post_event(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::sound_post_event(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn sound_post_event(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::sound_post_event(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`SetFieldPhaseBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn set_field_phase_bgm(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::set_field_phase_bgm(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_field_phase_bgm(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::set_field_phase_bgm(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`SetFieldBgmVolume(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn set_field_bgm_volume(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::set_field_bgm_volume(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_field_bgm_volume(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::set_field_bgm_volume(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`PlayFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn play_field_bgm(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::play_field_bgm(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn play_field_bgm(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::play_field_bgm(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`PauseFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn pause_field_bgm(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::pause_field_bgm(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn pause_field_bgm(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::pause_field_bgm(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`ResumeFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn resume_field_bgm(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::resume_field_bgm(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn resume_field_bgm(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::resume_field_bgm(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`SetFieldBgmWarSituation(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    pub fn set_field_bgm_war_situation(
-        args: impl ::core::convert::Into<
-            ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::set_field_bgm_war_situation(
-                ::core::convert::Into::into(args),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn set_field_bgm_war_situation(args: impl ::core::convert::Into<::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe { __ScriptSound_unity2_raw::set_field_bgm_war_situation(::core::convert::Into::into(args), ::core::option::Option::None) }
     }
+
     #[doc = "`Regist(crate::app::eventscript::EventScript)` overload"]
     pub fn regist(script: impl ::core::convert::Into<crate::app::eventscript::EventScript>) -> () {
-        unsafe {
-            __ScriptSound_unity2_raw::regist(
-                ::core::convert::Into::into(script),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptSound_unity2_raw::regist(::core::convert::Into::into(script), ::core::option::Option::None) }
     }
 }
 
@@ -573,9 +386,7 @@ pub trait IScriptSoundMethods: IScriptSound {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ScriptSound as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ScriptSound as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ScriptSound_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -588,13 +399,8 @@ impl<__T: IScriptSound> IScriptSoundMethods for __T {}
 impl ScriptSound {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptSound),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(ScriptSound), ::core::stringify!(new),));
         <Self as IScriptSoundMethods>::ctor(this);
         this
     }
@@ -603,13 +409,10 @@ impl ScriptSound {
 #[cfg(feature = "app-scriptsound")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptSound;
-    pub use super::IScriptSoundMethods;
-    pub use super::ScriptSound;
-    pub use crate::app::scriptutil::IScriptUtil;
+    pub use super::{IScriptSound, IScriptSoundMethods, ScriptSound};
     #[cfg(feature = "app-scriptutil")]
     pub use crate::app::scriptutil::IScriptUtilMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::scriptutil::IScriptUtil, system::object::IObject};
 }

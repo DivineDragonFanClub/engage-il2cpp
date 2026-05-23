@@ -2,25 +2,26 @@
 
 #[cfg(feature = "app-senditemmenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::app::basicdialog::{BasicDialog, IBasicDialog};
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes};
-    use crate::app::basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem};
-    use crate::app::basicmenu::{BasicMenu, IBasicMenu};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::yesnodialog::{IYesNoDialog, YesNoDialog};
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_CancelCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "SendItemMenu.CancelCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SendItemMenu_CancelCallback {}
+    use crate::{
+        app::{
+            basicdialog::{BasicDialog, IBasicDialog},
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicitemmenuitem::{BasicItemMenuItem, IBasicItemMenuItem},
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+            yesnodialog::{IYesNoDialog, YesNoDialog},
+        },
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu.md"))]
     #[::unity2::class(namespace = "App", name = "SendItemMenu")]
@@ -45,11 +46,23 @@ mod __types {
     #[parent(crate::app::yesnodialog::YesNoDialog)]
     pub struct SendItemMenu_ConfirmDialog {}
 
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_CancelCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "SendItemMenu.CancelCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SendItemMenu_CancelCallback {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_SendItemMenuItem.md"))]
+    #[::unity2::class(namespace = "App", name = "SendItemMenu.SendItemMenuItem")]
+    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
+    pub struct SendItemMenu_SendItemMenuItem {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_DecideCallback.md"))]
+    #[::unity2::class(namespace = "App", name = "SendItemMenu.DecideCallback")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct SendItemMenu_DecideCallback {}
+
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_ConfirmDialog_ConfirmYesDialogItem.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "SendItemMenu.ConfirmDialog.ConfirmYesDialogItem"
-    )]
+    #[::unity2::class(namespace = "App", name = "SendItemMenu.ConfirmDialog.ConfirmYesDialogItem")]
     #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
     pub struct SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
         #[rename(name = "m_Unit")]
@@ -61,20 +74,716 @@ mod __types {
         #[rename(name = "m_DecideCallback")]
         pub m_decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
     }
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_DecideCallback.md"))]
-    #[::unity2::class(namespace = "App", name = "SendItemMenu.DecideCallback")]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    pub struct SendItemMenu_DecideCallback {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/senditemmenu/SendItemMenu_SendItemMenuItem.md"))]
-    #[::unity2::class(namespace = "App", name = "SendItemMenu.SendItemMenuItem")]
-    #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
-    pub struct SendItemMenu_SendItemMenuItem {}
 }
 
 #[cfg(feature = "app-senditemmenu-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-senditemmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SendItemMenu_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::senditemmenu::SendItemMenu_DecideCallback as ::unity2::IlType>::il_type(),
+                <crate::app::senditemmenu::SendItemMenu_CancelCallback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                6,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        uncancellable: bool,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+        cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::procinst::ProcInst {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            bool,
+            crate::app::senditemmenu::SendItemMenu_DecideCallback,
+            crate::app::senditemmenu::SendItemMenu_CancelCallback,
+            ::unity2::OptionalMethod,
+        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(
+            super_,
+            unit,
+            gain_unit_item,
+            uncancellable,
+            decide_callback,
+            cancel_callback,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
+                <crate::app::basicmenucontent::BasicMenuContent as ::unity2::IlType>::il_type(),
+                <crate::app::senditemroot::SendItemRoot as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::app::senditemmenu::SendItemMenu_DecideCallback as ::unity2::IlType>::il_type(),
+                <crate::app::senditemmenu::SendItemMenu_CancelCallback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(<SendItemMenu as ::unity2::ClassIdentity>::class(), ".ctor", 8, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SendItemMenu,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        root: crate::app::senditemroot::SendItemRoot,
+        unit: crate::app::unit::Unit,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        uncancellable: bool,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+        cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SendItemMenu,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            crate::app::basicmenucontent::BasicMenuContent,
+            crate::app::senditemroot::SendItemRoot,
+            crate::app::unit::Unit,
+            crate::app::unititem::UnitItem,
+            bool,
+            crate::app::senditemmenu::SendItemMenu_DecideCallback,
+            crate::app::senditemmenu::SendItemMenu_CancelCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(
+            this,
+            menu_item_list,
+            menu_content,
+            root,
+            unit,
+            gain_unit_item,
+            uncancellable,
+            decide_callback,
+            cancel_callback,
+            __unity2_method_info,
+        )
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "GetName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_name(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_after_build {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "AfterBuild",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "AfterBuild",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn after_build(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_after_build::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_unit {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "GetUnit",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetUnit",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_unit(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_gain_unit_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "GetGainUnitItem",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "GetGainUnitItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_gain_unit_item(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_gain_unit_item::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_x_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<SendItemMenu as ::unity2::ClassIdentity>::class(), "XCall", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "XCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn x_call(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_x_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_close {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "OnClose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnClose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_close(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_close::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_dispose {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "OnDispose",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn on_dispose(this: SendItemMenu, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_send_item {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                "SendItem",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu as ::unity2::ClassIdentity>::NAME,
+                        "SendItem",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn send_item(this: SendItemMenu, select_unit_item: bool, unit_item_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SendItemMenu, bool, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_send_item::get_method_info().method_ptr);
+        inner(this, select_unit_item, unit_item_index, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+impl SendItemMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::senditemmenu::SendItemMenu_DecideCallback, crate::app::senditemmenu::SendItemMenu_CancelCallback)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        uncancellable: impl ::core::convert::Into<bool>,
+        decide_callback: impl ::core::convert::Into<crate::app::senditemmenu::SendItemMenu_DecideCallback>,
+        cancel_callback: impl ::core::convert::Into<crate::app::senditemmenu::SendItemMenu_CancelCallback>,
+    ) -> crate::app::procinst::ProcInst {
+        unsafe {
+            __SendItemMenu_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(gain_unit_item),
+                ::core::convert::Into::into(uncancellable),
+                ::core::convert::Into::into(decide_callback),
+                ::core::convert::Into::into(cancel_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+pub trait ISendItemMenuMethods: ISendItemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::senditemroot::SendItemRoot, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::senditemmenu::SendItemMenu_DecideCallback, crate::app::senditemmenu::SendItemMenu_CancelCallback)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
+        root: impl ::core::convert::Into<crate::app::senditemroot::SendItemRoot>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        uncancellable: impl ::core::convert::Into<bool>,
+        decide_callback: impl ::core::convert::Into<crate::app::senditemmenu::SendItemMenu_DecideCallback>,
+        cancel_callback: impl ::core::convert::Into<crate::app::senditemmenu::SendItemMenu_CancelCallback>,
+    ) -> () {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::ctor(
+                __receiver,
+                ::core::convert::Into::into(menu_item_list),
+                ::core::convert::Into::into(menu_content),
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(gain_unit_item),
+                ::core::convert::Into::into(uncancellable),
+                ::core::convert::Into::into(decide_callback),
+                ::core::convert::Into::into(cancel_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+    #[doc = "`GetName()` overload"]
+    fn get_name(self) -> ::unity2::Il2CppString {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`AfterBuild()` overload"]
+    fn after_build(self) -> () {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit()` overload"]
+    fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetGainUnitItem()` overload"]
+    fn get_gain_unit_item(self) -> crate::app::unititem::UnitItem {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::get_gain_unit_item(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`XCall()` overload"]
+    fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnClose()` overload"]
+    fn on_close(self) -> () {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`OnDispose()` overload"]
+    fn on_dispose(self) -> () {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`SendItem(bool, i32)` overload"]
+    fn send_item(self, select_unit_item: impl ::core::convert::Into<bool>, unit_item_index: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_unity2_raw::send_item(
+                __receiver,
+                ::core::convert::Into::into(select_unit_item),
+                ::core::convert::Into::into(unit_item_index),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+impl<__T: ISendItemMenu> ISendItemMenuMethods for __T {}
+
+#[cfg(feature = "app-senditemmenu")]
+impl SendItemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::senditemroot::SendItemRoot, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::senditemmenu::SendItemMenu_DecideCallback, crate::app::senditemmenu::SendItemMenu_CancelCallback)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        root: crate::app::senditemroot::SendItemRoot,
+        unit: crate::app::unit::Unit,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        uncancellable: bool,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+        cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(SendItemMenu), ::core::stringify!(new),));
+        <Self as ISendItemMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            root,
+            unit,
+            gain_unit_item,
+            uncancellable,
+            decide_callback,
+            cancel_callback,
+        );
+        this
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SendItemMenu_ConfirmDialog_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_create_bind {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::procinst::ProcInst as ::unity2::IlType>::il_type(),
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::senditemmenu::SendItemMenu_DecideCallback as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                "CreateBind",
+                5,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::app::procinst::ProcInst,
+            crate::app::unit::Unit,
+            i32,
+            crate::app::unititem::UnitItem,
+            crate::app::senditemmenu::SendItemMenu_DecideCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
+        inner(super_, unit, unit_item_index, gain_unit_item, decide_callback, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::app::basicmenuitem::BasicMenuItem,
+            > as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(
+        this: SendItemMenu_ConfirmDialog,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            SendItemMenu_ConfirmDialog,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, menu_item_list, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+impl SendItemMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_item_index: impl ::core::convert::Into<i32>,
+        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        decide_callback: impl ::core::convert::Into<crate::app::senditemmenu::SendItemMenu_DecideCallback>,
+    ) -> () {
+        unsafe {
+            __SendItemMenu_ConfirmDialog_unity2_raw::create_bind(
+                ::core::convert::Into::into(super_),
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(unit_item_index),
+                ::core::convert::Into::into(gain_unit_item),
+                ::core::convert::Into::into(decide_callback),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+pub trait ISendItemMenu_ConfirmDialogMethods: ISendItemMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_ConfirmDialog_unity2_raw::ctor(__receiver, ::core::convert::Into::into(menu_item_list), ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-senditemmenu")]
+impl<__T: ISendItemMenu_ConfirmDialog> ISendItemMenu_ConfirmDialogMethods for __T {}
+
+#[cfg(feature = "app-senditemmenu")]
+impl SendItemMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SendItemMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISendItemMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
 
 #[cfg(feature = "app-senditemmenu")]
 #[doc(hidden)]
@@ -85,9 +794,7 @@ mod __SendItemMenu_CancelCallback_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -103,18 +810,15 @@ mod __SendItemMenu_CancelCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -123,25 +827,15 @@ mod __SendItemMenu_CancelCallback_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SendItemMenu_CancelCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SendItemMenu_CancelCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SendItemMenu_CancelCallback as ::unity2::ClassIdentity>::class(),
@@ -154,30 +848,20 @@ mod __SendItemMenu_CancelCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_CancelCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn invoke(
-        this: SendItemMenu_CancelCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn invoke(this: SendItemMenu_CancelCallback, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(SendItemMenu_CancelCallback, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_invoke::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -185,16 +869,10 @@ mod __SendItemMenu_CancelCallback_unity2_raw {
 #[cfg(feature = "app-senditemmenu")]
 pub trait ISendItemMenu_CancelCallbackMethods: ISendItemMenu_CancelCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <SendItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SendItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SendItemMenu_CancelCallback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -207,13 +885,8 @@ pub trait ISendItemMenu_CancelCallbackMethods: ISendItemMenu_CancelCallback {
     fn invoke(self) -> () {
         unsafe {
             let __receiver =
-                <SendItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_CancelCallback_unity2_raw::invoke(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <SendItemMenu_CancelCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_CancelCallback_unity2_raw::invoke(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -240,161 +913,16 @@ impl SendItemMenu_CancelCallback {
 #[cfg(feature = "app-senditemmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SendItemMenu_unity2_raw {
+mod __SendItemMenu_SendItemMenuItem_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemmenu :: SendItemMenu_DecideCallback as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemmenu :: SendItemMenu_CancelCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                6,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        uncancellable: bool,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::procinst::ProcInst {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            bool,
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-            crate::app::senditemmenu::SendItemMenu_CancelCallback,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::procinst::ProcInst = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            unit,
-            gain_unit_item,
-            uncancellable,
-            decide_callback,
-            cancel_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > as :: unity2 :: IlType > :: il_type () , < crate :: app :: basicmenucontent :: BasicMenuContent as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemroot :: SendItemRoot as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemmenu :: SendItemMenu_DecideCallback as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemmenu :: SendItemMenu_CancelCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                8,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SendItemMenu,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        root: crate::app::senditemroot::SendItemRoot,
-        unit: crate::app::unit::Unit,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        uncancellable: bool,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SendItemMenu,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            crate::app::basicmenucontent::BasicMenuContent,
-            crate::app::senditemroot::SendItemRoot,
-            crate::app::unit::Unit,
-            crate::app::unititem::UnitItem,
-            bool,
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-            crate::app::senditemmenu::SendItemMenu_CancelCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            menu_item_list,
-            menu_content,
-            root,
-            unit,
-            gain_unit_item,
-            uncancellable,
-            decide_callback,
-            cancel_callback,
-            __unity2_method_info,
-        )
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetName",
                 0,
                 param_types,
@@ -404,43 +932,31 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: SendItemMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_name::get_offset() as isize),
-            );
+    pub unsafe fn get_name(this: SendItemMenu_SendItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_after_build {
+    pub mod __lookup_build_attribute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "AfterBuild",
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "BuildAttribute",
                 0,
                 param_types,
                 false,
@@ -449,42 +965,174 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "AfterBuild",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+    }
+    pub unsafe fn build_attribute(
+        this: SendItemMenu_SendItemMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__lookup_build_attribute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_on_select {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "OnSelect",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn after_build(
-        this: SendItemMenu,
+    pub unsafe fn on_select(this: SendItemMenu_SendItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_a_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "ACall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn a_call(
+        this: SendItemMenu_SendItemMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_after_build::get_offset() as isize),
-            );
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_b_call {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "BCall",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "BCall",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn b_call(
+        this: SendItemMenu_SendItemMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::basicmenu::BasicMenu_Result {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__lookup_b_call::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_send_item_menu {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetSendItemMenu",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetSendItemMenu",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_send_item_menu(
+        this: SendItemMenu_SendItemMenuItem,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::app::senditemmenu::SendItemMenu {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::senditemmenu::SendItemMenu =
+            ::core::mem::transmute(__lookup_get_send_item_menu::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
                 "GetUnit",
                 0,
                 param_types,
@@ -494,43 +1142,31 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unit(
-        this: SendItemMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_unit::get_offset() as isize),
-            );
+    pub unsafe fn get_unit(this: SendItemMenu_SendItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_gain_unit_item {
+    pub mod __lookup_get_unit_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "GetGainUnitItem",
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetUnitItem",
                 0,
                 param_types,
                 false,
@@ -539,45 +1175,34 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "GetGainUnitItem",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetUnitItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_gain_unit_item(
-        this: SendItemMenu,
+    pub unsafe fn get_unit_item(
+        this: SendItemMenu_SendItemMenuItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            SendItemMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_gain_unit_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unititem::UnitItem =
+            ::core::mem::transmute(__lookup_get_unit_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_x_call {
+    pub mod __lookup_get_reciever_unit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "XCall",
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "GetRecieverUnit",
                 0,
                 param_types,
                 false,
@@ -586,45 +1211,31 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "XCall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "GetRecieverUnit",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn x_call(
-        this: SendItemMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            SendItemMenu,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_x_call::get_offset() as isize),
-        );
+    pub unsafe fn get_reciever_unit(this: SendItemMenu_SendItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> crate::app::unit::Unit {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> crate::app::unit::Unit =
+            ::core::mem::transmute(__lookup_get_reciever_unit::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_on_close {
+    pub mod __lookup_is_gain_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "OnClose",
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                "IsGainItem",
                 0,
                 param_types,
                 false,
@@ -633,43 +1244,31 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnClose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        "IsGainItem",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_close(
-        this: SendItemMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_close::get_offset() as isize),
-            );
+    pub unsafe fn is_gain_item(this: SendItemMenu_SendItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_is_gain_item::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_on_dispose {
+    pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "OnDispose",
+                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
                 0,
                 param_types,
                 false,
@@ -678,648 +1277,131 @@ mod __SendItemMenu_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: SendItemMenu,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SendItemMenu, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+    pub unsafe fn ctor(this: SendItemMenu_SendItemMenuItem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_send_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu as ::unity2::ClassIdentity>::class(),
-                "SendItem",
-                2,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu as ::unity2::ClassIdentity>::NAME,
-                    "SendItem",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn send_item(
-        this: SendItemMenu,
-        select_unit_item: bool,
-        unit_item_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SendItemMenu, bool, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_send_item::get_offset() as isize),
-            );
-        inner(
-            this,
-            select_unit_item,
-            unit_item_index,
-            __unity2_method_info,
-        )
     }
 }
 
 #[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::senditemmenu::SendItemMenu_DecideCallback, crate::app::senditemmenu::SendItemMenu_CancelCallback)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        uncancellable: impl ::core::convert::Into<bool>,
-        decide_callback: impl ::core::convert::Into<
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        >,
-        cancel_callback: impl ::core::convert::Into<
-            crate::app::senditemmenu::SendItemMenu_CancelCallback,
-        >,
-    ) -> crate::app::procinst::ProcInst {
-        unsafe {
-            __SendItemMenu_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(gain_unit_item),
-                ::core::convert::Into::into(uncancellable),
-                ::core::convert::Into::into(decide_callback),
-                ::core::convert::Into::into(cancel_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-pub trait ISendItemMenuMethods: ISendItemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::senditemroot::SendItemRoot, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::senditemmenu::SendItemMenu_DecideCallback, crate::app::senditemmenu::SendItemMenu_CancelCallback)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-        menu_content: impl ::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>,
-        root: impl ::core::convert::Into<crate::app::senditemroot::SendItemRoot>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        uncancellable: impl ::core::convert::Into<bool>,
-        decide_callback: impl ::core::convert::Into<
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        >,
-        cancel_callback: impl ::core::convert::Into<
-            crate::app::senditemmenu::SendItemMenu_CancelCallback,
-        >,
-    ) -> () {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::convert::Into::into(menu_content),
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(gain_unit_item),
-                ::core::convert::Into::into(uncancellable),
-                ::core::convert::Into::into(decide_callback),
-                ::core::convert::Into::into(cancel_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
+pub trait ISendItemMenu_SendItemMenuItemMethods: ISendItemMenu_SendItemMenuItem {
     #[doc = "`GetName()` overload"]
     fn get_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)
         }
     }
-    #[doc = "`AfterBuild()` overload"]
-    fn after_build(self) -> () {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetUnit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`GetGainUnitItem()` overload"]
-    fn get_gain_unit_item(self) -> crate::app::unititem::UnitItem {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::get_gain_unit_item(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`XCall()` overload"]
-    fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnClose()` overload"]
-    fn on_close(self) -> () {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`OnDispose()` overload"]
-    fn on_dispose(self) -> () {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
-        }
-    }
-    #[doc = "`SendItem(bool, i32)` overload"]
-    fn send_item(
-        self,
-        select_unit_item: impl ::core::convert::Into<bool>,
-        unit_item_index: impl ::core::convert::Into<i32>,
-    ) -> () {
-        unsafe {
-            let __receiver = <SendItemMenu as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __SendItemMenu_unity2_raw::send_item(
-                __receiver,
-                ::core::convert::Into::into(select_unit_item),
-                ::core::convert::Into::into(unit_item_index),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-impl<__T: ISendItemMenu> ISendItemMenuMethods for __T {}
-
-#[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::senditemroot::SendItemRoot, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::senditemmenu::SendItemMenu_DecideCallback, crate::app::senditemmenu::SendItemMenu_CancelCallback)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        root: crate::app::senditemroot::SendItemRoot,
-        unit: crate::app::unit::Unit,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        uncancellable: bool,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        cancel_callback: crate::app::senditemmenu::SendItemMenu_CancelCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SendItemMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISendItemMenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-            root,
-            unit,
-            gain_unit_item,
-            uncancellable,
-            decide_callback,
-            cancel_callback,
-        );
-        this
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SendItemMenu_ConfirmDialog_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_create_bind {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: procinst :: ProcInst as :: unity2 :: IlType > :: il_type () , < crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemmenu :: SendItemMenu_DecideCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                "CreateBind",
-                5,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::app::procinst::ProcInst,
-            crate::app::unit::Unit,
-            i32,
-            crate::app::unititem::UnitItem,
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_bind::get_offset() as isize),
-        );
-        inner(
-            super_,
-            unit,
-            unit_item_index,
-            gain_unit_item,
-            decide_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                1,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_ConfirmDialog as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SendItemMenu_ConfirmDialog,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SendItemMenu_ConfirmDialog,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, menu_item_list, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
-    pub fn create_bind(
-        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_item_index: impl ::core::convert::Into<i32>,
-        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        decide_callback: impl ::core::convert::Into<
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        >,
-    ) -> () {
-        unsafe {
-            __SendItemMenu_ConfirmDialog_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(unit_item_index),
-                ::core::convert::Into::into(gain_unit_item),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-pub trait ISendItemMenu_ConfirmDialogMethods: ISendItemMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    fn ctor(
-        self,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
-    ) -> () {
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
         unsafe {
             let __receiver =
-                <SendItemMenu_ConfirmDialog as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_ConfirmDialog_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(menu_item_list),
-                ::core::option::Option::None,
-            )
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)
         }
     }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-impl<__T: ISendItemMenu_ConfirmDialog> ISendItemMenu_ConfirmDialogMethods for __T {}
-
-#[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SendItemMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISendItemMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SendItemMenu_ConfirmDialog_ConfirmYesDialogItem_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: app :: unit :: Unit as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: app :: unititem :: UnitItem as :: unity2 :: IlType > :: il_type () , < crate :: app :: senditemmenu :: SendItemMenu_DecideCallback as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(
-                ),
-                ".ctor",
-                4,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
-            crate::app::unit::Unit,
-            i32,
-            crate::app::unititem::UnitItem,
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(
-            this,
-            unit,
-            unit_item_index,
-            gain_unit_item,
-            decide_callback,
-            __unity2_method_info,
-        )
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_a_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(
-                ),
-                "ACall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: ClassIdentity > :: NAME , "ACall" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn a_call(
-        this: SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-senditemmenu")]
-pub trait ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods:
-    ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem
-{
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
-    fn ctor(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        unit_item_index: impl ::core::convert::Into<i32>,
-        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
-        decide_callback: impl ::core::convert::Into<
-            crate::app::senditemmenu::SendItemMenu_DecideCallback,
-        >,
-    ) -> () {
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
         unsafe {
-            let __receiver = < SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SendItemMenu_ConfirmDialog_ConfirmYesDialogItem_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(unit_item_index),
-                ::core::convert::Into::into(gain_unit_item),
-                ::core::convert::Into::into(decide_callback),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver = < SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __SendItemMenu_ConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetSendItemMenu()` overload"]
+    fn get_send_item_menu(self) -> crate::app::senditemmenu::SendItemMenu {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::get_send_item_menu(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnit()` overload"]
+    fn get_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::get_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetUnitItem()` overload"]
+    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`GetRecieverUnit()` overload"]
+    fn get_reciever_unit(self) -> crate::app::unit::Unit {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::get_reciever_unit(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`IsGainItem()` overload"]
+    fn is_gain_item(self) -> bool {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::is_gain_item(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __SendItemMenu_SendItemMenuItem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-senditemmenu")]
-impl<__T: ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem>
-    ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods for __T
-{
-}
+impl<__T: ISendItemMenu_SendItemMenuItem> ISendItemMenu_SendItemMenuItemMethods for __T {}
 
 #[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        unit_item_index: i32,
-        gain_unit_item: crate::app::unititem::UnitItem,
-        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
-    ) -> Self {
+impl SendItemMenu_SendItemMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SendItemMenu_ConfirmDialog_ConfirmYesDialogItem),
+                ::core::stringify!(SendItemMenu_SendItemMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods>::ctor(
-            this,
-            unit,
-            unit_item_index,
-            gain_unit_item,
-            decide_callback,
-        );
+        <Self as ISendItemMenu_SendItemMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -1333,9 +1415,7 @@ mod __SendItemMenu_DecideCallback_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::system::object::Object as ::unity2::IlType>::il_type(),
                 <::unity2::IntPtr as ::unity2::IlType>::il_type(),
@@ -1351,18 +1431,15 @@ mod __SendItemMenu_DecideCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -1371,29 +1448,17 @@ mod __SendItemMenu_DecideCallback_unity2_raw {
         method: ::unity2::IntPtr,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SendItemMenu_DecideCallback,
-            crate::system::object::Object,
-            ::unity2::IntPtr,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(SendItemMenu_DecideCallback, crate::system::object::Object, ::unity2::IntPtr, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, object, method, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_invoke {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <bool as ::unity2::IlType>::il_type(),
-                <i32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<bool as ::unity2::IlType>::il_type(), <i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <SendItemMenu_DecideCallback as ::unity2::ClassIdentity>::class(),
                 "Invoke",
@@ -1405,18 +1470,15 @@ mod __SendItemMenu_DecideCallback_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
-                    "Invoke",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_DecideCallback as ::unity2::ClassIdentity>::NAME,
+                        "Invoke",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn invoke(
@@ -1425,38 +1487,19 @@ mod __SendItemMenu_DecideCallback_unity2_raw {
         unit_item_index: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            SendItemMenu_DecideCallback,
-            bool,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_invoke::get_offset() as isize),
-        );
-        inner(
-            this,
-            select_unit_item,
-            unit_item_index,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(SendItemMenu_DecideCallback, bool, i32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_invoke::get_method_info().method_ptr);
+        inner(this, select_unit_item, unit_item_index, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-senditemmenu")]
 pub trait ISendItemMenu_DecideCallbackMethods: ISendItemMenu_DecideCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    fn ctor(
-        self,
-        object: impl ::core::convert::Into<crate::system::object::Object>,
-        method: impl ::core::convert::Into<::unity2::IntPtr>,
-    ) -> () {
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity2::IntPtr>) -> () {
         unsafe {
             let __receiver =
-                <SendItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SendItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SendItemMenu_DecideCallback_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(object),
@@ -1466,16 +1509,10 @@ pub trait ISendItemMenu_DecideCallbackMethods: ISendItemMenu_DecideCallback {
         }
     }
     #[doc = "`Invoke(bool, i32)` overload"]
-    fn invoke(
-        self,
-        select_unit_item: impl ::core::convert::Into<bool>,
-        unit_item_index: impl ::core::convert::Into<i32>,
-    ) -> () {
+    fn invoke(self, select_unit_item: impl ::core::convert::Into<bool>, unit_item_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
             let __receiver =
-                <SendItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <SendItemMenu_DecideCallback as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __SendItemMenu_DecideCallback_unity2_raw::invoke(
                 __receiver,
                 ::core::convert::Into::into(select_unit_item),
@@ -1508,20 +1545,23 @@ impl SendItemMenu_DecideCallback {
 #[cfg(feature = "app-senditemmenu")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __SendItemMenu_SendItemMenuItem_unity2_raw {
+mod __SendItemMenu_ConfirmDialog_ConfirmYesDialogItem_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
-    pub mod __lookup_get_name {
+    pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <crate::app::unititem::UnitItem as ::unity2::IlType>::il_type(),
+                <crate::app::senditemmenu::SendItemMenu_DecideCallback as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetName",
-                0,
+                <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                4,
                 param_types,
                 false,
             )
@@ -1529,136 +1569,43 @@ mod __SendItemMenu_SendItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_name(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_name::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_build_attribute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "BuildAttribute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BuildAttribute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn build_attribute(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_build_attribute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_on_select {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "OnSelect",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn on_select(
-        this: SendItemMenu_SendItemMenuItem,
+    pub unsafe fn ctor(
+        this: SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_select::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
+        let inner: extern "C" fn(
+            SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
+            crate::app::unit::Unit,
+            i32,
+            crate::app::unititem::UnitItem,
+            crate::app::senditemmenu::SendItemMenu_DecideCallback,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, unit, unit_item_index, gain_unit_item, decide_callback, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_a_call {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
+                <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::class(),
                 "ACall",
                 0,
                 param_types,
@@ -1668,398 +1615,49 @@ mod __SendItemMenu_SendItemMenuItem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "ACall",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::ClassIdentity>::NAME,
+                        "ACall",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn a_call(
-        this: SendItemMenu_SendItemMenuItem,
+        this: SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::app::basicmenu::BasicMenu_Result {
         let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
+            SendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
             ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_a_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_b_call {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "BCall",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "BCall",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn b_call(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::basicmenu::BasicMenu_Result {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_b_call::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_send_item_menu {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetSendItemMenu",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetSendItemMenu",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_send_item_menu(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::senditemmenu::SendItemMenu {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::senditemmenu::SendItemMenu = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_send_item_menu::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_unit_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetUnitItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetUnitItem",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_unit_item(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unititem::UnitItem {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unititem::UnitItem = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unit_item::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_reciever_unit {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "GetRecieverUnit",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "GetRecieverUnit",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_reciever_unit(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::app::unit::Unit {
-        let inner: extern "C" fn(
-            SendItemMenu_SendItemMenuItem,
-            ::unity2::OptionalMethod,
-        ) -> crate::app::unit::Unit = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_reciever_unit::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_is_gain_item {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                "IsGainItem",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    "IsGainItem",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn is_gain_item(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_gain_item::get_offset() as isize),
-            );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <SendItemMenu_SendItemMenuItem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: SendItemMenu_SendItemMenuItem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(SendItemMenu_SendItemMenuItem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__lookup_a_call::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-senditemmenu")]
-pub trait ISendItemMenu_SendItemMenuItemMethods: ISendItemMenu_SendItemMenuItem {
-    #[doc = "`GetName()` overload"]
-    fn get_name(self) -> ::unity2::Il2CppString {
+pub trait ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods: ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]
+    fn ctor(
+        self,
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        unit_item_index: impl ::core::convert::Into<i32>,
+        gain_unit_item: impl ::core::convert::Into<crate::app::unititem::UnitItem>,
+        decide_callback: impl ::core::convert::Into<crate::app::senditemmenu::SendItemMenu_DecideCallback>,
+    ) -> () {
         unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::get_name(
+            let __receiver = <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SendItemMenu_ConfirmDialog_ConfirmYesDialogItem_unity2_raw::ctor(
                 __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BuildAttribute()` overload"]
-    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::build_attribute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`OnSelect()` overload"]
-    fn on_select(self) -> () {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::on_select(
-                __receiver,
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(unit_item_index),
+                ::core::convert::Into::into(gain_unit_item),
+                ::core::convert::Into::into(decide_callback),
                 ::core::option::Option::None,
             )
         }
@@ -2067,124 +1665,34 @@ pub trait ISendItemMenu_SendItemMenuItemMethods: ISendItemMenu_SendItemMenuItem 
     #[doc = "`ACall()` overload"]
     fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
         unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::a_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`BCall()` overload"]
-    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::b_call(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetSendItemMenu()` overload"]
-    fn get_send_item_menu(self) -> crate::app::senditemmenu::SendItemMenu {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::get_send_item_menu(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetUnit()` overload"]
-    fn get_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::get_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetUnitItem()` overload"]
-    fn get_unit_item(self) -> crate::app::unititem::UnitItem {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::get_unit_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`GetRecieverUnit()` overload"]
-    fn get_reciever_unit(self) -> crate::app::unit::Unit {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::get_reciever_unit(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`IsGainItem()` overload"]
-    fn is_gain_item(self) -> bool {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::is_gain_item(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver =
-                <SendItemMenu_SendItemMenuItem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __SendItemMenu_SendItemMenuItem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __SendItemMenu_ConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-senditemmenu")]
-impl<__T: ISendItemMenu_SendItemMenuItem> ISendItemMenu_SendItemMenuItemMethods for __T {}
+impl<__T: ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem> ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods for __T {}
 
 #[cfg(feature = "app-senditemmenu")]
-impl SendItemMenu_SendItemMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl SendItemMenu_ConfirmDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` — overload selector"]
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        unit_item_index: i32,
+        gain_unit_item: crate::app::unititem::UnitItem,
+        decide_callback: crate::app::senditemmenu::SendItemMenu_DecideCallback,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SendItemMenu_SendItemMenuItem),
+                ::core::stringify!(SendItemMenu_ConfirmDialog_ConfirmYesDialogItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISendItemMenu_SendItemMenuItemMethods>::ctor(this);
+        <Self as ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods>::ctor(this, unit, unit_item_index, gain_unit_item, decide_callback);
         this
     }
 }
@@ -2192,55 +1700,41 @@ impl SendItemMenu_SendItemMenuItem {
 #[cfg(feature = "app-senditemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISendItemMenu;
-    pub use super::ISendItemMenuMethods;
-    pub use super::ISendItemMenu_CancelCallback;
-    pub use super::ISendItemMenu_CancelCallbackMethods;
-    pub use super::ISendItemMenu_ConfirmDialog;
-    pub use super::ISendItemMenu_ConfirmDialogMethods;
-    pub use super::ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem;
-    pub use super::ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods;
-    pub use super::ISendItemMenu_DecideCallback;
-    pub use super::ISendItemMenu_DecideCallbackMethods;
-    pub use super::ISendItemMenu_SendItemMenuItem;
-    pub use super::ISendItemMenu_SendItemMenuItemMethods;
-    pub use super::SendItemMenu;
-    pub use super::SendItemMenu_CancelCallback;
-    pub use super::SendItemMenu_ConfirmDialog;
-    pub use super::SendItemMenu_ConfirmDialog_ConfirmYesDialogItem;
-    pub use super::SendItemMenu_DecideCallback;
-    pub use super::SendItemMenu_SendItemMenuItem;
-    pub use crate::app::basicdialog::IBasicDialog;
+    pub use super::{
+        ISendItemMenu, ISendItemMenuMethods, ISendItemMenu_CancelCallback, ISendItemMenu_CancelCallbackMethods, ISendItemMenu_ConfirmDialog,
+        ISendItemMenu_ConfirmDialogMethods, ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem,
+        ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods, ISendItemMenu_DecideCallback, ISendItemMenu_DecideCallbackMethods,
+        ISendItemMenu_SendItemMenuItem, ISendItemMenu_SendItemMenuItemMethods, SendItemMenu, SendItemMenu_CancelCallback, SendItemMenu_ConfirmDialog,
+        SendItemMenu_ConfirmDialog_ConfirmYesDialogItem, SendItemMenu_DecideCallback, SendItemMenu_SendItemMenuItem,
+    };
     #[cfg(feature = "app-basicdialog")]
     pub use crate::app::basicdialog::IBasicDialogMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     #[cfg(feature = "app-basicdialogitemyes")]
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
     #[cfg(feature = "app-basicitemmenuitem")]
     pub use crate::app::basicitemmenuitem::IBasicItemMenuItemMethods;
-    pub use crate::app::basicmenu::IBasicMenu;
     #[cfg(feature = "app-basicmenu")]
     pub use crate::app::basicmenu::IBasicMenuMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::app::procinst::IProcInst;
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::yesnodialog::IYesNoDialog;
     #[cfg(feature = "app-yesnodialog")]
     pub use crate::app::yesnodialog::IYesNoDialogMethods;
-    pub use crate::system::delegate::IDelegate;
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            basicdialog::IBasicDialog, basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes,
+            basicitemmenuitem::IBasicItemMenuItem, basicmenu::IBasicMenu, basicmenuitem::IBasicMenuItem, procinst::IProcInst,
+            yesnodialog::IYesNoDialog,
+        },
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject},
+    };
 }

@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-animassetex-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animassetex/AnimAssetEx.md"))]
     #[::unity2::class(namespace = "Combat", name = "AnimAssetEx")]
@@ -25,48 +25,27 @@ mod __AnimAssetEx_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_exists {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::combat::animasset::AnimAsset as ::unity2::IlType>::il_type()];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <AnimAssetEx as ::unity2::ClassIdentity>::class(),
-                "Exists",
-                1,
-                param_types,
-                true,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::combat::animasset::AnimAsset as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<AnimAssetEx as ::unity2::ClassIdentity>::class(), "Exists", 1, param_types, true)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AnimAssetEx as ::unity2::ClassIdentity>::NAME,
-                    "Exists",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AnimAssetEx as ::unity2::ClassIdentity>::NAME,
+                        "Exists",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn exists(
-        aa: crate::combat::animasset::AnimAsset,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            crate::combat::animasset::AnimAsset,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_exists::get_offset() as isize),
-        );
+    pub unsafe fn exists(aa: crate::combat::animasset::AnimAsset, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(crate::combat::animasset::AnimAsset, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_exists::get_method_info().method_ptr);
         inner(aa, __unity2_method_info)
     }
 }
@@ -75,20 +54,14 @@ mod __AnimAssetEx_unity2_raw {
 impl AnimAssetEx {
     #[doc = "`Exists(crate::combat::animasset::AnimAsset)` overload"]
     pub fn exists(aa: impl ::core::convert::Into<crate::combat::animasset::AnimAsset>) -> bool {
-        unsafe {
-            __AnimAssetEx_unity2_raw::exists(
-                ::core::convert::Into::into(aa),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __AnimAssetEx_unity2_raw::exists(::core::convert::Into::into(aa), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "combat-animassetex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimAssetEx;
-    pub use super::IAnimAssetEx;
+    pub use super::{AnimAssetEx, IAnimAssetEx};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,15 +2,19 @@
 
 #[cfg(feature = "unity_engine-ui-layoutgroup-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour, UIBehaviour};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/layoutgroup/LayoutGroup.md"))]
     #[::unity2::class(namespace = "UnityEngine.UI", name = "LayoutGroup")]
@@ -31,9 +35,7 @@ mod __types {
         #[rename(name = "m_TotalFlexibleSize")]
         pub m_total_flexible_size: crate::unity_engine::vector2::Vector2,
         #[rename(name = "m_RectChildren")]
-        pub m_rect_children: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::recttransform::RectTransform,
-        >,
+        pub m_rect_children: crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform>,
     }
 }
 
@@ -49,9 +51,7 @@ mod __LayoutGroup_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_padding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -64,41 +64,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_padding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_padding",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_padding(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::rectoffset::RectOffset {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::rectoffset::RectOffset = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_padding::get_offset() as isize),
-        );
+    pub unsafe fn get_padding(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> crate::unity_engine::rectoffset::RectOffset {
+        let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::rectoffset::RectOffset =
+            ::core::mem::transmute(__lookup_get_padding::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_padding {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::rectoffset::RectOffset as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -112,18 +98,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_padding",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_padding",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_padding(
@@ -131,24 +114,15 @@ mod __LayoutGroup_unity2_raw {
         value: crate::unity_engine::rectoffset::RectOffset,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            crate::unity_engine::rectoffset::RectOffset,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_padding::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, crate::unity_engine::rectoffset::RectOffset, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_padding::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_child_alignment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -161,41 +135,30 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_childAlignment",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_childAlignment",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_child_alignment(
         this: LayoutGroup,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::textanchor::TextAnchor {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::textanchor::TextAnchor = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_child_alignment::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::textanchor::TextAnchor =
+            ::core::mem::transmute(__lookup_get_child_alignment::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child_alignment {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
                 &[<crate::unity_engine::textanchor::TextAnchor as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
@@ -209,18 +172,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "set_childAlignment",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "set_childAlignment",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child_alignment(
@@ -228,24 +188,15 @@ mod __LayoutGroup_unity2_raw {
         value: crate::unity_engine::textanchor::TextAnchor,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            crate::unity_engine::textanchor::TextAnchor,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_child_alignment::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, crate::unity_engine::textanchor::TextAnchor, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_child_alignment::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_transform {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -258,41 +209,30 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_rectTransform",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_rectTransform",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rect_transform(
         this: LayoutGroup,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::recttransform::RectTransform {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::recttransform::RectTransform = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_transform::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> crate::unity_engine::recttransform::RectTransform =
+            ::core::mem::transmute(__lookup_get_rect_transform::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_rect_children {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -305,45 +245,33 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_rectChildren",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_rectChildren",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_rect_children(
         this: LayoutGroup,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::recttransform::RectTransform,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform> {
         let inner: extern "C" fn(
             LayoutGroup,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::recttransform::RectTransform,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_rect_children::get_offset() as isize),
-        );
+        ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform> =
+            ::core::mem::transmute(__lookup_get_rect_children::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_layout_input_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -356,39 +284,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "CalculateLayoutInputHorizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "CalculateLayoutInputHorizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_layout_input_horizontal(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calculate_layout_input_horizontal(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_layout_input_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_layout_input_horizontal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_calculate_layout_input_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -401,39 +317,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "CalculateLayoutInputVertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "CalculateLayoutInputVertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn calculate_layout_input_vertical(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn calculate_layout_input_vertical(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_calculate_layout_input_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_calculate_layout_input_vertical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_min_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -446,39 +350,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_minWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_minWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_min_width(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_min_width(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_min_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_min_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_preferred_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -491,39 +383,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_preferredWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_preferredWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_preferred_width(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_preferred_width(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_preferred_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_preferred_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_flexible_width {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -536,39 +416,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_flexibleWidth",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_flexibleWidth",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_flexible_width(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_flexible_width(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_flexible_width::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_flexible_width::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_min_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -581,39 +449,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_minHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_minHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_min_height(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_min_height(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_min_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_min_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_preferred_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -626,39 +482,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_preferredHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_preferredHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_preferred_height(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_preferred_height(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_preferred_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_preferred_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_flexible_height {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -671,39 +515,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_flexibleHeight",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_flexibleHeight",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_flexible_height(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_flexible_height(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_flexible_height::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_flexible_height::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_layout_priority {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -716,39 +548,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_layoutPriority",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_layoutPriority",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_layout_priority(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_layout_priority(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_layout_priority::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_layout_priority::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_horizontal {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -761,39 +581,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutHorizontal",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutHorizontal",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_layout_horizontal(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_layout_horizontal(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_horizontal::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_layout_horizontal::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_vertical {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -806,81 +614,53 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutVertical",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutVertical",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_layout_vertical(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_layout_vertical(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_vertical::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_layout_vertical::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <LayoutGroup as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<LayoutGroup as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_enable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -893,39 +673,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "OnEnable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "OnEnable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_enable(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_enable(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_enable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_enable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_disable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -938,39 +706,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "OnDisable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "OnDisable",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_disable(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_disable(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_disable::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_disable::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_did_apply_animation_properties {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -983,41 +739,28 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "OnDidApplyAnimationProperties",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "OnDidApplyAnimationProperties",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_did_apply_animation_properties(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_did_apply_animation_properties(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_did_apply_animation_properties::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_did_apply_animation_properties::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_total_min_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
                 "GetTotalMinSize",
@@ -1029,42 +772,28 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetTotalMinSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetTotalMinSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_total_min_size(
-        this: LayoutGroup,
-        axis: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_total_min_size(this: LayoutGroup, axis: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_total_min_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_total_min_size::get_method_info().method_ptr);
         inner(this, axis, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_total_preferred_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
                 "GetTotalPreferredSize",
@@ -1076,42 +805,28 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetTotalPreferredSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetTotalPreferredSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_total_preferred_size(
-        this: LayoutGroup,
-        axis: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_total_preferred_size(this: LayoutGroup, axis: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_total_preferred_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_total_preferred_size::get_method_info().method_ptr);
         inner(this, axis, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_total_flexible_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
                 "GetTotalFlexibleSize",
@@ -1123,44 +838,28 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetTotalFlexibleSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetTotalFlexibleSize",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_total_flexible_size(
-        this: LayoutGroup,
-        axis: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_total_flexible_size(this: LayoutGroup, axis: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_total_flexible_size::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_total_flexible_size::get_method_info().method_ptr);
         inner(this, axis, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_start_offset {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <i32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
                 "GetStartOffset",
@@ -1172,18 +871,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetStartOffset",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetStartOffset",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_start_offset(
@@ -1193,27 +889,15 @@ mod __LayoutGroup_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> f32 {
         let inner: extern "C" fn(LayoutGroup, i32, f32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_start_offset::get_offset() as isize),
-            );
-        inner(
-            this,
-            axis,
-            required_space_without_padding,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_get_start_offset::get_method_info().method_ptr);
+        inner(this, axis, required_space_without_padding, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_alignment_on_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
                 "GetAlignmentOnAxis",
@@ -1225,40 +909,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "GetAlignmentOnAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "GetAlignmentOnAxis",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_alignment_on_axis(
-        this: LayoutGroup,
-        axis: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_alignment_on_axis(this: LayoutGroup, axis: i32, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(LayoutGroup, i32, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_alignment_on_axis::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_alignment_on_axis::get_method_info().method_ptr);
         inner(this, axis, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_layout_input_for_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -1276,18 +947,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetLayoutInputForAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetLayoutInputForAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_layout_input_for_axis(
@@ -1299,27 +967,14 @@ mod __LayoutGroup_unity2_raw {
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(LayoutGroup, f32, f32, f32, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_layout_input_for_axis::get_offset() as isize),
-            );
-        inner(
-            this,
-            total_min,
-            total_preferred,
-            total_flexible,
-            axis,
-            __unity2_method_info,
-        )
+            ::core::mem::transmute(__lookup_set_layout_input_for_axis::get_method_info().method_ptr);
+        inner(this, total_min, total_preferred, total_flexible, axis, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child_along_axis {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1336,18 +991,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetChildAlongAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetChildAlongAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child_along_axis(
@@ -1357,26 +1009,15 @@ mod __LayoutGroup_unity2_raw {
         pos: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            crate::unity_engine::recttransform::RectTransform,
-            i32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_child_along_axis::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, crate::unity_engine::recttransform::RectTransform, i32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_child_along_axis::get_method_info().method_ptr);
         inner(this, rect, axis, pos, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child_along_axis_with_scale {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1394,18 +1035,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetChildAlongAxisWithScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetChildAlongAxisWithScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child_along_axis_with_scale(
@@ -1416,27 +1054,15 @@ mod __LayoutGroup_unity2_raw {
         scale_factor: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            crate::unity_engine::recttransform::RectTransform,
-            i32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_child_along_axis_with_scale::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, crate::unity_engine::recttransform::RectTransform, i32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_child_along_axis_with_scale::get_method_info().method_ptr);
         inner(this, rect, axis, pos, scale_factor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child_along_axis_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1454,18 +1080,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetChildAlongAxis",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetChildAlongAxis",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child_along_axis_2(
@@ -1476,27 +1099,15 @@ mod __LayoutGroup_unity2_raw {
         size: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            crate::unity_engine::recttransform::RectTransform,
-            i32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_child_along_axis_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(LayoutGroup, crate::unity_engine::recttransform::RectTransform, i32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_child_along_axis_2::get_method_info().method_ptr);
         inner(this, rect, axis, pos, size, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_child_along_axis_with_scale_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
                 <i32 as ::unity2::IlType>::il_type(),
@@ -1515,18 +1126,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetChildAlongAxisWithScale",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetChildAlongAxisWithScale",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_child_along_axis_with_scale_2(
@@ -1538,36 +1146,15 @@ mod __LayoutGroup_unity2_raw {
         scale_factor: f32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            LayoutGroup,
-            crate::unity_engine::recttransform::RectTransform,
-            i32,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_child_along_axis_with_scale_2::get_offset() as isize),
-        );
-        inner(
-            this,
-            rect,
-            axis,
-            pos,
-            size,
-            scale_factor,
-            __unity2_method_info,
-        )
+        let inner: extern "C" fn(LayoutGroup, crate::unity_engine::recttransform::RectTransform, i32, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_child_along_axis_with_scale_2::get_method_info().method_ptr);
+        inner(this, rect, axis, pos, size, scale_factor, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_root_layout_group {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -1580,39 +1167,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "get_isRootLayoutGroup",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "get_isRootLayoutGroup",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_root_layout_group(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_root_layout_group(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_root_layout_group::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_root_layout_group::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_rect_transform_dimensions_change {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -1625,39 +1200,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "OnRectTransformDimensionsChange",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "OnRectTransformDimensionsChange",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_rect_transform_dimensions_change(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_rect_transform_dimensions_change(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_rect_transform_dimensions_change::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_rect_transform_dimensions_change::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_transform_children_changed {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -1670,39 +1233,27 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "OnTransformChildrenChanged",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "OnTransformChildrenChanged",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_transform_children_changed(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_transform_children_changed(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_transform_children_changed::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_transform_children_changed::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
@@ -1715,42 +1266,29 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "SetDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "SetDirty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_dirty(
-        this: LayoutGroup,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_dirty(this: LayoutGroup, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(LayoutGroup, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_dirty::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_dirty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_delayed_set_dirty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::recttransform::RectTransform as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <LayoutGroup as ::unity2::ClassIdentity>::class(),
                 "DelayedSetDirty",
@@ -1762,18 +1300,15 @@ mod __LayoutGroup_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                    "DelayedSetDirty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                        "DelayedSetDirty",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn delayed_set_dirty(
@@ -1785,11 +1320,7 @@ mod __LayoutGroup_unity2_raw {
             LayoutGroup,
             crate::unity_engine::recttransform::RectTransform,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_delayed_set_dirty::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_delayed_set_dirty::get_method_info().method_ptr);
         inner(this, rect_transform, __unity2_method_info)
     }
 }
@@ -1799,271 +1330,175 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
     #[doc = "`get_padding()` overload"]
     fn get_padding(self) -> crate::unity_engine::rectoffset::RectOffset {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_padding(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_padding(crate::unity_engine::rectoffset::RectOffset)` overload"]
-    fn set_padding(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::rectoffset::RectOffset>,
-    ) -> () {
+    fn set_padding(self, value: impl ::core::convert::Into<crate::unity_engine::rectoffset::RectOffset>) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::set_padding(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::set_padding(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_childAlignment()` overload"]
     fn get_child_alignment(self) -> crate::unity_engine::textanchor::TextAnchor {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_child_alignment(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_childAlignment(crate::unity_engine::textanchor::TextAnchor)` overload"]
-    fn set_child_alignment(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>,
-    ) -> () {
+    fn set_child_alignment(self, value: impl ::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::set_child_alignment(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::set_child_alignment(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_rectTransform()` overload"]
     fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_rectChildren()` overload"]
-    fn get_rect_children(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::recttransform::RectTransform,
-    > {
+    fn get_rect_children(self) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform> {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_rect_children(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalculateLayoutInputHorizontal()` overload"]
     fn calculate_layout_input_horizontal(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::calculate_layout_input_horizontal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`CalculateLayoutInputVertical()` overload"]
     fn calculate_layout_input_vertical(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::calculate_layout_input_vertical(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_minWidth()` overload"]
     fn get_min_width(self) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_preferredWidth()` overload"]
     fn get_preferred_width(self) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_flexibleWidth()` overload"]
     fn get_flexible_width(self) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_minHeight()` overload"]
     fn get_min_height(self) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_preferredHeight()` overload"]
     fn get_preferred_height(self) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_flexibleHeight()` overload"]
     fn get_flexible_height(self) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_layoutPriority()` overload"]
     fn get_layout_priority(self) -> i32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLayoutHorizontal()` overload"]
     fn set_layout_horizontal(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::set_layout_horizontal(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`SetLayoutVertical()` overload"]
     fn set_layout_vertical(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnEnable()` overload"]
     fn on_enable(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::on_enable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDisable()` overload"]
     fn on_disable(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::on_disable(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDidApplyAnimationProperties()` overload"]
     fn on_did_apply_animation_properties(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::on_did_apply_animation_properties(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetTotalMinSize(i32)` overload"]
     fn get_total_min_size(self, axis: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::get_total_min_size(
-                __receiver,
-                ::core::convert::Into::into(axis),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::get_total_min_size(__receiver, ::core::convert::Into::into(axis), ::core::option::Option::None)
         }
     }
     #[doc = "`GetTotalPreferredSize(i32)` overload"]
     fn get_total_preferred_size(self, axis: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::get_total_preferred_size(
-                __receiver,
-                ::core::convert::Into::into(axis),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::get_total_preferred_size(__receiver, ::core::convert::Into::into(axis), ::core::option::Option::None)
         }
     }
     #[doc = "`GetTotalFlexibleSize(i32)` overload"]
     fn get_total_flexible_size(self, axis: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::get_total_flexible_size(
-                __receiver,
-                ::core::convert::Into::into(axis),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::get_total_flexible_size(__receiver, ::core::convert::Into::into(axis), ::core::option::Option::None)
         }
     }
     #[doc = "`GetStartOffset(i32, f32)` overload"]
-    fn get_start_offset(
-        self,
-        axis: impl ::core::convert::Into<i32>,
-        required_space_without_padding: impl ::core::convert::Into<f32>,
-    ) -> f32 {
+    fn get_start_offset(self, axis: impl ::core::convert::Into<i32>, required_space_without_padding: impl ::core::convert::Into<f32>) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::get_start_offset(
                 __receiver,
                 ::core::convert::Into::into(axis),
@@ -2075,14 +1510,8 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
     #[doc = "`GetAlignmentOnAxis(i32)` overload"]
     fn get_alignment_on_axis(self, axis: impl ::core::convert::Into<i32>) -> f32 {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::get_alignment_on_axis(
-                __receiver,
-                ::core::convert::Into::into(axis),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::get_alignment_on_axis(__receiver, ::core::convert::Into::into(axis), ::core::option::Option::None)
         }
     }
     #[doc = "`SetLayoutInputForAxis(f32, f32, f32, i32)` overload"]
@@ -2094,9 +1523,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         axis: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_layout_input_for_axis(
                 __receiver,
                 ::core::convert::Into::into(total_min),
@@ -2115,9 +1542,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         pos: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_child_along_axis(
                 __receiver,
                 ::core::convert::Into::into(rect),
@@ -2136,9 +1561,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         scale_factor: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_child_along_axis_with_scale(
                 __receiver,
                 ::core::convert::Into::into(rect),
@@ -2158,9 +1581,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         size: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_child_along_axis_2(
                 __receiver,
                 ::core::convert::Into::into(rect),
@@ -2181,9 +1602,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         scale_factor: impl ::core::convert::Into<f32>,
     ) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_child_along_axis_with_scale_2(
                 __receiver,
                 ::core::convert::Into::into(rect),
@@ -2198,37 +1617,22 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
     #[doc = "`get_isRootLayoutGroup()` overload"]
     fn get_is_root_layout_group(self) -> bool {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::get_is_root_layout_group(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::get_is_root_layout_group(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnRectTransformDimensionsChange()` overload"]
     fn on_rect_transform_dimensions_change(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::on_rect_transform_dimensions_change(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnTransformChildrenChanged()` overload"]
     fn on_transform_children_changed(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::on_transform_children_changed(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::on_transform_children_changed(__receiver, ::core::option::Option::None)
         }
     }
     fn set_property<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
@@ -2236,49 +1640,35 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         current_value: impl ::core::convert::Into<*mut M0>,
         new_value: impl ::core::convert::Into<M0>,
     ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <LayoutGroup as ::unity2::ClassIdentity>::class(),
-                "SetProperty",
-                2,
-            )
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<LayoutGroup as ::unity2::ClassIdentity>::class(), "SetProperty", 2)
         });
         #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
         let _ = false;
         let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
             ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <LayoutGroup as ::unity2::ClassIdentity>::NAME,
-                "SetProperty",
-                e
-            ),
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <LayoutGroup as ::unity2::ClassIdentity>::NAME,
+                    "SetProperty",
+                    e
+                )
+            },
         };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
         let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
         let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
             let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
         };
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let __f: extern "C" fn(LayoutGroup, *mut M0, M0, ::unity2::OptionalMethod) -> () =
-                ::core::mem::transmute(__inflated.method_ptr);
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let __f: extern "C" fn(LayoutGroup, *mut M0, M0, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__inflated.method_ptr);
             let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
             __f(
                 __receiver,
@@ -2291,9 +1681,7 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
     #[doc = "`SetDirty()` overload"]
     fn set_dirty(self) -> () {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __LayoutGroup_unity2_raw::set_dirty(__receiver, ::core::option::Option::None)
         }
     }
@@ -2303,14 +1691,8 @@ pub trait ILayoutGroupMethods: ILayoutGroup {
         rect_transform: impl ::core::convert::Into<crate::unity_engine::recttransform::RectTransform>,
     ) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __LayoutGroup_unity2_raw::delayed_set_dirty(
-                __receiver,
-                ::core::convert::Into::into(rect_transform),
-                ::core::option::Option::None,
-            )
+            let __receiver = <LayoutGroup as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __LayoutGroup_unity2_raw::delayed_set_dirty(__receiver, ::core::convert::Into::into(rect_transform), ::core::option::Option::None)
         }
     }
 }
@@ -2322,13 +1704,8 @@ impl<__T: ILayoutGroup> ILayoutGroupMethods for __T {}
 impl LayoutGroup {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LayoutGroup),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(LayoutGroup), ::core::stringify!(new),));
         <Self as ILayoutGroupMethods>::ctor(this);
         this
     }
@@ -2337,25 +1714,24 @@ impl LayoutGroup {
 #[cfg(feature = "unity_engine-ui-layoutgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILayoutGroup;
-    pub use super::ILayoutGroupMethods;
-    pub use super::LayoutGroup;
-    pub use crate::system::object::IObject;
+    pub use super::{ILayoutGroup, ILayoutGroupMethods, LayoutGroup};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
     #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
     pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

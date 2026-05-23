@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-shopcommon-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopcommon/ShopCommon.md"))]
     #[::unity2::class(namespace = "App", name = "ShopCommon")]
@@ -25,11 +25,8 @@ mod __ShopCommon_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_is_satisfied {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ShopCommon as ::unity2::ClassIdentity>::class(),
                 "IsSatisfied",
@@ -41,30 +38,20 @@ mod __ShopCommon_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ShopCommon as ::unity2::ClassIdentity>::NAME,
-                    "IsSatisfied",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ShopCommon as ::unity2::ClassIdentity>::NAME,
+                        "IsSatisfied",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_satisfied(
-        conditions: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_satisfied(conditions: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_satisfied::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_satisfied::get_method_info().method_ptr);
         inner(conditions, __unity2_method_info)
     }
 }
@@ -73,20 +60,14 @@ mod __ShopCommon_unity2_raw {
 impl ShopCommon {
     #[doc = "`IsSatisfied(::unity2::Il2CppString)` overload"]
     pub fn is_satisfied(conditions: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
-        unsafe {
-            __ShopCommon_unity2_raw::is_satisfied(
-                ::core::convert::Into::into(conditions),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ShopCommon_unity2_raw::is_satisfied(::core::convert::Into::into(conditions), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "app-shopcommon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IShopCommon;
-    pub use super::ShopCommon;
+    pub use super::{IShopCommon, ShopCommon};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

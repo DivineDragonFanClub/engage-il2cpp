@@ -2,20 +2,21 @@
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter_AddAbility.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "ArenaBondGodSelectSkillListSetter.AddAbility"
-    )]
+    #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectSkillListSetter.AddAbility")]
     #[parent(crate::system::object::Object)]
     pub struct ArenaBondGodSelectSkillListSetter_AddAbility {
         #[rename(name = "m_Root")]
@@ -25,18 +26,20 @@ mod __types {
         #[rename(name = "m_TalkRoot")]
         pub m_talk_root: crate::unity_engine::gameobject::GameObject,
         #[rename(name = "m_Abilitys")]
-        pub m_abilitys:
-            ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent>,
+        pub m_abilitys: ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter.md"))]
     #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectSkillListSetter")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct ArenaBondGodSelectSkillListSetter {
-# [rename (name = "m_MessageRoot")] pub m_message_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Message")] pub m_message : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [rename (name = "m_AddAbilitys")] pub m_add_abilitys : :: unity2 :: Array < crate :: app :: arenabondgodselectskilllistsetter :: ArenaBondGodSelectSkillListSetter_AddAbility > ,
-}
+        #[rename(name = "m_MessageRoot")]
+        pub m_message_root: crate::unity_engine::gameobject::GameObject,
+        #[rename(name = "m_Message")]
+        pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        #[rename(name = "m_AddAbilitys")]
+        pub m_add_abilitys: ::unity2::Array<crate::app::arenabondgodselectskilllistsetter::ArenaBondGodSelectSkillListSetter_AddAbility>,
+    }
 }
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter-types")]
@@ -51,15 +54,11 @@ mod __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <i32 as ::unity2::IlType>::il_type(),
                 <bool as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::list_1::List_1<
-                    crate::app::basicmenuitem::BasicMenuItem,
-                > as ::unity2::IlType>::il_type(),
+                <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::class(),
@@ -72,57 +71,38 @@ mod __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data(
         this: ArenaBondGodSelectSkillListSetter_AddAbility,
         lv: i32,
         is_level_cap_talk: bool,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             ArenaBondGodSelectSkillListSetter_AddAbility,
             i32,
             bool,
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
-        inner(
-            this,
-            lv,
-            is_level_cap_talk,
-            menu_item_list,
-            __unity2_method_info,
-        )
+        ) -> () = ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
+        inner(this, lv, is_level_cap_talk, menu_item_list, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_empty {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::class(),
@@ -135,41 +115,27 @@ mod __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::NAME,
-                    "SetEmpty",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::NAME,
+                        "SetEmpty",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_empty(
-        this: ArenaBondGodSelectSkillListSetter_AddAbility,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectSkillListSetter_AddAbility,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_empty::get_offset() as isize),
-        );
+    pub unsafe fn set_empty(this: ArenaBondGodSelectSkillListSetter_AddAbility, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArenaBondGodSelectSkillListSetter_AddAbility, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_empty::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::class(),
@@ -182,53 +148,37 @@ mod __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectSkillListSetter_AddAbility,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectSkillListSetter_AddAbility,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: ArenaBondGodSelectSkillListSetter_AddAbility, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArenaBondGodSelectSkillListSetter_AddAbility, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
-pub trait IArenaBondGodSelectSkillListSetter_AddAbilityMethods:
-    IArenaBondGodSelectSkillListSetter_AddAbility
-{
+pub trait IArenaBondGodSelectSkillListSetter_AddAbilityMethods: IArenaBondGodSelectSkillListSetter_AddAbility {
     #[doc = "`SetData(i32, bool, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
     fn set_data(
         self,
         lv: impl ::core::convert::Into<i32>,
         is_level_cap_talk: impl ::core::convert::Into<bool>,
-        menu_item_list: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::app::basicmenuitem::BasicMenuItem,
-            >,
-        >,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
     ) -> () {
         unsafe {
-            let __receiver = < ArenaBondGodSelectSkillListSetter_AddAbility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
+            let __receiver = <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw::set_data(
                 __receiver,
                 ::core::convert::Into::into(lv),
@@ -241,30 +191,25 @@ pub trait IArenaBondGodSelectSkillListSetter_AddAbilityMethods:
     #[doc = "`SetEmpty()` overload"]
     fn set_empty(self) -> () {
         unsafe {
-            let __receiver = < ArenaBondGodSelectSkillListSetter_AddAbility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw::set_empty(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw::set_empty(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < ArenaBondGodSelectSkillListSetter_AddAbility as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArenaBondGodSelectSkillListSetter_AddAbility as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArenaBondGodSelectSkillListSetter_AddAbility_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
-impl<__T: IArenaBondGodSelectSkillListSetter_AddAbility>
-    IArenaBondGodSelectSkillListSetter_AddAbilityMethods for __T
-{
-}
+impl<__T: IArenaBondGodSelectSkillListSetter_AddAbility> IArenaBondGodSelectSkillListSetter_AddAbilityMethods for __T {}
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
 impl ArenaBondGodSelectSkillListSetter_AddAbility {
@@ -291,9 +236,7 @@ mod __ArenaBondGodSelectSkillListSetter_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_data {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
                 <crate::app::godunit::GodUnit as ::unity2::IlType>::il_type(),
@@ -309,18 +252,15 @@ mod __ArenaBondGodSelectSkillListSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectSkillListSetter as ::unity2::ClassIdentity>::NAME,
-                    "SetData",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondGodSelectSkillListSetter as ::unity2::ClassIdentity>::NAME,
+                        "SetData",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_data(
@@ -334,20 +274,14 @@ mod __ArenaBondGodSelectSkillListSetter_unity2_raw {
             crate::app::unit::Unit,
             crate::app::godunit::GodUnit,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_data::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_data::get_method_info().method_ptr);
         inner(this, unit, god, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ArenaBondGodSelectSkillListSetter as ::unity2::ClassIdentity>::class(),
@@ -360,32 +294,20 @@ mod __ArenaBondGodSelectSkillListSetter_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ArenaBondGodSelectSkillListSetter as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ArenaBondGodSelectSkillListSetter as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ArenaBondGodSelectSkillListSetter,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            ArenaBondGodSelectSkillListSetter,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: ArenaBondGodSelectSkillListSetter, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(ArenaBondGodSelectSkillListSetter, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -393,16 +315,11 @@ mod __ArenaBondGodSelectSkillListSetter_unity2_raw {
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
 pub trait IArenaBondGodSelectSkillListSetterMethods: IArenaBondGodSelectSkillListSetter {
     #[doc = "`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    fn set_data(
-        self,
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        god: impl ::core::convert::Into<crate::app::godunit::GodUnit>,
-    ) -> () {
+    fn set_data(self, unit: impl ::core::convert::Into<crate::app::unit::Unit>, god: impl ::core::convert::Into<crate::app::godunit::GodUnit>) -> () {
         unsafe {
-            let __receiver =
-                <ArenaBondGodSelectSkillListSetter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+            let __receiver = <ArenaBondGodSelectSkillListSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
             __ArenaBondGodSelectSkillListSetter_unity2_raw::set_data(
                 __receiver,
                 ::core::convert::Into::into(unit),
@@ -414,14 +331,10 @@ pub trait IArenaBondGodSelectSkillListSetterMethods: IArenaBondGodSelectSkillLis
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver =
-                <ArenaBondGodSelectSkillListSetter as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __ArenaBondGodSelectSkillListSetter_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ArenaBondGodSelectSkillListSetter as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __ArenaBondGodSelectSkillListSetter_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -448,25 +361,23 @@ impl ArenaBondGodSelectSkillListSetter {
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondGodSelectSkillListSetter;
-    pub use super::ArenaBondGodSelectSkillListSetter_AddAbility;
-    pub use super::IArenaBondGodSelectSkillListSetter;
-    pub use super::IArenaBondGodSelectSkillListSetterMethods;
-    pub use super::IArenaBondGodSelectSkillListSetter_AddAbility;
-    pub use super::IArenaBondGodSelectSkillListSetter_AddAbilityMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        ArenaBondGodSelectSkillListSetter, ArenaBondGodSelectSkillListSetter_AddAbility, IArenaBondGodSelectSkillListSetter,
+        IArenaBondGodSelectSkillListSetterMethods, IArenaBondGodSelectSkillListSetter_AddAbility,
+        IArenaBondGodSelectSkillListSetter_AddAbilityMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

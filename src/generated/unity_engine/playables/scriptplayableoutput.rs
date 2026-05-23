@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-playables-scriptplayableoutput-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/scriptplayableoutput/ScriptPlayableOutput.md"))]
     #[repr(C)]
@@ -16,9 +18,8 @@ mod __types {
     }
 
     impl ::unity2::ClassIdentity for ScriptPlayableOutput {
-        const NAMESPACE: &'static str = "UnityEngine.Playables";
-
         const NAME: &'static str = "ScriptPlayableOutput";
+        const NAMESPACE: &'static str = "UnityEngine.Playables";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,10 +30,7 @@ mod __types {
 
     impl ::unity2::IlType for ScriptPlayableOutput {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -49,10 +47,11 @@ mod __ScriptPlayableOutput_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "Create",
@@ -64,18 +63,15 @@ mod __ScriptPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "Create",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "Create",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create(
@@ -83,17 +79,21 @@ mod __ScriptPlayableOutput_unity2_raw {
         name: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput {
-        let inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_create :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            ::unity2::Il2CppString,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput =
+            ::core::mem::transmute(__lookup_create::get_method_info().method_ptr);
         inner(graph, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPlayableOutput as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -105,18 +105,15 @@ mod __ScriptPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -128,20 +125,14 @@ mod __ScriptPlayableOutput_unity2_raw {
             ScriptPlayableOutput,
             crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, handle, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_null {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPlayableOutput as ::unity2::ClassIdentity>::class(),
@@ -154,33 +145,29 @@ mod __ScriptPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "get_Null",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "get_Null",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_null(
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_null :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput =
+            ::core::mem::transmute(__lookup_get_null::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_handle {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPlayableOutput as ::unity2::ClassIdentity>::class(),
@@ -193,35 +180,35 @@ mod __ScriptPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "GetHandle",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "GetHandle",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_handle(
         this: ScriptPlayableOutput,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
-        let inner : extern "C" fn (ScriptPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_handle :: get_offset () as isize) ,) ;
+        let inner: extern "C" fn(
+            ScriptPlayableOutput,
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle =
+            ::core::mem::transmute(__lookup_get_handle::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_op_implicit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: scriptplayableoutput :: ScriptPlayableOutput as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ScriptPlayableOutput as ::unity2::ClassIdentity>::class(),
                 "op_Implicit",
@@ -233,18 +220,15 @@ mod __ScriptPlayableOutput_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
-                    "op_Implicit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ScriptPlayableOutput as ::unity2::ClassIdentity>::NAME,
+                        "op_Implicit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn op_implicit(
@@ -254,13 +238,8 @@ mod __ScriptPlayableOutput_unity2_raw {
         let inner: extern "C" fn(
             crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput,
             ::unity2::OptionalMethod,
-        )
-            -> crate::unity_engine::playables::playableoutput::PlayableOutput =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_op_implicit::get_offset() as isize),
-            );
+        ) -> crate::unity_engine::playables::playableoutput::PlayableOutput =
+            ::core::mem::transmute(__lookup_op_implicit::get_method_info().method_ptr);
         inner(output, __unity2_method_info)
     }
 }
@@ -280,47 +259,29 @@ impl ScriptPlayableOutput {
             )
         }
     }
+
     #[doc = "`get_Null()` overload"]
-    pub fn get_null() -> crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput
-    {
+    pub fn get_null() -> crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput {
         unsafe { __ScriptPlayableOutput_unity2_raw::get_null(::core::option::Option::None) }
     }
+
     #[doc = "`op_Implicit(crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput)` overload"]
     pub fn op_implicit(
-        output: impl ::core::convert::Into<
-            crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput,
-        >,
+        output: impl ::core::convert::Into<crate::unity_engine::playables::scriptplayableoutput::ScriptPlayableOutput>,
     ) -> crate::unity_engine::playables::playableoutput::PlayableOutput {
-        unsafe {
-            __ScriptPlayableOutput_unity2_raw::op_implicit(
-                ::core::convert::Into::into(output),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __ScriptPlayableOutput_unity2_raw::op_implicit(::core::convert::Into::into(output), ::core::option::Option::None) }
     }
 }
 
 #[cfg(feature = "unity_engine-playables-scriptplayableoutput")]
 impl ScriptPlayableOutput {
     #[doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]
-    pub fn ctor(
-        self,
-        handle: impl ::core::convert::Into<
-            crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
-        >,
-    ) -> () {
-        unsafe {
-            __ScriptPlayableOutput_unity2_raw::ctor(
-                self,
-                ::core::convert::Into::into(handle),
-                ::core::option::Option::None,
-            )
-        }
+    pub fn ctor(self, handle: impl ::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>) -> () {
+        unsafe { __ScriptPlayableOutput_unity2_raw::ctor(self, ::core::convert::Into::into(handle), ::core::option::Option::None) }
     }
+
     #[doc = "`GetHandle()` overload"]
-    pub fn get_handle(
-        self,
-    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
+    pub fn get_handle(self) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle {
         unsafe { __ScriptPlayableOutput_unity2_raw::get_handle(self, ::core::option::Option::None) }
     }
 }
@@ -329,10 +290,9 @@ impl ScriptPlayableOutput {
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ScriptPlayableOutput;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,15 +2,12 @@
 
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyconfigurationattribute/AssemblyConfigurationAttribute.md"))]
-    #[::unity2::class(
-        namespace = "System.Reflection",
-        name = "AssemblyConfigurationAttribute"
-    )]
+    #[::unity2::class(namespace = "System.Reflection", name = "AssemblyConfigurationAttribute")]
     pub struct AssemblyConfigurationAttribute {
         #[rename(name = "m_configuration")]
         pub m_configuration: ::unity2::Il2CppString,
@@ -29,11 +26,8 @@ mod __AssemblyConfigurationAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AssemblyConfigurationAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -45,18 +39,15 @@ mod __AssemblyConfigurationAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AssemblyConfigurationAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AssemblyConfigurationAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -64,15 +55,8 @@ mod __AssemblyConfigurationAttribute_unity2_raw {
         configuration: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            AssemblyConfigurationAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(AssemblyConfigurationAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, configuration, __unity2_method_info)
     }
 }
@@ -83,14 +67,8 @@ pub trait IAssemblyConfigurationAttributeMethods: IAssemblyConfigurationAttribut
     fn ctor(self, configuration: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <AssemblyConfigurationAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __AssemblyConfigurationAttribute_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(configuration),
-                ::core::option::Option::None,
-            )
+                <AssemblyConfigurationAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AssemblyConfigurationAttribute_unity2_raw::ctor(__receiver, ::core::convert::Into::into(configuration), ::core::option::Option::None)
         }
     }
 }
@@ -117,7 +95,5 @@ impl AssemblyConfigurationAttribute {
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssemblyConfigurationAttribute;
-    pub use super::IAssemblyConfigurationAttribute;
-    pub use super::IAssemblyConfigurationAttributeMethods;
+    pub use super::{AssemblyConfigurationAttribute, IAssemblyConfigurationAttribute, IAssemblyConfigurationAttributeMethods};
 }

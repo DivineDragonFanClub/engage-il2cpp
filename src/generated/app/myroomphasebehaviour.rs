@@ -2,13 +2,13 @@
 
 #[cfg(feature = "app-myroomphasebehaviour-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::playables::playablebehaviour::{
-        IPlayableBehaviour, PlayableBehaviour,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomphasebehaviour/MyRoomPhaseBehaviour.md"))]
     #[::unity2::class(namespace = "App", name = "MyRoomPhaseBehaviour")]
@@ -28,13 +28,10 @@ mod __MyRoomPhaseBehaviour_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_on_behaviour_play {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::class(),
@@ -47,18 +44,15 @@ mod __MyRoomPhaseBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "OnBehaviourPlay",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "OnBehaviourPlay",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_behaviour_play(
@@ -72,24 +66,17 @@ mod __MyRoomPhaseBehaviour_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_behaviour_play::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_play::get_method_info().method_ptr);
         inner(this, playable, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_behaviour_pause {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <crate::unity_engine::playables::playable::Playable as ::unity2::IlType>::il_type(),
-                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::playables::framedata::FrameData as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::class(),
@@ -102,18 +89,15 @@ mod __MyRoomPhaseBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::NAME,
-                    "OnBehaviourPause",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::NAME,
+                        "OnBehaviourPause",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_behaviour_pause(
@@ -127,20 +111,14 @@ mod __MyRoomPhaseBehaviour_unity2_raw {
             crate::unity_engine::playables::playable::Playable,
             crate::unity_engine::playables::framedata::FrameData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_behaviour_pause::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_behaviour_pause::get_method_info().method_ptr);
         inner(this, playable, info, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::class(),
@@ -153,30 +131,20 @@ mod __MyRoomPhaseBehaviour_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MyRoomPhaseBehaviour as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MyRoomPhaseBehaviour,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MyRoomPhaseBehaviour, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MyRoomPhaseBehaviour, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -190,9 +158,8 @@ pub trait IMyRoomPhaseBehaviourMethods: IMyRoomPhaseBehaviour {
         info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <MyRoomPhaseBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomPhaseBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomPhaseBehaviour_unity2_raw::on_behaviour_play(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -208,9 +175,8 @@ pub trait IMyRoomPhaseBehaviourMethods: IMyRoomPhaseBehaviour {
         info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
     ) -> () {
         unsafe {
-            let __receiver = <MyRoomPhaseBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomPhaseBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomPhaseBehaviour_unity2_raw::on_behaviour_pause(
                 __receiver,
                 ::core::convert::Into::into(playable),
@@ -222,9 +188,8 @@ pub trait IMyRoomPhaseBehaviourMethods: IMyRoomPhaseBehaviour {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <MyRoomPhaseBehaviour as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <MyRoomPhaseBehaviour as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MyRoomPhaseBehaviour_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -252,13 +217,10 @@ impl MyRoomPhaseBehaviour {
 #[cfg(feature = "app-myroomphasebehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMyRoomPhaseBehaviour;
-    pub use super::IMyRoomPhaseBehaviourMethods;
-    pub use super::MyRoomPhaseBehaviour;
-    pub use crate::system::object::IObject;
+    pub use super::{IMyRoomPhaseBehaviour, IMyRoomPhaseBehaviourMethods, MyRoomPhaseBehaviour};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
     #[cfg(feature = "unity_engine-playables-playablebehaviour")]
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

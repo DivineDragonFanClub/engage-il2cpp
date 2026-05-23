@@ -2,35 +2,25 @@
 
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
-
-    use crate::system::object::{IObject, Object};
-    use crate::system::r#enum::{Enum, IEnum};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]
-    #[::unity2::class(namespace = "TMPro", name = "TMP_Compatibility")]
-    #[parent(crate::system::object::Object)]
-    pub struct TMP_Compatibility {}
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]
     #[repr(C)]
-    #[derive(
-        ::core::clone::Clone,
-        ::core::marker::Copy,
-        ::core::fmt::Debug,
-        ::core::cmp::PartialEq,
-        ::core::cmp::Eq,
-    )]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
     pub struct TMP_Compatibility_AnchorPositions {
         pub value: i32,
     }
 
     impl ::unity2::ClassIdentity for TMP_Compatibility_AnchorPositions {
-        const NAMESPACE: &'static str = "TMPro";
-
         const NAME: &'static str = "TMP_Compatibility.AnchorPositions";
+        const NAMESPACE: &'static str = "TMPro";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,10 +31,7 @@ mod __types {
 
     impl ::unity2::IlType for TMP_Compatibility_AnchorPositions {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 
@@ -93,6 +80,11 @@ mod __types {
             Self { value: 10 }
         }
     }
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]
+    #[::unity2::class(namespace = "TMPro", name = "TMP_Compatibility")]
+    #[parent(crate::system::object::Object)]
+    pub struct TMP_Compatibility {}
 }
 
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]
@@ -107,10 +99,9 @@ mod __TMP_Compatibility_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_convert_text_alignment_enum_values {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::tm_pro::textalignmentoptions::TextAlignmentOptions as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <TMP_Compatibility as ::unity2::ClassIdentity>::class(),
                 "ConvertTextAlignmentEnumValues",
@@ -122,18 +113,15 @@ mod __TMP_Compatibility_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TMP_Compatibility as ::unity2::ClassIdentity>::NAME,
-                    "ConvertTextAlignmentEnumValues",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TMP_Compatibility as ::unity2::ClassIdentity>::NAME,
+                        "ConvertTextAlignmentEnumValues",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn convert_text_alignment_enum_values(
@@ -143,12 +131,8 @@ mod __TMP_Compatibility_unity2_raw {
         let inner: extern "C" fn(
             crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
             ::unity2::OptionalMethod,
-        )
-            -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_convert_text_alignment_enum_values::get_offset() as isize),
-        );
+        ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions =
+            ::core::mem::transmute(__lookup_convert_text_alignment_enum_values::get_method_info().method_ptr);
         inner(old_value, __unity2_method_info)
     }
 }
@@ -160,10 +144,7 @@ impl TMP_Compatibility {
         old_value: impl ::core::convert::Into<crate::tm_pro::textalignmentoptions::TextAlignmentOptions>,
     ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions {
         unsafe {
-            __TMP_Compatibility_unity2_raw::convert_text_alignment_enum_values(
-                ::core::convert::Into::into(old_value),
-                ::core::option::Option::None,
-            )
+            __TMP_Compatibility_unity2_raw::convert_text_alignment_enum_values(::core::convert::Into::into(old_value), ::core::option::Option::None)
         }
     }
 }
@@ -171,16 +152,12 @@ impl TMP_Compatibility {
 #[cfg(feature = "tm_pro-tmp_compatibility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITMP_Compatibility;
-    pub use super::TMP_Compatibility;
-    pub use super::TMP_Compatibility_AnchorPositions;
-    pub use crate::system::object::IObject;
+    pub use super::{ITMP_Compatibility, TMP_Compatibility, TMP_Compatibility_AnchorPositions};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::r#enum::IEnum;
     #[cfg(feature = "system-enum")]
     pub use crate::system::r#enum::IEnumMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

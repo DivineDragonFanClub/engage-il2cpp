@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-bindings-nativepropertyattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::bindings::nativemethodattribute::{
-        INativeMethodAttribute, NativeMethodAttribute,
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::bindings::nativemethodattribute::{INativeMethodAttribute, NativeMethodAttribute},
     };
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/nativepropertyattribute/NativePropertyAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Bindings", name = "NativePropertyAttribute")]
@@ -28,10 +28,9 @@ mod __NativePropertyAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_set_target_type {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: bindings :: targettype :: TargetType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::bindings::targettype::TargetType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NativePropertyAttribute as ::unity2::ClassIdentity>::class(),
                 "set_TargetType",
@@ -43,18 +42,15 @@ mod __NativePropertyAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
-                    "set_TargetType",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
+                        "set_TargetType",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_target_type(
@@ -62,24 +58,15 @@ mod __NativePropertyAttribute_unity2_raw {
         value: crate::unity_engine::bindings::targettype::TargetType,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            NativePropertyAttribute,
-            crate::unity_engine::bindings::targettype::TargetType,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_target_type::get_offset() as isize),
-        );
+        let inner: extern "C" fn(NativePropertyAttribute, crate::unity_engine::bindings::targettype::TargetType, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set_target_type::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NativePropertyAttribute as ::unity2::ClassIdentity>::class(),
@@ -92,41 +79,28 @@ mod __NativePropertyAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: NativePropertyAttribute,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: NativePropertyAttribute, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(NativePropertyAttribute, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NativePropertyAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -138,44 +112,32 @@ mod __NativePropertyAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor_2(
-        this: NativePropertyAttribute,
-        name: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            NativePropertyAttribute,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_2::get_offset() as isize),
-        );
+    pub unsafe fn ctor_2(this: NativePropertyAttribute, name: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(NativePropertyAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor_2::get_method_info().method_ptr);
         inner(this, name, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor_3 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: bindings :: targettype :: TargetType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
+                <bool as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::bindings::targettype::TargetType as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <NativePropertyAttribute as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -187,18 +149,15 @@ mod __NativePropertyAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <NativePropertyAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor_3(
@@ -214,11 +173,7 @@ mod __NativePropertyAttribute_unity2_raw {
             bool,
             crate::unity_engine::bindings::targettype::TargetType,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor_3::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor_3::get_method_info().method_ptr);
         inner(this, name, is_free, target_type, __unity2_method_info)
     }
 }
@@ -226,29 +181,18 @@ mod __NativePropertyAttribute_unity2_raw {
 #[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
 pub trait INativePropertyAttributeMethods: INativePropertyAttribute {
     #[doc = "`set_TargetType(crate::unity_engine::bindings::targettype::TargetType)` overload"]
-    fn set_target_type(
-        self,
-        value: impl ::core::convert::Into<crate::unity_engine::bindings::targettype::TargetType>,
-    ) -> () {
+    fn set_target_type(self, value: impl ::core::convert::Into<crate::unity_engine::bindings::targettype::TargetType>) -> () {
         unsafe {
             let __receiver =
-                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NativePropertyAttribute_unity2_raw::set_target_type(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NativePropertyAttribute_unity2_raw::set_target_type(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NativePropertyAttribute_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -256,14 +200,8 @@ pub trait INativePropertyAttributeMethods: INativePropertyAttribute {
     fn ctor_2(self, name: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
             let __receiver =
-                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __NativePropertyAttribute_unity2_raw::ctor_2(
-                __receiver,
-                ::core::convert::Into::into(name),
-                ::core::option::Option::None,
-            )
+                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __NativePropertyAttribute_unity2_raw::ctor_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::bindings::targettype::TargetType)` overload"]
@@ -275,9 +213,7 @@ pub trait INativePropertyAttributeMethods: INativePropertyAttribute {
     ) -> () {
         unsafe {
             let __receiver =
-                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <NativePropertyAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __NativePropertyAttribute_unity2_raw::ctor_3(
                 __receiver,
                 ::core::convert::Into::into(name),
@@ -321,11 +257,7 @@ impl NativePropertyAttribute {
     }
 
     #[doc = "`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::bindings::targettype::TargetType)` — overload selector"]
-    pub fn new_3(
-        name: ::unity2::Il2CppString,
-        is_free: bool,
-        target_type: crate::unity_engine::bindings::targettype::TargetType,
-    ) -> Self {
+    pub fn new_3(name: ::unity2::Il2CppString, is_free: bool, target_type: crate::unity_engine::bindings::targettype::TargetType) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
@@ -341,13 +273,10 @@ impl NativePropertyAttribute {
 #[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INativePropertyAttribute;
-    pub use super::INativePropertyAttributeMethods;
-    pub use super::NativePropertyAttribute;
-    pub use crate::system::object::IObject;
+    pub use super::{INativePropertyAttribute, INativePropertyAttributeMethods, NativePropertyAttribute};
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::bindings::nativemethodattribute::INativeMethodAttribute;
     #[cfg(feature = "unity_engine-bindings-nativemethodattribute")]
     pub use crate::unity_engine::bindings::nativemethodattribute::INativeMethodAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::bindings::nativemethodattribute::INativeMethodAttribute};
 }

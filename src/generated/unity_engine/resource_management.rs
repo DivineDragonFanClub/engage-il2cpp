@@ -25,9 +25,7 @@ pub mod chainoperationtypelessdepedency_1;
 #[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1")]
 pub use chainoperationtypelessdepedency_1::IChainOperationTypelessDepedency_1Methods;
 #[cfg(feature = "unity_engine-resource_management-chainoperationtypelessdepedency_1-types")]
-pub use chainoperationtypelessdepedency_1::{
-    ChainOperationTypelessDepedency_1, IChainOperationTypelessDepedency_1,
-};
+pub use chainoperationtypelessdepedency_1::{ChainOperationTypelessDepedency_1, IChainOperationTypelessDepedency_1};
 #[cfg(any(
     feature = "unity_engine-resource_management-diagnostics-diagnosticevent-types",
     feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector-types",
@@ -85,15 +83,12 @@ pub mod resource_providers;
 pub mod resourcemanager;
 #[cfg(feature = "unity_engine-resource_management-resourcemanager-types")]
 pub use resourcemanager::{
-    IResourceManager, IResourceManager_CompletedOperation_1, IResourceManager_InstanceOperation,
-    ResourceManager, ResourceManager_CompletedOperation_1, ResourceManager_DiagnosticEventContext,
-    ResourceManager_DiagnosticEventType, ResourceManager_InstanceOperation,
+    IResourceManager, IResourceManager_CompletedOperation_1, IResourceManager_InstanceOperation, ResourceManager,
+    ResourceManager_CompletedOperation_1, ResourceManager_DiagnosticEventContext, ResourceManager_DiagnosticEventType,
+    ResourceManager_InstanceOperation,
 };
 #[cfg(feature = "unity_engine-resource_management-resourcemanager")]
-pub use resourcemanager::{
-    IResourceManagerMethods, IResourceManager_CompletedOperation_1Methods,
-    IResourceManager_InstanceOperationMethods,
-};
+pub use resourcemanager::{IResourceManagerMethods, IResourceManager_CompletedOperation_1Methods, IResourceManager_InstanceOperationMethods};
 #[cfg(any(
     feature = "unity_engine-resource_management-util-asyncophandlescachekey-types",
     feature = "unity_engine-resource_management-util-componentsingleton_1_2-types",

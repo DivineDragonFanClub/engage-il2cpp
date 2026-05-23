@@ -2,10 +2,10 @@
 
 #[cfg(feature = "combat-flattenedvec3curve-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/flattenedvec3curve/FlattenedVec3Curve.md"))]
     #[::unity2::class(namespace = "Combat", name = "FlattenedVec3Curve")]
@@ -15,17 +15,11 @@ mod __types {
         #[rename(name = "U")]
         pub u: f32,
         #[rename(name = "tip")]
-        pub tip: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        pub tip: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
         #[rename(name = "roo")]
-        pub roo: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        pub roo: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
         #[rename(name = "dir")]
-        pub dir: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::vector3::Vector3,
-        >,
+        pub dir: crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
     }
 }
 
@@ -41,9 +35,7 @@ mod __FlattenedVec3Curve_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_time_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
@@ -56,41 +48,28 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    "get_timeLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        "get_timeLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_time_length(
-        this: FlattenedVec3Curve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_time_length(this: FlattenedVec3Curve, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(FlattenedVec3Curve, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_time_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_time_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_time_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
                 "set_timeLength",
@@ -102,40 +81,27 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    "set_timeLength",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        "set_timeLength",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_time_length(
-        this: FlattenedVec3Curve,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_time_length(this: FlattenedVec3Curve, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(FlattenedVec3Curve, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_time_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_time_length::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_length {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
@@ -148,41 +114,28 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    "get_length",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        "get_length",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_length(
-        this: FlattenedVec3Curve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
+    pub unsafe fn get_length(this: FlattenedVec3Curve, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
         let inner: extern "C" fn(FlattenedVec3Curve, ::unity2::OptionalMethod) -> i32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_length::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_length::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_item {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
                 "get_Item",
@@ -194,18 +147,15 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    "get_Item",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        "get_Item",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_item(
@@ -213,37 +163,22 @@ mod __FlattenedVec3Curve_unity2_raw {
         i: i32,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::vector3::Vector3 {
-        let inner: extern "C" fn(
-            FlattenedVec3Curve,
-            i32,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::vector3::Vector3 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_item::get_offset() as isize),
-        );
+        let inner: extern "C" fn(FlattenedVec3Curve, i32, ::unity2::OptionalMethod) -> crate::unity_engine::vector3::Vector3 =
+            ::core::mem::transmute(__lookup_get_item::get_method_info().method_ptr);
         inner(this, i, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
@@ -256,18 +191,15 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -289,21 +221,19 @@ mod __FlattenedVec3Curve_unity2_raw {
             crate::unity_engine::animationcurve::AnimationCurve,
             crate::unity_engine::animationcurve::AnimationCurve,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, rx, ry, rz, tx, ty, tz, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_copy_from {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: combat :: flattenedvec3curve :: FlattenedVec3Curve as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::combat::flattenedvec3curve::FlattenedVec3Curve as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
                 "CopyFrom",
@@ -315,18 +245,15 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    "CopyFrom",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        "CopyFrom",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn copy_from(
@@ -342,33 +269,21 @@ mod __FlattenedVec3Curve_unity2_raw {
             i32,
             i32,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_copy_from::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_copy_from::get_method_info().method_ptr);
         inner(this, rhs, lp, rp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_export {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(),
             ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <FlattenedVec3Curve as ::unity2::ClassIdentity>::class(),
@@ -381,18 +296,15 @@ mod __FlattenedVec3Curve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
-                    "Export",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <FlattenedVec3Curve as ::unity2::ClassIdentity>::NAME,
+                        "Export",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn export(
@@ -414,11 +326,7 @@ mod __FlattenedVec3Curve_unity2_raw {
             *mut crate::unity_engine::animationcurve::AnimationCurve,
             *mut crate::unity_engine::animationcurve::AnimationCurve,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_export::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_export::get_method_info().method_ptr);
         inner(this, rx, ry, rz, tx, ty, tz, __unity2_method_info)
     }
 }
@@ -428,48 +336,29 @@ pub trait IFlattenedVec3CurveMethods: IFlattenedVec3Curve {
     #[doc = "`get_timeLength()` overload"]
     fn get_time_length(self) -> f32 {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FlattenedVec3Curve_unity2_raw::get_time_length(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FlattenedVec3Curve_unity2_raw::get_time_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_timeLength(f32)` overload"]
     fn set_time_length(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FlattenedVec3Curve_unity2_raw::set_time_length(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FlattenedVec3Curve_unity2_raw::set_time_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_length()` overload"]
     fn get_length(self) -> i32 {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FlattenedVec3Curve_unity2_raw::get_length(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Item(i32)` overload"]
     fn get_item(self, i: impl ::core::convert::Into<i32>) -> crate::unity_engine::vector3::Vector3 {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __FlattenedVec3Curve_unity2_raw::get_item(
-                __receiver,
-                ::core::convert::Into::into(i),
-                ::core::option::Option::None,
-            )
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __FlattenedVec3Curve_unity2_raw::get_item(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve, crate::unity_engine::animationcurve::AnimationCurve)` overload"]
@@ -483,9 +372,7 @@ pub trait IFlattenedVec3CurveMethods: IFlattenedVec3Curve {
         tz: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
     ) -> () {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FlattenedVec3Curve_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(rx),
@@ -506,9 +393,7 @@ pub trait IFlattenedVec3CurveMethods: IFlattenedVec3Curve {
         rp: impl ::core::convert::Into<i32>,
     ) -> () {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __FlattenedVec3Curve_unity2_raw::copy_from(
                 __receiver,
                 ::core::convert::Into::into(rhs),
@@ -530,27 +415,13 @@ pub trait IFlattenedVec3CurveMethods: IFlattenedVec3Curve {
         crate::unity_engine::animationcurve::AnimationCurve,
     ) {
         unsafe {
-            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            let mut __out_0 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animationcurve::AnimationCurve,
-            >::uninit();
-            let mut __out_1 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animationcurve::AnimationCurve,
-            >::uninit();
-            let mut __out_2 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animationcurve::AnimationCurve,
-            >::uninit();
-            let mut __out_3 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animationcurve::AnimationCurve,
-            >::uninit();
-            let mut __out_4 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animationcurve::AnimationCurve,
-            >::uninit();
-            let mut __out_5 = ::core::mem::MaybeUninit::<
-                crate::unity_engine::animationcurve::AnimationCurve,
-            >::uninit();
+            let __receiver = <FlattenedVec3Curve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::animationcurve::AnimationCurve>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::animationcurve::AnimationCurve>::uninit();
+            let mut __out_2 = ::core::mem::MaybeUninit::<crate::unity_engine::animationcurve::AnimationCurve>::uninit();
+            let mut __out_3 = ::core::mem::MaybeUninit::<crate::unity_engine::animationcurve::AnimationCurve>::uninit();
+            let mut __out_4 = ::core::mem::MaybeUninit::<crate::unity_engine::animationcurve::AnimationCurve>::uninit();
+            let mut __out_5 = ::core::mem::MaybeUninit::<crate::unity_engine::animationcurve::AnimationCurve>::uninit();
             __FlattenedVec3Curve_unity2_raw::export(
                 __receiver,
                 __out_0.as_mut_ptr(),
@@ -602,9 +473,7 @@ impl FlattenedVec3Curve {
 #[cfg(feature = "combat-flattenedvec3curve")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FlattenedVec3Curve;
-    pub use super::IFlattenedVec3Curve;
-    pub use super::IFlattenedVec3CurveMethods;
+    pub use super::{FlattenedVec3Curve, IFlattenedVec3Curve, IFlattenedVec3CurveMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

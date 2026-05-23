@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-nexpersistenceslotid-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexpersistenceslotid/NexPersistenceSlotId.md"))]
     #[::unity2::class(namespace = "App", name = "NexPersistenceSlotId")]
@@ -44,8 +44,7 @@ pub use __types::*;
 #[cfg(feature = "app-nexpersistenceslotid")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INexPersistenceSlotId;
-    pub use super::NexPersistenceSlotId;
+    pub use super::{INexPersistenceSlotId, NexPersistenceSlotId};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

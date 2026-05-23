@@ -4,22 +4,15 @@
 pub mod contentcatalogdata;
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata-types")]
 pub use contentcatalogdata::{
-    ContentCatalogData, ContentCatalogData_Bucket, ContentCatalogData_CompactLocation,
-    IContentCatalogData, IContentCatalogData_CompactLocation,
+    ContentCatalogData, ContentCatalogData_Bucket, ContentCatalogData_CompactLocation, IContentCatalogData, IContentCatalogData_CompactLocation,
 };
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
-pub use contentcatalogdata::{
-    IContentCatalogDataMethods, IContentCatalogData_CompactLocationMethods,
-};
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types"
-))]
+pub use contentcatalogdata::{IContentCatalogDataMethods, IContentCatalogData_CompactLocationMethods};
+#[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types"))]
 pub mod contentcatalogdataentry;
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry")]
 pub use contentcatalogdataentry::IContentCatalogDataEntryMethods;
-#[cfg(
-    feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types")]
 pub use contentcatalogdataentry::{ContentCatalogDataEntry, IContentCatalogDataEntry};
 #[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator-types"))]
 pub mod iresourcelocator;
@@ -27,29 +20,19 @@ pub mod iresourcelocator;
 pub use iresourcelocator::IIResourceLocatorMethods;
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator-types")]
 pub use iresourcelocator::{IIResourceLocator, IResourceLocator};
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types"
-))]
+#[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types"))]
 pub mod legacyresourceslocator;
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator")]
 pub use legacyresourceslocator::ILegacyResourcesLocatorMethods;
-#[cfg(
-    feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types")]
 pub use legacyresourceslocator::{ILegacyResourcesLocator, LegacyResourcesLocator};
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types"
-))]
+#[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types"))]
 pub mod resourcelocationdata;
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
 pub use resourcelocationdata::IResourceLocationDataMethods;
-#[cfg(
-    feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types"
-)]
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types")]
 pub use resourcelocationdata::{IResourceLocationData, ResourceLocationData};
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap-types"
-))]
+#[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap-types"))]
 pub mod resourcelocationmap;
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap")]
 pub use resourcelocationmap::IResourceLocationMapMethods;

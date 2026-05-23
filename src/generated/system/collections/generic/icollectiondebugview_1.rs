@@ -2,16 +2,13 @@
 
 #[cfg(feature = "system-collections-generic-icollectiondebugview_1-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/icollectiondebugview_1/ICollectionDebugView_1.md"))]
-    #[::unity2::class(
-        namespace = "System.Collections.Generic",
-        name = "ICollectionDebugView`1"
-    )]
+    #[::unity2::class(namespace = "System.Collections.Generic", name = "ICollectionDebugView`1")]
     #[parent(crate::system::object::Object)]
     pub struct ICollectionDebugView_1<T0: ::unity2::ClassIdentity> {}
 }
@@ -22,8 +19,7 @@ pub use __types::*;
 #[cfg(feature = "system-collections-generic-icollectiondebugview_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ICollectionDebugView_1;
-    pub use super::IICollectionDebugView_1;
+    pub use super::{ICollectionDebugView_1, IICollectionDebugView_1};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

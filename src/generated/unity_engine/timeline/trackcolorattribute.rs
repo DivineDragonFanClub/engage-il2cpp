@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcolorattribute/TrackColorAttribute.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackColorAttribute")]
@@ -26,9 +26,7 @@ mod __TrackColorAttribute_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <f32 as ::unity2::IlType>::il_type(),
                 <f32 as ::unity2::IlType>::il_type(),
@@ -45,38 +43,20 @@ mod __TrackColorAttribute_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <TrackColorAttribute as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <TrackColorAttribute as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: TrackColorAttribute,
-        r: f32,
-        g: f32,
-        b: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            TrackColorAttribute,
-            f32,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: TrackColorAttribute, r: f32, g: f32, b: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(TrackColorAttribute, f32, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, r, g, b, __unity2_method_info)
     }
 }
@@ -84,16 +64,9 @@ mod __TrackColorAttribute_unity2_raw {
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
 pub trait ITrackColorAttributeMethods: ITrackColorAttribute {
     #[doc = "`.ctor(f32, f32, f32)` overload"]
-    fn ctor(
-        self,
-        r: impl ::core::convert::Into<f32>,
-        g: impl ::core::convert::Into<f32>,
-        b: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn ctor(self, r: impl ::core::convert::Into<f32>, g: impl ::core::convert::Into<f32>, b: impl ::core::convert::Into<f32>) -> () {
         unsafe {
-            let __receiver = <TrackColorAttribute as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <TrackColorAttribute as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __TrackColorAttribute_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(r),
@@ -127,7 +100,5 @@ impl TrackColorAttribute {
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITrackColorAttribute;
-    pub use super::ITrackColorAttributeMethods;
-    pub use super::TrackColorAttribute;
+    pub use super::{ITrackColorAttribute, ITrackColorAttributeMethods, TrackColorAttribute};
 }

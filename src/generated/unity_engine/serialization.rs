@@ -5,6 +5,4 @@ pub mod formerlyserializedasattribute;
 #[cfg(feature = "unity_engine-serialization-formerlyserializedasattribute")]
 pub use formerlyserializedasattribute::IFormerlySerializedAsAttributeMethods;
 #[cfg(feature = "unity_engine-serialization-formerlyserializedasattribute-types")]
-pub use formerlyserializedasattribute::{
-    FormerlySerializedAsAttribute, IFormerlySerializedAsAttribute,
-};
+pub use formerlyserializedasattribute::{FormerlySerializedAsAttribute, IFormerlySerializedAsAttribute};

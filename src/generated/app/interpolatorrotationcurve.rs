@@ -2,10 +2,10 @@
 
 #[cfg(feature = "app-interpolatorrotationcurve-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorrotationcurve/InterpolatorRotationCurve.md"))]
     #[::unity2::class(namespace = "App", name = "InterpolatorRotationCurve")]
@@ -30,9 +30,7 @@ mod __InterpolatorRotationCurve_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
@@ -45,41 +43,28 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "get_Value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "get_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_value(
-        this: InterpolatorRotationCurve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_value(this: InterpolatorRotationCurve, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(InterpolatorRotationCurve, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_value::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_value {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
                 "set_Value",
@@ -91,40 +76,27 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "set_Value",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "set_Value",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_value(
-        this: InterpolatorRotationCurve,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_value(this: InterpolatorRotationCurve, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpolatorRotationCurve, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_value::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_value::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
@@ -137,41 +109,28 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "get_Prev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "get_Prev",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_prev(
-        this: InterpolatorRotationCurve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_prev(this: InterpolatorRotationCurve, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(InterpolatorRotationCurve, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_prev::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_prev::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_prev {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
                 "set_Prev",
@@ -183,40 +142,27 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "set_Prev",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "set_Prev",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_prev(
-        this: InterpolatorRotationCurve,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_prev(this: InterpolatorRotationCurve, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpolatorRotationCurve, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_prev::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_prev::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
@@ -229,41 +175,28 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "get_Next",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "get_Next",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_next(
-        this: InterpolatorRotationCurve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> f32 {
+    pub unsafe fn get_next(this: InterpolatorRotationCurve, __unity2_method_info: ::unity2::OptionalMethod) -> f32 {
         let inner: extern "C" fn(InterpolatorRotationCurve, ::unity2::OptionalMethod) -> f32 =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_next::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_next {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<f32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
                 "set_Next",
@@ -275,40 +208,27 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "set_Next",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "set_Next",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set_next(
-        this: InterpolatorRotationCurve,
-        value: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn set_next(this: InterpolatorRotationCurve, value: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpolatorRotationCurve, f32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_set_next::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_set_next::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_is_end {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
@@ -321,39 +241,27 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "get_IsEnd",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "get_IsEnd",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_is_end(
-        this: InterpolatorRotationCurve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn get_is_end(this: InterpolatorRotationCurve, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(InterpolatorRotationCurve, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_get_is_end::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_get_is_end::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_curve {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
@@ -366,45 +274,32 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "get_Curve",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "get_Curve",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_curve(
         this: InterpolatorRotationCurve,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::unity_engine::animationcurve::AnimationCurve {
-        let inner: extern "C" fn(
-            InterpolatorRotationCurve,
-            ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::animationcurve::AnimationCurve = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_curve::get_offset() as isize),
-        );
+        let inner: extern "C" fn(InterpolatorRotationCurve, ::unity2::OptionalMethod) -> crate::unity_engine::animationcurve::AnimationCurve =
+            ::core::mem::transmute(__lookup_get_curve::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type(
-                ),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::animationcurve::AnimationCurve as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -416,18 +311,15 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
@@ -435,28 +327,16 @@ mod __InterpolatorRotationCurve_unity2_raw {
         animation_curve: crate::unity_engine::animationcurve::AnimationCurve,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            InterpolatorRotationCurve,
-            crate::unity_engine::animationcurve::AnimationCurve,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        let inner: extern "C" fn(InterpolatorRotationCurve, crate::unity_engine::animationcurve::AnimationCurve, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, animation_curve, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <f32 as ::unity2::IlType>::il_type(),
-                <f32 as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<f32 as ::unity2::IlType>::il_type(), <f32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
                 "Set",
@@ -468,45 +348,27 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "Set",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "Set",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn set(
-        this: InterpolatorRotationCurve,
-        value: f32,
-        time: f32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            InterpolatorRotationCurve,
-            f32,
-            f32,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set::get_offset() as isize),
-        );
+    pub unsafe fn set(this: InterpolatorRotationCurve, value: f32, time: f32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(InterpolatorRotationCurve, f32, f32, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_set::get_method_info().method_ptr);
         inner(this, value, time, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_tick {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <InterpolatorRotationCurve as ::unity2::ClassIdentity>::class(),
@@ -519,30 +381,20 @@ mod __InterpolatorRotationCurve_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
-                    "Tick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <InterpolatorRotationCurve as ::unity2::ClassIdentity>::NAME,
+                        "Tick",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick(
-        this: InterpolatorRotationCurve,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn tick(this: InterpolatorRotationCurve, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(InterpolatorRotationCurve, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -553,137 +405,79 @@ pub trait IInterpolatorRotationCurveMethods: IInterpolatorRotationCurve {
     fn get_value(self) -> f32 {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::get_value(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::get_value(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Value(f32)` overload"]
     fn set_value(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::set_value(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Prev()` overload"]
     fn get_prev(self) -> f32 {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::get_prev(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::get_prev(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Prev(f32)` overload"]
     fn set_prev(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::set_prev(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::set_prev(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_Next()` overload"]
     fn get_next(self) -> f32 {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::get_next(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::get_next(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`set_Next(f32)` overload"]
     fn set_next(self, value: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::set_next(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::set_next(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`get_IsEnd()` overload"]
     fn get_is_end(self) -> bool {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::get_is_end(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::get_is_end(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_Curve()` overload"]
     fn get_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::get_curve(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::get_curve(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"]
-    fn ctor(
-        self,
-        animation_curve: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
-    ) -> () {
+    fn ctor(self, animation_curve: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>) -> () {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __InterpolatorRotationCurve_unity2_raw::ctor(
-                __receiver,
-                ::core::convert::Into::into(animation_curve),
-                ::core::option::Option::None,
-            )
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __InterpolatorRotationCurve_unity2_raw::ctor(__receiver, ::core::convert::Into::into(animation_curve), ::core::option::Option::None)
         }
     }
     #[doc = "`Set(f32, f32)` overload"]
-    fn set(
-        self,
-        value: impl ::core::convert::Into<f32>,
-        time: impl ::core::convert::Into<f32>,
-    ) -> () {
+    fn set(self, value: impl ::core::convert::Into<f32>, time: impl ::core::convert::Into<f32>) -> () {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpolatorRotationCurve_unity2_raw::set(
                 __receiver,
                 ::core::convert::Into::into(value),
@@ -696,9 +490,7 @@ pub trait IInterpolatorRotationCurveMethods: IInterpolatorRotationCurve {
     fn tick(self) -> () {
         unsafe {
             let __receiver =
-                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <InterpolatorRotationCurve as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __InterpolatorRotationCurve_unity2_raw::tick(__receiver, ::core::option::Option::None)
         }
     }
@@ -726,9 +518,7 @@ impl InterpolatorRotationCurve {
 #[cfg(feature = "app-interpolatorrotationcurve")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IInterpolatorRotationCurve;
-    pub use super::IInterpolatorRotationCurveMethods;
-    pub use super::InterpolatorRotationCurve;
+    pub use super::{IInterpolatorRotationCurve, IInterpolatorRotationCurveMethods, InterpolatorRotationCurve};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,17 +2,41 @@
 
 #[cfg(feature = "app-mapsequenceturnbegineffect-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::procinst::{IProcInst, ProcInst};
-    use crate::app::turneffect::{ITurnEffect, TurnEffect};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            turneffect::{ITurnEffect, TurnEffect},
+        },
+        system::object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainDamage.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcTerrainDamage")]
+    #[parent(crate::app::turneffect::TurnEffect)]
+    pub struct MapSequenceTurnBeginEffect_ProcTerrainDamage {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcEngageSkill.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcEngageSkill")]
+    #[parent(crate::app::turneffect::TurnEffect)]
+    pub struct MapSequenceTurnBeginEffect_ProcEngageSkill {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillHeal.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcSkillHeal")]
     #[parent(crate::app::turneffect::TurnEffect)]
     pub struct MapSequenceTurnBeginEffect_ProcSkillHeal {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MapSequenceTurnBeginEffect {}
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcFullBulletAttack.md"))]
+    #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcFullBulletAttack")]
+    #[parent(crate::app::turneffect::TurnEffect)]
+    pub struct MapSequenceTurnBeginEffect_ProcFullBulletAttack {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillTurn.md"))]
     #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcSkillTurn")]
@@ -23,36 +47,305 @@ mod __types {
     #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcTerrainHeal")]
     #[parent(crate::app::turneffect::TurnEffect)]
     pub struct MapSequenceTurnBeginEffect_ProcTerrainHeal {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect")]
-    #[parent(crate::app::procinst::ProcInst)]
-    pub struct MapSequenceTurnBeginEffect {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcEngageSkill.md"))]
-    #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcEngageSkill")]
-    #[parent(crate::app::turneffect::TurnEffect)]
-    pub struct MapSequenceTurnBeginEffect_ProcEngageSkill {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcFullBulletAttack.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapSequenceTurnBeginEffect.ProcFullBulletAttack"
-    )]
-    #[parent(crate::app::turneffect::TurnEffect)]
-    pub struct MapSequenceTurnBeginEffect_ProcFullBulletAttack {}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainDamage.md"))]
-    #[::unity2::class(
-        namespace = "App",
-        name = "MapSequenceTurnBeginEffect.ProcTerrainDamage"
-    )]
-    #[parent(crate::app::turneffect::TurnEffect)]
-    pub struct MapSequenceTurnBeginEffect_ProcTerrainDamage {}
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect-types")]
 pub use __types::*;
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_damage {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::class(),
+                "GetDamage",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::NAME,
+                        "GetDamage",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_damage(
+        unit: crate::app::unit::Unit,
+        terrain: crate::app::terraindata_2::TerrainData_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_damage::get_method_info().method_ptr);
+        inner(unit, terrain, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute(
+        this: MapSequenceTurnBeginEffect_ProcTerrainDamage,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            MapSequenceTurnBeginEffect_ProcTerrainDamage,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect_ProcTerrainDamage, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceTurnBeginEffect_ProcTerrainDamage, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
+    #[doc = "`GetDamage(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]
+    pub fn get_damage(
+        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
+        terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>,
+    ) -> i32 {
+        unsafe {
+            __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::get_damage(
+                ::core::convert::Into::into(unit),
+                ::core::convert::Into::into(terrain),
+                ::core::option::Option::None,
+            )
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+pub trait IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods: IMapSequenceTurnBeginEffect_ProcTerrainDamage {
+    #[doc = "`Execute()` overload"]
+    fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::execute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl<__T: IMapSequenceTurnBeginEffect_ProcTerrainDamage> IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods for __T {}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainDamage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute(
+        this: MapSequenceTurnBeginEffect_ProcEngageSkill,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            MapSequenceTurnBeginEffect_ProcEngageSkill,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect_ProcEngageSkill, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceTurnBeginEffect_ProcEngageSkill, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+pub trait IMapSequenceTurnBeginEffect_ProcEngageSkillMethods: IMapSequenceTurnBeginEffect_ProcEngageSkill {
+    #[doc = "`Execute()` overload"]
+    fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw::execute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl<__T: IMapSequenceTurnBeginEffect_ProcEngageSkill> IMapSequenceTurnBeginEffect_ProcEngageSkillMethods for __T {}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcEngageSkill {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcEngageSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTurnBeginEffect_ProcEngageSkillMethods>::ctor(this);
+        this
+    }
+}
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 #[doc(hidden)]
@@ -63,9 +356,7 @@ mod __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::ClassIdentity>::class(),
@@ -78,18 +369,15 @@ mod __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
@@ -99,20 +387,14 @@ mod __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw {
         let inner: extern "C" fn(
             MapSequenceTurnBeginEffect_ProcSkillHeal,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::ClassIdentity>::class(),
@@ -125,67 +407,48 @@ mod __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect_ProcSkillHeal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcSkillHeal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect_ProcSkillHeal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceTurnBeginEffect_ProcSkillHeal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-pub trait IMapSequenceTurnBeginEffect_ProcSkillHealMethods:
-    IMapSequenceTurnBeginEffect_ProcSkillHeal
-{
+pub trait IMapSequenceTurnBeginEffect_ProcSkillHealMethods: IMapSequenceTurnBeginEffect_ProcSkillHeal {
     #[doc = "`Execute()` overload"]
     fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcSkillHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcSkillHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapSequenceTurnBeginEffect_ProcSkillHeal as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl<__T: IMapSequenceTurnBeginEffect_ProcSkillHeal>
-    IMapSequenceTurnBeginEffect_ProcSkillHealMethods for __T
-{
-}
+impl<__T: IMapSequenceTurnBeginEffect_ProcSkillHeal> IMapSequenceTurnBeginEffect_ProcSkillHealMethods for __T {}
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 impl MapSequenceTurnBeginEffect_ProcSkillHeal {
@@ -206,382 +469,13 @@ impl MapSequenceTurnBeginEffect_ProcSkillHeal {
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute(
-        this: MapSequenceTurnBeginEffect_ProcSkillTurn,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcSkillTurn,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect_ProcSkillTurn,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcSkillTurn,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-pub trait IMapSequenceTurnBeginEffect_ProcSkillTurnMethods:
-    IMapSequenceTurnBeginEffect_ProcSkillTurn
-{
-    #[doc = "`Execute()` overload"]
-    fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcSkillTurn as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcSkillTurn as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl<__T: IMapSequenceTurnBeginEffect_ProcSkillTurn>
-    IMapSequenceTurnBeginEffect_ProcSkillTurnMethods for __T
-{
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcSkillTurn {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcSkillTurn),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceTurnBeginEffect_ProcSkillTurnMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_heal {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::class(),
-                "GetHeal",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::NAME,
-                    "GetHeal",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_heal(
-        unit: crate::app::unit::Unit,
-        terrain: crate::app::terraindata_2::TerrainData_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::terraindata_2::TerrainData_2,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_heal::get_offset() as isize),
-        );
-        inner(unit, terrain, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute(
-        this: MapSequenceTurnBeginEffect_ProcTerrainHeal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcTerrainHeal,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect_ProcTerrainHeal,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcTerrainHeal,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
-    #[doc = "`GetHeal(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]
-    pub fn get_heal(
-        unit: impl ::core::convert::Into<crate::app::unit::Unit>,
-        terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>,
-    ) -> i32 {
-        unsafe {
-            __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::get_heal(
-                ::core::convert::Into::into(unit),
-                ::core::convert::Into::into(terrain),
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-pub trait IMapSequenceTurnBeginEffect_ProcTerrainHealMethods:
-    IMapSequenceTurnBeginEffect_ProcTerrainHeal
-{
-    #[doc = "`Execute()` overload"]
-    fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcTerrainHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcTerrainHeal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl<__T: IMapSequenceTurnBeginEffect_ProcTerrainHeal>
-    IMapSequenceTurnBeginEffect_ProcTerrainHealMethods for __T
-{
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainHeal),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceTurnBeginEffect_ProcTerrainHealMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapSequenceTurnBeginEffect_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_create {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::class(),
@@ -594,39 +488,27 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnCreate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnCreate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_create(
-        this: MapSequenceTurnBeginEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_create(this: MapSequenceTurnBeginEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_create::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_create::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::class(),
@@ -639,41 +521,28 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
-                    "OnDispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
+                        "OnDispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn on_dispose(
-        this: MapSequenceTurnBeginEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn on_dispose(this: MapSequenceTurnBeginEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_on_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_on_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_create_bind {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::app::procinst::ProcInst as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::class(),
                 "CreateBind",
@@ -685,39 +554,27 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
-                    "CreateBind",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
+                        "CreateBind",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn create_bind(super_: crate::app::procinst::ProcInst, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_create_bind::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_create_bind::get_method_info().method_ptr);
         inner(super_, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_terrain_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::class(),
@@ -730,39 +587,27 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
-                    "TerrainUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
+                        "TerrainUpdate",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn terrain_update(
-        this: MapSequenceTurnBeginEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn terrain_update(this: MapSequenceTurnBeginEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_terrain_update::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_terrain_update::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_update_image {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::class(),
@@ -775,39 +620,27 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
-                    "UpdateImage",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
+                        "UpdateImage",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn update_image(
-        this: MapSequenceTurnBeginEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn update_image(this: MapSequenceTurnBeginEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_update_image::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_update_image::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::class(),
@@ -820,30 +653,20 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -852,12 +675,7 @@ mod __MapSequenceTurnBeginEffect_unity2_raw {
 impl MapSequenceTurnBeginEffect {
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
-        unsafe {
-            __MapSequenceTurnBeginEffect_unity2_raw::create_bind(
-                ::core::convert::Into::into(super_),
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __MapSequenceTurnBeginEffect_unity2_raw::create_bind(::core::convert::Into::into(super_), ::core::option::Option::None) }
     }
 }
 
@@ -867,61 +685,39 @@ pub trait IMapSequenceTurnBeginEffectMethods: IMapSequenceTurnBeginEffect {
     fn on_create(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceTurnBeginEffect_unity2_raw::on_create(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceTurnBeginEffect_unity2_raw::on_create(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OnDispose()` overload"]
     fn on_dispose(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceTurnBeginEffect_unity2_raw::on_dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceTurnBeginEffect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`TerrainUpdate()` overload"]
     fn terrain_update(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceTurnBeginEffect_unity2_raw::terrain_update(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceTurnBeginEffect_unity2_raw::terrain_update(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`UpdateImage()` overload"]
     fn update_image(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __MapSequenceTurnBeginEffect_unity2_raw::update_image(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __MapSequenceTurnBeginEffect_unity2_raw::update_image(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <MapSequenceTurnBeginEffect as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __MapSequenceTurnBeginEffect_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -949,168 +745,16 @@ impl MapSequenceTurnBeginEffect {
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute(
-        this: MapSequenceTurnBeginEffect_ProcEngageSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::ienumerator::IEnumerator {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcEngageSkill,
-            ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_ctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcEngageSkill as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect_ProcEngageSkill,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcEngageSkill,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
-        inner(this, __unity2_method_info)
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-pub trait IMapSequenceTurnBeginEffect_ProcEngageSkillMethods:
-    IMapSequenceTurnBeginEffect_ProcEngageSkill
-{
-    #[doc = "`Execute()` overload"]
-    fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
-        unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcEngageSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`.ctor()` overload"]
-    fn ctor(self) -> () {
-        unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcEngageSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
-        }
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl<__T: IMapSequenceTurnBeginEffect_ProcEngageSkill>
-    IMapSequenceTurnBeginEffect_ProcEngageSkillMethods for __T
-{
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcEngageSkill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcEngageSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceTurnBeginEffect_ProcEngageSkillMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
 mod __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw {
     use super::*;
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::ClassIdentity>::class(
-                ),
+                <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::ClassIdentity>::class(),
                 "Execute",
                 0,
                 param_types,
@@ -1118,12 +762,17 @@ mod __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceTurnBeginEffect_ProcFullBulletAttack as :: unity2 :: ClassIdentity > :: NAME , "Execute" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
         }
     }
     pub unsafe fn execute(
@@ -1133,24 +782,17 @@ mod __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw {
         let inner: extern "C" fn(
             MapSequenceTurnBeginEffect_ProcFullBulletAttack,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::ClassIdentity>::class(
-                ),
+                <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1158,61 +800,50 @@ mod __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw {
             )
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < MapSequenceTurnBeginEffect_ProcFullBulletAttack as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
         }
     }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect_ProcFullBulletAttack,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcFullBulletAttack,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect_ProcFullBulletAttack, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceTurnBeginEffect_ProcFullBulletAttack, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-pub trait IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods:
-    IMapSequenceTurnBeginEffect_ProcFullBulletAttack
-{
+pub trait IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods: IMapSequenceTurnBeginEffect_ProcFullBulletAttack {
     #[doc = "`Execute()` overload"]
     fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcFullBulletAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcFullBulletAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapSequenceTurnBeginEffect_ProcFullBulletAttack as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl<__T: IMapSequenceTurnBeginEffect_ProcFullBulletAttack>
-    IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods for __T
-{
-}
+impl<__T: IMapSequenceTurnBeginEffect_ProcFullBulletAttack> IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods for __T {}
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 impl MapSequenceTurnBeginEffect_ProcFullBulletAttack {
@@ -1233,70 +864,16 @@ impl MapSequenceTurnBeginEffect_ProcFullBulletAttack {
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 #[doc(hidden)]
 #[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw {
+mod __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw {
     use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_damage {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
-                <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::class(),
-                "GetDamage",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::NAME,
-                    "GetDamage",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_damage(
-        unit: crate::app::unit::Unit,
-        terrain: crate::app::terraindata_2::TerrainData_2,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            crate::app::unit::Unit,
-            crate::app::terraindata_2::TerrainData_2,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_damage::get_offset() as isize),
-        );
-        inner(unit, terrain, __unity2_method_info)
-    }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::class(),
+                <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::class(),
                 "Execute",
                 0,
                 param_types,
@@ -1306,44 +883,35 @@ mod __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
-        this: MapSequenceTurnBeginEffect_ProcTerrainDamage,
+        this: MapSequenceTurnBeginEffect_ProcSkillTurn,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> crate::system::collections::ienumerator::IEnumerator {
         let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcTerrainDamage,
+            MapSequenceTurnBeginEffect_ProcSkillTurn,
             ::unity2::OptionalMethod,
-        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
-                <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::class(),
+                <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::class(),
                 ".ctor",
                 0,
                 param_types,
@@ -1353,45 +921,192 @@ mod __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <MapSequenceTurnBeginEffect_ProcTerrainDamage as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: MapSequenceTurnBeginEffect_ProcTerrainDamage,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            MapSequenceTurnBeginEffect_ProcTerrainDamage,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect_ProcSkillTurn, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceTurnBeginEffect_ProcSkillTurn, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
-    #[doc = "`GetDamage(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]
-    pub fn get_damage(
+pub trait IMapSequenceTurnBeginEffect_ProcSkillTurnMethods: IMapSequenceTurnBeginEffect_ProcSkillTurn {
+    #[doc = "`Execute()` overload"]
+    fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
+        unsafe {
+            let __receiver = <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw::execute(__receiver, ::core::option::Option::None)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapSequenceTurnBeginEffect_ProcSkillTurn as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw::ctor(__receiver, ::core::option::Option::None)
+        }
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl<__T: IMapSequenceTurnBeginEffect_ProcSkillTurn> IMapSequenceTurnBeginEffect_ProcSkillTurnMethods for __T {}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcSkillTurn {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcSkillTurn),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTurnBeginEffect_ProcSkillTurnMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_heal {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::app::unit::Unit as ::unity2::IlType>::il_type(),
+                <crate::app::terraindata_2::TerrainData_2 as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::class(),
+                "GetHeal",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::NAME,
+                        "GetHeal",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_heal(
+        unit: crate::app::unit::Unit,
+        terrain: crate::app::terraindata_2::TerrainData_2,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> i32 {
+        let inner: extern "C" fn(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_get_heal::get_method_info().method_ptr);
+        inner(unit, terrain, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute(
+        this: MapSequenceTurnBeginEffect_ProcTerrainHeal,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::system::collections::ienumerator::IEnumerator {
+        let inner: extern "C" fn(
+            MapSequenceTurnBeginEffect_ProcTerrainHeal,
+            ::unity2::OptionalMethod,
+        ) -> crate::system::collections::ienumerator::IEnumerator = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn ctor(this: MapSequenceTurnBeginEffect_ProcTerrainHeal, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(MapSequenceTurnBeginEffect_ProcTerrainHeal, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
+        inner(this, __unity2_method_info)
+    }
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
+    #[doc = "`GetHeal(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]
+    pub fn get_heal(
         unit: impl ::core::convert::Into<crate::app::unit::Unit>,
         terrain: impl ::core::convert::Into<crate::app::terraindata_2::TerrainData_2>,
     ) -> i32 {
         unsafe {
-            __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::get_damage(
+            __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::get_heal(
                 ::core::convert::Into::into(unit),
                 ::core::convert::Into::into(terrain),
                 ::core::option::Option::None,
@@ -1401,49 +1116,42 @@ impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-pub trait IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods:
-    IMapSequenceTurnBeginEffect_ProcTerrainDamage
-{
+pub trait IMapSequenceTurnBeginEffect_ProcTerrainHealMethods: IMapSequenceTurnBeginEffect_ProcTerrainHeal {
     #[doc = "`Execute()` overload"]
     fn execute(self) -> crate::system::collections::ienumerator::IEnumerator {
         unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcTerrainDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::execute(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::execute(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = < MapSequenceTurnBeginEffect_ProcTerrainDamage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ;
-            __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <MapSequenceTurnBeginEffect_ProcTerrainHeal as ::unity2::FromIlInstance>::from_il_instance(
+                <Self as ::unity2::SystemObject>::as_instance(self),
+            );
+            __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl<__T: IMapSequenceTurnBeginEffect_ProcTerrainDamage>
-    IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods for __T
-{
-}
+impl<__T: IMapSequenceTurnBeginEffect_ProcTerrainHeal> IMapSequenceTurnBeginEffect_ProcTerrainHealMethods for __T {}
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
+impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainDamage),
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainHeal),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods>::ctor(this);
+        <Self as IMapSequenceTurnBeginEffect_ProcTerrainHealMethods>::ctor(this);
         this
     }
 }
@@ -1451,34 +1159,25 @@ impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMapSequenceTurnBeginEffect;
-    pub use super::IMapSequenceTurnBeginEffectMethods;
-    pub use super::IMapSequenceTurnBeginEffect_ProcEngageSkill;
-    pub use super::IMapSequenceTurnBeginEffect_ProcEngageSkillMethods;
-    pub use super::IMapSequenceTurnBeginEffect_ProcFullBulletAttack;
-    pub use super::IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods;
-    pub use super::IMapSequenceTurnBeginEffect_ProcSkillHeal;
-    pub use super::IMapSequenceTurnBeginEffect_ProcSkillHealMethods;
-    pub use super::IMapSequenceTurnBeginEffect_ProcSkillTurn;
-    pub use super::IMapSequenceTurnBeginEffect_ProcSkillTurnMethods;
-    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainDamage;
-    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods;
-    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainHeal;
-    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainHealMethods;
-    pub use super::MapSequenceTurnBeginEffect;
-    pub use super::MapSequenceTurnBeginEffect_ProcEngageSkill;
-    pub use super::MapSequenceTurnBeginEffect_ProcFullBulletAttack;
-    pub use super::MapSequenceTurnBeginEffect_ProcSkillHeal;
-    pub use super::MapSequenceTurnBeginEffect_ProcSkillTurn;
-    pub use super::MapSequenceTurnBeginEffect_ProcTerrainDamage;
-    pub use super::MapSequenceTurnBeginEffect_ProcTerrainHeal;
-    pub use crate::app::procinst::IProcInst;
+    pub use super::{
+        IMapSequenceTurnBeginEffect, IMapSequenceTurnBeginEffectMethods, IMapSequenceTurnBeginEffect_ProcEngageSkill,
+        IMapSequenceTurnBeginEffect_ProcEngageSkillMethods, IMapSequenceTurnBeginEffect_ProcFullBulletAttack,
+        IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods, IMapSequenceTurnBeginEffect_ProcSkillHeal,
+        IMapSequenceTurnBeginEffect_ProcSkillHealMethods, IMapSequenceTurnBeginEffect_ProcSkillTurn,
+        IMapSequenceTurnBeginEffect_ProcSkillTurnMethods, IMapSequenceTurnBeginEffect_ProcTerrainDamage,
+        IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods, IMapSequenceTurnBeginEffect_ProcTerrainHeal,
+        IMapSequenceTurnBeginEffect_ProcTerrainHealMethods, MapSequenceTurnBeginEffect, MapSequenceTurnBeginEffect_ProcEngageSkill,
+        MapSequenceTurnBeginEffect_ProcFullBulletAttack, MapSequenceTurnBeginEffect_ProcSkillHeal, MapSequenceTurnBeginEffect_ProcSkillTurn,
+        MapSequenceTurnBeginEffect_ProcTerrainDamage, MapSequenceTurnBeginEffect_ProcTerrainHeal,
+    };
     #[cfg(feature = "app-procinst")]
     pub use crate::app::procinst::IProcInstMethods;
-    pub use crate::app::turneffect::ITurnEffect;
     #[cfg(feature = "app-turneffect")]
     pub use crate::app::turneffect::ITurnEffectMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, turneffect::ITurnEffect},
+        system::object::IObject,
+    };
 }

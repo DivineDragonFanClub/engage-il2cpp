@@ -2,24 +2,21 @@
 
 #[cfg(feature = "unity_engine-events-unityaction_4-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityaction_4/UnityAction_4.md"))]
     #[::unity2::class(namespace = "UnityEngine.Events", name = "UnityAction`4")]
     #[parent(crate::system::multicastdelegate::MulticastDelegate)]
     #[parent(crate::system::delegate::Delegate)]
     #[parent(crate::system::object::Object)]
-    pub struct UnityAction_4<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-        T3: ::unity2::ClassIdentity,
-    > {}
+    pub struct UnityAction_4<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity> {}
 }
 
 #[cfg(feature = "unity_engine-events-unityaction_4-types")]
@@ -27,12 +24,8 @@ pub use __types::*;
 
 #[cfg(feature = "unity_engine-events-unityaction_4")]
 #[::unity2::methods]
-impl<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-        T3: ::unity2::ClassIdentity,
-    > UnityAction_4<T0, T1, T2, T3>
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity>
+    UnityAction_4<T0, T1, T2, T3>
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
@@ -44,22 +37,13 @@ impl<
 }
 
 #[cfg(feature = "unity_engine-events-unityaction_4")]
-impl<
-        T0: ::unity2::ClassIdentity,
-        T1: ::unity2::ClassIdentity,
-        T2: ::unity2::ClassIdentity,
-        T3: ::unity2::ClassIdentity,
-    > UnityAction_4<T0, T1, T2, T3>
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity, T2: ::unity2::ClassIdentity, T3: ::unity2::ClassIdentity>
+    UnityAction_4<T0, T1, T2, T3>
 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnityAction_4),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(UnityAction_4), ::core::stringify!(new),));
         <Self as IUnityAction_4Methods<T0, T1, T2, T3>>::ctor(this, object, method);
         this
     }
@@ -68,16 +52,12 @@ impl<
 #[cfg(feature = "unity_engine-events-unityaction_4")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IUnityAction_4;
-    pub use super::IUnityAction_4Methods;
-    pub use super::UnityAction_4;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{IUnityAction_4, IUnityAction_4Methods, UnityAction_4};
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

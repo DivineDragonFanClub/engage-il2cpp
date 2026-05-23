@@ -2,25 +2,29 @@
 
 #[cfg(feature = "unity_engine-event_systems-eventtrigger-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::unity_engine::behaviour::{Behaviour, IBehaviour};
-    use crate::unity_engine::component::{Component, IComponent};
-    use crate::unity_engine::events::unityevent_1::{IUnityEvent_1, UnityEvent_1};
-    use crate::unity_engine::events::unityeventbase::{IUnityEventBase, UnityEventBase};
-    use crate::unity_engine::monobehaviour::{IMonoBehaviour, MonoBehaviour};
-    use crate::unity_engine::object_2::{IObject_2, Object_2};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            events::{
+                unityevent_1::{IUnityEvent_1, UnityEvent_1},
+                unityeventbase::{IUnityEventBase, UnityEventBase},
+            },
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger")]
     #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
     pub struct EventTrigger {
         #[rename(name = "m_Delegates")]
-        pub m_delegates: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-        >,
+        pub m_delegates: crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))]
@@ -34,10 +38,7 @@ mod __types {
     }
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "EventTrigger.TriggerEvent"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger.TriggerEvent")]
     # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >)]
     pub struct EventTrigger_TriggerEvent {}
 }
@@ -54,9 +55,7 @@ mod __EventTrigger_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_delegates {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
@@ -69,49 +68,37 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "get_delegates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "get_delegates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_delegates(
         this: EventTrigger,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> {
         let inner: extern "C" fn(
             EventTrigger,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_delegates::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_delegates::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_delegates {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "set_delegates",
@@ -123,89 +110,60 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "set_delegates",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "set_delegates",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_delegates(
         this: EventTrigger,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             EventTrigger,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_delegates::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_delegates::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventTrigger as ::unity2::ClassIdentity>::class(),
-                ".ctor",
-                0,
-                param_types,
-                false,
-            )
+            ::unity2::lookup::method_info_on_class_with_signature(<EventTrigger as ::unity2::ClassIdentity>::class(), ".ctor", 0, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(this: EventTrigger, __unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(EventTrigger, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+        let inner: extern "C" fn(EventTrigger, ::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_triggers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
@@ -218,49 +176,37 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "get_triggers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "get_triggers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_triggers(
         this: EventTrigger,
         __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> {
         let inner: extern "C" fn(
             EventTrigger,
             ::unity2::OptionalMethod,
         ) -> crate::system::collections::generic::list_1::List_1<
             crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-        > = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_triggers::get_offset() as isize),
-        );
+        > = ::core::mem::transmute(__lookup_get_triggers::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_set_triggers {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<crate::system::collections::generic::list_1::List_1<
-                    crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-                > as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
+            > as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "set_triggers",
@@ -272,48 +218,38 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "set_triggers",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "set_triggers",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn set_triggers(
         this: EventTrigger,
-        value: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-        >,
+        value: crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
         let inner: extern "C" fn(
             EventTrigger,
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_set_triggers::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_set_triggers::get_method_info().method_ptr);
         inner(this, value, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: eventtriggertype :: EventTriggerType as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::eventtriggertype::EventTriggerType as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "Execute",
@@ -325,18 +261,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn execute(
@@ -350,21 +283,16 @@ mod __EventTrigger_unity2_raw {
             crate::unity_engine::event_systems::eventtriggertype::EventTriggerType,
             crate::unity_engine::event_systems::baseeventdata::BaseEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
         inner(this, id, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_enter {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnPointerEnter",
@@ -376,18 +304,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerEnter",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerEnter",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_enter(
@@ -399,21 +324,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_enter::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_enter::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_exit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnPointerExit",
@@ -425,18 +345,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerExit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerExit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_exit(
@@ -448,44 +365,30 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_exit::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_exit::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventTrigger as ::unity2::ClassIdentity>::class(),
-                "OnDrag",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventTrigger as ::unity2::ClassIdentity>::class(), "OnDrag", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_drag(
@@ -497,44 +400,30 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_drop {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventTrigger as ::unity2::ClassIdentity>::class(),
-                "OnDrop",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventTrigger as ::unity2::ClassIdentity>::class(), "OnDrop", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnDrop",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnDrop",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_drop(
@@ -546,21 +435,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_drop::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_drop::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_down {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnPointerDown",
@@ -572,18 +456,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerDown",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerDown",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_down(
@@ -595,21 +476,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_down::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_down::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_up {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnPointerUp",
@@ -621,18 +497,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerUp",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerUp",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_up(
@@ -644,21 +517,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_up::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_up::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_pointer_click {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnPointerClick",
@@ -670,18 +538,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnPointerClick",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnPointerClick",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_pointer_click(
@@ -693,21 +558,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_pointer_click::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_pointer_click::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_select {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnSelect",
@@ -719,18 +579,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnSelect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnSelect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_select(
@@ -738,25 +595,17 @@ mod __EventTrigger_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventTrigger,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_select::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventTrigger, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_select::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_deselect {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnDeselect",
@@ -768,18 +617,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnDeselect",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnDeselect",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_deselect(
@@ -787,25 +633,17 @@ mod __EventTrigger_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventTrigger,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_deselect::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventTrigger, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_deselect::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_scroll {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnScroll",
@@ -817,18 +655,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnScroll",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnScroll",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_scroll(
@@ -840,44 +675,30 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_scroll::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_scroll::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_move {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <EventTrigger as ::unity2::ClassIdentity>::class(),
-                "OnMove",
-                1,
-                param_types,
-                false,
-            )
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::axiseventdata::AxisEventData as ::unity2::IlType>::il_type()];
+            ::unity2::lookup::method_info_on_class_with_signature(<EventTrigger as ::unity2::ClassIdentity>::class(), "OnMove", 1, param_types, false)
         });
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnMove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnMove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_move(
@@ -885,25 +706,17 @@ mod __EventTrigger_unity2_raw {
         event_data: crate::unity_engine::event_systems::axiseventdata::AxisEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventTrigger,
-            crate::unity_engine::event_systems::axiseventdata::AxisEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_move::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventTrigger, crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_move::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_update_selected {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnUpdateSelected",
@@ -915,18 +728,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnUpdateSelected",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnUpdateSelected",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_update_selected(
@@ -934,25 +744,17 @@ mod __EventTrigger_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventTrigger,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_update_selected::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventTrigger, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_update_selected::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_initialize_potential_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnInitializePotentialDrag",
@@ -964,18 +766,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnInitializePotentialDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnInitializePotentialDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_initialize_potential_drag(
@@ -987,21 +786,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_initialize_potential_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_initialize_potential_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_begin_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnBeginDrag",
@@ -1013,18 +807,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnBeginDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnBeginDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_begin_drag(
@@ -1036,21 +827,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_begin_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_begin_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_end_drag {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::pointereventdata::PointerEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnEndDrag",
@@ -1062,18 +848,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnEndDrag",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnEndDrag",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_end_drag(
@@ -1085,21 +868,16 @@ mod __EventTrigger_unity2_raw {
             EventTrigger,
             crate::unity_engine::event_systems::pointereventdata::PointerEventData,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_end_drag::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_on_end_drag::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_submit {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnSubmit",
@@ -1111,18 +889,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnSubmit",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnSubmit",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_submit(
@@ -1130,25 +905,17 @@ mod __EventTrigger_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventTrigger,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_submit::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventTrigger, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_submit::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_on_cancel {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger as ::unity2::ClassIdentity>::class(),
                 "OnCancel",
@@ -1160,18 +927,15 @@ mod __EventTrigger_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger as ::unity2::ClassIdentity>::NAME,
-                    "OnCancel",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger as ::unity2::ClassIdentity>::NAME,
+                        "OnCancel",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn on_cancel(
@@ -1179,15 +943,8 @@ mod __EventTrigger_unity2_raw {
         event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            EventTrigger,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_on_cancel::get_offset() as isize),
-        );
+        let inner: extern "C" fn(EventTrigger, crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_on_cancel::get_method_info().method_ptr);
         inner(this, event_data, __unity2_method_info)
     }
 }
@@ -1197,13 +954,9 @@ pub trait IEventTriggerMethods: IEventTrigger {
     #[doc = "`get_delegates()` overload"]
     fn get_delegates(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventTrigger_unity2_raw::get_delegates(__receiver, ::core::option::Option::None)
         }
     }
@@ -1211,41 +964,27 @@ pub trait IEventTriggerMethods: IEventTrigger {
     fn set_delegates(
         self,
         value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::set_delegates(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::set_delegates(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventTrigger_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`get_triggers()` overload"]
     fn get_triggers(
         self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-    > {
+    ) -> crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventTrigger_unity2_raw::get_triggers(__receiver, ::core::option::Option::None)
         }
     }
@@ -1253,36 +992,22 @@ pub trait IEventTriggerMethods: IEventTrigger {
     fn set_triggers(
         self,
         value: impl ::core::convert::Into<
-            crate::system::collections::generic::list_1::List_1<
-                crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry,
-            >,
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry>,
         >,
     ) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::set_triggers(
-                __receiver,
-                ::core::convert::Into::into(value),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::set_triggers(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)
         }
     }
     #[doc = "`Execute(crate::unity_engine::event_systems::eventtriggertype::EventTriggerType, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
     fn execute(
         self,
-        id: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::eventtriggertype::EventTriggerType,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
+        id: impl ::core::convert::Into<crate::unity_engine::event_systems::eventtriggertype::EventTriggerType>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
     ) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventTrigger_unity2_raw::execute(
                 __receiver,
                 ::core::convert::Into::into(id),
@@ -1292,309 +1017,125 @@ pub trait IEventTriggerMethods: IEventTrigger {
         }
     }
     #[doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_enter(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_enter(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_pointer_enter(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_pointer_enter(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_exit(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_exit(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_pointer_exit(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_pointer_exit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDrop(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_drop(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_drop(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_drop(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_drop(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_down(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_down(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_pointer_down(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_up(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_up(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_pointer_up(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_pointer_up(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_pointer_click(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_pointer_click(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_pointer_click(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_select(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_select(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_select(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_select(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_deselect(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_deselect(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_deselect(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_scroll(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_scroll(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_scroll(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_scroll(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]
-    fn on_move(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::axiseventdata::AxisEventData,
-        >,
-    ) -> () {
+    fn on_move(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_move(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_update_selected(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_update_selected(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_update_selected(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_update_selected(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
     fn on_initialize_potential_drag(
         self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>,
     ) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_initialize_potential_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_initialize_potential_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_begin_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_begin_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_begin_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    fn on_end_drag(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-        >,
-    ) -> () {
+    fn on_end_drag(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_end_drag(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_end_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_submit(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_submit(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_submit(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
     #[doc = "`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    fn on_cancel(
-        self,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
+    fn on_cancel(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
         unsafe {
-            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __EventTrigger_unity2_raw::on_cancel(
-                __receiver,
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
+            let __receiver = <EventTrigger as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __EventTrigger_unity2_raw::on_cancel(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)
         }
     }
 }
@@ -1606,13 +1147,8 @@ impl<__T: IEventTrigger> IEventTriggerMethods for __T {}
 impl EventTrigger {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventTrigger),
-                ::core::stringify!(new),
-            )
-        });
+        let this = <Self as ::unity2::FromIlInstance>::instantiate()
+            .unwrap_or_else(|| panic!("{}::{} failed to instantiate", ::core::stringify!(EventTrigger), ::core::stringify!(new),));
         <Self as IEventTriggerMethods>::ctor(this);
         this
     }
@@ -1627,9 +1163,7 @@ mod __EventTrigger_Entry_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger_Entry as ::unity2::ClassIdentity>::class(),
@@ -1642,30 +1176,20 @@ mod __EventTrigger_Entry_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger_Entry as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger_Entry as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: EventTrigger_Entry,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: EventTrigger_Entry, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(EventTrigger_Entry, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1675,9 +1199,7 @@ pub trait IEventTrigger_EntryMethods: IEventTrigger_Entry {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <EventTrigger_Entry as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <EventTrigger_Entry as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventTrigger_Entry_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1711,9 +1233,7 @@ mod __EventTrigger_TriggerEvent_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <EventTrigger_TriggerEvent as ::unity2::ClassIdentity>::class(),
@@ -1726,30 +1246,20 @@ mod __EventTrigger_TriggerEvent_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <EventTrigger_TriggerEvent as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <EventTrigger_TriggerEvent as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: EventTrigger_TriggerEvent,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: EventTrigger_TriggerEvent, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(EventTrigger_TriggerEvent, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -1760,9 +1270,7 @@ pub trait IEventTrigger_TriggerEventMethods: IEventTrigger_TriggerEvent {
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <EventTrigger_TriggerEvent as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
+                <EventTrigger_TriggerEvent as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __EventTrigger_TriggerEvent_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1790,34 +1298,32 @@ impl EventTrigger_TriggerEvent {
 #[cfg(feature = "unity_engine-event_systems-eventtrigger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventTrigger;
-    pub use super::EventTrigger_Entry;
-    pub use super::EventTrigger_TriggerEvent;
-    pub use super::IEventTrigger;
-    pub use super::IEventTriggerMethods;
-    pub use super::IEventTrigger_Entry;
-    pub use super::IEventTrigger_EntryMethods;
-    pub use super::IEventTrigger_TriggerEvent;
-    pub use super::IEventTrigger_TriggerEventMethods;
-    pub use crate::system::object::IObject;
+    pub use super::{
+        EventTrigger, EventTrigger_Entry, EventTrigger_TriggerEvent, IEventTrigger, IEventTriggerMethods, IEventTrigger_Entry,
+        IEventTrigger_EntryMethods, IEventTrigger_TriggerEvent, IEventTrigger_TriggerEventMethods,
+    };
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::unity_engine::behaviour::IBehaviour;
     #[cfg(feature = "unity_engine-behaviour")]
     pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    pub use crate::unity_engine::component::IComponent;
     #[cfg(feature = "unity_engine-component")]
     pub use crate::unity_engine::component::IComponentMethods;
-    pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
     #[cfg(feature = "unity_engine-events-unityevent_1")]
     pub use crate::unity_engine::events::unityevent_1::IUnityEvent_1Methods;
-    pub use crate::unity_engine::events::unityeventbase::IUnityEventBase;
     #[cfg(feature = "unity_engine-events-unityeventbase")]
     pub use crate::unity_engine::events::unityeventbase::IUnityEventBaseMethods;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
     #[cfg(feature = "unity_engine-monobehaviour")]
     pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    pub use crate::unity_engine::object_2::IObject_2;
     #[cfg(feature = "unity_engine-object_2")]
     pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            events::{unityevent_1::IUnityEvent_1, unityeventbase::IUnityEventBase},
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+        },
+    };
 }

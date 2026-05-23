@@ -2,16 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/builtinruntimereflectionsystem/BuiltinRuntimeReflectionSystem.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering",
-        name = "BuiltinRuntimeReflectionSystem"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering", name = "BuiltinRuntimeReflectionSystem")]
     #[parent(crate::system::object::Object)]
     pub struct BuiltinRuntimeReflectionSystem {}
 }
@@ -28,9 +25,7 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_tick_realtime_probes {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
@@ -43,39 +38,27 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    "TickRealtimeProbes",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        "TickRealtimeProbes",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn tick_realtime_probes(
-        this: BuiltinRuntimeReflectionSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn tick_realtime_probes(this: BuiltinRuntimeReflectionSystem, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_tick_realtime_probes::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_tick_realtime_probes::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
@@ -88,41 +71,28 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose(
-        this: BuiltinRuntimeReflectionSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn dispose(this: BuiltinRuntimeReflectionSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_dispose::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_dispose::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_dispose_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<bool as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<bool as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
                 "Dispose",
@@ -134,43 +104,27 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    "Dispose",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        "Dispose",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn dispose_2(
-        this: BuiltinRuntimeReflectionSystem,
-        disposing: bool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            BuiltinRuntimeReflectionSystem,
-            bool,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_dispose_2::get_offset() as isize),
-        );
+    pub unsafe fn dispose_2(this: BuiltinRuntimeReflectionSystem, disposing: bool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(BuiltinRuntimeReflectionSystem, bool, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_dispose_2::get_method_info().method_ptr);
         inner(this, disposing, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_builtin_update {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
@@ -183,35 +137,26 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    "BuiltinUpdate",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        "BuiltinUpdate",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn builtin_update(__unity2_method_info: ::unity2::OptionalMethod) -> bool {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_builtin_update::get_offset() as isize),
-        );
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> bool = ::core::mem::transmute(__lookup_builtin_update::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_internal_builtin_runtime_reflection_system_new {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
@@ -224,30 +169,32 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    "Internal_BuiltinRuntimeReflectionSystem_New",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        "Internal_BuiltinRuntimeReflectionSystem_New",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn internal_builtin_runtime_reflection_system_new (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: builtinruntimereflectionsystem :: BuiltinRuntimeReflectionSystem{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: builtinruntimereflectionsystem :: BuiltinRuntimeReflectionSystem = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_internal_builtin_runtime_reflection_system_new :: get_offset () as isize) ,) ;
+    }
+    pub unsafe fn internal_builtin_runtime_reflection_system_new(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::experimental::rendering::builtinruntimereflectionsystem::BuiltinRuntimeReflectionSystem {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        )
+            -> crate::unity_engine::experimental::rendering::builtinruntimereflectionsystem::BuiltinRuntimeReflectionSystem =
+            ::core::mem::transmute(__lookup_internal_builtin_runtime_reflection_system_new::get_method_info().method_ptr);
         inner(__unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::class(),
@@ -260,30 +207,20 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <BuiltinRuntimeReflectionSystem as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: BuiltinRuntimeReflectionSystem,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: BuiltinRuntimeReflectionSystem, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -292,16 +229,13 @@ mod __BuiltinRuntimeReflectionSystem_unity2_raw {
 impl BuiltinRuntimeReflectionSystem {
     #[doc = "`BuiltinUpdate()` overload"]
     pub fn builtin_update() -> bool {
-        unsafe {
-            __BuiltinRuntimeReflectionSystem_unity2_raw::builtin_update(
-                ::core::option::Option::None,
-            )
-        }
+        unsafe { __BuiltinRuntimeReflectionSystem_unity2_raw::builtin_update(::core::option::Option::None) }
     }
-    #[doc = "`Internal_BuiltinRuntimeReflectionSystem_New()` overload"]    pub fn internal_builtin_runtime_reflection_system_new () -> crate :: unity_engine :: experimental :: rendering :: builtinruntimereflectionsystem :: BuiltinRuntimeReflectionSystem{
-        unsafe {
-            __BuiltinRuntimeReflectionSystem_unity2_raw :: internal_builtin_runtime_reflection_system_new (:: core :: option :: Option :: None)
-        }
+
+    #[doc = "`Internal_BuiltinRuntimeReflectionSystem_New()` overload"]
+    pub fn internal_builtin_runtime_reflection_system_new(
+    ) -> crate::unity_engine::experimental::rendering::builtinruntimereflectionsystem::BuiltinRuntimeReflectionSystem {
+        unsafe { __BuiltinRuntimeReflectionSystem_unity2_raw::internal_builtin_runtime_reflection_system_new(::core::option::Option::None) }
     }
 }
 
@@ -311,53 +245,32 @@ pub trait IBuiltinRuntimeReflectionSystemMethods: IBuiltinRuntimeReflectionSyste
     fn tick_realtime_probes(self) -> bool {
         unsafe {
             let __receiver =
-                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BuiltinRuntimeReflectionSystem_unity2_raw::tick_realtime_probes(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuiltinRuntimeReflectionSystem_unity2_raw::tick_realtime_probes(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose()` overload"]
     fn dispose(self) -> () {
         unsafe {
             let __receiver =
-                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BuiltinRuntimeReflectionSystem_unity2_raw::dispose(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuiltinRuntimeReflectionSystem_unity2_raw::dispose(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`Dispose(bool)` overload"]
     fn dispose_2(self, disposing: impl ::core::convert::Into<bool>) -> () {
         unsafe {
             let __receiver =
-                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BuiltinRuntimeReflectionSystem_unity2_raw::dispose_2(
-                __receiver,
-                ::core::convert::Into::into(disposing),
-                ::core::option::Option::None,
-            )
+                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuiltinRuntimeReflectionSystem_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
             let __receiver =
-                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(
-                    <Self as ::unity2::SystemObject>::as_instance(self),
-                );
-            __BuiltinRuntimeReflectionSystem_unity2_raw::ctor(
-                __receiver,
-                ::core::option::Option::None,
-            )
+                <BuiltinRuntimeReflectionSystem as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __BuiltinRuntimeReflectionSystem_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
 }
@@ -384,9 +297,7 @@ impl BuiltinRuntimeReflectionSystem {
 #[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BuiltinRuntimeReflectionSystem;
-    pub use super::IBuiltinRuntimeReflectionSystem;
-    pub use super::IBuiltinRuntimeReflectionSystemMethods;
+    pub use super::{BuiltinRuntimeReflectionSystem, IBuiltinRuntimeReflectionSystem, IBuiltinRuntimeReflectionSystemMethods};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

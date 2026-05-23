@@ -2,2520 +2,124 @@
 
 #[cfg(feature = "unity_engine-event_systems-executeevents-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::delegate::{Delegate, IDelegate};
-    use crate::system::multicastdelegate::{IMulticastDelegate, MulticastDelegate};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
+
+    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents_EventFunction_1.md"))]
+    #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "ExecuteEvents.EventFunction`1")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    #[parent(crate::system::delegate::Delegate)]
+    #[parent(crate::system::object::Object)]
+    pub struct ExecuteEvents_EventFunction_1<T0: ::unity2::ClassIdentity> {}
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents.md"))]
     #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "ExecuteEvents")]
     #[parent(crate::system::object::Object)]
     pub struct ExecuteEvents {
-# [static_field] # [rename (name = "s_PointerEnterHandler")] pub s_pointer_enter_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerenterhandler :: IPointerEnterHandler > ,
-# [static_field] # [rename (name = "s_PointerExitHandler")] pub s_pointer_exit_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerexithandler :: IPointerExitHandler > ,
-# [static_field] # [rename (name = "s_PointerDownHandler")] pub s_pointer_down_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerdownhandler :: IPointerDownHandler > ,
-# [static_field] # [rename (name = "s_PointerUpHandler")] pub s_pointer_up_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointeruphandler :: IPointerUpHandler > ,
-# [static_field] # [rename (name = "s_PointerClickHandler")] pub s_pointer_click_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerclickhandler :: IPointerClickHandler > ,
-# [static_field] # [rename (name = "s_InitializePotentialDragHandler")] pub s_initialize_potential_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler > ,
-# [static_field] # [rename (name = "s_BeginDragHandler")] pub s_begin_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ibegindraghandler :: IBeginDragHandler > ,
-# [static_field] # [rename (name = "s_DragHandler")] pub s_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: idraghandler :: IDragHandler > ,
-# [static_field] # [rename (name = "s_EndDragHandler")] pub s_end_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ienddraghandler :: IEndDragHandler > ,
-# [static_field] # [rename (name = "s_DropHandler")] pub s_drop_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: idrophandler :: IDropHandler > ,
-# [static_field] # [rename (name = "s_ScrollHandler")] pub s_scroll_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iscrollhandler :: IScrollHandler > ,
-# [static_field] # [rename (name = "s_UpdateSelectedHandler")] pub s_update_selected_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iupdateselectedhandler :: IUpdateSelectedHandler > ,
-# [static_field] # [rename (name = "s_SelectHandler")] pub s_select_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iselecthandler :: ISelectHandler > ,
-# [static_field] # [rename (name = "s_DeselectHandler")] pub s_deselect_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ideselecthandler :: IDeselectHandler > ,
-# [static_field] # [rename (name = "s_MoveHandler")] pub s_move_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: imovehandler :: IMoveHandler > ,
-# [static_field] # [rename (name = "s_SubmitHandler")] pub s_submit_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: isubmithandler :: ISubmitHandler > ,
-# [static_field] # [rename (name = "s_CancelHandler")] pub s_cancel_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: icancelhandler :: ICancelHandler > ,
-# [static_field] # [rename (name = "s_HandlerListPool")] pub s_handler_list_pool : crate :: unity_engine :: ui :: objectpool_1 :: ObjectPool_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: ieventsystemhandler :: IEventSystemHandler > > ,
-# [static_field] # [rename (name = "s_InternalTransformList")] pub s_internal_transform_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: transform :: Transform > ,
-}
-
-    # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents_EventFunction_1.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.EventSystems",
-        name = "ExecuteEvents.EventFunction`1"
-    )]
-    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-    #[parent(crate::system::delegate::Delegate)]
-    #[parent(crate::system::object::Object)]
-    pub struct ExecuteEvents_EventFunction_1<T0: ::unity2::ClassIdentity> {}
+        #[static_field]
+        #[rename(name = "s_PointerEnterHandler")]
+        pub s_pointer_enter_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_PointerExitHandler")]
+        pub s_pointer_exit_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_PointerDownHandler")]
+        pub s_pointer_down_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_PointerUpHandler")]
+        pub s_pointer_up_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_PointerClickHandler")]
+        pub s_pointer_click_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_InitializePotentialDragHandler")]
+        pub s_initialize_potential_drag_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_BeginDragHandler")]
+        pub s_begin_drag_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_DragHandler")]
+        pub s_drag_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::idraghandler::IDragHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_EndDragHandler")]
+        pub s_end_drag_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_DropHandler")]
+        pub s_drop_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::idrophandler::IDropHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_ScrollHandler")]
+        pub s_scroll_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_UpdateSelectedHandler")]
+        pub s_update_selected_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_SelectHandler")]
+        pub s_select_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_DeselectHandler")]
+        pub s_deselect_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_MoveHandler")]
+        pub s_move_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_SubmitHandler")]
+        pub s_submit_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_CancelHandler")]
+        pub s_cancel_handler: crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+        >,
+        #[static_field]
+        #[rename(name = "s_HandlerListPool")]
+        pub s_handler_list_pool: crate::unity_engine::ui::objectpool_1::ObjectPool_1<
+            crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::ieventsystemhandler::IEventSystemHandler>,
+        >,
+        #[static_field]
+        #[rename(name = "s_InternalTransformList")]
+        pub s_internal_transform_list: crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform>,
+    }
 }
 
 #[cfg(feature = "unity_engine-event_systems-executeevents-types")]
 pub use __types::*;
-
-#[cfg(feature = "unity_engine-event_systems-executeevents")]
-#[doc(hidden)]
-#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
-mod __ExecuteEvents_unity2_raw {
-    use super::*;
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ipointerenterhandler :: IPointerEnterHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute(
-        handler: crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_2 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ipointerexithandler :: IPointerExitHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_2(
-        handler: crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_2::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_3 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ipointerdownhandler :: IPointerDownHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_3(
-        handler: crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_3::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_4 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ipointeruphandler :: IPointerUpHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_4(
-        handler: crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_4::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_5 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ipointerclickhandler :: IPointerClickHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_5(
-        handler: crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_5::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_6 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_6(
-        handler : crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner : extern "C" fn (crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_execute_6 :: get_offset () as isize) ,) ;
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_7 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ibegindraghandler :: IBeginDragHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_7(
-        handler: crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_7::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_8 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: idraghandler :: IDragHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_8(
-        handler: crate::unity_engine::event_systems::idraghandler::IDragHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::idraghandler::IDragHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_8::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_9 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ienddraghandler :: IEndDragHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_9(
-        handler: crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_9::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_10 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: idrophandler :: IDropHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_10(
-        handler: crate::unity_engine::event_systems::idrophandler::IDropHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::idrophandler::IDropHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_10::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_11 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: iscrollhandler :: IScrollHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_11(
-        handler: crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_11::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_12 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: iupdateselectedhandler :: IUpdateSelectedHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_12(
-        handler: crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_12::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_13 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: iselecthandler :: ISelectHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_13(
-        handler: crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_13::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_14 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: ideselecthandler :: IDeselectHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_14(
-        handler: crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_14::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_15 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: imovehandler :: IMoveHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_15(
-        handler: crate::unity_engine::event_systems::imovehandler::IMoveHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::imovehandler::IMoveHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_15::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_16 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: isubmithandler :: ISubmitHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_16(
-        handler: crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_16::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_execute_17 {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: event_systems :: icancelhandler :: ICancelHandler as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData as :: unity2 :: IlType > :: il_type ()] ;
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "Execute",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn execute_17(
-        handler: crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_execute_17::get_offset() as isize),
-        );
-        inner(handler, event_data, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pointer_enter_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_pointerEnterHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_pointerEnterHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pointer_enter_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerenterhandler :: IPointerEnterHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_pointer_enter_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pointer_exit_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_pointerExitHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_pointerExitHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pointer_exit_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerexithandler :: IPointerExitHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_pointer_exit_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pointer_down_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_pointerDownHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_pointerDownHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pointer_down_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerdownhandler :: IPointerDownHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_pointer_down_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pointer_up_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_pointerUpHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_pointerUpHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pointer_up_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointeruphandler :: IPointerUpHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_pointer_up_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_pointer_click_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_pointerClickHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_pointerClickHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_pointer_click_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerclickhandler :: IPointerClickHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_pointer_click_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_initialize_potential_drag {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_initializePotentialDrag",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_initializePotentialDrag",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }    pub unsafe fn get_initialize_potential_drag (__unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler >{
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_initialize_potential_drag :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_begin_drag_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_beginDragHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_beginDragHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_begin_drag_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ibegindraghandler :: IBeginDragHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_begin_drag_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_drag_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_dragHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_dragHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_drag_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::idraghandler::IDragHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: idraghandler :: IDragHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_drag_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_end_drag_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_endDragHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_endDragHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_end_drag_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ienddraghandler :: IEndDragHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_end_drag_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_drop_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_dropHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_dropHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_drop_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::idrophandler::IDropHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: idrophandler :: IDropHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_drop_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_scroll_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_scrollHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_scrollHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_scroll_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iscrollhandler :: IScrollHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_scroll_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_update_selected_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_updateSelectedHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_updateSelectedHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_update_selected_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iupdateselectedhandler :: IUpdateSelectedHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_update_selected_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_select_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_selectHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_selectHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_select_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iselecthandler :: ISelectHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_select_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_deselect_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_deselectHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_deselectHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_deselect_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ideselecthandler :: IDeselectHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_deselect_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_move_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_moveHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_moveHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_move_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::imovehandler::IMoveHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: imovehandler :: IMoveHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_move_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_submit_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_submitHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_submitHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_submit_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: isubmithandler :: ISubmitHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_submit_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_cancel_handler {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "get_cancelHandler",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "get_cancelHandler",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_cancel_handler(
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
-    > {
-        let inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: icancelhandler :: ICancelHandler > = :: core :: mem :: transmute ((unsafe { :: skyline :: hooks :: getRegionAddress (:: skyline :: hooks :: Region :: Text) } as * const u8) . offset (__lookup_get_cancel_handler :: get_offset () as isize) ,) ;
-        inner(__unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_get_event_chain {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
-                <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                    crate::unity_engine::transform::Transform,
-                > as ::unity2::IlType>::il_type(),
-            ];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "GetEventChain",
-                2,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    "GetEventChain",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn get_event_chain(
-        root: crate::unity_engine::gameobject::GameObject,
-        event_chain: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-            crate::unity_engine::transform::Transform,
-        >,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            crate::unity_engine::gameobject::GameObject,
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::transform::Transform,
-            >,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_event_chain::get_offset() as isize),
-        );
-        inner(root, event_chain, __unity2_method_info)
-    }
-    #[doc(hidden)]
-    #[allow(non_snake_case)]
-    pub mod __lookup_cctor {
-        use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
-            ::unity2::lookup::method_info_on_class_with_signature(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                ".cctor",
-                0,
-                param_types,
-                true,
-            )
-        });
-        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
-            match &*METHOD {
-                ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                    ".cctor",
-                    e
-                ),
-            }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
-    }
-    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
-        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_cctor::get_offset() as isize),
-        );
-        inner(__unity2_method_info)
-    }
-}
-
-#[cfg(feature = "unity_engine-event_systems-executeevents")]
-impl ExecuteEvents {
-    pub fn validate_event_data<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> M0 {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "ValidateEventData",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "ValidateEventData",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-                ::unity2::OptionalMethod,
-            ) -> M0 = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(data),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_2(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_2(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_3(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_3(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_4(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_4(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_5(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_5(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_6(
-        handler : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_6(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_7(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_7(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::idraghandler::IDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_8(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::idraghandler::IDragHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_8(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_9(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_9(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::idrophandler::IDropHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_10(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::idrophandler::IDropHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_10(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::iscrollhandler::IScrollHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_11(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_11(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_12(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_12(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::iselecthandler::ISelectHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_13(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_13(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_14(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_14(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::imovehandler::IMoveHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_15(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::imovehandler::IMoveHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_15(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::isubmithandler::ISubmitHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_16(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_16(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`Execute(crate::unity_engine::event_systems::icancelhandler::ICancelHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    pub fn execute_17(
-        handler: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
-        >,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::execute_17(
-                ::core::convert::Into::into(handler),
-                ::core::convert::Into::into(event_data),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    #[doc = "`get_pointerEnterHandler()` overload"]
-    pub fn get_pointer_enter_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
-    > {
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_pointer_enter_handler(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_pointerExitHandler()` overload"]
-    pub fn get_pointer_exit_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
-    > {
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_pointer_exit_handler(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_pointerDownHandler()` overload"]
-    pub fn get_pointer_down_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
-    > {
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_pointer_down_handler(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_pointerUpHandler()` overload"]
-    pub fn get_pointer_up_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_pointer_up_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_pointerClickHandler()` overload"]
-    pub fn get_pointer_click_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
-    > {
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_pointer_click_handler(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_initializePotentialDrag()` overload"]    pub fn get_initialize_potential_drag () -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler >{
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_initialize_potential_drag(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_beginDragHandler()` overload"]
-    pub fn get_begin_drag_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_begin_drag_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_dragHandler()` overload"]
-    pub fn get_drag_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::idraghandler::IDragHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_drag_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_endDragHandler()` overload"]
-    pub fn get_end_drag_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_end_drag_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_dropHandler()` overload"]
-    pub fn get_drop_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::idrophandler::IDropHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_drop_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_scrollHandler()` overload"]
-    pub fn get_scroll_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_scroll_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_updateSelectedHandler()` overload"]
-    pub fn get_update_selected_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
-    > {
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_update_selected_handler(::core::option::Option::None)
-        }
-    }
-    #[doc = "`get_selectHandler()` overload"]
-    pub fn get_select_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_select_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_deselectHandler()` overload"]
-    pub fn get_deselect_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_deselect_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_moveHandler()` overload"]
-    pub fn get_move_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::imovehandler::IMoveHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_move_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_submitHandler()` overload"]
-    pub fn get_submit_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_submit_handler(::core::option::Option::None) }
-    }
-    #[doc = "`get_cancelHandler()` overload"]
-    pub fn get_cancel_handler(
-    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
-        crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
-    > {
-        unsafe { __ExecuteEvents_unity2_raw::get_cancel_handler(::core::option::Option::None) }
-    }
-    #[doc = "`GetEventChain(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::transform::Transform>)` overload"]
-    pub fn get_event_chain(
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        event_chain: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::transform::Transform,
-            >,
-        >,
-    ) -> () {
-        unsafe {
-            __ExecuteEvents_unity2_raw::get_event_chain(
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(event_chain),
-                ::core::option::Option::None,
-            )
-        }
-    }
-    pub fn execute_18<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-        functor: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>,
-        >,
-    ) -> bool {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "Execute",
-                3,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "Execute",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::gameobject::GameObject,
-                crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-                crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>,
-                ::unity2::OptionalMethod,
-            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(target),
-                ::core::convert::Into::into(event_data),
-                ::core::convert::Into::into(functor),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn execute_hierarchy<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        event_data: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-        >,
-        callback_function: impl ::core::convert::Into<
-            crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>,
-        >,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "ExecuteHierarchy",
-                3,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "ExecuteHierarchy",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::gameobject::GameObject,
-                crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-                crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>,
-                ::unity2::OptionalMethod,
-            ) -> crate::unity_engine::gameobject::GameObject =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(root),
-                ::core::convert::Into::into(event_data),
-                ::core::convert::Into::into(callback_function),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn should_send_to_component<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        component: impl ::core::convert::Into<crate::unity_engine::component::Component>,
-    ) -> bool {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "ShouldSendToComponent",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "ShouldSendToComponent",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::component::Component,
-                ::unity2::OptionalMethod,
-            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(component),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn get_event_list<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-        results: impl ::core::convert::Into<
-            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                crate::unity_engine::event_systems::ieventsystemhandler::IEventSystemHandler,
-            >,
-        >,
-    ) -> () {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "GetEventList",
-                2,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "GetEventList",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::gameobject::GameObject,
-                crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
-                    crate::unity_engine::event_systems::ieventsystemhandler::IEventSystemHandler,
-                >,
-                ::unity2::OptionalMethod,
-            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(go),
-                ::core::convert::Into::into(results),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn can_handle_event<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> bool {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "CanHandleEvent",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "CanHandleEvent",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::gameobject::GameObject,
-                ::unity2::OptionalMethod,
-            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(go),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    pub fn get_event_handler<
-        M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity,
-    >(
-        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
-    ) -> crate::unity_engine::gameobject::GameObject {
-        static OPEN: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            ::unity2::lookup::method_info_on_class(
-                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
-                "GetEventHandler",
-                1,
-            )
-        });
-        #[allow(clippy::type_complexity)]
-        static CACHE: ::std::sync::OnceLock<
-            ::std::sync::Mutex<
-                ::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>,
-            >,
-        > = ::std::sync::OnceLock::new();
-        let _ = true;
-        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
-            ::core::result::Result::Ok(mi) => *mi,
-            ::core::result::Result::Err(e) => panic!(
-                "method lookup failed: {}::{}: {}",
-                <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
-                "GetEventHandler",
-                e
-            ),
-        };
-        let __cache =
-            CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
-        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
-        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
-            let mut __guard = __cache.lock().unwrap();
-            *__guard.entry(__key).or_insert_with(|| {
-                ::unity2::il2cpp::generic::create_generic_method_info(
-                    __open,
-                    &[<M0 as ::unity2::IlType>::il_type()],
-                )
-            })
-        };
-        unsafe {
-            let __f: extern "C" fn(
-                crate::unity_engine::gameobject::GameObject,
-                ::unity2::OptionalMethod,
-            ) -> crate::unity_engine::gameobject::GameObject =
-                ::core::mem::transmute(__inflated.method_ptr);
-            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
-            __f(
-                ::core::convert::Into::into(root),
-                ::core::option::Option::Some(__mi_opaque),
-            )
-        }
-    }
-    #[doc = "`.cctor()` overload"]
-    pub fn cctor() -> () {
-        unsafe { __ExecuteEvents_unity2_raw::cctor(::core::option::Option::None) }
-    }
-}
 
 #[cfg(feature = "unity_engine-event_systems-executeevents")]
 #[::unity2::methods]
@@ -2526,11 +130,7 @@ impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
 
     #[doc = "`Invoke(T0, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
     #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        handler: T0,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-    ) -> ();
+    pub fn invoke(self, handler: T0, event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData) -> ();
 }
 
 #[cfg(feature = "unity_engine-event_systems-executeevents")]
@@ -2551,19 +151,2176 @@ impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
 
 #[cfg(feature = "unity_engine-event_systems-executeevents")]
 #[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ExecuteEvents_unity2_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute(
+        handler: crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_2 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_2(
+        handler: crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_2::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_3 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_3(
+        handler: crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_3::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_4 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_4(
+        handler: crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_4::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_5 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_5(
+        handler: crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_5::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_6 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_6(
+        handler: crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_6::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_7 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_7(
+        handler: crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_7::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_8 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::idraghandler::IDragHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_8(
+        handler: crate::unity_engine::event_systems::idraghandler::IDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::idraghandler::IDragHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_8::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_9 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_9(
+        handler: crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_9::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_10 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::idrophandler::IDropHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_10(
+        handler: crate::unity_engine::event_systems::idrophandler::IDropHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::idrophandler::IDropHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_10::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_11 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::iscrollhandler::IScrollHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_11(
+        handler: crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_11::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_12 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_12(
+        handler: crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_12::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_13 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::iselecthandler::ISelectHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_13(
+        handler: crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_13::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_14 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_14(
+        handler: crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_14::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_15 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::imovehandler::IMoveHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_15(
+        handler: crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_15::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_16 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::isubmithandler::ISubmitHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_16(
+        handler: crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_16::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_execute_17 {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::event_systems::icancelhandler::ICancelHandler as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::event_systems::baseeventdata::BaseEventData as ::unity2::IlType>::il_type(),
+            ];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "Execute",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "Execute",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn execute_17(
+        handler: crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_execute_17::get_method_info().method_ptr);
+        inner(handler, event_data, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pointer_enter_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_pointerEnterHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_pointerEnterHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pointer_enter_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+        > = ::core::mem::transmute(__lookup_get_pointer_enter_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pointer_exit_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_pointerExitHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_pointerExitHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pointer_exit_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+        > = ::core::mem::transmute(__lookup_get_pointer_exit_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pointer_down_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_pointerDownHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_pointerDownHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pointer_down_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+        > = ::core::mem::transmute(__lookup_get_pointer_down_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pointer_up_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_pointerUpHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_pointerUpHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pointer_up_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+        > = ::core::mem::transmute(__lookup_get_pointer_up_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_pointer_click_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_pointerClickHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_pointerClickHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_pointer_click_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+        > = ::core::mem::transmute(__lookup_get_pointer_click_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_initialize_potential_drag {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_initializePotentialDrag",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_initializePotentialDrag",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_initialize_potential_drag(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler,
+        > = ::core::mem::transmute(__lookup_get_initialize_potential_drag::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_begin_drag_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_beginDragHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_beginDragHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_begin_drag_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+        > = ::core::mem::transmute(__lookup_get_begin_drag_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_drag_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_dragHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_dragHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_drag_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::idraghandler::IDragHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::idraghandler::IDragHandler,
+        > = ::core::mem::transmute(__lookup_get_drag_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_end_drag_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_endDragHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_endDragHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_end_drag_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+        > = ::core::mem::transmute(__lookup_get_end_drag_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_drop_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_dropHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_dropHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_drop_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::idrophandler::IDropHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::idrophandler::IDropHandler,
+        > = ::core::mem::transmute(__lookup_get_drop_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_scroll_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_scrollHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_scrollHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_scroll_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+        > = ::core::mem::transmute(__lookup_get_scroll_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_update_selected_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_updateSelectedHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_updateSelectedHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_update_selected_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+        > = ::core::mem::transmute(__lookup_get_update_selected_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_select_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_selectHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_selectHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_select_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+        > = ::core::mem::transmute(__lookup_get_select_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_deselect_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_deselectHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_deselectHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_deselect_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+        > = ::core::mem::transmute(__lookup_get_deselect_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_move_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_moveHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_moveHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_move_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+        > = ::core::mem::transmute(__lookup_get_move_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_submit_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_submitHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_submitHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_submit_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+        > = ::core::mem::transmute(__lookup_get_submit_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_cancel_handler {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "get_cancelHandler",
+                0,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "get_cancelHandler",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_cancel_handler(
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+    > {
+        let inner: extern "C" fn(
+            ::unity2::OptionalMethod,
+        ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+            crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+        > = ::core::mem::transmute(__lookup_get_cancel_handler::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_event_chain {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: transform :: Transform > as :: unity2 :: IlType > :: il_type ()] ;
+            ::unity2::lookup::method_info_on_class_with_signature(
+                <ExecuteEvents as ::unity2::ClassIdentity>::class(),
+                "GetEventChain",
+                2,
+                param_types,
+                true,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        "GetEventChain",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn get_event_chain(
+        root: crate::unity_engine::gameobject::GameObject,
+        event_chain: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::transform::Transform>,
+        __unity2_method_info: ::unity2::OptionalMethod,
+    ) -> () {
+        let inner: extern "C" fn(
+            crate::unity_engine::gameobject::GameObject,
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::transform::Transform>,
+            ::unity2::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__lookup_get_event_chain::get_method_info().method_ptr);
+        inner(root, event_chain, __unity2_method_info)
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_cctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
+            ::unity2::lookup::method_info_on_class_with_signature(<ExecuteEvents as ::unity2::ClassIdentity>::class(), ".cctor", 0, param_types, true)
+        });
+        pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                        ".cctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    pub unsafe fn cctor(__unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(::unity2::OptionalMethod) -> () = ::core::mem::transmute(__lookup_cctor::get_method_info().method_ptr);
+        inner(__unity2_method_info)
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+impl ExecuteEvents {
+    pub fn validate_event_data<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> M0 {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "ValidateEventData", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "ValidateEventData",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod) -> M0 =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(data), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_2(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_2(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_3(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_3(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_4(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_4(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_5(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_5(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_6(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_6(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_7(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_7(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::idraghandler::IDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_8(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::idraghandler::IDragHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_8(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_9(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_9(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::idrophandler::IDropHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_10(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::idrophandler::IDropHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_10(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::iscrollhandler::IScrollHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_11(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::iscrollhandler::IScrollHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_11(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_12(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_12(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::iselecthandler::ISelectHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_13(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::iselecthandler::ISelectHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_13(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_14(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_14(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::imovehandler::IMoveHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_15(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::imovehandler::IMoveHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_15(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::isubmithandler::ISubmitHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_16(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::isubmithandler::ISubmitHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_16(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`Execute(crate::unity_engine::event_systems::icancelhandler::ICancelHandler, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    pub fn execute_17(
+        handler: impl ::core::convert::Into<crate::unity_engine::event_systems::icancelhandler::ICancelHandler>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::execute_17(
+                ::core::convert::Into::into(handler),
+                ::core::convert::Into::into(event_data),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    #[doc = "`get_pointerEnterHandler()` overload"]
+    pub fn get_pointer_enter_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_pointer_enter_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_pointerExitHandler()` overload"]
+    pub fn get_pointer_exit_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_pointer_exit_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_pointerDownHandler()` overload"]
+    pub fn get_pointer_down_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_pointer_down_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_pointerUpHandler()` overload"]
+    pub fn get_pointer_up_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_pointer_up_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_pointerClickHandler()` overload"]
+    pub fn get_pointer_click_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_pointer_click_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_initializePotentialDrag()` overload"]
+    pub fn get_initialize_potential_drag() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iinitializepotentialdraghandler::IInitializePotentialDragHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_initialize_potential_drag(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_beginDragHandler()` overload"]
+    pub fn get_begin_drag_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_begin_drag_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_dragHandler()` overload"]
+    pub fn get_drag_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::idraghandler::IDragHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_drag_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_endDragHandler()` overload"]
+    pub fn get_end_drag_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_end_drag_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_dropHandler()` overload"]
+    pub fn get_drop_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::idrophandler::IDropHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_drop_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_scrollHandler()` overload"]
+    pub fn get_scroll_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_scroll_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_updateSelectedHandler()` overload"]
+    pub fn get_update_selected_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_update_selected_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_selectHandler()` overload"]
+    pub fn get_select_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_select_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_deselectHandler()` overload"]
+    pub fn get_deselect_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_deselect_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_moveHandler()` overload"]
+    pub fn get_move_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_move_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_submitHandler()` overload"]
+    pub fn get_submit_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_submit_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`get_cancelHandler()` overload"]
+    pub fn get_cancel_handler() -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+    > {
+        unsafe { __ExecuteEvents_unity2_raw::get_cancel_handler(::core::option::Option::None) }
+    }
+
+    #[doc = "`GetEventChain(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::transform::Transform>)` overload"]
+    pub fn get_event_chain(
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        event_chain: impl ::core::convert::Into<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::transform::Transform>,
+        >,
+    ) -> () {
+        unsafe {
+            __ExecuteEvents_unity2_raw::get_event_chain(
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(event_chain),
+                ::core::option::Option::None,
+            )
+        }
+    }
+
+    pub fn execute_18<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        target: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+        functor: impl ::core::convert::Into<crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>>,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> =
+            ::std::sync::LazyLock::new(|| ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "Execute", 3));
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "Execute",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::gameobject::GameObject,
+                crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+                crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> bool = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(target),
+                ::core::convert::Into::into(event_data),
+                ::core::convert::Into::into(functor),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+
+    pub fn execute_hierarchy<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>,
+        callback_function: impl ::core::convert::Into<crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "ExecuteHierarchy", 3)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "ExecuteHierarchy",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::gameobject::GameObject,
+                crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+                crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<M0>,
+                ::unity2::OptionalMethod,
+            ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(root),
+                ::core::convert::Into::into(event_data),
+                ::core::convert::Into::into(callback_function),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+
+    pub fn should_send_to_component<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        component: impl ::core::convert::Into<crate::unity_engine::component::Component>,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "ShouldSendToComponent", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "ShouldSendToComponent",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(crate::unity_engine::component::Component, ::unity2::OptionalMethod) -> bool =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(component), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    pub fn get_event_list<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        results: impl ::core::convert::Into<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::event_systems::ieventsystemhandler::IEventSystemHandler,
+            >,
+        >,
+    ) -> () {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "GetEventList", 2)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "GetEventList",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::gameobject::GameObject,
+                crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                    crate::unity_engine::event_systems::ieventsystemhandler::IEventSystemHandler,
+                >,
+                ::unity2::OptionalMethod,
+            ) -> () = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(
+                ::core::convert::Into::into(go),
+                ::core::convert::Into::into(results),
+                ::core::option::Option::Some(__mi_opaque),
+            )
+        }
+    }
+
+    pub fn can_handle_event<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> bool {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "CanHandleEvent", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "CanHandleEvent",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod) -> bool =
+                ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(go), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    pub fn get_event_handler<M0: ::unity2::IlType + ::core::marker::Copy + ::unity2::ClassIdentity>(
+        root: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::unity_engine::gameobject::GameObject {
+        static OPEN: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            ::unity2::lookup::method_info_on_class(<ExecuteEvents as ::unity2::ClassIdentity>::class(), "GetEventHandler", 1)
+        });
+        #[allow(clippy::type_complexity)]
+        static CACHE: ::std::sync::OnceLock<::std::sync::Mutex<::std::collections::HashMap<usize, &'static ::unity2::il2cpp::MethodInfo>>> =
+            ::std::sync::OnceLock::new();
+        let _ = true;
+        let __open: &'static ::unity2::il2cpp::MethodInfo = match &*OPEN {
+            ::core::result::Result::Ok(mi) => *mi,
+            ::core::result::Result::Err(e) => {
+                panic!(
+                    "method lookup failed: {}::{}: {}",
+                    <ExecuteEvents as ::unity2::ClassIdentity>::NAME,
+                    "GetEventHandler",
+                    e
+                )
+            },
+        };
+        let __cache = CACHE.get_or_init(|| ::std::sync::Mutex::new(::std::collections::HashMap::new()));
+        let __key: usize = <M0 as ::unity2::IlType>::il_type() as *const _ as usize;
+        let __inflated: &'static ::unity2::il2cpp::MethodInfo = {
+            let mut __guard = __cache.lock().unwrap();
+            *__guard
+                .entry(__key)
+                .or_insert_with(|| ::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as ::unity2::IlType>::il_type()]))
+        };
+        unsafe {
+            let __f: extern "C" fn(
+                crate::unity_engine::gameobject::GameObject,
+                ::unity2::OptionalMethod,
+            ) -> crate::unity_engine::gameobject::GameObject = ::core::mem::transmute(__inflated.method_ptr);
+            let __mi_opaque: &'static () = &*(__inflated as *const _ as *const ());
+            __f(::core::convert::Into::into(root), ::core::option::Option::Some(__mi_opaque))
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe { __ExecuteEvents_unity2_raw::cctor(::core::option::Option::None) }
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+#[doc(hidden)]
 pub mod prelude {
-    pub use super::ExecuteEvents;
-    pub use super::ExecuteEvents_EventFunction_1;
-    pub use super::IExecuteEvents;
-    pub use super::IExecuteEvents_EventFunction_1;
-    pub use super::IExecuteEvents_EventFunction_1Methods;
-    pub use crate::system::delegate::IDelegate;
+    pub use super::{
+        ExecuteEvents, ExecuteEvents_EventFunction_1, IExecuteEvents, IExecuteEvents_EventFunction_1, IExecuteEvents_EventFunction_1Methods,
+    };
     #[cfg(feature = "system-delegate")]
     pub use crate::system::delegate::IDelegateMethods;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
     #[cfg(feature = "system-multicastdelegate")]
     pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

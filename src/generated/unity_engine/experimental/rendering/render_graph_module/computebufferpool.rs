@@ -2,26 +2,23 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: { IRenderGraphResourcePool_1 , RenderGraphResourcePool_1 }
- ;
+    use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::{
+            IRenderGraphResourcePool_1, RenderGraphResourcePool_1,
+        },
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/computebufferpool/ComputeBufferPool.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
-        name = "ComputeBufferPool"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule", name = "ComputeBufferPool")]
     # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: RenderGraphResourcePool_1 < crate :: unity_engine :: computebuffer :: ComputeBuffer >)]
     pub struct ComputeBufferPool {}
 }
 
-#[cfg(
-    feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool-types"
-)]
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool-types")]
 pub use __types::*;
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
@@ -33,12 +30,9 @@ mod __ComputeBufferPool_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_release_internal_resource {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBufferPool as ::unity2::ClassIdentity>::class(),
                 "ReleaseInternalResource",
@@ -50,18 +44,15 @@ mod __ComputeBufferPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
-                    "ReleaseInternalResource",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
+                        "ReleaseInternalResource",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn release_internal_resource(
@@ -69,27 +60,17 @@ mod __ComputeBufferPool_unity2_raw {
         res: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            ComputeBufferPool,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_release_internal_resource::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ComputeBufferPool, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_release_internal_resource::get_method_info().method_ptr);
         inner(this, res, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_resource_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBufferPool as ::unity2::ClassIdentity>::class(),
                 "GetResourceName",
@@ -101,18 +82,15 @@ mod __ComputeBufferPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
-                    "GetResourceName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
+                        "GetResourceName",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_resource_name(
@@ -124,23 +102,16 @@ mod __ComputeBufferPool_unity2_raw {
             ComputeBufferPool,
             crate::unity_engine::computebuffer::ComputeBuffer,
             ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_resource_name::get_offset() as isize),
-        );
+        ) -> ::unity2::Il2CppString = ::core::mem::transmute(__lookup_get_resource_name::get_method_info().method_ptr);
         inner(this, res, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_resource_size {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
-                <crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type(),
-            ];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::unity_engine::computebuffer::ComputeBuffer as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBufferPool as ::unity2::ClassIdentity>::class(),
                 "GetResourceSize",
@@ -152,18 +123,15 @@ mod __ComputeBufferPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
-                    "GetResourceSize",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
+                        "GetResourceSize",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_resource_size(
@@ -171,24 +139,15 @@ mod __ComputeBufferPool_unity2_raw {
         res: crate::unity_engine::computebuffer::ComputeBuffer,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> i64 {
-        let inner: extern "C" fn(
-            ComputeBufferPool,
-            crate::unity_engine::computebuffer::ComputeBuffer,
-            ::unity2::OptionalMethod,
-        ) -> i64 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_resource_size::get_offset() as isize),
-        );
+        let inner: extern "C" fn(ComputeBufferPool, crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod) -> i64 =
+            ::core::mem::transmute(__lookup_get_resource_size::get_method_info().method_ptr);
         inner(this, res, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_resource_type_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBufferPool as ::unity2::ClassIdentity>::class(),
@@ -201,43 +160,28 @@ mod __ComputeBufferPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
-                    "GetResourceTypeName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
+                        "GetResourceTypeName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_resource_type_name(
-        this: ComputeBufferPool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            ComputeBufferPool,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_resource_type_name::get_offset() as isize),
-        );
+    pub unsafe fn get_resource_type_name(this: ComputeBufferPool, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(ComputeBufferPool, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_resource_type_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_purge_unused_resources {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBufferPool as ::unity2::ClassIdentity>::class(),
                 "PurgeUnusedResources",
@@ -249,40 +193,27 @@ mod __ComputeBufferPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
-                    "PurgeUnusedResources",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
+                        "PurgeUnusedResources",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn purge_unused_resources(
-        this: ComputeBufferPool,
-        current_frame_index: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn purge_unused_resources(this: ComputeBufferPool, current_frame_index: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBufferPool, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_purge_unused_resources::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_purge_unused_resources::get_method_info().method_ptr);
         inner(this, current_frame_index, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ComputeBufferPool as ::unity2::ClassIdentity>::class(),
@@ -295,30 +226,20 @@ mod __ComputeBufferPool_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ComputeBufferPool as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: ComputeBufferPool,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: ComputeBufferPool, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(ComputeBufferPool, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -326,71 +247,37 @@ mod __ComputeBufferPool_unity2_raw {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
 pub trait IComputeBufferPoolMethods: IComputeBufferPool {
     #[doc = "`ReleaseInternalResource(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
-    fn release_internal_resource(
-        self,
-        res: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>,
-    ) -> () {
+    fn release_internal_resource(self, res: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>) -> () {
         unsafe {
-            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ComputeBufferPool_unity2_raw::release_internal_resource(
-                __receiver,
-                ::core::convert::Into::into(res),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ComputeBufferPool_unity2_raw::release_internal_resource(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)
         }
     }
     #[doc = "`GetResourceName(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
-    fn get_resource_name(
-        self,
-        res: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>,
-    ) -> ::unity2::Il2CppString {
+    fn get_resource_name(self, res: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ComputeBufferPool_unity2_raw::get_resource_name(
-                __receiver,
-                ::core::convert::Into::into(res),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ComputeBufferPool_unity2_raw::get_resource_name(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)
         }
     }
     #[doc = "`GetResourceSize(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]
-    fn get_resource_size(
-        self,
-        res: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>,
-    ) -> i64 {
+    fn get_resource_size(self, res: impl ::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>) -> i64 {
         unsafe {
-            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ComputeBufferPool_unity2_raw::get_resource_size(
-                __receiver,
-                ::core::convert::Into::into(res),
-                ::core::option::Option::None,
-            )
+            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ComputeBufferPool_unity2_raw::get_resource_size(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)
         }
     }
     #[doc = "`GetResourceTypeName()` overload"]
     fn get_resource_type_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __ComputeBufferPool_unity2_raw::get_resource_type_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __ComputeBufferPool_unity2_raw::get_resource_type_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`PurgeUnusedResources(i32)` overload"]
     fn purge_unused_resources(self, current_frame_index: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBufferPool_unity2_raw::purge_unused_resources(
                 __receiver,
                 ::core::convert::Into::into(current_frame_index),
@@ -401,9 +288,7 @@ pub trait IComputeBufferPoolMethods: IComputeBufferPool {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ComputeBufferPool as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ComputeBufferPool_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -431,11 +316,12 @@ impl ComputeBufferPool {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ComputeBufferPool;
-    pub use super::IComputeBufferPool;
-    pub use super::IComputeBufferPoolMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")] pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1Methods;
+    pub use super::{ComputeBufferPool, IComputeBufferPool, IComputeBufferPoolMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")]
+    pub use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1Methods;
+    pub use crate::{
+        system::object::IObject, unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::IRenderGraphResourcePool_1,
+    };
 }

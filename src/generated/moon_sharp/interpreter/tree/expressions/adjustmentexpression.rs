@@ -2,18 +2,19 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-adjustmentexpression-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::moon_sharp::interpreter::tree::expression::{Expression, IExpression};
-    use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase, NodeBase};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        moon_sharp::interpreter::tree::{
+            expression::{Expression, IExpression},
+            nodebase::{INodeBase, NodeBase},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/adjustmentexpression/AdjustmentExpression.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Tree.Expressions",
-        name = "AdjustmentExpression"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "AdjustmentExpression")]
     #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
     pub struct AdjustmentExpression {
         #[rename(name = "expression")]
@@ -33,10 +34,11 @@ mod __AdjustmentExpression_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity2::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::expression::Expression as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AdjustmentExpression as ::unity2::ClassIdentity>::class(),
                 ".ctor",
@@ -48,23 +50,20 @@ mod __AdjustmentExpression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AdjustmentExpression as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AdjustmentExpression as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn ctor(
         this: AdjustmentExpression,
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         exp: crate::moon_sharp::interpreter::tree::expression::Expression,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
@@ -73,21 +72,16 @@ mod __AdjustmentExpression_unity2_raw {
             crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
             crate::moon_sharp::interpreter::tree::expression::Expression,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_ctor::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, lcontext, exp, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_compile {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AdjustmentExpression as ::unity2::ClassIdentity>::class(),
                 "Compile",
@@ -99,18 +93,15 @@ mod __AdjustmentExpression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AdjustmentExpression as ::unity2::ClassIdentity>::NAME,
-                    "Compile",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AdjustmentExpression as ::unity2::ClassIdentity>::NAME,
+                        "Compile",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn compile(
@@ -122,21 +113,16 @@ mod __AdjustmentExpression_unity2_raw {
             AdjustmentExpression,
             crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
             ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_compile::get_offset() as isize),
-        );
+        ) -> () = ::core::mem::transmute(__lookup_compile::get_method_info().method_ptr);
         inner(this, bc, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_eval {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <AdjustmentExpression as ::unity2::ClassIdentity>::class(),
                 "Eval",
@@ -148,18 +134,15 @@ mod __AdjustmentExpression_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <AdjustmentExpression as ::unity2::ClassIdentity>::NAME,
-                    "Eval",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <AdjustmentExpression as ::unity2::ClassIdentity>::NAME,
+                        "Eval",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn eval(
@@ -171,11 +154,7 @@ mod __AdjustmentExpression_unity2_raw {
             AdjustmentExpression,
             crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
             ::unity2::OptionalMethod,
-        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_eval::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__lookup_eval::get_method_info().method_ptr);
         inner(this, context, __unity2_method_info)
     }
 }
@@ -185,15 +164,12 @@ pub trait IAdjustmentExpressionMethods: IAdjustmentExpression {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression)` overload"]
     fn ctor(
         self,
-        lcontext: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
-        >,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
         exp: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression>,
     ) -> () {
         unsafe {
-            let __receiver = <AdjustmentExpression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <AdjustmentExpression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __AdjustmentExpression_unity2_raw::ctor(
                 __receiver,
                 ::core::convert::Into::into(lcontext),
@@ -203,39 +179,22 @@ pub trait IAdjustmentExpressionMethods: IAdjustmentExpression {
         }
     }
     #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    fn compile(
-        self,
-        bc: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-        >,
-    ) -> () {
+    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
         unsafe {
-            let __receiver = <AdjustmentExpression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AdjustmentExpression_unity2_raw::compile(
-                __receiver,
-                ::core::convert::Into::into(bc),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AdjustmentExpression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AdjustmentExpression_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)
         }
     }
     #[doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
     fn eval(
         self,
-        context: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
-        >,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
     ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
         unsafe {
-            let __receiver = <AdjustmentExpression as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __AdjustmentExpression_unity2_raw::eval(
-                __receiver,
-                ::core::convert::Into::into(context),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <AdjustmentExpression as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __AdjustmentExpression_unity2_raw::eval(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)
         }
     }
 }
@@ -247,7 +206,7 @@ impl<__T: IAdjustmentExpression> IAdjustmentExpressionMethods for __T {}
 impl AdjustmentExpression {
     #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression)` — overload selector"]
     pub fn new(
-        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
         exp: crate::moon_sharp::interpreter::tree::expression::Expression,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
@@ -265,16 +224,15 @@ impl AdjustmentExpression {
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-adjustmentexpression")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AdjustmentExpression;
-    pub use super::IAdjustmentExpression;
-    pub use super::IAdjustmentExpressionMethods;
-    pub use crate::moon_sharp::interpreter::tree::expression::IExpression;
+    pub use super::{AdjustmentExpression, IAdjustmentExpression, IAdjustmentExpressionMethods};
     #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
     pub use crate::moon_sharp::interpreter::tree::expression::IExpressionMethods;
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
     #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
     pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::tree::{expression::IExpression, nodebase::INodeBase},
+        system::object::IObject,
+    };
 }

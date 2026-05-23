@@ -2,10 +2,10 @@
 
 #[cfg(feature = "tm_pro-codepoint-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/codepoint/CodePoint.md"))]
     #[::unity2::class(namespace = "TMPro", name = "CodePoint")]
@@ -80,8 +80,7 @@ pub use __types::*;
 #[cfg(feature = "tm_pro-codepoint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CodePoint;
-    pub use super::ICodePoint;
+    pub use super::{CodePoint, ICodePoint};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

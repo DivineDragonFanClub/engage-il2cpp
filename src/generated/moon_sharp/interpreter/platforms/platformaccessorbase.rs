@@ -2,16 +2,13 @@
 
 #[cfg(feature = "moon_sharp-interpreter-platforms-platformaccessorbase-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
+    use super::*;
     use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/platforms/platformaccessorbase/PlatformAccessorBase.md"))]
-    #[::unity2::class(
-        namespace = "MoonSharp.Interpreter.Platforms",
-        name = "PlatformAccessorBase"
-    )]
+    #[::unity2::class(namespace = "MoonSharp.Interpreter.Platforms", name = "PlatformAccessorBase")]
     #[parent(crate::system::object::Object)]
     pub struct PlatformAccessorBase {}
 }
@@ -28,9 +25,7 @@ mod __PlatformAccessorBase_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_get_platform_name_prefix {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -43,41 +38,27 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "GetPlatformNamePrefix",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "GetPlatformNamePrefix",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_platform_name_prefix(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_platform_name_prefix::get_offset() as isize),
-        );
+    pub unsafe fn get_platform_name_prefix(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_platform_name_prefix::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_platform_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -90,41 +71,27 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "GetPlatformName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "GetPlatformName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_platform_name(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_platform_name::get_offset() as isize),
-        );
+    pub unsafe fn get_platform_name(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_platform_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unity_runtime_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -137,41 +104,27 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "GetUnityRuntimeName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "GetUnityRuntimeName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unity_runtime_name(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unity_runtime_name::get_offset() as isize),
-        );
+    pub unsafe fn get_unity_runtime_name(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_unity_runtime_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_unity_platform_name {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -184,43 +137,28 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "GetUnityPlatformName",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "GetUnityPlatformName",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn get_unity_platform_name(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_unity_platform_name::get_offset() as isize),
-        );
+    pub unsafe fn get_unity_platform_name(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_unity_platform_name::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_default_print {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "DefaultPrint",
@@ -232,43 +170,27 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "DefaultPrint",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "DefaultPrint",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn default_print(
-        this: PlatformAccessorBase,
-        content: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_default_print::get_offset() as isize),
-        );
+    pub unsafe fn default_print(this: PlatformAccessorBase, content: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_default_print::get_method_info().method_ptr);
         inner(this, content, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_default_input {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -281,43 +203,28 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "DefaultInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "DefaultInput",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn default_input(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_default_input::get_offset() as isize),
-        );
+    pub unsafe fn default_input(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_default_input::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_default_input_2 {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "DefaultInput",
@@ -329,18 +236,15 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "DefaultInput",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "DefaultInput",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn default_input_2(
@@ -348,25 +252,17 @@ mod __PlatformAccessorBase_unity2_raw {
         prompt: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_default_input_2::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_default_input_2::get_method_info().method_ptr);
         inner(this, prompt, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_io_get_standard_stream {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: platforms :: standardfiletype :: StandardFileType as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "IO_GetStandardStream",
@@ -378,18 +274,15 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "IO_GetStandardStream",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "IO_GetStandardStream",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn io_get_standard_stream(
@@ -401,20 +294,14 @@ mod __PlatformAccessorBase_unity2_raw {
             PlatformAccessorBase,
             crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,
             ::unity2::OptionalMethod,
-        ) -> crate::system::io::stream::Stream = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_io_get_standard_stream::get_offset() as isize),
-        );
+        ) -> crate::system::io::stream::Stream = ::core::mem::transmute(__lookup_io_get_standard_stream::get_method_info().method_ptr);
         inner(this, r#type, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_io_os_get_temp_filename {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -427,43 +314,28 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "IO_OS_GetTempFilename",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "IO_OS_GetTempFilename",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn io_os_get_temp_filename(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_io_os_get_temp_filename::get_offset() as isize),
-        );
+    pub unsafe fn io_os_get_temp_filename(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> ::unity2::Il2CppString {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_io_os_get_temp_filename::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_os_exit_fast {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<i32 as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<i32 as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "OS_ExitFast",
@@ -475,42 +347,28 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "OS_ExitFast",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "OS_ExitFast",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn os_exit_fast(
-        this: PlatformAccessorBase,
-        exit_code: i32,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn os_exit_fast(this: PlatformAccessorBase, exit_code: i32, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlatformAccessorBase, i32, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_os_exit_fast::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_os_exit_fast::get_method_info().method_ptr);
         inner(this, exit_code, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_os_file_exists {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "OS_FileExists",
@@ -522,45 +380,28 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "OS_FileExists",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "OS_FileExists",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn os_file_exists(
-        this: PlatformAccessorBase,
-        file: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> bool = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_os_file_exists::get_offset() as isize),
-        );
+    pub unsafe fn os_file_exists(this: PlatformAccessorBase, file: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> bool =
+            ::core::mem::transmute(__lookup_os_file_exists::get_method_info().method_ptr);
         inner(this, file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_os_file_delete {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "OS_FileDelete",
@@ -572,43 +413,27 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "OS_FileDelete",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "OS_FileDelete",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn os_file_delete(
-        this: PlatformAccessorBase,
-        file: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_os_file_delete::get_offset() as isize),
-        );
+    pub unsafe fn os_file_delete(this: PlatformAccessorBase, file: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> () {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_os_file_delete::get_method_info().method_ptr);
         inner(this, file, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_os_file_move {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
                 <::unity2::Il2CppString as ::unity2::IlType>::il_type(),
@@ -624,18 +449,15 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "OS_FileMove",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "OS_FileMove",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn os_file_move(
@@ -644,27 +466,16 @@ mod __PlatformAccessorBase_unity2_raw {
         dst: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> () {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> () = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_os_file_move::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> () =
+            ::core::mem::transmute(__lookup_os_file_move::get_method_info().method_ptr);
         inner(this, src, dst, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_os_execute {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "OS_Execute",
@@ -676,44 +487,29 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "OS_Execute",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "OS_Execute",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn os_execute(
-        this: PlatformAccessorBase,
-        cmdline: ::unity2::Il2CppString,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> i32 {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> i32 = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_os_execute::get_offset() as isize),
-        );
+    pub unsafe fn os_execute(this: PlatformAccessorBase, cmdline: ::unity2::Il2CppString, __unity2_method_info: ::unity2::OptionalMethod) -> i32 {
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> i32 =
+            ::core::mem::transmute(__lookup_os_execute::get_method_info().method_ptr);
         inner(this, cmdline, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_filter_supported_core_modules {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: coremodules :: CoreModules as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
+                &[<crate::moon_sharp::interpreter::coremodules::CoreModules as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "FilterSupportedCoreModules",
@@ -725,18 +521,15 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "FilterSupportedCoreModules",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "FilterSupportedCoreModules",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn filter_supported_core_modules(
@@ -748,23 +541,16 @@ mod __PlatformAccessorBase_unity2_raw {
             PlatformAccessorBase,
             crate::moon_sharp::interpreter::coremodules::CoreModules,
             ::unity2::OptionalMethod,
-        )
-            -> crate::moon_sharp::interpreter::coremodules::CoreModules = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_filter_supported_core_modules::get_offset() as isize),
-        );
+        ) -> crate::moon_sharp::interpreter::coremodules::CoreModules =
+            ::core::mem::transmute(__lookup_filter_supported_core_modules::get_method_info().method_ptr);
         inner(this, module, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_get_environment_variable {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] =
-                &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[<::unity2::Il2CppString as ::unity2::IlType>::il_type()];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
                 "GetEnvironmentVariable",
@@ -776,18 +562,15 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "GetEnvironmentVariable",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "GetEnvironmentVariable",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn get_environment_variable(
@@ -795,24 +578,15 @@ mod __PlatformAccessorBase_unity2_raw {
         envvarname: ::unity2::Il2CppString,
         __unity2_method_info: ::unity2::OptionalMethod,
     ) -> ::unity2::Il2CppString {
-        let inner: extern "C" fn(
-            PlatformAccessorBase,
-            ::unity2::Il2CppString,
-            ::unity2::OptionalMethod,
-        ) -> ::unity2::Il2CppString = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_get_environment_variable::get_offset() as isize),
-        );
+        let inner: extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod) -> ::unity2::Il2CppString =
+            ::core::mem::transmute(__lookup_get_environment_variable::get_method_info().method_ptr);
         inner(this, envvarname, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_is_running_on_aot {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -825,39 +599,27 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    "IsRunningOnAOT",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        "IsRunningOnAOT",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn is_running_on_aot(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> bool {
+    pub unsafe fn is_running_on_aot(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> bool {
         let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> bool =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_is_running_on_aot::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_is_running_on_aot::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
     #[doc(hidden)]
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <PlatformAccessorBase as ::unity2::ClassIdentity>::class(),
@@ -870,30 +632,20 @@ mod __PlatformAccessorBase_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <PlatformAccessorBase as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: PlatformAccessorBase,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: PlatformAccessorBase, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -903,171 +655,107 @@ pub trait IPlatformAccessorBaseMethods: IPlatformAccessorBase {
     #[doc = "`GetPlatformNamePrefix()` overload"]
     fn get_platform_name_prefix(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::get_platform_name_prefix(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::get_platform_name_prefix(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetPlatformName()` overload"]
     fn get_platform_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::get_platform_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::get_platform_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnityRuntimeName()` overload"]
     fn get_unity_runtime_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::get_unity_runtime_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::get_unity_runtime_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`GetUnityPlatformName()` overload"]
     fn get_unity_platform_name(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::get_unity_platform_name(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::get_unity_platform_name(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DefaultPrint(::unity2::Il2CppString)` overload"]
     fn default_print(self, content: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::default_print(
-                __receiver,
-                ::core::convert::Into::into(content),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::default_print(__receiver, ::core::convert::Into::into(content), ::core::option::Option::None)
         }
     }
     #[doc = "`DefaultInput()` overload"]
     fn default_input(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::default_input(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::default_input(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`DefaultInput(::unity2::Il2CppString)` overload"]
-    fn default_input_2(
-        self,
-        prompt: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
+    fn default_input_2(self, prompt: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::default_input_2(
-                __receiver,
-                ::core::convert::Into::into(prompt),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::default_input_2(__receiver, ::core::convert::Into::into(prompt), ::core::option::Option::None)
         }
     }
     #[doc = "`IO_GetStandardStream(crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType)` overload"]
     fn io_get_standard_stream(
         self,
-        r#type: impl ::core::convert::Into<
-            crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,
-        >,
+        r#type: impl ::core::convert::Into<crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType>,
     ) -> crate::system::io::stream::Stream {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::io_get_standard_stream(
-                __receiver,
-                ::core::convert::Into::into(r#type),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::io_get_standard_stream(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)
         }
     }
     #[doc = "`IO_OS_GetTempFilename()` overload"]
     fn io_os_get_temp_filename(self) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::io_os_get_temp_filename(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::io_os_get_temp_filename(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`OS_ExitFast(i32)` overload"]
     fn os_exit_fast(self, exit_code: impl ::core::convert::Into<i32>) -> () {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::os_exit_fast(
-                __receiver,
-                ::core::convert::Into::into(exit_code),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::os_exit_fast(__receiver, ::core::convert::Into::into(exit_code), ::core::option::Option::None)
         }
     }
     #[doc = "`OS_FileExists(::unity2::Il2CppString)` overload"]
     fn os_file_exists(self, file: impl ::core::convert::Into<::unity2::Il2CppString>) -> bool {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::os_file_exists(
-                __receiver,
-                ::core::convert::Into::into(file),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::os_file_exists(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)
         }
     }
     #[doc = "`OS_FileDelete(::unity2::Il2CppString)` overload"]
     fn os_file_delete(self, file: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::os_file_delete(
-                __receiver,
-                ::core::convert::Into::into(file),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::os_file_delete(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)
         }
     }
     #[doc = "`OS_FileMove(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    fn os_file_move(
-        self,
-        src: impl ::core::convert::Into<::unity2::Il2CppString>,
-        dst: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> () {
+    fn os_file_move(self, src: impl ::core::convert::Into<::unity2::Il2CppString>, dst: impl ::core::convert::Into<::unity2::Il2CppString>) -> () {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlatformAccessorBase_unity2_raw::os_file_move(
                 __receiver,
                 ::core::convert::Into::into(src),
@@ -1079,14 +767,9 @@ pub trait IPlatformAccessorBaseMethods: IPlatformAccessorBase {
     #[doc = "`OS_Execute(::unity2::Il2CppString)` overload"]
     fn os_execute(self, cmdline: impl ::core::convert::Into<::unity2::Il2CppString>) -> i32 {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::os_execute(
-                __receiver,
-                ::core::convert::Into::into(cmdline),
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::os_execute(__receiver, ::core::convert::Into::into(cmdline), ::core::option::Option::None)
         }
     }
     #[doc = "`FilterSupportedCoreModules(crate::moon_sharp::interpreter::coremodules::CoreModules)` overload"]
@@ -1095,9 +778,8 @@ pub trait IPlatformAccessorBaseMethods: IPlatformAccessorBase {
         module: impl ::core::convert::Into<crate::moon_sharp::interpreter::coremodules::CoreModules>,
     ) -> crate::moon_sharp::interpreter::coremodules::CoreModules {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlatformAccessorBase_unity2_raw::filter_supported_core_modules(
                 __receiver,
                 ::core::convert::Into::into(module),
@@ -1106,14 +788,10 @@ pub trait IPlatformAccessorBaseMethods: IPlatformAccessorBase {
         }
     }
     #[doc = "`GetEnvironmentVariable(::unity2::Il2CppString)` overload"]
-    fn get_environment_variable(
-        self,
-        envvarname: impl ::core::convert::Into<::unity2::Il2CppString>,
-    ) -> ::unity2::Il2CppString {
+    fn get_environment_variable(self, envvarname: impl ::core::convert::Into<::unity2::Il2CppString>) -> ::unity2::Il2CppString {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlatformAccessorBase_unity2_raw::get_environment_variable(
                 __receiver,
                 ::core::convert::Into::into(envvarname),
@@ -1124,21 +802,16 @@ pub trait IPlatformAccessorBaseMethods: IPlatformAccessorBase {
     #[doc = "`IsRunningOnAOT()` overload"]
     fn is_running_on_aot(self) -> bool {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
-            __PlatformAccessorBase_unity2_raw::is_running_on_aot(
-                __receiver,
-                ::core::option::Option::None,
-            )
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
+            __PlatformAccessorBase_unity2_raw::is_running_on_aot(__receiver, ::core::option::Option::None)
         }
     }
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver =
+                <PlatformAccessorBase as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __PlatformAccessorBase_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -1166,9 +839,7 @@ impl PlatformAccessorBase {
 #[cfg(feature = "moon_sharp-interpreter-platforms-platformaccessorbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPlatformAccessorBase;
-    pub use super::IPlatformAccessorBaseMethods;
-    pub use super::PlatformAccessorBase;
+    pub use super::{IPlatformAccessorBase, IPlatformAccessorBaseMethods, PlatformAccessorBase};
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;

@@ -2,13 +2,17 @@
 
 #[cfg(feature = "app-giftdialogitemno-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::app::basicdialogitem::{BasicDialogItem, IBasicDialogItem};
-    use crate::app::basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo};
-    use crate::app::basicmenuitem::{BasicMenuItem, IBasicMenuItem};
-    use crate::system::object::{IObject, Object};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        },
+        system::object::{IObject, Object},
+    };
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftdialogitemno/GiftDialogItemNo.md"))]
     #[::unity2::class(namespace = "App", name = "GiftDialogItemNo")]
@@ -28,9 +32,7 @@ mod __GiftDialogItemNo_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_ctor {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
             let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <GiftDialogItemNo as ::unity2::ClassIdentity>::class(),
@@ -43,30 +45,20 @@ mod __GiftDialogItemNo_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <GiftDialogItemNo as ::unity2::ClassIdentity>::NAME,
-                    ".ctor",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <GiftDialogItemNo as ::unity2::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
             }
         }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
-        }
     }
-    pub unsafe fn ctor(
-        this: GiftDialogItemNo,
-        __unity2_method_info: ::unity2::OptionalMethod,
-    ) -> () {
+    pub unsafe fn ctor(this: GiftDialogItemNo, __unity2_method_info: ::unity2::OptionalMethod) -> () {
         let inner: extern "C" fn(GiftDialogItemNo, ::unity2::OptionalMethod) -> () =
-            ::core::mem::transmute(
-                (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                    as *const u8)
-                    .offset(__lookup_ctor::get_offset() as isize),
-            );
+            ::core::mem::transmute(__lookup_ctor::get_method_info().method_ptr);
         inner(this, __unity2_method_info)
     }
 }
@@ -76,9 +68,7 @@ pub trait IGiftDialogItemNoMethods: IGiftDialogItemNo {
     #[doc = "`.ctor()` overload"]
     fn ctor(self) -> () {
         unsafe {
-            let __receiver = <GiftDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <GiftDialogItemNo as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __GiftDialogItemNo_unity2_raw::ctor(__receiver, ::core::option::Option::None)
         }
     }
@@ -106,19 +96,17 @@ impl GiftDialogItemNo {
 #[cfg(feature = "app-giftdialogitemno")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GiftDialogItemNo;
-    pub use super::IGiftDialogItemNo;
-    pub use super::IGiftDialogItemNoMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
+    pub use super::{GiftDialogItemNo, IGiftDialogItemNo, IGiftDialogItemNoMethods};
     #[cfg(feature = "app-basicdialogitem")]
     pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     #[cfg(feature = "app-basicdialogitemno")]
     pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
     #[cfg(feature = "app-basicmenuitem")]
     pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicdialogitem::IBasicDialogItem, basicdialogitemno::IBasicDialogItemNo, basicmenuitem::IBasicMenuItem},
+        system::object::IObject,
+    };
 }

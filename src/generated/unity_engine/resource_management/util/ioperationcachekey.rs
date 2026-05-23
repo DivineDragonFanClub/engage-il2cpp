@@ -2,15 +2,12 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-ioperationcachekey-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity2::prelude::*;
+
     use super::*;
 
-    use ::unity2::prelude::*;
-
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/ioperationcachekey/IOperationCacheKey.md"))]
-    #[::unity2::class(
-        namespace = "UnityEngine.ResourceManagement.Util",
-        name = "IOperationCacheKey"
-    )]
+    #[::unity2::class(namespace = "UnityEngine.ResourceManagement.Util", name = "IOperationCacheKey")]
     pub struct IOperationCacheKey {}
 }
 
@@ -20,6 +17,5 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-resource_management-util-ioperationcachekey")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IIOperationCacheKey;
-    pub use super::IOperationCacheKey;
+    pub use super::{IIOperationCacheKey, IOperationCacheKey};
 }

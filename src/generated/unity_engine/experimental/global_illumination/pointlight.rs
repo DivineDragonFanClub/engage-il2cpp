@@ -2,11 +2,13 @@
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-pointlight-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use crate::system::object::{IObject, Object};
-    use crate::system::valuetype::{IValueType, ValueType};
-    use ::unity2::prelude::*;
+    use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
     #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/pointlight/PointLight.md"))]
     #[repr(C)]
@@ -17,18 +19,15 @@ mod __types {
         pub mode: crate::unity_engine::experimental::global_illumination::lightmode::LightMode,
         pub position: crate::unity_engine::vector3::Vector3,
         pub color: crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
-        pub indirect_color:
-            crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
+        pub indirect_color: crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
         pub range: f32,
         pub sphere_radius: f32,
-        pub falloff:
-            crate::unity_engine::experimental::global_illumination::fallofftype::FalloffType,
+        pub falloff: crate::unity_engine::experimental::global_illumination::fallofftype::FalloffType,
     }
 
     impl ::unity2::ClassIdentity for PointLight {
-        const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
-
         const NAME: &'static str = "PointLight";
+        const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
 
         fn class() -> ::unity2::Class {
             static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,10 +38,7 @@ mod __types {
 
     impl ::unity2::IlType for PointLight {
         fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-            &<Self as ::unity2::ClassIdentity>::class()
-                .raw()
-                ._1
-                .byval_arg
+            &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
         }
     }
 }
@@ -54,10 +50,9 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::PointLight;
-    pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")]
     pub use crate::system::object::IObjectMethods;
-    pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-valuetype")]
     pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

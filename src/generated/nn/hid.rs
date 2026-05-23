@@ -295,9 +295,7 @@ pub use vibrationfileinfo::VibrationFileInfo;
 #[cfg(any(feature = "nn-hid-vibrationfileparsercontext-types"))]
 pub mod vibrationfileparsercontext;
 #[cfg(feature = "nn-hid-vibrationfileparsercontext-types")]
-pub use vibrationfileparsercontext::{
-    VibrationFileParserContext, VibrationFileParserContext_IntPtrArray10,
-};
+pub use vibrationfileparsercontext::{VibrationFileParserContext, VibrationFileParserContext_IntPtrArray10};
 #[cfg(any(feature = "nn-hid-vibrationvalue-types"))]
 pub mod vibrationvalue;
 #[cfg(feature = "nn-hid-vibrationvalue-types")]

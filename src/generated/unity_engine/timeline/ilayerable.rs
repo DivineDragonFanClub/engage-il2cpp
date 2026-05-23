@@ -2,9 +2,9 @@
 
 #[cfg(feature = "unity_engine-timeline-ilayerable-types")]
 mod __types {
-    use super::*;
+    #[allow(unused_imports)] use ::unity2::prelude::*;
 
-    use ::unity2::prelude::*;
+    use super::*;
 
     # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/ilayerable/ILayerable.md"))]
     #[::unity2::class(namespace = "UnityEngine.Timeline", name = "ILayerable")]
@@ -23,10 +23,12 @@ mod __ILayerable_unity2_raw {
     #[allow(non_snake_case)]
     pub mod __lookup_create_layer_mixer {
         use super::*;
-        static METHOD: ::std::sync::LazyLock<
-            ::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>,
-        > = ::std::sync::LazyLock::new(|| {
-            let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: playables :: playablegraph :: PlayableGraph as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: gameobject :: GameObject as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ;
+        static METHOD: ::std::sync::LazyLock<::unity2::Il2CppResult<&'static ::unity2::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity2::il2cpp::Il2CppType] = &[
+                <crate::unity_engine::playables::playablegraph::PlayableGraph as ::unity2::IlType>::il_type(),
+                <crate::unity_engine::gameobject::GameObject as ::unity2::IlType>::il_type(),
+                <i32 as ::unity2::IlType>::il_type(),
+            ];
             ::unity2::lookup::method_info_on_class_with_signature(
                 <ILayerable as ::unity2::ClassIdentity>::class(),
                 "CreateLayerMixer",
@@ -38,18 +40,15 @@ mod __ILayerable_unity2_raw {
         pub fn get_method_info() -> &'static ::unity2::il2cpp::MethodInfo {
             match &*METHOD {
                 ::core::result::Result::Ok(mi) => *mi,
-                ::core::result::Result::Err(e) => panic!(
-                    "method lookup failed: {}::{}: {}",
-                    <ILayerable as ::unity2::ClassIdentity>::NAME,
-                    "CreateLayerMixer",
-                    e
-                ),
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}::{}: {}",
+                        <ILayerable as ::unity2::ClassIdentity>::NAME,
+                        "CreateLayerMixer",
+                        e
+                    )
+                },
             }
-        }
-        pub fn get_offset() -> usize {
-            let method_ptr = get_method_info().method_ptr;
-            let text = ::lazysimd::scan::get_text();
-            unsafe { (method_ptr as *const u8).offset_from(text.as_ptr()) as usize }
         }
     }
     pub unsafe fn create_layer_mixer(
@@ -65,11 +64,7 @@ mod __ILayerable_unity2_raw {
             crate::unity_engine::gameobject::GameObject,
             i32,
             ::unity2::OptionalMethod,
-        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(
-            (unsafe { ::skyline::hooks::getRegionAddress(::skyline::hooks::Region::Text) }
-                as *const u8)
-                .offset(__lookup_create_layer_mixer::get_offset() as isize),
-        );
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__lookup_create_layer_mixer::get_method_info().method_ptr);
         inner(this, graph, go, input_count, __unity2_method_info)
     }
 }
@@ -84,9 +79,7 @@ pub trait IILayerableMethods: IILayerable {
         input_count: impl ::core::convert::Into<i32>,
     ) -> crate::unity_engine::playables::playable::Playable {
         unsafe {
-            let __receiver = <ILayerable as ::unity2::FromIlInstance>::from_il_instance(
-                <Self as ::unity2::SystemObject>::as_instance(self),
-            );
+            let __receiver = <ILayerable as ::unity2::FromIlInstance>::from_il_instance(<Self as ::unity2::SystemObject>::as_instance(self));
             __ILayerable_unity2_raw::create_layer_mixer(
                 __receiver,
                 ::core::convert::Into::into(graph),
@@ -104,7 +97,5 @@ impl<__T: IILayerable> IILayerableMethods for __T {}
 #[cfg(feature = "unity_engine-timeline-ilayerable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IILayerable;
-    pub use super::IILayerableMethods;
-    pub use super::ILayerable;
+    pub use super::{IILayerable, IILayerableMethods, ILayerable};
 }
